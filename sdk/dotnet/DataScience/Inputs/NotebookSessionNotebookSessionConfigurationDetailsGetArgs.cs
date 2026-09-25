@@ -19,6 +19,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<int>? BlockStorageSizeInGbs { get; set; }
 
         /// <summary>
+        /// (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+        /// </summary>
+        [Input("capacityReservationId")]
+        public Input<string>? CapacityReservationId { get; set; }
+
+        /// <summary>
         /// (Updatable) Details for the notebook session shape configuration.
         /// </summary>
         [Input("notebookSessionShapeConfigDetails")]

@@ -110,7 +110,6 @@ import * as utilities from "../utilities";
  *         type: migrationIncludeObjectsType,
  *     }],
  *     initialLoadSettings: {
- *         jobMode: migrationInitialLoadSettingsJobMode,
  *         compatibilities: migrationInitialLoadSettingsCompatibility,
  *         dataPumpParameters: {
  *             estimate: migrationInitialLoadSettingsDataPumpParametersEstimate,
@@ -132,6 +131,7 @@ import * as utilities from "../utilities";
  *         isConsistent: migrationInitialLoadSettingsIsConsistent === "true",
  *         isIgnoreExistingObjects: migrationInitialLoadSettingsIsIgnoreExistingObjects === "true",
  *         isTzUtc: migrationInitialLoadSettingsIsTzUtc === "true",
+ *         jobMode: migrationInitialLoadSettingsJobMode,
  *         metadataRemaps: [{
  *             newValue: migrationInitialLoadSettingsMetadataRemapsNewValue,
  *             oldValue: migrationInitialLoadSettingsMetadataRemapsOldValue,

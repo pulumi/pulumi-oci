@@ -12,6 +12,10 @@ from .get_application import *
 from .get_applications import *
 from .get_function import *
 from .get_functions import *
+from .get_functions_runtime import *
+from .get_functions_runtime_version import *
+from .get_functions_runtime_versions import *
+from .get_functions_runtimes import *
 from .get_fusion_environment import *
 from .get_fusion_environment_admin_user import *
 from .get_fusion_environment_admin_users import *

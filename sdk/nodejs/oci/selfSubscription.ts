@@ -25,7 +25,8 @@ import * as utilities from "../utilities";
  *     productId: testProduct.id,
  *     sellerId: testSeller.id,
  *     subscriptionDetails: {
- *         billingDetails: {
+ *         billingDetails: [{
+ *             billingModel: subscriptionSubscriptionDetailsBillingDetailsBillingModel,
  *             meters: [{
  *                 name: subscriptionSubscriptionDetailsBillingDetailsMetersName,
  *                 rateAllocation: subscriptionSubscriptionDetailsBillingDetailsMetersRateAllocation,
@@ -35,10 +36,11 @@ import * as utilities from "../utilities";
  *                 }],
  *             }],
  *             metricType: subscriptionSubscriptionDetailsBillingDetailsMetricType,
+ *             pricingPlanKey: subscriptionSubscriptionDetailsBillingDetailsPricingPlanKey,
  *             rateAllocation: subscriptionSubscriptionDetailsBillingDetailsRateAllocation,
  *             sku: subscriptionSubscriptionDetailsBillingDetailsSku,
- *             hasGovSku: subscriptionSubscriptionDetailsBillingDetailsHasGovSku === "true",
- *         },
+ *             hasGovSku: subscriptionSubscriptionDetailsBillingDetailsHasGovSku,
+ *         }],
  *         partnerRegistrationUrl: subscriptionSubscriptionDetailsPartnerRegistrationUrl,
  *         pricingPlan: {
  *             billingFrequency: subscriptionSubscriptionDetailsPricingPlanBillingFrequency,
@@ -47,6 +49,18 @@ import * as utilities from "../utilities";
  *             rates: [{
  *                 currency: subscriptionSubscriptionDetailsPricingPlanRatesCurrency,
  *                 rate: subscriptionSubscriptionDetailsPricingPlanRatesRate,
+ *             }],
+ *             dimensions: [{
+ *                 dimensionBillingFrequency: subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionBillingFrequency,
+ *                 dimensionDescription: subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionDescription,
+ *                 dimensionKey: subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionKey,
+ *                 dimensionName: subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionName,
+ *                 metricType: subscriptionSubscriptionDetailsPricingPlanDimensionsMetricType,
+ *                 rates: [{
+ *                     currency: subscriptionSubscriptionDetailsPricingPlanDimensionsRatesCurrency,
+ *                     rate: subscriptionSubscriptionDetailsPricingPlanDimensionsRatesRate,
+ *                 }],
+ *                 includedQuantity: subscriptionSubscriptionDetailsPricingPlanDimensionsIncludedQuantity,
  *             }],
  *             planDescription: subscriptionSubscriptionDetailsPricingPlanPlanDescription,
  *             planDuration: subscriptionSubscriptionDetailsPricingPlanPlanDuration,

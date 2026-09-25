@@ -12,6 +12,16 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigMaintenanceWindowSchedule {
     /**
+     * @return (Updatable) Type of recurrence for a recurring maintenance window.
+     * 
+     */
+    private @Nullable String recurrenceType;
+    /**
+     * @return (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+     * 
+     */
+    private @Nullable String scheduleType;
+    /**
      * @return (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
@@ -23,6 +33,20 @@ public final class ConfigMaintenanceWindowSchedule {
     private @Nullable String timeStarted;
 
     private ConfigMaintenanceWindowSchedule() {}
+    /**
+     * @return (Updatable) Type of recurrence for a recurring maintenance window.
+     * 
+     */
+    public Optional<String> recurrenceType() {
+        return Optional.ofNullable(this.recurrenceType);
+    }
+    /**
+     * @return (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+     * 
+     */
+    public Optional<String> scheduleType() {
+        return Optional.ofNullable(this.scheduleType);
+    }
     /**
      * @return (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
@@ -47,15 +71,31 @@ public final class ConfigMaintenanceWindowSchedule {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String recurrenceType;
+        private @Nullable String scheduleType;
         private @Nullable String timeEnded;
         private @Nullable String timeStarted;
         public Builder() {}
         public Builder(ConfigMaintenanceWindowSchedule defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.recurrenceType = defaults.recurrenceType;
+    	      this.scheduleType = defaults.scheduleType;
     	      this.timeEnded = defaults.timeEnded;
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
+        public Builder recurrenceType(@Nullable String recurrenceType) {
+
+            this.recurrenceType = recurrenceType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scheduleType(@Nullable String scheduleType) {
+
+            this.scheduleType = scheduleType;
+            return this;
+        }
         @CustomType.Setter
         public Builder timeEnded(@Nullable String timeEnded) {
 
@@ -70,6 +110,8 @@ public final class ConfigMaintenanceWindowSchedule {
         }
         public ConfigMaintenanceWindowSchedule build() {
             final var _resultValue = new ConfigMaintenanceWindowSchedule();
+            _resultValue.recurrenceType = recurrenceType;
+            _resultValue.scheduleType = scheduleType;
             _resultValue.timeEnded = timeEnded;
             _resultValue.timeStarted = timeStarted;
             return _resultValue;

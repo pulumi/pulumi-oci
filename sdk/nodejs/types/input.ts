@@ -4257,7 +4257,7 @@ export namespace ApmSynthetics {
          */
         isOverrideDns?: pulumi.Input<boolean | undefined>;
         /**
-         * (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+         * (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
          */
         overrideDnsIp?: pulumi.Input<string | undefined>;
     }
@@ -4387,6 +4387,14 @@ export namespace ApmSynthetics {
     }
 
     export interface ConfigMaintenanceWindowSchedule {
+        /**
+         * (Updatable) Type of recurrence for a recurring maintenance window.
+         */
+        recurrenceType?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+         */
+        scheduleType?: pulumi.Input<string | undefined>;
         /**
          * (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
          */
@@ -23703,6 +23711,240 @@ export namespace DataSafe {
         onlineVolume?: pulumi.Input<string | undefined>;
     }
 
+    export interface CryptoAssessmentCryptoPosture {
+        /**
+         * Backup encryption status observed for the assessment.
+         */
+        backupStatus?: pulumi.Input<string | undefined>;
+        /**
+         * Number of encrypted backup pieces.
+         */
+        encryptedBackupPiecesCount?: pulumi.Input<number | undefined>;
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured?: pulumi.Input<string | undefined>;
+        /**
+         * Overall FIPS status for the assessment when the target uses common FIPS configuration.
+         */
+        fipsStatus?: pulumi.Input<string | undefined>;
+        /**
+         * Network encryption details.
+         */
+        networkEncryptions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Native network encryption posture details.
+         */
+        nnes?: pulumi.Input<pulumi.Input<inputs.DataSafe.CryptoAssessmentCryptoPostureNne>[] | undefined>;
+        /**
+         * Transparent data encryption posture details.
+         */
+        tdes?: pulumi.Input<pulumi.Input<inputs.DataSafe.CryptoAssessmentCryptoPostureTde>[] | undefined>;
+        /**
+         * TLS posture details.
+         */
+        tls?: pulumi.Input<pulumi.Input<inputs.DataSafe.CryptoAssessmentCryptoPostureTl>[] | undefined>;
+        /**
+         * Number of unencrypted backup pieces.
+         */
+        unencryptedBackupPiecesCount?: pulumi.Input<number | undefined>;
+    }
+
+    export interface CryptoAssessmentCryptoPostureNne {
+        /**
+         * Indicates if weak NNE options are allowed.
+         */
+        areWeakOptionsAllowed?: pulumi.Input<string | undefined>;
+        /**
+         * Configured TDE encryption algorithm.
+         */
+        encryptionConfigureds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured?: pulumi.Input<string | undefined>;
+        /**
+         * NNE integrity algorithm(s).
+         */
+        integrities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Observed NNE key exchange setting.
+         */
+        keyExchange?: pulumi.Input<string | undefined>;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness?: pulumi.Input<string | undefined>;
+        /**
+         * Observed server-side encryption requirement.
+         */
+        serverEncryption?: pulumi.Input<string | undefined>;
+        /**
+         * NNE server integrity algorithm(s).
+         */
+        serverIntegrities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * TLS enablement status.
+         */
+        status?: pulumi.Input<string | undefined>;
+    }
+
+    export interface CryptoAssessmentCryptoPostureTde {
+        /**
+         * Observed DB credentials encryption algorithm.
+         */
+        dbCredentialsEncryptionObserved?: pulumi.Input<string | undefined>;
+        /**
+         * Number of encrypted tablespaces detected.
+         */
+        encryptedTablespacesCount?: pulumi.Input<number | undefined>;
+        /**
+         * Configured TDE encryption algorithm.
+         */
+        encryptionConfigureds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured?: pulumi.Input<string | undefined>;
+        /**
+         * Configured TDE integrity-related setting.
+         */
+        integrityConfigureds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The observed TDE key cache status.
+         */
+        keyCacheStatus?: pulumi.Input<string | undefined>;
+        /**
+         * The observed TDE key store type.
+         */
+        keyStoreType?: pulumi.Input<string | undefined>;
+        /**
+         * The observed encryption algorithm used by the master key.
+         */
+        masterKeyEncryptionAlgorithm?: pulumi.Input<string | undefined>;
+        /**
+         * The observed TDE master key identifier.
+         */
+        masterKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness?: pulumi.Input<string | undefined>;
+        /**
+         * Observed redo log encryption algorithm.
+         */
+        redoEncryptionObserved?: pulumi.Input<string | undefined>;
+        /**
+         * TLS enablement status.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * The last observed rotation time for the TDE master key, in RFC3339 format.
+         */
+        timeMasterKeyLastRotation?: pulumi.Input<string | undefined>;
+        /**
+         * Number of unencrypted tablespaces detected.
+         */
+        unencryptedTablespacesCount?: pulumi.Input<number | undefined>;
+        /**
+         * TLS wallet location observed on target.
+         */
+        walletLocation?: pulumi.Input<string | undefined>;
+    }
+
+    export interface CryptoAssessmentCryptoPostureTl {
+        /**
+         * Indicates if weak TLS cipher suites are allowed.
+         */
+        areWeakCipherSuitesAllowed?: pulumi.Input<string | undefined>;
+        /**
+         * TLS cipher suites configured on target.
+         */
+        cipherSuitesConfigureds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured?: pulumi.Input<string | undefined>;
+        /**
+         * Whether TLS client authentication is configured.
+         */
+        isMtlsConfigured?: pulumi.Input<string | undefined>;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness?: pulumi.Input<string | undefined>;
+        /**
+         * Certificate revocation checking mode.
+         */
+        revocationMode?: pulumi.Input<string | undefined>;
+        /**
+         * TLS enablement status.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * TLS versions configured on target.
+         */
+        versions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * TLS wallet location observed on target.
+         */
+        walletLocation?: pulumi.Input<string | undefined>;
+    }
+
+    export interface CryptoAssessmentManagementCryptoPosture {
+        backupStatus?: pulumi.Input<string | undefined>;
+        encryptedBackupPiecesCount?: pulumi.Input<number | undefined>;
+        fipsModeConfigured?: pulumi.Input<string | undefined>;
+        fipsStatus?: pulumi.Input<string | undefined>;
+        networkEncryptions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        nnes?: pulumi.Input<pulumi.Input<inputs.DataSafe.CryptoAssessmentManagementCryptoPostureNne>[] | undefined>;
+        tdes?: pulumi.Input<pulumi.Input<inputs.DataSafe.CryptoAssessmentManagementCryptoPostureTde>[] | undefined>;
+        tls?: pulumi.Input<pulumi.Input<inputs.DataSafe.CryptoAssessmentManagementCryptoPostureTl>[] | undefined>;
+        unencryptedBackupPiecesCount?: pulumi.Input<number | undefined>;
+    }
+
+    export interface CryptoAssessmentManagementCryptoPostureNne {
+        areWeakOptionsAllowed?: pulumi.Input<string | undefined>;
+        encryptionConfigureds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        fipsModeConfigured?: pulumi.Input<string | undefined>;
+        integrities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        keyExchange?: pulumi.Input<string | undefined>;
+        quantumReadiness?: pulumi.Input<string | undefined>;
+        serverEncryption?: pulumi.Input<string | undefined>;
+        serverIntegrities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        status?: pulumi.Input<string | undefined>;
+    }
+
+    export interface CryptoAssessmentManagementCryptoPostureTde {
+        dbCredentialsEncryptionObserved?: pulumi.Input<string | undefined>;
+        encryptedTablespacesCount?: pulumi.Input<number | undefined>;
+        encryptionConfigureds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        fipsModeConfigured?: pulumi.Input<string | undefined>;
+        integrityConfigureds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        keyCacheStatus?: pulumi.Input<string | undefined>;
+        keyStoreType?: pulumi.Input<string | undefined>;
+        masterKeyEncryptionAlgorithm?: pulumi.Input<string | undefined>;
+        masterKeyId?: pulumi.Input<string | undefined>;
+        quantumReadiness?: pulumi.Input<string | undefined>;
+        redoEncryptionObserved?: pulumi.Input<string | undefined>;
+        status?: pulumi.Input<string | undefined>;
+        timeMasterKeyLastRotation?: pulumi.Input<string | undefined>;
+        unencryptedTablespacesCount?: pulumi.Input<number | undefined>;
+        walletLocation?: pulumi.Input<string | undefined>;
+    }
+
+    export interface CryptoAssessmentManagementCryptoPostureTl {
+        areWeakCipherSuitesAllowed?: pulumi.Input<string | undefined>;
+        cipherSuitesConfigureds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        fipsModeConfigured?: pulumi.Input<string | undefined>;
+        isMtlsConfigured?: pulumi.Input<string | undefined>;
+        quantumReadiness?: pulumi.Input<string | undefined>;
+        revocationMode?: pulumi.Input<string | undefined>;
+        status?: pulumi.Input<string | undefined>;
+        versions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        walletLocation?: pulumi.Input<string | undefined>;
+    }
+
     export interface DataSafeConfigurationGlobalSetting {
         /**
          * The paid usage option chosen by the customer admin.
@@ -23941,6 +24183,126 @@ export namespace DataSafe {
     }
 
     export interface GetAuditTrailsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCryptoAssessmentBackupSetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentBackupSetsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCryptoAssessmentCbomItemsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentCbomItemsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCryptoAssessmentCertificatesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentCertificatesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCryptoAssessmentFindingAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentFindingAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCryptoAssessmentFindingTargetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentFindingTargetsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCryptoAssessmentFindingsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentFindingsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCryptoAssessmentKeysFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentKeysFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCryptoAssessmentTdeObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentTdeObjectsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCryptoAssessmentWalletsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentWalletsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCryptoAssessmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -28793,6 +29155,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs?: pulumi.Input<number | undefined>;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         */
+        capacityReservationId?: pulumi.Input<string | undefined>;
+        /**
          * Details for the notebook session shape configuration.
          */
         notebookSessionShapeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails | undefined>;
@@ -28830,6 +29196,10 @@ export namespace DataScience {
          * (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
          */
         blockStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         */
+        capacityReservationId?: pulumi.Input<string | undefined>;
         /**
          * (Updatable) Details for the notebook session shape configuration.
          */
@@ -42662,7 +43032,7 @@ export namespace DatabaseMigration {
         /**
          * (Updatable) Oracle Job Mode
          */
-        jobMode: pulumi.Input<string>;
+        jobMode?: pulumi.Input<string | undefined>;
         /**
          * (Updatable) Defines remapping to be applied to objects as they are processed.
          */
@@ -51137,13 +51507,79 @@ export namespace Functions {
 
     export interface FunctionSourceDetails {
         /**
+         * (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+         */
+        archiveSourceDetails?: pulumi.Input<inputs.Functions.FunctionSourceDetailsArchiveSourceDetails | undefined>;
+        /**
+         * (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+         */
+        handler?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+         */
+        image?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+         */
+        imageDigest?: pulumi.Input<string | undefined>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
          */
-        pbfListingId: pulumi.Input<string>;
+        pbfListingId?: pulumi.Input<string | undefined>;
         /**
-         * Type of the Function Source. Possible values: PBF.
+         * (Updatable) FunctionsRuntime configuration used to create a function.
+         */
+        runtimeConfig?: pulumi.Input<inputs.Functions.FunctionSourceDetailsRuntimeConfig | undefined>;
+        /**
+         * The SHA256 hash of the function source code archive, base64-encoded.
+         */
+        sourceCodeSha256?: pulumi.Input<string | undefined>;
+        /**
+         * Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
          */
         sourceType: pulumi.Input<string>;
+    }
+
+    export interface FunctionSourceDetailsArchiveSourceDetails {
+        /**
+         * (Updatable) The base64-encoded archive file of the function code. The archive file must contain all the files for the function. Please refer to functions documentation for maximum allowed size and supported archive formats.
+         */
+        archiveFile?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+         */
+        archiveSourceType: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the Object Storage bucket.
+         */
+        bucket?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The Object Storage namespace.
+         */
+        namespace?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The name of the Object Storage object.
+         */
+        object?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+         */
+        objectVersionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface FunctionSourceDetailsRuntimeConfig {
+        /**
+         * (Updatable) The name of the FunctionsRuntime this function is to be associated with.
+         */
+        functionsRuntimeName: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the FunctionsRuntimeVersion to use for the Function in manual mode.
+         */
+        functionsRuntimeVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+         */
+        runtimeConfigType: pulumi.Input<string>;
     }
 
     export interface FunctionSuccessDestination {
@@ -51198,6 +51634,36 @@ export namespace Functions {
     }
 
     export interface GetFunctionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFunctionsRuntimeVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFunctionsRuntimeVersionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFunctionsRuntimesFilter {
+        /**
+         * A filter to return only resources that match the entire FunctionsRuntime name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFunctionsRuntimesFilterArgs {
+        /**
+         * A filter to return only resources that match the entire FunctionsRuntime name given.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -52491,6 +52957,24 @@ export namespace GenerativeAi {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetModelDiscoveriesFilter {
+        /**
+         * The name of this parameter.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetModelDiscoveriesFilterArgs {
+        /**
+         * The name of this parameter.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetModelsFilter {
         name: string;
         regex?: boolean;
@@ -52510,6 +52994,18 @@ export namespace GenerativeAi {
     }
 
     export interface GetProjectsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRoutingProfilesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRoutingProfilesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -53055,6 +53551,103 @@ export namespace GenerativeAi {
          * (Updatable) The id of the GenAI model
          */
         modelId: pulumi.Input<string>;
+    }
+
+    export interface RoutingProfileModelRoutingPolicy {
+        /**
+         * (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+         *
+         * The order of entries is preserved. Duplicate entries are not allowed.
+         */
+        allowedModels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface RoutingProfilePreviousState {
+        /**
+         * (Updatable) The OCID of the compartment in which to create the routing profile.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+        /**
+         * (Updatable) An optional description of the routing profile.
+         */
+        description?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+        /**
+         * An OCID that uniquely identifies this routing profile resource.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * A message describing the current state of the routing profile in more detail that can provide actionable information.
+         */
+        lifecycleDetails?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+         */
+        modelRoutingPolicies?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.RoutingProfilePreviousStateModelRoutingPolicy>[] | undefined>;
+        /**
+         * (Updatable) The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+         */
+        regionRoutingPolicies?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.RoutingProfilePreviousStateRegionRoutingPolicy>[] | undefined>;
+        /**
+         * The current state of the routing profile.
+         */
+        state?: pulumi.Input<string | undefined>;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+        /**
+         * The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+    }
+
+    export interface RoutingProfilePreviousStateModelRoutingPolicy {
+        /**
+         * (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+         *
+         * The order of entries is preserved. Duplicate entries are not allowed.
+         */
+        allowedModels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface RoutingProfilePreviousStateRegionRoutingPolicy {
+        /**
+         * (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+         *
+         * The order of entries is preserved. Duplicate entries are not allowed.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        allowedRegions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface RoutingProfileRegionRoutingPolicy {
+        /**
+         * (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+         *
+         * The order of entries is preserved. Duplicate entries are not allowed.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        allowedRegions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     }
 
     export interface SemanticStoreDataSource {
@@ -105903,6 +106496,30 @@ export namespace oci {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSelfPartnersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSelfPartnersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSelfSelfPartnerSubscriptionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSelfSelfPartnerSubscriptionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetSelfSubscriptionsFilter {
         /**
          * Name of meter.
@@ -105916,150 +106533,6 @@ export namespace oci {
         /**
          * Name of meter.
          */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean | undefined>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetWlmsManagedInstanceScanResultsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsManagedInstanceScanResultsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean | undefined>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetWlmsManagedInstanceServerInstalledPatchesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsManagedInstanceServerInstalledPatchesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean | undefined>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetWlmsManagedInstanceServersFilter {
-        /**
-         * The name of the resource.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsManagedInstanceServersFilterArgs {
-        /**
-         * The name of the resource.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean | undefined>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetWlmsManagedInstancesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsManagedInstancesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean | undefined>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetWlmsWlsDomainAgreementRecordsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainAgreementRecordsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean | undefined>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetWlmsWlsDomainApplicablePatchesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainApplicablePatchesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean | undefined>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetWlmsWlsDomainScanResultsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainScanResultsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean | undefined>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetWlmsWlsDomainServerBackupsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainServerBackupsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean | undefined>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetWlmsWlsDomainServerInstalledPatchesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainServerInstalledPatchesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean | undefined>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetWlmsWlsDomainServersFilter {
-        /**
-         * The name of the resource.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainServersFilterArgs {
-        /**
-         * The name of the resource.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean | undefined>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetWlmsWlsDomainsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -106385,7 +106858,7 @@ export namespace oci {
          */
         amount?: pulumi.Input<number | undefined>;
         /**
-         * Sku details for billing subscription.
+         * Billing details associated with the subscription plan and its usage dimensions.
          */
         billingDetails: pulumi.Input<inputs.oci.SelfSubscriptionSubscriptionDetailsBillingDetails>;
         /**
@@ -106408,6 +106881,10 @@ export namespace oci {
 
     export interface SelfSubscriptionSubscriptionDetailsBillingDetails {
         /**
+         * The billing model this billing detail applies to.
+         */
+        billingModel: pulumi.Input<string>;
+        /**
          * Whether this sku is assign to gov product.
          */
         hasGovSku?: pulumi.Input<boolean | undefined>;
@@ -106419,6 +106896,10 @@ export namespace oci {
          * The part's metric.
          */
         metricType: pulumi.Input<string>;
+        /**
+         * Unique key used to map this SKU to the pricing plan.
+         */
+        pricingPlanKey: pulumi.Input<string>;
         /**
          * Tha rate of this sku meter.
          */
@@ -106457,15 +106938,19 @@ export namespace oci {
 
     export interface SelfSubscriptionSubscriptionDetailsPricingPlan {
         /**
-         * Specifies the interval at which billing occurs for the subscription plan.
+         * Specifies the interval at which billing occurs for the subscription plan or usage dimension.
          */
         billingFrequency: pulumi.Input<string>;
+        /**
+         * Metered usage dimensions associated with the pricing plan.
+         */
+        dimensions?: pulumi.Input<pulumi.Input<inputs.oci.SelfSubscriptionSubscriptionDetailsPricingPlanDimension>[] | undefined>;
         /**
          * A detailed explanation of the subscription plan.
          */
         planDescription?: pulumi.Input<string | undefined>;
         /**
-         * Specifies the interval at which billing occurs for the subscription plan.
+         * Specifies the duration of the subscription plan.
          */
         planDuration?: pulumi.Input<string | undefined>;
         /**
@@ -106480,6 +106965,48 @@ export namespace oci {
          * The pricing details of the subscription plan in various supported currencies.
          */
         rates: pulumi.Input<pulumi.Input<inputs.oci.SelfSubscriptionSubscriptionDetailsPricingPlanRate>[]>;
+    }
+
+    export interface SelfSubscriptionSubscriptionDetailsPricingPlanDimension {
+        /**
+         * Specifies the interval at which the usage dimension is billed.
+         */
+        dimensionBillingFrequency: pulumi.Input<string>;
+        /**
+         * A detailed explanation of the usage dimension.
+         */
+        dimensionDescription: pulumi.Input<string>;
+        /**
+         * The stable key used internally to map this usage dimension to billing details.
+         */
+        dimensionKey: pulumi.Input<string>;
+        /**
+         * The name of the usage dimension.
+         */
+        dimensionName: pulumi.Input<string>;
+        /**
+         * Quantity included in the base fee for hybrid plans.
+         */
+        includedQuantity?: pulumi.Input<number | undefined>;
+        /**
+         * The metric type in which usage is measured.
+         */
+        metricType: pulumi.Input<string>;
+        /**
+         * Dimension-level rates in various supported currencies.
+         */
+        rates: pulumi.Input<pulumi.Input<inputs.oci.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRate>[]>;
+    }
+
+    export interface SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRate {
+        /**
+         * The currency supported, in the format specified by ISO-4217
+         */
+        currency: pulumi.Input<string>;
+        /**
+         * The amount charged for the plan in the specified currency.
+         */
+        rate: pulumi.Input<number>;
     }
 
     export interface SelfSubscriptionSubscriptionDetailsPricingPlanRate {

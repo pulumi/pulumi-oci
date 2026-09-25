@@ -18,7 +18,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly bool IsOverrideDns;
         /// <summary>
-        /// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+        /// Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
         /// </summary>
         public readonly string OverrideDnsIp;
 

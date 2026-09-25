@@ -94,6 +94,11 @@ __all__ = [
     'ProjectShortTermMemoryOptimizationConfig',
     'ProjectShortTermMemoryOptimizationConfigCondenserConfig',
     'ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection',
+    'RoutingProfileModelRoutingPolicy',
+    'RoutingProfilePreviousState',
+    'RoutingProfilePreviousStateModelRoutingPolicy',
+    'RoutingProfilePreviousStateRegionRoutingPolicy',
+    'RoutingProfileRegionRoutingPolicy',
     'SemanticStoreDataSource',
     'SemanticStoreRefreshSchedule',
     'SemanticStoreSchemas',
@@ -271,6 +276,12 @@ __all__ = [
     'GetImportedModelsImportedModelCollectionResult',
     'GetImportedModelsImportedModelCollectionItemResult',
     'GetImportedModelsImportedModelCollectionItemDataSourceResult',
+    'GetModelDiscoveriesFilterResult',
+    'GetModelDiscoveriesModelDiscoveryCollectionResult',
+    'GetModelDiscoveriesModelDiscoveryCollectionItemResult',
+    'GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityResult',
+    'GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportResult',
+    'GetModelDiscoveriesModelDiscoveryCollectionItemParameterResult',
     'GetModelFineTuneDetailResult',
     'GetModelFineTuneDetailTrainingConfigResult',
     'GetModelFineTuneDetailTrainingDatasetResult',
@@ -305,6 +316,19 @@ __all__ = [
     'GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigResult',
     'GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigResult',
     'GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionResult',
+    'GetRoutingProfileModelRoutingPolicyResult',
+    'GetRoutingProfilePreviousStateResult',
+    'GetRoutingProfilePreviousStateModelRoutingPolicyResult',
+    'GetRoutingProfilePreviousStateRegionRoutingPolicyResult',
+    'GetRoutingProfileRegionRoutingPolicyResult',
+    'GetRoutingProfilesFilterResult',
+    'GetRoutingProfilesRoutingProfileCollectionResult',
+    'GetRoutingProfilesRoutingProfileCollectionItemResult',
+    'GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyResult',
+    'GetRoutingProfilesRoutingProfileCollectionItemPreviousStateResult',
+    'GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyResult',
+    'GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyResult',
+    'GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyResult',
     'GetSemanticStoreDataSourceResult',
     'GetSemanticStoreRefreshScheduleResult',
     'GetSemanticStoreSchemaResult',
@@ -5404,6 +5428,376 @@ class ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection(dict):
         (Updatable) The id of the GenAI model
         """
         return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class RoutingProfileModelRoutingPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowedModels":
+            suggest = "allowed_models"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RoutingProfileModelRoutingPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RoutingProfileModelRoutingPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RoutingProfileModelRoutingPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allowed_models: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] allowed_models: (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+               
+               The order of entries is preserved. Duplicate entries are not allowed.
+        """
+        if allowed_models is not None:
+            pulumi.set(__self__, "allowed_models", allowed_models)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedModels")
+    def allowed_models(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+
+        The order of entries is preserved. Duplicate entries are not allowed.
+        """
+        return pulumi.get(self, "allowed_models")
+
+
+@pulumi.output_type
+class RoutingProfilePreviousState(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "definedTags":
+            suggest = "defined_tags"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "modelRoutingPolicies":
+            suggest = "model_routing_policies"
+        elif key == "regionRoutingPolicies":
+            suggest = "region_routing_policies"
+        elif key == "systemTags":
+            suggest = "system_tags"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RoutingProfilePreviousState. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RoutingProfilePreviousState.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RoutingProfilePreviousState.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[_builtins.str] = None,
+                 defined_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 id: Optional[_builtins.str] = None,
+                 lifecycle_details: Optional[_builtins.str] = None,
+                 model_routing_policies: Optional[Sequence['outputs.RoutingProfilePreviousStateModelRoutingPolicy']] = None,
+                 region_routing_policies: Optional[Sequence['outputs.RoutingProfilePreviousStateRegionRoutingPolicy']] = None,
+                 state: Optional[_builtins.str] = None,
+                 system_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 time_created: Optional[_builtins.str] = None,
+                 time_updated: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str compartment_id: (Updatable) The OCID of the compartment in which to create the routing profile.
+        :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: (Updatable) An optional description of the routing profile.
+        :param _builtins.str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
+        :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: An OCID that uniquely identifies this routing profile resource.
+        :param _builtins.str lifecycle_details: A message describing the current state of the routing profile in more detail that can provide actionable information.
+        :param Sequence['RoutingProfilePreviousStateModelRoutingPolicyArgs'] model_routing_policies: (Updatable) The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+        :param Sequence['RoutingProfilePreviousStateRegionRoutingPolicyArgs'] region_routing_policies: (Updatable) The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+        :param _builtins.str state: The current state of the routing profile.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+        :param _builtins.str time_updated: The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if model_routing_policies is not None:
+            pulumi.set(__self__, "model_routing_policies", model_routing_policies)
+        if region_routing_policies is not None:
+            pulumi.set(__self__, "region_routing_policies", region_routing_policies)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the compartment in which to create the routing profile.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) An optional description of the routing profile.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        An OCID that uniquely identifies this routing profile resource.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[_builtins.str]:
+        """
+        A message describing the current state of the routing profile in more detail that can provide actionable information.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelRoutingPolicies")
+    def model_routing_policies(self) -> Optional[Sequence['outputs.RoutingProfilePreviousStateModelRoutingPolicy']]:
+        """
+        (Updatable) The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+        """
+        return pulumi.get(self, "model_routing_policies")
+
+    @_builtins.property
+    @pulumi.getter(name="regionRoutingPolicies")
+    def region_routing_policies(self) -> Optional[Sequence['outputs.RoutingProfilePreviousStateRegionRoutingPolicy']]:
+        """
+        (Updatable) The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+        """
+        return pulumi.get(self, "region_routing_policies")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        The current state of the routing profile.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[_builtins.str]:
+        """
+        The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class RoutingProfilePreviousStateModelRoutingPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowedModels":
+            suggest = "allowed_models"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RoutingProfilePreviousStateModelRoutingPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RoutingProfilePreviousStateModelRoutingPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RoutingProfilePreviousStateModelRoutingPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allowed_models: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] allowed_models: (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+               
+               The order of entries is preserved. Duplicate entries are not allowed.
+        """
+        if allowed_models is not None:
+            pulumi.set(__self__, "allowed_models", allowed_models)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedModels")
+    def allowed_models(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+
+        The order of entries is preserved. Duplicate entries are not allowed.
+        """
+        return pulumi.get(self, "allowed_models")
+
+
+@pulumi.output_type
+class RoutingProfilePreviousStateRegionRoutingPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowedRegions":
+            suggest = "allowed_regions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RoutingProfilePreviousStateRegionRoutingPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RoutingProfilePreviousStateRegionRoutingPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RoutingProfilePreviousStateRegionRoutingPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allowed_regions: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] allowed_regions: (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+               
+               The order of entries is preserved. Duplicate entries are not allowed.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if allowed_regions is not None:
+            pulumi.set(__self__, "allowed_regions", allowed_regions)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRegions")
+    def allowed_regions(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+
+        The order of entries is preserved. Duplicate entries are not allowed.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "allowed_regions")
+
+
+@pulumi.output_type
+class RoutingProfileRegionRoutingPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowedRegions":
+            suggest = "allowed_regions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RoutingProfileRegionRoutingPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RoutingProfileRegionRoutingPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RoutingProfileRegionRoutingPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allowed_regions: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] allowed_regions: (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+               
+               The order of entries is preserved. Duplicate entries are not allowed.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if allowed_regions is not None:
+            pulumi.set(__self__, "allowed_regions", allowed_regions)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRegions")
+    def allowed_regions(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+
+        The order of entries is preserved. Duplicate entries are not allowed.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "allowed_regions")
 
 
 @pulumi.output_type
@@ -14359,6 +14753,338 @@ class GetImportedModelsImportedModelCollectionItemDataSourceResult(dict):
 
 
 @pulumi.output_type
+class GetModelDiscoveriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of this parameter.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of this parameter.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetModelDiscoveriesModelDiscoveryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetModelDiscoveriesModelDiscoveryCollectionItemResult']):
+        """
+        :param Sequence['GetModelDiscoveriesModelDiscoveryCollectionItemArgs'] items: The list of discovered models matching the search criteria.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetModelDiscoveriesModelDiscoveryCollectionItemResult']:
+        """
+        The list of discovered models matching the search criteria.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetModelDiscoveriesModelDiscoveryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 api_capabilities: Sequence[_builtins.str],
+                 availabilities: Sequence['outputs.GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityResult'],
+                 capabilities: Sequence[_builtins.str],
+                 modality_supports: Sequence['outputs.GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportResult'],
+                 model_access: _builtins.str,
+                 model_id: _builtins.str,
+                 parameters: Sequence['outputs.GetModelDiscoveriesModelDiscoveryCollectionItemParameterResult'],
+                 vendor: _builtins.str):
+        """
+        :param Sequence[_builtins.str] api_capabilities: Filter models that support any of the specified API capabilities.
+        :param Sequence['GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArgs'] availabilities: The list of availability details for the model across different regions and deployment modes.
+        :param Sequence[_builtins.str] capabilities: Describes what this model can be used for.
+        :param Sequence['GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArgs'] modality_supports: The supported input-to-output modality transformations for this model. For example, a model can support TEXT to VIDEO or AUDIO to VIDEO.
+        :param _builtins.str model_access: Filter models by access type.
+        :param _builtins.str model_id: A filter to return only resources whose model identifier matches the given modelId.
+        :param Sequence['GetModelDiscoveriesModelDiscoveryCollectionItemParameterArgs'] parameters: The list of configurable parameters supported by the model. For example, temperature and max_tokens for a text generation model.
+        :param _builtins.str vendor: The vendor that offers the model.
+        """
+        pulumi.set(__self__, "api_capabilities", api_capabilities)
+        pulumi.set(__self__, "availabilities", availabilities)
+        pulumi.set(__self__, "capabilities", capabilities)
+        pulumi.set(__self__, "modality_supports", modality_supports)
+        pulumi.set(__self__, "model_access", model_access)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "parameters", parameters)
+        pulumi.set(__self__, "vendor", vendor)
+
+    @_builtins.property
+    @pulumi.getter(name="apiCapabilities")
+    def api_capabilities(self) -> Sequence[_builtins.str]:
+        """
+        Filter models that support any of the specified API capabilities.
+        """
+        return pulumi.get(self, "api_capabilities")
+
+    @_builtins.property
+    @pulumi.getter
+    def availabilities(self) -> Sequence['outputs.GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityResult']:
+        """
+        The list of availability details for the model across different regions and deployment modes.
+        """
+        return pulumi.get(self, "availabilities")
+
+    @_builtins.property
+    @pulumi.getter
+    def capabilities(self) -> Sequence[_builtins.str]:
+        """
+        Describes what this model can be used for.
+        """
+        return pulumi.get(self, "capabilities")
+
+    @_builtins.property
+    @pulumi.getter(name="modalitySupports")
+    def modality_supports(self) -> Sequence['outputs.GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportResult']:
+        """
+        The supported input-to-output modality transformations for this model. For example, a model can support TEXT to VIDEO or AUDIO to VIDEO.
+        """
+        return pulumi.get(self, "modality_supports")
+
+    @_builtins.property
+    @pulumi.getter(name="modelAccess")
+    def model_access(self) -> _builtins.str:
+        """
+        Filter models by access type.
+        """
+        return pulumi.get(self, "model_access")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        A filter to return only resources whose model identifier matches the given modelId.
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def parameters(self) -> Sequence['outputs.GetModelDiscoveriesModelDiscoveryCollectionItemParameterResult']:
+        """
+        The list of configurable parameters supported by the model. For example, temperature and max_tokens for a text generation model.
+        """
+        return pulumi.get(self, "parameters")
+
+    @_builtins.property
+    @pulumi.getter
+    def vendor(self) -> _builtins.str:
+        """
+        The vendor that offers the model.
+        """
+        return pulumi.get(self, "vendor")
+
+
+@pulumi.output_type
+class GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityResult(dict):
+    def __init__(__self__, *,
+                 realm: _builtins.str,
+                 region: _builtins.str,
+                 serving_modes: Sequence[_builtins.str],
+                 supported_replacements: Sequence[_builtins.str],
+                 time_dedicated_retired: _builtins.str,
+                 time_deprecated: _builtins.str,
+                 time_on_demand_retired: _builtins.str):
+        """
+        :param _builtins.str realm: A filter to return only resources whose realm matches the given realm.
+        :param _builtins.str region: A filter to return only resources whose region matches the given region.
+        :param Sequence[_builtins.str] serving_modes: The supported deployment modes for the model in this region (e.g., on-demand or dedicated).
+        :param Sequence[_builtins.str] supported_replacements: A list of model identifiers that are recommended as replacements after this model is retired.
+        :param _builtins.str time_dedicated_retired: The timestamp when dedicated deployments of the model will be fully retired.
+        :param _builtins.str time_deprecated: The timestamp when the model is marked as deprecated and is no longer recommended for use.
+        :param _builtins.str time_on_demand_retired: The timestamp when the model will no longer be available for on-demand (shared) usage.
+        """
+        pulumi.set(__self__, "realm", realm)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "serving_modes", serving_modes)
+        pulumi.set(__self__, "supported_replacements", supported_replacements)
+        pulumi.set(__self__, "time_dedicated_retired", time_dedicated_retired)
+        pulumi.set(__self__, "time_deprecated", time_deprecated)
+        pulumi.set(__self__, "time_on_demand_retired", time_on_demand_retired)
+
+    @_builtins.property
+    @pulumi.getter
+    def realm(self) -> _builtins.str:
+        """
+        A filter to return only resources whose realm matches the given realm.
+        """
+        return pulumi.get(self, "realm")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        """
+        A filter to return only resources whose region matches the given region.
+        """
+        return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter(name="servingModes")
+    def serving_modes(self) -> Sequence[_builtins.str]:
+        """
+        The supported deployment modes for the model in this region (e.g., on-demand or dedicated).
+        """
+        return pulumi.get(self, "serving_modes")
+
+    @_builtins.property
+    @pulumi.getter(name="supportedReplacements")
+    def supported_replacements(self) -> Sequence[_builtins.str]:
+        """
+        A list of model identifiers that are recommended as replacements after this model is retired.
+        """
+        return pulumi.get(self, "supported_replacements")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDedicatedRetired")
+    def time_dedicated_retired(self) -> _builtins.str:
+        """
+        The timestamp when dedicated deployments of the model will be fully retired.
+        """
+        return pulumi.get(self, "time_dedicated_retired")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDeprecated")
+    def time_deprecated(self) -> _builtins.str:
+        """
+        The timestamp when the model is marked as deprecated and is no longer recommended for use.
+        """
+        return pulumi.get(self, "time_deprecated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeOnDemandRetired")
+    def time_on_demand_retired(self) -> _builtins.str:
+        """
+        The timestamp when the model will no longer be available for on-demand (shared) usage.
+        """
+        return pulumi.get(self, "time_on_demand_retired")
+
+
+@pulumi.output_type
+class GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportResult(dict):
+    def __init__(__self__, *,
+                 input: _builtins.str,
+                 output: _builtins.str):
+        """
+        :param _builtins.str input: The source modality accepted by the model.
+        :param _builtins.str output: The target modality produced by the model.
+        """
+        pulumi.set(__self__, "input", input)
+        pulumi.set(__self__, "output", output)
+
+    @_builtins.property
+    @pulumi.getter
+    def input(self) -> _builtins.str:
+        """
+        The source modality accepted by the model.
+        """
+        return pulumi.get(self, "input")
+
+    @_builtins.property
+    @pulumi.getter
+    def output(self) -> _builtins.str:
+        """
+        The target modality produced by the model.
+        """
+        return pulumi.get(self, "output")
+
+
+@pulumi.output_type
+class GetModelDiscoveriesModelDiscoveryCollectionItemParameterResult(dict):
+    def __init__(__self__, *,
+                 default_value: _builtins.str,
+                 description: _builtins.str,
+                 maximum: _builtins.float,
+                 minimum: _builtins.float,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str default_value: The default value used when this parameter is not supplied.
+        :param _builtins.str description: A human-readable description of this parameter.
+        :param _builtins.float maximum: The maximum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+        :param _builtins.float minimum: The minimum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+        :param _builtins.str name: The name of this parameter.
+        :param _builtins.str type: The data type of the parameter (e.g., float, integer, string).
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "maximum", maximum)
+        pulumi.set(__self__, "minimum", minimum)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> _builtins.str:
+        """
+        The default value used when this parameter is not supplied.
+        """
+        return pulumi.get(self, "default_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A human-readable description of this parameter.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def maximum(self) -> _builtins.float:
+        """
+        The maximum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+        """
+        return pulumi.get(self, "maximum")
+
+    @_builtins.property
+    @pulumi.getter
+    def minimum(self) -> _builtins.float:
+        """
+        The minimum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+        """
+        return pulumi.get(self, "minimum")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of this parameter.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The data type of the parameter (e.g., float, integer, string).
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetModelFineTuneDetailResult(dict):
     def __init__(__self__, *,
                  dedicated_ai_cluster_id: _builtins.str,
@@ -15626,6 +16352,650 @@ class GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationCon
         The id of the GenAI model
         """
         return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class GetRoutingProfileModelRoutingPolicyResult(dict):
+    def __init__(__self__, *,
+                 allowed_models: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] allowed_models: The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+        """
+        pulumi.set(__self__, "allowed_models", allowed_models)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedModels")
+    def allowed_models(self) -> Sequence[_builtins.str]:
+        """
+        The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+        """
+        return pulumi.get(self, "allowed_models")
+
+
+@pulumi.output_type
+class GetRoutingProfilePreviousStateResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 model_routing_policies: Sequence['outputs.GetRoutingProfilePreviousStateModelRoutingPolicyResult'],
+                 region_routing_policies: Sequence['outputs.GetRoutingProfilePreviousStateRegionRoutingPolicyResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The OCID of the compartment in which the routing profile lives.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: An optional description of the routing profile.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: An OCID that uniquely identifies this routing profile resource.
+        :param _builtins.str lifecycle_details: A message describing the current state of the routing profile in more detail that can provide actionable information.
+        :param Sequence['GetRoutingProfilePreviousStateModelRoutingPolicyArgs'] model_routing_policies: The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+        :param Sequence['GetRoutingProfilePreviousStateRegionRoutingPolicyArgs'] region_routing_policies: The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+        :param _builtins.str state: The current state of the routing profile.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+        :param _builtins.str time_updated: The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "model_routing_policies", model_routing_policies)
+        pulumi.set(__self__, "region_routing_policies", region_routing_policies)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment in which the routing profile lives.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        An optional description of the routing profile.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        An OCID that uniquely identifies this routing profile resource.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state of the routing profile in more detail that can provide actionable information.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelRoutingPolicies")
+    def model_routing_policies(self) -> Sequence['outputs.GetRoutingProfilePreviousStateModelRoutingPolicyResult']:
+        """
+        The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+        """
+        return pulumi.get(self, "model_routing_policies")
+
+    @_builtins.property
+    @pulumi.getter(name="regionRoutingPolicies")
+    def region_routing_policies(self) -> Sequence['outputs.GetRoutingProfilePreviousStateRegionRoutingPolicyResult']:
+        """
+        The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+        """
+        return pulumi.get(self, "region_routing_policies")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the routing profile.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetRoutingProfilePreviousStateModelRoutingPolicyResult(dict):
+    def __init__(__self__, *,
+                 allowed_models: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] allowed_models: The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+        """
+        pulumi.set(__self__, "allowed_models", allowed_models)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedModels")
+    def allowed_models(self) -> Sequence[_builtins.str]:
+        """
+        The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+        """
+        return pulumi.get(self, "allowed_models")
+
+
+@pulumi.output_type
+class GetRoutingProfilePreviousStateRegionRoutingPolicyResult(dict):
+    def __init__(__self__, *,
+                 allowed_regions: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] allowed_regions: The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+        """
+        pulumi.set(__self__, "allowed_regions", allowed_regions)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRegions")
+    def allowed_regions(self) -> Sequence[_builtins.str]:
+        """
+        The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+        """
+        return pulumi.get(self, "allowed_regions")
+
+
+@pulumi.output_type
+class GetRoutingProfileRegionRoutingPolicyResult(dict):
+    def __init__(__self__, *,
+                 allowed_regions: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] allowed_regions: The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+        """
+        pulumi.set(__self__, "allowed_regions", allowed_regions)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRegions")
+    def allowed_regions(self) -> Sequence[_builtins.str]:
+        """
+        The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+        """
+        return pulumi.get(self, "allowed_regions")
+
+
+@pulumi.output_type
+class GetRoutingProfilesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRoutingProfilesRoutingProfileCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRoutingProfilesRoutingProfileCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 model_routing_policies: Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyResult'],
+                 previous_states: Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemPreviousStateResult'],
+                 region_routing_policies: Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: An optional description of the routing profile.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+        :param _builtins.str lifecycle_details: A message describing the current state of the routing profile in more detail that can provide actionable information.
+        :param Sequence['GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArgs'] model_routing_policies: The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+        :param Sequence['GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArgs'] previous_states: A bounded snapshot of the previous state of a routing profile. This object intentionally omits `previousState` to avoid recursive nesting.
+        :param Sequence['GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArgs'] region_routing_policies: The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+        :param _builtins.str state: A filter to return only resources whose lifecycle state matches the given value.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+        :param _builtins.str time_updated: The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "model_routing_policies", model_routing_policies)
+        pulumi.set(__self__, "previous_states", previous_states)
+        pulumi.set(__self__, "region_routing_policies", region_routing_policies)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        An optional description of the routing profile.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state of the routing profile in more detail that can provide actionable information.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelRoutingPolicies")
+    def model_routing_policies(self) -> Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyResult']:
+        """
+        The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+        """
+        return pulumi.get(self, "model_routing_policies")
+
+    @_builtins.property
+    @pulumi.getter(name="previousStates")
+    def previous_states(self) -> Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemPreviousStateResult']:
+        """
+        A bounded snapshot of the previous state of a routing profile. This object intentionally omits `previousState` to avoid recursive nesting.
+        """
+        return pulumi.get(self, "previous_states")
+
+    @_builtins.property
+    @pulumi.getter(name="regionRoutingPolicies")
+    def region_routing_policies(self) -> Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyResult']:
+        """
+        The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+        """
+        return pulumi.get(self, "region_routing_policies")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources whose lifecycle state matches the given value.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyResult(dict):
+    def __init__(__self__, *,
+                 allowed_models: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] allowed_models: The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+        """
+        pulumi.set(__self__, "allowed_models", allowed_models)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedModels")
+    def allowed_models(self) -> Sequence[_builtins.str]:
+        """
+        The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+        """
+        return pulumi.get(self, "allowed_models")
+
+
+@pulumi.output_type
+class GetRoutingProfilesRoutingProfileCollectionItemPreviousStateResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 model_routing_policies: Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyResult'],
+                 region_routing_policies: Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: An optional description of the routing profile.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+        :param _builtins.str lifecycle_details: A message describing the current state of the routing profile in more detail that can provide actionable information.
+        :param Sequence['GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArgs'] model_routing_policies: The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+        :param Sequence['GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArgs'] region_routing_policies: The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+        :param _builtins.str state: A filter to return only resources whose lifecycle state matches the given value.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+        :param _builtins.str time_updated: The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "model_routing_policies", model_routing_policies)
+        pulumi.set(__self__, "region_routing_policies", region_routing_policies)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        An optional description of the routing profile.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state of the routing profile in more detail that can provide actionable information.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelRoutingPolicies")
+    def model_routing_policies(self) -> Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyResult']:
+        """
+        The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+        """
+        return pulumi.get(self, "model_routing_policies")
+
+    @_builtins.property
+    @pulumi.getter(name="regionRoutingPolicies")
+    def region_routing_policies(self) -> Sequence['outputs.GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyResult']:
+        """
+        The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+        """
+        return pulumi.get(self, "region_routing_policies")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources whose lifecycle state matches the given value.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyResult(dict):
+    def __init__(__self__, *,
+                 allowed_models: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] allowed_models: The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+        """
+        pulumi.set(__self__, "allowed_models", allowed_models)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedModels")
+    def allowed_models(self) -> Sequence[_builtins.str]:
+        """
+        The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+        """
+        return pulumi.get(self, "allowed_models")
+
+
+@pulumi.output_type
+class GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyResult(dict):
+    def __init__(__self__, *,
+                 allowed_regions: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] allowed_regions: The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+        """
+        pulumi.set(__self__, "allowed_regions", allowed_regions)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRegions")
+    def allowed_regions(self) -> Sequence[_builtins.str]:
+        """
+        The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+        """
+        return pulumi.get(self, "allowed_regions")
+
+
+@pulumi.output_type
+class GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyResult(dict):
+    def __init__(__self__, *,
+                 allowed_regions: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] allowed_regions: The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+        """
+        pulumi.set(__self__, "allowed_regions", allowed_regions)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRegions")
+    def allowed_regions(self) -> Sequence[_builtins.str]:
+        """
+        The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+        """
+        return pulumi.get(self, "allowed_regions")
 
 
 @pulumi.output_type

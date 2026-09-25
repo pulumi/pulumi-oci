@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Oci.Inputs
     public sealed class SelfSubscriptionSubscriptionDetailsBillingDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The billing model this billing detail applies to.
+        /// </summary>
+        [Input("billingModel", required: true)]
+        public Input<string> BillingModel { get; set; } = null!;
+
+        /// <summary>
         /// Whether this sku is assign to gov product.
         /// </summary>
         [Input("hasGovSku")]
@@ -35,6 +41,12 @@ namespace Pulumi.Oci.Oci.Inputs
         /// </summary>
         [Input("metricType", required: true)]
         public Input<string> MetricType { get; set; } = null!;
+
+        /// <summary>
+        /// Unique key used to map this SKU to the pricing plan.
+        /// </summary>
+        [Input("pricingPlanKey", required: true)]
+        public Input<string> PricingPlanKey { get; set; } = null!;
 
         /// <summary>
         /// Tha rate of this sku meter.

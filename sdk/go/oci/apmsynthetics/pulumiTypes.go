@@ -1905,7 +1905,7 @@ func (o ConfigConfigurationDatabaseWalletDetailsPtrOutput) ServiceName() pulumi.
 type ConfigConfigurationDnsConfiguration struct {
 	// (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns *bool `pulumi:"isOverrideDns"`
-	// (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+	// (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
 	OverrideDnsIp *string `pulumi:"overrideDnsIp"`
 }
 
@@ -1923,7 +1923,7 @@ type ConfigConfigurationDnsConfigurationInput interface {
 type ConfigConfigurationDnsConfigurationArgs struct {
 	// (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns pulumi.BoolPtrInput `pulumi:"isOverrideDns"`
-	// (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+	// (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
 	OverrideDnsIp pulumi.StringPtrInput `pulumi:"overrideDnsIp"`
 }
 
@@ -2009,7 +2009,7 @@ func (o ConfigConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolPt
 	return o.ApplyT(func(v ConfigConfigurationDnsConfiguration) *bool { return v.IsOverrideDns }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+// (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
 func (o ConfigConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationDnsConfiguration) *string { return v.OverrideDnsIp }).(pulumi.StringPtrOutput)
 }
@@ -2048,7 +2048,7 @@ func (o ConfigConfigurationDnsConfigurationPtrOutput) IsOverrideDns() pulumi.Boo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+// (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
 func (o ConfigConfigurationDnsConfigurationPtrOutput) OverrideDnsIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigConfigurationDnsConfiguration) *string {
 		if v == nil {
@@ -3292,6 +3292,10 @@ func (o ConfigConfigurationVerifyTextArrayOutput) Index(i pulumi.IntInput) Confi
 }
 
 type ConfigMaintenanceWindowSchedule struct {
+	// (Updatable) Type of recurrence for a recurring maintenance window.
+	RecurrenceType *string `pulumi:"recurrenceType"`
+	// (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+	ScheduleType *string `pulumi:"scheduleType"`
 	// (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded *string `pulumi:"timeEnded"`
 	// (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -3310,6 +3314,10 @@ type ConfigMaintenanceWindowScheduleInput interface {
 }
 
 type ConfigMaintenanceWindowScheduleArgs struct {
+	// (Updatable) Type of recurrence for a recurring maintenance window.
+	RecurrenceType pulumi.StringPtrInput `pulumi:"recurrenceType"`
+	// (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+	ScheduleType pulumi.StringPtrInput `pulumi:"scheduleType"`
 	// (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
 	// (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -3393,6 +3401,16 @@ func (o ConfigMaintenanceWindowScheduleOutput) ToConfigMaintenanceWindowSchedule
 	}).(ConfigMaintenanceWindowSchedulePtrOutput)
 }
 
+// (Updatable) Type of recurrence for a recurring maintenance window.
+func (o ConfigMaintenanceWindowScheduleOutput) RecurrenceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigMaintenanceWindowSchedule) *string { return v.RecurrenceType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+func (o ConfigMaintenanceWindowScheduleOutput) ScheduleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigMaintenanceWindowSchedule) *string { return v.ScheduleType }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 func (o ConfigMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigMaintenanceWindowSchedule) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
@@ -3425,6 +3443,26 @@ func (o ConfigMaintenanceWindowSchedulePtrOutput) Elem() ConfigMaintenanceWindow
 		var ret ConfigMaintenanceWindowSchedule
 		return ret
 	}).(ConfigMaintenanceWindowScheduleOutput)
+}
+
+// (Updatable) Type of recurrence for a recurring maintenance window.
+func (o ConfigMaintenanceWindowSchedulePtrOutput) RecurrenceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigMaintenanceWindowSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RecurrenceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+func (o ConfigMaintenanceWindowSchedulePtrOutput) ScheduleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigMaintenanceWindowSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScheduleType
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -7206,7 +7244,7 @@ func (o GetMonitorConfigurationDatabaseWalletDetailArrayOutput) Index(i pulumi.I
 type GetMonitorConfigurationDnsConfiguration struct {
 	// If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns bool `pulumi:"isOverrideDns"`
-	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+	// Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
 	OverrideDnsIp string `pulumi:"overrideDnsIp"`
 }
 
@@ -7224,7 +7262,7 @@ type GetMonitorConfigurationDnsConfigurationInput interface {
 type GetMonitorConfigurationDnsConfigurationArgs struct {
 	// If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns pulumi.BoolInput `pulumi:"isOverrideDns"`
-	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+	// Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
 	OverrideDnsIp pulumi.StringInput `pulumi:"overrideDnsIp"`
 }
 
@@ -7284,7 +7322,7 @@ func (o GetMonitorConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.Bo
 	return o.ApplyT(func(v GetMonitorConfigurationDnsConfiguration) bool { return v.IsOverrideDns }).(pulumi.BoolOutput)
 }
 
-// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+// Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
 func (o GetMonitorConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfigurationDnsConfiguration) string { return v.OverrideDnsIp }).(pulumi.StringOutput)
 }
@@ -8243,6 +8281,10 @@ func (o GetMonitorConfigurationVerifyTextArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetMonitorMaintenanceWindowSchedule struct {
+	// Type of recurrence for a recurring maintenance window.
+	RecurrenceType string `pulumi:"recurrenceType"`
+	// Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+	ScheduleType string `pulumi:"scheduleType"`
 	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded string `pulumi:"timeEnded"`
 	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -8261,6 +8303,10 @@ type GetMonitorMaintenanceWindowScheduleInput interface {
 }
 
 type GetMonitorMaintenanceWindowScheduleArgs struct {
+	// Type of recurrence for a recurring maintenance window.
+	RecurrenceType pulumi.StringInput `pulumi:"recurrenceType"`
+	// Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+	ScheduleType pulumi.StringInput `pulumi:"scheduleType"`
 	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
 	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -8316,6 +8362,16 @@ func (o GetMonitorMaintenanceWindowScheduleOutput) ToGetMonitorMaintenanceWindow
 
 func (o GetMonitorMaintenanceWindowScheduleOutput) ToGetMonitorMaintenanceWindowScheduleOutputWithContext(ctx context.Context) GetMonitorMaintenanceWindowScheduleOutput {
 	return o
+}
+
+// Type of recurrence for a recurring maintenance window.
+func (o GetMonitorMaintenanceWindowScheduleOutput) RecurrenceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorMaintenanceWindowSchedule) string { return v.RecurrenceType }).(pulumi.StringOutput)
+}
+
+// Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+func (o GetMonitorMaintenanceWindowScheduleOutput) ScheduleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorMaintenanceWindowSchedule) string { return v.ScheduleType }).(pulumi.StringOutput)
 }
 
 // End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -10453,7 +10509,7 @@ func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOu
 type GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration struct {
 	// If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns bool `pulumi:"isOverrideDns"`
-	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+	// Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
 	OverrideDnsIp string `pulumi:"overrideDnsIp"`
 }
 
@@ -10471,7 +10527,7 @@ type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput interfac
 type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs struct {
 	// If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns pulumi.BoolInput `pulumi:"isOverrideDns"`
-	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+	// Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
 	OverrideDnsIp pulumi.StringInput `pulumi:"overrideDnsIp"`
 }
 
@@ -10531,7 +10587,7 @@ func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) IsO
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration) bool { return v.IsOverrideDns }).(pulumi.BoolOutput)
 }
 
-// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+// Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
 func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration) string { return v.OverrideDnsIp }).(pulumi.StringOutput)
 }
@@ -11516,6 +11572,10 @@ func (o GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput) Inde
 }
 
 type GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule struct {
+	// Type of recurrence for a recurring maintenance window.
+	RecurrenceType string `pulumi:"recurrenceType"`
+	// Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+	ScheduleType string `pulumi:"scheduleType"`
 	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded string `pulumi:"timeEnded"`
 	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -11534,6 +11594,10 @@ type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleInput interface {
 }
 
 type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs struct {
+	// Type of recurrence for a recurring maintenance window.
+	RecurrenceType pulumi.StringInput `pulumi:"recurrenceType"`
+	// Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+	ScheduleType pulumi.StringInput `pulumi:"scheduleType"`
 	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
 	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -11589,6 +11653,16 @@ func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) ToGetMo
 
 func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) ToGetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput {
 	return o
+}
+
+// Type of recurrence for a recurring maintenance window.
+func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) RecurrenceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule) string { return v.RecurrenceType }).(pulumi.StringOutput)
+}
+
+// Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) ScheduleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule) string { return v.ScheduleType }).(pulumi.StringOutput)
 }
 
 // End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`

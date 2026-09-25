@@ -69,8 +69,8 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         /// <summary>
         /// (Updatable) Oracle Job Mode
         /// </summary>
-        [Input("jobMode", required: true)]
-        public Input<string> JobMode { get; set; } = null!;
+        [Input("jobMode")]
+        public Input<string>? JobMode { get; set; }
 
         [Input("metadataRemaps")]
         private InputList<Inputs.MigrationInitialLoadSettingsMetadataRemapGetArgs>? _metadataRemaps;

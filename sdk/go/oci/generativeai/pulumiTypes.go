@@ -13445,6 +13445,732 @@ func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+type RoutingProfileModelRoutingPolicy struct {
+	// (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	//
+	// The order of entries is preserved. Duplicate entries are not allowed.
+	AllowedModels []string `pulumi:"allowedModels"`
+}
+
+// RoutingProfileModelRoutingPolicyInput is an input type that accepts RoutingProfileModelRoutingPolicyArgs and RoutingProfileModelRoutingPolicyOutput values.
+// You can construct a concrete instance of `RoutingProfileModelRoutingPolicyInput` via:
+//
+//	RoutingProfileModelRoutingPolicyArgs{...}
+type RoutingProfileModelRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToRoutingProfileModelRoutingPolicyOutput() RoutingProfileModelRoutingPolicyOutput
+	ToRoutingProfileModelRoutingPolicyOutputWithContext(context.Context) RoutingProfileModelRoutingPolicyOutput
+}
+
+type RoutingProfileModelRoutingPolicyArgs struct {
+	// (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	//
+	// The order of entries is preserved. Duplicate entries are not allowed.
+	AllowedModels pulumi.StringArrayInput `pulumi:"allowedModels"`
+}
+
+func (RoutingProfileModelRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RoutingProfileModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i RoutingProfileModelRoutingPolicyArgs) ToRoutingProfileModelRoutingPolicyOutput() RoutingProfileModelRoutingPolicyOutput {
+	return i.ToRoutingProfileModelRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i RoutingProfileModelRoutingPolicyArgs) ToRoutingProfileModelRoutingPolicyOutputWithContext(ctx context.Context) RoutingProfileModelRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfileModelRoutingPolicyOutput)
+}
+
+func (i RoutingProfileModelRoutingPolicyArgs) ToRoutingProfileModelRoutingPolicyPtrOutput() RoutingProfileModelRoutingPolicyPtrOutput {
+	return i.ToRoutingProfileModelRoutingPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i RoutingProfileModelRoutingPolicyArgs) ToRoutingProfileModelRoutingPolicyPtrOutputWithContext(ctx context.Context) RoutingProfileModelRoutingPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfileModelRoutingPolicyOutput).ToRoutingProfileModelRoutingPolicyPtrOutputWithContext(ctx)
+}
+
+// RoutingProfileModelRoutingPolicyPtrInput is an input type that accepts RoutingProfileModelRoutingPolicyArgs, RoutingProfileModelRoutingPolicyPtr and RoutingProfileModelRoutingPolicyPtrOutput values.
+// You can construct a concrete instance of `RoutingProfileModelRoutingPolicyPtrInput` via:
+//
+//	        RoutingProfileModelRoutingPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type RoutingProfileModelRoutingPolicyPtrInput interface {
+	pulumi.Input
+
+	ToRoutingProfileModelRoutingPolicyPtrOutput() RoutingProfileModelRoutingPolicyPtrOutput
+	ToRoutingProfileModelRoutingPolicyPtrOutputWithContext(context.Context) RoutingProfileModelRoutingPolicyPtrOutput
+}
+
+type routingProfileModelRoutingPolicyPtrType RoutingProfileModelRoutingPolicyArgs
+
+func RoutingProfileModelRoutingPolicyPtr(v *RoutingProfileModelRoutingPolicyArgs) RoutingProfileModelRoutingPolicyPtrInput {
+	return (*routingProfileModelRoutingPolicyPtrType)(v)
+}
+
+func (*routingProfileModelRoutingPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RoutingProfileModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i *routingProfileModelRoutingPolicyPtrType) ToRoutingProfileModelRoutingPolicyPtrOutput() RoutingProfileModelRoutingPolicyPtrOutput {
+	return i.ToRoutingProfileModelRoutingPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *routingProfileModelRoutingPolicyPtrType) ToRoutingProfileModelRoutingPolicyPtrOutputWithContext(ctx context.Context) RoutingProfileModelRoutingPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfileModelRoutingPolicyPtrOutput)
+}
+
+type RoutingProfileModelRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (RoutingProfileModelRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RoutingProfileModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o RoutingProfileModelRoutingPolicyOutput) ToRoutingProfileModelRoutingPolicyOutput() RoutingProfileModelRoutingPolicyOutput {
+	return o
+}
+
+func (o RoutingProfileModelRoutingPolicyOutput) ToRoutingProfileModelRoutingPolicyOutputWithContext(ctx context.Context) RoutingProfileModelRoutingPolicyOutput {
+	return o
+}
+
+func (o RoutingProfileModelRoutingPolicyOutput) ToRoutingProfileModelRoutingPolicyPtrOutput() RoutingProfileModelRoutingPolicyPtrOutput {
+	return o.ToRoutingProfileModelRoutingPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o RoutingProfileModelRoutingPolicyOutput) ToRoutingProfileModelRoutingPolicyPtrOutputWithContext(ctx context.Context) RoutingProfileModelRoutingPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RoutingProfileModelRoutingPolicy) *RoutingProfileModelRoutingPolicy {
+		return &v
+	}).(RoutingProfileModelRoutingPolicyPtrOutput)
+}
+
+// (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+//
+// The order of entries is preserved. Duplicate entries are not allowed.
+func (o RoutingProfileModelRoutingPolicyOutput) AllowedModels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RoutingProfileModelRoutingPolicy) []string { return v.AllowedModels }).(pulumi.StringArrayOutput)
+}
+
+type RoutingProfileModelRoutingPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (RoutingProfileModelRoutingPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RoutingProfileModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o RoutingProfileModelRoutingPolicyPtrOutput) ToRoutingProfileModelRoutingPolicyPtrOutput() RoutingProfileModelRoutingPolicyPtrOutput {
+	return o
+}
+
+func (o RoutingProfileModelRoutingPolicyPtrOutput) ToRoutingProfileModelRoutingPolicyPtrOutputWithContext(ctx context.Context) RoutingProfileModelRoutingPolicyPtrOutput {
+	return o
+}
+
+func (o RoutingProfileModelRoutingPolicyPtrOutput) Elem() RoutingProfileModelRoutingPolicyOutput {
+	return o.ApplyT(func(v *RoutingProfileModelRoutingPolicy) RoutingProfileModelRoutingPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret RoutingProfileModelRoutingPolicy
+		return ret
+	}).(RoutingProfileModelRoutingPolicyOutput)
+}
+
+// (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+//
+// The order of entries is preserved. Duplicate entries are not allowed.
+func (o RoutingProfileModelRoutingPolicyPtrOutput) AllowedModels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RoutingProfileModelRoutingPolicy) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowedModels
+	}).(pulumi.StringArrayOutput)
+}
+
+type RoutingProfilePreviousState struct {
+	// (Updatable) The OCID of the compartment in which to create the routing profile.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) An optional description of the routing profile.
+	Description *string `pulumi:"description"`
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// An OCID that uniquely identifies this routing profile resource.
+	Id *string `pulumi:"id"`
+	// A message describing the current state of the routing profile in more detail that can provide actionable information.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+	ModelRoutingPolicies []RoutingProfilePreviousStateModelRoutingPolicy `pulumi:"modelRoutingPolicies"`
+	// (Updatable) The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+	RegionRoutingPolicies []RoutingProfilePreviousStateRegionRoutingPolicy `pulumi:"regionRoutingPolicies"`
+	// The current state of the routing profile.
+	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+}
+
+// RoutingProfilePreviousStateInput is an input type that accepts RoutingProfilePreviousStateArgs and RoutingProfilePreviousStateOutput values.
+// You can construct a concrete instance of `RoutingProfilePreviousStateInput` via:
+//
+//	RoutingProfilePreviousStateArgs{...}
+type RoutingProfilePreviousStateInput interface {
+	pulumi.Input
+
+	ToRoutingProfilePreviousStateOutput() RoutingProfilePreviousStateOutput
+	ToRoutingProfilePreviousStateOutputWithContext(context.Context) RoutingProfilePreviousStateOutput
+}
+
+type RoutingProfilePreviousStateArgs struct {
+	// (Updatable) The OCID of the compartment in which to create the routing profile.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// (Updatable) An optional description of the routing profile.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// An OCID that uniquely identifies this routing profile resource.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// A message describing the current state of the routing profile in more detail that can provide actionable information.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// (Updatable) The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+	ModelRoutingPolicies RoutingProfilePreviousStateModelRoutingPolicyArrayInput `pulumi:"modelRoutingPolicies"`
+	// (Updatable) The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+	RegionRoutingPolicies RoutingProfilePreviousStateRegionRoutingPolicyArrayInput `pulumi:"regionRoutingPolicies"`
+	// The current state of the routing profile.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+}
+
+func (RoutingProfilePreviousStateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RoutingProfilePreviousState)(nil)).Elem()
+}
+
+func (i RoutingProfilePreviousStateArgs) ToRoutingProfilePreviousStateOutput() RoutingProfilePreviousStateOutput {
+	return i.ToRoutingProfilePreviousStateOutputWithContext(context.Background())
+}
+
+func (i RoutingProfilePreviousStateArgs) ToRoutingProfilePreviousStateOutputWithContext(ctx context.Context) RoutingProfilePreviousStateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfilePreviousStateOutput)
+}
+
+// RoutingProfilePreviousStateArrayInput is an input type that accepts RoutingProfilePreviousStateArray and RoutingProfilePreviousStateArrayOutput values.
+// You can construct a concrete instance of `RoutingProfilePreviousStateArrayInput` via:
+//
+//	RoutingProfilePreviousStateArray{ RoutingProfilePreviousStateArgs{...} }
+type RoutingProfilePreviousStateArrayInput interface {
+	pulumi.Input
+
+	ToRoutingProfilePreviousStateArrayOutput() RoutingProfilePreviousStateArrayOutput
+	ToRoutingProfilePreviousStateArrayOutputWithContext(context.Context) RoutingProfilePreviousStateArrayOutput
+}
+
+type RoutingProfilePreviousStateArray []RoutingProfilePreviousStateInput
+
+func (RoutingProfilePreviousStateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RoutingProfilePreviousState)(nil)).Elem()
+}
+
+func (i RoutingProfilePreviousStateArray) ToRoutingProfilePreviousStateArrayOutput() RoutingProfilePreviousStateArrayOutput {
+	return i.ToRoutingProfilePreviousStateArrayOutputWithContext(context.Background())
+}
+
+func (i RoutingProfilePreviousStateArray) ToRoutingProfilePreviousStateArrayOutputWithContext(ctx context.Context) RoutingProfilePreviousStateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfilePreviousStateArrayOutput)
+}
+
+type RoutingProfilePreviousStateOutput struct{ *pulumi.OutputState }
+
+func (RoutingProfilePreviousStateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RoutingProfilePreviousState)(nil)).Elem()
+}
+
+func (o RoutingProfilePreviousStateOutput) ToRoutingProfilePreviousStateOutput() RoutingProfilePreviousStateOutput {
+	return o
+}
+
+func (o RoutingProfilePreviousStateOutput) ToRoutingProfilePreviousStateOutputWithContext(ctx context.Context) RoutingProfilePreviousStateOutput {
+	return o
+}
+
+// (Updatable) The OCID of the compartment in which to create the routing profile.
+func (o RoutingProfilePreviousStateOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o RoutingProfilePreviousStateOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) An optional description of the routing profile.
+func (o RoutingProfilePreviousStateOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
+func (o RoutingProfilePreviousStateOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o RoutingProfilePreviousStateOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// An OCID that uniquely identifies this routing profile resource.
+func (o RoutingProfilePreviousStateOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// A message describing the current state of the routing profile in more detail that can provide actionable information.
+func (o RoutingProfilePreviousStateOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+func (o RoutingProfilePreviousStateOutput) ModelRoutingPolicies() RoutingProfilePreviousStateModelRoutingPolicyArrayOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) []RoutingProfilePreviousStateModelRoutingPolicy {
+		return v.ModelRoutingPolicies
+	}).(RoutingProfilePreviousStateModelRoutingPolicyArrayOutput)
+}
+
+// (Updatable) The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+func (o RoutingProfilePreviousStateOutput) RegionRoutingPolicies() RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) []RoutingProfilePreviousStateRegionRoutingPolicy {
+		return v.RegionRoutingPolicies
+	}).(RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput)
+}
+
+// The current state of the routing profile.
+func (o RoutingProfilePreviousStateOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o RoutingProfilePreviousStateOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+func (o RoutingProfilePreviousStateOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+func (o RoutingProfilePreviousStateOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousState) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+type RoutingProfilePreviousStateArrayOutput struct{ *pulumi.OutputState }
+
+func (RoutingProfilePreviousStateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RoutingProfilePreviousState)(nil)).Elem()
+}
+
+func (o RoutingProfilePreviousStateArrayOutput) ToRoutingProfilePreviousStateArrayOutput() RoutingProfilePreviousStateArrayOutput {
+	return o
+}
+
+func (o RoutingProfilePreviousStateArrayOutput) ToRoutingProfilePreviousStateArrayOutputWithContext(ctx context.Context) RoutingProfilePreviousStateArrayOutput {
+	return o
+}
+
+func (o RoutingProfilePreviousStateArrayOutput) Index(i pulumi.IntInput) RoutingProfilePreviousStateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RoutingProfilePreviousState {
+		return vs[0].([]RoutingProfilePreviousState)[vs[1].(int)]
+	}).(RoutingProfilePreviousStateOutput)
+}
+
+type RoutingProfilePreviousStateModelRoutingPolicy struct {
+	// (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	//
+	// The order of entries is preserved. Duplicate entries are not allowed.
+	AllowedModels []string `pulumi:"allowedModels"`
+}
+
+// RoutingProfilePreviousStateModelRoutingPolicyInput is an input type that accepts RoutingProfilePreviousStateModelRoutingPolicyArgs and RoutingProfilePreviousStateModelRoutingPolicyOutput values.
+// You can construct a concrete instance of `RoutingProfilePreviousStateModelRoutingPolicyInput` via:
+//
+//	RoutingProfilePreviousStateModelRoutingPolicyArgs{...}
+type RoutingProfilePreviousStateModelRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToRoutingProfilePreviousStateModelRoutingPolicyOutput() RoutingProfilePreviousStateModelRoutingPolicyOutput
+	ToRoutingProfilePreviousStateModelRoutingPolicyOutputWithContext(context.Context) RoutingProfilePreviousStateModelRoutingPolicyOutput
+}
+
+type RoutingProfilePreviousStateModelRoutingPolicyArgs struct {
+	// (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	//
+	// The order of entries is preserved. Duplicate entries are not allowed.
+	AllowedModels pulumi.StringArrayInput `pulumi:"allowedModels"`
+}
+
+func (RoutingProfilePreviousStateModelRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RoutingProfilePreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i RoutingProfilePreviousStateModelRoutingPolicyArgs) ToRoutingProfilePreviousStateModelRoutingPolicyOutput() RoutingProfilePreviousStateModelRoutingPolicyOutput {
+	return i.ToRoutingProfilePreviousStateModelRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i RoutingProfilePreviousStateModelRoutingPolicyArgs) ToRoutingProfilePreviousStateModelRoutingPolicyOutputWithContext(ctx context.Context) RoutingProfilePreviousStateModelRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfilePreviousStateModelRoutingPolicyOutput)
+}
+
+// RoutingProfilePreviousStateModelRoutingPolicyArrayInput is an input type that accepts RoutingProfilePreviousStateModelRoutingPolicyArray and RoutingProfilePreviousStateModelRoutingPolicyArrayOutput values.
+// You can construct a concrete instance of `RoutingProfilePreviousStateModelRoutingPolicyArrayInput` via:
+//
+//	RoutingProfilePreviousStateModelRoutingPolicyArray{ RoutingProfilePreviousStateModelRoutingPolicyArgs{...} }
+type RoutingProfilePreviousStateModelRoutingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToRoutingProfilePreviousStateModelRoutingPolicyArrayOutput() RoutingProfilePreviousStateModelRoutingPolicyArrayOutput
+	ToRoutingProfilePreviousStateModelRoutingPolicyArrayOutputWithContext(context.Context) RoutingProfilePreviousStateModelRoutingPolicyArrayOutput
+}
+
+type RoutingProfilePreviousStateModelRoutingPolicyArray []RoutingProfilePreviousStateModelRoutingPolicyInput
+
+func (RoutingProfilePreviousStateModelRoutingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RoutingProfilePreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i RoutingProfilePreviousStateModelRoutingPolicyArray) ToRoutingProfilePreviousStateModelRoutingPolicyArrayOutput() RoutingProfilePreviousStateModelRoutingPolicyArrayOutput {
+	return i.ToRoutingProfilePreviousStateModelRoutingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i RoutingProfilePreviousStateModelRoutingPolicyArray) ToRoutingProfilePreviousStateModelRoutingPolicyArrayOutputWithContext(ctx context.Context) RoutingProfilePreviousStateModelRoutingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfilePreviousStateModelRoutingPolicyArrayOutput)
+}
+
+type RoutingProfilePreviousStateModelRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (RoutingProfilePreviousStateModelRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RoutingProfilePreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o RoutingProfilePreviousStateModelRoutingPolicyOutput) ToRoutingProfilePreviousStateModelRoutingPolicyOutput() RoutingProfilePreviousStateModelRoutingPolicyOutput {
+	return o
+}
+
+func (o RoutingProfilePreviousStateModelRoutingPolicyOutput) ToRoutingProfilePreviousStateModelRoutingPolicyOutputWithContext(ctx context.Context) RoutingProfilePreviousStateModelRoutingPolicyOutput {
+	return o
+}
+
+// (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+//
+// The order of entries is preserved. Duplicate entries are not allowed.
+func (o RoutingProfilePreviousStateModelRoutingPolicyOutput) AllowedModels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousStateModelRoutingPolicy) []string { return v.AllowedModels }).(pulumi.StringArrayOutput)
+}
+
+type RoutingProfilePreviousStateModelRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (RoutingProfilePreviousStateModelRoutingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RoutingProfilePreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o RoutingProfilePreviousStateModelRoutingPolicyArrayOutput) ToRoutingProfilePreviousStateModelRoutingPolicyArrayOutput() RoutingProfilePreviousStateModelRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o RoutingProfilePreviousStateModelRoutingPolicyArrayOutput) ToRoutingProfilePreviousStateModelRoutingPolicyArrayOutputWithContext(ctx context.Context) RoutingProfilePreviousStateModelRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o RoutingProfilePreviousStateModelRoutingPolicyArrayOutput) Index(i pulumi.IntInput) RoutingProfilePreviousStateModelRoutingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RoutingProfilePreviousStateModelRoutingPolicy {
+		return vs[0].([]RoutingProfilePreviousStateModelRoutingPolicy)[vs[1].(int)]
+	}).(RoutingProfilePreviousStateModelRoutingPolicyOutput)
+}
+
+type RoutingProfilePreviousStateRegionRoutingPolicy struct {
+	// (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	//
+	// The order of entries is preserved. Duplicate entries are not allowed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	AllowedRegions []string `pulumi:"allowedRegions"`
+}
+
+// RoutingProfilePreviousStateRegionRoutingPolicyInput is an input type that accepts RoutingProfilePreviousStateRegionRoutingPolicyArgs and RoutingProfilePreviousStateRegionRoutingPolicyOutput values.
+// You can construct a concrete instance of `RoutingProfilePreviousStateRegionRoutingPolicyInput` via:
+//
+//	RoutingProfilePreviousStateRegionRoutingPolicyArgs{...}
+type RoutingProfilePreviousStateRegionRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToRoutingProfilePreviousStateRegionRoutingPolicyOutput() RoutingProfilePreviousStateRegionRoutingPolicyOutput
+	ToRoutingProfilePreviousStateRegionRoutingPolicyOutputWithContext(context.Context) RoutingProfilePreviousStateRegionRoutingPolicyOutput
+}
+
+type RoutingProfilePreviousStateRegionRoutingPolicyArgs struct {
+	// (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	//
+	// The order of entries is preserved. Duplicate entries are not allowed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	AllowedRegions pulumi.StringArrayInput `pulumi:"allowedRegions"`
+}
+
+func (RoutingProfilePreviousStateRegionRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RoutingProfilePreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i RoutingProfilePreviousStateRegionRoutingPolicyArgs) ToRoutingProfilePreviousStateRegionRoutingPolicyOutput() RoutingProfilePreviousStateRegionRoutingPolicyOutput {
+	return i.ToRoutingProfilePreviousStateRegionRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i RoutingProfilePreviousStateRegionRoutingPolicyArgs) ToRoutingProfilePreviousStateRegionRoutingPolicyOutputWithContext(ctx context.Context) RoutingProfilePreviousStateRegionRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfilePreviousStateRegionRoutingPolicyOutput)
+}
+
+// RoutingProfilePreviousStateRegionRoutingPolicyArrayInput is an input type that accepts RoutingProfilePreviousStateRegionRoutingPolicyArray and RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput values.
+// You can construct a concrete instance of `RoutingProfilePreviousStateRegionRoutingPolicyArrayInput` via:
+//
+//	RoutingProfilePreviousStateRegionRoutingPolicyArray{ RoutingProfilePreviousStateRegionRoutingPolicyArgs{...} }
+type RoutingProfilePreviousStateRegionRoutingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput() RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput
+	ToRoutingProfilePreviousStateRegionRoutingPolicyArrayOutputWithContext(context.Context) RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput
+}
+
+type RoutingProfilePreviousStateRegionRoutingPolicyArray []RoutingProfilePreviousStateRegionRoutingPolicyInput
+
+func (RoutingProfilePreviousStateRegionRoutingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RoutingProfilePreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i RoutingProfilePreviousStateRegionRoutingPolicyArray) ToRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput() RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput {
+	return i.ToRoutingProfilePreviousStateRegionRoutingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i RoutingProfilePreviousStateRegionRoutingPolicyArray) ToRoutingProfilePreviousStateRegionRoutingPolicyArrayOutputWithContext(ctx context.Context) RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput)
+}
+
+type RoutingProfilePreviousStateRegionRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (RoutingProfilePreviousStateRegionRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RoutingProfilePreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o RoutingProfilePreviousStateRegionRoutingPolicyOutput) ToRoutingProfilePreviousStateRegionRoutingPolicyOutput() RoutingProfilePreviousStateRegionRoutingPolicyOutput {
+	return o
+}
+
+func (o RoutingProfilePreviousStateRegionRoutingPolicyOutput) ToRoutingProfilePreviousStateRegionRoutingPolicyOutputWithContext(ctx context.Context) RoutingProfilePreviousStateRegionRoutingPolicyOutput {
+	return o
+}
+
+// (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+//
+// The order of entries is preserved. Duplicate entries are not allowed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o RoutingProfilePreviousStateRegionRoutingPolicyOutput) AllowedRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RoutingProfilePreviousStateRegionRoutingPolicy) []string { return v.AllowedRegions }).(pulumi.StringArrayOutput)
+}
+
+type RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RoutingProfilePreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput) ToRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput() RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput) ToRoutingProfilePreviousStateRegionRoutingPolicyArrayOutputWithContext(ctx context.Context) RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput) Index(i pulumi.IntInput) RoutingProfilePreviousStateRegionRoutingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RoutingProfilePreviousStateRegionRoutingPolicy {
+		return vs[0].([]RoutingProfilePreviousStateRegionRoutingPolicy)[vs[1].(int)]
+	}).(RoutingProfilePreviousStateRegionRoutingPolicyOutput)
+}
+
+type RoutingProfileRegionRoutingPolicy struct {
+	// (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	//
+	// The order of entries is preserved. Duplicate entries are not allowed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	AllowedRegions []string `pulumi:"allowedRegions"`
+}
+
+// RoutingProfileRegionRoutingPolicyInput is an input type that accepts RoutingProfileRegionRoutingPolicyArgs and RoutingProfileRegionRoutingPolicyOutput values.
+// You can construct a concrete instance of `RoutingProfileRegionRoutingPolicyInput` via:
+//
+//	RoutingProfileRegionRoutingPolicyArgs{...}
+type RoutingProfileRegionRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToRoutingProfileRegionRoutingPolicyOutput() RoutingProfileRegionRoutingPolicyOutput
+	ToRoutingProfileRegionRoutingPolicyOutputWithContext(context.Context) RoutingProfileRegionRoutingPolicyOutput
+}
+
+type RoutingProfileRegionRoutingPolicyArgs struct {
+	// (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	//
+	// The order of entries is preserved. Duplicate entries are not allowed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	AllowedRegions pulumi.StringArrayInput `pulumi:"allowedRegions"`
+}
+
+func (RoutingProfileRegionRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RoutingProfileRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i RoutingProfileRegionRoutingPolicyArgs) ToRoutingProfileRegionRoutingPolicyOutput() RoutingProfileRegionRoutingPolicyOutput {
+	return i.ToRoutingProfileRegionRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i RoutingProfileRegionRoutingPolicyArgs) ToRoutingProfileRegionRoutingPolicyOutputWithContext(ctx context.Context) RoutingProfileRegionRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfileRegionRoutingPolicyOutput)
+}
+
+func (i RoutingProfileRegionRoutingPolicyArgs) ToRoutingProfileRegionRoutingPolicyPtrOutput() RoutingProfileRegionRoutingPolicyPtrOutput {
+	return i.ToRoutingProfileRegionRoutingPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i RoutingProfileRegionRoutingPolicyArgs) ToRoutingProfileRegionRoutingPolicyPtrOutputWithContext(ctx context.Context) RoutingProfileRegionRoutingPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfileRegionRoutingPolicyOutput).ToRoutingProfileRegionRoutingPolicyPtrOutputWithContext(ctx)
+}
+
+// RoutingProfileRegionRoutingPolicyPtrInput is an input type that accepts RoutingProfileRegionRoutingPolicyArgs, RoutingProfileRegionRoutingPolicyPtr and RoutingProfileRegionRoutingPolicyPtrOutput values.
+// You can construct a concrete instance of `RoutingProfileRegionRoutingPolicyPtrInput` via:
+//
+//	        RoutingProfileRegionRoutingPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type RoutingProfileRegionRoutingPolicyPtrInput interface {
+	pulumi.Input
+
+	ToRoutingProfileRegionRoutingPolicyPtrOutput() RoutingProfileRegionRoutingPolicyPtrOutput
+	ToRoutingProfileRegionRoutingPolicyPtrOutputWithContext(context.Context) RoutingProfileRegionRoutingPolicyPtrOutput
+}
+
+type routingProfileRegionRoutingPolicyPtrType RoutingProfileRegionRoutingPolicyArgs
+
+func RoutingProfileRegionRoutingPolicyPtr(v *RoutingProfileRegionRoutingPolicyArgs) RoutingProfileRegionRoutingPolicyPtrInput {
+	return (*routingProfileRegionRoutingPolicyPtrType)(v)
+}
+
+func (*routingProfileRegionRoutingPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RoutingProfileRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i *routingProfileRegionRoutingPolicyPtrType) ToRoutingProfileRegionRoutingPolicyPtrOutput() RoutingProfileRegionRoutingPolicyPtrOutput {
+	return i.ToRoutingProfileRegionRoutingPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *routingProfileRegionRoutingPolicyPtrType) ToRoutingProfileRegionRoutingPolicyPtrOutputWithContext(ctx context.Context) RoutingProfileRegionRoutingPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RoutingProfileRegionRoutingPolicyPtrOutput)
+}
+
+type RoutingProfileRegionRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (RoutingProfileRegionRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RoutingProfileRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o RoutingProfileRegionRoutingPolicyOutput) ToRoutingProfileRegionRoutingPolicyOutput() RoutingProfileRegionRoutingPolicyOutput {
+	return o
+}
+
+func (o RoutingProfileRegionRoutingPolicyOutput) ToRoutingProfileRegionRoutingPolicyOutputWithContext(ctx context.Context) RoutingProfileRegionRoutingPolicyOutput {
+	return o
+}
+
+func (o RoutingProfileRegionRoutingPolicyOutput) ToRoutingProfileRegionRoutingPolicyPtrOutput() RoutingProfileRegionRoutingPolicyPtrOutput {
+	return o.ToRoutingProfileRegionRoutingPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o RoutingProfileRegionRoutingPolicyOutput) ToRoutingProfileRegionRoutingPolicyPtrOutputWithContext(ctx context.Context) RoutingProfileRegionRoutingPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RoutingProfileRegionRoutingPolicy) *RoutingProfileRegionRoutingPolicy {
+		return &v
+	}).(RoutingProfileRegionRoutingPolicyPtrOutput)
+}
+
+// (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+//
+// The order of entries is preserved. Duplicate entries are not allowed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o RoutingProfileRegionRoutingPolicyOutput) AllowedRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RoutingProfileRegionRoutingPolicy) []string { return v.AllowedRegions }).(pulumi.StringArrayOutput)
+}
+
+type RoutingProfileRegionRoutingPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (RoutingProfileRegionRoutingPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RoutingProfileRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o RoutingProfileRegionRoutingPolicyPtrOutput) ToRoutingProfileRegionRoutingPolicyPtrOutput() RoutingProfileRegionRoutingPolicyPtrOutput {
+	return o
+}
+
+func (o RoutingProfileRegionRoutingPolicyPtrOutput) ToRoutingProfileRegionRoutingPolicyPtrOutputWithContext(ctx context.Context) RoutingProfileRegionRoutingPolicyPtrOutput {
+	return o
+}
+
+func (o RoutingProfileRegionRoutingPolicyPtrOutput) Elem() RoutingProfileRegionRoutingPolicyOutput {
+	return o.ApplyT(func(v *RoutingProfileRegionRoutingPolicy) RoutingProfileRegionRoutingPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret RoutingProfileRegionRoutingPolicy
+		return ret
+	}).(RoutingProfileRegionRoutingPolicyOutput)
+}
+
+// (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+//
+// The order of entries is preserved. Duplicate entries are not allowed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o RoutingProfileRegionRoutingPolicyPtrOutput) AllowedRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RoutingProfileRegionRoutingPolicy) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowedRegions
+	}).(pulumi.StringArrayOutput)
+}
+
 type SemanticStoreDataSource struct {
 	// Specifies the type of underlying connection.
 	ConnectionType string `pulumi:"connectionType"`
@@ -36097,6 +36823,785 @@ func (o GetImportedModelsImportedModelCollectionItemDataSourceArrayOutput) Index
 	}).(GetImportedModelsImportedModelCollectionItemDataSourceOutput)
 }
 
+type GetModelDiscoveriesFilter struct {
+	// The name of this parameter.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetModelDiscoveriesFilterInput is an input type that accepts GetModelDiscoveriesFilterArgs and GetModelDiscoveriesFilterOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesFilterInput` via:
+//
+//	GetModelDiscoveriesFilterArgs{...}
+type GetModelDiscoveriesFilterInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesFilterOutput() GetModelDiscoveriesFilterOutput
+	ToGetModelDiscoveriesFilterOutputWithContext(context.Context) GetModelDiscoveriesFilterOutput
+}
+
+type GetModelDiscoveriesFilterArgs struct {
+	// The name of this parameter.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetModelDiscoveriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesFilter)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesFilterArgs) ToGetModelDiscoveriesFilterOutput() GetModelDiscoveriesFilterOutput {
+	return i.ToGetModelDiscoveriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesFilterArgs) ToGetModelDiscoveriesFilterOutputWithContext(ctx context.Context) GetModelDiscoveriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesFilterOutput)
+}
+
+// GetModelDiscoveriesFilterArrayInput is an input type that accepts GetModelDiscoveriesFilterArray and GetModelDiscoveriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesFilterArrayInput` via:
+//
+//	GetModelDiscoveriesFilterArray{ GetModelDiscoveriesFilterArgs{...} }
+type GetModelDiscoveriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesFilterArrayOutput() GetModelDiscoveriesFilterArrayOutput
+	ToGetModelDiscoveriesFilterArrayOutputWithContext(context.Context) GetModelDiscoveriesFilterArrayOutput
+}
+
+type GetModelDiscoveriesFilterArray []GetModelDiscoveriesFilterInput
+
+func (GetModelDiscoveriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesFilter)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesFilterArray) ToGetModelDiscoveriesFilterArrayOutput() GetModelDiscoveriesFilterArrayOutput {
+	return i.ToGetModelDiscoveriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesFilterArray) ToGetModelDiscoveriesFilterArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesFilterArrayOutput)
+}
+
+type GetModelDiscoveriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesFilter)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesFilterOutput) ToGetModelDiscoveriesFilterOutput() GetModelDiscoveriesFilterOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesFilterOutput) ToGetModelDiscoveriesFilterOutputWithContext(ctx context.Context) GetModelDiscoveriesFilterOutput {
+	return o
+}
+
+// The name of this parameter.
+func (o GetModelDiscoveriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetModelDiscoveriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetModelDiscoveriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetModelDiscoveriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesFilter)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesFilterArrayOutput) ToGetModelDiscoveriesFilterArrayOutput() GetModelDiscoveriesFilterArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesFilterArrayOutput) ToGetModelDiscoveriesFilterArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesFilterArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesFilterArrayOutput) Index(i pulumi.IntInput) GetModelDiscoveriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDiscoveriesFilter {
+		return vs[0].([]GetModelDiscoveriesFilter)[vs[1].(int)]
+	}).(GetModelDiscoveriesFilterOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollection struct {
+	// The list of discovered models matching the search criteria.
+	Items []GetModelDiscoveriesModelDiscoveryCollectionItem `pulumi:"items"`
+}
+
+// GetModelDiscoveriesModelDiscoveryCollectionInput is an input type that accepts GetModelDiscoveriesModelDiscoveryCollectionArgs and GetModelDiscoveriesModelDiscoveryCollectionOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesModelDiscoveryCollectionInput` via:
+//
+//	GetModelDiscoveriesModelDiscoveryCollectionArgs{...}
+type GetModelDiscoveriesModelDiscoveryCollectionInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesModelDiscoveryCollectionOutput() GetModelDiscoveriesModelDiscoveryCollectionOutput
+	ToGetModelDiscoveriesModelDiscoveryCollectionOutputWithContext(context.Context) GetModelDiscoveriesModelDiscoveryCollectionOutput
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionArgs struct {
+	// The list of discovered models matching the search criteria.
+	Items GetModelDiscoveriesModelDiscoveryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetModelDiscoveriesModelDiscoveryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollection)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionArgs) ToGetModelDiscoveriesModelDiscoveryCollectionOutput() GetModelDiscoveriesModelDiscoveryCollectionOutput {
+	return i.ToGetModelDiscoveriesModelDiscoveryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionArgs) ToGetModelDiscoveriesModelDiscoveryCollectionOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesModelDiscoveryCollectionOutput)
+}
+
+// GetModelDiscoveriesModelDiscoveryCollectionArrayInput is an input type that accepts GetModelDiscoveriesModelDiscoveryCollectionArray and GetModelDiscoveriesModelDiscoveryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesModelDiscoveryCollectionArrayInput` via:
+//
+//	GetModelDiscoveriesModelDiscoveryCollectionArray{ GetModelDiscoveriesModelDiscoveryCollectionArgs{...} }
+type GetModelDiscoveriesModelDiscoveryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesModelDiscoveryCollectionArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionArrayOutput
+	ToGetModelDiscoveriesModelDiscoveryCollectionArrayOutputWithContext(context.Context) GetModelDiscoveriesModelDiscoveryCollectionArrayOutput
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionArray []GetModelDiscoveriesModelDiscoveryCollectionInput
+
+func (GetModelDiscoveriesModelDiscoveryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesModelDiscoveryCollection)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionArray) ToGetModelDiscoveriesModelDiscoveryCollectionArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionArrayOutput {
+	return i.ToGetModelDiscoveriesModelDiscoveryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionArray) ToGetModelDiscoveriesModelDiscoveryCollectionArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesModelDiscoveryCollectionArrayOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesModelDiscoveryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollection)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionOutput) ToGetModelDiscoveriesModelDiscoveryCollectionOutput() GetModelDiscoveriesModelDiscoveryCollectionOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionOutput) ToGetModelDiscoveriesModelDiscoveryCollectionOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionOutput {
+	return o
+}
+
+// The list of discovered models matching the search criteria.
+func (o GetModelDiscoveriesModelDiscoveryCollectionOutput) Items() GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollection) []GetModelDiscoveriesModelDiscoveryCollectionItem {
+		return v.Items
+	}).(GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesModelDiscoveryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesModelDiscoveryCollection)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionArrayOutput) ToGetModelDiscoveriesModelDiscoveryCollectionArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionArrayOutput) ToGetModelDiscoveriesModelDiscoveryCollectionArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionArrayOutput) Index(i pulumi.IntInput) GetModelDiscoveriesModelDiscoveryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDiscoveriesModelDiscoveryCollection {
+		return vs[0].([]GetModelDiscoveriesModelDiscoveryCollection)[vs[1].(int)]
+	}).(GetModelDiscoveriesModelDiscoveryCollectionOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItem struct {
+	// Filter models that support any of the specified API capabilities.
+	ApiCapabilities []string `pulumi:"apiCapabilities"`
+	// The list of availability details for the model across different regions and deployment modes.
+	Availabilities []GetModelDiscoveriesModelDiscoveryCollectionItemAvailability `pulumi:"availabilities"`
+	// Describes what this model can be used for.
+	Capabilities []string `pulumi:"capabilities"`
+	// The supported input-to-output modality transformations for this model. For example, a model can support TEXT to VIDEO or AUDIO to VIDEO.
+	ModalitySupports []GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport `pulumi:"modalitySupports"`
+	// Filter models by access type.
+	ModelAccess string `pulumi:"modelAccess"`
+	// A filter to return only resources whose model identifier matches the given modelId.
+	ModelId string `pulumi:"modelId"`
+	// The list of configurable parameters supported by the model. For example, temperature and maxTokens for a text generation model.
+	Parameters []GetModelDiscoveriesModelDiscoveryCollectionItemParameter `pulumi:"parameters"`
+	// The vendor that offers the model.
+	Vendor string `pulumi:"vendor"`
+}
+
+// GetModelDiscoveriesModelDiscoveryCollectionItemInput is an input type that accepts GetModelDiscoveriesModelDiscoveryCollectionItemArgs and GetModelDiscoveriesModelDiscoveryCollectionItemOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesModelDiscoveryCollectionItemInput` via:
+//
+//	GetModelDiscoveriesModelDiscoveryCollectionItemArgs{...}
+type GetModelDiscoveriesModelDiscoveryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemOutput() GetModelDiscoveriesModelDiscoveryCollectionItemOutput
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemOutputWithContext(context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemOutput
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemArgs struct {
+	// Filter models that support any of the specified API capabilities.
+	ApiCapabilities pulumi.StringArrayInput `pulumi:"apiCapabilities"`
+	// The list of availability details for the model across different regions and deployment modes.
+	Availabilities GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayInput `pulumi:"availabilities"`
+	// Describes what this model can be used for.
+	Capabilities pulumi.StringArrayInput `pulumi:"capabilities"`
+	// The supported input-to-output modality transformations for this model. For example, a model can support TEXT to VIDEO or AUDIO to VIDEO.
+	ModalitySupports GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayInput `pulumi:"modalitySupports"`
+	// Filter models by access type.
+	ModelAccess pulumi.StringInput `pulumi:"modelAccess"`
+	// A filter to return only resources whose model identifier matches the given modelId.
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// The list of configurable parameters supported by the model. For example, temperature and maxTokens for a text generation model.
+	Parameters GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayInput `pulumi:"parameters"`
+	// The vendor that offers the model.
+	Vendor pulumi.StringInput `pulumi:"vendor"`
+}
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItem)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemArgs) ToGetModelDiscoveriesModelDiscoveryCollectionItemOutput() GetModelDiscoveriesModelDiscoveryCollectionItemOutput {
+	return i.ToGetModelDiscoveriesModelDiscoveryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemArgs) ToGetModelDiscoveriesModelDiscoveryCollectionItemOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesModelDiscoveryCollectionItemOutput)
+}
+
+// GetModelDiscoveriesModelDiscoveryCollectionItemArrayInput is an input type that accepts GetModelDiscoveriesModelDiscoveryCollectionItemArray and GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesModelDiscoveryCollectionItemArrayInput` via:
+//
+//	GetModelDiscoveriesModelDiscoveryCollectionItemArray{ GetModelDiscoveriesModelDiscoveryCollectionItemArgs{...} }
+type GetModelDiscoveriesModelDiscoveryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemArrayOutputWithContext(context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemArray []GetModelDiscoveriesModelDiscoveryCollectionItemInput
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesModelDiscoveryCollectionItem)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemArray) ToGetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput {
+	return i.ToGetModelDiscoveriesModelDiscoveryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemArray) ToGetModelDiscoveriesModelDiscoveryCollectionItemArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItem)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemOutput() GetModelDiscoveriesModelDiscoveryCollectionItemOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemOutput {
+	return o
+}
+
+// Filter models that support any of the specified API capabilities.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemOutput) ApiCapabilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItem) []string { return v.ApiCapabilities }).(pulumi.StringArrayOutput)
+}
+
+// The list of availability details for the model across different regions and deployment modes.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemOutput) Availabilities() GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItem) []GetModelDiscoveriesModelDiscoveryCollectionItemAvailability {
+		return v.Availabilities
+	}).(GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput)
+}
+
+// Describes what this model can be used for.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemOutput) Capabilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItem) []string { return v.Capabilities }).(pulumi.StringArrayOutput)
+}
+
+// The supported input-to-output modality transformations for this model. For example, a model can support TEXT to VIDEO or AUDIO to VIDEO.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemOutput) ModalitySupports() GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItem) []GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport {
+		return v.ModalitySupports
+	}).(GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput)
+}
+
+// Filter models by access type.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemOutput) ModelAccess() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItem) string { return v.ModelAccess }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources whose model identifier matches the given modelId.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItem) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// The list of configurable parameters supported by the model. For example, temperature and maxTokens for a text generation model.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemOutput) Parameters() GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItem) []GetModelDiscoveriesModelDiscoveryCollectionItemParameter {
+		return v.Parameters
+	}).(GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput)
+}
+
+// The vendor that offers the model.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemOutput) Vendor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItem) string { return v.Vendor }).(pulumi.StringOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesModelDiscoveryCollectionItem)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetModelDiscoveriesModelDiscoveryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDiscoveriesModelDiscoveryCollectionItem {
+		return vs[0].([]GetModelDiscoveriesModelDiscoveryCollectionItem)[vs[1].(int)]
+	}).(GetModelDiscoveriesModelDiscoveryCollectionItemOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemAvailability struct {
+	// A filter to return only resources whose realm matches the given realm.
+	Realm string `pulumi:"realm"`
+	// A filter to return only resources whose region matches the given region.
+	Region string `pulumi:"region"`
+	// The supported deployment modes for the model in this region (e.g., on-demand or dedicated).
+	ServingModes []string `pulumi:"servingModes"`
+	// A list of model identifiers that are recommended as replacements after this model is retired.
+	SupportedReplacements []string `pulumi:"supportedReplacements"`
+	// The timestamp when dedicated deployments of the model will be fully retired.
+	TimeDedicatedRetired string `pulumi:"timeDedicatedRetired"`
+	// The timestamp when the model is marked as deprecated and is no longer recommended for use.
+	TimeDeprecated string `pulumi:"timeDeprecated"`
+	// The timestamp when the model will no longer be available for on-demand (shared) usage.
+	TimeOnDemandRetired string `pulumi:"timeOnDemandRetired"`
+}
+
+// GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityInput is an input type that accepts GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArgs and GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityInput` via:
+//
+//	GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArgs{...}
+type GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput() GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutputWithContext(context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArgs struct {
+	// A filter to return only resources whose realm matches the given realm.
+	Realm pulumi.StringInput `pulumi:"realm"`
+	// A filter to return only resources whose region matches the given region.
+	Region pulumi.StringInput `pulumi:"region"`
+	// The supported deployment modes for the model in this region (e.g., on-demand or dedicated).
+	ServingModes pulumi.StringArrayInput `pulumi:"servingModes"`
+	// A list of model identifiers that are recommended as replacements after this model is retired.
+	SupportedReplacements pulumi.StringArrayInput `pulumi:"supportedReplacements"`
+	// The timestamp when dedicated deployments of the model will be fully retired.
+	TimeDedicatedRetired pulumi.StringInput `pulumi:"timeDedicatedRetired"`
+	// The timestamp when the model is marked as deprecated and is no longer recommended for use.
+	TimeDeprecated pulumi.StringInput `pulumi:"timeDeprecated"`
+	// The timestamp when the model will no longer be available for on-demand (shared) usage.
+	TimeOnDemandRetired pulumi.StringInput `pulumi:"timeOnDemandRetired"`
+}
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemAvailability)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArgs) ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput() GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput {
+	return i.ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArgs) ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput)
+}
+
+// GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayInput is an input type that accepts GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArray and GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayInput` via:
+//
+//	GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArray{ GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArgs{...} }
+type GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutputWithContext(context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArray []GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityInput
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesModelDiscoveryCollectionItemAvailability)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArray) ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput {
+	return i.ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArray) ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemAvailability)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput() GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput {
+	return o
+}
+
+// A filter to return only resources whose realm matches the given realm.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput) Realm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemAvailability) string { return v.Realm }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources whose region matches the given region.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemAvailability) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// The supported deployment modes for the model in this region (e.g., on-demand or dedicated).
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput) ServingModes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemAvailability) []string { return v.ServingModes }).(pulumi.StringArrayOutput)
+}
+
+// A list of model identifiers that are recommended as replacements after this model is retired.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput) SupportedReplacements() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemAvailability) []string {
+		return v.SupportedReplacements
+	}).(pulumi.StringArrayOutput)
+}
+
+// The timestamp when dedicated deployments of the model will be fully retired.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput) TimeDedicatedRetired() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemAvailability) string {
+		return v.TimeDedicatedRetired
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp when the model is marked as deprecated and is no longer recommended for use.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput) TimeDeprecated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemAvailability) string { return v.TimeDeprecated }).(pulumi.StringOutput)
+}
+
+// The timestamp when the model will no longer be available for on-demand (shared) usage.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput) TimeOnDemandRetired() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemAvailability) string {
+		return v.TimeOnDemandRetired
+	}).(pulumi.StringOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesModelDiscoveryCollectionItemAvailability)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput) Index(i pulumi.IntInput) GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDiscoveriesModelDiscoveryCollectionItemAvailability {
+		return vs[0].([]GetModelDiscoveriesModelDiscoveryCollectionItemAvailability)[vs[1].(int)]
+	}).(GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport struct {
+	// The source modality accepted by the model.
+	Input string `pulumi:"input"`
+	// The target modality produced by the model.
+	Output string `pulumi:"output"`
+}
+
+// GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportInput is an input type that accepts GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArgs and GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportInput` via:
+//
+//	GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArgs{...}
+type GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput() GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutputWithContext(context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArgs struct {
+	// The source modality accepted by the model.
+	Input pulumi.StringInput `pulumi:"input"`
+	// The target modality produced by the model.
+	Output pulumi.StringInput `pulumi:"output"`
+}
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArgs) ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput() GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput {
+	return i.ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArgs) ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput)
+}
+
+// GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayInput is an input type that accepts GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArray and GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayInput` via:
+//
+//	GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArray{ GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArgs{...} }
+type GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutputWithContext(context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArray []GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportInput
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArray) ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput {
+	return i.ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArray) ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput() GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput {
+	return o
+}
+
+// The source modality accepted by the model.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput) Input() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport) string { return v.Input }).(pulumi.StringOutput)
+}
+
+// The target modality produced by the model.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput) Output() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport) string { return v.Output }).(pulumi.StringOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput) Index(i pulumi.IntInput) GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport {
+		return vs[0].([]GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport)[vs[1].(int)]
+	}).(GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemParameter struct {
+	// The default value used when this parameter is not supplied.
+	DefaultValue string `pulumi:"defaultValue"`
+	// A human-readable description of this parameter.
+	Description string `pulumi:"description"`
+	// The maximum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+	Maximum float64 `pulumi:"maximum"`
+	// The minimum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+	Minimum float64 `pulumi:"minimum"`
+	// The name of this parameter.
+	Name string `pulumi:"name"`
+	// The data type of the parameter (e.g., float, integer, string).
+	Type string `pulumi:"type"`
+}
+
+// GetModelDiscoveriesModelDiscoveryCollectionItemParameterInput is an input type that accepts GetModelDiscoveriesModelDiscoveryCollectionItemParameterArgs and GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesModelDiscoveryCollectionItemParameterInput` via:
+//
+//	GetModelDiscoveriesModelDiscoveryCollectionItemParameterArgs{...}
+type GetModelDiscoveriesModelDiscoveryCollectionItemParameterInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput() GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterOutputWithContext(context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemParameterArgs struct {
+	// The default value used when this parameter is not supplied.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// A human-readable description of this parameter.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The maximum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+	Maximum pulumi.Float64Input `pulumi:"maximum"`
+	// The minimum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+	Minimum pulumi.Float64Input `pulumi:"minimum"`
+	// The name of this parameter.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The data type of the parameter (e.g., float, integer, string).
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemParameter)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemParameterArgs) ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput() GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput {
+	return i.ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemParameterArgs) ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput)
+}
+
+// GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayInput is an input type that accepts GetModelDiscoveriesModelDiscoveryCollectionItemParameterArray and GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput values.
+// You can construct a concrete instance of `GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayInput` via:
+//
+//	GetModelDiscoveriesModelDiscoveryCollectionItemParameterArray{ GetModelDiscoveriesModelDiscoveryCollectionItemParameterArgs{...} }
+type GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput
+	ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutputWithContext(context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemParameterArray []GetModelDiscoveriesModelDiscoveryCollectionItemParameterInput
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesModelDiscoveryCollectionItemParameter)(nil)).Elem()
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemParameterArray) ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput {
+	return i.ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDiscoveriesModelDiscoveryCollectionItemParameterArray) ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemParameter)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput() GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput {
+	return o
+}
+
+// The default value used when this parameter is not supplied.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemParameter) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// A human-readable description of this parameter.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemParameter) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The maximum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput) Maximum() pulumi.Float64Output {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemParameter) float64 { return v.Maximum }).(pulumi.Float64Output)
+}
+
+// The minimum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput) Minimum() pulumi.Float64Output {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemParameter) float64 { return v.Minimum }).(pulumi.Float64Output)
+}
+
+// The name of this parameter.
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemParameter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The data type of the parameter (e.g., float, integer, string).
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDiscoveriesModelDiscoveryCollectionItemParameter) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDiscoveriesModelDiscoveryCollectionItemParameter)(nil)).Elem()
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput() GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput) ToGetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutputWithContext(ctx context.Context) GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput {
+	return o
+}
+
+func (o GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput) Index(i pulumi.IntInput) GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDiscoveriesModelDiscoveryCollectionItemParameter {
+		return vs[0].([]GetModelDiscoveriesModelDiscoveryCollectionItemParameter)[vs[1].(int)]
+	}).(GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput)
+}
+
 type GetModelFineTuneDetail struct {
 	DedicatedAiClusterId string                                  `pulumi:"dedicatedAiClusterId"`
 	TrainingConfigs      []GetModelFineTuneDetailTrainingConfig  `pulumi:"trainingConfigs"`
@@ -40046,6 +41551,1636 @@ func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationC
 	}).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput)
 }
 
+type GetRoutingProfileModelRoutingPolicy struct {
+	// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	AllowedModels []string `pulumi:"allowedModels"`
+}
+
+// GetRoutingProfileModelRoutingPolicyInput is an input type that accepts GetRoutingProfileModelRoutingPolicyArgs and GetRoutingProfileModelRoutingPolicyOutput values.
+// You can construct a concrete instance of `GetRoutingProfileModelRoutingPolicyInput` via:
+//
+//	GetRoutingProfileModelRoutingPolicyArgs{...}
+type GetRoutingProfileModelRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfileModelRoutingPolicyOutput() GetRoutingProfileModelRoutingPolicyOutput
+	ToGetRoutingProfileModelRoutingPolicyOutputWithContext(context.Context) GetRoutingProfileModelRoutingPolicyOutput
+}
+
+type GetRoutingProfileModelRoutingPolicyArgs struct {
+	// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	AllowedModels pulumi.StringArrayInput `pulumi:"allowedModels"`
+}
+
+func (GetRoutingProfileModelRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfileModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfileModelRoutingPolicyArgs) ToGetRoutingProfileModelRoutingPolicyOutput() GetRoutingProfileModelRoutingPolicyOutput {
+	return i.ToGetRoutingProfileModelRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfileModelRoutingPolicyArgs) ToGetRoutingProfileModelRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfileModelRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfileModelRoutingPolicyOutput)
+}
+
+// GetRoutingProfileModelRoutingPolicyArrayInput is an input type that accepts GetRoutingProfileModelRoutingPolicyArray and GetRoutingProfileModelRoutingPolicyArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfileModelRoutingPolicyArrayInput` via:
+//
+//	GetRoutingProfileModelRoutingPolicyArray{ GetRoutingProfileModelRoutingPolicyArgs{...} }
+type GetRoutingProfileModelRoutingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfileModelRoutingPolicyArrayOutput() GetRoutingProfileModelRoutingPolicyArrayOutput
+	ToGetRoutingProfileModelRoutingPolicyArrayOutputWithContext(context.Context) GetRoutingProfileModelRoutingPolicyArrayOutput
+}
+
+type GetRoutingProfileModelRoutingPolicyArray []GetRoutingProfileModelRoutingPolicyInput
+
+func (GetRoutingProfileModelRoutingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfileModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfileModelRoutingPolicyArray) ToGetRoutingProfileModelRoutingPolicyArrayOutput() GetRoutingProfileModelRoutingPolicyArrayOutput {
+	return i.ToGetRoutingProfileModelRoutingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfileModelRoutingPolicyArray) ToGetRoutingProfileModelRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfileModelRoutingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfileModelRoutingPolicyArrayOutput)
+}
+
+type GetRoutingProfileModelRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfileModelRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfileModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfileModelRoutingPolicyOutput) ToGetRoutingProfileModelRoutingPolicyOutput() GetRoutingProfileModelRoutingPolicyOutput {
+	return o
+}
+
+func (o GetRoutingProfileModelRoutingPolicyOutput) ToGetRoutingProfileModelRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfileModelRoutingPolicyOutput {
+	return o
+}
+
+// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+func (o GetRoutingProfileModelRoutingPolicyOutput) AllowedModels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfileModelRoutingPolicy) []string { return v.AllowedModels }).(pulumi.StringArrayOutput)
+}
+
+type GetRoutingProfileModelRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfileModelRoutingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfileModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfileModelRoutingPolicyArrayOutput) ToGetRoutingProfileModelRoutingPolicyArrayOutput() GetRoutingProfileModelRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfileModelRoutingPolicyArrayOutput) ToGetRoutingProfileModelRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfileModelRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfileModelRoutingPolicyArrayOutput) Index(i pulumi.IntInput) GetRoutingProfileModelRoutingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfileModelRoutingPolicy {
+		return vs[0].([]GetRoutingProfileModelRoutingPolicy)[vs[1].(int)]
+	}).(GetRoutingProfileModelRoutingPolicyOutput)
+}
+
+type GetRoutingProfilePreviousState struct {
+	// The OCID of the compartment in which the routing profile lives.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// An optional description of the routing profile.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// An OCID that uniquely identifies this routing profile resource.
+	Id string `pulumi:"id"`
+	// A message describing the current state of the routing profile in more detail that can provide actionable information.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+	ModelRoutingPolicies []GetRoutingProfilePreviousStateModelRoutingPolicy `pulumi:"modelRoutingPolicies"`
+	// The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+	RegionRoutingPolicies []GetRoutingProfilePreviousStateRegionRoutingPolicy `pulumi:"regionRoutingPolicies"`
+	// The current state of the routing profile.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetRoutingProfilePreviousStateInput is an input type that accepts GetRoutingProfilePreviousStateArgs and GetRoutingProfilePreviousStateOutput values.
+// You can construct a concrete instance of `GetRoutingProfilePreviousStateInput` via:
+//
+//	GetRoutingProfilePreviousStateArgs{...}
+type GetRoutingProfilePreviousStateInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilePreviousStateOutput() GetRoutingProfilePreviousStateOutput
+	ToGetRoutingProfilePreviousStateOutputWithContext(context.Context) GetRoutingProfilePreviousStateOutput
+}
+
+type GetRoutingProfilePreviousStateArgs struct {
+	// The OCID of the compartment in which the routing profile lives.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// An optional description of the routing profile.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// An OCID that uniquely identifies this routing profile resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state of the routing profile in more detail that can provide actionable information.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+	ModelRoutingPolicies GetRoutingProfilePreviousStateModelRoutingPolicyArrayInput `pulumi:"modelRoutingPolicies"`
+	// The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+	RegionRoutingPolicies GetRoutingProfilePreviousStateRegionRoutingPolicyArrayInput `pulumi:"regionRoutingPolicies"`
+	// The current state of the routing profile.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetRoutingProfilePreviousStateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilePreviousState)(nil)).Elem()
+}
+
+func (i GetRoutingProfilePreviousStateArgs) ToGetRoutingProfilePreviousStateOutput() GetRoutingProfilePreviousStateOutput {
+	return i.ToGetRoutingProfilePreviousStateOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilePreviousStateArgs) ToGetRoutingProfilePreviousStateOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilePreviousStateOutput)
+}
+
+// GetRoutingProfilePreviousStateArrayInput is an input type that accepts GetRoutingProfilePreviousStateArray and GetRoutingProfilePreviousStateArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfilePreviousStateArrayInput` via:
+//
+//	GetRoutingProfilePreviousStateArray{ GetRoutingProfilePreviousStateArgs{...} }
+type GetRoutingProfilePreviousStateArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilePreviousStateArrayOutput() GetRoutingProfilePreviousStateArrayOutput
+	ToGetRoutingProfilePreviousStateArrayOutputWithContext(context.Context) GetRoutingProfilePreviousStateArrayOutput
+}
+
+type GetRoutingProfilePreviousStateArray []GetRoutingProfilePreviousStateInput
+
+func (GetRoutingProfilePreviousStateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilePreviousState)(nil)).Elem()
+}
+
+func (i GetRoutingProfilePreviousStateArray) ToGetRoutingProfilePreviousStateArrayOutput() GetRoutingProfilePreviousStateArrayOutput {
+	return i.ToGetRoutingProfilePreviousStateArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilePreviousStateArray) ToGetRoutingProfilePreviousStateArrayOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilePreviousStateArrayOutput)
+}
+
+type GetRoutingProfilePreviousStateOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilePreviousStateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilePreviousState)(nil)).Elem()
+}
+
+func (o GetRoutingProfilePreviousStateOutput) ToGetRoutingProfilePreviousStateOutput() GetRoutingProfilePreviousStateOutput {
+	return o
+}
+
+func (o GetRoutingProfilePreviousStateOutput) ToGetRoutingProfilePreviousStateOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateOutput {
+	return o
+}
+
+// The OCID of the compartment in which the routing profile lives.
+func (o GetRoutingProfilePreviousStateOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetRoutingProfilePreviousStateOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// An optional description of the routing profile.
+func (o GetRoutingProfilePreviousStateOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.
+func (o GetRoutingProfilePreviousStateOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetRoutingProfilePreviousStateOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// An OCID that uniquely identifies this routing profile resource.
+func (o GetRoutingProfilePreviousStateOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state of the routing profile in more detail that can provide actionable information.
+func (o GetRoutingProfilePreviousStateOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+func (o GetRoutingProfilePreviousStateOutput) ModelRoutingPolicies() GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) []GetRoutingProfilePreviousStateModelRoutingPolicy {
+		return v.ModelRoutingPolicies
+	}).(GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput)
+}
+
+// The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+func (o GetRoutingProfilePreviousStateOutput) RegionRoutingPolicies() GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) []GetRoutingProfilePreviousStateRegionRoutingPolicy {
+		return v.RegionRoutingPolicies
+	}).(GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput)
+}
+
+// The current state of the routing profile.
+func (o GetRoutingProfilePreviousStateOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetRoutingProfilePreviousStateOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+func (o GetRoutingProfilePreviousStateOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+func (o GetRoutingProfilePreviousStateOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousState) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetRoutingProfilePreviousStateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilePreviousStateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilePreviousState)(nil)).Elem()
+}
+
+func (o GetRoutingProfilePreviousStateArrayOutput) ToGetRoutingProfilePreviousStateArrayOutput() GetRoutingProfilePreviousStateArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilePreviousStateArrayOutput) ToGetRoutingProfilePreviousStateArrayOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilePreviousStateArrayOutput) Index(i pulumi.IntInput) GetRoutingProfilePreviousStateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfilePreviousState {
+		return vs[0].([]GetRoutingProfilePreviousState)[vs[1].(int)]
+	}).(GetRoutingProfilePreviousStateOutput)
+}
+
+type GetRoutingProfilePreviousStateModelRoutingPolicy struct {
+	// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	AllowedModels []string `pulumi:"allowedModels"`
+}
+
+// GetRoutingProfilePreviousStateModelRoutingPolicyInput is an input type that accepts GetRoutingProfilePreviousStateModelRoutingPolicyArgs and GetRoutingProfilePreviousStateModelRoutingPolicyOutput values.
+// You can construct a concrete instance of `GetRoutingProfilePreviousStateModelRoutingPolicyInput` via:
+//
+//	GetRoutingProfilePreviousStateModelRoutingPolicyArgs{...}
+type GetRoutingProfilePreviousStateModelRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilePreviousStateModelRoutingPolicyOutput() GetRoutingProfilePreviousStateModelRoutingPolicyOutput
+	ToGetRoutingProfilePreviousStateModelRoutingPolicyOutputWithContext(context.Context) GetRoutingProfilePreviousStateModelRoutingPolicyOutput
+}
+
+type GetRoutingProfilePreviousStateModelRoutingPolicyArgs struct {
+	// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	AllowedModels pulumi.StringArrayInput `pulumi:"allowedModels"`
+}
+
+func (GetRoutingProfilePreviousStateModelRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilePreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilePreviousStateModelRoutingPolicyArgs) ToGetRoutingProfilePreviousStateModelRoutingPolicyOutput() GetRoutingProfilePreviousStateModelRoutingPolicyOutput {
+	return i.ToGetRoutingProfilePreviousStateModelRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilePreviousStateModelRoutingPolicyArgs) ToGetRoutingProfilePreviousStateModelRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateModelRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilePreviousStateModelRoutingPolicyOutput)
+}
+
+// GetRoutingProfilePreviousStateModelRoutingPolicyArrayInput is an input type that accepts GetRoutingProfilePreviousStateModelRoutingPolicyArray and GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfilePreviousStateModelRoutingPolicyArrayInput` via:
+//
+//	GetRoutingProfilePreviousStateModelRoutingPolicyArray{ GetRoutingProfilePreviousStateModelRoutingPolicyArgs{...} }
+type GetRoutingProfilePreviousStateModelRoutingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput() GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput
+	ToGetRoutingProfilePreviousStateModelRoutingPolicyArrayOutputWithContext(context.Context) GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput
+}
+
+type GetRoutingProfilePreviousStateModelRoutingPolicyArray []GetRoutingProfilePreviousStateModelRoutingPolicyInput
+
+func (GetRoutingProfilePreviousStateModelRoutingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilePreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilePreviousStateModelRoutingPolicyArray) ToGetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput() GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput {
+	return i.ToGetRoutingProfilePreviousStateModelRoutingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilePreviousStateModelRoutingPolicyArray) ToGetRoutingProfilePreviousStateModelRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput)
+}
+
+type GetRoutingProfilePreviousStateModelRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilePreviousStateModelRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilePreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilePreviousStateModelRoutingPolicyOutput) ToGetRoutingProfilePreviousStateModelRoutingPolicyOutput() GetRoutingProfilePreviousStateModelRoutingPolicyOutput {
+	return o
+}
+
+func (o GetRoutingProfilePreviousStateModelRoutingPolicyOutput) ToGetRoutingProfilePreviousStateModelRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateModelRoutingPolicyOutput {
+	return o
+}
+
+// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+func (o GetRoutingProfilePreviousStateModelRoutingPolicyOutput) AllowedModels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousStateModelRoutingPolicy) []string { return v.AllowedModels }).(pulumi.StringArrayOutput)
+}
+
+type GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilePreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput) ToGetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput() GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput) ToGetRoutingProfilePreviousStateModelRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput) Index(i pulumi.IntInput) GetRoutingProfilePreviousStateModelRoutingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfilePreviousStateModelRoutingPolicy {
+		return vs[0].([]GetRoutingProfilePreviousStateModelRoutingPolicy)[vs[1].(int)]
+	}).(GetRoutingProfilePreviousStateModelRoutingPolicyOutput)
+}
+
+type GetRoutingProfilePreviousStateRegionRoutingPolicy struct {
+	// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	AllowedRegions []string `pulumi:"allowedRegions"`
+}
+
+// GetRoutingProfilePreviousStateRegionRoutingPolicyInput is an input type that accepts GetRoutingProfilePreviousStateRegionRoutingPolicyArgs and GetRoutingProfilePreviousStateRegionRoutingPolicyOutput values.
+// You can construct a concrete instance of `GetRoutingProfilePreviousStateRegionRoutingPolicyInput` via:
+//
+//	GetRoutingProfilePreviousStateRegionRoutingPolicyArgs{...}
+type GetRoutingProfilePreviousStateRegionRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilePreviousStateRegionRoutingPolicyOutput() GetRoutingProfilePreviousStateRegionRoutingPolicyOutput
+	ToGetRoutingProfilePreviousStateRegionRoutingPolicyOutputWithContext(context.Context) GetRoutingProfilePreviousStateRegionRoutingPolicyOutput
+}
+
+type GetRoutingProfilePreviousStateRegionRoutingPolicyArgs struct {
+	// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	AllowedRegions pulumi.StringArrayInput `pulumi:"allowedRegions"`
+}
+
+func (GetRoutingProfilePreviousStateRegionRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilePreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilePreviousStateRegionRoutingPolicyArgs) ToGetRoutingProfilePreviousStateRegionRoutingPolicyOutput() GetRoutingProfilePreviousStateRegionRoutingPolicyOutput {
+	return i.ToGetRoutingProfilePreviousStateRegionRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilePreviousStateRegionRoutingPolicyArgs) ToGetRoutingProfilePreviousStateRegionRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateRegionRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilePreviousStateRegionRoutingPolicyOutput)
+}
+
+// GetRoutingProfilePreviousStateRegionRoutingPolicyArrayInput is an input type that accepts GetRoutingProfilePreviousStateRegionRoutingPolicyArray and GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfilePreviousStateRegionRoutingPolicyArrayInput` via:
+//
+//	GetRoutingProfilePreviousStateRegionRoutingPolicyArray{ GetRoutingProfilePreviousStateRegionRoutingPolicyArgs{...} }
+type GetRoutingProfilePreviousStateRegionRoutingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput() GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput
+	ToGetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutputWithContext(context.Context) GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput
+}
+
+type GetRoutingProfilePreviousStateRegionRoutingPolicyArray []GetRoutingProfilePreviousStateRegionRoutingPolicyInput
+
+func (GetRoutingProfilePreviousStateRegionRoutingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilePreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilePreviousStateRegionRoutingPolicyArray) ToGetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput() GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput {
+	return i.ToGetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilePreviousStateRegionRoutingPolicyArray) ToGetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput)
+}
+
+type GetRoutingProfilePreviousStateRegionRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilePreviousStateRegionRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilePreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilePreviousStateRegionRoutingPolicyOutput) ToGetRoutingProfilePreviousStateRegionRoutingPolicyOutput() GetRoutingProfilePreviousStateRegionRoutingPolicyOutput {
+	return o
+}
+
+func (o GetRoutingProfilePreviousStateRegionRoutingPolicyOutput) ToGetRoutingProfilePreviousStateRegionRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateRegionRoutingPolicyOutput {
+	return o
+}
+
+// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+func (o GetRoutingProfilePreviousStateRegionRoutingPolicyOutput) AllowedRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilePreviousStateRegionRoutingPolicy) []string { return v.AllowedRegions }).(pulumi.StringArrayOutput)
+}
+
+type GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilePreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput) ToGetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput() GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput) ToGetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput) Index(i pulumi.IntInput) GetRoutingProfilePreviousStateRegionRoutingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfilePreviousStateRegionRoutingPolicy {
+		return vs[0].([]GetRoutingProfilePreviousStateRegionRoutingPolicy)[vs[1].(int)]
+	}).(GetRoutingProfilePreviousStateRegionRoutingPolicyOutput)
+}
+
+type GetRoutingProfileRegionRoutingPolicy struct {
+	// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	AllowedRegions []string `pulumi:"allowedRegions"`
+}
+
+// GetRoutingProfileRegionRoutingPolicyInput is an input type that accepts GetRoutingProfileRegionRoutingPolicyArgs and GetRoutingProfileRegionRoutingPolicyOutput values.
+// You can construct a concrete instance of `GetRoutingProfileRegionRoutingPolicyInput` via:
+//
+//	GetRoutingProfileRegionRoutingPolicyArgs{...}
+type GetRoutingProfileRegionRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfileRegionRoutingPolicyOutput() GetRoutingProfileRegionRoutingPolicyOutput
+	ToGetRoutingProfileRegionRoutingPolicyOutputWithContext(context.Context) GetRoutingProfileRegionRoutingPolicyOutput
+}
+
+type GetRoutingProfileRegionRoutingPolicyArgs struct {
+	// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	AllowedRegions pulumi.StringArrayInput `pulumi:"allowedRegions"`
+}
+
+func (GetRoutingProfileRegionRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfileRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfileRegionRoutingPolicyArgs) ToGetRoutingProfileRegionRoutingPolicyOutput() GetRoutingProfileRegionRoutingPolicyOutput {
+	return i.ToGetRoutingProfileRegionRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfileRegionRoutingPolicyArgs) ToGetRoutingProfileRegionRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfileRegionRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfileRegionRoutingPolicyOutput)
+}
+
+// GetRoutingProfileRegionRoutingPolicyArrayInput is an input type that accepts GetRoutingProfileRegionRoutingPolicyArray and GetRoutingProfileRegionRoutingPolicyArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfileRegionRoutingPolicyArrayInput` via:
+//
+//	GetRoutingProfileRegionRoutingPolicyArray{ GetRoutingProfileRegionRoutingPolicyArgs{...} }
+type GetRoutingProfileRegionRoutingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfileRegionRoutingPolicyArrayOutput() GetRoutingProfileRegionRoutingPolicyArrayOutput
+	ToGetRoutingProfileRegionRoutingPolicyArrayOutputWithContext(context.Context) GetRoutingProfileRegionRoutingPolicyArrayOutput
+}
+
+type GetRoutingProfileRegionRoutingPolicyArray []GetRoutingProfileRegionRoutingPolicyInput
+
+func (GetRoutingProfileRegionRoutingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfileRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfileRegionRoutingPolicyArray) ToGetRoutingProfileRegionRoutingPolicyArrayOutput() GetRoutingProfileRegionRoutingPolicyArrayOutput {
+	return i.ToGetRoutingProfileRegionRoutingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfileRegionRoutingPolicyArray) ToGetRoutingProfileRegionRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfileRegionRoutingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfileRegionRoutingPolicyArrayOutput)
+}
+
+type GetRoutingProfileRegionRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfileRegionRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfileRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfileRegionRoutingPolicyOutput) ToGetRoutingProfileRegionRoutingPolicyOutput() GetRoutingProfileRegionRoutingPolicyOutput {
+	return o
+}
+
+func (o GetRoutingProfileRegionRoutingPolicyOutput) ToGetRoutingProfileRegionRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfileRegionRoutingPolicyOutput {
+	return o
+}
+
+// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+func (o GetRoutingProfileRegionRoutingPolicyOutput) AllowedRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfileRegionRoutingPolicy) []string { return v.AllowedRegions }).(pulumi.StringArrayOutput)
+}
+
+type GetRoutingProfileRegionRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfileRegionRoutingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfileRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfileRegionRoutingPolicyArrayOutput) ToGetRoutingProfileRegionRoutingPolicyArrayOutput() GetRoutingProfileRegionRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfileRegionRoutingPolicyArrayOutput) ToGetRoutingProfileRegionRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfileRegionRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfileRegionRoutingPolicyArrayOutput) Index(i pulumi.IntInput) GetRoutingProfileRegionRoutingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfileRegionRoutingPolicy {
+		return vs[0].([]GetRoutingProfileRegionRoutingPolicy)[vs[1].(int)]
+	}).(GetRoutingProfileRegionRoutingPolicyOutput)
+}
+
+type GetRoutingProfilesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRoutingProfilesFilterInput is an input type that accepts GetRoutingProfilesFilterArgs and GetRoutingProfilesFilterOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesFilterInput` via:
+//
+//	GetRoutingProfilesFilterArgs{...}
+type GetRoutingProfilesFilterInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesFilterOutput() GetRoutingProfilesFilterOutput
+	ToGetRoutingProfilesFilterOutputWithContext(context.Context) GetRoutingProfilesFilterOutput
+}
+
+type GetRoutingProfilesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRoutingProfilesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesFilter)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesFilterArgs) ToGetRoutingProfilesFilterOutput() GetRoutingProfilesFilterOutput {
+	return i.ToGetRoutingProfilesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesFilterArgs) ToGetRoutingProfilesFilterOutputWithContext(ctx context.Context) GetRoutingProfilesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesFilterOutput)
+}
+
+// GetRoutingProfilesFilterArrayInput is an input type that accepts GetRoutingProfilesFilterArray and GetRoutingProfilesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesFilterArrayInput` via:
+//
+//	GetRoutingProfilesFilterArray{ GetRoutingProfilesFilterArgs{...} }
+type GetRoutingProfilesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesFilterArrayOutput() GetRoutingProfilesFilterArrayOutput
+	ToGetRoutingProfilesFilterArrayOutputWithContext(context.Context) GetRoutingProfilesFilterArrayOutput
+}
+
+type GetRoutingProfilesFilterArray []GetRoutingProfilesFilterInput
+
+func (GetRoutingProfilesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesFilter)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesFilterArray) ToGetRoutingProfilesFilterArrayOutput() GetRoutingProfilesFilterArrayOutput {
+	return i.ToGetRoutingProfilesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesFilterArray) ToGetRoutingProfilesFilterArrayOutputWithContext(ctx context.Context) GetRoutingProfilesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesFilterArrayOutput)
+}
+
+type GetRoutingProfilesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesFilter)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesFilterOutput) ToGetRoutingProfilesFilterOutput() GetRoutingProfilesFilterOutput {
+	return o
+}
+
+func (o GetRoutingProfilesFilterOutput) ToGetRoutingProfilesFilterOutputWithContext(ctx context.Context) GetRoutingProfilesFilterOutput {
+	return o
+}
+
+func (o GetRoutingProfilesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRoutingProfilesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRoutingProfilesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRoutingProfilesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRoutingProfilesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesFilter)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesFilterArrayOutput) ToGetRoutingProfilesFilterArrayOutput() GetRoutingProfilesFilterArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesFilterArrayOutput) ToGetRoutingProfilesFilterArrayOutputWithContext(ctx context.Context) GetRoutingProfilesFilterArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesFilterArrayOutput) Index(i pulumi.IntInput) GetRoutingProfilesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfilesFilter {
+		return vs[0].([]GetRoutingProfilesFilter)[vs[1].(int)]
+	}).(GetRoutingProfilesFilterOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollection struct {
+	Items []GetRoutingProfilesRoutingProfileCollectionItem `pulumi:"items"`
+}
+
+// GetRoutingProfilesRoutingProfileCollectionInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionArgs and GetRoutingProfilesRoutingProfileCollectionOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionArgs{...}
+type GetRoutingProfilesRoutingProfileCollectionInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionOutput() GetRoutingProfilesRoutingProfileCollectionOutput
+	ToGetRoutingProfilesRoutingProfileCollectionOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionArgs struct {
+	Items GetRoutingProfilesRoutingProfileCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRoutingProfilesRoutingProfileCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollection)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionArgs) ToGetRoutingProfilesRoutingProfileCollectionOutput() GetRoutingProfilesRoutingProfileCollectionOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionArgs) ToGetRoutingProfilesRoutingProfileCollectionOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionOutput)
+}
+
+// GetRoutingProfilesRoutingProfileCollectionArrayInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionArray and GetRoutingProfilesRoutingProfileCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionArrayInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionArray{ GetRoutingProfilesRoutingProfileCollectionArgs{...} }
+type GetRoutingProfilesRoutingProfileCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionArrayOutput() GetRoutingProfilesRoutingProfileCollectionArrayOutput
+	ToGetRoutingProfilesRoutingProfileCollectionArrayOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionArrayOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionArray []GetRoutingProfilesRoutingProfileCollectionInput
+
+func (GetRoutingProfilesRoutingProfileCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollection)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionArray) ToGetRoutingProfilesRoutingProfileCollectionArrayOutput() GetRoutingProfilesRoutingProfileCollectionArrayOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionArray) ToGetRoutingProfilesRoutingProfileCollectionArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollection)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionOutput) ToGetRoutingProfilesRoutingProfileCollectionOutput() GetRoutingProfilesRoutingProfileCollectionOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionOutput) ToGetRoutingProfilesRoutingProfileCollectionOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionOutput) Items() GetRoutingProfilesRoutingProfileCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollection) []GetRoutingProfilesRoutingProfileCollectionItem {
+		return v.Items
+	}).(GetRoutingProfilesRoutingProfileCollectionItemArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollection)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionArrayOutput() GetRoutingProfilesRoutingProfileCollectionArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionArrayOutput) Index(i pulumi.IntInput) GetRoutingProfilesRoutingProfileCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfilesRoutingProfileCollection {
+		return vs[0].([]GetRoutingProfilesRoutingProfileCollection)[vs[1].(int)]
+	}).(GetRoutingProfilesRoutingProfileCollectionOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// An optional description of the routing profile.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+	Id string `pulumi:"id"`
+	// A message describing the current state of the routing profile in more detail that can provide actionable information.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+	ModelRoutingPolicies []GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy `pulumi:"modelRoutingPolicies"`
+	// A bounded snapshot of the previous state of a routing profile. This object intentionally omits `previousState` to avoid recursive nesting.
+	PreviousStates []GetRoutingProfilesRoutingProfileCollectionItemPreviousState `pulumi:"previousStates"`
+	// The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+	RegionRoutingPolicies []GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy `pulumi:"regionRoutingPolicies"`
+	// A filter to return only resources whose lifecycle state matches the given value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemArgs and GetRoutingProfilesRoutingProfileCollectionItemOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemArgs{...}
+type GetRoutingProfilesRoutingProfileCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemOutput() GetRoutingProfilesRoutingProfileCollectionItemOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// An optional description of the routing profile.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state of the routing profile in more detail that can provide actionable information.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+	ModelRoutingPolicies GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayInput `pulumi:"modelRoutingPolicies"`
+	// A bounded snapshot of the previous state of a routing profile. This object intentionally omits `previousState` to avoid recursive nesting.
+	PreviousStates GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayInput `pulumi:"previousStates"`
+	// The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+	RegionRoutingPolicies GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayInput `pulumi:"regionRoutingPolicies"`
+	// A filter to return only resources whose lifecycle state matches the given value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetRoutingProfilesRoutingProfileCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItem)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemArgs) ToGetRoutingProfilesRoutingProfileCollectionItemOutput() GetRoutingProfilesRoutingProfileCollectionItemOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemArgs) ToGetRoutingProfilesRoutingProfileCollectionItemOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemOutput)
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemArrayInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemArray and GetRoutingProfilesRoutingProfileCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemArrayInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemArray{ GetRoutingProfilesRoutingProfileCollectionItemArgs{...} }
+type GetRoutingProfilesRoutingProfileCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemArrayOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemArrayOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemArrayOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemArray []GetRoutingProfilesRoutingProfileCollectionItemInput
+
+func (GetRoutingProfilesRoutingProfileCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItem)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemArray) ToGetRoutingProfilesRoutingProfileCollectionItemArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemArrayOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemArray) ToGetRoutingProfilesRoutingProfileCollectionItemArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItem)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) ToGetRoutingProfilesRoutingProfileCollectionItemOutput() GetRoutingProfilesRoutingProfileCollectionItemOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) ToGetRoutingProfilesRoutingProfileCollectionItemOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// An optional description of the routing profile.
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state of the routing profile in more detail that can provide actionable information.
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) ModelRoutingPolicies() GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) []GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy {
+		return v.ModelRoutingPolicies
+	}).(GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput)
+}
+
+// A bounded snapshot of the previous state of a routing profile. This object intentionally omits `previousState` to avoid recursive nesting.
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) PreviousStates() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) []GetRoutingProfilesRoutingProfileCollectionItemPreviousState {
+		return v.PreviousStates
+	}).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput)
+}
+
+// The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) RegionRoutingPolicies() GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) []GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy {
+		return v.RegionRoutingPolicies
+	}).(GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput)
+}
+
+// A filter to return only resources whose lifecycle state matches the given value.
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+func (o GetRoutingProfilesRoutingProfileCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItem)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRoutingProfilesRoutingProfileCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfilesRoutingProfileCollectionItem {
+		return vs[0].([]GetRoutingProfilesRoutingProfileCollectionItem)[vs[1].(int)]
+	}).(GetRoutingProfilesRoutingProfileCollectionItemOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy struct {
+	// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	AllowedModels []string `pulumi:"allowedModels"`
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArgs and GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArgs{...}
+type GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArgs struct {
+	// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	AllowedModels pulumi.StringArrayInput `pulumi:"allowedModels"`
+}
+
+func (GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArgs) ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArgs) ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput)
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArray and GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArray{ GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArgs{...} }
+type GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArray []GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyInput
+
+func (GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArray) ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArray) ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput) ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput) ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput {
+	return o
+}
+
+// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+func (o GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput) AllowedModels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy) []string {
+		return v.AllowedModels
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput) Index(i pulumi.IntInput) GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy {
+		return vs[0].([]GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy)[vs[1].(int)]
+	}).(GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousState struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// An optional description of the routing profile.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+	Id string `pulumi:"id"`
+	// A message describing the current state of the routing profile in more detail that can provide actionable information.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+	ModelRoutingPolicies []GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy `pulumi:"modelRoutingPolicies"`
+	// The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+	RegionRoutingPolicies []GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy `pulumi:"regionRoutingPolicies"`
+	// A filter to return only resources whose lifecycle state matches the given value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemPreviousStateInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArgs and GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemPreviousStateInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArgs{...}
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// An optional description of the routing profile.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state of the routing profile in more detail that can provide actionable information.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+	ModelRoutingPolicies GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayInput `pulumi:"modelRoutingPolicies"`
+	// The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+	RegionRoutingPolicies GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayInput `pulumi:"regionRoutingPolicies"`
+	// A filter to return only resources whose lifecycle state matches the given value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousState)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArgs) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArgs) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput)
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArray and GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArray{ GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArgs{...} }
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArray []GetRoutingProfilesRoutingProfileCollectionItemPreviousStateInput
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItemPreviousState)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArray) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArray) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousState)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// An optional description of the routing profile.
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state of the routing profile in more detail that can provide actionable information.
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) ModelRoutingPolicies() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) []GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy {
+		return v.ModelRoutingPolicies
+	}).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput)
+}
+
+// The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) RegionRoutingPolicies() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) []GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy {
+		return v.RegionRoutingPolicies
+	}).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput)
+}
+
+// A filter to return only resources whose lifecycle state matches the given value.
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousState) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItemPreviousState)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput) Index(i pulumi.IntInput) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfilesRoutingProfileCollectionItemPreviousState {
+		return vs[0].([]GetRoutingProfilesRoutingProfileCollectionItemPreviousState)[vs[1].(int)]
+	}).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy struct {
+	// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	AllowedModels []string `pulumi:"allowedModels"`
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArgs and GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArgs{...}
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArgs struct {
+	// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+	AllowedModels pulumi.StringArrayInput `pulumi:"allowedModels"`
+}
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArgs) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArgs) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput)
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArray and GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArray{ GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArgs{...} }
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArray []GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyInput
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArray) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArray) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput {
+	return o
+}
+
+// The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput) AllowedModels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy) []string {
+		return v.AllowedModels
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput) Index(i pulumi.IntInput) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy {
+		return vs[0].([]GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy)[vs[1].(int)]
+	}).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy struct {
+	// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	AllowedRegions []string `pulumi:"allowedRegions"`
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArgs and GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArgs{...}
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArgs struct {
+	// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	AllowedRegions pulumi.StringArrayInput `pulumi:"allowedRegions"`
+}
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArgs) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArgs) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput)
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArray and GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArray{ GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArgs{...} }
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArray []GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyInput
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArray) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArray) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput {
+	return o
+}
+
+// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput) AllowedRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy) []string {
+		return v.AllowedRegions
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput) Index(i pulumi.IntInput) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy {
+		return vs[0].([]GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy)[vs[1].(int)]
+	}).(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy struct {
+	// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	AllowedRegions []string `pulumi:"allowedRegions"`
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArgs and GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArgs{...}
+type GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArgs struct {
+	// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+	AllowedRegions pulumi.StringArrayInput `pulumi:"allowedRegions"`
+}
+
+func (GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArgs) ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArgs) ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput)
+}
+
+// GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayInput is an input type that accepts GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArray and GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput values.
+// You can construct a concrete instance of `GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayInput` via:
+//
+//	GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArray{ GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArgs{...} }
+type GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput
+	ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutputWithContext(context.Context) GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArray []GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyInput
+
+func (GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArray) ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput {
+	return i.ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArray) ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput) ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput() GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput) ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput {
+	return o
+}
+
+// The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+func (o GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput) AllowedRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy) []string {
+		return v.AllowedRegions
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy)(nil)).Elem()
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput() GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput) ToGetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutputWithContext(ctx context.Context) GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput {
+	return o
+}
+
+func (o GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput) Index(i pulumi.IntInput) GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy {
+		return vs[0].([]GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy)[vs[1].(int)]
+	}).(GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput)
+}
+
 type GetSemanticStoreDataSource struct {
 	// Specifies the type of underlying connection.
 	ConnectionType string `pulumi:"connectionType"`
@@ -41469,6 +44604,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrInput)(nil)).Elem(), ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput)(nil)).Elem(), ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrInput)(nil)).Elem(), ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RoutingProfileModelRoutingPolicyInput)(nil)).Elem(), RoutingProfileModelRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RoutingProfileModelRoutingPolicyPtrInput)(nil)).Elem(), RoutingProfileModelRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RoutingProfilePreviousStateInput)(nil)).Elem(), RoutingProfilePreviousStateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RoutingProfilePreviousStateArrayInput)(nil)).Elem(), RoutingProfilePreviousStateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RoutingProfilePreviousStateModelRoutingPolicyInput)(nil)).Elem(), RoutingProfilePreviousStateModelRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RoutingProfilePreviousStateModelRoutingPolicyArrayInput)(nil)).Elem(), RoutingProfilePreviousStateModelRoutingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RoutingProfilePreviousStateRegionRoutingPolicyInput)(nil)).Elem(), RoutingProfilePreviousStateRegionRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RoutingProfilePreviousStateRegionRoutingPolicyArrayInput)(nil)).Elem(), RoutingProfilePreviousStateRegionRoutingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RoutingProfileRegionRoutingPolicyInput)(nil)).Elem(), RoutingProfileRegionRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RoutingProfileRegionRoutingPolicyPtrInput)(nil)).Elem(), RoutingProfileRegionRoutingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreDataSourceInput)(nil)).Elem(), SemanticStoreDataSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreDataSourcePtrInput)(nil)).Elem(), SemanticStoreDataSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreRefreshScheduleInput)(nil)).Elem(), SemanticStoreRefreshScheduleArgs{})
@@ -41823,6 +44968,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportedModelsImportedModelCollectionItemArrayInput)(nil)).Elem(), GetImportedModelsImportedModelCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportedModelsImportedModelCollectionItemDataSourceInput)(nil)).Elem(), GetImportedModelsImportedModelCollectionItemDataSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportedModelsImportedModelCollectionItemDataSourceArrayInput)(nil)).Elem(), GetImportedModelsImportedModelCollectionItemDataSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesFilterInput)(nil)).Elem(), GetModelDiscoveriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesFilterArrayInput)(nil)).Elem(), GetModelDiscoveriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionInput)(nil)).Elem(), GetModelDiscoveriesModelDiscoveryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionArrayInput)(nil)).Elem(), GetModelDiscoveriesModelDiscoveryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemInput)(nil)).Elem(), GetModelDiscoveriesModelDiscoveryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemArrayInput)(nil)).Elem(), GetModelDiscoveriesModelDiscoveryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityInput)(nil)).Elem(), GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayInput)(nil)).Elem(), GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportInput)(nil)).Elem(), GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayInput)(nil)).Elem(), GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemParameterInput)(nil)).Elem(), GetModelDiscoveriesModelDiscoveryCollectionItemParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayInput)(nil)).Elem(), GetModelDiscoveriesModelDiscoveryCollectionItemParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelFineTuneDetailInput)(nil)).Elem(), GetModelFineTuneDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelFineTuneDetailArrayInput)(nil)).Elem(), GetModelFineTuneDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelFineTuneDetailTrainingConfigInput)(nil)).Elem(), GetModelFineTuneDetailTrainingConfigArgs{})
@@ -41891,6 +45048,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfileModelRoutingPolicyInput)(nil)).Elem(), GetRoutingProfileModelRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfileModelRoutingPolicyArrayInput)(nil)).Elem(), GetRoutingProfileModelRoutingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilePreviousStateInput)(nil)).Elem(), GetRoutingProfilePreviousStateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilePreviousStateArrayInput)(nil)).Elem(), GetRoutingProfilePreviousStateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilePreviousStateModelRoutingPolicyInput)(nil)).Elem(), GetRoutingProfilePreviousStateModelRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilePreviousStateModelRoutingPolicyArrayInput)(nil)).Elem(), GetRoutingProfilePreviousStateModelRoutingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilePreviousStateRegionRoutingPolicyInput)(nil)).Elem(), GetRoutingProfilePreviousStateRegionRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilePreviousStateRegionRoutingPolicyArrayInput)(nil)).Elem(), GetRoutingProfilePreviousStateRegionRoutingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfileRegionRoutingPolicyInput)(nil)).Elem(), GetRoutingProfileRegionRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfileRegionRoutingPolicyArrayInput)(nil)).Elem(), GetRoutingProfileRegionRoutingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesFilterInput)(nil)).Elem(), GetRoutingProfilesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesFilterArrayInput)(nil)).Elem(), GetRoutingProfilesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionArrayInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemArrayInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousStateInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayInput)(nil)).Elem(), GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreDataSourceInput)(nil)).Elem(), GetSemanticStoreDataSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreDataSourceArrayInput)(nil)).Elem(), GetSemanticStoreDataSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreRefreshScheduleInput)(nil)).Elem(), GetSemanticStoreRefreshScheduleArgs{})
@@ -42069,6 +45252,16 @@ func init() {
 	pulumi.RegisterOutputType(ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput{})
 	pulumi.RegisterOutputType(ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput{})
 	pulumi.RegisterOutputType(ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput{})
+	pulumi.RegisterOutputType(RoutingProfileModelRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(RoutingProfileModelRoutingPolicyPtrOutput{})
+	pulumi.RegisterOutputType(RoutingProfilePreviousStateOutput{})
+	pulumi.RegisterOutputType(RoutingProfilePreviousStateArrayOutput{})
+	pulumi.RegisterOutputType(RoutingProfilePreviousStateModelRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(RoutingProfilePreviousStateModelRoutingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(RoutingProfilePreviousStateRegionRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(RoutingProfilePreviousStateRegionRoutingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(RoutingProfileRegionRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(RoutingProfileRegionRoutingPolicyPtrOutput{})
 	pulumi.RegisterOutputType(SemanticStoreDataSourceOutput{})
 	pulumi.RegisterOutputType(SemanticStoreDataSourcePtrOutput{})
 	pulumi.RegisterOutputType(SemanticStoreRefreshScheduleOutput{})
@@ -42423,6 +45616,18 @@ func init() {
 	pulumi.RegisterOutputType(GetImportedModelsImportedModelCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetImportedModelsImportedModelCollectionItemDataSourceOutput{})
 	pulumi.RegisterOutputType(GetImportedModelsImportedModelCollectionItemDataSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesFilterOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesModelDiscoveryCollectionOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesModelDiscoveryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesModelDiscoveryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesModelDiscoveryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesModelDiscoveryCollectionItemAvailabilityArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupportArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesModelDiscoveryCollectionItemParameterOutput{})
+	pulumi.RegisterOutputType(GetModelDiscoveriesModelDiscoveryCollectionItemParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetModelFineTuneDetailOutput{})
 	pulumi.RegisterOutputType(GetModelFineTuneDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetModelFineTuneDetailTrainingConfigOutput{})
@@ -42491,6 +45696,32 @@ func init() {
 	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput{})
 	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfileModelRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfileModelRoutingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilePreviousStateOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilePreviousStateArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilePreviousStateModelRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilePreviousStateModelRoutingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilePreviousStateRegionRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilePreviousStateRegionRoutingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfileRegionRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfileRegionRoutingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesFilterOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyOutput{})
+	pulumi.RegisterOutputType(GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetSemanticStoreDataSourceOutput{})
 	pulumi.RegisterOutputType(GetSemanticStoreDataSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetSemanticStoreRefreshScheduleOutput{})

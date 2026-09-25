@@ -941,9 +941,21 @@ func (o FunctionProvisionedConcurrencyConfigPtrOutput) Strategy() pulumi.StringP
 }
 
 type FunctionSourceDetails struct {
+	// (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+	ArchiveSourceDetails *FunctionSourceDetailsArchiveSourceDetails `pulumi:"archiveSourceDetails"`
+	// (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+	Handler *string `pulumi:"handler"`
+	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	Image *string `pulumi:"image"`
+	// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+	ImageDigest *string `pulumi:"imageDigest"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-	PbfListingId string `pulumi:"pbfListingId"`
-	// Type of the Function Source. Possible values: PBF.
+	PbfListingId *string `pulumi:"pbfListingId"`
+	// (Updatable) FunctionsRuntime configuration used to create a function.
+	RuntimeConfig *FunctionSourceDetailsRuntimeConfig `pulumi:"runtimeConfig"`
+	// The SHA256 hash of the function source code archive, base64-encoded.
+	SourceCodeSha256 *string `pulumi:"sourceCodeSha256"`
+	// Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -959,9 +971,21 @@ type FunctionSourceDetailsInput interface {
 }
 
 type FunctionSourceDetailsArgs struct {
+	// (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+	ArchiveSourceDetails FunctionSourceDetailsArchiveSourceDetailsPtrInput `pulumi:"archiveSourceDetails"`
+	// (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+	Handler pulumi.StringPtrInput `pulumi:"handler"`
+	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	Image pulumi.StringPtrInput `pulumi:"image"`
+	// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+	ImageDigest pulumi.StringPtrInput `pulumi:"imageDigest"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-	PbfListingId pulumi.StringInput `pulumi:"pbfListingId"`
-	// Type of the Function Source. Possible values: PBF.
+	PbfListingId pulumi.StringPtrInput `pulumi:"pbfListingId"`
+	// (Updatable) FunctionsRuntime configuration used to create a function.
+	RuntimeConfig FunctionSourceDetailsRuntimeConfigPtrInput `pulumi:"runtimeConfig"`
+	// The SHA256 hash of the function source code archive, base64-encoded.
+	SourceCodeSha256 pulumi.StringPtrInput `pulumi:"sourceCodeSha256"`
+	// Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -1042,12 +1066,44 @@ func (o FunctionSourceDetailsOutput) ToFunctionSourceDetailsPtrOutputWithContext
 	}).(FunctionSourceDetailsPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-func (o FunctionSourceDetailsOutput) PbfListingId() pulumi.StringOutput {
-	return o.ApplyT(func(v FunctionSourceDetails) string { return v.PbfListingId }).(pulumi.StringOutput)
+// (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+func (o FunctionSourceDetailsOutput) ArchiveSourceDetails() FunctionSourceDetailsArchiveSourceDetailsPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetails) *FunctionSourceDetailsArchiveSourceDetails {
+		return v.ArchiveSourceDetails
+	}).(FunctionSourceDetailsArchiveSourceDetailsPtrOutput)
 }
 
-// Type of the Function Source. Possible values: PBF.
+// (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+func (o FunctionSourceDetailsOutput) Handler() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetails) *string { return v.Handler }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+func (o FunctionSourceDetailsOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetails) *string { return v.Image }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+func (o FunctionSourceDetailsOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetails) *string { return v.ImageDigest }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+func (o FunctionSourceDetailsOutput) PbfListingId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetails) *string { return v.PbfListingId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) FunctionsRuntime configuration used to create a function.
+func (o FunctionSourceDetailsOutput) RuntimeConfig() FunctionSourceDetailsRuntimeConfigPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetails) *FunctionSourceDetailsRuntimeConfig { return v.RuntimeConfig }).(FunctionSourceDetailsRuntimeConfigPtrOutput)
+}
+
+// The SHA256 hash of the function source code archive, base64-encoded.
+func (o FunctionSourceDetailsOutput) SourceCodeSha256() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetails) *string { return v.SourceCodeSha256 }).(pulumi.StringPtrOutput)
+}
+
+// Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
 func (o FunctionSourceDetailsOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v FunctionSourceDetails) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -1076,23 +1132,490 @@ func (o FunctionSourceDetailsPtrOutput) Elem() FunctionSourceDetailsOutput {
 	}).(FunctionSourceDetailsOutput)
 }
 
+// (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+func (o FunctionSourceDetailsPtrOutput) ArchiveSourceDetails() FunctionSourceDetailsArchiveSourceDetailsPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetails) *FunctionSourceDetailsArchiveSourceDetails {
+		if v == nil {
+			return nil
+		}
+		return v.ArchiveSourceDetails
+	}).(FunctionSourceDetailsArchiveSourceDetailsPtrOutput)
+}
+
+// (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+func (o FunctionSourceDetailsPtrOutput) Handler() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Handler
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+func (o FunctionSourceDetailsPtrOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Image
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+func (o FunctionSourceDetailsPtrOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageDigest
+	}).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
 func (o FunctionSourceDetailsPtrOutput) PbfListingId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FunctionSourceDetails) *string {
 		if v == nil {
 			return nil
 		}
-		return &v.PbfListingId
+		return v.PbfListingId
 	}).(pulumi.StringPtrOutput)
 }
 
-// Type of the Function Source. Possible values: PBF.
+// (Updatable) FunctionsRuntime configuration used to create a function.
+func (o FunctionSourceDetailsPtrOutput) RuntimeConfig() FunctionSourceDetailsRuntimeConfigPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetails) *FunctionSourceDetailsRuntimeConfig {
+		if v == nil {
+			return nil
+		}
+		return v.RuntimeConfig
+	}).(FunctionSourceDetailsRuntimeConfigPtrOutput)
+}
+
+// The SHA256 hash of the function source code archive, base64-encoded.
+func (o FunctionSourceDetailsPtrOutput) SourceCodeSha256() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceCodeSha256
+	}).(pulumi.StringPtrOutput)
+}
+
+// Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
 func (o FunctionSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FunctionSourceDetails) *string {
 		if v == nil {
 			return nil
 		}
 		return &v.SourceType
+	}).(pulumi.StringPtrOutput)
+}
+
+type FunctionSourceDetailsArchiveSourceDetails struct {
+	// (Updatable) The base64-encoded archive file of the function code. The archive file must contain all the files for the function. Please refer to functions documentation for maximum allowed size and supported archive formats.
+	ArchiveFile *string `pulumi:"archiveFile"`
+	// (Updatable) Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+	ArchiveSourceType string `pulumi:"archiveSourceType"`
+	// (Updatable) The name of the Object Storage bucket.
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) The Object Storage namespace.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) The name of the Object Storage object.
+	Object *string `pulumi:"object"`
+	// (Updatable) VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+	ObjectVersionId *string `pulumi:"objectVersionId"`
+}
+
+// FunctionSourceDetailsArchiveSourceDetailsInput is an input type that accepts FunctionSourceDetailsArchiveSourceDetailsArgs and FunctionSourceDetailsArchiveSourceDetailsOutput values.
+// You can construct a concrete instance of `FunctionSourceDetailsArchiveSourceDetailsInput` via:
+//
+//	FunctionSourceDetailsArchiveSourceDetailsArgs{...}
+type FunctionSourceDetailsArchiveSourceDetailsInput interface {
+	pulumi.Input
+
+	ToFunctionSourceDetailsArchiveSourceDetailsOutput() FunctionSourceDetailsArchiveSourceDetailsOutput
+	ToFunctionSourceDetailsArchiveSourceDetailsOutputWithContext(context.Context) FunctionSourceDetailsArchiveSourceDetailsOutput
+}
+
+type FunctionSourceDetailsArchiveSourceDetailsArgs struct {
+	// (Updatable) The base64-encoded archive file of the function code. The archive file must contain all the files for the function. Please refer to functions documentation for maximum allowed size and supported archive formats.
+	ArchiveFile pulumi.StringPtrInput `pulumi:"archiveFile"`
+	// (Updatable) Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+	ArchiveSourceType pulumi.StringInput `pulumi:"archiveSourceType"`
+	// (Updatable) The name of the Object Storage bucket.
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) The Object Storage namespace.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) The name of the Object Storage object.
+	Object pulumi.StringPtrInput `pulumi:"object"`
+	// (Updatable) VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+	ObjectVersionId pulumi.StringPtrInput `pulumi:"objectVersionId"`
+}
+
+func (FunctionSourceDetailsArchiveSourceDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionSourceDetailsArchiveSourceDetails)(nil)).Elem()
+}
+
+func (i FunctionSourceDetailsArchiveSourceDetailsArgs) ToFunctionSourceDetailsArchiveSourceDetailsOutput() FunctionSourceDetailsArchiveSourceDetailsOutput {
+	return i.ToFunctionSourceDetailsArchiveSourceDetailsOutputWithContext(context.Background())
+}
+
+func (i FunctionSourceDetailsArchiveSourceDetailsArgs) ToFunctionSourceDetailsArchiveSourceDetailsOutputWithContext(ctx context.Context) FunctionSourceDetailsArchiveSourceDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceDetailsArchiveSourceDetailsOutput)
+}
+
+func (i FunctionSourceDetailsArchiveSourceDetailsArgs) ToFunctionSourceDetailsArchiveSourceDetailsPtrOutput() FunctionSourceDetailsArchiveSourceDetailsPtrOutput {
+	return i.ToFunctionSourceDetailsArchiveSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionSourceDetailsArchiveSourceDetailsArgs) ToFunctionSourceDetailsArchiveSourceDetailsPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsArchiveSourceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceDetailsArchiveSourceDetailsOutput).ToFunctionSourceDetailsArchiveSourceDetailsPtrOutputWithContext(ctx)
+}
+
+// FunctionSourceDetailsArchiveSourceDetailsPtrInput is an input type that accepts FunctionSourceDetailsArchiveSourceDetailsArgs, FunctionSourceDetailsArchiveSourceDetailsPtr and FunctionSourceDetailsArchiveSourceDetailsPtrOutput values.
+// You can construct a concrete instance of `FunctionSourceDetailsArchiveSourceDetailsPtrInput` via:
+//
+//	        FunctionSourceDetailsArchiveSourceDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionSourceDetailsArchiveSourceDetailsPtrInput interface {
+	pulumi.Input
+
+	ToFunctionSourceDetailsArchiveSourceDetailsPtrOutput() FunctionSourceDetailsArchiveSourceDetailsPtrOutput
+	ToFunctionSourceDetailsArchiveSourceDetailsPtrOutputWithContext(context.Context) FunctionSourceDetailsArchiveSourceDetailsPtrOutput
+}
+
+type functionSourceDetailsArchiveSourceDetailsPtrType FunctionSourceDetailsArchiveSourceDetailsArgs
+
+func FunctionSourceDetailsArchiveSourceDetailsPtr(v *FunctionSourceDetailsArchiveSourceDetailsArgs) FunctionSourceDetailsArchiveSourceDetailsPtrInput {
+	return (*functionSourceDetailsArchiveSourceDetailsPtrType)(v)
+}
+
+func (*functionSourceDetailsArchiveSourceDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionSourceDetailsArchiveSourceDetails)(nil)).Elem()
+}
+
+func (i *functionSourceDetailsArchiveSourceDetailsPtrType) ToFunctionSourceDetailsArchiveSourceDetailsPtrOutput() FunctionSourceDetailsArchiveSourceDetailsPtrOutput {
+	return i.ToFunctionSourceDetailsArchiveSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *functionSourceDetailsArchiveSourceDetailsPtrType) ToFunctionSourceDetailsArchiveSourceDetailsPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsArchiveSourceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceDetailsArchiveSourceDetailsPtrOutput)
+}
+
+type FunctionSourceDetailsArchiveSourceDetailsOutput struct{ *pulumi.OutputState }
+
+func (FunctionSourceDetailsArchiveSourceDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionSourceDetailsArchiveSourceDetails)(nil)).Elem()
+}
+
+func (o FunctionSourceDetailsArchiveSourceDetailsOutput) ToFunctionSourceDetailsArchiveSourceDetailsOutput() FunctionSourceDetailsArchiveSourceDetailsOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsArchiveSourceDetailsOutput) ToFunctionSourceDetailsArchiveSourceDetailsOutputWithContext(ctx context.Context) FunctionSourceDetailsArchiveSourceDetailsOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsArchiveSourceDetailsOutput) ToFunctionSourceDetailsArchiveSourceDetailsPtrOutput() FunctionSourceDetailsArchiveSourceDetailsPtrOutput {
+	return o.ToFunctionSourceDetailsArchiveSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionSourceDetailsArchiveSourceDetailsOutput) ToFunctionSourceDetailsArchiveSourceDetailsPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsArchiveSourceDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionSourceDetailsArchiveSourceDetails) *FunctionSourceDetailsArchiveSourceDetails {
+		return &v
+	}).(FunctionSourceDetailsArchiveSourceDetailsPtrOutput)
+}
+
+// (Updatable) The base64-encoded archive file of the function code. The archive file must contain all the files for the function. Please refer to functions documentation for maximum allowed size and supported archive formats.
+func (o FunctionSourceDetailsArchiveSourceDetailsOutput) ArchiveFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetailsArchiveSourceDetails) *string { return v.ArchiveFile }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+func (o FunctionSourceDetailsArchiveSourceDetailsOutput) ArchiveSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v FunctionSourceDetailsArchiveSourceDetails) string { return v.ArchiveSourceType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The name of the Object Storage bucket.
+func (o FunctionSourceDetailsArchiveSourceDetailsOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetailsArchiveSourceDetails) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Object Storage namespace.
+func (o FunctionSourceDetailsArchiveSourceDetailsOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetailsArchiveSourceDetails) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the Object Storage object.
+func (o FunctionSourceDetailsArchiveSourceDetailsOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetailsArchiveSourceDetails) *string { return v.Object }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+func (o FunctionSourceDetailsArchiveSourceDetailsOutput) ObjectVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetailsArchiveSourceDetails) *string { return v.ObjectVersionId }).(pulumi.StringPtrOutput)
+}
+
+type FunctionSourceDetailsArchiveSourceDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionSourceDetailsArchiveSourceDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionSourceDetailsArchiveSourceDetails)(nil)).Elem()
+}
+
+func (o FunctionSourceDetailsArchiveSourceDetailsPtrOutput) ToFunctionSourceDetailsArchiveSourceDetailsPtrOutput() FunctionSourceDetailsArchiveSourceDetailsPtrOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsArchiveSourceDetailsPtrOutput) ToFunctionSourceDetailsArchiveSourceDetailsPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsArchiveSourceDetailsPtrOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsArchiveSourceDetailsPtrOutput) Elem() FunctionSourceDetailsArchiveSourceDetailsOutput {
+	return o.ApplyT(func(v *FunctionSourceDetailsArchiveSourceDetails) FunctionSourceDetailsArchiveSourceDetails {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionSourceDetailsArchiveSourceDetails
+		return ret
+	}).(FunctionSourceDetailsArchiveSourceDetailsOutput)
+}
+
+// (Updatable) The base64-encoded archive file of the function code. The archive file must contain all the files for the function. Please refer to functions documentation for maximum allowed size and supported archive formats.
+func (o FunctionSourceDetailsArchiveSourceDetailsPtrOutput) ArchiveFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetailsArchiveSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ArchiveFile
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+func (o FunctionSourceDetailsArchiveSourceDetailsPtrOutput) ArchiveSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetailsArchiveSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ArchiveSourceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the Object Storage bucket.
+func (o FunctionSourceDetailsArchiveSourceDetailsPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetailsArchiveSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Object Storage namespace.
+func (o FunctionSourceDetailsArchiveSourceDetailsPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetailsArchiveSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the Object Storage object.
+func (o FunctionSourceDetailsArchiveSourceDetailsPtrOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetailsArchiveSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Object
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+func (o FunctionSourceDetailsArchiveSourceDetailsPtrOutput) ObjectVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetailsArchiveSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ObjectVersionId
+	}).(pulumi.StringPtrOutput)
+}
+
+type FunctionSourceDetailsRuntimeConfig struct {
+	// (Updatable) The name of the FunctionsRuntime this function is to be associated with.
+	FunctionsRuntimeName string `pulumi:"functionsRuntimeName"`
+	// (Updatable) The OCID of the FunctionsRuntimeVersion to use for the Function in manual mode.
+	FunctionsRuntimeVersionId *string `pulumi:"functionsRuntimeVersionId"`
+	// (Updatable) Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+	RuntimeConfigType string `pulumi:"runtimeConfigType"`
+}
+
+// FunctionSourceDetailsRuntimeConfigInput is an input type that accepts FunctionSourceDetailsRuntimeConfigArgs and FunctionSourceDetailsRuntimeConfigOutput values.
+// You can construct a concrete instance of `FunctionSourceDetailsRuntimeConfigInput` via:
+//
+//	FunctionSourceDetailsRuntimeConfigArgs{...}
+type FunctionSourceDetailsRuntimeConfigInput interface {
+	pulumi.Input
+
+	ToFunctionSourceDetailsRuntimeConfigOutput() FunctionSourceDetailsRuntimeConfigOutput
+	ToFunctionSourceDetailsRuntimeConfigOutputWithContext(context.Context) FunctionSourceDetailsRuntimeConfigOutput
+}
+
+type FunctionSourceDetailsRuntimeConfigArgs struct {
+	// (Updatable) The name of the FunctionsRuntime this function is to be associated with.
+	FunctionsRuntimeName pulumi.StringInput `pulumi:"functionsRuntimeName"`
+	// (Updatable) The OCID of the FunctionsRuntimeVersion to use for the Function in manual mode.
+	FunctionsRuntimeVersionId pulumi.StringPtrInput `pulumi:"functionsRuntimeVersionId"`
+	// (Updatable) Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+	RuntimeConfigType pulumi.StringInput `pulumi:"runtimeConfigType"`
+}
+
+func (FunctionSourceDetailsRuntimeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionSourceDetailsRuntimeConfig)(nil)).Elem()
+}
+
+func (i FunctionSourceDetailsRuntimeConfigArgs) ToFunctionSourceDetailsRuntimeConfigOutput() FunctionSourceDetailsRuntimeConfigOutput {
+	return i.ToFunctionSourceDetailsRuntimeConfigOutputWithContext(context.Background())
+}
+
+func (i FunctionSourceDetailsRuntimeConfigArgs) ToFunctionSourceDetailsRuntimeConfigOutputWithContext(ctx context.Context) FunctionSourceDetailsRuntimeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceDetailsRuntimeConfigOutput)
+}
+
+func (i FunctionSourceDetailsRuntimeConfigArgs) ToFunctionSourceDetailsRuntimeConfigPtrOutput() FunctionSourceDetailsRuntimeConfigPtrOutput {
+	return i.ToFunctionSourceDetailsRuntimeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionSourceDetailsRuntimeConfigArgs) ToFunctionSourceDetailsRuntimeConfigPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsRuntimeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceDetailsRuntimeConfigOutput).ToFunctionSourceDetailsRuntimeConfigPtrOutputWithContext(ctx)
+}
+
+// FunctionSourceDetailsRuntimeConfigPtrInput is an input type that accepts FunctionSourceDetailsRuntimeConfigArgs, FunctionSourceDetailsRuntimeConfigPtr and FunctionSourceDetailsRuntimeConfigPtrOutput values.
+// You can construct a concrete instance of `FunctionSourceDetailsRuntimeConfigPtrInput` via:
+//
+//	        FunctionSourceDetailsRuntimeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionSourceDetailsRuntimeConfigPtrInput interface {
+	pulumi.Input
+
+	ToFunctionSourceDetailsRuntimeConfigPtrOutput() FunctionSourceDetailsRuntimeConfigPtrOutput
+	ToFunctionSourceDetailsRuntimeConfigPtrOutputWithContext(context.Context) FunctionSourceDetailsRuntimeConfigPtrOutput
+}
+
+type functionSourceDetailsRuntimeConfigPtrType FunctionSourceDetailsRuntimeConfigArgs
+
+func FunctionSourceDetailsRuntimeConfigPtr(v *FunctionSourceDetailsRuntimeConfigArgs) FunctionSourceDetailsRuntimeConfigPtrInput {
+	return (*functionSourceDetailsRuntimeConfigPtrType)(v)
+}
+
+func (*functionSourceDetailsRuntimeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionSourceDetailsRuntimeConfig)(nil)).Elem()
+}
+
+func (i *functionSourceDetailsRuntimeConfigPtrType) ToFunctionSourceDetailsRuntimeConfigPtrOutput() FunctionSourceDetailsRuntimeConfigPtrOutput {
+	return i.ToFunctionSourceDetailsRuntimeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *functionSourceDetailsRuntimeConfigPtrType) ToFunctionSourceDetailsRuntimeConfigPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsRuntimeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceDetailsRuntimeConfigPtrOutput)
+}
+
+type FunctionSourceDetailsRuntimeConfigOutput struct{ *pulumi.OutputState }
+
+func (FunctionSourceDetailsRuntimeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionSourceDetailsRuntimeConfig)(nil)).Elem()
+}
+
+func (o FunctionSourceDetailsRuntimeConfigOutput) ToFunctionSourceDetailsRuntimeConfigOutput() FunctionSourceDetailsRuntimeConfigOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsRuntimeConfigOutput) ToFunctionSourceDetailsRuntimeConfigOutputWithContext(ctx context.Context) FunctionSourceDetailsRuntimeConfigOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsRuntimeConfigOutput) ToFunctionSourceDetailsRuntimeConfigPtrOutput() FunctionSourceDetailsRuntimeConfigPtrOutput {
+	return o.ToFunctionSourceDetailsRuntimeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionSourceDetailsRuntimeConfigOutput) ToFunctionSourceDetailsRuntimeConfigPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsRuntimeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionSourceDetailsRuntimeConfig) *FunctionSourceDetailsRuntimeConfig {
+		return &v
+	}).(FunctionSourceDetailsRuntimeConfigPtrOutput)
+}
+
+// (Updatable) The name of the FunctionsRuntime this function is to be associated with.
+func (o FunctionSourceDetailsRuntimeConfigOutput) FunctionsRuntimeName() pulumi.StringOutput {
+	return o.ApplyT(func(v FunctionSourceDetailsRuntimeConfig) string { return v.FunctionsRuntimeName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the FunctionsRuntimeVersion to use for the Function in manual mode.
+func (o FunctionSourceDetailsRuntimeConfigOutput) FunctionsRuntimeVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceDetailsRuntimeConfig) *string { return v.FunctionsRuntimeVersionId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+func (o FunctionSourceDetailsRuntimeConfigOutput) RuntimeConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v FunctionSourceDetailsRuntimeConfig) string { return v.RuntimeConfigType }).(pulumi.StringOutput)
+}
+
+type FunctionSourceDetailsRuntimeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionSourceDetailsRuntimeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionSourceDetailsRuntimeConfig)(nil)).Elem()
+}
+
+func (o FunctionSourceDetailsRuntimeConfigPtrOutput) ToFunctionSourceDetailsRuntimeConfigPtrOutput() FunctionSourceDetailsRuntimeConfigPtrOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsRuntimeConfigPtrOutput) ToFunctionSourceDetailsRuntimeConfigPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsRuntimeConfigPtrOutput {
+	return o
+}
+
+func (o FunctionSourceDetailsRuntimeConfigPtrOutput) Elem() FunctionSourceDetailsRuntimeConfigOutput {
+	return o.ApplyT(func(v *FunctionSourceDetailsRuntimeConfig) FunctionSourceDetailsRuntimeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionSourceDetailsRuntimeConfig
+		return ret
+	}).(FunctionSourceDetailsRuntimeConfigOutput)
+}
+
+// (Updatable) The name of the FunctionsRuntime this function is to be associated with.
+func (o FunctionSourceDetailsRuntimeConfigPtrOutput) FunctionsRuntimeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetailsRuntimeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.FunctionsRuntimeName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the FunctionsRuntimeVersion to use for the Function in manual mode.
+func (o FunctionSourceDetailsRuntimeConfigPtrOutput) FunctionsRuntimeVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetailsRuntimeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FunctionsRuntimeVersionId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+func (o FunctionSourceDetailsRuntimeConfigPtrOutput) RuntimeConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceDetailsRuntimeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.RuntimeConfigType
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2863,9 +3386,21 @@ func (o GetFunctionProvisionedConcurrencyConfigArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetFunctionSourceDetail struct {
+	// The details for the Archive source of the Function.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+	ArchiveSourceDetails []GetFunctionSourceDetailArchiveSourceDetail `pulumi:"archiveSourceDetails"`
+	// The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+	Handler string `pulumi:"handler"`
+	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	Image string `pulumi:"image"`
+	// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+	ImageDigest string `pulumi:"imageDigest"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
 	PbfListingId string `pulumi:"pbfListingId"`
-	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	// FunctionsRuntime configuration for a function.
+	RuntimeConfigs []GetFunctionSourceDetailRuntimeConfig `pulumi:"runtimeConfigs"`
+	// The SHA256 hash of the function source code archive, base64-encoded.
+	SourceCodeSha256 string `pulumi:"sourceCodeSha256"`
+	// Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -2881,9 +3416,21 @@ type GetFunctionSourceDetailInput interface {
 }
 
 type GetFunctionSourceDetailArgs struct {
+	// The details for the Archive source of the Function.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+	ArchiveSourceDetails GetFunctionSourceDetailArchiveSourceDetailArrayInput `pulumi:"archiveSourceDetails"`
+	// The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+	Handler pulumi.StringInput `pulumi:"handler"`
+	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	Image pulumi.StringInput `pulumi:"image"`
+	// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
 	PbfListingId pulumi.StringInput `pulumi:"pbfListingId"`
-	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	// FunctionsRuntime configuration for a function.
+	RuntimeConfigs GetFunctionSourceDetailRuntimeConfigArrayInput `pulumi:"runtimeConfigs"`
+	// The SHA256 hash of the function source code archive, base64-encoded.
+	SourceCodeSha256 pulumi.StringInput `pulumi:"sourceCodeSha256"`
+	// Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -2938,12 +3485,44 @@ func (o GetFunctionSourceDetailOutput) ToGetFunctionSourceDetailOutputWithContex
 	return o
 }
 
+// The details for the Archive source of the Function.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+func (o GetFunctionSourceDetailOutput) ArchiveSourceDetails() GetFunctionSourceDetailArchiveSourceDetailArrayOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetail) []GetFunctionSourceDetailArchiveSourceDetail {
+		return v.ArchiveSourceDetails
+	}).(GetFunctionSourceDetailArchiveSourceDetailArrayOutput)
+}
+
+// The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+func (o GetFunctionSourceDetailOutput) Handler() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetail) string { return v.Handler }).(pulumi.StringOutput)
+}
+
+// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+func (o GetFunctionSourceDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetail) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+func (o GetFunctionSourceDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetail) string { return v.ImageDigest }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
 func (o GetFunctionSourceDetailOutput) PbfListingId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFunctionSourceDetail) string { return v.PbfListingId }).(pulumi.StringOutput)
 }
 
-// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+// FunctionsRuntime configuration for a function.
+func (o GetFunctionSourceDetailOutput) RuntimeConfigs() GetFunctionSourceDetailRuntimeConfigArrayOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetail) []GetFunctionSourceDetailRuntimeConfig { return v.RuntimeConfigs }).(GetFunctionSourceDetailRuntimeConfigArrayOutput)
+}
+
+// The SHA256 hash of the function source code archive, base64-encoded.
+func (o GetFunctionSourceDetailOutput) SourceCodeSha256() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetail) string { return v.SourceCodeSha256 }).(pulumi.StringOutput)
+}
+
+// Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
 func (o GetFunctionSourceDetailOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFunctionSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -2966,6 +3545,260 @@ func (o GetFunctionSourceDetailArrayOutput) Index(i pulumi.IntInput) GetFunction
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionSourceDetail {
 		return vs[0].([]GetFunctionSourceDetail)[vs[1].(int)]
 	}).(GetFunctionSourceDetailOutput)
+}
+
+type GetFunctionSourceDetailArchiveSourceDetail struct {
+	ArchiveFile string `pulumi:"archiveFile"`
+	// Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+	ArchiveSourceType string `pulumi:"archiveSourceType"`
+	// The name of the Object Storage bucket.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace.
+	Namespace string `pulumi:"namespace"`
+	// The name of the Object Storage object.
+	Object string `pulumi:"object"`
+	// VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+	ObjectVersionId string `pulumi:"objectVersionId"`
+}
+
+// GetFunctionSourceDetailArchiveSourceDetailInput is an input type that accepts GetFunctionSourceDetailArchiveSourceDetailArgs and GetFunctionSourceDetailArchiveSourceDetailOutput values.
+// You can construct a concrete instance of `GetFunctionSourceDetailArchiveSourceDetailInput` via:
+//
+//	GetFunctionSourceDetailArchiveSourceDetailArgs{...}
+type GetFunctionSourceDetailArchiveSourceDetailInput interface {
+	pulumi.Input
+
+	ToGetFunctionSourceDetailArchiveSourceDetailOutput() GetFunctionSourceDetailArchiveSourceDetailOutput
+	ToGetFunctionSourceDetailArchiveSourceDetailOutputWithContext(context.Context) GetFunctionSourceDetailArchiveSourceDetailOutput
+}
+
+type GetFunctionSourceDetailArchiveSourceDetailArgs struct {
+	ArchiveFile pulumi.StringInput `pulumi:"archiveFile"`
+	// Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+	ArchiveSourceType pulumi.StringInput `pulumi:"archiveSourceType"`
+	// The name of the Object Storage bucket.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The name of the Object Storage object.
+	Object pulumi.StringInput `pulumi:"object"`
+	// VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+	ObjectVersionId pulumi.StringInput `pulumi:"objectVersionId"`
+}
+
+func (GetFunctionSourceDetailArchiveSourceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionSourceDetailArchiveSourceDetail)(nil)).Elem()
+}
+
+func (i GetFunctionSourceDetailArchiveSourceDetailArgs) ToGetFunctionSourceDetailArchiveSourceDetailOutput() GetFunctionSourceDetailArchiveSourceDetailOutput {
+	return i.ToGetFunctionSourceDetailArchiveSourceDetailOutputWithContext(context.Background())
+}
+
+func (i GetFunctionSourceDetailArchiveSourceDetailArgs) ToGetFunctionSourceDetailArchiveSourceDetailOutputWithContext(ctx context.Context) GetFunctionSourceDetailArchiveSourceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionSourceDetailArchiveSourceDetailOutput)
+}
+
+// GetFunctionSourceDetailArchiveSourceDetailArrayInput is an input type that accepts GetFunctionSourceDetailArchiveSourceDetailArray and GetFunctionSourceDetailArchiveSourceDetailArrayOutput values.
+// You can construct a concrete instance of `GetFunctionSourceDetailArchiveSourceDetailArrayInput` via:
+//
+//	GetFunctionSourceDetailArchiveSourceDetailArray{ GetFunctionSourceDetailArchiveSourceDetailArgs{...} }
+type GetFunctionSourceDetailArchiveSourceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionSourceDetailArchiveSourceDetailArrayOutput() GetFunctionSourceDetailArchiveSourceDetailArrayOutput
+	ToGetFunctionSourceDetailArchiveSourceDetailArrayOutputWithContext(context.Context) GetFunctionSourceDetailArchiveSourceDetailArrayOutput
+}
+
+type GetFunctionSourceDetailArchiveSourceDetailArray []GetFunctionSourceDetailArchiveSourceDetailInput
+
+func (GetFunctionSourceDetailArchiveSourceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionSourceDetailArchiveSourceDetail)(nil)).Elem()
+}
+
+func (i GetFunctionSourceDetailArchiveSourceDetailArray) ToGetFunctionSourceDetailArchiveSourceDetailArrayOutput() GetFunctionSourceDetailArchiveSourceDetailArrayOutput {
+	return i.ToGetFunctionSourceDetailArchiveSourceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionSourceDetailArchiveSourceDetailArray) ToGetFunctionSourceDetailArchiveSourceDetailArrayOutputWithContext(ctx context.Context) GetFunctionSourceDetailArchiveSourceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionSourceDetailArchiveSourceDetailArrayOutput)
+}
+
+type GetFunctionSourceDetailArchiveSourceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionSourceDetailArchiveSourceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionSourceDetailArchiveSourceDetail)(nil)).Elem()
+}
+
+func (o GetFunctionSourceDetailArchiveSourceDetailOutput) ToGetFunctionSourceDetailArchiveSourceDetailOutput() GetFunctionSourceDetailArchiveSourceDetailOutput {
+	return o
+}
+
+func (o GetFunctionSourceDetailArchiveSourceDetailOutput) ToGetFunctionSourceDetailArchiveSourceDetailOutputWithContext(ctx context.Context) GetFunctionSourceDetailArchiveSourceDetailOutput {
+	return o
+}
+
+func (o GetFunctionSourceDetailArchiveSourceDetailOutput) ArchiveFile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetailArchiveSourceDetail) string { return v.ArchiveFile }).(pulumi.StringOutput)
+}
+
+// Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+func (o GetFunctionSourceDetailArchiveSourceDetailOutput) ArchiveSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetailArchiveSourceDetail) string { return v.ArchiveSourceType }).(pulumi.StringOutput)
+}
+
+// The name of the Object Storage bucket.
+func (o GetFunctionSourceDetailArchiveSourceDetailOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetailArchiveSourceDetail) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace.
+func (o GetFunctionSourceDetailArchiveSourceDetailOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetailArchiveSourceDetail) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The name of the Object Storage object.
+func (o GetFunctionSourceDetailArchiveSourceDetailOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetailArchiveSourceDetail) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+func (o GetFunctionSourceDetailArchiveSourceDetailOutput) ObjectVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetailArchiveSourceDetail) string { return v.ObjectVersionId }).(pulumi.StringOutput)
+}
+
+type GetFunctionSourceDetailArchiveSourceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionSourceDetailArchiveSourceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionSourceDetailArchiveSourceDetail)(nil)).Elem()
+}
+
+func (o GetFunctionSourceDetailArchiveSourceDetailArrayOutput) ToGetFunctionSourceDetailArchiveSourceDetailArrayOutput() GetFunctionSourceDetailArchiveSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetFunctionSourceDetailArchiveSourceDetailArrayOutput) ToGetFunctionSourceDetailArchiveSourceDetailArrayOutputWithContext(ctx context.Context) GetFunctionSourceDetailArchiveSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetFunctionSourceDetailArchiveSourceDetailArrayOutput) Index(i pulumi.IntInput) GetFunctionSourceDetailArchiveSourceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionSourceDetailArchiveSourceDetail {
+		return vs[0].([]GetFunctionSourceDetailArchiveSourceDetail)[vs[1].(int)]
+	}).(GetFunctionSourceDetailArchiveSourceDetailOutput)
+}
+
+type GetFunctionSourceDetailRuntimeConfig struct {
+	// The name of the FunctionsRuntime this function is to be associated with.
+	FunctionsRuntimeName string `pulumi:"functionsRuntimeName"`
+	// The OCID of the FunctionsRuntimeVersion that is currently in use for the function.
+	FunctionsRuntimeVersionId string `pulumi:"functionsRuntimeVersionId"`
+	// Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+	RuntimeConfigType string `pulumi:"runtimeConfigType"`
+}
+
+// GetFunctionSourceDetailRuntimeConfigInput is an input type that accepts GetFunctionSourceDetailRuntimeConfigArgs and GetFunctionSourceDetailRuntimeConfigOutput values.
+// You can construct a concrete instance of `GetFunctionSourceDetailRuntimeConfigInput` via:
+//
+//	GetFunctionSourceDetailRuntimeConfigArgs{...}
+type GetFunctionSourceDetailRuntimeConfigInput interface {
+	pulumi.Input
+
+	ToGetFunctionSourceDetailRuntimeConfigOutput() GetFunctionSourceDetailRuntimeConfigOutput
+	ToGetFunctionSourceDetailRuntimeConfigOutputWithContext(context.Context) GetFunctionSourceDetailRuntimeConfigOutput
+}
+
+type GetFunctionSourceDetailRuntimeConfigArgs struct {
+	// The name of the FunctionsRuntime this function is to be associated with.
+	FunctionsRuntimeName pulumi.StringInput `pulumi:"functionsRuntimeName"`
+	// The OCID of the FunctionsRuntimeVersion that is currently in use for the function.
+	FunctionsRuntimeVersionId pulumi.StringInput `pulumi:"functionsRuntimeVersionId"`
+	// Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+	RuntimeConfigType pulumi.StringInput `pulumi:"runtimeConfigType"`
+}
+
+func (GetFunctionSourceDetailRuntimeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionSourceDetailRuntimeConfig)(nil)).Elem()
+}
+
+func (i GetFunctionSourceDetailRuntimeConfigArgs) ToGetFunctionSourceDetailRuntimeConfigOutput() GetFunctionSourceDetailRuntimeConfigOutput {
+	return i.ToGetFunctionSourceDetailRuntimeConfigOutputWithContext(context.Background())
+}
+
+func (i GetFunctionSourceDetailRuntimeConfigArgs) ToGetFunctionSourceDetailRuntimeConfigOutputWithContext(ctx context.Context) GetFunctionSourceDetailRuntimeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionSourceDetailRuntimeConfigOutput)
+}
+
+// GetFunctionSourceDetailRuntimeConfigArrayInput is an input type that accepts GetFunctionSourceDetailRuntimeConfigArray and GetFunctionSourceDetailRuntimeConfigArrayOutput values.
+// You can construct a concrete instance of `GetFunctionSourceDetailRuntimeConfigArrayInput` via:
+//
+//	GetFunctionSourceDetailRuntimeConfigArray{ GetFunctionSourceDetailRuntimeConfigArgs{...} }
+type GetFunctionSourceDetailRuntimeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionSourceDetailRuntimeConfigArrayOutput() GetFunctionSourceDetailRuntimeConfigArrayOutput
+	ToGetFunctionSourceDetailRuntimeConfigArrayOutputWithContext(context.Context) GetFunctionSourceDetailRuntimeConfigArrayOutput
+}
+
+type GetFunctionSourceDetailRuntimeConfigArray []GetFunctionSourceDetailRuntimeConfigInput
+
+func (GetFunctionSourceDetailRuntimeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionSourceDetailRuntimeConfig)(nil)).Elem()
+}
+
+func (i GetFunctionSourceDetailRuntimeConfigArray) ToGetFunctionSourceDetailRuntimeConfigArrayOutput() GetFunctionSourceDetailRuntimeConfigArrayOutput {
+	return i.ToGetFunctionSourceDetailRuntimeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionSourceDetailRuntimeConfigArray) ToGetFunctionSourceDetailRuntimeConfigArrayOutputWithContext(ctx context.Context) GetFunctionSourceDetailRuntimeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionSourceDetailRuntimeConfigArrayOutput)
+}
+
+type GetFunctionSourceDetailRuntimeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionSourceDetailRuntimeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionSourceDetailRuntimeConfig)(nil)).Elem()
+}
+
+func (o GetFunctionSourceDetailRuntimeConfigOutput) ToGetFunctionSourceDetailRuntimeConfigOutput() GetFunctionSourceDetailRuntimeConfigOutput {
+	return o
+}
+
+func (o GetFunctionSourceDetailRuntimeConfigOutput) ToGetFunctionSourceDetailRuntimeConfigOutputWithContext(ctx context.Context) GetFunctionSourceDetailRuntimeConfigOutput {
+	return o
+}
+
+// The name of the FunctionsRuntime this function is to be associated with.
+func (o GetFunctionSourceDetailRuntimeConfigOutput) FunctionsRuntimeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetailRuntimeConfig) string { return v.FunctionsRuntimeName }).(pulumi.StringOutput)
+}
+
+// The OCID of the FunctionsRuntimeVersion that is currently in use for the function.
+func (o GetFunctionSourceDetailRuntimeConfigOutput) FunctionsRuntimeVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetailRuntimeConfig) string { return v.FunctionsRuntimeVersionId }).(pulumi.StringOutput)
+}
+
+// Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+func (o GetFunctionSourceDetailRuntimeConfigOutput) RuntimeConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetailRuntimeConfig) string { return v.RuntimeConfigType }).(pulumi.StringOutput)
+}
+
+type GetFunctionSourceDetailRuntimeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionSourceDetailRuntimeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionSourceDetailRuntimeConfig)(nil)).Elem()
+}
+
+func (o GetFunctionSourceDetailRuntimeConfigArrayOutput) ToGetFunctionSourceDetailRuntimeConfigArrayOutput() GetFunctionSourceDetailRuntimeConfigArrayOutput {
+	return o
+}
+
+func (o GetFunctionSourceDetailRuntimeConfigArrayOutput) ToGetFunctionSourceDetailRuntimeConfigArrayOutputWithContext(ctx context.Context) GetFunctionSourceDetailRuntimeConfigArrayOutput {
+	return o
+}
+
+func (o GetFunctionSourceDetailRuntimeConfigArrayOutput) Index(i pulumi.IntInput) GetFunctionSourceDetailRuntimeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionSourceDetailRuntimeConfig {
+		return vs[0].([]GetFunctionSourceDetailRuntimeConfig)[vs[1].(int)]
+	}).(GetFunctionSourceDetailRuntimeConfigOutput)
 }
 
 type GetFunctionSuccessDestination struct {
@@ -3324,6 +4157,8 @@ type GetFunctionsFunction struct {
 	// A filter to return only functions with the specified OCID.
 	Id string `pulumi:"id"`
 	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	//
+	// Deprecated: The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
 	Image string `pulumi:"image"`
 	// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
 	ImageDigest string `pulumi:"imageDigest"`
@@ -3382,6 +4217,8 @@ type GetFunctionsFunctionArgs struct {
 	// A filter to return only functions with the specified OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	//
+	// Deprecated: The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
 	Image pulumi.StringInput `pulumi:"image"`
 	// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
 	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
@@ -3506,6 +4343,8 @@ func (o GetFunctionsFunctionOutput) Id() pulumi.StringOutput {
 }
 
 // The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+//
+// Deprecated: The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
 func (o GetFunctionsFunctionOutput) Image() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFunctionsFunction) string { return v.Image }).(pulumi.StringOutput)
 }
@@ -3832,9 +4671,21 @@ func (o GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput) Index(i pul
 }
 
 type GetFunctionsFunctionSourceDetail struct {
+	// The details for the Archive source of the Function.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+	ArchiveSourceDetails []GetFunctionsFunctionSourceDetailArchiveSourceDetail `pulumi:"archiveSourceDetails"`
+	// The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+	Handler string `pulumi:"handler"`
+	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	Image string `pulumi:"image"`
+	// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+	ImageDigest string `pulumi:"imageDigest"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
 	PbfListingId string `pulumi:"pbfListingId"`
-	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	// FunctionsRuntime configuration for a function.
+	RuntimeConfigs []GetFunctionsFunctionSourceDetailRuntimeConfig `pulumi:"runtimeConfigs"`
+	// The SHA256 hash of the function source code archive, base64-encoded.
+	SourceCodeSha256 string `pulumi:"sourceCodeSha256"`
+	// Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -3850,9 +4701,21 @@ type GetFunctionsFunctionSourceDetailInput interface {
 }
 
 type GetFunctionsFunctionSourceDetailArgs struct {
+	// The details for the Archive source of the Function.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+	ArchiveSourceDetails GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayInput `pulumi:"archiveSourceDetails"`
+	// The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+	Handler pulumi.StringInput `pulumi:"handler"`
+	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	Image pulumi.StringInput `pulumi:"image"`
+	// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
 	PbfListingId pulumi.StringInput `pulumi:"pbfListingId"`
-	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	// FunctionsRuntime configuration for a function.
+	RuntimeConfigs GetFunctionsFunctionSourceDetailRuntimeConfigArrayInput `pulumi:"runtimeConfigs"`
+	// The SHA256 hash of the function source code archive, base64-encoded.
+	SourceCodeSha256 pulumi.StringInput `pulumi:"sourceCodeSha256"`
+	// Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -3907,12 +4770,46 @@ func (o GetFunctionsFunctionSourceDetailOutput) ToGetFunctionsFunctionSourceDeta
 	return o
 }
 
+// The details for the Archive source of the Function.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+func (o GetFunctionsFunctionSourceDetailOutput) ArchiveSourceDetails() GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) []GetFunctionsFunctionSourceDetailArchiveSourceDetail {
+		return v.ArchiveSourceDetails
+	}).(GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput)
+}
+
+// The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+func (o GetFunctionsFunctionSourceDetailOutput) Handler() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) string { return v.Handler }).(pulumi.StringOutput)
+}
+
+// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+func (o GetFunctionsFunctionSourceDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+func (o GetFunctionsFunctionSourceDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) string { return v.ImageDigest }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
 func (o GetFunctionsFunctionSourceDetailOutput) PbfListingId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) string { return v.PbfListingId }).(pulumi.StringOutput)
 }
 
-// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+// FunctionsRuntime configuration for a function.
+func (o GetFunctionsFunctionSourceDetailOutput) RuntimeConfigs() GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) []GetFunctionsFunctionSourceDetailRuntimeConfig {
+		return v.RuntimeConfigs
+	}).(GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput)
+}
+
+// The SHA256 hash of the function source code archive, base64-encoded.
+func (o GetFunctionsFunctionSourceDetailOutput) SourceCodeSha256() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) string { return v.SourceCodeSha256 }).(pulumi.StringOutput)
+}
+
+// Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
 func (o GetFunctionsFunctionSourceDetailOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -3935,6 +4832,260 @@ func (o GetFunctionsFunctionSourceDetailArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionSourceDetail {
 		return vs[0].([]GetFunctionsFunctionSourceDetail)[vs[1].(int)]
 	}).(GetFunctionsFunctionSourceDetailOutput)
+}
+
+type GetFunctionsFunctionSourceDetailArchiveSourceDetail struct {
+	ArchiveFile string `pulumi:"archiveFile"`
+	// Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+	ArchiveSourceType string `pulumi:"archiveSourceType"`
+	// The name of the Object Storage bucket.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace.
+	Namespace string `pulumi:"namespace"`
+	// The name of the Object Storage object.
+	Object string `pulumi:"object"`
+	// VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+	ObjectVersionId string `pulumi:"objectVersionId"`
+}
+
+// GetFunctionsFunctionSourceDetailArchiveSourceDetailInput is an input type that accepts GetFunctionsFunctionSourceDetailArchiveSourceDetailArgs and GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionSourceDetailArchiveSourceDetailInput` via:
+//
+//	GetFunctionsFunctionSourceDetailArchiveSourceDetailArgs{...}
+type GetFunctionsFunctionSourceDetailArchiveSourceDetailInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionSourceDetailArchiveSourceDetailOutput() GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput
+	ToGetFunctionsFunctionSourceDetailArchiveSourceDetailOutputWithContext(context.Context) GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput
+}
+
+type GetFunctionsFunctionSourceDetailArchiveSourceDetailArgs struct {
+	ArchiveFile pulumi.StringInput `pulumi:"archiveFile"`
+	// Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+	ArchiveSourceType pulumi.StringInput `pulumi:"archiveSourceType"`
+	// The name of the Object Storage bucket.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The name of the Object Storage object.
+	Object pulumi.StringInput `pulumi:"object"`
+	// VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+	ObjectVersionId pulumi.StringInput `pulumi:"objectVersionId"`
+}
+
+func (GetFunctionsFunctionSourceDetailArchiveSourceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionSourceDetailArchiveSourceDetail)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionSourceDetailArchiveSourceDetailArgs) ToGetFunctionsFunctionSourceDetailArchiveSourceDetailOutput() GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput {
+	return i.ToGetFunctionsFunctionSourceDetailArchiveSourceDetailOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionSourceDetailArchiveSourceDetailArgs) ToGetFunctionsFunctionSourceDetailArchiveSourceDetailOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput)
+}
+
+// GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayInput is an input type that accepts GetFunctionsFunctionSourceDetailArchiveSourceDetailArray and GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayInput` via:
+//
+//	GetFunctionsFunctionSourceDetailArchiveSourceDetailArray{ GetFunctionsFunctionSourceDetailArchiveSourceDetailArgs{...} }
+type GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput() GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput
+	ToGetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutputWithContext(context.Context) GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput
+}
+
+type GetFunctionsFunctionSourceDetailArchiveSourceDetailArray []GetFunctionsFunctionSourceDetailArchiveSourceDetailInput
+
+func (GetFunctionsFunctionSourceDetailArchiveSourceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionSourceDetailArchiveSourceDetail)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionSourceDetailArchiveSourceDetailArray) ToGetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput() GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput {
+	return i.ToGetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionSourceDetailArchiveSourceDetailArray) ToGetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput)
+}
+
+type GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionSourceDetailArchiveSourceDetail)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput) ToGetFunctionsFunctionSourceDetailArchiveSourceDetailOutput() GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput) ToGetFunctionsFunctionSourceDetailArchiveSourceDetailOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput) ArchiveFile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetailArchiveSourceDetail) string { return v.ArchiveFile }).(pulumi.StringOutput)
+}
+
+// Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+func (o GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput) ArchiveSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetailArchiveSourceDetail) string { return v.ArchiveSourceType }).(pulumi.StringOutput)
+}
+
+// The name of the Object Storage bucket.
+func (o GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetailArchiveSourceDetail) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace.
+func (o GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetailArchiveSourceDetail) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The name of the Object Storage object.
+func (o GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetailArchiveSourceDetail) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+func (o GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput) ObjectVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetailArchiveSourceDetail) string { return v.ObjectVersionId }).(pulumi.StringOutput)
+}
+
+type GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionSourceDetailArchiveSourceDetail)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput) ToGetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput() GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput) ToGetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput) Index(i pulumi.IntInput) GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionSourceDetailArchiveSourceDetail {
+		return vs[0].([]GetFunctionsFunctionSourceDetailArchiveSourceDetail)[vs[1].(int)]
+	}).(GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput)
+}
+
+type GetFunctionsFunctionSourceDetailRuntimeConfig struct {
+	// The name of the FunctionsRuntime this function is to be associated with.
+	FunctionsRuntimeName string `pulumi:"functionsRuntimeName"`
+	// The OCID of the FunctionsRuntimeVersion that is currently in use for the function.
+	FunctionsRuntimeVersionId string `pulumi:"functionsRuntimeVersionId"`
+	// Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+	RuntimeConfigType string `pulumi:"runtimeConfigType"`
+}
+
+// GetFunctionsFunctionSourceDetailRuntimeConfigInput is an input type that accepts GetFunctionsFunctionSourceDetailRuntimeConfigArgs and GetFunctionsFunctionSourceDetailRuntimeConfigOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionSourceDetailRuntimeConfigInput` via:
+//
+//	GetFunctionsFunctionSourceDetailRuntimeConfigArgs{...}
+type GetFunctionsFunctionSourceDetailRuntimeConfigInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionSourceDetailRuntimeConfigOutput() GetFunctionsFunctionSourceDetailRuntimeConfigOutput
+	ToGetFunctionsFunctionSourceDetailRuntimeConfigOutputWithContext(context.Context) GetFunctionsFunctionSourceDetailRuntimeConfigOutput
+}
+
+type GetFunctionsFunctionSourceDetailRuntimeConfigArgs struct {
+	// The name of the FunctionsRuntime this function is to be associated with.
+	FunctionsRuntimeName pulumi.StringInput `pulumi:"functionsRuntimeName"`
+	// The OCID of the FunctionsRuntimeVersion that is currently in use for the function.
+	FunctionsRuntimeVersionId pulumi.StringInput `pulumi:"functionsRuntimeVersionId"`
+	// Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+	RuntimeConfigType pulumi.StringInput `pulumi:"runtimeConfigType"`
+}
+
+func (GetFunctionsFunctionSourceDetailRuntimeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionSourceDetailRuntimeConfig)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionSourceDetailRuntimeConfigArgs) ToGetFunctionsFunctionSourceDetailRuntimeConfigOutput() GetFunctionsFunctionSourceDetailRuntimeConfigOutput {
+	return i.ToGetFunctionsFunctionSourceDetailRuntimeConfigOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionSourceDetailRuntimeConfigArgs) ToGetFunctionsFunctionSourceDetailRuntimeConfigOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailRuntimeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionSourceDetailRuntimeConfigOutput)
+}
+
+// GetFunctionsFunctionSourceDetailRuntimeConfigArrayInput is an input type that accepts GetFunctionsFunctionSourceDetailRuntimeConfigArray and GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionSourceDetailRuntimeConfigArrayInput` via:
+//
+//	GetFunctionsFunctionSourceDetailRuntimeConfigArray{ GetFunctionsFunctionSourceDetailRuntimeConfigArgs{...} }
+type GetFunctionsFunctionSourceDetailRuntimeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput() GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput
+	ToGetFunctionsFunctionSourceDetailRuntimeConfigArrayOutputWithContext(context.Context) GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput
+}
+
+type GetFunctionsFunctionSourceDetailRuntimeConfigArray []GetFunctionsFunctionSourceDetailRuntimeConfigInput
+
+func (GetFunctionsFunctionSourceDetailRuntimeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionSourceDetailRuntimeConfig)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionSourceDetailRuntimeConfigArray) ToGetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput() GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput {
+	return i.ToGetFunctionsFunctionSourceDetailRuntimeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionSourceDetailRuntimeConfigArray) ToGetFunctionsFunctionSourceDetailRuntimeConfigArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput)
+}
+
+type GetFunctionsFunctionSourceDetailRuntimeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionSourceDetailRuntimeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionSourceDetailRuntimeConfig)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionSourceDetailRuntimeConfigOutput) ToGetFunctionsFunctionSourceDetailRuntimeConfigOutput() GetFunctionsFunctionSourceDetailRuntimeConfigOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSourceDetailRuntimeConfigOutput) ToGetFunctionsFunctionSourceDetailRuntimeConfigOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailRuntimeConfigOutput {
+	return o
+}
+
+// The name of the FunctionsRuntime this function is to be associated with.
+func (o GetFunctionsFunctionSourceDetailRuntimeConfigOutput) FunctionsRuntimeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetailRuntimeConfig) string { return v.FunctionsRuntimeName }).(pulumi.StringOutput)
+}
+
+// The OCID of the FunctionsRuntimeVersion that is currently in use for the function.
+func (o GetFunctionsFunctionSourceDetailRuntimeConfigOutput) FunctionsRuntimeVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetailRuntimeConfig) string { return v.FunctionsRuntimeVersionId }).(pulumi.StringOutput)
+}
+
+// Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+func (o GetFunctionsFunctionSourceDetailRuntimeConfigOutput) RuntimeConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetailRuntimeConfig) string { return v.RuntimeConfigType }).(pulumi.StringOutput)
+}
+
+type GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionSourceDetailRuntimeConfig)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput) ToGetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput() GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput) ToGetFunctionsFunctionSourceDetailRuntimeConfigArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput) Index(i pulumi.IntInput) GetFunctionsFunctionSourceDetailRuntimeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionSourceDetailRuntimeConfig {
+		return vs[0].([]GetFunctionsFunctionSourceDetailRuntimeConfig)[vs[1].(int)]
+	}).(GetFunctionsFunctionSourceDetailRuntimeConfigOutput)
 }
 
 type GetFunctionsFunctionSuccessDestination struct {
@@ -4165,6 +5316,846 @@ func (o GetFunctionsFunctionTraceConfigArrayOutput) Index(i pulumi.IntInput) Get
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionTraceConfig {
 		return vs[0].([]GetFunctionsFunctionTraceConfig)[vs[1].(int)]
 	}).(GetFunctionsFunctionTraceConfigOutput)
+}
+
+type GetFunctionsRuntimeVersionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFunctionsRuntimeVersionsFilterInput is an input type that accepts GetFunctionsRuntimeVersionsFilterArgs and GetFunctionsRuntimeVersionsFilterOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimeVersionsFilterInput` via:
+//
+//	GetFunctionsRuntimeVersionsFilterArgs{...}
+type GetFunctionsRuntimeVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimeVersionsFilterOutput() GetFunctionsRuntimeVersionsFilterOutput
+	ToGetFunctionsRuntimeVersionsFilterOutputWithContext(context.Context) GetFunctionsRuntimeVersionsFilterOutput
+}
+
+type GetFunctionsRuntimeVersionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFunctionsRuntimeVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimeVersionsFilter)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimeVersionsFilterArgs) ToGetFunctionsRuntimeVersionsFilterOutput() GetFunctionsRuntimeVersionsFilterOutput {
+	return i.ToGetFunctionsRuntimeVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimeVersionsFilterArgs) ToGetFunctionsRuntimeVersionsFilterOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimeVersionsFilterOutput)
+}
+
+// GetFunctionsRuntimeVersionsFilterArrayInput is an input type that accepts GetFunctionsRuntimeVersionsFilterArray and GetFunctionsRuntimeVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimeVersionsFilterArrayInput` via:
+//
+//	GetFunctionsRuntimeVersionsFilterArray{ GetFunctionsRuntimeVersionsFilterArgs{...} }
+type GetFunctionsRuntimeVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimeVersionsFilterArrayOutput() GetFunctionsRuntimeVersionsFilterArrayOutput
+	ToGetFunctionsRuntimeVersionsFilterArrayOutputWithContext(context.Context) GetFunctionsRuntimeVersionsFilterArrayOutput
+}
+
+type GetFunctionsRuntimeVersionsFilterArray []GetFunctionsRuntimeVersionsFilterInput
+
+func (GetFunctionsRuntimeVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimeVersionsFilter)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimeVersionsFilterArray) ToGetFunctionsRuntimeVersionsFilterArrayOutput() GetFunctionsRuntimeVersionsFilterArrayOutput {
+	return i.ToGetFunctionsRuntimeVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimeVersionsFilterArray) ToGetFunctionsRuntimeVersionsFilterArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimeVersionsFilterArrayOutput)
+}
+
+type GetFunctionsRuntimeVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimeVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimeVersionsFilter)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimeVersionsFilterOutput) ToGetFunctionsRuntimeVersionsFilterOutput() GetFunctionsRuntimeVersionsFilterOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimeVersionsFilterOutput) ToGetFunctionsRuntimeVersionsFilterOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFilterOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimeVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFunctionsRuntimeVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFunctionsRuntimeVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFunctionsRuntimeVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimeVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimeVersionsFilter)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimeVersionsFilterArrayOutput) ToGetFunctionsRuntimeVersionsFilterArrayOutput() GetFunctionsRuntimeVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimeVersionsFilterArrayOutput) ToGetFunctionsRuntimeVersionsFilterArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimeVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetFunctionsRuntimeVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsRuntimeVersionsFilter {
+		return vs[0].([]GetFunctionsRuntimeVersionsFilter)[vs[1].(int)]
+	}).(GetFunctionsRuntimeVersionsFilterOutput)
+}
+
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollection struct {
+	Items []GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem `pulumi:"items"`
+}
+
+// GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionInput is an input type that accepts GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArgs and GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionInput` via:
+//
+//	GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArgs{...}
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput
+	ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutputWithContext(context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput
+}
+
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArgs struct {
+	Items GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollection)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArgs) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput {
+	return i.ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArgs) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput)
+}
+
+// GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayInput is an input type that accepts GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArray and GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayInput` via:
+//
+//	GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArray{ GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArgs{...} }
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput
+	ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutputWithContext(context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput
+}
+
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArray []GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionInput
+
+func (GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollection)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArray) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput {
+	return i.ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArray) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput)
+}
+
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollection)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput) Items() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollection) []GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem {
+		return v.Items
+	}).(GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput)
+}
+
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollection)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput) Index(i pulumi.IntInput) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollection {
+		return vs[0].([]GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollection)[vs[1].(int)]
+	}).(GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput)
+}
+
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire FunctionsRuntimeVersion name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// unique FunctionsRuntime identifier
+	FunctionsRuntimeId string `pulumi:"functionsRuntimeId"`
+	// The OCID of the FunctionsRuntimeVersion that is immutable on creation.
+	Id string `pulumi:"id"`
+	// A filter to return only resources that match the entire languageVersion name given.
+	LanguageVersion string `pulumi:"languageVersion"`
+	// Details of the change in the FunctionsRuntimeVersion of the FunctionsRuntime.
+	Metadata string `pulumi:"metadata"`
+	// A filter to return only resources that match the entire osVersion name given.
+	OsVersion string `pulumi:"osVersion"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// The list of supported architectures for the FunctionsRuntimeVersion.
+	SupportedArchitectures []string `pulumi:"supportedArchitectures"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time when the FunctionsRuntimeVersion was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time when the FunctionsRuntimeVersion was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemInput is an input type that accepts GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArgs and GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemInput` via:
+//
+//	GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArgs{...}
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput
+	ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutputWithContext(context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput
+}
+
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire FunctionsRuntimeVersion name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// unique FunctionsRuntime identifier
+	FunctionsRuntimeId pulumi.StringInput `pulumi:"functionsRuntimeId"`
+	// The OCID of the FunctionsRuntimeVersion that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources that match the entire languageVersion name given.
+	LanguageVersion pulumi.StringInput `pulumi:"languageVersion"`
+	// Details of the change in the FunctionsRuntimeVersion of the FunctionsRuntime.
+	Metadata pulumi.StringInput `pulumi:"metadata"`
+	// A filter to return only resources that match the entire osVersion name given.
+	OsVersion pulumi.StringInput `pulumi:"osVersion"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// The list of supported architectures for the FunctionsRuntimeVersion.
+	SupportedArchitectures pulumi.StringArrayInput `pulumi:"supportedArchitectures"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time when the FunctionsRuntimeVersion was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time when the FunctionsRuntimeVersion was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArgs) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput {
+	return i.ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArgs) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput)
+}
+
+// GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayInput is an input type that accepts GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArray and GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayInput` via:
+//
+//	GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArray{ GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArgs{...} }
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput
+	ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutputWithContext(context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput
+}
+
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArray []GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemInput
+
+func (GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArray) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput {
+	return i.ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArray) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput)
+}
+
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire FunctionsRuntimeVersion name given.
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// unique FunctionsRuntime identifier
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) FunctionsRuntimeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) string {
+		return v.FunctionsRuntimeId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the FunctionsRuntimeVersion that is immutable on creation.
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire languageVersion name given.
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) LanguageVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) string {
+		return v.LanguageVersion
+	}).(pulumi.StringOutput)
+}
+
+// Details of the change in the FunctionsRuntimeVersion of the FunctionsRuntime.
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) Metadata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) string { return v.Metadata }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire osVersion name given.
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) OsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) string { return v.OsVersion }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources their lifecycleState matches the given lifecycleState.
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The list of supported architectures for the FunctionsRuntimeVersion.
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) SupportedArchitectures() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) []string {
+		return v.SupportedArchitectures
+	}).(pulumi.StringArrayOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time when the FunctionsRuntimeVersion was created. An RFC3339 formatted datetime string.
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time when the FunctionsRuntimeVersion was updated. An RFC3339 formatted datetime string.
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput() GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput) ToGetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem {
+		return vs[0].([]GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem)[vs[1].(int)]
+	}).(GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput)
+}
+
+type GetFunctionsRuntimesFilter struct {
+	// A filter to return only resources that match the entire FunctionsRuntime name given.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFunctionsRuntimesFilterInput is an input type that accepts GetFunctionsRuntimesFilterArgs and GetFunctionsRuntimesFilterOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimesFilterInput` via:
+//
+//	GetFunctionsRuntimesFilterArgs{...}
+type GetFunctionsRuntimesFilterInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimesFilterOutput() GetFunctionsRuntimesFilterOutput
+	ToGetFunctionsRuntimesFilterOutputWithContext(context.Context) GetFunctionsRuntimesFilterOutput
+}
+
+type GetFunctionsRuntimesFilterArgs struct {
+	// A filter to return only resources that match the entire FunctionsRuntime name given.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFunctionsRuntimesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimesFilter)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimesFilterArgs) ToGetFunctionsRuntimesFilterOutput() GetFunctionsRuntimesFilterOutput {
+	return i.ToGetFunctionsRuntimesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimesFilterArgs) ToGetFunctionsRuntimesFilterOutputWithContext(ctx context.Context) GetFunctionsRuntimesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimesFilterOutput)
+}
+
+// GetFunctionsRuntimesFilterArrayInput is an input type that accepts GetFunctionsRuntimesFilterArray and GetFunctionsRuntimesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimesFilterArrayInput` via:
+//
+//	GetFunctionsRuntimesFilterArray{ GetFunctionsRuntimesFilterArgs{...} }
+type GetFunctionsRuntimesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimesFilterArrayOutput() GetFunctionsRuntimesFilterArrayOutput
+	ToGetFunctionsRuntimesFilterArrayOutputWithContext(context.Context) GetFunctionsRuntimesFilterArrayOutput
+}
+
+type GetFunctionsRuntimesFilterArray []GetFunctionsRuntimesFilterInput
+
+func (GetFunctionsRuntimesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimesFilter)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimesFilterArray) ToGetFunctionsRuntimesFilterArrayOutput() GetFunctionsRuntimesFilterArrayOutput {
+	return i.ToGetFunctionsRuntimesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimesFilterArray) ToGetFunctionsRuntimesFilterArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimesFilterArrayOutput)
+}
+
+type GetFunctionsRuntimesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimesFilter)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimesFilterOutput) ToGetFunctionsRuntimesFilterOutput() GetFunctionsRuntimesFilterOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimesFilterOutput) ToGetFunctionsRuntimesFilterOutputWithContext(ctx context.Context) GetFunctionsRuntimesFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire FunctionsRuntime name given.
+func (o GetFunctionsRuntimesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFunctionsRuntimesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFunctionsRuntimesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFunctionsRuntimesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimesFilter)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimesFilterArrayOutput) ToGetFunctionsRuntimesFilterArrayOutput() GetFunctionsRuntimesFilterArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimesFilterArrayOutput) ToGetFunctionsRuntimesFilterArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimesFilterArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimesFilterArrayOutput) Index(i pulumi.IntInput) GetFunctionsRuntimesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsRuntimesFilter {
+		return vs[0].([]GetFunctionsRuntimesFilter)[vs[1].(int)]
+	}).(GetFunctionsRuntimesFilterOutput)
+}
+
+type GetFunctionsRuntimesFunctionsRuntimeCollection struct {
+	Items []GetFunctionsRuntimesFunctionsRuntimeCollectionItem `pulumi:"items"`
+}
+
+// GetFunctionsRuntimesFunctionsRuntimeCollectionInput is an input type that accepts GetFunctionsRuntimesFunctionsRuntimeCollectionArgs and GetFunctionsRuntimesFunctionsRuntimeCollectionOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimesFunctionsRuntimeCollectionInput` via:
+//
+//	GetFunctionsRuntimesFunctionsRuntimeCollectionArgs{...}
+type GetFunctionsRuntimesFunctionsRuntimeCollectionInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimesFunctionsRuntimeCollectionOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionOutput
+	ToGetFunctionsRuntimesFunctionsRuntimeCollectionOutputWithContext(context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionOutput
+}
+
+type GetFunctionsRuntimesFunctionsRuntimeCollectionArgs struct {
+	Items GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFunctionsRuntimesFunctionsRuntimeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimesFunctionsRuntimeCollection)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimesFunctionsRuntimeCollectionArgs) ToGetFunctionsRuntimesFunctionsRuntimeCollectionOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionOutput {
+	return i.ToGetFunctionsRuntimesFunctionsRuntimeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimesFunctionsRuntimeCollectionArgs) ToGetFunctionsRuntimesFunctionsRuntimeCollectionOutputWithContext(ctx context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimesFunctionsRuntimeCollectionOutput)
+}
+
+// GetFunctionsRuntimesFunctionsRuntimeCollectionArrayInput is an input type that accepts GetFunctionsRuntimesFunctionsRuntimeCollectionArray and GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimesFunctionsRuntimeCollectionArrayInput` via:
+//
+//	GetFunctionsRuntimesFunctionsRuntimeCollectionArray{ GetFunctionsRuntimesFunctionsRuntimeCollectionArgs{...} }
+type GetFunctionsRuntimesFunctionsRuntimeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput
+	ToGetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutputWithContext(context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput
+}
+
+type GetFunctionsRuntimesFunctionsRuntimeCollectionArray []GetFunctionsRuntimesFunctionsRuntimeCollectionInput
+
+func (GetFunctionsRuntimesFunctionsRuntimeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimesFunctionsRuntimeCollection)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimesFunctionsRuntimeCollectionArray) ToGetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput {
+	return i.ToGetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimesFunctionsRuntimeCollectionArray) ToGetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput)
+}
+
+type GetFunctionsRuntimesFunctionsRuntimeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimesFunctionsRuntimeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimesFunctionsRuntimeCollection)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionOutput) ToGetFunctionsRuntimesFunctionsRuntimeCollectionOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionOutput) ToGetFunctionsRuntimesFunctionsRuntimeCollectionOutputWithContext(ctx context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionOutput) Items() GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollection) []GetFunctionsRuntimesFunctionsRuntimeCollectionItem {
+		return v.Items
+	}).(GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput)
+}
+
+type GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimesFunctionsRuntimeCollection)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput) ToGetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput) ToGetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput) Index(i pulumi.IntInput) GetFunctionsRuntimesFunctionsRuntimeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsRuntimesFunctionsRuntimeCollection {
+		return vs[0].([]GetFunctionsRuntimesFunctionsRuntimeCollection)[vs[1].(int)]
+	}).(GetFunctionsRuntimesFunctionsRuntimeCollectionOutput)
+}
+
+type GetFunctionsRuntimesFunctionsRuntimeCollectionItem struct {
+	// The OCID of the current FunctionsRuntimeVersion for this FunctionsRuntime.
+	CurrentFunctionsRuntimeVersionId string `pulumi:"currentFunctionsRuntimeVersionId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the FunctionsRuntime that is immutable on creation.
+	Id string `pulumi:"id"`
+	// A filter to return only resources that match the entire language name given.
+	Language string `pulumi:"language"`
+	// Metadata for the FunctionsRuntime Resource.
+	Metadata string `pulumi:"metadata"`
+	// A filter to return only resources that match the entire FunctionsRuntime name given.
+	Name string `pulumi:"name"`
+	// A filter to return only resources that match the entire os name given.
+	Os string `pulumi:"os"`
+	// A filter to return only resources where their lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time when the FunctionsRuntime was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time when the FunctionsRuntime will be decommissioned. An RFC3339 formatted datetime string.
+	TimeDecommissioned string `pulumi:"timeDecommissioned"`
+	// The time when the FunctionsRuntime will be deprecated. An RFC3339 formatted datetime string.
+	TimeDeprecated string `pulumi:"timeDeprecated"`
+	// The time when the FunctionsRuntime was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetFunctionsRuntimesFunctionsRuntimeCollectionItemInput is an input type that accepts GetFunctionsRuntimesFunctionsRuntimeCollectionItemArgs and GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimesFunctionsRuntimeCollectionItemInput` via:
+//
+//	GetFunctionsRuntimesFunctionsRuntimeCollectionItemArgs{...}
+type GetFunctionsRuntimesFunctionsRuntimeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput
+	ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemOutputWithContext(context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput
+}
+
+type GetFunctionsRuntimesFunctionsRuntimeCollectionItemArgs struct {
+	// The OCID of the current FunctionsRuntimeVersion for this FunctionsRuntime.
+	CurrentFunctionsRuntimeVersionId pulumi.StringInput `pulumi:"currentFunctionsRuntimeVersionId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the FunctionsRuntime that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources that match the entire language name given.
+	Language pulumi.StringInput `pulumi:"language"`
+	// Metadata for the FunctionsRuntime Resource.
+	Metadata pulumi.StringInput `pulumi:"metadata"`
+	// A filter to return only resources that match the entire FunctionsRuntime name given.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return only resources that match the entire os name given.
+	Os pulumi.StringInput `pulumi:"os"`
+	// A filter to return only resources where their lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time when the FunctionsRuntime was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time when the FunctionsRuntime will be decommissioned. An RFC3339 formatted datetime string.
+	TimeDecommissioned pulumi.StringInput `pulumi:"timeDecommissioned"`
+	// The time when the FunctionsRuntime will be deprecated. An RFC3339 formatted datetime string.
+	TimeDeprecated pulumi.StringInput `pulumi:"timeDeprecated"`
+	// The time when the FunctionsRuntime was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetFunctionsRuntimesFunctionsRuntimeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimesFunctionsRuntimeCollectionItem)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimesFunctionsRuntimeCollectionItemArgs) ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput {
+	return i.ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimesFunctionsRuntimeCollectionItemArgs) ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemOutputWithContext(ctx context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput)
+}
+
+// GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayInput is an input type that accepts GetFunctionsRuntimesFunctionsRuntimeCollectionItemArray and GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayInput` via:
+//
+//	GetFunctionsRuntimesFunctionsRuntimeCollectionItemArray{ GetFunctionsRuntimesFunctionsRuntimeCollectionItemArgs{...} }
+type GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput
+	ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutputWithContext(context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput
+}
+
+type GetFunctionsRuntimesFunctionsRuntimeCollectionItemArray []GetFunctionsRuntimesFunctionsRuntimeCollectionItemInput
+
+func (GetFunctionsRuntimesFunctionsRuntimeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimesFunctionsRuntimeCollectionItem)(nil)).Elem()
+}
+
+func (i GetFunctionsRuntimesFunctionsRuntimeCollectionItemArray) ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput {
+	return i.ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsRuntimesFunctionsRuntimeCollectionItemArray) ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput)
+}
+
+type GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsRuntimesFunctionsRuntimeCollectionItem)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemOutputWithContext(ctx context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput {
+	return o
+}
+
+// The OCID of the current FunctionsRuntimeVersion for this FunctionsRuntime.
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) CurrentFunctionsRuntimeVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) string {
+		return v.CurrentFunctionsRuntimeVersionId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the FunctionsRuntime that is immutable on creation.
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire language name given.
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) Language() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) string { return v.Language }).(pulumi.StringOutput)
+}
+
+// Metadata for the FunctionsRuntime Resource.
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) Metadata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) string { return v.Metadata }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire FunctionsRuntime name given.
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire os name given.
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) Os() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) string { return v.Os }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources where their lifecycleState matches the given lifecycleState.
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The time when the FunctionsRuntime was created. An RFC3339 formatted datetime string.
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time when the FunctionsRuntime will be decommissioned. An RFC3339 formatted datetime string.
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) TimeDecommissioned() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) string { return v.TimeDecommissioned }).(pulumi.StringOutput)
+}
+
+// The time when the FunctionsRuntime will be deprecated. An RFC3339 formatted datetime string.
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) TimeDeprecated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) string { return v.TimeDeprecated }).(pulumi.StringOutput)
+}
+
+// The time when the FunctionsRuntime was updated. An RFC3339 formatted datetime string.
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsRuntimesFunctionsRuntimeCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsRuntimesFunctionsRuntimeCollectionItem)(nil)).Elem()
+}
+
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput) ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput() GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput) ToGetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutputWithContext(ctx context.Context) GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsRuntimesFunctionsRuntimeCollectionItem {
+		return vs[0].([]GetFunctionsRuntimesFunctionsRuntimeCollectionItem)[vs[1].(int)]
+	}).(GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput)
 }
 
 type GetFusionEnvironmentAdditionalEgressRule struct {
@@ -13472,6 +15463,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionProvisionedConcurrencyConfigPtrInput)(nil)).Elem(), FunctionProvisionedConcurrencyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceDetailsInput)(nil)).Elem(), FunctionSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceDetailsPtrInput)(nil)).Elem(), FunctionSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceDetailsArchiveSourceDetailsInput)(nil)).Elem(), FunctionSourceDetailsArchiveSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceDetailsArchiveSourceDetailsPtrInput)(nil)).Elem(), FunctionSourceDetailsArchiveSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceDetailsRuntimeConfigInput)(nil)).Elem(), FunctionSourceDetailsRuntimeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceDetailsRuntimeConfigPtrInput)(nil)).Elem(), FunctionSourceDetailsRuntimeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSuccessDestinationInput)(nil)).Elem(), FunctionSuccessDestinationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSuccessDestinationPtrInput)(nil)).Elem(), FunctionSuccessDestinationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTraceConfigInput)(nil)).Elem(), FunctionTraceConfigArgs{})
@@ -13502,6 +15497,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionProvisionedConcurrencyConfigArrayInput)(nil)).Elem(), GetFunctionProvisionedConcurrencyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSourceDetailInput)(nil)).Elem(), GetFunctionSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSourceDetailArrayInput)(nil)).Elem(), GetFunctionSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSourceDetailArchiveSourceDetailInput)(nil)).Elem(), GetFunctionSourceDetailArchiveSourceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSourceDetailArchiveSourceDetailArrayInput)(nil)).Elem(), GetFunctionSourceDetailArchiveSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSourceDetailRuntimeConfigInput)(nil)).Elem(), GetFunctionSourceDetailRuntimeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSourceDetailRuntimeConfigArrayInput)(nil)).Elem(), GetFunctionSourceDetailRuntimeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSuccessDestinationInput)(nil)).Elem(), GetFunctionSuccessDestinationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSuccessDestinationArrayInput)(nil)).Elem(), GetFunctionSuccessDestinationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTraceConfigInput)(nil)).Elem(), GetFunctionTraceConfigArgs{})
@@ -13516,10 +15515,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionProvisionedConcurrencyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSourceDetailInput)(nil)).Elem(), GetFunctionsFunctionSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSourceDetailArrayInput)(nil)).Elem(), GetFunctionsFunctionSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSourceDetailArchiveSourceDetailInput)(nil)).Elem(), GetFunctionsFunctionSourceDetailArchiveSourceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayInput)(nil)).Elem(), GetFunctionsFunctionSourceDetailArchiveSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSourceDetailRuntimeConfigInput)(nil)).Elem(), GetFunctionsFunctionSourceDetailRuntimeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSourceDetailRuntimeConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionSourceDetailRuntimeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSuccessDestinationInput)(nil)).Elem(), GetFunctionsFunctionSuccessDestinationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSuccessDestinationArrayInput)(nil)).Elem(), GetFunctionsFunctionSuccessDestinationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimeVersionsFilterInput)(nil)).Elem(), GetFunctionsRuntimeVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimeVersionsFilterArrayInput)(nil)).Elem(), GetFunctionsRuntimeVersionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionInput)(nil)).Elem(), GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayInput)(nil)).Elem(), GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemInput)(nil)).Elem(), GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayInput)(nil)).Elem(), GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimesFilterInput)(nil)).Elem(), GetFunctionsRuntimesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimesFilterArrayInput)(nil)).Elem(), GetFunctionsRuntimesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimesFunctionsRuntimeCollectionInput)(nil)).Elem(), GetFunctionsRuntimesFunctionsRuntimeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimesFunctionsRuntimeCollectionArrayInput)(nil)).Elem(), GetFunctionsRuntimesFunctionsRuntimeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimesFunctionsRuntimeCollectionItemInput)(nil)).Elem(), GetFunctionsRuntimesFunctionsRuntimeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayInput)(nil)).Elem(), GetFunctionsRuntimesFunctionsRuntimeCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdditionalEgressRuleInput)(nil)).Elem(), GetFusionEnvironmentAdditionalEgressRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdditionalEgressRuleArrayInput)(nil)).Elem(), GetFusionEnvironmentAdditionalEgressRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUserItemInput)(nil)).Elem(), GetFusionEnvironmentAdminUserItemArgs{})
@@ -13684,6 +15699,10 @@ func init() {
 	pulumi.RegisterOutputType(FunctionProvisionedConcurrencyConfigPtrOutput{})
 	pulumi.RegisterOutputType(FunctionSourceDetailsOutput{})
 	pulumi.RegisterOutputType(FunctionSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(FunctionSourceDetailsArchiveSourceDetailsOutput{})
+	pulumi.RegisterOutputType(FunctionSourceDetailsArchiveSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(FunctionSourceDetailsRuntimeConfigOutput{})
+	pulumi.RegisterOutputType(FunctionSourceDetailsRuntimeConfigPtrOutput{})
 	pulumi.RegisterOutputType(FunctionSuccessDestinationOutput{})
 	pulumi.RegisterOutputType(FunctionSuccessDestinationPtrOutput{})
 	pulumi.RegisterOutputType(FunctionTraceConfigOutput{})
@@ -13714,6 +15733,10 @@ func init() {
 	pulumi.RegisterOutputType(GetFunctionProvisionedConcurrencyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetFunctionSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionSourceDetailArchiveSourceDetailOutput{})
+	pulumi.RegisterOutputType(GetFunctionSourceDetailArchiveSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionSourceDetailRuntimeConfigOutput{})
+	pulumi.RegisterOutputType(GetFunctionSourceDetailRuntimeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionSuccessDestinationOutput{})
 	pulumi.RegisterOutputType(GetFunctionSuccessDestinationArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionTraceConfigOutput{})
@@ -13728,10 +15751,26 @@ func init() {
 	pulumi.RegisterOutputType(GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionSourceDetailArchiveSourceDetailOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionSourceDetailArchiveSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionSourceDetailRuntimeConfigOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionSourceDetailRuntimeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionSuccessDestinationOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionSuccessDestinationArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimeVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimeVersionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimesFilterOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimesFunctionsRuntimeCollectionOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimesFunctionsRuntimeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimesFunctionsRuntimeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFunctionsRuntimesFunctionsRuntimeCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentAdditionalEgressRuleOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentAdditionalEgressRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUserItemOutput{})

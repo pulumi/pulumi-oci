@@ -20205,6 +20205,8 @@ func (o ModelRetentionSettingPtrOutput) DeleteAfterDays() pulumi.IntPtrOutput {
 type NotebookSessionNotebookSessionConfigDetails struct {
 	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs *int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails *NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails `pulumi:"notebookSessionShapeConfigDetails"`
 	// The OCID of a Data Science private endpoint.
@@ -20229,6 +20231,8 @@ type NotebookSessionNotebookSessionConfigDetailsInput interface {
 type NotebookSessionNotebookSessionConfigDetailsArgs struct {
 	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs pulumi.IntPtrInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrInput `pulumi:"notebookSessionShapeConfigDetails"`
 	// The OCID of a Data Science private endpoint.
@@ -20321,6 +20325,11 @@ func (o NotebookSessionNotebookSessionConfigDetailsOutput) BlockStorageSizeInGbs
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetails) *int { return v.BlockStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+func (o NotebookSessionNotebookSessionConfigDetailsOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetails) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
+}
+
 // Details for the notebook session shape configuration.
 func (o NotebookSessionNotebookSessionConfigDetailsOutput) NotebookSessionShapeConfigDetails() NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetails) *NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails {
@@ -20375,6 +20384,16 @@ func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) BlockStorageSizeIn
 		}
 		return v.BlockStorageSizeInGbs
 	}).(pulumi.IntPtrOutput)
+}
+
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityReservationId
+	}).(pulumi.StringPtrOutput)
 }
 
 // Details for the notebook session shape configuration.
@@ -20601,6 +20620,8 @@ func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDet
 type NotebookSessionNotebookSessionConfigurationDetails struct {
 	// (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs *int `pulumi:"blockStorageSizeInGbs"`
+	// (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// (Updatable) Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails *NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails `pulumi:"notebookSessionShapeConfigDetails"`
 	// (Updatable) The OCID of a Data Science private endpoint.
@@ -20625,6 +20646,8 @@ type NotebookSessionNotebookSessionConfigurationDetailsInput interface {
 type NotebookSessionNotebookSessionConfigurationDetailsArgs struct {
 	// (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs pulumi.IntPtrInput `pulumi:"blockStorageSizeInGbs"`
+	// (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// (Updatable) Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrInput `pulumi:"notebookSessionShapeConfigDetails"`
 	// (Updatable) The OCID of a Data Science private endpoint.
@@ -20717,6 +20740,11 @@ func (o NotebookSessionNotebookSessionConfigurationDetailsOutput) BlockStorageSi
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigurationDetails) *int { return v.BlockStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+func (o NotebookSessionNotebookSessionConfigurationDetailsOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigurationDetails) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Details for the notebook session shape configuration.
 func (o NotebookSessionNotebookSessionConfigurationDetailsOutput) NotebookSessionShapeConfigDetails() NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigurationDetails) *NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails {
@@ -20771,6 +20799,16 @@ func (o NotebookSessionNotebookSessionConfigurationDetailsPtrOutput) BlockStorag
 		}
 		return v.BlockStorageSizeInGbs
 	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+func (o NotebookSessionNotebookSessionConfigurationDetailsPtrOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityReservationId
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Details for the notebook session shape configuration.
@@ -69755,6 +69793,8 @@ func (o GetModelsModelRetentionSettingArrayOutput) Index(i pulumi.IntInput) GetM
 type GetNotebookSessionNotebookSessionConfigDetail struct {
 	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails []GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
 	// The OCID of a Data Science private endpoint.
@@ -69779,6 +69819,8 @@ type GetNotebookSessionNotebookSessionConfigDetailInput interface {
 type GetNotebookSessionNotebookSessionConfigDetailArgs struct {
 	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
 	// The OCID of a Data Science private endpoint.
@@ -69843,6 +69885,11 @@ func (o GetNotebookSessionNotebookSessionConfigDetailOutput) ToGetNotebookSessio
 // A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 func (o GetNotebookSessionNotebookSessionConfigDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigDetail) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+func (o GetNotebookSessionNotebookSessionConfigDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigDetail) string { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
 // Details for the notebook session shape configuration.
@@ -70011,6 +70058,8 @@ func (o GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigD
 type GetNotebookSessionNotebookSessionConfigurationDetail struct {
 	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails []GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
 	// The OCID of a Data Science private endpoint.
@@ -70035,6 +70084,8 @@ type GetNotebookSessionNotebookSessionConfigurationDetailInput interface {
 type GetNotebookSessionNotebookSessionConfigurationDetailArgs struct {
 	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
 	// The OCID of a Data Science private endpoint.
@@ -70099,6 +70150,11 @@ func (o GetNotebookSessionNotebookSessionConfigurationDetailOutput) ToGetNoteboo
 // A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 func (o GetNotebookSessionNotebookSessionConfigurationDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigurationDetail) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+func (o GetNotebookSessionNotebookSessionConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigurationDetail) string { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
 // Details for the notebook session shape configuration.
@@ -71317,6 +71373,8 @@ func (o GetNotebookSessionsNotebookSessionArrayOutput) Index(i pulumi.IntInput) 
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail struct {
 	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
 	// The OCID of a Data Science private endpoint.
@@ -71341,6 +71399,8 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput interfac
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs struct {
 	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
 	// The OCID of a Data Science private endpoint.
@@ -71407,6 +71467,13 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) Blo
 	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) int {
 		return v.BlockStorageSizeInGbs
 	}).(pulumi.IntOutput)
+}
+
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
 }
 
 // Details for the notebook session shape configuration.
@@ -71577,6 +71644,8 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSes
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail struct {
 	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
 	// The OCID of a Data Science private endpoint.
@@ -71601,6 +71670,8 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput i
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs struct {
 	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
 	// The OCID of a Data Science private endpoint.
@@ -71667,6 +71738,13 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutp
 	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) int {
 		return v.BlockStorageSizeInGbs
 	}).(pulumi.IntOutput)
+}
+
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
 }
 
 // Details for the notebook session shape configuration.

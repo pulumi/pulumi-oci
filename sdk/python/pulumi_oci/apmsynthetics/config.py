@@ -968,6 +968,8 @@ class Config(pulumi.CustomResource):
             is_run_now=monitor_is_run_now == "true",
             is_run_once=monitor_is_run_once == "true",
             maintenance_window_schedule={
+                "recurrence_type": monitor_maintenance_window_schedule_recurrence_type,
+                "schedule_type": "RECURRING",
                 "time_ended": monitor_maintenance_window_schedule_time_ended,
                 "time_started": monitor_maintenance_window_schedule_time_started,
             },
@@ -1153,6 +1155,8 @@ class Config(pulumi.CustomResource):
             is_run_now=monitor_is_run_now == "true",
             is_run_once=monitor_is_run_once == "true",
             maintenance_window_schedule={
+                "recurrence_type": monitor_maintenance_window_schedule_recurrence_type,
+                "schedule_type": "RECURRING",
                 "time_ended": monitor_maintenance_window_schedule_time_ended,
                 "time_started": monitor_maintenance_window_schedule_time_started,
             },

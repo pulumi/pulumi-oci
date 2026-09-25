@@ -1150,7 +1150,7 @@ class ConfigConfigurationDnsConfigurationArgsDict(TypedDict):
     """
     override_dns_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+    (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
     """
 
 @pulumi.input_type
@@ -1160,7 +1160,7 @@ class ConfigConfigurationDnsConfigurationArgs:
                  override_dns_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_override_dns: (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
-        :param pulumi.Input[_builtins.str] override_dns_ip: (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+        :param pulumi.Input[_builtins.str] override_dns_ip: (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
         """
         if is_override_dns is not None:
             pulumi.set(__self__, "is_override_dns", is_override_dns)
@@ -1183,7 +1183,7 @@ class ConfigConfigurationDnsConfigurationArgs:
     @pulumi.getter(name="overrideDnsIp")
     def override_dns_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+        (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
         """
         return pulumi.get(self, "override_dns_ip")
 
@@ -1765,6 +1765,14 @@ class ConfigConfigurationVerifyTextArgs:
 
 
 class ConfigMaintenanceWindowScheduleArgsDict(TypedDict):
+    recurrence_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Type of recurrence for a recurring maintenance window.
+    """
+    schedule_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+    """
     time_ended: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -1777,16 +1785,48 @@ class ConfigMaintenanceWindowScheduleArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigMaintenanceWindowScheduleArgs:
     def __init__(__self__, *,
+                 recurrence_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_ended: pulumi.Input[Optional[_builtins.str]] = None,
                  time_started: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] recurrence_type: (Updatable) Type of recurrence for a recurring maintenance window.
+        :param pulumi.Input[_builtins.str] schedule_type: (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
         :param pulumi.Input[_builtins.str] time_ended: (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[_builtins.str] time_started: (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
+        if recurrence_type is not None:
+            pulumi.set(__self__, "recurrence_type", recurrence_type)
+        if schedule_type is not None:
+            pulumi.set(__self__, "schedule_type", schedule_type)
         if time_ended is not None:
             pulumi.set(__self__, "time_ended", time_ended)
         if time_started is not None:
             pulumi.set(__self__, "time_started", time_started)
+
+    @_builtins.property
+    @pulumi.getter(name="recurrenceType")
+    def recurrence_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Type of recurrence for a recurring maintenance window.
+        """
+        return pulumi.get(self, "recurrence_type")
+
+    @recurrence_type.setter
+    def recurrence_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "recurrence_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scheduleType")
+    def schedule_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+        """
+        return pulumi.get(self, "schedule_type")
+
+    @schedule_type.setter
+    def schedule_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "schedule_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEnded")

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly double Amount;
         /// <summary>
-        /// Sku details for billing subscription.
+        /// Billing details associated with the subscription plan and its usage dimensions.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSelfSubscriptionSubscriptionDetailBillingDetailResult> BillingDetails;
         /// <summary>

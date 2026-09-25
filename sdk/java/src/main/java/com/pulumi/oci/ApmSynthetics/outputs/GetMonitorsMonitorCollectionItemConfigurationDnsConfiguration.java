@@ -17,7 +17,7 @@ public final class GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration
      */
     private Boolean isOverrideDns;
     /**
-     * @return Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+     * @return Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
      * 
      */
     private String overrideDnsIp;
@@ -31,7 +31,7 @@ public final class GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration
         return this.isOverrideDns;
     }
     /**
-     * @return Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+     * @return Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
      * 
      */
     public String overrideDnsIp() {

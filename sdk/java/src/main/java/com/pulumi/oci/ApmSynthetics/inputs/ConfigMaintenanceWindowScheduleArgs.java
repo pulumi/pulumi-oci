@@ -16,6 +16,36 @@ public final class ConfigMaintenanceWindowScheduleArgs extends com.pulumi.resour
     public static final ConfigMaintenanceWindowScheduleArgs Empty = new ConfigMaintenanceWindowScheduleArgs();
 
     /**
+     * (Updatable) Type of recurrence for a recurring maintenance window.
+     * 
+     */
+    @Import(name="recurrenceType")
+    private @Nullable Output<String> recurrenceType;
+
+    /**
+     * @return (Updatable) Type of recurrence for a recurring maintenance window.
+     * 
+     */
+    public Optional<Output<String>> recurrenceType() {
+        return Optional.ofNullable(this.recurrenceType);
+    }
+
+    /**
+     * (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+     * 
+     */
+    @Import(name="scheduleType")
+    private @Nullable Output<String> scheduleType;
+
+    /**
+     * @return (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+     * 
+     */
+    public Optional<Output<String>> scheduleType() {
+        return Optional.ofNullable(this.scheduleType);
+    }
+
+    /**
      * (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
@@ -48,6 +78,8 @@ public final class ConfigMaintenanceWindowScheduleArgs extends com.pulumi.resour
     private ConfigMaintenanceWindowScheduleArgs() {}
 
     private ConfigMaintenanceWindowScheduleArgs(ConfigMaintenanceWindowScheduleArgs $) {
+        this.recurrenceType = $.recurrenceType;
+        this.scheduleType = $.scheduleType;
         this.timeEnded = $.timeEnded;
         this.timeStarted = $.timeStarted;
     }
@@ -68,6 +100,48 @@ public final class ConfigMaintenanceWindowScheduleArgs extends com.pulumi.resour
 
         public Builder(ConfigMaintenanceWindowScheduleArgs defaults) {
             $ = new ConfigMaintenanceWindowScheduleArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param recurrenceType (Updatable) Type of recurrence for a recurring maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recurrenceType(@Nullable Output<String> recurrenceType) {
+            $.recurrenceType = recurrenceType;
+            return this;
+        }
+
+        /**
+         * @param recurrenceType (Updatable) Type of recurrence for a recurring maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recurrenceType(String recurrenceType) {
+            return recurrenceType(Output.of(recurrenceType));
+        }
+
+        /**
+         * @param scheduleType (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduleType(@Nullable Output<String> scheduleType) {
+            $.scheduleType = scheduleType;
+            return this;
+        }
+
+        /**
+         * @param scheduleType (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduleType(String scheduleType) {
+            return scheduleType(Output.of(scheduleType));
         }
 
         /**

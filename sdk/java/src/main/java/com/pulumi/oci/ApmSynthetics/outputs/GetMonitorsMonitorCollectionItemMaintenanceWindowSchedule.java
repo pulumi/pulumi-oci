@@ -11,6 +11,16 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule {
     /**
+     * @return Type of recurrence for a recurring maintenance window.
+     * 
+     */
+    private String recurrenceType;
+    /**
+     * @return Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+     * 
+     */
+    private String scheduleType;
+    /**
      * @return End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
@@ -22,6 +32,20 @@ public final class GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule {
     private String timeStarted;
 
     private GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule() {}
+    /**
+     * @return Type of recurrence for a recurring maintenance window.
+     * 
+     */
+    public String recurrenceType() {
+        return this.recurrenceType;
+    }
+    /**
+     * @return Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+     * 
+     */
+    public String scheduleType() {
+        return this.scheduleType;
+    }
     /**
      * @return End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
@@ -46,15 +70,35 @@ public final class GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String recurrenceType;
+        private String scheduleType;
         private String timeEnded;
         private String timeStarted;
         public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.recurrenceType = defaults.recurrenceType;
+    	      this.scheduleType = defaults.scheduleType;
     	      this.timeEnded = defaults.timeEnded;
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
+        public Builder recurrenceType(String recurrenceType) {
+            if (recurrenceType == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule", "recurrenceType");
+            }
+            this.recurrenceType = recurrenceType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scheduleType(String scheduleType) {
+            if (scheduleType == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule", "scheduleType");
+            }
+            this.scheduleType = scheduleType;
+            return this;
+        }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
             if (timeEnded == null) {
@@ -73,6 +117,8 @@ public final class GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule {
         }
         public GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule build() {
             final var _resultValue = new GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule();
+            _resultValue.recurrenceType = recurrenceType;
+            _resultValue.scheduleType = scheduleType;
             _resultValue.timeEnded = timeEnded;
             _resultValue.timeStarted = timeStarted;
             return _resultValue;

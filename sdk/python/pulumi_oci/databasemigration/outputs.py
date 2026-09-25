@@ -2557,9 +2557,7 @@ class MigrationInitialLoadSettings(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "jobMode":
-            suggest = "job_mode"
-        elif key == "dataPumpParameters":
+        if key == "dataPumpParameters":
             suggest = "data_pump_parameters"
         elif key == "exportDirectoryObject":
             suggest = "export_directory_object"
@@ -2573,6 +2571,8 @@ class MigrationInitialLoadSettings(dict):
             suggest = "is_ignore_existing_objects"
         elif key == "isTzUtc":
             suggest = "is_tz_utc"
+        elif key == "jobMode":
+            suggest = "job_mode"
         elif key == "metadataRemaps":
             suggest = "metadata_remaps"
         elif key == "primaryKeyCompatibility":
@@ -2592,7 +2592,6 @@ class MigrationInitialLoadSettings(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 job_mode: _builtins.str,
                  compatibilities: Optional[Sequence[_builtins.str]] = None,
                  data_pump_parameters: Optional['outputs.MigrationInitialLoadSettingsDataPumpParameters'] = None,
                  export_directory_object: Optional['outputs.MigrationInitialLoadSettingsExportDirectoryObject'] = None,
@@ -2601,11 +2600,11 @@ class MigrationInitialLoadSettings(dict):
                  is_consistent: Optional[_builtins.bool] = None,
                  is_ignore_existing_objects: Optional[_builtins.bool] = None,
                  is_tz_utc: Optional[_builtins.bool] = None,
+                 job_mode: Optional[_builtins.str] = None,
                  metadata_remaps: Optional[Sequence['outputs.MigrationInitialLoadSettingsMetadataRemap']] = None,
                  primary_key_compatibility: Optional[_builtins.str] = None,
                  tablespace_details: Optional['outputs.MigrationInitialLoadSettingsTablespaceDetails'] = None):
         """
-        :param _builtins.str job_mode: (Updatable) Oracle Job Mode
         :param Sequence[_builtins.str] compatibilities: (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
         :param 'MigrationInitialLoadSettingsDataPumpParametersArgs' data_pump_parameters: (Updatable) Optional parameters for Data Pump Export and Import.
         :param 'MigrationInitialLoadSettingsExportDirectoryObjectArgs' export_directory_object: (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
@@ -2614,11 +2613,11 @@ class MigrationInitialLoadSettings(dict):
         :param _builtins.bool is_consistent: (Updatable) Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
         :param _builtins.bool is_ignore_existing_objects: (Updatable) Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
         :param _builtins.bool is_tz_utc: (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
+        :param _builtins.str job_mode: (Updatable) Oracle Job Mode
         :param Sequence['MigrationInitialLoadSettingsMetadataRemapArgs'] metadata_remaps: (Updatable) Defines remapping to be applied to objects as they are processed.
         :param _builtins.str primary_key_compatibility: (Updatable) Primary key compatibility option
         :param 'MigrationInitialLoadSettingsTablespaceDetailsArgs' tablespace_details: (Updatable) Migration tablespace settings.
         """
-        pulumi.set(__self__, "job_mode", job_mode)
         if compatibilities is not None:
             pulumi.set(__self__, "compatibilities", compatibilities)
         if data_pump_parameters is not None:
@@ -2635,20 +2634,14 @@ class MigrationInitialLoadSettings(dict):
             pulumi.set(__self__, "is_ignore_existing_objects", is_ignore_existing_objects)
         if is_tz_utc is not None:
             pulumi.set(__self__, "is_tz_utc", is_tz_utc)
+        if job_mode is not None:
+            pulumi.set(__self__, "job_mode", job_mode)
         if metadata_remaps is not None:
             pulumi.set(__self__, "metadata_remaps", metadata_remaps)
         if primary_key_compatibility is not None:
             pulumi.set(__self__, "primary_key_compatibility", primary_key_compatibility)
         if tablespace_details is not None:
             pulumi.set(__self__, "tablespace_details", tablespace_details)
-
-    @_builtins.property
-    @pulumi.getter(name="jobMode")
-    def job_mode(self) -> _builtins.str:
-        """
-        (Updatable) Oracle Job Mode
-        """
-        return pulumi.get(self, "job_mode")
 
     @_builtins.property
     @pulumi.getter
@@ -2713,6 +2706,14 @@ class MigrationInitialLoadSettings(dict):
         (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
         """
         return pulumi.get(self, "is_tz_utc")
+
+    @_builtins.property
+    @pulumi.getter(name="jobMode")
+    def job_mode(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Oracle Job Mode
+        """
+        return pulumi.get(self, "job_mode")
 
     @_builtins.property
     @pulumi.getter(name="metadataRemaps")
@@ -6099,6 +6100,7 @@ class GetAssessmentsAssessmentCollectionItemResult(dict):
                  include_objects: Sequence['outputs.GetAssessmentsAssessmentCollectionItemIncludeObjectResult'],
                  is_cdb_supported: _builtins.bool,
                  migration_id: _builtins.str,
+                 migration_scope: _builtins.str,
                  network_speed_megabit_per_second: _builtins.str,
                  source_database_connections: Sequence['outputs.GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionResult'],
                  state: _builtins.str,
@@ -6121,6 +6123,7 @@ class GetAssessmentsAssessmentCollectionItemResult(dict):
         :param _builtins.str id: The OCID of the resource being referenced.
         :param _builtins.bool is_cdb_supported: True if CDB should be defined, false otherwise.
         :param _builtins.str migration_id: The OCID of the resource being referenced.
+        :param _builtins.str migration_scope: Assessment migration scope.
         :param _builtins.str network_speed_megabit_per_second: A network speed in Megabits per second.
         :param Sequence['GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArgs'] source_database_connections: Source Assessment Connection object
         :param _builtins.str state: The lifecycle state of the Assessment.
@@ -6146,6 +6149,7 @@ class GetAssessmentsAssessmentCollectionItemResult(dict):
         pulumi.set(__self__, "include_objects", include_objects)
         pulumi.set(__self__, "is_cdb_supported", is_cdb_supported)
         pulumi.set(__self__, "migration_id", migration_id)
+        pulumi.set(__self__, "migration_scope", migration_scope)
         pulumi.set(__self__, "network_speed_megabit_per_second", network_speed_megabit_per_second)
         pulumi.set(__self__, "source_database_connections", source_database_connections)
         pulumi.set(__self__, "state", state)
@@ -6280,6 +6284,14 @@ class GetAssessmentsAssessmentCollectionItemResult(dict):
         The OCID of the resource being referenced.
         """
         return pulumi.get(self, "migration_id")
+
+    @_builtins.property
+    @pulumi.getter(name="migrationScope")
+    def migration_scope(self) -> _builtins.str:
+        """
+        Assessment migration scope.
+        """
+        return pulumi.get(self, "migration_scope")
 
     @_builtins.property
     @pulumi.getter(name="networkSpeedMegabitPerSecond")

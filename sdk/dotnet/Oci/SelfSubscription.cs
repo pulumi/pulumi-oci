@@ -34,28 +34,33 @@ namespace Pulumi.Oci.Oci
     ///         SellerId = testSeller.Id,
     ///         SubscriptionDetails = new Oci.Oci.Inputs.SelfSubscriptionSubscriptionDetailsArgs
     ///         {
-    ///             BillingDetails = new Oci.Oci.Inputs.SelfSubscriptionSubscriptionDetailsBillingDetailsArgs
+    ///             BillingDetails = new[]
     ///             {
-    ///                 Meters = new[]
+    ///                 
     ///                 {
-    ///                     new Oci.Oci.Inputs.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs
+    ///                     { "billingModel", subscriptionSubscriptionDetailsBillingDetailsBillingModel },
+    ///                     { "meters", new[]
     ///                     {
-    ///                         Name = subscriptionSubscriptionDetailsBillingDetailsMetersName,
-    ///                         RateAllocation = subscriptionSubscriptionDetailsBillingDetailsMetersRateAllocation,
-    ///                         ExtendedMetadatas = new[]
+    ///                         
     ///                         {
-    ///                             new Oci.Oci.Inputs.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs
+    ///                             { "name", subscriptionSubscriptionDetailsBillingDetailsMetersName },
+    ///                             { "rateAllocation", subscriptionSubscriptionDetailsBillingDetailsMetersRateAllocation },
+    ///                             { "extendedMetadatas", new[]
     ///                             {
-    ///                                 Key = subscriptionSubscriptionDetailsBillingDetailsMetersExtendedMetadataKey,
-    ///                                 Value = subscriptionSubscriptionDetailsBillingDetailsMetersExtendedMetadataValue,
-    ///                             },
+    ///                                 
+    ///                                 {
+    ///                                     { "key", subscriptionSubscriptionDetailsBillingDetailsMetersExtendedMetadataKey },
+    ///                                     { "value", subscriptionSubscriptionDetailsBillingDetailsMetersExtendedMetadataValue },
+    ///                                 },
+    ///                             } },
     ///                         },
-    ///                     },
+    ///                     } },
+    ///                     { "metricType", subscriptionSubscriptionDetailsBillingDetailsMetricType },
+    ///                     { "pricingPlanKey", subscriptionSubscriptionDetailsBillingDetailsPricingPlanKey },
+    ///                     { "rateAllocation", subscriptionSubscriptionDetailsBillingDetailsRateAllocation },
+    ///                     { "sku", subscriptionSubscriptionDetailsBillingDetailsSku },
+    ///                     { "hasGovSku", subscriptionSubscriptionDetailsBillingDetailsHasGovSku },
     ///                 },
-    ///                 MetricType = subscriptionSubscriptionDetailsBillingDetailsMetricType,
-    ///                 RateAllocation = subscriptionSubscriptionDetailsBillingDetailsRateAllocation,
-    ///                 Sku = subscriptionSubscriptionDetailsBillingDetailsSku,
-    ///                 HasGovSku = subscriptionSubscriptionDetailsBillingDetailsHasGovSku,
     ///             },
     ///             PartnerRegistrationUrl = subscriptionSubscriptionDetailsPartnerRegistrationUrl,
     ///             PricingPlan = new Oci.Oci.Inputs.SelfSubscriptionSubscriptionDetailsPricingPlanArgs
@@ -69,6 +74,26 @@ namespace Pulumi.Oci.Oci
     ///                     {
     ///                         Currency = subscriptionSubscriptionDetailsPricingPlanRatesCurrency,
     ///                         Rate = subscriptionSubscriptionDetailsPricingPlanRatesRate,
+    ///                     },
+    ///                 },
+    ///                 Dimensions = new[]
+    ///                 {
+    ///                     new Oci.Oci.Inputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs
+    ///                     {
+    ///                         DimensionBillingFrequency = subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionBillingFrequency,
+    ///                         DimensionDescription = subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionDescription,
+    ///                         DimensionKey = subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionKey,
+    ///                         DimensionName = subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionName,
+    ///                         MetricType = subscriptionSubscriptionDetailsPricingPlanDimensionsMetricType,
+    ///                         Rates = new[]
+    ///                         {
+    ///                             new Oci.Oci.Inputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgs
+    ///                             {
+    ///                                 Currency = subscriptionSubscriptionDetailsPricingPlanDimensionsRatesCurrency,
+    ///                                 Rate = subscriptionSubscriptionDetailsPricingPlanDimensionsRatesRate,
+    ///                             },
+    ///                         },
+    ///                         IncludedQuantity = subscriptionSubscriptionDetailsPricingPlanDimensionsIncludedQuantity,
     ///                     },
     ///                 },
     ///                 PlanDescription = subscriptionSubscriptionDetailsPricingPlanPlanDescription,

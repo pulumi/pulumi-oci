@@ -29,6 +29,10 @@ __all__ = [
     'FunctionProvisionedConcurrencyConfigArgsDict',
     'FunctionSourceDetailsArgs',
     'FunctionSourceDetailsArgsDict',
+    'FunctionSourceDetailsArchiveSourceDetailsArgs',
+    'FunctionSourceDetailsArchiveSourceDetailsArgsDict',
+    'FunctionSourceDetailsRuntimeConfigArgs',
+    'FunctionSourceDetailsRuntimeConfigArgsDict',
     'FunctionSuccessDestinationArgs',
     'FunctionSuccessDestinationArgsDict',
     'FunctionTraceConfigArgs',
@@ -37,6 +41,10 @@ __all__ = [
     'GetApplicationsFilterArgsDict',
     'GetFunctionsFilterArgs',
     'GetFunctionsFilterArgsDict',
+    'GetFunctionsRuntimeVersionsFilterArgs',
+    'GetFunctionsRuntimeVersionsFilterArgsDict',
+    'GetFunctionsRuntimesFilterArgs',
+    'GetFunctionsRuntimesFilterArgsDict',
     'GetFusionEnvironmentAdminUsersFilterArgs',
     'GetFusionEnvironmentAdminUsersFilterArgsDict',
     'GetFusionEnvironmentDataMaskingActivitiesFilterArgs',
@@ -381,50 +389,366 @@ class FunctionProvisionedConcurrencyConfigArgs:
 
 
 class FunctionSourceDetailsArgsDict(TypedDict):
-    pbf_listing_id: pulumi.Input[_builtins.str]
+    source_type: pulumi.Input[_builtins.str]
+    """
+    Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
+    """
+    archive_source_details: NotRequired[pulumi.Input[Optional['FunctionSourceDetailsArchiveSourceDetailsArgsDict']]]
+    """
+    (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+    """
+    handler: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+    """
+    image: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+    """
+    image_digest: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+    """
+    pbf_listing_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
     """
-    source_type: pulumi.Input[_builtins.str]
+    runtime_config: NotRequired[pulumi.Input[Optional['FunctionSourceDetailsRuntimeConfigArgsDict']]]
     """
-    Type of the Function Source. Possible values: PBF.
+    (Updatable) FunctionsRuntime configuration used to create a function.
+    """
+    source_code_sha256: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The SHA256 hash of the function source code archive, base64-encoded.
     """
 
 @pulumi.input_type
 class FunctionSourceDetailsArgs:
     def __init__(__self__, *,
-                 pbf_listing_id: pulumi.Input[_builtins.str],
-                 source_type: pulumi.Input[_builtins.str]):
+                 source_type: pulumi.Input[_builtins.str],
+                 archive_source_details: pulumi.Input[Optional['FunctionSourceDetailsArchiveSourceDetailsArgs']] = None,
+                 handler: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_digest: pulumi.Input[Optional[_builtins.str]] = None,
+                 pbf_listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 runtime_config: pulumi.Input[Optional['FunctionSourceDetailsRuntimeConfigArgs']] = None,
+                 source_code_sha256: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] source_type: Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
+        :param pulumi.Input['FunctionSourceDetailsArchiveSourceDetailsArgs'] archive_source_details: (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+        :param pulumi.Input[_builtins.str] handler: (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+        :param pulumi.Input[_builtins.str] image: (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+        :param pulumi.Input[_builtins.str] image_digest: (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         :param pulumi.Input[_builtins.str] pbf_listing_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-        :param pulumi.Input[_builtins.str] source_type: Type of the Function Source. Possible values: PBF.
+        :param pulumi.Input['FunctionSourceDetailsRuntimeConfigArgs'] runtime_config: (Updatable) FunctionsRuntime configuration used to create a function.
+        :param pulumi.Input[_builtins.str] source_code_sha256: The SHA256 hash of the function source code archive, base64-encoded.
         """
-        pulumi.set(__self__, "pbf_listing_id", pbf_listing_id)
         pulumi.set(__self__, "source_type", source_type)
-
-    @_builtins.property
-    @pulumi.getter(name="pbfListingId")
-    def pbf_listing_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-        """
-        return pulumi.get(self, "pbf_listing_id")
-
-    @pbf_listing_id.setter
-    def pbf_listing_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "pbf_listing_id", value)
+        if archive_source_details is not None:
+            pulumi.set(__self__, "archive_source_details", archive_source_details)
+        if handler is not None:
+            pulumi.set(__self__, "handler", handler)
+        if image is not None:
+            pulumi.set(__self__, "image", image)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if pbf_listing_id is not None:
+            pulumi.set(__self__, "pbf_listing_id", pbf_listing_id)
+        if runtime_config is not None:
+            pulumi.set(__self__, "runtime_config", runtime_config)
+        if source_code_sha256 is not None:
+            pulumi.set(__self__, "source_code_sha256", source_code_sha256)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Type of the Function Source. Possible values: PBF.
+        Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
     def source_type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "source_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="archiveSourceDetails")
+    def archive_source_details(self) -> pulumi.Input[Optional['FunctionSourceDetailsArchiveSourceDetailsArgs']]:
+        """
+        (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+        """
+        return pulumi.get(self, "archive_source_details")
+
+    @archive_source_details.setter
+    def archive_source_details(self, value: pulumi.Input[Optional['FunctionSourceDetailsArchiveSourceDetailsArgs']]):
+        pulumi.set(self, "archive_source_details", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def handler(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+        """
+        return pulumi.get(self, "handler")
+
+    @handler.setter
+    def handler(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "handler", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+        """
+        return pulumi.get(self, "image")
+
+    @image.setter
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "image", value)
+
+    @_builtins.property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @image_digest.setter
+    def image_digest(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "image_digest", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pbfListingId")
+    def pbf_listing_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+        """
+        return pulumi.get(self, "pbf_listing_id")
+
+    @pbf_listing_id.setter
+    def pbf_listing_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pbf_listing_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="runtimeConfig")
+    def runtime_config(self) -> pulumi.Input[Optional['FunctionSourceDetailsRuntimeConfigArgs']]:
+        """
+        (Updatable) FunctionsRuntime configuration used to create a function.
+        """
+        return pulumi.get(self, "runtime_config")
+
+    @runtime_config.setter
+    def runtime_config(self, value: pulumi.Input[Optional['FunctionSourceDetailsRuntimeConfigArgs']]):
+        pulumi.set(self, "runtime_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceCodeSha256")
+    def source_code_sha256(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The SHA256 hash of the function source code archive, base64-encoded.
+        """
+        return pulumi.get(self, "source_code_sha256")
+
+    @source_code_sha256.setter
+    def source_code_sha256(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_code_sha256", value)
+
+
+class FunctionSourceDetailsArchiveSourceDetailsArgsDict(TypedDict):
+    archive_source_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+    """
+    archive_file: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The base64-encoded archive file of the function code. The archive file must contain all the files for the function. Please refer to functions documentation for maximum allowed size and supported archive formats.
+    """
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The name of the Object Storage bucket.
+    """
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The Object Storage namespace.
+    """
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The name of the Object Storage object.
+    """
+    object_version_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+    """
+
+@pulumi.input_type
+class FunctionSourceDetailsArchiveSourceDetailsArgs:
+    def __init__(__self__, *,
+                 archive_source_type: pulumi.Input[_builtins.str],
+                 archive_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_version_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] archive_source_type: (Updatable) Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+        :param pulumi.Input[_builtins.str] archive_file: (Updatable) The base64-encoded archive file of the function code. The archive file must contain all the files for the function. Please refer to functions documentation for maximum allowed size and supported archive formats.
+        :param pulumi.Input[_builtins.str] bucket: (Updatable) The name of the Object Storage bucket.
+        :param pulumi.Input[_builtins.str] namespace: (Updatable) The Object Storage namespace.
+        :param pulumi.Input[_builtins.str] object: (Updatable) The name of the Object Storage object.
+        :param pulumi.Input[_builtins.str] object_version_id: (Updatable) VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+        """
+        pulumi.set(__self__, "archive_source_type", archive_source_type)
+        if archive_file is not None:
+            pulumi.set(__self__, "archive_file", archive_file)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if object_version_id is not None:
+            pulumi.set(__self__, "object_version_id", object_version_id)
+
+    @_builtins.property
+    @pulumi.getter(name="archiveSourceType")
+    def archive_source_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+        """
+        return pulumi.get(self, "archive_source_type")
+
+    @archive_source_type.setter
+    def archive_source_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "archive_source_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="archiveFile")
+    def archive_file(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The base64-encoded archive file of the function code. The archive file must contain all the files for the function. Please refer to functions documentation for maximum allowed size and supported archive formats.
+        """
+        return pulumi.get(self, "archive_file")
+
+    @archive_file.setter
+    def archive_file(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "archive_file", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The name of the Object Storage bucket.
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "bucket", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Object Storage namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "namespace", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The name of the Object Storage object.
+        """
+        return pulumi.get(self, "object")
+
+    @object.setter
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "object", value)
+
+    @_builtins.property
+    @pulumi.getter(name="objectVersionId")
+    def object_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+        """
+        return pulumi.get(self, "object_version_id")
+
+    @object_version_id.setter
+    def object_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "object_version_id", value)
+
+
+class FunctionSourceDetailsRuntimeConfigArgsDict(TypedDict):
+    functions_runtime_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the FunctionsRuntime this function is to be associated with.
+    """
+    runtime_config_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+    """
+    functions_runtime_version_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The OCID of the FunctionsRuntimeVersion to use for the Function in manual mode.
+    """
+
+@pulumi.input_type
+class FunctionSourceDetailsRuntimeConfigArgs:
+    def __init__(__self__, *,
+                 functions_runtime_name: pulumi.Input[_builtins.str],
+                 runtime_config_type: pulumi.Input[_builtins.str],
+                 functions_runtime_version_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] functions_runtime_name: (Updatable) The name of the FunctionsRuntime this function is to be associated with.
+        :param pulumi.Input[_builtins.str] runtime_config_type: (Updatable) Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+        :param pulumi.Input[_builtins.str] functions_runtime_version_id: (Updatable) The OCID of the FunctionsRuntimeVersion to use for the Function in manual mode.
+        """
+        pulumi.set(__self__, "functions_runtime_name", functions_runtime_name)
+        pulumi.set(__self__, "runtime_config_type", runtime_config_type)
+        if functions_runtime_version_id is not None:
+            pulumi.set(__self__, "functions_runtime_version_id", functions_runtime_version_id)
+
+    @_builtins.property
+    @pulumi.getter(name="functionsRuntimeName")
+    def functions_runtime_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The name of the FunctionsRuntime this function is to be associated with.
+        """
+        return pulumi.get(self, "functions_runtime_name")
+
+    @functions_runtime_name.setter
+    def functions_runtime_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "functions_runtime_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="runtimeConfigType")
+    def runtime_config_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+        """
+        return pulumi.get(self, "runtime_config_type")
+
+    @runtime_config_type.setter
+    def runtime_config_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "runtime_config_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="functionsRuntimeVersionId")
+    def functions_runtime_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of the FunctionsRuntimeVersion to use for the Function in manual mode.
+        """
+        return pulumi.get(self, "functions_runtime_version_id")
+
+    @functions_runtime_version_id.setter
+    def functions_runtime_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "functions_runtime_version_id", value)
 
 
 class FunctionSuccessDestinationArgsDict(TypedDict):
@@ -636,6 +960,103 @@ class GetFunctionsFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetFunctionsRuntimeVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetFunctionsRuntimeVersionsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetFunctionsRuntimesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire FunctionsRuntime name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetFunctionsRuntimesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the entire FunctionsRuntime name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire FunctionsRuntime name given.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

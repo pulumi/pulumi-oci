@@ -5,6 +5,7 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanDimension;
 import com.pulumi.oci.oci.outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanRate;
 import java.lang.String;
 import java.util.List;
@@ -13,17 +14,22 @@ import java.util.Objects;
 @CustomType
 public final class GetSelfSubscriptionSubscriptionDetailPricingPlan {
     /**
-     * @return Specifies the interval at which billing occurs for the subscription plan.
+     * @return Specifies the interval at which billing occurs for the subscription plan or usage dimension.
      * 
      */
     private String billingFrequency;
+    /**
+     * @return Metered usage dimensions associated with the pricing plan.
+     * 
+     */
+    private List<GetSelfSubscriptionSubscriptionDetailPricingPlanDimension> dimensions;
     /**
      * @return A detailed explanation of the subscription plan.
      * 
      */
     private String planDescription;
     /**
-     * @return Specifies the interval at which billing occurs for the subscription plan.
+     * @return Specifies the duration of the subscription plan.
      * 
      */
     private String planDuration;
@@ -45,11 +51,18 @@ public final class GetSelfSubscriptionSubscriptionDetailPricingPlan {
 
     private GetSelfSubscriptionSubscriptionDetailPricingPlan() {}
     /**
-     * @return Specifies the interval at which billing occurs for the subscription plan.
+     * @return Specifies the interval at which billing occurs for the subscription plan or usage dimension.
      * 
      */
     public String billingFrequency() {
         return this.billingFrequency;
+    }
+    /**
+     * @return Metered usage dimensions associated with the pricing plan.
+     * 
+     */
+    public List<GetSelfSubscriptionSubscriptionDetailPricingPlanDimension> dimensions() {
+        return this.dimensions;
     }
     /**
      * @return A detailed explanation of the subscription plan.
@@ -59,7 +72,7 @@ public final class GetSelfSubscriptionSubscriptionDetailPricingPlan {
         return this.planDescription;
     }
     /**
-     * @return Specifies the interval at which billing occurs for the subscription plan.
+     * @return Specifies the duration of the subscription plan.
      * 
      */
     public String planDuration() {
@@ -97,6 +110,7 @@ public final class GetSelfSubscriptionSubscriptionDetailPricingPlan {
     @CustomType.Builder
     public static final class Builder {
         private String billingFrequency;
+        private List<GetSelfSubscriptionSubscriptionDetailPricingPlanDimension> dimensions;
         private String planDescription;
         private String planDuration;
         private String planName;
@@ -106,6 +120,7 @@ public final class GetSelfSubscriptionSubscriptionDetailPricingPlan {
         public Builder(GetSelfSubscriptionSubscriptionDetailPricingPlan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billingFrequency = defaults.billingFrequency;
+    	      this.dimensions = defaults.dimensions;
     	      this.planDescription = defaults.planDescription;
     	      this.planDuration = defaults.planDuration;
     	      this.planName = defaults.planName;
@@ -120,6 +135,17 @@ public final class GetSelfSubscriptionSubscriptionDetailPricingPlan {
             }
             this.billingFrequency = billingFrequency;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dimensions(List<GetSelfSubscriptionSubscriptionDetailPricingPlanDimension> dimensions) {
+            if (dimensions == null) {
+              throw new MissingRequiredPropertyException("GetSelfSubscriptionSubscriptionDetailPricingPlan", "dimensions");
+            }
+            this.dimensions = dimensions;
+            return this;
+        }
+        public Builder dimensions(GetSelfSubscriptionSubscriptionDetailPricingPlanDimension... dimensions) {
+            return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
         public Builder planDescription(String planDescription) {
@@ -167,6 +193,7 @@ public final class GetSelfSubscriptionSubscriptionDetailPricingPlan {
         public GetSelfSubscriptionSubscriptionDetailPricingPlan build() {
             final var _resultValue = new GetSelfSubscriptionSubscriptionDetailPricingPlan();
             _resultValue.billingFrequency = billingFrequency;
+            _resultValue.dimensions = dimensions;
             _resultValue.planDescription = planDescription;
             _resultValue.planDuration = planDuration;
             _resultValue.planName = planName;

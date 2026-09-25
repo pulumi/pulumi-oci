@@ -977,7 +977,6 @@ class Migration(pulumi.CustomResource):
                 "type": migration_include_objects_type,
             }],
             initial_load_settings={
-                "job_mode": migration_initial_load_settings_job_mode,
                 "compatibilities": migration_initial_load_settings_compatibility,
                 "data_pump_parameters": {
                     "estimate": migration_initial_load_settings_data_pump_parameters_estimate,
@@ -999,6 +998,7 @@ class Migration(pulumi.CustomResource):
                 "is_consistent": migration_initial_load_settings_is_consistent == "true",
                 "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects == "true",
                 "is_tz_utc": migration_initial_load_settings_is_tz_utc == "true",
+                "job_mode": migration_initial_load_settings_job_mode,
                 "metadata_remaps": [{
                     "new_value": migration_initial_load_settings_metadata_remaps_new_value,
                     "old_value": migration_initial_load_settings_metadata_remaps_old_value,
@@ -1166,7 +1166,6 @@ class Migration(pulumi.CustomResource):
                 "type": migration_include_objects_type,
             }],
             initial_load_settings={
-                "job_mode": migration_initial_load_settings_job_mode,
                 "compatibilities": migration_initial_load_settings_compatibility,
                 "data_pump_parameters": {
                     "estimate": migration_initial_load_settings_data_pump_parameters_estimate,
@@ -1188,6 +1187,7 @@ class Migration(pulumi.CustomResource):
                 "is_consistent": migration_initial_load_settings_is_consistent == "true",
                 "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects == "true",
                 "is_tz_utc": migration_initial_load_settings_is_tz_utc == "true",
+                "job_mode": migration_initial_load_settings_job_mode,
                 "metadata_remaps": [{
                     "new_value": migration_initial_load_settings_metadata_remaps_new_value,
                     "old_value": migration_initial_load_settings_metadata_remaps_old_value,

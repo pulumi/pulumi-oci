@@ -28,6 +28,7 @@ import * as utilities from "../utilities";
  *     databaseCombination: assessmentDatabaseCombination,
  *     databaseDataSize: assessmentDatabaseDataSize,
  *     ddlExpectation: assessmentDdlExpectation,
+ *     migrationScope: assessmentMigrationScope,
  *     networkSpeedMegabitPerSecond: assessmentNetworkSpeedMegabitPerSecond,
  *     sourceDatabaseConnection: {
  *         id: assessmentSourceDatabaseConnectionId,
@@ -165,6 +166,10 @@ export class Assessment extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly migrationId: pulumi.Output<string>;
     /**
+     * (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+     */
+    declare public readonly migrationScope: pulumi.Output<string | undefined>;
+    /**
      * (Updatable) A network speed in Megabits per second.
      */
     declare public readonly networkSpeedMegabitPerSecond: pulumi.Output<string>;
@@ -222,6 +227,7 @@ export class Assessment extends pulumi.CustomResource {
             resourceInputs["includeObjects"] = state?.includeObjects;
             resourceInputs["isCdbSupported"] = state?.isCdbSupported;
             resourceInputs["migrationId"] = state?.migrationId;
+            resourceInputs["migrationScope"] = state?.migrationScope;
             resourceInputs["networkSpeedMegabitPerSecond"] = state?.networkSpeedMegabitPerSecond;
             resourceInputs["sourceDatabaseConnection"] = state?.sourceDatabaseConnection;
             resourceInputs["state"] = state?.state;
@@ -268,6 +274,7 @@ export class Assessment extends pulumi.CustomResource {
             resourceInputs["excludeObjects"] = args?.excludeObjects;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["includeObjects"] = args?.includeObjects;
+            resourceInputs["migrationScope"] = args?.migrationScope;
             resourceInputs["networkSpeedMegabitPerSecond"] = args?.networkSpeedMegabitPerSecond;
             resourceInputs["sourceDatabaseConnection"] = args?.sourceDatabaseConnection;
             resourceInputs["targetDatabaseConnection"] = args?.targetDatabaseConnection;
@@ -352,6 +359,10 @@ export interface AssessmentState {
      * The OCID of the resource being referenced.
      */
     migrationId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+     */
+    migrationScope?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A network speed in Megabits per second.
      */
@@ -438,6 +449,10 @@ export interface AssessmentArgs {
      * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
      */
     includeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.AssessmentIncludeObject>[] | undefined>;
+    /**
+     * (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+     */
+    migrationScope?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A network speed in Megabits per second.
      */

@@ -15,6 +15,11 @@ import java.util.Objects;
 @CustomType
 public final class GetSelfSubscriptionSubscriptionDetailBillingDetail {
     /**
+     * @return The billing model this billing detail applies to.
+     * 
+     */
+    private String billingModel;
+    /**
      * @return Whether this sku is assign to gov product.
      * 
      */
@@ -25,10 +30,15 @@ public final class GetSelfSubscriptionSubscriptionDetailBillingDetail {
      */
     private List<GetSelfSubscriptionSubscriptionDetailBillingDetailMeter> meters;
     /**
-     * @return The part&#39;s metric.
+     * @return The metric type in which usage is measured.
      * 
      */
     private String metricType;
+    /**
+     * @return Unique key used to map this SKU to the pricing plan.
+     * 
+     */
+    private String pricingPlanKey;
     /**
      * @return Tha rate of this sku meter.
      * 
@@ -41,6 +51,13 @@ public final class GetSelfSubscriptionSubscriptionDetailBillingDetail {
     private String sku;
 
     private GetSelfSubscriptionSubscriptionDetailBillingDetail() {}
+    /**
+     * @return The billing model this billing detail applies to.
+     * 
+     */
+    public String billingModel() {
+        return this.billingModel;
+    }
     /**
      * @return Whether this sku is assign to gov product.
      * 
@@ -56,11 +73,18 @@ public final class GetSelfSubscriptionSubscriptionDetailBillingDetail {
         return this.meters;
     }
     /**
-     * @return The part&#39;s metric.
+     * @return The metric type in which usage is measured.
      * 
      */
     public String metricType() {
         return this.metricType;
+    }
+    /**
+     * @return Unique key used to map this SKU to the pricing plan.
+     * 
+     */
+    public String pricingPlanKey() {
+        return this.pricingPlanKey;
     }
     /**
      * @return Tha rate of this sku meter.
@@ -86,21 +110,33 @@ public final class GetSelfSubscriptionSubscriptionDetailBillingDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String billingModel;
         private Boolean hasGovSku;
         private List<GetSelfSubscriptionSubscriptionDetailBillingDetailMeter> meters;
         private String metricType;
+        private String pricingPlanKey;
         private Double rateAllocation;
         private String sku;
         public Builder() {}
         public Builder(GetSelfSubscriptionSubscriptionDetailBillingDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.billingModel = defaults.billingModel;
     	      this.hasGovSku = defaults.hasGovSku;
     	      this.meters = defaults.meters;
     	      this.metricType = defaults.metricType;
+    	      this.pricingPlanKey = defaults.pricingPlanKey;
     	      this.rateAllocation = defaults.rateAllocation;
     	      this.sku = defaults.sku;
         }
 
+        @CustomType.Setter
+        public Builder billingModel(String billingModel) {
+            if (billingModel == null) {
+              throw new MissingRequiredPropertyException("GetSelfSubscriptionSubscriptionDetailBillingDetail", "billingModel");
+            }
+            this.billingModel = billingModel;
+            return this;
+        }
         @CustomType.Setter
         public Builder hasGovSku(Boolean hasGovSku) {
             if (hasGovSku == null) {
@@ -129,6 +165,14 @@ public final class GetSelfSubscriptionSubscriptionDetailBillingDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder pricingPlanKey(String pricingPlanKey) {
+            if (pricingPlanKey == null) {
+              throw new MissingRequiredPropertyException("GetSelfSubscriptionSubscriptionDetailBillingDetail", "pricingPlanKey");
+            }
+            this.pricingPlanKey = pricingPlanKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder rateAllocation(Double rateAllocation) {
             if (rateAllocation == null) {
               throw new MissingRequiredPropertyException("GetSelfSubscriptionSubscriptionDetailBillingDetail", "rateAllocation");
@@ -146,9 +190,11 @@ public final class GetSelfSubscriptionSubscriptionDetailBillingDetail {
         }
         public GetSelfSubscriptionSubscriptionDetailBillingDetail build() {
             final var _resultValue = new GetSelfSubscriptionSubscriptionDetailBillingDetail();
+            _resultValue.billingModel = billingModel;
             _resultValue.hasGovSku = hasGovSku;
             _resultValue.meters = meters;
             _resultValue.metricType = metricType;
+            _resultValue.pricingPlanKey = pricingPlanKey;
             _resultValue.rateAllocation = rateAllocation;
             _resultValue.sku = sku;
             return _resultValue;

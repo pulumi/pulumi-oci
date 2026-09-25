@@ -5574,6 +5574,122 @@
                 "current": "oci:DataSafe/compareUserAssessment:CompareUserAssessment",
                 "majorVersion": 5
             },
+            "oci_data_safe_crypto_assessment": {
+                "current": "oci:DataSafe/cryptoAssessment:CryptoAssessment",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_posture": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "network_encryption": {
+                                    "maxItemsOne": false
+                                },
+                                "nne": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "encryption_configured": {
+                                                "maxItemsOne": false
+                                            },
+                                            "integrity": {
+                                                "maxItemsOne": false
+                                            },
+                                            "server_integrity": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "tde": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "encryption_configured": {
+                                                "maxItemsOne": false
+                                            },
+                                            "integrity_configured": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "tls": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "cipher_suites_configured": {
+                                                "maxItemsOne": false
+                                            },
+                                            "versions": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment_management": {
+                "current": "oci:DataSafe/cryptoAssessmentManagement:CryptoAssessmentManagement",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_posture": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "network_encryption": {
+                                    "maxItemsOne": false
+                                },
+                                "nne": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "encryption_configured": {
+                                                "maxItemsOne": false
+                                            },
+                                            "integrity": {
+                                                "maxItemsOne": false
+                                            },
+                                            "server_integrity": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "tde": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "encryption_configured": {
+                                                "maxItemsOne": false
+                                            },
+                                            "integrity_configured": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "tls": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "cipher_suites_configured": {
+                                                "maxItemsOne": false
+                                            },
+                                            "versions": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "oci_data_safe_data_safe_configuration": {
                 "current": "oci:DataSafe/dataSafeConfiguration:DataSafeConfiguration",
                 "majorVersion": 5,
@@ -14371,7 +14487,17 @@
                         "maxItemsOne": true
                     },
                     "source_details": {
-                        "maxItemsOne": true
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "archive_source_details": {
+                                    "maxItemsOne": true
+                                },
+                                "runtime_config": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
                     },
                     "success_destination": {
                         "maxItemsOne": true
@@ -14939,6 +15065,59 @@
                                             }
                                         }
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_generative_ai_routing_profile": {
+                "current": "oci:GenerativeAi/routingProfile:RoutingProfile",
+                "majorVersion": 5,
+                "fields": {
+                    "model_routing_policy": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "allowed_models": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "previous_state": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "model_routing_policy": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "allowed_models": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "region_routing_policy": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "allowed_regions": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "region_routing_policy": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "allowed_regions": {
+                                    "maxItemsOne": false
                                 }
                             }
                         }
@@ -22351,6 +22530,16 @@
                                     "maxItemsOne": true,
                                     "elem": {
                                         "fields": {
+                                            "dimensions": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "rates": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "rates": {
                                                 "maxItemsOne": false
                                             }
@@ -42031,6 +42220,483 @@
                                 }
                             }
                         }
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment": {
+                "current": "oci:DataSafe/getCryptoAssessment:getCryptoAssessment",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_posture": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "network_encryption": {
+                                    "maxItemsOne": false
+                                },
+                                "nne": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "encryption_configured": {
+                                                "maxItemsOne": false
+                                            },
+                                            "integrity": {
+                                                "maxItemsOne": false
+                                            },
+                                            "server_integrity": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "tde": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "encryption_configured": {
+                                                "maxItemsOne": false
+                                            },
+                                            "integrity_configured": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "tls": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "cipher_suites_configured": {
+                                                "maxItemsOne": false
+                                            },
+                                            "versions": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment_backup_sets": {
+                "current": "oci:DataSafe/getCryptoAssessmentBackupSets:getCryptoAssessmentBackupSets",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_assessment_backup_set_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment_cbom_items": {
+                "current": "oci:DataSafe/getCryptoAssessmentCbomItems:getCryptoAssessmentCbomItems",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_assessment_cbom_item_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "configuration_location": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment_certificates": {
+                "current": "oci:DataSafe/getCryptoAssessmentCertificates:getCryptoAssessmentCertificates",
+                "majorVersion": 5,
+                "fields": {
+                    "certificate_type": {
+                        "maxItemsOne": false
+                    },
+                    "crypto_assessment_certificate_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "public_key_type": {
+                        "maxItemsOne": false
+                    },
+                    "signature_algorithm": {
+                        "maxItemsOne": false
+                    },
+                    "status": {
+                        "maxItemsOne": false
+                    },
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment_finding_analytics": {
+                "current": "oci:DataSafe/getCryptoAssessmentFindingAnalytics:getCryptoAssessmentFindingAnalytics",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_assessment_finding_analytics_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "finding_key": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment_finding_targets": {
+                "current": "oci:DataSafe/getCryptoAssessmentFindingTargets:getCryptoAssessmentFindingTargets",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_assessment_finding_target_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "finding_key": {
+                        "maxItemsOne": false
+                    },
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment_findings": {
+                "current": "oci:DataSafe/getCryptoAssessmentFindings:getCryptoAssessmentFindings",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_assessment_finding_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "observed_value": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "summary": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "backup_status": {
+                                                "maxItemsOne": false
+                                            },
+                                            "data_encryption_status": {
+                                                "maxItemsOne": false
+                                            },
+                                            "network_encryption_status": {
+                                                "maxItemsOne": false
+                                            },
+                                            "wallet_status": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment_keys": {
+                "current": "oci:DataSafe/getCryptoAssessmentKeys:getCryptoAssessmentKeys",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_assessment_key_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "key_manager_type": {
+                        "maxItemsOne": false
+                    },
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment_sqlnet_parameter": {
+                "current": "oci:DataSafe/getCryptoAssessmentSqlnetParameter:getCryptoAssessmentSqlnetParameter",
+                "majorVersion": 5,
+                "fields": {
+                    "parameters": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "value": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "source": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment_tde_objects": {
+                "current": "oci:DataSafe/getCryptoAssessmentTdeObjects:getCryptoAssessmentTdeObjects",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_assessment_tde_object_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "encryption_observed": {
+                        "maxItemsOne": false
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessment_wallets": {
+                "current": "oci:DataSafe/getCryptoAssessmentWallets:getCryptoAssessmentWallets",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_assessment_wallet_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "target_ids": {
+                        "maxItemsOne": false
+                    },
+                    "wallet_encryption_algorithm": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_crypto_assessments": {
+                "current": "oci:DataSafe/getCryptoAssessments:getCryptoAssessments",
+                "majorVersion": 5,
+                "fields": {
+                    "crypto_assessment_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "crypto_posture": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "network_encryption": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "nne": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "encryption_configured": {
+                                                                        "maxItemsOne": false
+                                                                    },
+                                                                    "integrity": {
+                                                                        "maxItemsOne": false
+                                                                    },
+                                                                    "server_integrity": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "tde": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "encryption_configured": {
+                                                                        "maxItemsOne": false
+                                                                    },
+                                                                    "integrity_configured": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "tls": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cipher_suites_configured": {
+                                                                        "maxItemsOne": false
+                                                                    },
+                                                                    "versions": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "posture_category": {
+                        "maxItemsOne": false
+                    },
+                    "target_ids": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -70869,7 +71535,17 @@
                         "maxItemsOne": false
                     },
                     "source_details": {
-                        "maxItemsOne": false
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "archive_source_details": {
+                                    "maxItemsOne": false
+                                },
+                                "runtime_config": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
                     },
                     "success_destination": {
                         "maxItemsOne": false
@@ -70904,12 +71580,94 @@
                                     "maxItemsOne": false
                                 },
                                 "source_details": {
-                                    "maxItemsOne": false
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "archive_source_details": {
+                                                "maxItemsOne": false
+                                            },
+                                            "runtime_config": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
                                 },
                                 "success_destination": {
                                     "maxItemsOne": false
                                 },
                                 "trace_config": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_functions_functions_runtime": {
+                "current": "oci:Functions/getFunctionsRuntime:getFunctionsRuntime",
+                "majorVersion": 5
+            },
+            "oci_functions_functions_runtime_version": {
+                "current": "oci:Functions/getFunctionsRuntimeVersion:getFunctionsRuntimeVersion",
+                "majorVersion": 5,
+                "fields": {
+                    "supported_architectures": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_functions_functions_runtime_versions": {
+                "current": "oci:Functions/getFunctionsRuntimeVersions:getFunctionsRuntimeVersions",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "functions_runtime_version_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "supported_architectures": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_functions_functions_runtimes": {
+                "current": "oci:Functions/getFunctionsRuntimes:getFunctionsRuntimes",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "functions_runtime_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
                                     "maxItemsOne": false
                                 }
                             }
@@ -72678,6 +73436,79 @@
                     }
                 }
             },
+            "oci_generative_ai_model_discoveries": {
+                "current": "oci:GenerativeAi/getModelDiscoveries:getModelDiscoveries",
+                "majorVersion": 5,
+                "fields": {
+                    "api_capability": {
+                        "maxItemsOne": false
+                    },
+                    "capability": {
+                        "maxItemsOne": false
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "model_access": {
+                        "maxItemsOne": false
+                    },
+                    "model_discovery_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "api_capability": {
+                                                "maxItemsOne": false
+                                            },
+                                            "availability": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "serving_modes": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "supported_replacements": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "capabilities": {
+                                                "maxItemsOne": false
+                                            },
+                                            "modality_support": {
+                                                "maxItemsOne": false
+                                            },
+                                            "parameters": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "realm": {
+                        "maxItemsOne": false
+                    },
+                    "region": {
+                        "maxItemsOne": false
+                    },
+                    "serving_mode": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "oci_generative_ai_models": {
                 "current": "oci:GenerativeAi/getModels:getModels",
                 "majorVersion": 5,
@@ -72862,6 +73693,136 @@
                                                                     }
                                                                 }
                                                             }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_generative_ai_routing_profile": {
+                "current": "oci:GenerativeAi/getRoutingProfile:getRoutingProfile",
+                "majorVersion": 5,
+                "fields": {
+                    "model_routing_policy": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "allowed_models": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "previous_state": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "model_routing_policy": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "allowed_models": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "region_routing_policy": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "allowed_regions": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "region_routing_policy": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "allowed_regions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_generative_ai_routing_profiles": {
+                "current": "oci:GenerativeAi/getRoutingProfiles:getRoutingProfiles",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "routing_profile_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "model_routing_policy": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "allowed_models": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "previous_state": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "model_routing_policy": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "allowed_models": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "region_routing_policy": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "allowed_regions": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "region_routing_policy": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "allowed_regions": {
+                                                            "maxItemsOne": false
                                                         }
                                                     }
                                                 }
@@ -98131,6 +99092,58 @@
                     }
                 }
             },
+            "oci_self_partners": {
+                "current": "oci:oci/getSelfPartners:getSelfPartners",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "partner_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_self_self_partner_subscriptions": {
+                "current": "oci:oci/getSelfSelfPartnerSubscriptions:getSelfSelfPartnerSubscriptions",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "listing_subscriptions_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "oci_self_subscription": {
                 "current": "oci:oci/getSelfSubscription:getSelfSubscription",
                 "majorVersion": 5,
@@ -98163,6 +99176,16 @@
                                     "maxItemsOne": false,
                                     "elem": {
                                         "fields": {
+                                            "dimensions": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "rates": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "rates": {
                                                 "maxItemsOne": false
                                             }
@@ -98228,6 +99251,16 @@
                                                             "maxItemsOne": false,
                                                             "elem": {
                                                                 "fields": {
+                                                                    "dimensions": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "rates": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
                                                                     "rates": {
                                                                         "maxItemsOne": false
                                                                     }
@@ -102251,373 +103284,6 @@
                     }
                 }
             },
-            "oci_wlms_managed_instance": {
-                "current": "oci:oci/getWlmsManagedInstance:getWlmsManagedInstance",
-                "majorVersion": 5,
-                "fields": {
-                    "configuration": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "domain_search_paths": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_managed_instance_scan_results": {
-                "current": "oci:oci/getWlmsManagedInstanceScanResults:getWlmsManagedInstanceScanResults",
-                "majorVersion": 5,
-                "fields": {
-                    "filter": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "values": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "scan_result_collection": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "items": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_managed_instance_server": {
-                "current": "oci:oci/getWlmsManagedInstanceServer:getWlmsManagedInstanceServer",
-                "majorVersion": 5
-            },
-            "oci_wlms_managed_instance_server_installed_patches": {
-                "current": "oci:oci/getWlmsManagedInstanceServerInstalledPatches:getWlmsManagedInstanceServerInstalledPatches",
-                "majorVersion": 5,
-                "fields": {
-                    "filter": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "values": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "installed_patch_collection": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "items": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_managed_instance_servers": {
-                "current": "oci:oci/getWlmsManagedInstanceServers:getWlmsManagedInstanceServers",
-                "majorVersion": 5,
-                "fields": {
-                    "filter": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "values": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "server_collection": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "items": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_managed_instances": {
-                "current": "oci:oci/getWlmsManagedInstances:getWlmsManagedInstances",
-                "majorVersion": 5,
-                "fields": {
-                    "filter": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "values": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "managed_instance_collection": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "items": {
-                                    "maxItemsOne": false,
-                                    "elem": {
-                                        "fields": {
-                                            "configuration": {
-                                                "maxItemsOne": false,
-                                                "elem": {
-                                                    "fields": {
-                                                        "domain_search_paths": {
-                                                            "maxItemsOne": false
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_wls_domain": {
-                "current": "oci:oci/getWlmsWlsDomain:getWlmsWlsDomain",
-                "majorVersion": 5,
-                "fields": {
-                    "configuration": {
-                        "maxItemsOne": false
-                    }
-                }
-            },
-            "oci_wlms_wls_domain_agreement_records": {
-                "current": "oci:oci/getWlmsWlsDomainAgreementRecords:getWlmsWlsDomainAgreementRecords",
-                "majorVersion": 5,
-                "fields": {
-                    "agreement_record_collection": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "items": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "filter": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "values": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_wls_domain_applicable_patches": {
-                "current": "oci:oci/getWlmsWlsDomainApplicablePatches:getWlmsWlsDomainApplicablePatches",
-                "majorVersion": 5,
-                "fields": {
-                    "applicable_patch_collection": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "items": {
-                                    "maxItemsOne": false,
-                                    "elem": {
-                                        "fields": {
-                                            "middleware_type": {
-                                                "maxItemsOne": false
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "filter": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "values": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_wls_domain_scan_results": {
-                "current": "oci:oci/getWlmsWlsDomainScanResults:getWlmsWlsDomainScanResults",
-                "majorVersion": 5,
-                "fields": {
-                    "filter": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "values": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "scan_result_collection": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "items": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_wls_domain_server": {
-                "current": "oci:oci/getWlmsWlsDomainServer:getWlmsWlsDomainServer",
-                "majorVersion": 5
-            },
-            "oci_wlms_wls_domain_server_backup": {
-                "current": "oci:oci/getWlmsWlsDomainServerBackup:getWlmsWlsDomainServerBackup",
-                "majorVersion": 5
-            },
-            "oci_wlms_wls_domain_server_backup_content": {
-                "current": "oci:oci/getWlmsWlsDomainServerBackupContent:getWlmsWlsDomainServerBackupContent",
-                "majorVersion": 5,
-                "fields": {
-                    "middleware": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "patches": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_wls_domain_server_backups": {
-                "current": "oci:oci/getWlmsWlsDomainServerBackups:getWlmsWlsDomainServerBackups",
-                "majorVersion": 5,
-                "fields": {
-                    "backup_collection": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "items": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "filter": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "values": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_wls_domain_server_installed_patches": {
-                "current": "oci:oci/getWlmsWlsDomainServerInstalledPatches:getWlmsWlsDomainServerInstalledPatches",
-                "majorVersion": 5,
-                "fields": {
-                    "filter": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "values": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "installed_patch_collection": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "items": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_wls_domain_servers": {
-                "current": "oci:oci/getWlmsWlsDomainServers:getWlmsWlsDomainServers",
-                "majorVersion": 5,
-                "fields": {
-                    "filter": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "values": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "server_collection": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "items": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "oci_wlms_wls_domains": {
-                "current": "oci:oci/getWlmsWlsDomains:getWlmsWlsDomains",
-                "majorVersion": 5,
-                "fields": {
-                    "filter": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "values": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "wls_domain_collection": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "items": {
-                                    "maxItemsOne": false,
-                                    "elem": {
-                                        "fields": {
-                                            "configuration": {
-                                                "maxItemsOne": false
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "oci_zpr_configuration": {
                 "current": "oci:Zpr/getConfiguration:getConfiguration",
                 "majorVersion": 5
@@ -102672,6 +103338,11 @@
                 "renames": [
                     "oci:oci/lustreFileStorageLustreFileSystem:LustreFileStorageLustreFileSystem"
                 ]
+            },
+            "oci_self_subscription": {
+                "maxItemsOneOverrides": {
+                    "subscription_details.$.billing_details": true
+                }
             }
         }
     },

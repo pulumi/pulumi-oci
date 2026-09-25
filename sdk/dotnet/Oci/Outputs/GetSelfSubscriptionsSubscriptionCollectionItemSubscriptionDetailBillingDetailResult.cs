@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailResult
     {
         /// <summary>
+        /// The billing model this billing detail applies to.
+        /// </summary>
+        public readonly string BillingModel;
+        /// <summary>
         /// Whether this sku is assign to gov product.
         /// </summary>
         public readonly bool HasGovSku;
@@ -22,9 +26,13 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterResult> Meters;
         /// <summary>
-        /// The part's metric.
+        /// The metric type in which usage is measured.
         /// </summary>
         public readonly string MetricType;
+        /// <summary>
+        /// Unique key used to map this SKU to the pricing plan.
+        /// </summary>
+        public readonly string PricingPlanKey;
         /// <summary>
         /// Tha rate of this sku meter.
         /// </summary>
@@ -36,19 +44,25 @@ namespace Pulumi.Oci.Oci.Outputs
 
         [OutputConstructor]
         private GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailResult(
+            string billingModel,
+
             bool hasGovSku,
 
             ImmutableArray<Outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterResult> meters,
 
             string metricType,
 
+            string pricingPlanKey,
+
             double rateAllocation,
 
             string sku)
         {
+            BillingModel = billingModel;
             HasGovSku = hasGovSku;
             Meters = meters;
             MetricType = metricType;
+            PricingPlanKey = pricingPlanKey;
             RateAllocation = rateAllocation;
             Sku = sku;
         }

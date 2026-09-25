@@ -765,6 +765,16 @@ export const getSelfPartnerSubscriptions: typeof import("./getSelfPartnerSubscri
 export const getSelfPartnerSubscriptionsOutput: typeof import("./getSelfPartnerSubscriptions").getSelfPartnerSubscriptionsOutput = null as any;
 utilities.lazyLoad(exports, ["getSelfPartnerSubscriptions","getSelfPartnerSubscriptionsOutput"], () => require("./getSelfPartnerSubscriptions"));
 
+export { GetSelfPartnersArgs, GetSelfPartnersResult, GetSelfPartnersOutputArgs } from "./getSelfPartners";
+export const getSelfPartners: typeof import("./getSelfPartners").getSelfPartners = null as any;
+export const getSelfPartnersOutput: typeof import("./getSelfPartners").getSelfPartnersOutput = null as any;
+utilities.lazyLoad(exports, ["getSelfPartners","getSelfPartnersOutput"], () => require("./getSelfPartners"));
+
+export { GetSelfSelfPartnerSubscriptionsArgs, GetSelfSelfPartnerSubscriptionsResult, GetSelfSelfPartnerSubscriptionsOutputArgs } from "./getSelfSelfPartnerSubscriptions";
+export const getSelfSelfPartnerSubscriptions: typeof import("./getSelfSelfPartnerSubscriptions").getSelfSelfPartnerSubscriptions = null as any;
+export const getSelfSelfPartnerSubscriptionsOutput: typeof import("./getSelfSelfPartnerSubscriptions").getSelfSelfPartnerSubscriptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSelfSelfPartnerSubscriptions","getSelfSelfPartnerSubscriptionsOutput"], () => require("./getSelfSelfPartnerSubscriptions"));
+
 export { GetSelfSubscriptionArgs, GetSelfSubscriptionResult, GetSelfSubscriptionOutputArgs } from "./getSelfSubscription";
 export const getSelfSubscription: typeof import("./getSelfSubscription").getSelfSubscription = null as any;
 export const getSelfSubscriptionOutput: typeof import("./getSelfSubscription").getSelfSubscriptionOutput = null as any;
@@ -779,91 +789,6 @@ export { GetSelfSubscriptionsArgs, GetSelfSubscriptionsResult, GetSelfSubscripti
 export const getSelfSubscriptions: typeof import("./getSelfSubscriptions").getSelfSubscriptions = null as any;
 export const getSelfSubscriptionsOutput: typeof import("./getSelfSubscriptions").getSelfSubscriptionsOutput = null as any;
 utilities.lazyLoad(exports, ["getSelfSubscriptions","getSelfSubscriptionsOutput"], () => require("./getSelfSubscriptions"));
-
-export { GetWlmsManagedInstanceArgs, GetWlmsManagedInstanceResult, GetWlmsManagedInstanceOutputArgs } from "./getWlmsManagedInstance";
-export const getWlmsManagedInstance: typeof import("./getWlmsManagedInstance").getWlmsManagedInstance = null as any;
-export const getWlmsManagedInstanceOutput: typeof import("./getWlmsManagedInstance").getWlmsManagedInstanceOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsManagedInstance","getWlmsManagedInstanceOutput"], () => require("./getWlmsManagedInstance"));
-
-export { GetWlmsManagedInstanceScanResultsArgs, GetWlmsManagedInstanceScanResultsResult, GetWlmsManagedInstanceScanResultsOutputArgs } from "./getWlmsManagedInstanceScanResults";
-export const getWlmsManagedInstanceScanResults: typeof import("./getWlmsManagedInstanceScanResults").getWlmsManagedInstanceScanResults = null as any;
-export const getWlmsManagedInstanceScanResultsOutput: typeof import("./getWlmsManagedInstanceScanResults").getWlmsManagedInstanceScanResultsOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsManagedInstanceScanResults","getWlmsManagedInstanceScanResultsOutput"], () => require("./getWlmsManagedInstanceScanResults"));
-
-export { GetWlmsManagedInstanceServerArgs, GetWlmsManagedInstanceServerResult, GetWlmsManagedInstanceServerOutputArgs } from "./getWlmsManagedInstanceServer";
-export const getWlmsManagedInstanceServer: typeof import("./getWlmsManagedInstanceServer").getWlmsManagedInstanceServer = null as any;
-export const getWlmsManagedInstanceServerOutput: typeof import("./getWlmsManagedInstanceServer").getWlmsManagedInstanceServerOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsManagedInstanceServer","getWlmsManagedInstanceServerOutput"], () => require("./getWlmsManagedInstanceServer"));
-
-export { GetWlmsManagedInstanceServerInstalledPatchesArgs, GetWlmsManagedInstanceServerInstalledPatchesResult, GetWlmsManagedInstanceServerInstalledPatchesOutputArgs } from "./getWlmsManagedInstanceServerInstalledPatches";
-export const getWlmsManagedInstanceServerInstalledPatches: typeof import("./getWlmsManagedInstanceServerInstalledPatches").getWlmsManagedInstanceServerInstalledPatches = null as any;
-export const getWlmsManagedInstanceServerInstalledPatchesOutput: typeof import("./getWlmsManagedInstanceServerInstalledPatches").getWlmsManagedInstanceServerInstalledPatchesOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsManagedInstanceServerInstalledPatches","getWlmsManagedInstanceServerInstalledPatchesOutput"], () => require("./getWlmsManagedInstanceServerInstalledPatches"));
-
-export { GetWlmsManagedInstanceServersArgs, GetWlmsManagedInstanceServersResult, GetWlmsManagedInstanceServersOutputArgs } from "./getWlmsManagedInstanceServers";
-export const getWlmsManagedInstanceServers: typeof import("./getWlmsManagedInstanceServers").getWlmsManagedInstanceServers = null as any;
-export const getWlmsManagedInstanceServersOutput: typeof import("./getWlmsManagedInstanceServers").getWlmsManagedInstanceServersOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsManagedInstanceServers","getWlmsManagedInstanceServersOutput"], () => require("./getWlmsManagedInstanceServers"));
-
-export { GetWlmsManagedInstancesArgs, GetWlmsManagedInstancesResult, GetWlmsManagedInstancesOutputArgs } from "./getWlmsManagedInstances";
-export const getWlmsManagedInstances: typeof import("./getWlmsManagedInstances").getWlmsManagedInstances = null as any;
-export const getWlmsManagedInstancesOutput: typeof import("./getWlmsManagedInstances").getWlmsManagedInstancesOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsManagedInstances","getWlmsManagedInstancesOutput"], () => require("./getWlmsManagedInstances"));
-
-export { GetWlmsWlsDomainArgs, GetWlmsWlsDomainResult, GetWlmsWlsDomainOutputArgs } from "./getWlmsWlsDomain";
-export const getWlmsWlsDomain: typeof import("./getWlmsWlsDomain").getWlmsWlsDomain = null as any;
-export const getWlmsWlsDomainOutput: typeof import("./getWlmsWlsDomain").getWlmsWlsDomainOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsWlsDomain","getWlmsWlsDomainOutput"], () => require("./getWlmsWlsDomain"));
-
-export { GetWlmsWlsDomainAgreementRecordsArgs, GetWlmsWlsDomainAgreementRecordsResult, GetWlmsWlsDomainAgreementRecordsOutputArgs } from "./getWlmsWlsDomainAgreementRecords";
-export const getWlmsWlsDomainAgreementRecords: typeof import("./getWlmsWlsDomainAgreementRecords").getWlmsWlsDomainAgreementRecords = null as any;
-export const getWlmsWlsDomainAgreementRecordsOutput: typeof import("./getWlmsWlsDomainAgreementRecords").getWlmsWlsDomainAgreementRecordsOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsWlsDomainAgreementRecords","getWlmsWlsDomainAgreementRecordsOutput"], () => require("./getWlmsWlsDomainAgreementRecords"));
-
-export { GetWlmsWlsDomainApplicablePatchesArgs, GetWlmsWlsDomainApplicablePatchesResult, GetWlmsWlsDomainApplicablePatchesOutputArgs } from "./getWlmsWlsDomainApplicablePatches";
-export const getWlmsWlsDomainApplicablePatches: typeof import("./getWlmsWlsDomainApplicablePatches").getWlmsWlsDomainApplicablePatches = null as any;
-export const getWlmsWlsDomainApplicablePatchesOutput: typeof import("./getWlmsWlsDomainApplicablePatches").getWlmsWlsDomainApplicablePatchesOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsWlsDomainApplicablePatches","getWlmsWlsDomainApplicablePatchesOutput"], () => require("./getWlmsWlsDomainApplicablePatches"));
-
-export { GetWlmsWlsDomainScanResultsArgs, GetWlmsWlsDomainScanResultsResult, GetWlmsWlsDomainScanResultsOutputArgs } from "./getWlmsWlsDomainScanResults";
-export const getWlmsWlsDomainScanResults: typeof import("./getWlmsWlsDomainScanResults").getWlmsWlsDomainScanResults = null as any;
-export const getWlmsWlsDomainScanResultsOutput: typeof import("./getWlmsWlsDomainScanResults").getWlmsWlsDomainScanResultsOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsWlsDomainScanResults","getWlmsWlsDomainScanResultsOutput"], () => require("./getWlmsWlsDomainScanResults"));
-
-export { GetWlmsWlsDomainServerArgs, GetWlmsWlsDomainServerResult, GetWlmsWlsDomainServerOutputArgs } from "./getWlmsWlsDomainServer";
-export const getWlmsWlsDomainServer: typeof import("./getWlmsWlsDomainServer").getWlmsWlsDomainServer = null as any;
-export const getWlmsWlsDomainServerOutput: typeof import("./getWlmsWlsDomainServer").getWlmsWlsDomainServerOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsWlsDomainServer","getWlmsWlsDomainServerOutput"], () => require("./getWlmsWlsDomainServer"));
-
-export { GetWlmsWlsDomainServerBackupArgs, GetWlmsWlsDomainServerBackupResult, GetWlmsWlsDomainServerBackupOutputArgs } from "./getWlmsWlsDomainServerBackup";
-export const getWlmsWlsDomainServerBackup: typeof import("./getWlmsWlsDomainServerBackup").getWlmsWlsDomainServerBackup = null as any;
-export const getWlmsWlsDomainServerBackupOutput: typeof import("./getWlmsWlsDomainServerBackup").getWlmsWlsDomainServerBackupOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsWlsDomainServerBackup","getWlmsWlsDomainServerBackupOutput"], () => require("./getWlmsWlsDomainServerBackup"));
-
-export { GetWlmsWlsDomainServerBackupContentArgs, GetWlmsWlsDomainServerBackupContentResult, GetWlmsWlsDomainServerBackupContentOutputArgs } from "./getWlmsWlsDomainServerBackupContent";
-export const getWlmsWlsDomainServerBackupContent: typeof import("./getWlmsWlsDomainServerBackupContent").getWlmsWlsDomainServerBackupContent = null as any;
-export const getWlmsWlsDomainServerBackupContentOutput: typeof import("./getWlmsWlsDomainServerBackupContent").getWlmsWlsDomainServerBackupContentOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsWlsDomainServerBackupContent","getWlmsWlsDomainServerBackupContentOutput"], () => require("./getWlmsWlsDomainServerBackupContent"));
-
-export { GetWlmsWlsDomainServerBackupsArgs, GetWlmsWlsDomainServerBackupsResult, GetWlmsWlsDomainServerBackupsOutputArgs } from "./getWlmsWlsDomainServerBackups";
-export const getWlmsWlsDomainServerBackups: typeof import("./getWlmsWlsDomainServerBackups").getWlmsWlsDomainServerBackups = null as any;
-export const getWlmsWlsDomainServerBackupsOutput: typeof import("./getWlmsWlsDomainServerBackups").getWlmsWlsDomainServerBackupsOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsWlsDomainServerBackups","getWlmsWlsDomainServerBackupsOutput"], () => require("./getWlmsWlsDomainServerBackups"));
-
-export { GetWlmsWlsDomainServerInstalledPatchesArgs, GetWlmsWlsDomainServerInstalledPatchesResult, GetWlmsWlsDomainServerInstalledPatchesOutputArgs } from "./getWlmsWlsDomainServerInstalledPatches";
-export const getWlmsWlsDomainServerInstalledPatches: typeof import("./getWlmsWlsDomainServerInstalledPatches").getWlmsWlsDomainServerInstalledPatches = null as any;
-export const getWlmsWlsDomainServerInstalledPatchesOutput: typeof import("./getWlmsWlsDomainServerInstalledPatches").getWlmsWlsDomainServerInstalledPatchesOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsWlsDomainServerInstalledPatches","getWlmsWlsDomainServerInstalledPatchesOutput"], () => require("./getWlmsWlsDomainServerInstalledPatches"));
-
-export { GetWlmsWlsDomainServersArgs, GetWlmsWlsDomainServersResult, GetWlmsWlsDomainServersOutputArgs } from "./getWlmsWlsDomainServers";
-export const getWlmsWlsDomainServers: typeof import("./getWlmsWlsDomainServers").getWlmsWlsDomainServers = null as any;
-export const getWlmsWlsDomainServersOutput: typeof import("./getWlmsWlsDomainServers").getWlmsWlsDomainServersOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsWlsDomainServers","getWlmsWlsDomainServersOutput"], () => require("./getWlmsWlsDomainServers"));
-
-export { GetWlmsWlsDomainsArgs, GetWlmsWlsDomainsResult, GetWlmsWlsDomainsOutputArgs } from "./getWlmsWlsDomains";
-export const getWlmsWlsDomains: typeof import("./getWlmsWlsDomains").getWlmsWlsDomains = null as any;
-export const getWlmsWlsDomainsOutput: typeof import("./getWlmsWlsDomains").getWlmsWlsDomainsOutput = null as any;
-utilities.lazyLoad(exports, ["getWlmsWlsDomains","getWlmsWlsDomainsOutput"], () => require("./getWlmsWlsDomains"));
 
 export { IotDigitalTwinAdapterArgs, IotDigitalTwinAdapterState } from "./iotDigitalTwinAdapter";
 export type IotDigitalTwinAdapter = import("./iotDigitalTwinAdapter").IotDigitalTwinAdapter;

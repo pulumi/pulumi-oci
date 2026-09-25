@@ -37,7 +37,27 @@ import (
 //				ApplicationId: pulumi.Any(testApplication.Id),
 //				DisplayName:   pulumi.Any(functionDisplayName),
 //				MemoryInMbs:   pulumi.Any(functionMemoryInMbs),
-//				Config:        pulumi.Any(functionConfig),
+//				SourceDetails: &functions.FunctionSourceDetailsArgs{
+//					SourceType: pulumi.Any(functionSourceDetailsSourceType),
+//					ArchiveSourceDetails: &functions.FunctionSourceDetailsArchiveSourceDetailsArgs{
+//						ArchiveSourceType: pulumi.Any(functionSourceDetailsArchiveSourceDetailsArchiveSourceType),
+//						ArchiveFile:       pulumi.Any(functionSourceDetailsArchiveSourceDetailsArchiveFile),
+//						Bucket:            pulumi.Any(functionSourceDetailsArchiveSourceDetailsBucket),
+//						Namespace:         pulumi.Any(functionSourceDetailsArchiveSourceDetailsNamespace),
+//						Object:            pulumi.Any(functionSourceDetailsArchiveSourceDetailsObject),
+//						ObjectVersionId:   pulumi.Any(testObjectVersion.Id),
+//					},
+//					Handler:      pulumi.Any(functionSourceDetailsHandler),
+//					Image:        pulumi.Any(functionSourceDetailsImage),
+//					ImageDigest:  pulumi.Any(functionSourceDetailsImageDigest),
+//					PbfListingId: pulumi.Any(testPbfListing.Id),
+//					RuntimeConfig: &functions.FunctionSourceDetailsRuntimeConfigArgs{
+//						FunctionsRuntimeName:      pulumi.Any(functionsRuntimeName),
+//						FunctionsRuntimeVersionId: pulumi.Any(functionsRuntimeVersionId),
+//						RuntimeConfigType:         pulumi.Any(functionSourceDetailsRuntimeConfigRuntimeConfigType),
+//					},
+//				},
+//				Config: pulumi.Any(functionConfig),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -52,15 +72,9 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				Image:       pulumi.Any(functionImage),
-//				ImageDigest: pulumi.Any(functionImageDigest),
 //				ProvisionedConcurrencyConfig: &functions.FunctionProvisionedConcurrencyConfigArgs{
 //					Strategy: pulumi.Any(functionProvisionedConcurrencyConfigStrategy),
 //					Count:    pulumi.Any(functionProvisionedConcurrencyConfigCount),
-//				},
-//				SourceDetails: &functions.FunctionSourceDetailsArgs{
-//					PbfListingId: pulumi.Any(testPbfListing.Id),
-//					SourceType:   pulumi.Any(functionSourceDetailsSourceType),
 //				},
 //				SuccessDestination: &functions.FunctionSuccessDestinationArgs{
 //					Kind:      pulumi.Any(functionSuccessDestinationKind),
@@ -111,9 +125,11 @@ type Function struct {
 	FailureDestination FunctionFailureDestinationOutput `pulumi:"failureDestination"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	// (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	//
+	// Deprecated: The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
 	Image pulumi.StringOutput `pulumi:"image"`
-	// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+	// (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
 	ImageDigest pulumi.StringOutput `pulumi:"imageDigest"`
 	// The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
 	InvokeEndpoint pulumi.StringOutput `pulumi:"invokeEndpoint"`
@@ -123,7 +139,7 @@ type Function struct {
 	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigOutput `pulumi:"provisionedConcurrencyConfig"`
 	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
 	Shape pulumi.StringOutput `pulumi:"shape"`
-	// The source details for the Function. The function can be created from various sources.
+	// (Updatable) The source details for creating the Function. The function can be created from various sources.
 	SourceDetails FunctionSourceDetailsOutput `pulumi:"sourceDetails"`
 	// The current state of the function.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -196,9 +212,11 @@ type functionState struct {
 	FailureDestination *FunctionFailureDestination `pulumi:"failureDestination"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	// (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	//
+	// Deprecated: The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
 	Image *string `pulumi:"image"`
-	// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+	// (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
 	ImageDigest *string `pulumi:"imageDigest"`
 	// The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
 	InvokeEndpoint *string `pulumi:"invokeEndpoint"`
@@ -208,7 +226,7 @@ type functionState struct {
 	ProvisionedConcurrencyConfig *FunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfig"`
 	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
 	Shape *string `pulumi:"shape"`
-	// The source details for the Function. The function can be created from various sources.
+	// (Updatable) The source details for creating the Function. The function can be created from various sources.
 	SourceDetails *FunctionSourceDetails `pulumi:"sourceDetails"`
 	// The current state of the function.
 	State *string `pulumi:"state"`
@@ -243,9 +261,11 @@ type FunctionState struct {
 	FailureDestination FunctionFailureDestinationPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	// (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	//
+	// Deprecated: The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
 	Image pulumi.StringPtrInput
-	// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+	// (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
 	ImageDigest pulumi.StringPtrInput
 	// The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
 	InvokeEndpoint pulumi.StringPtrInput
@@ -255,7 +275,7 @@ type FunctionState struct {
 	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigPtrInput
 	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
 	Shape pulumi.StringPtrInput
-	// The source details for the Function. The function can be created from various sources.
+	// (Updatable) The source details for creating the Function. The function can be created from various sources.
 	SourceDetails FunctionSourceDetailsPtrInput
 	// The current state of the function.
 	State pulumi.StringPtrInput
@@ -292,15 +312,17 @@ type functionArgs struct {
 	FailureDestination *FunctionFailureDestination `pulumi:"failureDestination"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	// (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	//
+	// Deprecated: The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
 	Image *string `pulumi:"image"`
-	// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+	// (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
 	ImageDigest *string `pulumi:"imageDigest"`
 	// (Updatable) Maximum usable memory for the function (MiB).
 	MemoryInMbs string `pulumi:"memoryInMbs"`
 	// (Updatable) Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfig *FunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfig"`
-	// The source details for the Function. The function can be created from various sources.
+	// (Updatable) The source details for creating the Function. The function can be created from various sources.
 	SourceDetails *FunctionSourceDetails `pulumi:"sourceDetails"`
 	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
 	SuccessDestination *FunctionSuccessDestination `pulumi:"successDestination"`
@@ -328,15 +350,17 @@ type FunctionArgs struct {
 	FailureDestination FunctionFailureDestinationPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	// (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	//
+	// Deprecated: The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
 	Image pulumi.StringPtrInput
-	// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+	// (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
 	ImageDigest pulumi.StringPtrInput
 	// (Updatable) Maximum usable memory for the function (MiB).
 	MemoryInMbs pulumi.StringInput
 	// (Updatable) Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigPtrInput
-	// The source details for the Function. The function can be created from various sources.
+	// (Updatable) The source details for creating the Function. The function can be created from various sources.
 	SourceDetails FunctionSourceDetailsPtrInput
 	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
 	SuccessDestination FunctionSuccessDestinationPtrInput
@@ -475,12 +499,14 @@ func (o FunctionOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Function) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+// (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+//
+// Deprecated: The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
 func (o FunctionOutput) Image() pulumi.StringOutput {
 	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.Image }).(pulumi.StringOutput)
 }
 
-// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+// (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
 func (o FunctionOutput) ImageDigest() pulumi.StringOutput {
 	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.ImageDigest }).(pulumi.StringOutput)
 }
@@ -505,7 +531,7 @@ func (o FunctionOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The source details for the Function. The function can be created from various sources.
+// (Updatable) The source details for creating the Function. The function can be created from various sources.
 func (o FunctionOutput) SourceDetails() FunctionSourceDetailsOutput {
 	return o.ApplyT(func(v *Function) FunctionSourceDetailsOutput { return v.SourceDetails }).(FunctionSourceDetailsOutput)
 }

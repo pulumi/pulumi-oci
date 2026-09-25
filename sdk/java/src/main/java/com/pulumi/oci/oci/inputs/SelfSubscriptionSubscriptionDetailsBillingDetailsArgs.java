@@ -21,6 +21,21 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetailsArgs extends
     public static final SelfSubscriptionSubscriptionDetailsBillingDetailsArgs Empty = new SelfSubscriptionSubscriptionDetailsBillingDetailsArgs();
 
     /**
+     * The billing model this billing detail applies to.
+     * 
+     */
+    @Import(name="billingModel", required=true)
+    private Output<String> billingModel;
+
+    /**
+     * @return The billing model this billing detail applies to.
+     * 
+     */
+    public Output<String> billingModel() {
+        return this.billingModel;
+    }
+
+    /**
      * Whether this sku is assign to gov product.
      * 
      */
@@ -66,6 +81,21 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetailsArgs extends
     }
 
     /**
+     * Unique key used to map this SKU to the pricing plan.
+     * 
+     */
+    @Import(name="pricingPlanKey", required=true)
+    private Output<String> pricingPlanKey;
+
+    /**
+     * @return Unique key used to map this SKU to the pricing plan.
+     * 
+     */
+    public Output<String> pricingPlanKey() {
+        return this.pricingPlanKey;
+    }
+
+    /**
      * Tha rate of this sku meter.
      * 
      */
@@ -98,9 +128,11 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetailsArgs extends
     private SelfSubscriptionSubscriptionDetailsBillingDetailsArgs() {}
 
     private SelfSubscriptionSubscriptionDetailsBillingDetailsArgs(SelfSubscriptionSubscriptionDetailsBillingDetailsArgs $) {
+        this.billingModel = $.billingModel;
         this.hasGovSku = $.hasGovSku;
         this.meters = $.meters;
         this.metricType = $.metricType;
+        this.pricingPlanKey = $.pricingPlanKey;
         this.rateAllocation = $.rateAllocation;
         this.sku = $.sku;
     }
@@ -121,6 +153,27 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetailsArgs extends
 
         public Builder(SelfSubscriptionSubscriptionDetailsBillingDetailsArgs defaults) {
             $ = new SelfSubscriptionSubscriptionDetailsBillingDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param billingModel The billing model this billing detail applies to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder billingModel(Output<String> billingModel) {
+            $.billingModel = billingModel;
+            return this;
+        }
+
+        /**
+         * @param billingModel The billing model this billing detail applies to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder billingModel(String billingModel) {
+            return billingModel(Output.of(billingModel));
         }
 
         /**
@@ -197,6 +250,27 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetailsArgs extends
         }
 
         /**
+         * @param pricingPlanKey Unique key used to map this SKU to the pricing plan.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pricingPlanKey(Output<String> pricingPlanKey) {
+            $.pricingPlanKey = pricingPlanKey;
+            return this;
+        }
+
+        /**
+         * @param pricingPlanKey Unique key used to map this SKU to the pricing plan.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pricingPlanKey(String pricingPlanKey) {
+            return pricingPlanKey(Output.of(pricingPlanKey));
+        }
+
+        /**
          * @param rateAllocation Tha rate of this sku meter.
          * 
          * @return builder
@@ -239,11 +313,17 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetailsArgs extends
         }
 
         public SelfSubscriptionSubscriptionDetailsBillingDetailsArgs build() {
+            if ($.billingModel == null) {
+                throw new MissingRequiredPropertyException("SelfSubscriptionSubscriptionDetailsBillingDetailsArgs", "billingModel");
+            }
             if ($.meters == null) {
                 throw new MissingRequiredPropertyException("SelfSubscriptionSubscriptionDetailsBillingDetailsArgs", "meters");
             }
             if ($.metricType == null) {
                 throw new MissingRequiredPropertyException("SelfSubscriptionSubscriptionDetailsBillingDetailsArgs", "metricType");
+            }
+            if ($.pricingPlanKey == null) {
+                throw new MissingRequiredPropertyException("SelfSubscriptionSubscriptionDetailsBillingDetailsArgs", "pricingPlanKey");
             }
             if ($.rateAllocation == null) {
                 throw new MissingRequiredPropertyException("SelfSubscriptionSubscriptionDetailsBillingDetailsArgs", "rateAllocation");

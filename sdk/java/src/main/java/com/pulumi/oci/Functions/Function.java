@@ -39,9 +39,11 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Functions.Function;
  * import com.pulumi.oci.Functions.FunctionArgs;
+ * import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsArgs;
+ * import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsArchiveSourceDetailsArgs;
+ * import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsRuntimeConfigArgs;
  * import com.pulumi.oci.Functions.inputs.FunctionFailureDestinationArgs;
  * import com.pulumi.oci.Functions.inputs.FunctionProvisionedConcurrencyConfigArgs;
- * import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsArgs;
  * import com.pulumi.oci.Functions.inputs.FunctionSuccessDestinationArgs;
  * import com.pulumi.oci.Functions.inputs.FunctionTraceConfigArgs;
  * import java.util.ArrayList;
@@ -61,6 +63,26 @@ import javax.annotation.Nullable;
  *             .applicationId(testApplication.id())
  *             .displayName(functionDisplayName)
  *             .memoryInMbs(functionMemoryInMbs)
+ *             .sourceDetails(FunctionSourceDetailsArgs.builder()
+ *                 .sourceType(functionSourceDetailsSourceType)
+ *                 .archiveSourceDetails(FunctionSourceDetailsArchiveSourceDetailsArgs.builder()
+ *                     .archiveSourceType(functionSourceDetailsArchiveSourceDetailsArchiveSourceType)
+ *                     .archiveFile(functionSourceDetailsArchiveSourceDetailsArchiveFile)
+ *                     .bucket(functionSourceDetailsArchiveSourceDetailsBucket)
+ *                     .namespace(functionSourceDetailsArchiveSourceDetailsNamespace)
+ *                     .object(functionSourceDetailsArchiveSourceDetailsObject)
+ *                     .objectVersionId(testObjectVersion.id())
+ *                     .build())
+ *                 .handler(functionSourceDetailsHandler)
+ *                 .image(functionSourceDetailsImage)
+ *                 .imageDigest(functionSourceDetailsImageDigest)
+ *                 .pbfListingId(testPbfListing.id())
+ *                 .runtimeConfig(FunctionSourceDetailsRuntimeConfigArgs.builder()
+ *                     .functionsRuntimeName(functionsRuntimeName)
+ *                     .functionsRuntimeVersionId(functionsRuntimeVersionId)
+ *                     .runtimeConfigType(functionSourceDetailsRuntimeConfigRuntimeConfigType)
+ *                     .build())
+ *                 .build())
  *             .config(functionConfig)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .detachedModeTimeoutInSeconds(functionDetachedModeTimeoutInSeconds)
@@ -72,15 +94,9 @@ import javax.annotation.Nullable;
  *                 .topicId(testNotificationTopic.id())
  *                 .build())
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .image(functionImage)
- *             .imageDigest(functionImageDigest)
  *             .provisionedConcurrencyConfig(FunctionProvisionedConcurrencyConfigArgs.builder()
  *                 .strategy(functionProvisionedConcurrencyConfigStrategy)
  *                 .count(functionProvisionedConcurrencyConfigCount)
- *                 .build())
- *             .sourceDetails(FunctionSourceDetailsArgs.builder()
- *                 .pbfListingId(testPbfListing.id())
- *                 .sourceType(functionSourceDetailsSourceType)
  *                 .build())
  *             .successDestination(FunctionSuccessDestinationArgs.builder()
  *                 .kind(functionSuccessDestinationKind)
@@ -228,28 +244,32 @@ public class Function extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * (Updatable) Deprecated. The &#39;image&#39; field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image&#39; will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * 
+     * @deprecated
+     * The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
      * 
      */
+    @Deprecated /* The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used. */
     @Export(name="image", refs={String.class}, tree="[0]")
     private Output<String> image;
 
     /**
-     * @return (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * @return (Updatable) Deprecated. The &#39;image&#39; field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image&#39; will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
      */
     public Output<String> image() {
         return this.image;
     }
     /**
-     * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * (Updatable) Deprecated. The &#39;image_digest&#39; field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image_digest&#39; will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      * 
      */
     @Export(name="imageDigest", refs={String.class}, tree="[0]")
     private Output<String> imageDigest;
 
     /**
-     * @return (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * @return (Updatable) Deprecated. The &#39;image_digest&#39; field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image_digest&#39; will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      * 
      */
     public Output<String> imageDigest() {
@@ -312,14 +332,14 @@ public class Function extends com.pulumi.resources.CustomResource {
         return this.shape;
     }
     /**
-     * The source details for the Function. The function can be created from various sources.
+     * (Updatable) The source details for creating the Function. The function can be created from various sources.
      * 
      */
     @Export(name="sourceDetails", refs={FunctionSourceDetails.class}, tree="[0]")
     private Output<FunctionSourceDetails> sourceDetails;
 
     /**
-     * @return The source details for the Function. The function can be created from various sources.
+     * @return (Updatable) The source details for creating the Function. The function can be created from various sources.
      * 
      */
     public Output<FunctionSourceDetails> sourceDetails() {

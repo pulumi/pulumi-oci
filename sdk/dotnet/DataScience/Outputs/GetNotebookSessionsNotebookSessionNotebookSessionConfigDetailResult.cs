@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly int BlockStorageSizeInGbs;
         /// <summary>
+        /// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+        /// </summary>
+        public readonly string CapacityReservationId;
+        /// <summary>
         /// Details for the notebook session shape configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult> NotebookSessionShapeConfigDetails;
@@ -38,6 +42,8 @@ namespace Pulumi.Oci.DataScience.Outputs
         private GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult(
             int blockStorageSizeInGbs,
 
+            string capacityReservationId,
+
             ImmutableArray<Outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult> notebookSessionShapeConfigDetails,
 
             string privateEndpointId,
@@ -47,6 +53,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             string subnetId)
         {
             BlockStorageSizeInGbs = blockStorageSizeInGbs;
+            CapacityReservationId = capacityReservationId;
             NotebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
             PrivateEndpointId = privateEndpointId;
             Shape = shape;

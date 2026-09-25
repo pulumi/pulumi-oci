@@ -20,6 +20,11 @@ public final class NotebookSessionNotebookSessionConfigDetails {
      */
     private @Nullable Integer blockStorageSizeInGbs;
     /**
+     * @return This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+     * 
+     */
+    private @Nullable String capacityReservationId;
+    /**
      * @return Details for the notebook session shape configuration.
      * 
      */
@@ -47,6 +52,13 @@ public final class NotebookSessionNotebookSessionConfigDetails {
      */
     public Optional<Integer> blockStorageSizeInGbs() {
         return Optional.ofNullable(this.blockStorageSizeInGbs);
+    }
+    /**
+     * @return This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+     * 
+     */
+    public Optional<String> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
     }
     /**
      * @return Details for the notebook session shape configuration.
@@ -87,6 +99,7 @@ public final class NotebookSessionNotebookSessionConfigDetails {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer blockStorageSizeInGbs;
+        private @Nullable String capacityReservationId;
         private @Nullable NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails;
         private @Nullable String privateEndpointId;
         private String shape;
@@ -95,6 +108,7 @@ public final class NotebookSessionNotebookSessionConfigDetails {
         public Builder(NotebookSessionNotebookSessionConfigDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
+    	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.notebookSessionShapeConfigDetails = defaults.notebookSessionShapeConfigDetails;
     	      this.privateEndpointId = defaults.privateEndpointId;
     	      this.shape = defaults.shape;
@@ -105,6 +119,12 @@ public final class NotebookSessionNotebookSessionConfigDetails {
         public Builder blockStorageSizeInGbs(@Nullable Integer blockStorageSizeInGbs) {
 
             this.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder capacityReservationId(@Nullable String capacityReservationId) {
+
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
@@ -136,6 +156,7 @@ public final class NotebookSessionNotebookSessionConfigDetails {
         public NotebookSessionNotebookSessionConfigDetails build() {
             final var _resultValue = new NotebookSessionNotebookSessionConfigDetails();
             _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
             _resultValue.privateEndpointId = privateEndpointId;
             _resultValue.shape = shape;

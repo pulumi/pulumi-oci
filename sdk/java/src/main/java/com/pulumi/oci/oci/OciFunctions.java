@@ -255,46 +255,16 @@ import com.pulumi.oci.oci.inputs.GetResourceSearchArgs;
 import com.pulumi.oci.oci.inputs.GetResourceSearchPlainArgs;
 import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
 import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetSelfPartnersArgs;
+import com.pulumi.oci.oci.inputs.GetSelfPartnersPlainArgs;
+import com.pulumi.oci.oci.inputs.GetSelfSelfPartnerSubscriptionsArgs;
+import com.pulumi.oci.oci.inputs.GetSelfSelfPartnerSubscriptionsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
 import com.pulumi.oci.oci.inputs.GetSelfSubscriptionPlainArgs;
 import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
 import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenPlainArgs;
 import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
 import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancePlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersPlainArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsPlainArgs;
 import com.pulumi.oci.oci.outputs.GetAiDataPlatformAiDataPlatformResult;
 import com.pulumi.oci.oci.outputs.GetAiDataPlatformAiDataPlatformsResult;
 import com.pulumi.oci.oci.outputs.GetApiPlatformApiPlatformInstanceResult;
@@ -418,26 +388,11 @@ import com.pulumi.oci.oci.outputs.GetResourceAnalyticsTenancyAttachmentResult;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsTenancyAttachmentsResult;
 import com.pulumi.oci.oci.outputs.GetResourceSearchInvokeResult;
 import com.pulumi.oci.oci.outputs.GetSelfPartnerSubscriptionsResult;
+import com.pulumi.oci.oci.outputs.GetSelfPartnersResult;
+import com.pulumi.oci.oci.outputs.GetSelfSelfPartnerSubscriptionsResult;
 import com.pulumi.oci.oci.outputs.GetSelfSubscriptionResult;
 import com.pulumi.oci.oci.outputs.GetSelfSubscriptionTokenResult;
 import com.pulumi.oci.oci.outputs.GetSelfSubscriptionsResult;
-import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceResult;
-import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceScanResultsResult;
-import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceServerInstalledPatchesResult;
-import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceServerResult;
-import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceServersResult;
-import com.pulumi.oci.oci.outputs.GetWlmsManagedInstancesResult;
-import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainAgreementRecordsResult;
-import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainApplicablePatchesResult;
-import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainResult;
-import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainScanResultsResult;
-import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainServerBackupContentResult;
-import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainServerBackupResult;
-import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainServerBackupsResult;
-import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainServerInstalledPatchesResult;
-import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainServerResult;
-import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainServersResult;
-import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainsResult;
 import java.util.concurrent.CompletableFuture;
 
 public final class OciFunctions {
@@ -28986,7 +28941,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
      * 
-     * Gets information about a Subscription.
+     * Deprecated. This endpoint has moved permanently to `/partners/subscriptions`.
      * 
      * ## Example Usage
      * 
@@ -29029,7 +28984,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
      * 
-     * Gets information about a Subscription.
+     * Deprecated. This endpoint has moved permanently to `/partners/subscriptions`.
      * 
      * ## Example Usage
      * 
@@ -29072,7 +29027,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
      * 
-     * Gets information about a Subscription.
+     * Deprecated. This endpoint has moved permanently to `/partners/subscriptions`.
      * 
      * ## Example Usage
      * 
@@ -29115,7 +29070,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
      * 
-     * Gets information about a Subscription.
+     * Deprecated. This endpoint has moved permanently to `/partners/subscriptions`.
      * 
      * ## Example Usage
      * 
@@ -29158,7 +29113,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
      * 
-     * Gets information about a Subscription.
+     * Deprecated. This endpoint has moved permanently to `/partners/subscriptions`.
      * 
      * ## Example Usage
      * 
@@ -29197,6 +29152,522 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetSelfPartnerSubscriptionsResult> getSelfPartnerSubscriptionsPlain(GetSelfPartnerSubscriptionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getSelfPartnerSubscriptions:getSelfPartnerSubscriptions", TypeShape.of(GetSelfPartnerSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Partners in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists marketplace publisher partner info for a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartners = OciFunctions.getSelfPartners(GetSelfPartnersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(partnerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfPartnersResult> getSelfPartners() {
+        return getSelfPartners(GetSelfPartnersArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Partners in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists marketplace publisher partner info for a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartners = OciFunctions.getSelfPartners(GetSelfPartnersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(partnerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfPartnersResult> getSelfPartnersPlain() {
+        return getSelfPartnersPlain(GetSelfPartnersPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Partners in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists marketplace publisher partner info for a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartners = OciFunctions.getSelfPartners(GetSelfPartnersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(partnerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfPartnersResult> getSelfPartners(GetSelfPartnersArgs args) {
+        return getSelfPartners(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Partners in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists marketplace publisher partner info for a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartners = OciFunctions.getSelfPartners(GetSelfPartnersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(partnerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfPartnersResult> getSelfPartnersPlain(GetSelfPartnersPlainArgs args) {
+        return getSelfPartnersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Partners in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists marketplace publisher partner info for a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartners = OciFunctions.getSelfPartners(GetSelfPartnersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(partnerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfPartnersResult> getSelfPartners(GetSelfPartnersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfPartners:getSelfPartners", TypeShape.of(GetSelfPartnersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Partners in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists marketplace publisher partner info for a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartners = OciFunctions.getSelfPartners(GetSelfPartnersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(partnerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfPartnersResult> getSelfPartners(GetSelfPartnersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfPartners:getSelfPartners", TypeShape.of(GetSelfPartnersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Partners in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists marketplace publisher partner info for a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartners = OciFunctions.getSelfPartners(GetSelfPartnersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(partnerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfPartnersResult> getSelfPartnersPlain(GetSelfPartnersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getSelfPartners:getSelfPartners", TypeShape.of(GetSelfPartnersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Self Partner Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSelfPartnerSubscriptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfPartnerSubscriptions = OciFunctions.getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs.builder()
+     *             .listingId(testListing.id())
+     *             .displayName(selfPartnerSubscriptionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSelfPartnerSubscriptionsResult> getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs args) {
+        return getSelfSelfPartnerSubscriptions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Self Partner Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSelfPartnerSubscriptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfPartnerSubscriptions = OciFunctions.getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs.builder()
+     *             .listingId(testListing.id())
+     *             .displayName(selfPartnerSubscriptionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfSelfPartnerSubscriptionsResult> getSelfSelfPartnerSubscriptionsPlain(GetSelfSelfPartnerSubscriptionsPlainArgs args) {
+        return getSelfSelfPartnerSubscriptionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Self Partner Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSelfPartnerSubscriptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfPartnerSubscriptions = OciFunctions.getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs.builder()
+     *             .listingId(testListing.id())
+     *             .displayName(selfPartnerSubscriptionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSelfPartnerSubscriptionsResult> getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfSelfPartnerSubscriptions:getSelfSelfPartnerSubscriptions", TypeShape.of(GetSelfSelfPartnerSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Self Partner Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSelfPartnerSubscriptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfPartnerSubscriptions = OciFunctions.getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs.builder()
+     *             .listingId(testListing.id())
+     *             .displayName(selfPartnerSubscriptionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSelfPartnerSubscriptionsResult> getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfSelfPartnerSubscriptions:getSelfSelfPartnerSubscriptions", TypeShape.of(GetSelfSelfPartnerSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Self Partner Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSelfPartnerSubscriptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfPartnerSubscriptions = OciFunctions.getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs.builder()
+     *             .listingId(testListing.id())
+     *             .displayName(selfPartnerSubscriptionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfSelfPartnerSubscriptionsResult> getSelfSelfPartnerSubscriptionsPlain(GetSelfSelfPartnerSubscriptionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getSelfSelfPartnerSubscriptions:getSelfSelfPartnerSubscriptions", TypeShape.of(GetSelfSelfPartnerSubscriptionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Self service.
@@ -29939,3876 +30410,5 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetSelfSubscriptionsResult> getSelfSubscriptionsPlain(GetSelfSubscriptionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getSelfSubscriptions:getSelfSubscriptions", TypeShape.of(GetSelfSubscriptionsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstance = OciFunctions.getWlmsManagedInstance(GetWlmsManagedInstanceArgs.builder()
-     *             .managedInstanceId(testManagedInstanceOciWlmsManagedInstance.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceResult> getWlmsManagedInstance(GetWlmsManagedInstanceArgs args) {
-        return getWlmsManagedInstance(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstance = OciFunctions.getWlmsManagedInstance(GetWlmsManagedInstanceArgs.builder()
-     *             .managedInstanceId(testManagedInstanceOciWlmsManagedInstance.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstanceResult> getWlmsManagedInstancePlain(GetWlmsManagedInstancePlainArgs args) {
-        return getWlmsManagedInstancePlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstance = OciFunctions.getWlmsManagedInstance(GetWlmsManagedInstanceArgs.builder()
-     *             .managedInstanceId(testManagedInstanceOciWlmsManagedInstance.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceResult> getWlmsManagedInstance(GetWlmsManagedInstanceArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstance:getWlmsManagedInstance", TypeShape.of(GetWlmsManagedInstanceResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstance = OciFunctions.getWlmsManagedInstance(GetWlmsManagedInstanceArgs.builder()
-     *             .managedInstanceId(testManagedInstanceOciWlmsManagedInstance.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceResult> getWlmsManagedInstance(GetWlmsManagedInstanceArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstance:getWlmsManagedInstance", TypeShape.of(GetWlmsManagedInstanceResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstance = OciFunctions.getWlmsManagedInstance(GetWlmsManagedInstanceArgs.builder()
-     *             .managedInstanceId(testManagedInstanceOciWlmsManagedInstance.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstanceResult> getWlmsManagedInstancePlain(GetWlmsManagedInstancePlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsManagedInstance:getWlmsManagedInstance", TypeShape.of(GetWlmsManagedInstanceResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instance Scan Results in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all the scan results for all WebLogic servers in the managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceScanResults = OciFunctions.getWlmsManagedInstanceScanResults(GetWlmsManagedInstanceScanResultsArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverName(managedInstanceScanResultServerName)
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceScanResultsResult> getWlmsManagedInstanceScanResults(GetWlmsManagedInstanceScanResultsArgs args) {
-        return getWlmsManagedInstanceScanResults(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Managed Instance Scan Results in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all the scan results for all WebLogic servers in the managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceScanResults = OciFunctions.getWlmsManagedInstanceScanResults(GetWlmsManagedInstanceScanResultsArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverName(managedInstanceScanResultServerName)
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstanceScanResultsResult> getWlmsManagedInstanceScanResultsPlain(GetWlmsManagedInstanceScanResultsPlainArgs args) {
-        return getWlmsManagedInstanceScanResultsPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Managed Instance Scan Results in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all the scan results for all WebLogic servers in the managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceScanResults = OciFunctions.getWlmsManagedInstanceScanResults(GetWlmsManagedInstanceScanResultsArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverName(managedInstanceScanResultServerName)
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceScanResultsResult> getWlmsManagedInstanceScanResults(GetWlmsManagedInstanceScanResultsArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstanceScanResults:getWlmsManagedInstanceScanResults", TypeShape.of(GetWlmsManagedInstanceScanResultsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instance Scan Results in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all the scan results for all WebLogic servers in the managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceScanResults = OciFunctions.getWlmsManagedInstanceScanResults(GetWlmsManagedInstanceScanResultsArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverName(managedInstanceScanResultServerName)
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceScanResultsResult> getWlmsManagedInstanceScanResults(GetWlmsManagedInstanceScanResultsArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstanceScanResults:getWlmsManagedInstanceScanResults", TypeShape.of(GetWlmsManagedInstanceScanResultsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instance Scan Results in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all the scan results for all WebLogic servers in the managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceScanResults = OciFunctions.getWlmsManagedInstanceScanResults(GetWlmsManagedInstanceScanResultsArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverName(managedInstanceScanResultServerName)
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstanceScanResultsResult> getWlmsManagedInstanceScanResultsPlain(GetWlmsManagedInstanceScanResultsPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsManagedInstanceScanResults:getWlmsManagedInstanceScanResults", TypeShape.of(GetWlmsManagedInstanceScanResultsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Managed Instance Server resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified server in a managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServer = OciFunctions.getWlmsManagedInstanceServer(GetWlmsManagedInstanceServerArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverId(testServer.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceServerResult> getWlmsManagedInstanceServer(GetWlmsManagedInstanceServerArgs args) {
-        return getWlmsManagedInstanceServer(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Managed Instance Server resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified server in a managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServer = OciFunctions.getWlmsManagedInstanceServer(GetWlmsManagedInstanceServerArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverId(testServer.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstanceServerResult> getWlmsManagedInstanceServerPlain(GetWlmsManagedInstanceServerPlainArgs args) {
-        return getWlmsManagedInstanceServerPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Managed Instance Server resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified server in a managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServer = OciFunctions.getWlmsManagedInstanceServer(GetWlmsManagedInstanceServerArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverId(testServer.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceServerResult> getWlmsManagedInstanceServer(GetWlmsManagedInstanceServerArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstanceServer:getWlmsManagedInstanceServer", TypeShape.of(GetWlmsManagedInstanceServerResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Managed Instance Server resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified server in a managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServer = OciFunctions.getWlmsManagedInstanceServer(GetWlmsManagedInstanceServerArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverId(testServer.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceServerResult> getWlmsManagedInstanceServer(GetWlmsManagedInstanceServerArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstanceServer:getWlmsManagedInstanceServer", TypeShape.of(GetWlmsManagedInstanceServerResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Managed Instance Server resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified server in a managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServer = OciFunctions.getWlmsManagedInstanceServer(GetWlmsManagedInstanceServerArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverId(testServer.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstanceServerResult> getWlmsManagedInstanceServerPlain(GetWlmsManagedInstanceServerPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsManagedInstanceServer:getWlmsManagedInstanceServer", TypeShape.of(GetWlmsManagedInstanceServerResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instance Server Installed Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of installed patches on a server in a managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServerInstalledPatches = OciFunctions.getWlmsManagedInstanceServerInstalledPatches(GetWlmsManagedInstanceServerInstalledPatchesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverId(testServer.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceServerInstalledPatchesResult> getWlmsManagedInstanceServerInstalledPatches(GetWlmsManagedInstanceServerInstalledPatchesArgs args) {
-        return getWlmsManagedInstanceServerInstalledPatches(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Managed Instance Server Installed Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of installed patches on a server in a managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServerInstalledPatches = OciFunctions.getWlmsManagedInstanceServerInstalledPatches(GetWlmsManagedInstanceServerInstalledPatchesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverId(testServer.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstanceServerInstalledPatchesResult> getWlmsManagedInstanceServerInstalledPatchesPlain(GetWlmsManagedInstanceServerInstalledPatchesPlainArgs args) {
-        return getWlmsManagedInstanceServerInstalledPatchesPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Managed Instance Server Installed Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of installed patches on a server in a managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServerInstalledPatches = OciFunctions.getWlmsManagedInstanceServerInstalledPatches(GetWlmsManagedInstanceServerInstalledPatchesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverId(testServer.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceServerInstalledPatchesResult> getWlmsManagedInstanceServerInstalledPatches(GetWlmsManagedInstanceServerInstalledPatchesArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstanceServerInstalledPatches:getWlmsManagedInstanceServerInstalledPatches", TypeShape.of(GetWlmsManagedInstanceServerInstalledPatchesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instance Server Installed Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of installed patches on a server in a managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServerInstalledPatches = OciFunctions.getWlmsManagedInstanceServerInstalledPatches(GetWlmsManagedInstanceServerInstalledPatchesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverId(testServer.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceServerInstalledPatchesResult> getWlmsManagedInstanceServerInstalledPatches(GetWlmsManagedInstanceServerInstalledPatchesArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstanceServerInstalledPatches:getWlmsManagedInstanceServerInstalledPatches", TypeShape.of(GetWlmsManagedInstanceServerInstalledPatchesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instance Server Installed Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of installed patches on a server in a managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServerInstalledPatches = OciFunctions.getWlmsManagedInstanceServerInstalledPatches(GetWlmsManagedInstanceServerInstalledPatchesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .serverId(testServer.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstanceServerInstalledPatchesResult> getWlmsManagedInstanceServerInstalledPatchesPlain(GetWlmsManagedInstanceServerInstalledPatchesPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsManagedInstanceServerInstalledPatches:getWlmsManagedInstanceServerInstalledPatches", TypeShape.of(GetWlmsManagedInstanceServerInstalledPatchesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instance Servers in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets list of servers in a specific managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServers = OciFunctions.getWlmsManagedInstanceServers(GetWlmsManagedInstanceServersArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .name(managedInstanceServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceServersResult> getWlmsManagedInstanceServers(GetWlmsManagedInstanceServersArgs args) {
-        return getWlmsManagedInstanceServers(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Managed Instance Servers in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets list of servers in a specific managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServers = OciFunctions.getWlmsManagedInstanceServers(GetWlmsManagedInstanceServersArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .name(managedInstanceServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstanceServersResult> getWlmsManagedInstanceServersPlain(GetWlmsManagedInstanceServersPlainArgs args) {
-        return getWlmsManagedInstanceServersPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Managed Instance Servers in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets list of servers in a specific managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServers = OciFunctions.getWlmsManagedInstanceServers(GetWlmsManagedInstanceServersArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .name(managedInstanceServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceServersResult> getWlmsManagedInstanceServers(GetWlmsManagedInstanceServersArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstanceServers:getWlmsManagedInstanceServers", TypeShape.of(GetWlmsManagedInstanceServersResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instance Servers in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets list of servers in a specific managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServers = OciFunctions.getWlmsManagedInstanceServers(GetWlmsManagedInstanceServersArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .name(managedInstanceServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstanceServersResult> getWlmsManagedInstanceServers(GetWlmsManagedInstanceServersArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstanceServers:getWlmsManagedInstanceServers", TypeShape.of(GetWlmsManagedInstanceServersResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instance Servers in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets list of servers in a specific managed instance.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstanceServers = OciFunctions.getWlmsManagedInstanceServers(GetWlmsManagedInstanceServersArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .name(managedInstanceServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstanceServersResult> getWlmsManagedInstanceServersPlain(GetWlmsManagedInstanceServersPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsManagedInstanceServers:getWlmsManagedInstanceServers", TypeShape.of(GetWlmsManagedInstanceServersResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status and compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OciFunctions.getWlmsManagedInstances(GetWlmsManagedInstancesArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(managedInstanceDisplayName)
-     *             .id(managedInstanceId)
-     *             .pluginStatus(managedInstancePluginStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstancesResult> getWlmsManagedInstances() {
-        return getWlmsManagedInstances(GetWlmsManagedInstancesArgs.Empty, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status and compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OciFunctions.getWlmsManagedInstances(GetWlmsManagedInstancesArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(managedInstanceDisplayName)
-     *             .id(managedInstanceId)
-     *             .pluginStatus(managedInstancePluginStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstancesResult> getWlmsManagedInstancesPlain() {
-        return getWlmsManagedInstancesPlain(GetWlmsManagedInstancesPlainArgs.Empty, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status and compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OciFunctions.getWlmsManagedInstances(GetWlmsManagedInstancesArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(managedInstanceDisplayName)
-     *             .id(managedInstanceId)
-     *             .pluginStatus(managedInstancePluginStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstancesResult> getWlmsManagedInstances(GetWlmsManagedInstancesArgs args) {
-        return getWlmsManagedInstances(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status and compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OciFunctions.getWlmsManagedInstances(GetWlmsManagedInstancesArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(managedInstanceDisplayName)
-     *             .id(managedInstanceId)
-     *             .pluginStatus(managedInstancePluginStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstancesResult> getWlmsManagedInstancesPlain(GetWlmsManagedInstancesPlainArgs args) {
-        return getWlmsManagedInstancesPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status and compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OciFunctions.getWlmsManagedInstances(GetWlmsManagedInstancesArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(managedInstanceDisplayName)
-     *             .id(managedInstanceId)
-     *             .pluginStatus(managedInstancePluginStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstancesResult> getWlmsManagedInstances(GetWlmsManagedInstancesArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstances:getWlmsManagedInstances", TypeShape.of(GetWlmsManagedInstancesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status and compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OciFunctions.getWlmsManagedInstances(GetWlmsManagedInstancesArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(managedInstanceDisplayName)
-     *             .id(managedInstanceId)
-     *             .pluginStatus(managedInstancePluginStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsManagedInstancesResult> getWlmsManagedInstances(GetWlmsManagedInstancesArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsManagedInstances:getWlmsManagedInstances", TypeShape.of(GetWlmsManagedInstancesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status and compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testManagedInstances = OciFunctions.getWlmsManagedInstances(GetWlmsManagedInstancesArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(managedInstanceDisplayName)
-     *             .id(managedInstanceId)
-     *             .pluginStatus(managedInstancePluginStatus)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsManagedInstancesResult> getWlmsManagedInstancesPlain(GetWlmsManagedInstancesPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsManagedInstances:getWlmsManagedInstances", TypeShape.of(GetWlmsManagedInstancesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomain = OciFunctions.getWlmsWlsDomain(GetWlmsWlsDomainArgs.builder()
-     *             .wlsDomainId(testWlsDomainOciWlmsWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainResult> getWlmsWlsDomain(GetWlmsWlsDomainArgs args) {
-        return getWlmsWlsDomain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Wls Domain resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomain = OciFunctions.getWlmsWlsDomain(GetWlmsWlsDomainArgs.builder()
-     *             .wlsDomainId(testWlsDomainOciWlmsWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainResult> getWlmsWlsDomainPlain(GetWlmsWlsDomainPlainArgs args) {
-        return getWlmsWlsDomainPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Wls Domain resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomain = OciFunctions.getWlmsWlsDomain(GetWlmsWlsDomainArgs.builder()
-     *             .wlsDomainId(testWlsDomainOciWlmsWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainResult> getWlmsWlsDomain(GetWlmsWlsDomainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomain:getWlmsWlsDomain", TypeShape.of(GetWlmsWlsDomainResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomain = OciFunctions.getWlmsWlsDomain(GetWlmsWlsDomainArgs.builder()
-     *             .wlsDomainId(testWlsDomainOciWlmsWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainResult> getWlmsWlsDomain(GetWlmsWlsDomainArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomain:getWlmsWlsDomain", TypeShape.of(GetWlmsWlsDomainResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomain = OciFunctions.getWlmsWlsDomain(GetWlmsWlsDomainArgs.builder()
-     *             .wlsDomainId(testWlsDomainOciWlmsWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainResult> getWlmsWlsDomainPlain(GetWlmsWlsDomainPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsWlsDomain:getWlmsWlsDomain", TypeShape.of(GetWlmsWlsDomainResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Agreement Records in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * List the terms of use agreement record for the WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainAgreementRecords = OciFunctions.getWlmsWlsDomainAgreementRecords(GetWlmsWlsDomainAgreementRecordsArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainAgreementRecordsResult> getWlmsWlsDomainAgreementRecords(GetWlmsWlsDomainAgreementRecordsArgs args) {
-        return getWlmsWlsDomainAgreementRecords(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Agreement Records in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * List the terms of use agreement record for the WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainAgreementRecords = OciFunctions.getWlmsWlsDomainAgreementRecords(GetWlmsWlsDomainAgreementRecordsArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainAgreementRecordsResult> getWlmsWlsDomainAgreementRecordsPlain(GetWlmsWlsDomainAgreementRecordsPlainArgs args) {
-        return getWlmsWlsDomainAgreementRecordsPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Agreement Records in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * List the terms of use agreement record for the WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainAgreementRecords = OciFunctions.getWlmsWlsDomainAgreementRecords(GetWlmsWlsDomainAgreementRecordsArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainAgreementRecordsResult> getWlmsWlsDomainAgreementRecords(GetWlmsWlsDomainAgreementRecordsArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainAgreementRecords:getWlmsWlsDomainAgreementRecords", TypeShape.of(GetWlmsWlsDomainAgreementRecordsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Agreement Records in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * List the terms of use agreement record for the WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainAgreementRecords = OciFunctions.getWlmsWlsDomainAgreementRecords(GetWlmsWlsDomainAgreementRecordsArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainAgreementRecordsResult> getWlmsWlsDomainAgreementRecords(GetWlmsWlsDomainAgreementRecordsArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainAgreementRecords:getWlmsWlsDomainAgreementRecords", TypeShape.of(GetWlmsWlsDomainAgreementRecordsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Agreement Records in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * List the terms of use agreement record for the WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainAgreementRecords = OciFunctions.getWlmsWlsDomainAgreementRecords(GetWlmsWlsDomainAgreementRecordsArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainAgreementRecordsResult> getWlmsWlsDomainAgreementRecordsPlain(GetWlmsWlsDomainAgreementRecordsPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsWlsDomainAgreementRecords:getWlmsWlsDomainAgreementRecords", TypeShape.of(GetWlmsWlsDomainAgreementRecordsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Applicable Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets the latest patches that can be installed to the WebLogic domains.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainApplicablePatches = OciFunctions.getWlmsWlsDomainApplicablePatches(GetWlmsWlsDomainApplicablePatchesArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainApplicablePatchesResult> getWlmsWlsDomainApplicablePatches(GetWlmsWlsDomainApplicablePatchesArgs args) {
-        return getWlmsWlsDomainApplicablePatches(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Applicable Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets the latest patches that can be installed to the WebLogic domains.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainApplicablePatches = OciFunctions.getWlmsWlsDomainApplicablePatches(GetWlmsWlsDomainApplicablePatchesArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainApplicablePatchesResult> getWlmsWlsDomainApplicablePatchesPlain(GetWlmsWlsDomainApplicablePatchesPlainArgs args) {
-        return getWlmsWlsDomainApplicablePatchesPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Applicable Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets the latest patches that can be installed to the WebLogic domains.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainApplicablePatches = OciFunctions.getWlmsWlsDomainApplicablePatches(GetWlmsWlsDomainApplicablePatchesArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainApplicablePatchesResult> getWlmsWlsDomainApplicablePatches(GetWlmsWlsDomainApplicablePatchesArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainApplicablePatches:getWlmsWlsDomainApplicablePatches", TypeShape.of(GetWlmsWlsDomainApplicablePatchesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Applicable Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets the latest patches that can be installed to the WebLogic domains.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainApplicablePatches = OciFunctions.getWlmsWlsDomainApplicablePatches(GetWlmsWlsDomainApplicablePatchesArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainApplicablePatchesResult> getWlmsWlsDomainApplicablePatches(GetWlmsWlsDomainApplicablePatchesArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainApplicablePatches:getWlmsWlsDomainApplicablePatches", TypeShape.of(GetWlmsWlsDomainApplicablePatchesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Applicable Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets the latest patches that can be installed to the WebLogic domains.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainApplicablePatches = OciFunctions.getWlmsWlsDomainApplicablePatches(GetWlmsWlsDomainApplicablePatchesArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainApplicablePatchesResult> getWlmsWlsDomainApplicablePatchesPlain(GetWlmsWlsDomainApplicablePatchesPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsWlsDomainApplicablePatches:getWlmsWlsDomainApplicablePatches", TypeShape.of(GetWlmsWlsDomainApplicablePatchesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Scan Results in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get all scan results for a server in a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainScanResults = OciFunctions.getWlmsWlsDomainScanResults(GetWlmsWlsDomainScanResultsArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .serverName(wlsDomainScanResultServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainScanResultsResult> getWlmsWlsDomainScanResults(GetWlmsWlsDomainScanResultsArgs args) {
-        return getWlmsWlsDomainScanResults(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Scan Results in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get all scan results for a server in a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainScanResults = OciFunctions.getWlmsWlsDomainScanResults(GetWlmsWlsDomainScanResultsArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .serverName(wlsDomainScanResultServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainScanResultsResult> getWlmsWlsDomainScanResultsPlain(GetWlmsWlsDomainScanResultsPlainArgs args) {
-        return getWlmsWlsDomainScanResultsPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Scan Results in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get all scan results for a server in a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainScanResults = OciFunctions.getWlmsWlsDomainScanResults(GetWlmsWlsDomainScanResultsArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .serverName(wlsDomainScanResultServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainScanResultsResult> getWlmsWlsDomainScanResults(GetWlmsWlsDomainScanResultsArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainScanResults:getWlmsWlsDomainScanResults", TypeShape.of(GetWlmsWlsDomainScanResultsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Scan Results in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get all scan results for a server in a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainScanResults = OciFunctions.getWlmsWlsDomainScanResults(GetWlmsWlsDomainScanResultsArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .serverName(wlsDomainScanResultServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainScanResultsResult> getWlmsWlsDomainScanResults(GetWlmsWlsDomainScanResultsArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainScanResults:getWlmsWlsDomainScanResults", TypeShape.of(GetWlmsWlsDomainScanResultsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Scan Results in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get all scan results for a server in a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainScanResults = OciFunctions.getWlmsWlsDomainScanResults(GetWlmsWlsDomainScanResultsArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .serverName(wlsDomainScanResultServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainScanResultsResult> getWlmsWlsDomainScanResultsPlain(GetWlmsWlsDomainScanResultsPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsWlsDomainScanResults:getWlmsWlsDomainScanResults", TypeShape.of(GetWlmsWlsDomainScanResultsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified server in a WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServer = OciFunctions.getWlmsWlsDomainServer(GetWlmsWlsDomainServerArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerResult> getWlmsWlsDomainServer(GetWlmsWlsDomainServerArgs args) {
-        return getWlmsWlsDomainServer(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified server in a WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServer = OciFunctions.getWlmsWlsDomainServer(GetWlmsWlsDomainServerArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServerResult> getWlmsWlsDomainServerPlain(GetWlmsWlsDomainServerPlainArgs args) {
-        return getWlmsWlsDomainServerPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified server in a WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServer = OciFunctions.getWlmsWlsDomainServer(GetWlmsWlsDomainServerArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerResult> getWlmsWlsDomainServer(GetWlmsWlsDomainServerArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServer:getWlmsWlsDomainServer", TypeShape.of(GetWlmsWlsDomainServerResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified server in a WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServer = OciFunctions.getWlmsWlsDomainServer(GetWlmsWlsDomainServerArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerResult> getWlmsWlsDomainServer(GetWlmsWlsDomainServerArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServer:getWlmsWlsDomainServer", TypeShape.of(GetWlmsWlsDomainServerResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets information about the specified server in a WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServer = OciFunctions.getWlmsWlsDomainServer(GetWlmsWlsDomainServerArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServerResult> getWlmsWlsDomainServerPlain(GetWlmsWlsDomainServerPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsWlsDomainServer:getWlmsWlsDomainServer", TypeShape.of(GetWlmsWlsDomainServerResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server Backup resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get details of specific backup for the WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackup = OciFunctions.getWlmsWlsDomainServerBackup(GetWlmsWlsDomainServerBackupArgs.builder()
-     *             .backupId(testBackup.id())
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerBackupResult> getWlmsWlsDomainServerBackup(GetWlmsWlsDomainServerBackupArgs args) {
-        return getWlmsWlsDomainServerBackup(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server Backup resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get details of specific backup for the WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackup = OciFunctions.getWlmsWlsDomainServerBackup(GetWlmsWlsDomainServerBackupArgs.builder()
-     *             .backupId(testBackup.id())
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServerBackupResult> getWlmsWlsDomainServerBackupPlain(GetWlmsWlsDomainServerBackupPlainArgs args) {
-        return getWlmsWlsDomainServerBackupPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server Backup resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get details of specific backup for the WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackup = OciFunctions.getWlmsWlsDomainServerBackup(GetWlmsWlsDomainServerBackupArgs.builder()
-     *             .backupId(testBackup.id())
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerBackupResult> getWlmsWlsDomainServerBackup(GetWlmsWlsDomainServerBackupArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServerBackup:getWlmsWlsDomainServerBackup", TypeShape.of(GetWlmsWlsDomainServerBackupResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server Backup resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get details of specific backup for the WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackup = OciFunctions.getWlmsWlsDomainServerBackup(GetWlmsWlsDomainServerBackupArgs.builder()
-     *             .backupId(testBackup.id())
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerBackupResult> getWlmsWlsDomainServerBackup(GetWlmsWlsDomainServerBackupArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServerBackup:getWlmsWlsDomainServerBackup", TypeShape.of(GetWlmsWlsDomainServerBackupResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server Backup resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get details of specific backup for the WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackup = OciFunctions.getWlmsWlsDomainServerBackup(GetWlmsWlsDomainServerBackupArgs.builder()
-     *             .backupId(testBackup.id())
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServerBackupResult> getWlmsWlsDomainServerBackupPlain(GetWlmsWlsDomainServerBackupPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsWlsDomainServerBackup:getWlmsWlsDomainServerBackup", TypeShape.of(GetWlmsWlsDomainServerBackupResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server Backup Content resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get details of specific backup for the WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackupContent = OciFunctions.getWlmsWlsDomainServerBackupContent(GetWlmsWlsDomainServerBackupContentArgs.builder()
-     *             .backupId(testBackup.id())
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerBackupContentResult> getWlmsWlsDomainServerBackupContent(GetWlmsWlsDomainServerBackupContentArgs args) {
-        return getWlmsWlsDomainServerBackupContent(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server Backup Content resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get details of specific backup for the WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackupContent = OciFunctions.getWlmsWlsDomainServerBackupContent(GetWlmsWlsDomainServerBackupContentArgs.builder()
-     *             .backupId(testBackup.id())
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServerBackupContentResult> getWlmsWlsDomainServerBackupContentPlain(GetWlmsWlsDomainServerBackupContentPlainArgs args) {
-        return getWlmsWlsDomainServerBackupContentPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server Backup Content resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get details of specific backup for the WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackupContent = OciFunctions.getWlmsWlsDomainServerBackupContent(GetWlmsWlsDomainServerBackupContentArgs.builder()
-     *             .backupId(testBackup.id())
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerBackupContentResult> getWlmsWlsDomainServerBackupContent(GetWlmsWlsDomainServerBackupContentArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServerBackupContent:getWlmsWlsDomainServerBackupContent", TypeShape.of(GetWlmsWlsDomainServerBackupContentResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server Backup Content resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get details of specific backup for the WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackupContent = OciFunctions.getWlmsWlsDomainServerBackupContent(GetWlmsWlsDomainServerBackupContentArgs.builder()
-     *             .backupId(testBackup.id())
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerBackupContentResult> getWlmsWlsDomainServerBackupContent(GetWlmsWlsDomainServerBackupContentArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServerBackupContent:getWlmsWlsDomainServerBackupContent", TypeShape.of(GetWlmsWlsDomainServerBackupContentResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Wls Domain Server Backup Content resource in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Get details of specific backup for the WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackupContent = OciFunctions.getWlmsWlsDomainServerBackupContent(GetWlmsWlsDomainServerBackupContentArgs.builder()
-     *             .backupId(testBackup.id())
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServerBackupContentResult> getWlmsWlsDomainServerBackupContentPlain(GetWlmsWlsDomainServerBackupContentPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsWlsDomainServerBackupContent:getWlmsWlsDomainServerBackupContent", TypeShape.of(GetWlmsWlsDomainServerBackupContentResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Server Backups in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of backups for the server of a specific WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackups = OciFunctions.getWlmsWlsDomainServerBackups(GetWlmsWlsDomainServerBackupsArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerBackupsResult> getWlmsWlsDomainServerBackups(GetWlmsWlsDomainServerBackupsArgs args) {
-        return getWlmsWlsDomainServerBackups(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Server Backups in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of backups for the server of a specific WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackups = OciFunctions.getWlmsWlsDomainServerBackups(GetWlmsWlsDomainServerBackupsArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServerBackupsResult> getWlmsWlsDomainServerBackupsPlain(GetWlmsWlsDomainServerBackupsPlainArgs args) {
-        return getWlmsWlsDomainServerBackupsPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Server Backups in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of backups for the server of a specific WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackups = OciFunctions.getWlmsWlsDomainServerBackups(GetWlmsWlsDomainServerBackupsArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerBackupsResult> getWlmsWlsDomainServerBackups(GetWlmsWlsDomainServerBackupsArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServerBackups:getWlmsWlsDomainServerBackups", TypeShape.of(GetWlmsWlsDomainServerBackupsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Server Backups in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of backups for the server of a specific WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackups = OciFunctions.getWlmsWlsDomainServerBackups(GetWlmsWlsDomainServerBackupsArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerBackupsResult> getWlmsWlsDomainServerBackups(GetWlmsWlsDomainServerBackupsArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServerBackups:getWlmsWlsDomainServerBackups", TypeShape.of(GetWlmsWlsDomainServerBackupsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Server Backups in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of backups for the server of a specific WebLogic Domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerBackups = OciFunctions.getWlmsWlsDomainServerBackups(GetWlmsWlsDomainServerBackupsArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServerBackupsResult> getWlmsWlsDomainServerBackupsPlain(GetWlmsWlsDomainServerBackupsPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsWlsDomainServerBackups:getWlmsWlsDomainServerBackups", TypeShape.of(GetWlmsWlsDomainServerBackupsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Server Installed Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of installed patches on a server for a domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerInstalledPatches = OciFunctions.getWlmsWlsDomainServerInstalledPatches(GetWlmsWlsDomainServerInstalledPatchesArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerInstalledPatchesResult> getWlmsWlsDomainServerInstalledPatches(GetWlmsWlsDomainServerInstalledPatchesArgs args) {
-        return getWlmsWlsDomainServerInstalledPatches(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Server Installed Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of installed patches on a server for a domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerInstalledPatches = OciFunctions.getWlmsWlsDomainServerInstalledPatches(GetWlmsWlsDomainServerInstalledPatchesArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServerInstalledPatchesResult> getWlmsWlsDomainServerInstalledPatchesPlain(GetWlmsWlsDomainServerInstalledPatchesPlainArgs args) {
-        return getWlmsWlsDomainServerInstalledPatchesPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Server Installed Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of installed patches on a server for a domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerInstalledPatches = OciFunctions.getWlmsWlsDomainServerInstalledPatches(GetWlmsWlsDomainServerInstalledPatchesArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerInstalledPatchesResult> getWlmsWlsDomainServerInstalledPatches(GetWlmsWlsDomainServerInstalledPatchesArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServerInstalledPatches:getWlmsWlsDomainServerInstalledPatches", TypeShape.of(GetWlmsWlsDomainServerInstalledPatchesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Server Installed Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of installed patches on a server for a domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerInstalledPatches = OciFunctions.getWlmsWlsDomainServerInstalledPatches(GetWlmsWlsDomainServerInstalledPatchesArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServerInstalledPatchesResult> getWlmsWlsDomainServerInstalledPatches(GetWlmsWlsDomainServerInstalledPatchesArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServerInstalledPatches:getWlmsWlsDomainServerInstalledPatches", TypeShape.of(GetWlmsWlsDomainServerInstalledPatchesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Server Installed Patches in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets a list of installed patches on a server for a domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServerInstalledPatches = OciFunctions.getWlmsWlsDomainServerInstalledPatches(GetWlmsWlsDomainServerInstalledPatchesArgs.builder()
-     *             .serverId(testServer.id())
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServerInstalledPatchesResult> getWlmsWlsDomainServerInstalledPatchesPlain(GetWlmsWlsDomainServerInstalledPatchesPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsWlsDomainServerInstalledPatches:getWlmsWlsDomainServerInstalledPatches", TypeShape.of(GetWlmsWlsDomainServerInstalledPatchesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Servers in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets list of servers in a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServers = OciFunctions.getWlmsWlsDomainServers(GetWlmsWlsDomainServersArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .name(wlsDomainServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServersResult> getWlmsWlsDomainServers(GetWlmsWlsDomainServersArgs args) {
-        return getWlmsWlsDomainServers(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Servers in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets list of servers in a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServers = OciFunctions.getWlmsWlsDomainServers(GetWlmsWlsDomainServersArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .name(wlsDomainServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServersResult> getWlmsWlsDomainServersPlain(GetWlmsWlsDomainServersPlainArgs args) {
-        return getWlmsWlsDomainServersPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domain Servers in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets list of servers in a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServers = OciFunctions.getWlmsWlsDomainServers(GetWlmsWlsDomainServersArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .name(wlsDomainServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServersResult> getWlmsWlsDomainServers(GetWlmsWlsDomainServersArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServers:getWlmsWlsDomainServers", TypeShape.of(GetWlmsWlsDomainServersResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Servers in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets list of servers in a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServers = OciFunctions.getWlmsWlsDomainServers(GetWlmsWlsDomainServersArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .name(wlsDomainServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainServersResult> getWlmsWlsDomainServers(GetWlmsWlsDomainServersArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomainServers:getWlmsWlsDomainServers", TypeShape.of(GetWlmsWlsDomainServersResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domain Servers in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets list of servers in a specific WebLogic domain.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomainServers = OciFunctions.getWlmsWlsDomainServers(GetWlmsWlsDomainServersArgs.builder()
-     *             .wlsDomainId(testWlsDomain.id())
-     *             .name(wlsDomainServerName)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainServersResult> getWlmsWlsDomainServersPlain(GetWlmsWlsDomainServersPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsWlsDomainServers:getWlmsWlsDomainServers", TypeShape.of(GetWlmsWlsDomainServersResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domains in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all WebLogic domains in a given compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomains = OciFunctions.getWlmsWlsDomains(GetWlmsWlsDomainsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(wlsDomainDisplayName)
-     *             .id(wlsDomainId)
-     *             .middlewareType(wlsDomainMiddlewareType)
-     *             .patchReadinessStatus(wlsDomainPatchReadinessStatus)
-     *             .state(wlsDomainState)
-     *             .weblogicVersion(wlsDomainWeblogicVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainsResult> getWlmsWlsDomains() {
-        return getWlmsWlsDomains(GetWlmsWlsDomainsArgs.Empty, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domains in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all WebLogic domains in a given compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomains = OciFunctions.getWlmsWlsDomains(GetWlmsWlsDomainsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(wlsDomainDisplayName)
-     *             .id(wlsDomainId)
-     *             .middlewareType(wlsDomainMiddlewareType)
-     *             .patchReadinessStatus(wlsDomainPatchReadinessStatus)
-     *             .state(wlsDomainState)
-     *             .weblogicVersion(wlsDomainWeblogicVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainsResult> getWlmsWlsDomainsPlain() {
-        return getWlmsWlsDomainsPlain(GetWlmsWlsDomainsPlainArgs.Empty, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domains in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all WebLogic domains in a given compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomains = OciFunctions.getWlmsWlsDomains(GetWlmsWlsDomainsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(wlsDomainDisplayName)
-     *             .id(wlsDomainId)
-     *             .middlewareType(wlsDomainMiddlewareType)
-     *             .patchReadinessStatus(wlsDomainPatchReadinessStatus)
-     *             .state(wlsDomainState)
-     *             .weblogicVersion(wlsDomainWeblogicVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainsResult> getWlmsWlsDomains(GetWlmsWlsDomainsArgs args) {
-        return getWlmsWlsDomains(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domains in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all WebLogic domains in a given compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomains = OciFunctions.getWlmsWlsDomains(GetWlmsWlsDomainsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(wlsDomainDisplayName)
-     *             .id(wlsDomainId)
-     *             .middlewareType(wlsDomainMiddlewareType)
-     *             .patchReadinessStatus(wlsDomainPatchReadinessStatus)
-     *             .state(wlsDomainState)
-     *             .weblogicVersion(wlsDomainWeblogicVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainsResult> getWlmsWlsDomainsPlain(GetWlmsWlsDomainsPlainArgs args) {
-        return getWlmsWlsDomainsPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Wls Domains in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all WebLogic domains in a given compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomains = OciFunctions.getWlmsWlsDomains(GetWlmsWlsDomainsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(wlsDomainDisplayName)
-     *             .id(wlsDomainId)
-     *             .middlewareType(wlsDomainMiddlewareType)
-     *             .patchReadinessStatus(wlsDomainPatchReadinessStatus)
-     *             .state(wlsDomainState)
-     *             .weblogicVersion(wlsDomainWeblogicVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainsResult> getWlmsWlsDomains(GetWlmsWlsDomainsArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomains:getWlmsWlsDomains", TypeShape.of(GetWlmsWlsDomainsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domains in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all WebLogic domains in a given compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomains = OciFunctions.getWlmsWlsDomains(GetWlmsWlsDomainsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(wlsDomainDisplayName)
-     *             .id(wlsDomainId)
-     *             .middlewareType(wlsDomainMiddlewareType)
-     *             .patchReadinessStatus(wlsDomainPatchReadinessStatus)
-     *             .state(wlsDomainState)
-     *             .weblogicVersion(wlsDomainWeblogicVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetWlmsWlsDomainsResult> getWlmsWlsDomains(GetWlmsWlsDomainsArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getWlmsWlsDomains:getWlmsWlsDomains", TypeShape.of(GetWlmsWlsDomainsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Wls Domains in Oracle Cloud Infrastructure Wlms service.
-     * 
-     * Gets all WebLogic domains in a given compartment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testWlsDomains = OciFunctions.getWlmsWlsDomains(GetWlmsWlsDomainsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(wlsDomainDisplayName)
-     *             .id(wlsDomainId)
-     *             .middlewareType(wlsDomainMiddlewareType)
-     *             .patchReadinessStatus(wlsDomainPatchReadinessStatus)
-     *             .state(wlsDomainState)
-     *             .weblogicVersion(wlsDomainWeblogicVersion)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetWlmsWlsDomainsResult> getWlmsWlsDomainsPlain(GetWlmsWlsDomainsPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getWlmsWlsDomains:getWlmsWlsDomains", TypeShape.of(GetWlmsWlsDomainsResult.class), args, Utilities.withVersion(options));
     }
 }

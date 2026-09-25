@@ -2287,6 +2287,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/cryptoAssessment",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/cryptoAssessment:CryptoAssessment": "CryptoAssessment"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/cryptoAssessmentManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/cryptoAssessmentManagement:CryptoAssessmentManagement": "CryptoAssessmentManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/dataSafeConfiguration",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -4899,6 +4915,14 @@ _utilities.register(
   "fqn": "pulumi_oci.generativeai",
   "classes": {
    "oci:GenerativeAi/project:Project": "Project"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/routingProfile",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/routingProfile:RoutingProfile": "RoutingProfile"
   }
  },
  {

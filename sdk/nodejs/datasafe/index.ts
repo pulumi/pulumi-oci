@@ -85,6 +85,16 @@ export type CompareUserAssessment = import("./compareUserAssessment").CompareUse
 export const CompareUserAssessment: typeof import("./compareUserAssessment").CompareUserAssessment = null as any;
 utilities.lazyLoad(exports, ["CompareUserAssessment"], () => require("./compareUserAssessment"));
 
+export { CryptoAssessmentArgs, CryptoAssessmentState } from "./cryptoAssessment";
+export type CryptoAssessment = import("./cryptoAssessment").CryptoAssessment;
+export const CryptoAssessment: typeof import("./cryptoAssessment").CryptoAssessment = null as any;
+utilities.lazyLoad(exports, ["CryptoAssessment"], () => require("./cryptoAssessment"));
+
+export { CryptoAssessmentManagementArgs, CryptoAssessmentManagementState } from "./cryptoAssessmentManagement";
+export type CryptoAssessmentManagement = import("./cryptoAssessmentManagement").CryptoAssessmentManagement;
+export const CryptoAssessmentManagement: typeof import("./cryptoAssessmentManagement").CryptoAssessmentManagement = null as any;
+utilities.lazyLoad(exports, ["CryptoAssessmentManagement"], () => require("./cryptoAssessmentManagement"));
+
 export { DataSafeConfigurationArgs, DataSafeConfigurationState } from "./dataSafeConfiguration";
 export type DataSafeConfiguration = import("./dataSafeConfiguration").DataSafeConfiguration;
 export const DataSafeConfiguration: typeof import("./dataSafeConfiguration").DataSafeConfiguration = null as any;
@@ -269,6 +279,66 @@ export { GetCompatibleFormatsForSensitiveTypeArgs, GetCompatibleFormatsForSensit
 export const getCompatibleFormatsForSensitiveType: typeof import("./getCompatibleFormatsForSensitiveType").getCompatibleFormatsForSensitiveType = null as any;
 export const getCompatibleFormatsForSensitiveTypeOutput: typeof import("./getCompatibleFormatsForSensitiveType").getCompatibleFormatsForSensitiveTypeOutput = null as any;
 utilities.lazyLoad(exports, ["getCompatibleFormatsForSensitiveType","getCompatibleFormatsForSensitiveTypeOutput"], () => require("./getCompatibleFormatsForSensitiveType"));
+
+export { GetCryptoAssessmentArgs, GetCryptoAssessmentResult, GetCryptoAssessmentOutputArgs } from "./getCryptoAssessment";
+export const getCryptoAssessment: typeof import("./getCryptoAssessment").getCryptoAssessment = null as any;
+export const getCryptoAssessmentOutput: typeof import("./getCryptoAssessment").getCryptoAssessmentOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessment","getCryptoAssessmentOutput"], () => require("./getCryptoAssessment"));
+
+export { GetCryptoAssessmentBackupSetsArgs, GetCryptoAssessmentBackupSetsResult, GetCryptoAssessmentBackupSetsOutputArgs } from "./getCryptoAssessmentBackupSets";
+export const getCryptoAssessmentBackupSets: typeof import("./getCryptoAssessmentBackupSets").getCryptoAssessmentBackupSets = null as any;
+export const getCryptoAssessmentBackupSetsOutput: typeof import("./getCryptoAssessmentBackupSets").getCryptoAssessmentBackupSetsOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessmentBackupSets","getCryptoAssessmentBackupSetsOutput"], () => require("./getCryptoAssessmentBackupSets"));
+
+export { GetCryptoAssessmentCbomItemsArgs, GetCryptoAssessmentCbomItemsResult, GetCryptoAssessmentCbomItemsOutputArgs } from "./getCryptoAssessmentCbomItems";
+export const getCryptoAssessmentCbomItems: typeof import("./getCryptoAssessmentCbomItems").getCryptoAssessmentCbomItems = null as any;
+export const getCryptoAssessmentCbomItemsOutput: typeof import("./getCryptoAssessmentCbomItems").getCryptoAssessmentCbomItemsOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessmentCbomItems","getCryptoAssessmentCbomItemsOutput"], () => require("./getCryptoAssessmentCbomItems"));
+
+export { GetCryptoAssessmentCertificatesArgs, GetCryptoAssessmentCertificatesResult, GetCryptoAssessmentCertificatesOutputArgs } from "./getCryptoAssessmentCertificates";
+export const getCryptoAssessmentCertificates: typeof import("./getCryptoAssessmentCertificates").getCryptoAssessmentCertificates = null as any;
+export const getCryptoAssessmentCertificatesOutput: typeof import("./getCryptoAssessmentCertificates").getCryptoAssessmentCertificatesOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessmentCertificates","getCryptoAssessmentCertificatesOutput"], () => require("./getCryptoAssessmentCertificates"));
+
+export { GetCryptoAssessmentFindingAnalyticsArgs, GetCryptoAssessmentFindingAnalyticsResult, GetCryptoAssessmentFindingAnalyticsOutputArgs } from "./getCryptoAssessmentFindingAnalytics";
+export const getCryptoAssessmentFindingAnalytics: typeof import("./getCryptoAssessmentFindingAnalytics").getCryptoAssessmentFindingAnalytics = null as any;
+export const getCryptoAssessmentFindingAnalyticsOutput: typeof import("./getCryptoAssessmentFindingAnalytics").getCryptoAssessmentFindingAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessmentFindingAnalytics","getCryptoAssessmentFindingAnalyticsOutput"], () => require("./getCryptoAssessmentFindingAnalytics"));
+
+export { GetCryptoAssessmentFindingTargetsArgs, GetCryptoAssessmentFindingTargetsResult, GetCryptoAssessmentFindingTargetsOutputArgs } from "./getCryptoAssessmentFindingTargets";
+export const getCryptoAssessmentFindingTargets: typeof import("./getCryptoAssessmentFindingTargets").getCryptoAssessmentFindingTargets = null as any;
+export const getCryptoAssessmentFindingTargetsOutput: typeof import("./getCryptoAssessmentFindingTargets").getCryptoAssessmentFindingTargetsOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessmentFindingTargets","getCryptoAssessmentFindingTargetsOutput"], () => require("./getCryptoAssessmentFindingTargets"));
+
+export { GetCryptoAssessmentFindingsArgs, GetCryptoAssessmentFindingsResult, GetCryptoAssessmentFindingsOutputArgs } from "./getCryptoAssessmentFindings";
+export const getCryptoAssessmentFindings: typeof import("./getCryptoAssessmentFindings").getCryptoAssessmentFindings = null as any;
+export const getCryptoAssessmentFindingsOutput: typeof import("./getCryptoAssessmentFindings").getCryptoAssessmentFindingsOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessmentFindings","getCryptoAssessmentFindingsOutput"], () => require("./getCryptoAssessmentFindings"));
+
+export { GetCryptoAssessmentKeysArgs, GetCryptoAssessmentKeysResult, GetCryptoAssessmentKeysOutputArgs } from "./getCryptoAssessmentKeys";
+export const getCryptoAssessmentKeys: typeof import("./getCryptoAssessmentKeys").getCryptoAssessmentKeys = null as any;
+export const getCryptoAssessmentKeysOutput: typeof import("./getCryptoAssessmentKeys").getCryptoAssessmentKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessmentKeys","getCryptoAssessmentKeysOutput"], () => require("./getCryptoAssessmentKeys"));
+
+export { GetCryptoAssessmentSqlnetParameterArgs, GetCryptoAssessmentSqlnetParameterResult, GetCryptoAssessmentSqlnetParameterOutputArgs } from "./getCryptoAssessmentSqlnetParameter";
+export const getCryptoAssessmentSqlnetParameter: typeof import("./getCryptoAssessmentSqlnetParameter").getCryptoAssessmentSqlnetParameter = null as any;
+export const getCryptoAssessmentSqlnetParameterOutput: typeof import("./getCryptoAssessmentSqlnetParameter").getCryptoAssessmentSqlnetParameterOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessmentSqlnetParameter","getCryptoAssessmentSqlnetParameterOutput"], () => require("./getCryptoAssessmentSqlnetParameter"));
+
+export { GetCryptoAssessmentTdeObjectsArgs, GetCryptoAssessmentTdeObjectsResult, GetCryptoAssessmentTdeObjectsOutputArgs } from "./getCryptoAssessmentTdeObjects";
+export const getCryptoAssessmentTdeObjects: typeof import("./getCryptoAssessmentTdeObjects").getCryptoAssessmentTdeObjects = null as any;
+export const getCryptoAssessmentTdeObjectsOutput: typeof import("./getCryptoAssessmentTdeObjects").getCryptoAssessmentTdeObjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessmentTdeObjects","getCryptoAssessmentTdeObjectsOutput"], () => require("./getCryptoAssessmentTdeObjects"));
+
+export { GetCryptoAssessmentWalletsArgs, GetCryptoAssessmentWalletsResult, GetCryptoAssessmentWalletsOutputArgs } from "./getCryptoAssessmentWallets";
+export const getCryptoAssessmentWallets: typeof import("./getCryptoAssessmentWallets").getCryptoAssessmentWallets = null as any;
+export const getCryptoAssessmentWalletsOutput: typeof import("./getCryptoAssessmentWallets").getCryptoAssessmentWalletsOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessmentWallets","getCryptoAssessmentWalletsOutput"], () => require("./getCryptoAssessmentWallets"));
+
+export { GetCryptoAssessmentsArgs, GetCryptoAssessmentsResult, GetCryptoAssessmentsOutputArgs } from "./getCryptoAssessments";
+export const getCryptoAssessments: typeof import("./getCryptoAssessments").getCryptoAssessments = null as any;
+export const getCryptoAssessmentsOutput: typeof import("./getCryptoAssessments").getCryptoAssessmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getCryptoAssessments","getCryptoAssessmentsOutput"], () => require("./getCryptoAssessments"));
 
 export { GetDataSafeConfigurationArgs, GetDataSafeConfigurationResult, GetDataSafeConfigurationOutputArgs } from "./getDataSafeConfiguration";
 export const getDataSafeConfiguration: typeof import("./getDataSafeConfiguration").getDataSafeConfiguration = null as any;
@@ -1162,6 +1232,10 @@ const _module = {
                 return new CompareSecurityAssessment(name, <any>undefined, { urn })
             case "oci:DataSafe/compareUserAssessment:CompareUserAssessment":
                 return new CompareUserAssessment(name, <any>undefined, { urn })
+            case "oci:DataSafe/cryptoAssessment:CryptoAssessment":
+                return new CryptoAssessment(name, <any>undefined, { urn })
+            case "oci:DataSafe/cryptoAssessmentManagement:CryptoAssessmentManagement":
+                return new CryptoAssessmentManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/dataSafeConfiguration:DataSafeConfiguration":
                 return new DataSafeConfiguration(name, <any>undefined, { urn })
             case "oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint":
@@ -1287,6 +1361,8 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/calculateAuditVolumeAvail
 pulumi.runtime.registerResourceModule("oci", "DataSafe/calculateAuditVolumeCollected", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/compareSecurityAssessment", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/compareUserAssessment", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/cryptoAssessment", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/cryptoAssessmentManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/dataSafeConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/dataSafePrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/databaseSecurityConfig", _module)

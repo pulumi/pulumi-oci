@@ -27,7 +27,7 @@ class GetAssessmentResult:
     """
     A collection of values returned by getAssessment.
     """
-    def __init__(__self__, acceptable_downtime=None, assessment_id=None, assessment_migration_type=None, bulk_include_exclude_data=None, compartment_id=None, creation_type=None, database_combination=None, database_data_size=None, ddl_expectation=None, defined_tags=None, description=None, display_name=None, exclude_objects=None, freeform_tags=None, id=None, include_objects=None, is_cdb_supported=None, migration_id=None, network_speed_megabit_per_second=None, source_database_connections=None, state=None, system_tags=None, target_database_connections=None, time_created=None, time_updated=None):
+    def __init__(__self__, acceptable_downtime=None, assessment_id=None, assessment_migration_type=None, bulk_include_exclude_data=None, compartment_id=None, creation_type=None, database_combination=None, database_data_size=None, ddl_expectation=None, defined_tags=None, description=None, display_name=None, exclude_objects=None, freeform_tags=None, id=None, include_objects=None, is_cdb_supported=None, migration_id=None, migration_scope=None, network_speed_megabit_per_second=None, source_database_connections=None, state=None, system_tags=None, target_database_connections=None, time_created=None, time_updated=None):
         if acceptable_downtime and not isinstance(acceptable_downtime, str):
             raise TypeError("Expected argument 'acceptable_downtime' to be a str")
         pulumi.set(__self__, "acceptable_downtime", acceptable_downtime)
@@ -82,6 +82,9 @@ class GetAssessmentResult:
         if migration_id and not isinstance(migration_id, str):
             raise TypeError("Expected argument 'migration_id' to be a str")
         pulumi.set(__self__, "migration_id", migration_id)
+        if migration_scope and not isinstance(migration_scope, str):
+            raise TypeError("Expected argument 'migration_scope' to be a str")
+        pulumi.set(__self__, "migration_scope", migration_scope)
         if network_speed_megabit_per_second and not isinstance(network_speed_megabit_per_second, str):
             raise TypeError("Expected argument 'network_speed_megabit_per_second' to be a str")
         pulumi.set(__self__, "network_speed_megabit_per_second", network_speed_megabit_per_second)
@@ -237,6 +240,14 @@ class GetAssessmentResult:
         return pulumi.get(self, "migration_id")
 
     @_builtins.property
+    @pulumi.getter(name="migrationScope")
+    def migration_scope(self) -> _builtins.str:
+        """
+        Assessment migration scope.
+        """
+        return pulumi.get(self, "migration_scope")
+
+    @_builtins.property
     @pulumi.getter(name="networkSpeedMegabitPerSecond")
     def network_speed_megabit_per_second(self) -> _builtins.str:
         """
@@ -317,6 +328,7 @@ class AwaitableGetAssessmentResult(GetAssessmentResult):
             include_objects=self.include_objects,
             is_cdb_supported=self.is_cdb_supported,
             migration_id=self.migration_id,
+            migration_scope=self.migration_scope,
             network_speed_megabit_per_second=self.network_speed_megabit_per_second,
             source_database_connections=self.source_database_connections,
             state=self.state,
@@ -369,6 +381,7 @@ def get_assessment(assessment_id: Optional[_builtins.str] = None,
         include_objects=pulumi.get(__ret__, 'include_objects'),
         is_cdb_supported=pulumi.get(__ret__, 'is_cdb_supported'),
         migration_id=pulumi.get(__ret__, 'migration_id'),
+        migration_scope=pulumi.get(__ret__, 'migration_scope'),
         network_speed_megabit_per_second=pulumi.get(__ret__, 'network_speed_megabit_per_second'),
         source_database_connections=pulumi.get(__ret__, 'source_database_connections'),
         state=pulumi.get(__ret__, 'state'),
@@ -418,6 +431,7 @@ def get_assessment_output(assessment_id: pulumi.Input[Optional[_builtins.str]] =
         include_objects=pulumi.get(__response__, 'include_objects'),
         is_cdb_supported=pulumi.get(__response__, 'is_cdb_supported'),
         migration_id=pulumi.get(__response__, 'migration_id'),
+        migration_scope=pulumi.get(__response__, 'migration_scope'),
         network_speed_megabit_per_second=pulumi.get(__response__, 'network_speed_megabit_per_second'),
         source_database_connections=pulumi.get(__response__, 'source_database_connections'),
         state=pulumi.get(__response__, 'state'),

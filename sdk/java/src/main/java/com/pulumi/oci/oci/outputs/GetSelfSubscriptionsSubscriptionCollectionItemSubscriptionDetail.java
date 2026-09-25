@@ -21,7 +21,7 @@ public final class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDet
      */
     private Double amount;
     /**
-     * @return Sku details for billing subscription.
+     * @return Billing details associated with the subscription plan and its usage dimensions.
      * 
      */
     private List<GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetail> billingDetails;
@@ -55,7 +55,7 @@ public final class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDet
         return this.amount;
     }
     /**
-     * @return Sku details for billing subscription.
+     * @return Billing details associated with the subscription plan and its usage dimensions.
      * 
      */
     public List<GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetail> billingDetails() {

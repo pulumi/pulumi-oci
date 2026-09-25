@@ -203,6 +203,10 @@ __all__ = [
     'SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgsDict',
     'SelfSubscriptionSubscriptionDetailsPricingPlanArgs',
     'SelfSubscriptionSubscriptionDetailsPricingPlanArgsDict',
+    'SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs',
+    'SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgsDict',
+    'SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgs',
+    'SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgsDict',
     'SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs',
     'SelfSubscriptionSubscriptionDetailsPricingPlanRateArgsDict',
     'GetAiDataPlatformAiDataPlatformsFilterArgs',
@@ -335,30 +339,12 @@ __all__ = [
     'GetResourceAnalyticsTenancyAttachmentsFilterArgsDict',
     'GetSelfPartnerSubscriptionsFilterArgs',
     'GetSelfPartnerSubscriptionsFilterArgsDict',
+    'GetSelfPartnersFilterArgs',
+    'GetSelfPartnersFilterArgsDict',
+    'GetSelfSelfPartnerSubscriptionsFilterArgs',
+    'GetSelfSelfPartnerSubscriptionsFilterArgsDict',
     'GetSelfSubscriptionsFilterArgs',
     'GetSelfSubscriptionsFilterArgsDict',
-    'GetWlmsManagedInstanceScanResultsFilterArgs',
-    'GetWlmsManagedInstanceScanResultsFilterArgsDict',
-    'GetWlmsManagedInstanceServerInstalledPatchesFilterArgs',
-    'GetWlmsManagedInstanceServerInstalledPatchesFilterArgsDict',
-    'GetWlmsManagedInstanceServersFilterArgs',
-    'GetWlmsManagedInstanceServersFilterArgsDict',
-    'GetWlmsManagedInstancesFilterArgs',
-    'GetWlmsManagedInstancesFilterArgsDict',
-    'GetWlmsWlsDomainAgreementRecordsFilterArgs',
-    'GetWlmsWlsDomainAgreementRecordsFilterArgsDict',
-    'GetWlmsWlsDomainApplicablePatchesFilterArgs',
-    'GetWlmsWlsDomainApplicablePatchesFilterArgsDict',
-    'GetWlmsWlsDomainScanResultsFilterArgs',
-    'GetWlmsWlsDomainScanResultsFilterArgsDict',
-    'GetWlmsWlsDomainServerBackupsFilterArgs',
-    'GetWlmsWlsDomainServerBackupsFilterArgsDict',
-    'GetWlmsWlsDomainServerInstalledPatchesFilterArgs',
-    'GetWlmsWlsDomainServerInstalledPatchesFilterArgsDict',
-    'GetWlmsWlsDomainServersFilterArgs',
-    'GetWlmsWlsDomainServersFilterArgsDict',
-    'GetWlmsWlsDomainsFilterArgs',
-    'GetWlmsWlsDomainsFilterArgsDict',
 ]
 
 class ApiPlatformApiPlatformInstanceIdcsAppArgsDict(TypedDict):
@@ -8216,7 +8202,7 @@ class SelfSubscriptionAdditionalDetailArgs:
 class SelfSubscriptionSubscriptionDetailsArgsDict(TypedDict):
     billing_details: pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsArgsDict']
     """
-    Sku details for billing subscription.
+    Billing details associated with the subscription plan and its usage dimensions.
     """
     partner_registration_url: pulumi.Input[_builtins.str]
     """
@@ -8249,7 +8235,7 @@ class SelfSubscriptionSubscriptionDetailsArgs:
                  currency: pulumi.Input[Optional[_builtins.str]] = None,
                  is_auto_renew: pulumi.Input[Optional[_builtins.bool]] = None):
         """
-        :param pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsArgs'] billing_details: Sku details for billing subscription.
+        :param pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsArgs'] billing_details: Billing details associated with the subscription plan and its usage dimensions.
         :param pulumi.Input[_builtins.str] partner_registration_url: The activation link given by the partner.
         :param pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanArgs'] pricing_plan: A pricing plan details provided by the Publisher.
         :param pulumi.Input[_builtins.float] amount: Tha amount for the currency type.
@@ -8270,7 +8256,7 @@ class SelfSubscriptionSubscriptionDetailsArgs:
     @pulumi.getter(name="billingDetails")
     def billing_details(self) -> pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsArgs']:
         """
-        Sku details for billing subscription.
+        Billing details associated with the subscription plan and its usage dimensions.
         """
         return pulumi.get(self, "billing_details")
 
@@ -8340,6 +8326,10 @@ class SelfSubscriptionSubscriptionDetailsArgs:
 
 
 class SelfSubscriptionSubscriptionDetailsBillingDetailsArgsDict(TypedDict):
+    billing_model: pulumi.Input[_builtins.str]
+    """
+    The billing model this billing detail applies to.
+    """
     meters: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgsDict']]]
     """
     The meters associated with sku.
@@ -8347,6 +8337,10 @@ class SelfSubscriptionSubscriptionDetailsBillingDetailsArgsDict(TypedDict):
     metric_type: pulumi.Input[_builtins.str]
     """
     The part's metric.
+    """
+    pricing_plan_key: pulumi.Input[_builtins.str]
+    """
+    Unique key used to map this SKU to the pricing plan.
     """
     rate_allocation: pulumi.Input[_builtins.float]
     """
@@ -8364,24 +8358,42 @@ class SelfSubscriptionSubscriptionDetailsBillingDetailsArgsDict(TypedDict):
 @pulumi.input_type
 class SelfSubscriptionSubscriptionDetailsBillingDetailsArgs:
     def __init__(__self__, *,
+                 billing_model: pulumi.Input[_builtins.str],
                  meters: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs']]],
                  metric_type: pulumi.Input[_builtins.str],
+                 pricing_plan_key: pulumi.Input[_builtins.str],
                  rate_allocation: pulumi.Input[_builtins.float],
                  sku: pulumi.Input[_builtins.str],
                  has_gov_sku: pulumi.Input[Optional[_builtins.bool]] = None):
         """
+        :param pulumi.Input[_builtins.str] billing_model: The billing model this billing detail applies to.
         :param pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs']]] meters: The meters associated with sku.
         :param pulumi.Input[_builtins.str] metric_type: The part's metric.
+        :param pulumi.Input[_builtins.str] pricing_plan_key: Unique key used to map this SKU to the pricing plan.
         :param pulumi.Input[_builtins.float] rate_allocation: Tha rate of this sku meter.
         :param pulumi.Input[_builtins.str] sku: Sku for service.
         :param pulumi.Input[_builtins.bool] has_gov_sku: Whether this sku is assign to gov product.
         """
+        pulumi.set(__self__, "billing_model", billing_model)
         pulumi.set(__self__, "meters", meters)
         pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "pricing_plan_key", pricing_plan_key)
         pulumi.set(__self__, "rate_allocation", rate_allocation)
         pulumi.set(__self__, "sku", sku)
         if has_gov_sku is not None:
             pulumi.set(__self__, "has_gov_sku", has_gov_sku)
+
+    @_builtins.property
+    @pulumi.getter(name="billingModel")
+    def billing_model(self) -> pulumi.Input[_builtins.str]:
+        """
+        The billing model this billing detail applies to.
+        """
+        return pulumi.get(self, "billing_model")
+
+    @billing_model.setter
+    def billing_model(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "billing_model", value)
 
     @_builtins.property
     @pulumi.getter
@@ -8406,6 +8418,18 @@ class SelfSubscriptionSubscriptionDetailsBillingDetailsArgs:
     @metric_type.setter
     def metric_type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "metric_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pricingPlanKey")
+    def pricing_plan_key(self) -> pulumi.Input[_builtins.str]:
+        """
+        Unique key used to map this SKU to the pricing plan.
+        """
+        return pulumi.get(self, "pricing_plan_key")
+
+    @pricing_plan_key.setter
+    def pricing_plan_key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "pricing_plan_key", value)
 
     @_builtins.property
     @pulumi.getter(name="rateAllocation")
@@ -8561,7 +8585,7 @@ class SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs
 class SelfSubscriptionSubscriptionDetailsPricingPlanArgsDict(TypedDict):
     billing_frequency: pulumi.Input[_builtins.str]
     """
-    Specifies the interval at which billing occurs for the subscription plan.
+    Specifies the interval at which billing occurs for the subscription plan or usage dimension.
     """
     plan_name: pulumi.Input[_builtins.str]
     """
@@ -8575,13 +8599,17 @@ class SelfSubscriptionSubscriptionDetailsPricingPlanArgsDict(TypedDict):
     """
     The pricing details of the subscription plan in various supported currencies.
     """
+    dimensions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgsDict']]]]]
+    """
+    Metered usage dimensions associated with the pricing plan.
+    """
     plan_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A detailed explanation of the subscription plan.
     """
     plan_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    Specifies the interval at which billing occurs for the subscription plan.
+    Specifies the duration of the subscription plan.
     """
 
 @pulumi.input_type
@@ -8591,20 +8619,24 @@ class SelfSubscriptionSubscriptionDetailsPricingPlanArgs:
                  plan_name: pulumi.Input[_builtins.str],
                  plan_type: pulumi.Input[_builtins.str],
                  rates: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs']]],
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs']]]] = None,
                  plan_description: pulumi.Input[Optional[_builtins.str]] = None,
                  plan_duration: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] billing_frequency: Specifies the interval at which billing occurs for the subscription plan.
+        :param pulumi.Input[_builtins.str] billing_frequency: Specifies the interval at which billing occurs for the subscription plan or usage dimension.
         :param pulumi.Input[_builtins.str] plan_name: The name of the subscription plan used to identify the plan.
         :param pulumi.Input[_builtins.str] plan_type: The type of the subscription plan.
         :param pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs']]] rates: The pricing details of the subscription plan in various supported currencies.
+        :param pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs']]] dimensions: Metered usage dimensions associated with the pricing plan.
         :param pulumi.Input[_builtins.str] plan_description: A detailed explanation of the subscription plan.
-        :param pulumi.Input[_builtins.str] plan_duration: Specifies the interval at which billing occurs for the subscription plan.
+        :param pulumi.Input[_builtins.str] plan_duration: Specifies the duration of the subscription plan.
         """
         pulumi.set(__self__, "billing_frequency", billing_frequency)
         pulumi.set(__self__, "plan_name", plan_name)
         pulumi.set(__self__, "plan_type", plan_type)
         pulumi.set(__self__, "rates", rates)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
         if plan_description is not None:
             pulumi.set(__self__, "plan_description", plan_description)
         if plan_duration is not None:
@@ -8614,7 +8646,7 @@ class SelfSubscriptionSubscriptionDetailsPricingPlanArgs:
     @pulumi.getter(name="billingFrequency")
     def billing_frequency(self) -> pulumi.Input[_builtins.str]:
         """
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the interval at which billing occurs for the subscription plan or usage dimension.
         """
         return pulumi.get(self, "billing_frequency")
 
@@ -8659,6 +8691,18 @@ class SelfSubscriptionSubscriptionDetailsPricingPlanArgs:
         pulumi.set(self, "rates", value)
 
     @_builtins.property
+    @pulumi.getter
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs']]]]:
+        """
+        Metered usage dimensions associated with the pricing plan.
+        """
+        return pulumi.get(self, "dimensions")
+
+    @dimensions.setter
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs']]]]):
+        pulumi.set(self, "dimensions", value)
+
+    @_builtins.property
     @pulumi.getter(name="planDescription")
     def plan_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -8674,13 +8718,203 @@ class SelfSubscriptionSubscriptionDetailsPricingPlanArgs:
     @pulumi.getter(name="planDuration")
     def plan_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the duration of the subscription plan.
         """
         return pulumi.get(self, "plan_duration")
 
     @plan_duration.setter
     def plan_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plan_duration", value)
+
+
+class SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgsDict(TypedDict):
+    dimension_billing_frequency: pulumi.Input[_builtins.str]
+    """
+    Specifies the interval at which the usage dimension is billed.
+    """
+    dimension_description: pulumi.Input[_builtins.str]
+    """
+    A detailed explanation of the usage dimension.
+    """
+    dimension_key: pulumi.Input[_builtins.str]
+    """
+    The stable key used internally to map this usage dimension to billing details.
+    """
+    dimension_name: pulumi.Input[_builtins.str]
+    """
+    The name of the usage dimension.
+    """
+    metric_type: pulumi.Input[_builtins.str]
+    """
+    The metric type in which usage is measured.
+    """
+    rates: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgsDict']]]
+    """
+    Dimension-level rates in various supported currencies.
+    """
+    included_quantity: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    Quantity included in the base fee for hybrid plans.
+    """
+
+@pulumi.input_type
+class SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs:
+    def __init__(__self__, *,
+                 dimension_billing_frequency: pulumi.Input[_builtins.str],
+                 dimension_description: pulumi.Input[_builtins.str],
+                 dimension_key: pulumi.Input[_builtins.str],
+                 dimension_name: pulumi.Input[_builtins.str],
+                 metric_type: pulumi.Input[_builtins.str],
+                 rates: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgs']]],
+                 included_quantity: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.str] dimension_billing_frequency: Specifies the interval at which the usage dimension is billed.
+        :param pulumi.Input[_builtins.str] dimension_description: A detailed explanation of the usage dimension.
+        :param pulumi.Input[_builtins.str] dimension_key: The stable key used internally to map this usage dimension to billing details.
+        :param pulumi.Input[_builtins.str] dimension_name: The name of the usage dimension.
+        :param pulumi.Input[_builtins.str] metric_type: The metric type in which usage is measured.
+        :param pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgs']]] rates: Dimension-level rates in various supported currencies.
+        :param pulumi.Input[_builtins.float] included_quantity: Quantity included in the base fee for hybrid plans.
+        """
+        pulumi.set(__self__, "dimension_billing_frequency", dimension_billing_frequency)
+        pulumi.set(__self__, "dimension_description", dimension_description)
+        pulumi.set(__self__, "dimension_key", dimension_key)
+        pulumi.set(__self__, "dimension_name", dimension_name)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "rates", rates)
+        if included_quantity is not None:
+            pulumi.set(__self__, "included_quantity", included_quantity)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionBillingFrequency")
+    def dimension_billing_frequency(self) -> pulumi.Input[_builtins.str]:
+        """
+        Specifies the interval at which the usage dimension is billed.
+        """
+        return pulumi.get(self, "dimension_billing_frequency")
+
+    @dimension_billing_frequency.setter
+    def dimension_billing_frequency(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "dimension_billing_frequency", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionDescription")
+    def dimension_description(self) -> pulumi.Input[_builtins.str]:
+        """
+        A detailed explanation of the usage dimension.
+        """
+        return pulumi.get(self, "dimension_description")
+
+    @dimension_description.setter
+    def dimension_description(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "dimension_description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionKey")
+    def dimension_key(self) -> pulumi.Input[_builtins.str]:
+        """
+        The stable key used internally to map this usage dimension to billing details.
+        """
+        return pulumi.get(self, "dimension_key")
+
+    @dimension_key.setter
+    def dimension_key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "dimension_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionName")
+    def dimension_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the usage dimension.
+        """
+        return pulumi.get(self, "dimension_name")
+
+    @dimension_name.setter
+    def dimension_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "dimension_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The metric type in which usage is measured.
+        """
+        return pulumi.get(self, "metric_type")
+
+    @metric_type.setter
+    def metric_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "metric_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rates(self) -> pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgs']]]:
+        """
+        Dimension-level rates in various supported currencies.
+        """
+        return pulumi.get(self, "rates")
+
+    @rates.setter
+    def rates(self, value: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgs']]]):
+        pulumi.set(self, "rates", value)
+
+    @_builtins.property
+    @pulumi.getter(name="includedQuantity")
+    def included_quantity(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        Quantity included in the base fee for hybrid plans.
+        """
+        return pulumi.get(self, "included_quantity")
+
+    @included_quantity.setter
+    def included_quantity(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "included_quantity", value)
+
+
+class SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgsDict(TypedDict):
+    currency: pulumi.Input[_builtins.str]
+    """
+    The currency supported, in the format specified by ISO-4217
+    """
+    rate: pulumi.Input[_builtins.float]
+    """
+    The amount charged for the plan in the specified currency.
+    """
+
+@pulumi.input_type
+class SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgs:
+    def __init__(__self__, *,
+                 currency: pulumi.Input[_builtins.str],
+                 rate: pulumi.Input[_builtins.float]):
+        """
+        :param pulumi.Input[_builtins.str] currency: The currency supported, in the format specified by ISO-4217
+        :param pulumi.Input[_builtins.float] rate: The amount charged for the plan in the specified currency.
+        """
+        pulumi.set(__self__, "currency", currency)
+        pulumi.set(__self__, "rate", rate)
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> pulumi.Input[_builtins.str]:
+        """
+        The currency supported, in the format specified by ISO-4217
+        """
+        return pulumi.get(self, "currency")
+
+    @currency.setter
+    def currency(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "currency", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rate(self) -> pulumi.Input[_builtins.float]:
+        """
+        The amount charged for the plan in the specified currency.
+        """
+        return pulumi.get(self, "rate")
+
+    @rate.setter
+    def rate(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "rate", value)
 
 
 class SelfSubscriptionSubscriptionDetailsPricingPlanRateArgsDict(TypedDict):
@@ -11741,6 +11975,94 @@ class GetSelfPartnerSubscriptionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+class GetSelfPartnersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetSelfPartnersFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetSelfSelfPartnerSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetSelfSelfPartnerSubscriptionsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
 class GetSelfSubscriptionsFilterArgsDict(TypedDict):
     name: _builtins.str
     """
@@ -11769,508 +12091,6 @@ class GetSelfSubscriptionsFilterArgs:
         """
         Name of meter.
         """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: _builtins.str):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[_builtins.str]):
-        pulumi.set(self, "values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[_builtins.bool]):
-        pulumi.set(self, "regex", value)
-
-
-class GetWlmsManagedInstanceScanResultsFilterArgsDict(TypedDict):
-    name: _builtins.str
-    values: Sequence[_builtins.str]
-    regex: NotRequired[_builtins.bool]
-
-@pulumi.input_type
-class GetWlmsManagedInstanceScanResultsFilterArgs:
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: _builtins.str):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[_builtins.str]):
-        pulumi.set(self, "values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[_builtins.bool]):
-        pulumi.set(self, "regex", value)
-
-
-class GetWlmsManagedInstanceServerInstalledPatchesFilterArgsDict(TypedDict):
-    name: _builtins.str
-    values: Sequence[_builtins.str]
-    regex: NotRequired[_builtins.bool]
-
-@pulumi.input_type
-class GetWlmsManagedInstanceServerInstalledPatchesFilterArgs:
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: _builtins.str):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[_builtins.str]):
-        pulumi.set(self, "values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[_builtins.bool]):
-        pulumi.set(self, "regex", value)
-
-
-class GetWlmsManagedInstanceServersFilterArgsDict(TypedDict):
-    name: _builtins.str
-    """
-    The name of the resource.
-    """
-    values: Sequence[_builtins.str]
-    regex: NotRequired[_builtins.bool]
-
-@pulumi.input_type
-class GetWlmsManagedInstanceServersFilterArgs:
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        """
-        :param _builtins.str name: The name of the resource.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        """
-        The name of the resource.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: _builtins.str):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[_builtins.str]):
-        pulumi.set(self, "values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[_builtins.bool]):
-        pulumi.set(self, "regex", value)
-
-
-class GetWlmsManagedInstancesFilterArgsDict(TypedDict):
-    name: _builtins.str
-    values: Sequence[_builtins.str]
-    regex: NotRequired[_builtins.bool]
-
-@pulumi.input_type
-class GetWlmsManagedInstancesFilterArgs:
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: _builtins.str):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[_builtins.str]):
-        pulumi.set(self, "values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[_builtins.bool]):
-        pulumi.set(self, "regex", value)
-
-
-class GetWlmsWlsDomainAgreementRecordsFilterArgsDict(TypedDict):
-    name: _builtins.str
-    values: Sequence[_builtins.str]
-    regex: NotRequired[_builtins.bool]
-
-@pulumi.input_type
-class GetWlmsWlsDomainAgreementRecordsFilterArgs:
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: _builtins.str):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[_builtins.str]):
-        pulumi.set(self, "values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[_builtins.bool]):
-        pulumi.set(self, "regex", value)
-
-
-class GetWlmsWlsDomainApplicablePatchesFilterArgsDict(TypedDict):
-    name: _builtins.str
-    values: Sequence[_builtins.str]
-    regex: NotRequired[_builtins.bool]
-
-@pulumi.input_type
-class GetWlmsWlsDomainApplicablePatchesFilterArgs:
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: _builtins.str):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[_builtins.str]):
-        pulumi.set(self, "values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[_builtins.bool]):
-        pulumi.set(self, "regex", value)
-
-
-class GetWlmsWlsDomainScanResultsFilterArgsDict(TypedDict):
-    name: _builtins.str
-    values: Sequence[_builtins.str]
-    regex: NotRequired[_builtins.bool]
-
-@pulumi.input_type
-class GetWlmsWlsDomainScanResultsFilterArgs:
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: _builtins.str):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[_builtins.str]):
-        pulumi.set(self, "values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[_builtins.bool]):
-        pulumi.set(self, "regex", value)
-
-
-class GetWlmsWlsDomainServerBackupsFilterArgsDict(TypedDict):
-    name: _builtins.str
-    values: Sequence[_builtins.str]
-    regex: NotRequired[_builtins.bool]
-
-@pulumi.input_type
-class GetWlmsWlsDomainServerBackupsFilterArgs:
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: _builtins.str):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[_builtins.str]):
-        pulumi.set(self, "values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[_builtins.bool]):
-        pulumi.set(self, "regex", value)
-
-
-class GetWlmsWlsDomainServerInstalledPatchesFilterArgsDict(TypedDict):
-    name: _builtins.str
-    values: Sequence[_builtins.str]
-    regex: NotRequired[_builtins.bool]
-
-@pulumi.input_type
-class GetWlmsWlsDomainServerInstalledPatchesFilterArgs:
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: _builtins.str):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[_builtins.str]):
-        pulumi.set(self, "values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[_builtins.bool]):
-        pulumi.set(self, "regex", value)
-
-
-class GetWlmsWlsDomainServersFilterArgsDict(TypedDict):
-    name: _builtins.str
-    """
-    The name of the resource.
-    """
-    values: Sequence[_builtins.str]
-    regex: NotRequired[_builtins.bool]
-
-@pulumi.input_type
-class GetWlmsWlsDomainServersFilterArgs:
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        """
-        :param _builtins.str name: The name of the resource.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        """
-        The name of the resource.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: _builtins.str):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[_builtins.str]):
-        pulumi.set(self, "values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[_builtins.bool]):
-        pulumi.set(self, "regex", value)
-
-
-class GetWlmsWlsDomainsFilterArgsDict(TypedDict):
-    name: _builtins.str
-    values: Sequence[_builtins.str]
-    regex: NotRequired[_builtins.bool]
-
-@pulumi.input_type
-class GetWlmsWlsDomainsFilterArgs:
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
         return pulumi.get(self, "name")
 
     @name.setter

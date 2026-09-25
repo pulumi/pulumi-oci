@@ -37,11 +37,10 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.oci.SelfSubscription;
  * import com.pulumi.oci.oci.SelfSubscriptionArgs;
  * import com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsArgs;
- * import com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsBillingDetailsArgs;
- * import com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs;
- * import com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs;
  * import com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsPricingPlanArgs;
  * import com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs;
+ * import com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs;
+ * import com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgs;
  * import com.pulumi.oci.oci.inputs.SelfSubscriptionAdditionalDetailArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
@@ -61,16 +60,18 @@ import javax.annotation.Nullable;
  *             .productId(testProduct.id())
  *             .sellerId(testSeller.id())
  *             .subscriptionDetails(SelfSubscriptionSubscriptionDetailsArgs.builder()
- *                 .billingDetails(SelfSubscriptionSubscriptionDetailsBillingDetailsArgs.builder()
- *                     .meters(SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs.builder()
+ *                 .billingDetails(com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsBillingDetailsArgs.builder()
+ *                     .billingModel(subscriptionSubscriptionDetailsBillingDetailsBillingModel)
+ *                     .meters(com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs.builder()
  *                         .name(subscriptionSubscriptionDetailsBillingDetailsMetersName)
  *                         .rateAllocation(subscriptionSubscriptionDetailsBillingDetailsMetersRateAllocation)
- *                         .extendedMetadatas(SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs.builder()
+ *                         .extendedMetadatas(com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs.builder()
  *                             .key(subscriptionSubscriptionDetailsBillingDetailsMetersExtendedMetadataKey)
  *                             .value(subscriptionSubscriptionDetailsBillingDetailsMetersExtendedMetadataValue)
  *                             .build())
  *                         .build())
  *                     .metricType(subscriptionSubscriptionDetailsBillingDetailsMetricType)
+ *                     .pricingPlanKey(subscriptionSubscriptionDetailsBillingDetailsPricingPlanKey)
  *                     .rateAllocation(subscriptionSubscriptionDetailsBillingDetailsRateAllocation)
  *                     .sku(subscriptionSubscriptionDetailsBillingDetailsSku)
  *                     .hasGovSku(subscriptionSubscriptionDetailsBillingDetailsHasGovSku)
@@ -83,6 +84,18 @@ import javax.annotation.Nullable;
  *                     .rates(SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs.builder()
  *                         .currency(subscriptionSubscriptionDetailsPricingPlanRatesCurrency)
  *                         .rate(subscriptionSubscriptionDetailsPricingPlanRatesRate)
+ *                         .build())
+ *                     .dimensions(SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs.builder()
+ *                         .dimensionBillingFrequency(subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionBillingFrequency)
+ *                         .dimensionDescription(subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionDescription)
+ *                         .dimensionKey(subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionKey)
+ *                         .dimensionName(subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionName)
+ *                         .metricType(subscriptionSubscriptionDetailsPricingPlanDimensionsMetricType)
+ *                         .rates(SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgs.builder()
+ *                             .currency(subscriptionSubscriptionDetailsPricingPlanDimensionsRatesCurrency)
+ *                             .rate(subscriptionSubscriptionDetailsPricingPlanDimensionsRatesRate)
+ *                             .build())
+ *                         .includedQuantity(subscriptionSubscriptionDetailsPricingPlanDimensionsIncludedQuantity)
  *                         .build())
  *                     .planDescription(subscriptionSubscriptionDetailsPricingPlanPlanDescription)
  *                     .planDuration(subscriptionSubscriptionDetailsPricingPlanPlanDuration)

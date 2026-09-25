@@ -218,6 +218,21 @@ public final class AssessmentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+     * 
+     */
+    @Import(name="migrationScope")
+    private @Nullable Output<String> migrationScope;
+
+    /**
+     * @return (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+     * 
+     */
+    public Optional<Output<String>> migrationScope() {
+        return Optional.ofNullable(this.migrationScope);
+    }
+
+    /**
      * (Updatable) A network speed in Megabits per second.
      * 
      */
@@ -278,6 +293,7 @@ public final class AssessmentArgs extends com.pulumi.resources.ResourceArgs {
         this.excludeObjects = $.excludeObjects;
         this.freeformTags = $.freeformTags;
         this.includeObjects = $.includeObjects;
+        this.migrationScope = $.migrationScope;
         this.networkSpeedMegabitPerSecond = $.networkSpeedMegabitPerSecond;
         this.sourceDatabaseConnection = $.sourceDatabaseConnection;
         this.targetDatabaseConnection = $.targetDatabaseConnection;
@@ -592,6 +608,27 @@ public final class AssessmentArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder includeObjects(AssessmentIncludeObjectArgs... includeObjects) {
             return includeObjects(List.of(includeObjects));
+        }
+
+        /**
+         * @param migrationScope (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder migrationScope(@Nullable Output<String> migrationScope) {
+            $.migrationScope = migrationScope;
+            return this;
+        }
+
+        /**
+         * @param migrationScope (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder migrationScope(String migrationScope) {
+            return migrationScope(Output.of(migrationScope));
         }
 
         /**

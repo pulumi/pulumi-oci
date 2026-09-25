@@ -5,23 +5,84 @@ package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Functions.outputs.GetFunctionSourceDetailArchiveSourceDetail;
+import com.pulumi.oci.Functions.outputs.GetFunctionSourceDetailRuntimeConfig;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetFunctionSourceDetail {
+    /**
+     * @return The details for the Archive source of the Function.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+     * 
+     */
+    private List<GetFunctionSourceDetailArchiveSourceDetail> archiveSourceDetails;
+    /**
+     * @return The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+     * 
+     */
+    private String handler;
+    /**
+     * @return The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * 
+     */
+    private String image;
+    /**
+     * @return The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * 
+     */
+    private String imageDigest;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
      * 
      */
     private String pbfListingId;
     /**
-     * @return Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+     * @return FunctionsRuntime configuration for a function.
+     * 
+     */
+    private List<GetFunctionSourceDetailRuntimeConfig> runtimeConfigs;
+    /**
+     * @return The SHA256 hash of the function source code archive, base64-encoded.
+     * 
+     */
+    private String sourceCodeSha256;
+    /**
+     * @return Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
      * 
      */
     private String sourceType;
 
     private GetFunctionSourceDetail() {}
+    /**
+     * @return The details for the Archive source of the Function.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+     * 
+     */
+    public List<GetFunctionSourceDetailArchiveSourceDetail> archiveSourceDetails() {
+        return this.archiveSourceDetails;
+    }
+    /**
+     * @return The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+     * 
+     */
+    public String handler() {
+        return this.handler;
+    }
+    /**
+     * @return The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * 
+     */
+    public String image() {
+        return this.image;
+    }
+    /**
+     * @return The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * 
+     */
+    public String imageDigest() {
+        return this.imageDigest;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
      * 
@@ -30,7 +91,21 @@ public final class GetFunctionSourceDetail {
         return this.pbfListingId;
     }
     /**
-     * @return Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+     * @return FunctionsRuntime configuration for a function.
+     * 
+     */
+    public List<GetFunctionSourceDetailRuntimeConfig> runtimeConfigs() {
+        return this.runtimeConfigs;
+    }
+    /**
+     * @return The SHA256 hash of the function source code archive, base64-encoded.
+     * 
+     */
+    public String sourceCodeSha256() {
+        return this.sourceCodeSha256;
+    }
+    /**
+     * @return Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
      * 
      */
     public String sourceType() {
@@ -46,21 +121,87 @@ public final class GetFunctionSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetFunctionSourceDetailArchiveSourceDetail> archiveSourceDetails;
+        private String handler;
+        private String image;
+        private String imageDigest;
         private String pbfListingId;
+        private List<GetFunctionSourceDetailRuntimeConfig> runtimeConfigs;
+        private String sourceCodeSha256;
         private String sourceType;
         public Builder() {}
         public Builder(GetFunctionSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.archiveSourceDetails = defaults.archiveSourceDetails;
+    	      this.handler = defaults.handler;
+    	      this.image = defaults.image;
+    	      this.imageDigest = defaults.imageDigest;
     	      this.pbfListingId = defaults.pbfListingId;
+    	      this.runtimeConfigs = defaults.runtimeConfigs;
+    	      this.sourceCodeSha256 = defaults.sourceCodeSha256;
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
+        public Builder archiveSourceDetails(List<GetFunctionSourceDetailArchiveSourceDetail> archiveSourceDetails) {
+            if (archiveSourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetFunctionSourceDetail", "archiveSourceDetails");
+            }
+            this.archiveSourceDetails = archiveSourceDetails;
+            return this;
+        }
+        public Builder archiveSourceDetails(GetFunctionSourceDetailArchiveSourceDetail... archiveSourceDetails) {
+            return archiveSourceDetails(List.of(archiveSourceDetails));
+        }
+        @CustomType.Setter
+        public Builder handler(String handler) {
+            if (handler == null) {
+              throw new MissingRequiredPropertyException("GetFunctionSourceDetail", "handler");
+            }
+            this.handler = handler;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder image(String image) {
+            if (image == null) {
+              throw new MissingRequiredPropertyException("GetFunctionSourceDetail", "image");
+            }
+            this.image = image;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder imageDigest(String imageDigest) {
+            if (imageDigest == null) {
+              throw new MissingRequiredPropertyException("GetFunctionSourceDetail", "imageDigest");
+            }
+            this.imageDigest = imageDigest;
+            return this;
+        }
         @CustomType.Setter
         public Builder pbfListingId(String pbfListingId) {
             if (pbfListingId == null) {
               throw new MissingRequiredPropertyException("GetFunctionSourceDetail", "pbfListingId");
             }
             this.pbfListingId = pbfListingId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder runtimeConfigs(List<GetFunctionSourceDetailRuntimeConfig> runtimeConfigs) {
+            if (runtimeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetFunctionSourceDetail", "runtimeConfigs");
+            }
+            this.runtimeConfigs = runtimeConfigs;
+            return this;
+        }
+        public Builder runtimeConfigs(GetFunctionSourceDetailRuntimeConfig... runtimeConfigs) {
+            return runtimeConfigs(List.of(runtimeConfigs));
+        }
+        @CustomType.Setter
+        public Builder sourceCodeSha256(String sourceCodeSha256) {
+            if (sourceCodeSha256 == null) {
+              throw new MissingRequiredPropertyException("GetFunctionSourceDetail", "sourceCodeSha256");
+            }
+            this.sourceCodeSha256 = sourceCodeSha256;
             return this;
         }
         @CustomType.Setter
@@ -73,7 +214,13 @@ public final class GetFunctionSourceDetail {
         }
         public GetFunctionSourceDetail build() {
             final var _resultValue = new GetFunctionSourceDetail();
+            _resultValue.archiveSourceDetails = archiveSourceDetails;
+            _resultValue.handler = handler;
+            _resultValue.image = image;
+            _resultValue.imageDigest = imageDigest;
             _resultValue.pbfListingId = pbfListingId;
+            _resultValue.runtimeConfigs = runtimeConfigs;
+            _resultValue.sourceCodeSha256 = sourceCodeSha256;
             _resultValue.sourceType = sourceType;
             return _resultValue;
         }

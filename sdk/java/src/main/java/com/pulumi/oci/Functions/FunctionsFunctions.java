@@ -16,6 +16,14 @@ import com.pulumi.oci.Functions.inputs.GetFunctionArgs;
 import com.pulumi.oci.Functions.inputs.GetFunctionPlainArgs;
 import com.pulumi.oci.Functions.inputs.GetFunctionsArgs;
 import com.pulumi.oci.Functions.inputs.GetFunctionsPlainArgs;
+import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeArgs;
+import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimePlainArgs;
+import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionArgs;
+import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionPlainArgs;
+import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionsArgs;
+import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionsPlainArgs;
+import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimesArgs;
+import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimesPlainArgs;
 import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUserArgs;
 import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUserPlainArgs;
 import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUsersArgs;
@@ -68,6 +76,10 @@ import com.pulumi.oci.Functions.outputs.GetApplicationResult;
 import com.pulumi.oci.Functions.outputs.GetApplicationsResult;
 import com.pulumi.oci.Functions.outputs.GetFunctionResult;
 import com.pulumi.oci.Functions.outputs.GetFunctionsResult;
+import com.pulumi.oci.Functions.outputs.GetFunctionsRuntimeResult;
+import com.pulumi.oci.Functions.outputs.GetFunctionsRuntimeVersionResult;
+import com.pulumi.oci.Functions.outputs.GetFunctionsRuntimeVersionsResult;
+import com.pulumi.oci.Functions.outputs.GetFunctionsRuntimesResult;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentAdminUserResult;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentAdminUsersResult;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentDataMaskingActivitiesResult;
@@ -965,6 +977,1119 @@ public final class FunctionsFunctions {
      */
     public static CompletableFuture<GetFunctionsResult> getFunctionsPlain(GetFunctionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Functions/getFunctions:getFunctions", TypeShape.of(GetFunctionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Functions Runtime resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a FunctionsRuntime by ID. Returns a FunctionsRuntime response model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntime = FunctionsFunctions.getFunctionsRuntime(GetFunctionsRuntimeArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimeResult> getFunctionsRuntime(GetFunctionsRuntimeArgs args) {
+        return getFunctionsRuntime(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Functions Runtime resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a FunctionsRuntime by ID. Returns a FunctionsRuntime response model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntime = FunctionsFunctions.getFunctionsRuntime(GetFunctionsRuntimeArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFunctionsRuntimeResult> getFunctionsRuntimePlain(GetFunctionsRuntimePlainArgs args) {
+        return getFunctionsRuntimePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Functions Runtime resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a FunctionsRuntime by ID. Returns a FunctionsRuntime response model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntime = FunctionsFunctions.getFunctionsRuntime(GetFunctionsRuntimeArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimeResult> getFunctionsRuntime(GetFunctionsRuntimeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFunctionsRuntime:getFunctionsRuntime", TypeShape.of(GetFunctionsRuntimeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Functions Runtime resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a FunctionsRuntime by ID. Returns a FunctionsRuntime response model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntime = FunctionsFunctions.getFunctionsRuntime(GetFunctionsRuntimeArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimeResult> getFunctionsRuntime(GetFunctionsRuntimeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFunctionsRuntime:getFunctionsRuntime", TypeShape.of(GetFunctionsRuntimeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Functions Runtime resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a FunctionsRuntime by ID. Returns a FunctionsRuntime response model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntime = FunctionsFunctions.getFunctionsRuntime(GetFunctionsRuntimeArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFunctionsRuntimeResult> getFunctionsRuntimePlain(GetFunctionsRuntimePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Functions/getFunctionsRuntime:getFunctionsRuntime", TypeShape.of(GetFunctionsRuntimeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Functions Runtime Version resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a FunctionsRuntimeVersion by ID. Returns a FunctionsRuntimeVersion response model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersion = FunctionsFunctions.getFunctionsRuntimeVersion(GetFunctionsRuntimeVersionArgs.builder()
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimeVersionResult> getFunctionsRuntimeVersion(GetFunctionsRuntimeVersionArgs args) {
+        return getFunctionsRuntimeVersion(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Functions Runtime Version resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a FunctionsRuntimeVersion by ID. Returns a FunctionsRuntimeVersion response model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersion = FunctionsFunctions.getFunctionsRuntimeVersion(GetFunctionsRuntimeVersionArgs.builder()
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFunctionsRuntimeVersionResult> getFunctionsRuntimeVersionPlain(GetFunctionsRuntimeVersionPlainArgs args) {
+        return getFunctionsRuntimeVersionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Functions Runtime Version resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a FunctionsRuntimeVersion by ID. Returns a FunctionsRuntimeVersion response model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersion = FunctionsFunctions.getFunctionsRuntimeVersion(GetFunctionsRuntimeVersionArgs.builder()
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimeVersionResult> getFunctionsRuntimeVersion(GetFunctionsRuntimeVersionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFunctionsRuntimeVersion:getFunctionsRuntimeVersion", TypeShape.of(GetFunctionsRuntimeVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Functions Runtime Version resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a FunctionsRuntimeVersion by ID. Returns a FunctionsRuntimeVersion response model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersion = FunctionsFunctions.getFunctionsRuntimeVersion(GetFunctionsRuntimeVersionArgs.builder()
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimeVersionResult> getFunctionsRuntimeVersion(GetFunctionsRuntimeVersionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFunctionsRuntimeVersion:getFunctionsRuntimeVersion", TypeShape.of(GetFunctionsRuntimeVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Functions Runtime Version resource in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a FunctionsRuntimeVersion by ID. Returns a FunctionsRuntimeVersion response model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersion = FunctionsFunctions.getFunctionsRuntimeVersion(GetFunctionsRuntimeVersionArgs.builder()
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFunctionsRuntimeVersionResult> getFunctionsRuntimeVersionPlain(GetFunctionsRuntimeVersionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Functions/getFunctionsRuntimeVersion:getFunctionsRuntimeVersion", TypeShape.of(GetFunctionsRuntimeVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Functions Runtime Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimeVersions. Returns a FunctionsRuntimeVersionCollection containing
+     * an array of FunctionsRuntimeVersionSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersions = FunctionsFunctions.getFunctionsRuntimeVersions(GetFunctionsRuntimeVersionsArgs.builder()
+     *             .displayName(functionsRuntimeVersionDisplayName)
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .functionsRuntimeName(functionsRuntimeName)
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .isCurrentVersion(functionsRuntimeVersionIsCurrentVersion)
+     *             .languageVersion(functionsRuntimeVersionLanguageVersion)
+     *             .osVersion(functionsRuntimeVersionOsVersion)
+     *             .state(functionsRuntimeVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimeVersionsResult> getFunctionsRuntimeVersions() {
+        return getFunctionsRuntimeVersions(GetFunctionsRuntimeVersionsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Functions Runtime Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimeVersions. Returns a FunctionsRuntimeVersionCollection containing
+     * an array of FunctionsRuntimeVersionSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersions = FunctionsFunctions.getFunctionsRuntimeVersions(GetFunctionsRuntimeVersionsArgs.builder()
+     *             .displayName(functionsRuntimeVersionDisplayName)
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .functionsRuntimeName(functionsRuntimeName)
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .isCurrentVersion(functionsRuntimeVersionIsCurrentVersion)
+     *             .languageVersion(functionsRuntimeVersionLanguageVersion)
+     *             .osVersion(functionsRuntimeVersionOsVersion)
+     *             .state(functionsRuntimeVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFunctionsRuntimeVersionsResult> getFunctionsRuntimeVersionsPlain() {
+        return getFunctionsRuntimeVersionsPlain(GetFunctionsRuntimeVersionsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Functions Runtime Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimeVersions. Returns a FunctionsRuntimeVersionCollection containing
+     * an array of FunctionsRuntimeVersionSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersions = FunctionsFunctions.getFunctionsRuntimeVersions(GetFunctionsRuntimeVersionsArgs.builder()
+     *             .displayName(functionsRuntimeVersionDisplayName)
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .functionsRuntimeName(functionsRuntimeName)
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .isCurrentVersion(functionsRuntimeVersionIsCurrentVersion)
+     *             .languageVersion(functionsRuntimeVersionLanguageVersion)
+     *             .osVersion(functionsRuntimeVersionOsVersion)
+     *             .state(functionsRuntimeVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimeVersionsResult> getFunctionsRuntimeVersions(GetFunctionsRuntimeVersionsArgs args) {
+        return getFunctionsRuntimeVersions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Functions Runtime Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimeVersions. Returns a FunctionsRuntimeVersionCollection containing
+     * an array of FunctionsRuntimeVersionSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersions = FunctionsFunctions.getFunctionsRuntimeVersions(GetFunctionsRuntimeVersionsArgs.builder()
+     *             .displayName(functionsRuntimeVersionDisplayName)
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .functionsRuntimeName(functionsRuntimeName)
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .isCurrentVersion(functionsRuntimeVersionIsCurrentVersion)
+     *             .languageVersion(functionsRuntimeVersionLanguageVersion)
+     *             .osVersion(functionsRuntimeVersionOsVersion)
+     *             .state(functionsRuntimeVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFunctionsRuntimeVersionsResult> getFunctionsRuntimeVersionsPlain(GetFunctionsRuntimeVersionsPlainArgs args) {
+        return getFunctionsRuntimeVersionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Functions Runtime Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimeVersions. Returns a FunctionsRuntimeVersionCollection containing
+     * an array of FunctionsRuntimeVersionSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersions = FunctionsFunctions.getFunctionsRuntimeVersions(GetFunctionsRuntimeVersionsArgs.builder()
+     *             .displayName(functionsRuntimeVersionDisplayName)
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .functionsRuntimeName(functionsRuntimeName)
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .isCurrentVersion(functionsRuntimeVersionIsCurrentVersion)
+     *             .languageVersion(functionsRuntimeVersionLanguageVersion)
+     *             .osVersion(functionsRuntimeVersionOsVersion)
+     *             .state(functionsRuntimeVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimeVersionsResult> getFunctionsRuntimeVersions(GetFunctionsRuntimeVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFunctionsRuntimeVersions:getFunctionsRuntimeVersions", TypeShape.of(GetFunctionsRuntimeVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Functions Runtime Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimeVersions. Returns a FunctionsRuntimeVersionCollection containing
+     * an array of FunctionsRuntimeVersionSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersions = FunctionsFunctions.getFunctionsRuntimeVersions(GetFunctionsRuntimeVersionsArgs.builder()
+     *             .displayName(functionsRuntimeVersionDisplayName)
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .functionsRuntimeName(functionsRuntimeName)
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .isCurrentVersion(functionsRuntimeVersionIsCurrentVersion)
+     *             .languageVersion(functionsRuntimeVersionLanguageVersion)
+     *             .osVersion(functionsRuntimeVersionOsVersion)
+     *             .state(functionsRuntimeVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimeVersionsResult> getFunctionsRuntimeVersions(GetFunctionsRuntimeVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFunctionsRuntimeVersions:getFunctionsRuntimeVersions", TypeShape.of(GetFunctionsRuntimeVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Functions Runtime Versions in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimeVersions. Returns a FunctionsRuntimeVersionCollection containing
+     * an array of FunctionsRuntimeVersionSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimeVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimeVersions = FunctionsFunctions.getFunctionsRuntimeVersions(GetFunctionsRuntimeVersionsArgs.builder()
+     *             .displayName(functionsRuntimeVersionDisplayName)
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .functionsRuntimeName(functionsRuntimeName)
+     *             .functionsRuntimeVersionId(functionsRuntimeVersionId)
+     *             .isCurrentVersion(functionsRuntimeVersionIsCurrentVersion)
+     *             .languageVersion(functionsRuntimeVersionLanguageVersion)
+     *             .osVersion(functionsRuntimeVersionOsVersion)
+     *             .state(functionsRuntimeVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFunctionsRuntimeVersionsResult> getFunctionsRuntimeVersionsPlain(GetFunctionsRuntimeVersionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Functions/getFunctionsRuntimeVersions:getFunctionsRuntimeVersions", TypeShape.of(GetFunctionsRuntimeVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Functions Runtimes in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
+     * an array of FunctionsRuntimeSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimes = FunctionsFunctions.getFunctionsRuntimes(GetFunctionsRuntimesArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .language(functionsRuntimeLanguage)
+     *             .name(functionsRuntimeName)
+     *             .nameContains(functionsRuntimeNameContains)
+     *             .nameStartsWith(functionsRuntimeNameStartsWith)
+     *             .os(functionsRuntimeOs)
+     *             .state(functionsRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimesResult> getFunctionsRuntimes() {
+        return getFunctionsRuntimes(GetFunctionsRuntimesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Functions Runtimes in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
+     * an array of FunctionsRuntimeSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimes = FunctionsFunctions.getFunctionsRuntimes(GetFunctionsRuntimesArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .language(functionsRuntimeLanguage)
+     *             .name(functionsRuntimeName)
+     *             .nameContains(functionsRuntimeNameContains)
+     *             .nameStartsWith(functionsRuntimeNameStartsWith)
+     *             .os(functionsRuntimeOs)
+     *             .state(functionsRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFunctionsRuntimesResult> getFunctionsRuntimesPlain() {
+        return getFunctionsRuntimesPlain(GetFunctionsRuntimesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Functions Runtimes in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
+     * an array of FunctionsRuntimeSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimes = FunctionsFunctions.getFunctionsRuntimes(GetFunctionsRuntimesArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .language(functionsRuntimeLanguage)
+     *             .name(functionsRuntimeName)
+     *             .nameContains(functionsRuntimeNameContains)
+     *             .nameStartsWith(functionsRuntimeNameStartsWith)
+     *             .os(functionsRuntimeOs)
+     *             .state(functionsRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimesResult> getFunctionsRuntimes(GetFunctionsRuntimesArgs args) {
+        return getFunctionsRuntimes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Functions Runtimes in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
+     * an array of FunctionsRuntimeSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimes = FunctionsFunctions.getFunctionsRuntimes(GetFunctionsRuntimesArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .language(functionsRuntimeLanguage)
+     *             .name(functionsRuntimeName)
+     *             .nameContains(functionsRuntimeNameContains)
+     *             .nameStartsWith(functionsRuntimeNameStartsWith)
+     *             .os(functionsRuntimeOs)
+     *             .state(functionsRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFunctionsRuntimesResult> getFunctionsRuntimesPlain(GetFunctionsRuntimesPlainArgs args) {
+        return getFunctionsRuntimesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Functions Runtimes in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
+     * an array of FunctionsRuntimeSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimes = FunctionsFunctions.getFunctionsRuntimes(GetFunctionsRuntimesArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .language(functionsRuntimeLanguage)
+     *             .name(functionsRuntimeName)
+     *             .nameContains(functionsRuntimeNameContains)
+     *             .nameStartsWith(functionsRuntimeNameStartsWith)
+     *             .os(functionsRuntimeOs)
+     *             .state(functionsRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimesResult> getFunctionsRuntimes(GetFunctionsRuntimesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFunctionsRuntimes:getFunctionsRuntimes", TypeShape.of(GetFunctionsRuntimesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Functions Runtimes in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
+     * an array of FunctionsRuntimeSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimes = FunctionsFunctions.getFunctionsRuntimes(GetFunctionsRuntimesArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .language(functionsRuntimeLanguage)
+     *             .name(functionsRuntimeName)
+     *             .nameContains(functionsRuntimeNameContains)
+     *             .nameStartsWith(functionsRuntimeNameStartsWith)
+     *             .os(functionsRuntimeOs)
+     *             .state(functionsRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFunctionsRuntimesResult> getFunctionsRuntimes(GetFunctionsRuntimesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Functions/getFunctionsRuntimes:getFunctionsRuntimes", TypeShape.of(GetFunctionsRuntimesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Functions Runtimes in Oracle Cloud Infrastructure Functions service.
+     * 
+     * Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
+     * an array of FunctionsRuntimeSummary response models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctionsRuntimes = FunctionsFunctions.getFunctionsRuntimes(GetFunctionsRuntimesArgs.builder()
+     *             .functionsRuntimeId(functionsRuntimeId)
+     *             .language(functionsRuntimeLanguage)
+     *             .name(functionsRuntimeName)
+     *             .nameContains(functionsRuntimeNameContains)
+     *             .nameStartsWith(functionsRuntimeNameStartsWith)
+     *             .os(functionsRuntimeOs)
+     *             .state(functionsRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFunctionsRuntimesResult> getFunctionsRuntimesPlain(GetFunctionsRuntimesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Functions/getFunctionsRuntimes:getFunctionsRuntimes", TypeShape.of(GetFunctionsRuntimesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.

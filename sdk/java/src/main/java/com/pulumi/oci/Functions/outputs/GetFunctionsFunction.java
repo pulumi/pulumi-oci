@@ -66,7 +66,11 @@ public final class GetFunctionsFunction {
     /**
      * @return The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
+     * @deprecated
+     * The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
+     * 
      */
+    @Deprecated /* The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used. */
     private String image;
     /**
      * @return The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
@@ -196,7 +200,11 @@ public final class GetFunctionsFunction {
     /**
      * @return The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
+     * @deprecated
+     * The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
+     * 
      */
+    @Deprecated /* The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used. */
     public String image() {
         return this.image;
     }

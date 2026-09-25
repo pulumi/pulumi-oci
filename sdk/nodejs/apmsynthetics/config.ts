@@ -135,6 +135,8 @@ import * as utilities from "../utilities";
  *     isRunNow: monitorIsRunNow === "true",
  *     isRunOnce: monitorIsRunOnce === "true",
  *     maintenanceWindowSchedule: {
+ *         recurrenceType: monitorMaintenanceWindowScheduleRecurrenceType,
+ *         scheduleType: "RECURRING",
  *         timeEnded: monitorMaintenanceWindowScheduleTimeEnded,
  *         timeStarted: monitorMaintenanceWindowScheduleTimeStarted,
  *     },

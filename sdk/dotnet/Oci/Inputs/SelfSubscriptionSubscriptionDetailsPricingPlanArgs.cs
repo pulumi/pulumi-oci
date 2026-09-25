@@ -13,10 +13,22 @@ namespace Pulumi.Oci.Oci.Inputs
     public sealed class SelfSubscriptionSubscriptionDetailsPricingPlanArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Specifies the interval at which billing occurs for the subscription plan.
+        /// Specifies the interval at which billing occurs for the subscription plan or usage dimension.
         /// </summary>
         [Input("billingFrequency", required: true)]
         public Input<string> BillingFrequency { get; set; } = null!;
+
+        [Input("dimensions")]
+        private InputList<Inputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs>? _dimensions;
+
+        /// <summary>
+        /// Metered usage dimensions associated with the pricing plan.
+        /// </summary>
+        public InputList<Inputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs> Dimensions
+        {
+            get => _dimensions ?? (_dimensions = new InputList<Inputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs>());
+            set => _dimensions = value;
+        }
 
         /// <summary>
         /// A detailed explanation of the subscription plan.
@@ -25,7 +37,7 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<string>? PlanDescription { get; set; }
 
         /// <summary>
-        /// Specifies the interval at which billing occurs for the subscription plan.
+        /// Specifies the duration of the subscription plan.
         /// </summary>
         [Input("planDuration")]
         public Input<string>? PlanDuration { get; set; }

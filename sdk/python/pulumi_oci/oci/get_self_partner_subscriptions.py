@@ -100,7 +100,7 @@ def get_self_partner_subscriptions(display_name: Optional[_builtins.str] = None,
     """
     This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
 
-    Gets information about a Subscription.
+    Deprecated. This endpoint has moved permanently to `/partners/subscriptions`.
 
     ## Example Usage
 
@@ -136,7 +136,7 @@ def get_self_partner_subscriptions_output(display_name: pulumi.Input[Optional[Op
     """
     This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
 
-    Gets information about a Subscription.
+    Deprecated. This endpoint has moved permanently to `/partners/subscriptions`.
 
     ## Example Usage
 

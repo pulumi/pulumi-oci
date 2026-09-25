@@ -17,6 +17,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SelfSubscriptionSubscriptionDetailsBillingDetails {
     /**
+     * @return The billing model this billing detail applies to.
+     * 
+     */
+    private String billingModel;
+    /**
      * @return Whether this sku is assign to gov product.
      * 
      */
@@ -32,6 +37,11 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetails {
      */
     private String metricType;
     /**
+     * @return Unique key used to map this SKU to the pricing plan.
+     * 
+     */
+    private String pricingPlanKey;
+    /**
      * @return Tha rate of this sku meter.
      * 
      */
@@ -43,6 +53,13 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetails {
     private String sku;
 
     private SelfSubscriptionSubscriptionDetailsBillingDetails() {}
+    /**
+     * @return The billing model this billing detail applies to.
+     * 
+     */
+    public String billingModel() {
+        return this.billingModel;
+    }
     /**
      * @return Whether this sku is assign to gov product.
      * 
@@ -63,6 +80,13 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetails {
      */
     public String metricType() {
         return this.metricType;
+    }
+    /**
+     * @return Unique key used to map this SKU to the pricing plan.
+     * 
+     */
+    public String pricingPlanKey() {
+        return this.pricingPlanKey;
     }
     /**
      * @return Tha rate of this sku meter.
@@ -88,21 +112,33 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetails {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String billingModel;
         private @Nullable Boolean hasGovSku;
         private List<SelfSubscriptionSubscriptionDetailsBillingDetailsMeter> meters;
         private String metricType;
+        private String pricingPlanKey;
         private Double rateAllocation;
         private String sku;
         public Builder() {}
         public Builder(SelfSubscriptionSubscriptionDetailsBillingDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.billingModel = defaults.billingModel;
     	      this.hasGovSku = defaults.hasGovSku;
     	      this.meters = defaults.meters;
     	      this.metricType = defaults.metricType;
+    	      this.pricingPlanKey = defaults.pricingPlanKey;
     	      this.rateAllocation = defaults.rateAllocation;
     	      this.sku = defaults.sku;
         }
 
+        @CustomType.Setter
+        public Builder billingModel(String billingModel) {
+            if (billingModel == null) {
+              throw new MissingRequiredPropertyException("SelfSubscriptionSubscriptionDetailsBillingDetails", "billingModel");
+            }
+            this.billingModel = billingModel;
+            return this;
+        }
         @CustomType.Setter
         public Builder hasGovSku(@Nullable Boolean hasGovSku) {
 
@@ -129,6 +165,14 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder pricingPlanKey(String pricingPlanKey) {
+            if (pricingPlanKey == null) {
+              throw new MissingRequiredPropertyException("SelfSubscriptionSubscriptionDetailsBillingDetails", "pricingPlanKey");
+            }
+            this.pricingPlanKey = pricingPlanKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder rateAllocation(Double rateAllocation) {
             if (rateAllocation == null) {
               throw new MissingRequiredPropertyException("SelfSubscriptionSubscriptionDetailsBillingDetails", "rateAllocation");
@@ -146,9 +190,11 @@ public final class SelfSubscriptionSubscriptionDetailsBillingDetails {
         }
         public SelfSubscriptionSubscriptionDetailsBillingDetails build() {
             final var _resultValue = new SelfSubscriptionSubscriptionDetailsBillingDetails();
+            _resultValue.billingModel = billingModel;
             _resultValue.hasGovSku = hasGovSku;
             _resultValue.meters = meters;
             _resultValue.metricType = metricType;
+            _resultValue.pricingPlanKey = pricingPlanKey;
             _resultValue.rateAllocation = rateAllocation;
             _resultValue.sku = sku;
             return _resultValue;

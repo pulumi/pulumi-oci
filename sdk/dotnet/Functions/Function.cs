@@ -32,6 +32,29 @@ namespace Pulumi.Oci.Functions
     ///         ApplicationId = testApplication.Id,
     ///         DisplayName = functionDisplayName,
     ///         MemoryInMbs = functionMemoryInMbs,
+    ///         SourceDetails = new Oci.Functions.Inputs.FunctionSourceDetailsArgs
+    ///         {
+    ///             SourceType = functionSourceDetailsSourceType,
+    ///             ArchiveSourceDetails = new Oci.Functions.Inputs.FunctionSourceDetailsArchiveSourceDetailsArgs
+    ///             {
+    ///                 ArchiveSourceType = functionSourceDetailsArchiveSourceDetailsArchiveSourceType,
+    ///                 ArchiveFile = functionSourceDetailsArchiveSourceDetailsArchiveFile,
+    ///                 Bucket = functionSourceDetailsArchiveSourceDetailsBucket,
+    ///                 Namespace = functionSourceDetailsArchiveSourceDetailsNamespace,
+    ///                 Object = functionSourceDetailsArchiveSourceDetailsObject,
+    ///                 ObjectVersionId = testObjectVersion.Id,
+    ///             },
+    ///             Handler = functionSourceDetailsHandler,
+    ///             Image = functionSourceDetailsImage,
+    ///             ImageDigest = functionSourceDetailsImageDigest,
+    ///             PbfListingId = testPbfListing.Id,
+    ///             RuntimeConfig = new Oci.Functions.Inputs.FunctionSourceDetailsRuntimeConfigArgs
+    ///             {
+    ///                 FunctionsRuntimeName = functionsRuntimeName,
+    ///                 FunctionsRuntimeVersionId = functionsRuntimeVersionId,
+    ///                 RuntimeConfigType = functionSourceDetailsRuntimeConfigRuntimeConfigType,
+    ///             },
+    ///         },
     ///         Config = functionConfig,
     ///         DefinedTags = 
     ///         {
@@ -50,17 +73,10 @@ namespace Pulumi.Oci.Functions
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         Image = functionImage,
-    ///         ImageDigest = functionImageDigest,
     ///         ProvisionedConcurrencyConfig = new Oci.Functions.Inputs.FunctionProvisionedConcurrencyConfigArgs
     ///         {
     ///             Strategy = functionProvisionedConcurrencyConfigStrategy,
     ///             Count = functionProvisionedConcurrencyConfigCount,
-    ///         },
-    ///         SourceDetails = new Oci.Functions.Inputs.FunctionSourceDetailsArgs
-    ///         {
-    ///             PbfListingId = testPbfListing.Id,
-    ///             SourceType = functionSourceDetailsSourceType,
     ///         },
     ///         SuccessDestination = new Oci.Functions.Inputs.FunctionSuccessDestinationArgs
     ///         {
@@ -142,13 +158,13 @@ namespace Pulumi.Oci.Functions
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if ImageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+        /// (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` SourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         /// </summary>
         [Output("image")]
         public Output<string> Image { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+        /// (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` SourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         /// </summary>
         [Output("imageDigest")]
         public Output<string> ImageDigest { get; private set; } = null!;
@@ -178,7 +194,7 @@ namespace Pulumi.Oci.Functions
         public Output<string> Shape { get; private set; } = null!;
 
         /// <summary>
-        /// The source details for the Function. The function can be created from various sources.
+        /// (Updatable) The source details for creating the Function. The function can be created from various sources.
         /// </summary>
         [Output("sourceDetails")]
         public Output<Outputs.FunctionSourceDetails> SourceDetails { get; private set; } = null!;
@@ -328,13 +344,13 @@ namespace Pulumi.Oci.Functions
         }
 
         /// <summary>
-        /// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if ImageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+        /// (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` SourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         /// </summary>
         [Input("image")]
         public Input<string>? Image { get; set; }
 
         /// <summary>
-        /// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+        /// (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` SourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         /// </summary>
         [Input("imageDigest")]
         public Input<string>? ImageDigest { get; set; }
@@ -352,7 +368,7 @@ namespace Pulumi.Oci.Functions
         public Input<Inputs.FunctionProvisionedConcurrencyConfigArgs>? ProvisionedConcurrencyConfig { get; set; }
 
         /// <summary>
-        /// The source details for the Function. The function can be created from various sources.
+        /// (Updatable) The source details for creating the Function. The function can be created from various sources.
         /// </summary>
         [Input("sourceDetails")]
         public Input<Inputs.FunctionSourceDetailsArgs>? SourceDetails { get; set; }
@@ -452,13 +468,13 @@ namespace Pulumi.Oci.Functions
         }
 
         /// <summary>
-        /// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if ImageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+        /// (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` SourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         /// </summary>
         [Input("image")]
         public Input<string>? Image { get; set; }
 
         /// <summary>
-        /// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+        /// (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` SourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         /// </summary>
         [Input("imageDigest")]
         public Input<string>? ImageDigest { get; set; }
@@ -488,7 +504,7 @@ namespace Pulumi.Oci.Functions
         public Input<string>? Shape { get; set; }
 
         /// <summary>
-        /// The source details for the Function. The function can be created from various sources.
+        /// (Updatable) The source details for creating the Function. The function can be created from various sources.
         /// </summary>
         [Input("sourceDetails")]
         public Input<Inputs.FunctionSourceDetailsGetArgs>? SourceDetails { get; set; }

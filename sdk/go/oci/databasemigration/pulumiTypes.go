@@ -5122,7 +5122,7 @@ type MigrationInitialLoadSettings struct {
 	// (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
 	IsTzUtc *bool `pulumi:"isTzUtc"`
 	// (Updatable) Oracle Job Mode
-	JobMode string `pulumi:"jobMode"`
+	JobMode *string `pulumi:"jobMode"`
 	// (Updatable) Defines remapping to be applied to objects as they are processed.
 	MetadataRemaps []MigrationInitialLoadSettingsMetadataRemap `pulumi:"metadataRemaps"`
 	// (Updatable) Primary key compatibility option
@@ -5160,7 +5160,7 @@ type MigrationInitialLoadSettingsArgs struct {
 	// (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
 	IsTzUtc pulumi.BoolPtrInput `pulumi:"isTzUtc"`
 	// (Updatable) Oracle Job Mode
-	JobMode pulumi.StringInput `pulumi:"jobMode"`
+	JobMode pulumi.StringPtrInput `pulumi:"jobMode"`
 	// (Updatable) Defines remapping to be applied to objects as they are processed.
 	MetadataRemaps MigrationInitialLoadSettingsMetadataRemapArrayInput `pulumi:"metadataRemaps"`
 	// (Updatable) Primary key compatibility option
@@ -5293,8 +5293,8 @@ func (o MigrationInitialLoadSettingsOutput) IsTzUtc() pulumi.BoolPtrOutput {
 }
 
 // (Updatable) Oracle Job Mode
-func (o MigrationInitialLoadSettingsOutput) JobMode() pulumi.StringOutput {
-	return o.ApplyT(func(v MigrationInitialLoadSettings) string { return v.JobMode }).(pulumi.StringOutput)
+func (o MigrationInitialLoadSettingsOutput) JobMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) *string { return v.JobMode }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defines remapping to be applied to objects as they are processed.
@@ -5426,7 +5426,7 @@ func (o MigrationInitialLoadSettingsPtrOutput) JobMode() pulumi.StringPtrOutput 
 		if v == nil {
 			return nil
 		}
-		return &v.JobMode
+		return v.JobMode
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -13280,6 +13280,8 @@ type GetAssessmentsAssessmentCollectionItem struct {
 	IsCdbSupported bool `pulumi:"isCdbSupported"`
 	// The OCID of the resource being referenced.
 	MigrationId string `pulumi:"migrationId"`
+	// Assessment migration scope.
+	MigrationScope string `pulumi:"migrationScope"`
 	// A network speed in Megabits per second.
 	NetworkSpeedMegabitPerSecond string `pulumi:"networkSpeedMegabitPerSecond"`
 	// Source Assessment Connection object
@@ -13339,6 +13341,8 @@ type GetAssessmentsAssessmentCollectionItemArgs struct {
 	IsCdbSupported pulumi.BoolInput `pulumi:"isCdbSupported"`
 	// The OCID of the resource being referenced.
 	MigrationId pulumi.StringInput `pulumi:"migrationId"`
+	// Assessment migration scope.
+	MigrationScope pulumi.StringInput `pulumi:"migrationScope"`
 	// A network speed in Megabits per second.
 	NetworkSpeedMegabitPerSecond pulumi.StringInput `pulumi:"networkSpeedMegabitPerSecond"`
 	// Source Assessment Connection object
@@ -13490,6 +13494,11 @@ func (o GetAssessmentsAssessmentCollectionItemOutput) IsCdbSupported() pulumi.Bo
 // The OCID of the resource being referenced.
 func (o GetAssessmentsAssessmentCollectionItemOutput) MigrationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.MigrationId }).(pulumi.StringOutput)
+}
+
+// Assessment migration scope.
+func (o GetAssessmentsAssessmentCollectionItemOutput) MigrationScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.MigrationScope }).(pulumi.StringOutput)
 }
 
 // A network speed in Megabits per second.

@@ -90,6 +90,8 @@ type LookupAssessmentResult struct {
 	IsCdbSupported bool `pulumi:"isCdbSupported"`
 	// The OCID of the resource being referenced.
 	MigrationId string `pulumi:"migrationId"`
+	// Assessment migration scope.
+	MigrationScope string `pulumi:"migrationScope"`
 	// A network speed in Megabits per second.
 	NetworkSpeedMegabitPerSecond string `pulumi:"networkSpeedMegabitPerSecond"`
 	// Source Assessment Connection object
@@ -220,6 +222,11 @@ func (o LookupAssessmentResultOutput) IsCdbSupported() pulumi.BoolOutput {
 // The OCID of the resource being referenced.
 func (o LookupAssessmentResultOutput) MigrationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAssessmentResult) string { return v.MigrationId }).(pulumi.StringOutput)
+}
+
+// Assessment migration scope.
+func (o LookupAssessmentResultOutput) MigrationScope() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAssessmentResult) string { return v.MigrationScope }).(pulumi.StringOutput)
 }
 
 // A network speed in Megabits per second.

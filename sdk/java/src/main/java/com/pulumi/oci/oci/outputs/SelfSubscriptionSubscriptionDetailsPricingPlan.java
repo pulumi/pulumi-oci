@@ -5,6 +5,7 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimension;
 import com.pulumi.oci.oci.outputs.SelfSubscriptionSubscriptionDetailsPricingPlanRate;
 import java.lang.String;
 import java.util.List;
@@ -15,17 +16,22 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SelfSubscriptionSubscriptionDetailsPricingPlan {
     /**
-     * @return Specifies the interval at which billing occurs for the subscription plan.
+     * @return Specifies the interval at which billing occurs for the subscription plan or usage dimension.
      * 
      */
     private String billingFrequency;
+    /**
+     * @return Metered usage dimensions associated with the pricing plan.
+     * 
+     */
+    private @Nullable List<SelfSubscriptionSubscriptionDetailsPricingPlanDimension> dimensions;
     /**
      * @return A detailed explanation of the subscription plan.
      * 
      */
     private @Nullable String planDescription;
     /**
-     * @return Specifies the interval at which billing occurs for the subscription plan.
+     * @return Specifies the duration of the subscription plan.
      * 
      */
     private @Nullable String planDuration;
@@ -47,11 +53,18 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlan {
 
     private SelfSubscriptionSubscriptionDetailsPricingPlan() {}
     /**
-     * @return Specifies the interval at which billing occurs for the subscription plan.
+     * @return Specifies the interval at which billing occurs for the subscription plan or usage dimension.
      * 
      */
     public String billingFrequency() {
         return this.billingFrequency;
+    }
+    /**
+     * @return Metered usage dimensions associated with the pricing plan.
+     * 
+     */
+    public List<SelfSubscriptionSubscriptionDetailsPricingPlanDimension> dimensions() {
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return A detailed explanation of the subscription plan.
@@ -61,7 +74,7 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlan {
         return Optional.ofNullable(this.planDescription);
     }
     /**
-     * @return Specifies the interval at which billing occurs for the subscription plan.
+     * @return Specifies the duration of the subscription plan.
      * 
      */
     public Optional<String> planDuration() {
@@ -99,6 +112,7 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlan {
     @CustomType.Builder
     public static final class Builder {
         private String billingFrequency;
+        private @Nullable List<SelfSubscriptionSubscriptionDetailsPricingPlanDimension> dimensions;
         private @Nullable String planDescription;
         private @Nullable String planDuration;
         private String planName;
@@ -108,6 +122,7 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlan {
         public Builder(SelfSubscriptionSubscriptionDetailsPricingPlan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billingFrequency = defaults.billingFrequency;
+    	      this.dimensions = defaults.dimensions;
     	      this.planDescription = defaults.planDescription;
     	      this.planDuration = defaults.planDuration;
     	      this.planName = defaults.planName;
@@ -122,6 +137,15 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlan {
             }
             this.billingFrequency = billingFrequency;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dimensions(@Nullable List<SelfSubscriptionSubscriptionDetailsPricingPlanDimension> dimensions) {
+
+            this.dimensions = dimensions;
+            return this;
+        }
+        public Builder dimensions(SelfSubscriptionSubscriptionDetailsPricingPlanDimension... dimensions) {
+            return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
         public Builder planDescription(@Nullable String planDescription) {
@@ -165,6 +189,7 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlan {
         public SelfSubscriptionSubscriptionDetailsPricingPlan build() {
             final var _resultValue = new SelfSubscriptionSubscriptionDetailsPricingPlan();
             _resultValue.billingFrequency = billingFrequency;
+            _resultValue.dimensions = dimensions;
             _resultValue.planDescription = planDescription;
             _resultValue.planDuration = planDuration;
             _resultValue.planName = planName;

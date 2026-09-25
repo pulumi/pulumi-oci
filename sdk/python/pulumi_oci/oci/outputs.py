@@ -110,6 +110,8 @@ __all__ = [
     'SelfSubscriptionSubscriptionDetailsBillingDetailsMeter',
     'SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadata',
     'SelfSubscriptionSubscriptionDetailsPricingPlan',
+    'SelfSubscriptionSubscriptionDetailsPricingPlanDimension',
+    'SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRate',
     'SelfSubscriptionSubscriptionDetailsPricingPlanRate',
     'GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionResult',
     'GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemResult',
@@ -499,12 +501,20 @@ __all__ = [
     'GetSelfPartnerSubscriptionsFilterResult',
     'GetSelfPartnerSubscriptionsListingSubscriptionsCollectionResult',
     'GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemResult',
+    'GetSelfPartnersFilterResult',
+    'GetSelfPartnersPartnerCollectionResult',
+    'GetSelfPartnersPartnerCollectionItemResult',
+    'GetSelfSelfPartnerSubscriptionsFilterResult',
+    'GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionResult',
+    'GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemResult',
     'GetSelfSubscriptionAdditionalDetailResult',
     'GetSelfSubscriptionSubscriptionDetailResult',
     'GetSelfSubscriptionSubscriptionDetailBillingDetailResult',
     'GetSelfSubscriptionSubscriptionDetailBillingDetailMeterResult',
     'GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataResult',
     'GetSelfSubscriptionSubscriptionDetailPricingPlanResult',
+    'GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionResult',
+    'GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateResult',
     'GetSelfSubscriptionSubscriptionDetailPricingPlanRateResult',
     'GetSelfSubscriptionsFilterResult',
     'GetSelfSubscriptionsSubscriptionCollectionResult',
@@ -515,46 +525,9 @@ __all__ = [
     'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterResult',
     'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterExtendedMetadataResult',
     'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanResult',
+    'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionResult',
+    'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionRateResult',
     'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateResult',
-    'GetWlmsManagedInstanceConfigurationResult',
-    'GetWlmsManagedInstanceScanResultsFilterResult',
-    'GetWlmsManagedInstanceScanResultsScanResultCollectionResult',
-    'GetWlmsManagedInstanceScanResultsScanResultCollectionItemResult',
-    'GetWlmsManagedInstanceServerInstalledPatchesFilterResult',
-    'GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionResult',
-    'GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemResult',
-    'GetWlmsManagedInstanceServersFilterResult',
-    'GetWlmsManagedInstanceServersServerCollectionResult',
-    'GetWlmsManagedInstanceServersServerCollectionItemResult',
-    'GetWlmsManagedInstancesFilterResult',
-    'GetWlmsManagedInstancesManagedInstanceCollectionResult',
-    'GetWlmsManagedInstancesManagedInstanceCollectionItemResult',
-    'GetWlmsManagedInstancesManagedInstanceCollectionItemConfigurationResult',
-    'GetWlmsWlsDomainAgreementRecordsAgreementRecordCollectionResult',
-    'GetWlmsWlsDomainAgreementRecordsAgreementRecordCollectionItemResult',
-    'GetWlmsWlsDomainAgreementRecordsFilterResult',
-    'GetWlmsWlsDomainApplicablePatchesApplicablePatchCollectionResult',
-    'GetWlmsWlsDomainApplicablePatchesApplicablePatchCollectionItemResult',
-    'GetWlmsWlsDomainApplicablePatchesFilterResult',
-    'GetWlmsWlsDomainConfigurationResult',
-    'GetWlmsWlsDomainScanResultsFilterResult',
-    'GetWlmsWlsDomainScanResultsScanResultCollectionResult',
-    'GetWlmsWlsDomainScanResultsScanResultCollectionItemResult',
-    'GetWlmsWlsDomainServerBackupContentMiddlewareResult',
-    'GetWlmsWlsDomainServerBackupContentMiddlewarePatchResult',
-    'GetWlmsWlsDomainServerBackupsBackupCollectionResult',
-    'GetWlmsWlsDomainServerBackupsBackupCollectionItemResult',
-    'GetWlmsWlsDomainServerBackupsFilterResult',
-    'GetWlmsWlsDomainServerInstalledPatchesFilterResult',
-    'GetWlmsWlsDomainServerInstalledPatchesInstalledPatchCollectionResult',
-    'GetWlmsWlsDomainServerInstalledPatchesInstalledPatchCollectionItemResult',
-    'GetWlmsWlsDomainServersFilterResult',
-    'GetWlmsWlsDomainServersServerCollectionResult',
-    'GetWlmsWlsDomainServersServerCollectionItemResult',
-    'GetWlmsWlsDomainsFilterResult',
-    'GetWlmsWlsDomainsWlsDomainCollectionResult',
-    'GetWlmsWlsDomainsWlsDomainCollectionItemResult',
-    'GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationResult',
 ]
 
 @pulumi.output_type
@@ -7213,7 +7186,7 @@ class SelfSubscriptionSubscriptionDetails(dict):
                  currency: Optional[_builtins.str] = None,
                  is_auto_renew: Optional[_builtins.bool] = None):
         """
-        :param 'SelfSubscriptionSubscriptionDetailsBillingDetailsArgs' billing_details: Sku details for billing subscription.
+        :param 'SelfSubscriptionSubscriptionDetailsBillingDetailsArgs' billing_details: Billing details associated with the subscription plan and its usage dimensions.
         :param _builtins.str partner_registration_url: The activation link given by the partner.
         :param 'SelfSubscriptionSubscriptionDetailsPricingPlanArgs' pricing_plan: A pricing plan details provided by the Publisher.
         :param _builtins.float amount: Tha amount for the currency type.
@@ -7234,7 +7207,7 @@ class SelfSubscriptionSubscriptionDetails(dict):
     @pulumi.getter(name="billingDetails")
     def billing_details(self) -> 'outputs.SelfSubscriptionSubscriptionDetailsBillingDetails':
         """
-        Sku details for billing subscription.
+        Billing details associated with the subscription plan and its usage dimensions.
         """
         return pulumi.get(self, "billing_details")
 
@@ -7284,8 +7257,12 @@ class SelfSubscriptionSubscriptionDetailsBillingDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "metricType":
+        if key == "billingModel":
+            suggest = "billing_model"
+        elif key == "metricType":
             suggest = "metric_type"
+        elif key == "pricingPlanKey":
+            suggest = "pricing_plan_key"
         elif key == "rateAllocation":
             suggest = "rate_allocation"
         elif key == "hasGovSku":
@@ -7303,24 +7280,38 @@ class SelfSubscriptionSubscriptionDetailsBillingDetails(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 billing_model: _builtins.str,
                  meters: Sequence['outputs.SelfSubscriptionSubscriptionDetailsBillingDetailsMeter'],
                  metric_type: _builtins.str,
+                 pricing_plan_key: _builtins.str,
                  rate_allocation: _builtins.float,
                  sku: _builtins.str,
                  has_gov_sku: Optional[_builtins.bool] = None):
         """
+        :param _builtins.str billing_model: The billing model this billing detail applies to.
         :param Sequence['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs'] meters: The meters associated with sku.
         :param _builtins.str metric_type: The part's metric.
+        :param _builtins.str pricing_plan_key: Unique key used to map this SKU to the pricing plan.
         :param _builtins.float rate_allocation: Tha rate of this sku meter.
         :param _builtins.str sku: Sku for service.
         :param _builtins.bool has_gov_sku: Whether this sku is assign to gov product.
         """
+        pulumi.set(__self__, "billing_model", billing_model)
         pulumi.set(__self__, "meters", meters)
         pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "pricing_plan_key", pricing_plan_key)
         pulumi.set(__self__, "rate_allocation", rate_allocation)
         pulumi.set(__self__, "sku", sku)
         if has_gov_sku is not None:
             pulumi.set(__self__, "has_gov_sku", has_gov_sku)
+
+    @_builtins.property
+    @pulumi.getter(name="billingModel")
+    def billing_model(self) -> _builtins.str:
+        """
+        The billing model this billing detail applies to.
+        """
+        return pulumi.get(self, "billing_model")
 
     @_builtins.property
     @pulumi.getter
@@ -7337,6 +7328,14 @@ class SelfSubscriptionSubscriptionDetailsBillingDetails(dict):
         The part's metric.
         """
         return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter(name="pricingPlanKey")
+    def pricing_plan_key(self) -> _builtins.str:
+        """
+        Unique key used to map this SKU to the pricing plan.
+        """
+        return pulumi.get(self, "pricing_plan_key")
 
     @_builtins.property
     @pulumi.getter(name="rateAllocation")
@@ -7484,20 +7483,24 @@ class SelfSubscriptionSubscriptionDetailsPricingPlan(dict):
                  plan_name: _builtins.str,
                  plan_type: _builtins.str,
                  rates: Sequence['outputs.SelfSubscriptionSubscriptionDetailsPricingPlanRate'],
+                 dimensions: Optional[Sequence['outputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimension']] = None,
                  plan_description: Optional[_builtins.str] = None,
                  plan_duration: Optional[_builtins.str] = None):
         """
-        :param _builtins.str billing_frequency: Specifies the interval at which billing occurs for the subscription plan.
+        :param _builtins.str billing_frequency: Specifies the interval at which billing occurs for the subscription plan or usage dimension.
         :param _builtins.str plan_name: The name of the subscription plan used to identify the plan.
         :param _builtins.str plan_type: The type of the subscription plan.
         :param Sequence['SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs'] rates: The pricing details of the subscription plan in various supported currencies.
+        :param Sequence['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs'] dimensions: Metered usage dimensions associated with the pricing plan.
         :param _builtins.str plan_description: A detailed explanation of the subscription plan.
-        :param _builtins.str plan_duration: Specifies the interval at which billing occurs for the subscription plan.
+        :param _builtins.str plan_duration: Specifies the duration of the subscription plan.
         """
         pulumi.set(__self__, "billing_frequency", billing_frequency)
         pulumi.set(__self__, "plan_name", plan_name)
         pulumi.set(__self__, "plan_type", plan_type)
         pulumi.set(__self__, "rates", rates)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
         if plan_description is not None:
             pulumi.set(__self__, "plan_description", plan_description)
         if plan_duration is not None:
@@ -7507,7 +7510,7 @@ class SelfSubscriptionSubscriptionDetailsPricingPlan(dict):
     @pulumi.getter(name="billingFrequency")
     def billing_frequency(self) -> _builtins.str:
         """
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the interval at which billing occurs for the subscription plan or usage dimension.
         """
         return pulumi.get(self, "billing_frequency")
 
@@ -7536,6 +7539,14 @@ class SelfSubscriptionSubscriptionDetailsPricingPlan(dict):
         return pulumi.get(self, "rates")
 
     @_builtins.property
+    @pulumi.getter
+    def dimensions(self) -> Optional[Sequence['outputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimension']]:
+        """
+        Metered usage dimensions associated with the pricing plan.
+        """
+        return pulumi.get(self, "dimensions")
+
+    @_builtins.property
     @pulumi.getter(name="planDescription")
     def plan_description(self) -> Optional[_builtins.str]:
         """
@@ -7547,9 +7558,150 @@ class SelfSubscriptionSubscriptionDetailsPricingPlan(dict):
     @pulumi.getter(name="planDuration")
     def plan_duration(self) -> Optional[_builtins.str]:
         """
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the duration of the subscription plan.
         """
         return pulumi.get(self, "plan_duration")
+
+
+@pulumi.output_type
+class SelfSubscriptionSubscriptionDetailsPricingPlanDimension(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dimensionBillingFrequency":
+            suggest = "dimension_billing_frequency"
+        elif key == "dimensionDescription":
+            suggest = "dimension_description"
+        elif key == "dimensionKey":
+            suggest = "dimension_key"
+        elif key == "dimensionName":
+            suggest = "dimension_name"
+        elif key == "metricType":
+            suggest = "metric_type"
+        elif key == "includedQuantity":
+            suggest = "included_quantity"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SelfSubscriptionSubscriptionDetailsPricingPlanDimension. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SelfSubscriptionSubscriptionDetailsPricingPlanDimension.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SelfSubscriptionSubscriptionDetailsPricingPlanDimension.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dimension_billing_frequency: _builtins.str,
+                 dimension_description: _builtins.str,
+                 dimension_key: _builtins.str,
+                 dimension_name: _builtins.str,
+                 metric_type: _builtins.str,
+                 rates: Sequence['outputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRate'],
+                 included_quantity: Optional[_builtins.float] = None):
+        """
+        :param _builtins.str dimension_billing_frequency: Specifies the interval at which the usage dimension is billed.
+        :param _builtins.str dimension_description: A detailed explanation of the usage dimension.
+        :param _builtins.str dimension_key: The stable key used internally to map this usage dimension to billing details.
+        :param _builtins.str dimension_name: The name of the usage dimension.
+        :param _builtins.str metric_type: The metric type in which usage is measured.
+        :param Sequence['SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgs'] rates: Dimension-level rates in various supported currencies.
+        :param _builtins.float included_quantity: Quantity included in the base fee for hybrid plans.
+        """
+        pulumi.set(__self__, "dimension_billing_frequency", dimension_billing_frequency)
+        pulumi.set(__self__, "dimension_description", dimension_description)
+        pulumi.set(__self__, "dimension_key", dimension_key)
+        pulumi.set(__self__, "dimension_name", dimension_name)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "rates", rates)
+        if included_quantity is not None:
+            pulumi.set(__self__, "included_quantity", included_quantity)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionBillingFrequency")
+    def dimension_billing_frequency(self) -> _builtins.str:
+        """
+        Specifies the interval at which the usage dimension is billed.
+        """
+        return pulumi.get(self, "dimension_billing_frequency")
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionDescription")
+    def dimension_description(self) -> _builtins.str:
+        """
+        A detailed explanation of the usage dimension.
+        """
+        return pulumi.get(self, "dimension_description")
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionKey")
+    def dimension_key(self) -> _builtins.str:
+        """
+        The stable key used internally to map this usage dimension to billing details.
+        """
+        return pulumi.get(self, "dimension_key")
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionName")
+    def dimension_name(self) -> _builtins.str:
+        """
+        The name of the usage dimension.
+        """
+        return pulumi.get(self, "dimension_name")
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> _builtins.str:
+        """
+        The metric type in which usage is measured.
+        """
+        return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def rates(self) -> Sequence['outputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRate']:
+        """
+        Dimension-level rates in various supported currencies.
+        """
+        return pulumi.get(self, "rates")
+
+    @_builtins.property
+    @pulumi.getter(name="includedQuantity")
+    def included_quantity(self) -> Optional[_builtins.float]:
+        """
+        Quantity included in the base fee for hybrid plans.
+        """
+        return pulumi.get(self, "included_quantity")
+
+
+@pulumi.output_type
+class SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRate(dict):
+    def __init__(__self__, *,
+                 currency: _builtins.str,
+                 rate: _builtins.float):
+        """
+        :param _builtins.str currency: The currency supported, in the format specified by ISO-4217
+        :param _builtins.float rate: The amount charged for the plan in the specified currency.
+        """
+        pulumi.set(__self__, "currency", currency)
+        pulumi.set(__self__, "rate", rate)
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> _builtins.str:
+        """
+        The currency supported, in the format specified by ISO-4217
+        """
+        return pulumi.get(self, "currency")
+
+    @_builtins.property
+    @pulumi.getter
+    def rate(self) -> _builtins.float:
+        """
+        The amount charged for the plan in the specified currency.
+        """
+        return pulumi.get(self, "rate")
 
 
 @pulumi.output_type
@@ -31063,6 +31215,286 @@ class GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetSelfPartnersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSelfPartnersPartnerCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSelfPartnersPartnerCollectionItemResult']):
+        """
+        :param Sequence['GetSelfPartnersPartnerCollectionItemArgs'] items: The list of marketplace publisher partners.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSelfPartnersPartnerCollectionItemResult']:
+        """
+        The list of marketplace publisher partners.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSelfPartnersPartnerCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The unique identifier of the marketplace publisher partner.
+        :param _builtins.str state: The current lifecycle state of the marketplace publisher partner.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The unique identifier of the marketplace publisher partner.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the marketplace publisher partner.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetSelfSelfPartnerSubscriptionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemResult']):
+        """
+        :param Sequence['GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs'] items: List of subscriptions for particular listing.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemResult']:
+        """
+        List of subscriptions for particular listing.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 lifecycle_details: _builtins.str,
+                 product_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_ended: _builtins.str,
+                 time_started: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str lifecycle_details: A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str product_id: The unique identifier of marketplace listing in Oracle Cloud Infrastructure.
+        :param _builtins.str state: The current state of the Subscription.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_ended: The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_started: The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "product_id", product_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> _builtins.str:
+        """
+        The unique identifier of marketplace listing in Oracle Cloud Infrastructure.
+        """
+        return pulumi.get(self, "product_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the Subscription.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> _builtins.str:
+        """
+        The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_ended")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
 class GetSelfSubscriptionAdditionalDetailResult(dict):
     def __init__(__self__, *,
                  key: _builtins.str,
@@ -31102,7 +31534,7 @@ class GetSelfSubscriptionSubscriptionDetailResult(dict):
                  pricing_plans: Sequence['outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanResult']):
         """
         :param _builtins.float amount: Tha amount for the currency type.
-        :param Sequence['GetSelfSubscriptionSubscriptionDetailBillingDetailArgs'] billing_details: Sku details for billing subscription.
+        :param Sequence['GetSelfSubscriptionSubscriptionDetailBillingDetailArgs'] billing_details: Billing details associated with the subscription plan and its usage dimensions.
         :param _builtins.str currency: The currency supported, in the format specified by ISO-4217
         :param _builtins.bool is_auto_renew: Whether subscription should be auto-renewed at the end of cycle.
         :param _builtins.str partner_registration_url: The activation link given by the partner.
@@ -31127,7 +31559,7 @@ class GetSelfSubscriptionSubscriptionDetailResult(dict):
     @pulumi.getter(name="billingDetails")
     def billing_details(self) -> Sequence['outputs.GetSelfSubscriptionSubscriptionDetailBillingDetailResult']:
         """
-        Sku details for billing subscription.
+        Billing details associated with the subscription plan and its usage dimensions.
         """
         return pulumi.get(self, "billing_details")
 
@@ -31167,23 +31599,37 @@ class GetSelfSubscriptionSubscriptionDetailResult(dict):
 @pulumi.output_type
 class GetSelfSubscriptionSubscriptionDetailBillingDetailResult(dict):
     def __init__(__self__, *,
+                 billing_model: _builtins.str,
                  has_gov_sku: _builtins.bool,
                  meters: Sequence['outputs.GetSelfSubscriptionSubscriptionDetailBillingDetailMeterResult'],
                  metric_type: _builtins.str,
+                 pricing_plan_key: _builtins.str,
                  rate_allocation: _builtins.float,
                  sku: _builtins.str):
         """
+        :param _builtins.str billing_model: The billing model this billing detail applies to.
         :param _builtins.bool has_gov_sku: Whether this sku is assign to gov product.
         :param Sequence['GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArgs'] meters: The meters associated with sku.
-        :param _builtins.str metric_type: The part's metric.
+        :param _builtins.str metric_type: The metric type in which usage is measured.
+        :param _builtins.str pricing_plan_key: Unique key used to map this SKU to the pricing plan.
         :param _builtins.float rate_allocation: Tha rate of this sku meter.
         :param _builtins.str sku: Sku for service.
         """
+        pulumi.set(__self__, "billing_model", billing_model)
         pulumi.set(__self__, "has_gov_sku", has_gov_sku)
         pulumi.set(__self__, "meters", meters)
         pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "pricing_plan_key", pricing_plan_key)
         pulumi.set(__self__, "rate_allocation", rate_allocation)
         pulumi.set(__self__, "sku", sku)
+
+    @_builtins.property
+    @pulumi.getter(name="billingModel")
+    def billing_model(self) -> _builtins.str:
+        """
+        The billing model this billing detail applies to.
+        """
+        return pulumi.get(self, "billing_model")
 
     @_builtins.property
     @pulumi.getter(name="hasGovSku")
@@ -31205,9 +31651,17 @@ class GetSelfSubscriptionSubscriptionDetailBillingDetailResult(dict):
     @pulumi.getter(name="metricType")
     def metric_type(self) -> _builtins.str:
         """
-        The part's metric.
+        The metric type in which usage is measured.
         """
         return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter(name="pricingPlanKey")
+    def pricing_plan_key(self) -> _builtins.str:
+        """
+        Unique key used to map this SKU to the pricing plan.
+        """
+        return pulumi.get(self, "pricing_plan_key")
 
     @_builtins.property
     @pulumi.getter(name="rateAllocation")
@@ -31299,20 +31753,23 @@ class GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataRes
 class GetSelfSubscriptionSubscriptionDetailPricingPlanResult(dict):
     def __init__(__self__, *,
                  billing_frequency: _builtins.str,
+                 dimensions: Sequence['outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionResult'],
                  plan_description: _builtins.str,
                  plan_duration: _builtins.str,
                  plan_name: _builtins.str,
                  plan_type: _builtins.str,
                  rates: Sequence['outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanRateResult']):
         """
-        :param _builtins.str billing_frequency: Specifies the interval at which billing occurs for the subscription plan.
+        :param _builtins.str billing_frequency: Specifies the interval at which billing occurs for the subscription plan or usage dimension.
+        :param Sequence['GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArgs'] dimensions: Metered usage dimensions associated with the pricing plan.
         :param _builtins.str plan_description: A detailed explanation of the subscription plan.
-        :param _builtins.str plan_duration: Specifies the interval at which billing occurs for the subscription plan.
+        :param _builtins.str plan_duration: Specifies the duration of the subscription plan.
         :param _builtins.str plan_name: The name of the subscription plan used to identify the plan.
         :param _builtins.str plan_type: The type of the subscription plan.
         :param Sequence['GetSelfSubscriptionSubscriptionDetailPricingPlanRateArgs'] rates: The pricing details of the subscription plan in various supported currencies.
         """
         pulumi.set(__self__, "billing_frequency", billing_frequency)
+        pulumi.set(__self__, "dimensions", dimensions)
         pulumi.set(__self__, "plan_description", plan_description)
         pulumi.set(__self__, "plan_duration", plan_duration)
         pulumi.set(__self__, "plan_name", plan_name)
@@ -31323,9 +31780,17 @@ class GetSelfSubscriptionSubscriptionDetailPricingPlanResult(dict):
     @pulumi.getter(name="billingFrequency")
     def billing_frequency(self) -> _builtins.str:
         """
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the interval at which billing occurs for the subscription plan or usage dimension.
         """
         return pulumi.get(self, "billing_frequency")
+
+    @_builtins.property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionResult']:
+        """
+        Metered usage dimensions associated with the pricing plan.
+        """
+        return pulumi.get(self, "dimensions")
 
     @_builtins.property
     @pulumi.getter(name="planDescription")
@@ -31339,7 +31804,7 @@ class GetSelfSubscriptionSubscriptionDetailPricingPlanResult(dict):
     @pulumi.getter(name="planDuration")
     def plan_duration(self) -> _builtins.str:
         """
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the duration of the subscription plan.
         """
         return pulumi.get(self, "plan_duration")
 
@@ -31366,6 +31831,119 @@ class GetSelfSubscriptionSubscriptionDetailPricingPlanResult(dict):
         The pricing details of the subscription plan in various supported currencies.
         """
         return pulumi.get(self, "rates")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionResult(dict):
+    def __init__(__self__, *,
+                 dimension_billing_frequency: _builtins.str,
+                 dimension_description: _builtins.str,
+                 dimension_key: _builtins.str,
+                 dimension_name: _builtins.str,
+                 included_quantity: _builtins.float,
+                 metric_type: _builtins.str,
+                 rates: Sequence['outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateResult']):
+        """
+        :param _builtins.str dimension_billing_frequency: Specifies the interval at which the usage dimension is billed.
+        :param _builtins.str dimension_description: A detailed explanation of the usage dimension.
+        :param _builtins.str dimension_key: The stable key used internally to map this usage dimension to billing details.
+        :param _builtins.str dimension_name: The name of the usage dimension.
+        :param _builtins.float included_quantity: Quantity included in the base fee for hybrid plans.
+        :param _builtins.str metric_type: The metric type in which usage is measured.
+        :param Sequence['GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArgs'] rates: The pricing details of the subscription plan in various supported currencies.
+        """
+        pulumi.set(__self__, "dimension_billing_frequency", dimension_billing_frequency)
+        pulumi.set(__self__, "dimension_description", dimension_description)
+        pulumi.set(__self__, "dimension_key", dimension_key)
+        pulumi.set(__self__, "dimension_name", dimension_name)
+        pulumi.set(__self__, "included_quantity", included_quantity)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "rates", rates)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionBillingFrequency")
+    def dimension_billing_frequency(self) -> _builtins.str:
+        """
+        Specifies the interval at which the usage dimension is billed.
+        """
+        return pulumi.get(self, "dimension_billing_frequency")
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionDescription")
+    def dimension_description(self) -> _builtins.str:
+        """
+        A detailed explanation of the usage dimension.
+        """
+        return pulumi.get(self, "dimension_description")
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionKey")
+    def dimension_key(self) -> _builtins.str:
+        """
+        The stable key used internally to map this usage dimension to billing details.
+        """
+        return pulumi.get(self, "dimension_key")
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionName")
+    def dimension_name(self) -> _builtins.str:
+        """
+        The name of the usage dimension.
+        """
+        return pulumi.get(self, "dimension_name")
+
+    @_builtins.property
+    @pulumi.getter(name="includedQuantity")
+    def included_quantity(self) -> _builtins.float:
+        """
+        Quantity included in the base fee for hybrid plans.
+        """
+        return pulumi.get(self, "included_quantity")
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> _builtins.str:
+        """
+        The metric type in which usage is measured.
+        """
+        return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def rates(self) -> Sequence['outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateResult']:
+        """
+        The pricing details of the subscription plan in various supported currencies.
+        """
+        return pulumi.get(self, "rates")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateResult(dict):
+    def __init__(__self__, *,
+                 currency: _builtins.str,
+                 rate: _builtins.float):
+        """
+        :param _builtins.str currency: The currency supported, in the format specified by ISO-4217
+        :param _builtins.float rate: The amount charged for the plan in the specified currency.
+        """
+        pulumi.set(__self__, "currency", currency)
+        pulumi.set(__self__, "rate", rate)
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> _builtins.str:
+        """
+        The currency supported, in the format specified by ISO-4217
+        """
+        return pulumi.get(self, "currency")
+
+    @_builtins.property
+    @pulumi.getter
+    def rate(self) -> _builtins.float:
+        """
+        The amount charged for the plan in the specified currency.
+        """
+        return pulumi.get(self, "rate")
 
 
 @pulumi.output_type
@@ -31709,7 +32287,7 @@ class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailResult(dic
                  pricing_plans: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanResult']):
         """
         :param _builtins.float amount: Tha amount for the currency type.
-        :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailArgs'] billing_details: Sku details for billing subscription.
+        :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailArgs'] billing_details: Billing details associated with the subscription plan and its usage dimensions.
         :param _builtins.str currency: The currency supported, in the format specified by ISO-4217
         :param _builtins.bool is_auto_renew: Whether subscription should be auto-renewed at the end of cycle.
         :param _builtins.str partner_registration_url: The activation link given by the partner.
@@ -31734,7 +32312,7 @@ class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailResult(dic
     @pulumi.getter(name="billingDetails")
     def billing_details(self) -> Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailResult']:
         """
-        Sku details for billing subscription.
+        Billing details associated with the subscription plan and its usage dimensions.
         """
         return pulumi.get(self, "billing_details")
 
@@ -31774,23 +32352,37 @@ class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailResult(dic
 @pulumi.output_type
 class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailResult(dict):
     def __init__(__self__, *,
+                 billing_model: _builtins.str,
                  has_gov_sku: _builtins.bool,
                  meters: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterResult'],
                  metric_type: _builtins.str,
+                 pricing_plan_key: _builtins.str,
                  rate_allocation: _builtins.float,
                  sku: _builtins.str):
         """
+        :param _builtins.str billing_model: The billing model this billing detail applies to.
         :param _builtins.bool has_gov_sku: Whether this sku is assign to gov product.
         :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterArgs'] meters: The meters associated with sku.
-        :param _builtins.str metric_type: The part's metric.
+        :param _builtins.str metric_type: The metric type in which usage is measured.
+        :param _builtins.str pricing_plan_key: Unique key used to map this SKU to the pricing plan.
         :param _builtins.float rate_allocation: Tha rate of this sku meter.
         :param _builtins.str sku: Sku for service.
         """
+        pulumi.set(__self__, "billing_model", billing_model)
         pulumi.set(__self__, "has_gov_sku", has_gov_sku)
         pulumi.set(__self__, "meters", meters)
         pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "pricing_plan_key", pricing_plan_key)
         pulumi.set(__self__, "rate_allocation", rate_allocation)
         pulumi.set(__self__, "sku", sku)
+
+    @_builtins.property
+    @pulumi.getter(name="billingModel")
+    def billing_model(self) -> _builtins.str:
+        """
+        The billing model this billing detail applies to.
+        """
+        return pulumi.get(self, "billing_model")
 
     @_builtins.property
     @pulumi.getter(name="hasGovSku")
@@ -31812,9 +32404,17 @@ class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDet
     @pulumi.getter(name="metricType")
     def metric_type(self) -> _builtins.str:
         """
-        The part's metric.
+        The metric type in which usage is measured.
         """
         return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter(name="pricingPlanKey")
+    def pricing_plan_key(self) -> _builtins.str:
+        """
+        Unique key used to map this SKU to the pricing plan.
+        """
+        return pulumi.get(self, "pricing_plan_key")
 
     @_builtins.property
     @pulumi.getter(name="rateAllocation")
@@ -31906,20 +32506,23 @@ class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDet
 class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanResult(dict):
     def __init__(__self__, *,
                  billing_frequency: _builtins.str,
+                 dimensions: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionResult'],
                  plan_description: _builtins.str,
                  plan_duration: _builtins.str,
                  plan_name: _builtins.str,
                  plan_type: _builtins.str,
                  rates: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateResult']):
         """
-        :param _builtins.str billing_frequency: Specifies the interval at which billing occurs for the subscription plan.
+        :param _builtins.str billing_frequency: Specifies the interval at which billing occurs for the subscription plan or usage dimension.
+        :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionArgs'] dimensions: Metered usage dimensions associated with the pricing plan.
         :param _builtins.str plan_description: A detailed explanation of the subscription plan.
-        :param _builtins.str plan_duration: Specifies the interval at which billing occurs for the subscription plan.
+        :param _builtins.str plan_duration: Specifies the duration of the subscription plan.
         :param _builtins.str plan_name: The name of the subscription plan used to identify the plan.
         :param _builtins.str plan_type: The type of the subscription plan.
         :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateArgs'] rates: The pricing details of the subscription plan in various supported currencies.
         """
         pulumi.set(__self__, "billing_frequency", billing_frequency)
+        pulumi.set(__self__, "dimensions", dimensions)
         pulumi.set(__self__, "plan_description", plan_description)
         pulumi.set(__self__, "plan_duration", plan_duration)
         pulumi.set(__self__, "plan_name", plan_name)
@@ -31930,9 +32533,17 @@ class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPla
     @pulumi.getter(name="billingFrequency")
     def billing_frequency(self) -> _builtins.str:
         """
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the interval at which billing occurs for the subscription plan or usage dimension.
         """
         return pulumi.get(self, "billing_frequency")
+
+    @_builtins.property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionResult']:
+        """
+        Metered usage dimensions associated with the pricing plan.
+        """
+        return pulumi.get(self, "dimensions")
 
     @_builtins.property
     @pulumi.getter(name="planDescription")
@@ -31946,7 +32557,7 @@ class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPla
     @pulumi.getter(name="planDuration")
     def plan_duration(self) -> _builtins.str:
         """
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the duration of the subscription plan.
         """
         return pulumi.get(self, "plan_duration")
 
@@ -31976,7 +32587,91 @@ class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPla
 
 
 @pulumi.output_type
-class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateResult(dict):
+class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionResult(dict):
+    def __init__(__self__, *,
+                 dimension_billing_frequency: _builtins.str,
+                 dimension_description: _builtins.str,
+                 dimension_key: _builtins.str,
+                 dimension_name: _builtins.str,
+                 included_quantity: _builtins.float,
+                 metric_type: _builtins.str,
+                 rates: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionRateResult']):
+        """
+        :param _builtins.str dimension_billing_frequency: Specifies the interval at which the usage dimension is billed.
+        :param _builtins.str dimension_description: A detailed explanation of the usage dimension.
+        :param _builtins.str dimension_key: The stable key used internally to map this usage dimension to billing details.
+        :param _builtins.str dimension_name: The name of the usage dimension.
+        :param _builtins.float included_quantity: Quantity included in the base fee for hybrid plans.
+        :param _builtins.str metric_type: The metric type in which usage is measured.
+        :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionRateArgs'] rates: The pricing details of the subscription plan in various supported currencies.
+        """
+        pulumi.set(__self__, "dimension_billing_frequency", dimension_billing_frequency)
+        pulumi.set(__self__, "dimension_description", dimension_description)
+        pulumi.set(__self__, "dimension_key", dimension_key)
+        pulumi.set(__self__, "dimension_name", dimension_name)
+        pulumi.set(__self__, "included_quantity", included_quantity)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "rates", rates)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionBillingFrequency")
+    def dimension_billing_frequency(self) -> _builtins.str:
+        """
+        Specifies the interval at which the usage dimension is billed.
+        """
+        return pulumi.get(self, "dimension_billing_frequency")
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionDescription")
+    def dimension_description(self) -> _builtins.str:
+        """
+        A detailed explanation of the usage dimension.
+        """
+        return pulumi.get(self, "dimension_description")
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionKey")
+    def dimension_key(self) -> _builtins.str:
+        """
+        The stable key used internally to map this usage dimension to billing details.
+        """
+        return pulumi.get(self, "dimension_key")
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionName")
+    def dimension_name(self) -> _builtins.str:
+        """
+        The name of the usage dimension.
+        """
+        return pulumi.get(self, "dimension_name")
+
+    @_builtins.property
+    @pulumi.getter(name="includedQuantity")
+    def included_quantity(self) -> _builtins.float:
+        """
+        Quantity included in the base fee for hybrid plans.
+        """
+        return pulumi.get(self, "included_quantity")
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> _builtins.str:
+        """
+        The metric type in which usage is measured.
+        """
+        return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def rates(self) -> Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionRateResult']:
+        """
+        The pricing details of the subscription plan in various supported currencies.
+        """
+        return pulumi.get(self, "rates")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionRateResult(dict):
     def __init__(__self__, *,
                  currency: _builtins.str,
                  rate: _builtins.float):
@@ -32005,2028 +32700,31 @@ class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPla
 
 
 @pulumi.output_type
-class GetWlmsManagedInstanceConfigurationResult(dict):
+class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateResult(dict):
     def __init__(__self__, *,
-                 discovery_interval: _builtins.int,
-                 domain_search_paths: Sequence[_builtins.str]):
+                 currency: _builtins.str,
+                 rate: _builtins.float):
         """
-        :param _builtins.int discovery_interval: Frequency of domain discovery to be run on the managed instance. The unit is in hours.
-        :param Sequence[_builtins.str] domain_search_paths: The whitelisted paths which domain discovery are run against.
+        :param _builtins.str currency: The currency supported, in the format specified by ISO-4217
+        :param _builtins.float rate: The amount charged for the plan in the specified currency.
         """
-        pulumi.set(__self__, "discovery_interval", discovery_interval)
-        pulumi.set(__self__, "domain_search_paths", domain_search_paths)
+        pulumi.set(__self__, "currency", currency)
+        pulumi.set(__self__, "rate", rate)
 
     @_builtins.property
-    @pulumi.getter(name="discoveryInterval")
-    def discovery_interval(self) -> _builtins.int:
-        """
-        Frequency of domain discovery to be run on the managed instance. The unit is in hours.
-        """
-        return pulumi.get(self, "discovery_interval")
-
-    @_builtins.property
-    @pulumi.getter(name="domainSearchPaths")
-    def domain_search_paths(self) -> Sequence[_builtins.str]:
-        """
-        The whitelisted paths which domain discovery are run against.
-        """
-        return pulumi.get(self, "domain_search_paths")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstanceScanResultsFilterResult(dict):
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstanceScanResultsScanResultCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetWlmsManagedInstanceScanResultsScanResultCollectionItemResult']):
-        """
-        :param Sequence['GetWlmsManagedInstanceScanResultsScanResultCollectionItemArgs'] items: List of scan results.
-        """
-        pulumi.set(__self__, "items", items)
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWlmsManagedInstanceScanResultsScanResultCollectionItemResult']:
-        """
-        List of scan results.
-        """
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstanceScanResultsScanResultCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 server_check_name: _builtins.str,
-                 server_check_result: _builtins.str,
-                 server_check_result_id: _builtins.str,
-                 server_check_status: _builtins.str,
-                 server_name: _builtins.str,
-                 time_of_server_check: _builtins.str,
-                 wls_domain_id: _builtins.str):
-        """
-        :param _builtins.str server_check_name: The name of the check performed.
-        :param _builtins.str server_check_result: The result of the server check.
-        :param _builtins.str server_check_result_id: The identifier of the the server check result.
-        :param _builtins.str server_check_status: The status of the server check which is OK, FAILURE, or WARNING.
-        :param _builtins.str server_name: The name of the server.
-        :param _builtins.str time_of_server_check: The date when the WebLogic server health check is performed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        :param _builtins.str wls_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-        """
-        pulumi.set(__self__, "server_check_name", server_check_name)
-        pulumi.set(__self__, "server_check_result", server_check_result)
-        pulumi.set(__self__, "server_check_result_id", server_check_result_id)
-        pulumi.set(__self__, "server_check_status", server_check_status)
-        pulumi.set(__self__, "server_name", server_name)
-        pulumi.set(__self__, "time_of_server_check", time_of_server_check)
-        pulumi.set(__self__, "wls_domain_id", wls_domain_id)
-
-    @_builtins.property
-    @pulumi.getter(name="serverCheckName")
-    def server_check_name(self) -> _builtins.str:
-        """
-        The name of the check performed.
-        """
-        return pulumi.get(self, "server_check_name")
-
-    @_builtins.property
-    @pulumi.getter(name="serverCheckResult")
-    def server_check_result(self) -> _builtins.str:
-        """
-        The result of the server check.
-        """
-        return pulumi.get(self, "server_check_result")
-
-    @_builtins.property
-    @pulumi.getter(name="serverCheckResultId")
-    def server_check_result_id(self) -> _builtins.str:
-        """
-        The identifier of the the server check result.
-        """
-        return pulumi.get(self, "server_check_result_id")
-
-    @_builtins.property
-    @pulumi.getter(name="serverCheckStatus")
-    def server_check_status(self) -> _builtins.str:
-        """
-        The status of the server check which is OK, FAILURE, or WARNING.
-        """
-        return pulumi.get(self, "server_check_status")
-
-    @_builtins.property
-    @pulumi.getter(name="serverName")
-    def server_name(self) -> _builtins.str:
-        """
-        The name of the server.
-        """
-        return pulumi.get(self, "server_name")
-
-    @_builtins.property
-    @pulumi.getter(name="timeOfServerCheck")
-    def time_of_server_check(self) -> _builtins.str:
-        """
-        The date when the WebLogic server health check is performed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_of_server_check")
-
-    @_builtins.property
-    @pulumi.getter(name="wlsDomainId")
-    def wls_domain_id(self) -> _builtins.str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-        """
-        return pulumi.get(self, "wls_domain_id")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstanceServerInstalledPatchesFilterResult(dict):
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemResult']):
-        """
-        :param Sequence['GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArgs'] items: List of installed patches per server
-        """
-        pulumi.set(__self__, "items", items)
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemResult']:
-        """
-        List of installed patches per server
-        """
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 description: _builtins.str,
-                 display_name: _builtins.str,
-                 id: _builtins.str):
-        """
-        :param _builtins.str description: The description of the WebLogic patch.
-        :param _builtins.str display_name: The name of the WebLogic patch.
-        :param _builtins.str id: The ID of the WebLogic patch.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-
-    @_builtins.property
-    @pulumi.getter
-    def description(self) -> _builtins.str:
-        """
-        The description of the WebLogic patch.
-        """
-        return pulumi.get(self, "description")
-
-    @_builtins.property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> _builtins.str:
-        """
-        The name of the WebLogic patch.
-        """
-        return pulumi.get(self, "display_name")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The ID of the WebLogic patch.
-        """
-        return pulumi.get(self, "id")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstanceServersFilterResult(dict):
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        """
-        :param _builtins.str name: The name of the resource.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        """
-        The name of the resource.
-        """
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstanceServersServerCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetWlmsManagedInstanceServersServerCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWlmsManagedInstanceServersServerCollectionItemResult']:
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstanceServersServerCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 host_name: _builtins.str,
-                 id: _builtins.str,
-                 is_admin: _builtins.bool,
-                 jdk_path: _builtins.str,
-                 jdk_version: _builtins.str,
-                 latest_patches_status: _builtins.str,
-                 managed_instance_id: _builtins.str,
-                 middleware_path: _builtins.str,
-                 middleware_type: _builtins.str,
-                 name: _builtins.str,
-                 patch_readiness_status: _builtins.str,
-                 restart_order: _builtins.int,
-                 status: _builtins.str,
-                 time_created: _builtins.str,
-                 time_updated: _builtins.str,
-                 weblogic_version: _builtins.str,
-                 wls_domain_id: _builtins.str,
-                 wls_domain_name: _builtins.str,
-                 wls_domain_path: _builtins.str):
-        """
-        :param _builtins.str host_name: The name of the server.
-        :param _builtins.str id: The unique identifier of the server.
-        :param _builtins.bool is_admin: Whether or not the server is an admin node.
-        :param _builtins.str jdk_path: The JDK path on the server.
-        :param _builtins.str jdk_version: The JDK version on the server.
-        :param _builtins.str latest_patches_status: Whether or not the server has installed the latest patches.
-        :param _builtins.str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-        :param _builtins.str middleware_path: The middleware path on the server.
-        :param _builtins.str middleware_type: The middleware type on the server.
-        :param _builtins.str name: The name of the resource.
-        :param _builtins.str patch_readiness_status: The patch readiness status of the server.
-        :param _builtins.int restart_order: The restart order assigned to the server.
-        :param _builtins.str status: The status of the server.
-        :param _builtins.str time_created: The date and time the server was first reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        :param _builtins.str time_updated: The date and time the server was last reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        :param _builtins.str weblogic_version: The version of the WebLogic domain of the server
-        :param _builtins.str wls_domain_id: The ID of the WebLogic domain to which the server belongs.
-        :param _builtins.str wls_domain_name: The name of the WebLogic domain to which the server belongs.
-        :param _builtins.str wls_domain_path: The path of the WebLogic domain to which the server belongs.
-        """
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_admin", is_admin)
-        pulumi.set(__self__, "jdk_path", jdk_path)
-        pulumi.set(__self__, "jdk_version", jdk_version)
-        pulumi.set(__self__, "latest_patches_status", latest_patches_status)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "middleware_path", middleware_path)
-        pulumi.set(__self__, "middleware_type", middleware_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "patch_readiness_status", patch_readiness_status)
-        pulumi.set(__self__, "restart_order", restart_order)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "weblogic_version", weblogic_version)
-        pulumi.set(__self__, "wls_domain_id", wls_domain_id)
-        pulumi.set(__self__, "wls_domain_name", wls_domain_name)
-        pulumi.set(__self__, "wls_domain_path", wls_domain_path)
-
-    @_builtins.property
-    @pulumi.getter(name="hostName")
-    def host_name(self) -> _builtins.str:
-        """
-        The name of the server.
-        """
-        return pulumi.get(self, "host_name")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The unique identifier of the server.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter(name="isAdmin")
-    def is_admin(self) -> _builtins.bool:
-        """
-        Whether or not the server is an admin node.
-        """
-        return pulumi.get(self, "is_admin")
-
-    @_builtins.property
-    @pulumi.getter(name="jdkPath")
-    def jdk_path(self) -> _builtins.str:
-        """
-        The JDK path on the server.
-        """
-        return pulumi.get(self, "jdk_path")
-
-    @_builtins.property
-    @pulumi.getter(name="jdkVersion")
-    def jdk_version(self) -> _builtins.str:
-        """
-        The JDK version on the server.
-        """
-        return pulumi.get(self, "jdk_version")
-
-    @_builtins.property
-    @pulumi.getter(name="latestPatchesStatus")
-    def latest_patches_status(self) -> _builtins.str:
-        """
-        Whether or not the server has installed the latest patches.
-        """
-        return pulumi.get(self, "latest_patches_status")
-
-    @_builtins.property
-    @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> _builtins.str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-        """
-        return pulumi.get(self, "managed_instance_id")
-
-    @_builtins.property
-    @pulumi.getter(name="middlewarePath")
-    def middleware_path(self) -> _builtins.str:
-        """
-        The middleware path on the server.
-        """
-        return pulumi.get(self, "middleware_path")
-
-    @_builtins.property
-    @pulumi.getter(name="middlewareType")
-    def middleware_type(self) -> _builtins.str:
-        """
-        The middleware type on the server.
-        """
-        return pulumi.get(self, "middleware_type")
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        """
-        The name of the resource.
-        """
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter(name="patchReadinessStatus")
-    def patch_readiness_status(self) -> _builtins.str:
-        """
-        The patch readiness status of the server.
-        """
-        return pulumi.get(self, "patch_readiness_status")
-
-    @_builtins.property
-    @pulumi.getter(name="restartOrder")
-    def restart_order(self) -> _builtins.int:
-        """
-        The restart order assigned to the server.
-        """
-        return pulumi.get(self, "restart_order")
-
-    @_builtins.property
-    @pulumi.getter
-    def status(self) -> _builtins.str:
-        """
-        The status of the server.
-        """
-        return pulumi.get(self, "status")
-
-    @_builtins.property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> _builtins.str:
-        """
-        The date and time the server was first reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_created")
-
-    @_builtins.property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> _builtins.str:
-        """
-        The date and time the server was last reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_updated")
-
-    @_builtins.property
-    @pulumi.getter(name="weblogicVersion")
-    def weblogic_version(self) -> _builtins.str:
-        """
-        The version of the WebLogic domain of the server
-        """
-        return pulumi.get(self, "weblogic_version")
-
-    @_builtins.property
-    @pulumi.getter(name="wlsDomainId")
-    def wls_domain_id(self) -> _builtins.str:
-        """
-        The ID of the WebLogic domain to which the server belongs.
-        """
-        return pulumi.get(self, "wls_domain_id")
-
-    @_builtins.property
-    @pulumi.getter(name="wlsDomainName")
-    def wls_domain_name(self) -> _builtins.str:
-        """
-        The name of the WebLogic domain to which the server belongs.
-        """
-        return pulumi.get(self, "wls_domain_name")
-
-    @_builtins.property
-    @pulumi.getter(name="wlsDomainPath")
-    def wls_domain_path(self) -> _builtins.str:
-        """
-        The path of the WebLogic domain to which the server belongs.
-        """
-        return pulumi.get(self, "wls_domain_path")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstancesFilterResult(dict):
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstancesManagedInstanceCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetWlmsManagedInstancesManagedInstanceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWlmsManagedInstancesManagedInstanceCollectionItemResult']:
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstancesManagedInstanceCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 compartment_id: _builtins.str,
-                 configurations: Sequence['outputs.GetWlmsManagedInstancesManagedInstanceCollectionItemConfigurationResult'],
-                 display_name: _builtins.str,
-                 host_name: _builtins.str,
-                 id: _builtins.str,
-                 os_arch: _builtins.str,
-                 os_name: _builtins.str,
-                 plugin_status: _builtins.str,
-                 server_count: _builtins.int,
-                 time_created: _builtins.str,
-                 time_updated: _builtins.str):
-        """
-        :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns  only resources contained within the specified compartment.
-        :param Sequence['GetWlmsManagedInstancesManagedInstanceCollectionItemConfigurationArgs'] configurations: The configuration for a managed instance.
-        :param _builtins.str display_name: The display name.
-        :param _builtins.str host_name: The FQDN of the managed instance.
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-        :param _builtins.str os_arch: The operating system architecture on the managed instance.
-        :param _builtins.str os_name: The operating system name on the managed instance.
-        :param _builtins.str plugin_status: The plugin status of the managed instance.
-        :param _builtins.int server_count: The number of servers running in the managed instance.
-        :param _builtins.str time_created: The date and time the managed instance was first reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        :param _builtins.str time_updated: The date and time the managed instance was last report (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "os_arch", os_arch)
-        pulumi.set(__self__, "os_name", os_name)
-        pulumi.set(__self__, "plugin_status", plugin_status)
-        pulumi.set(__self__, "server_count", server_count)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-
-    @_builtins.property
-    @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> _builtins.str:
-        """
-        The OCID of the compartment that contains the resources to list. This filter returns  only resources contained within the specified compartment.
-        """
-        return pulumi.get(self, "compartment_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def configurations(self) -> Sequence['outputs.GetWlmsManagedInstancesManagedInstanceCollectionItemConfigurationResult']:
-        """
-        The configuration for a managed instance.
-        """
-        return pulumi.get(self, "configurations")
-
-    @_builtins.property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> _builtins.str:
-        """
-        The display name.
-        """
-        return pulumi.get(self, "display_name")
-
-    @_builtins.property
-    @pulumi.getter(name="hostName")
-    def host_name(self) -> _builtins.str:
-        """
-        The FQDN of the managed instance.
-        """
-        return pulumi.get(self, "host_name")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter(name="osArch")
-    def os_arch(self) -> _builtins.str:
-        """
-        The operating system architecture on the managed instance.
-        """
-        return pulumi.get(self, "os_arch")
-
-    @_builtins.property
-    @pulumi.getter(name="osName")
-    def os_name(self) -> _builtins.str:
-        """
-        The operating system name on the managed instance.
-        """
-        return pulumi.get(self, "os_name")
-
-    @_builtins.property
-    @pulumi.getter(name="pluginStatus")
-    def plugin_status(self) -> _builtins.str:
-        """
-        The plugin status of the managed instance.
-        """
-        return pulumi.get(self, "plugin_status")
-
-    @_builtins.property
-    @pulumi.getter(name="serverCount")
-    def server_count(self) -> _builtins.int:
-        """
-        The number of servers running in the managed instance.
-        """
-        return pulumi.get(self, "server_count")
-
-    @_builtins.property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> _builtins.str:
-        """
-        The date and time the managed instance was first reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_created")
-
-    @_builtins.property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> _builtins.str:
-        """
-        The date and time the managed instance was last report (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_updated")
-
-
-@pulumi.output_type
-class GetWlmsManagedInstancesManagedInstanceCollectionItemConfigurationResult(dict):
-    def __init__(__self__, *,
-                 discovery_interval: _builtins.int,
-                 domain_search_paths: Sequence[_builtins.str]):
-        """
-        :param _builtins.int discovery_interval: Frequency of domain discovery to be run on the managed instance. The unit is in hours.
-        :param Sequence[_builtins.str] domain_search_paths: The whitelisted paths which domain discovery are run against.
-        """
-        pulumi.set(__self__, "discovery_interval", discovery_interval)
-        pulumi.set(__self__, "domain_search_paths", domain_search_paths)
-
-    @_builtins.property
-    @pulumi.getter(name="discoveryInterval")
-    def discovery_interval(self) -> _builtins.int:
-        """
-        Frequency of domain discovery to be run on the managed instance. The unit is in hours.
-        """
-        return pulumi.get(self, "discovery_interval")
-
-    @_builtins.property
-    @pulumi.getter(name="domainSearchPaths")
-    def domain_search_paths(self) -> Sequence[_builtins.str]:
-        """
-        The whitelisted paths which domain discovery are run against.
-        """
-        return pulumi.get(self, "domain_search_paths")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainAgreementRecordsAgreementRecordCollectionResult(dict):
-    def __init__(__self__, *,
-                 agreement_signature: _builtins.str,
-                 agreement_uuid: _builtins.str,
-                 items: Sequence['outputs.GetWlmsWlsDomainAgreementRecordsAgreementRecordCollectionItemResult'],
-                 time_accepted: _builtins.str,
-                 wls_domain_id: _builtins.str):
-        """
-        :param _builtins.str agreement_signature: The agreement signature.
-        :param _builtins.str agreement_uuid: The ID of the accepted agreement.
-        :param Sequence['GetWlmsWlsDomainAgreementRecordsAgreementRecordCollectionItemArgs'] items: List of agreement records.
-        :param _builtins.str time_accepted: The accepted time for the agreement record.
-        :param _builtins.str wls_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-        """
-        pulumi.set(__self__, "agreement_signature", agreement_signature)
-        pulumi.set(__self__, "agreement_uuid", agreement_uuid)
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "time_accepted", time_accepted)
-        pulumi.set(__self__, "wls_domain_id", wls_domain_id)
-
-    @_builtins.property
-    @pulumi.getter(name="agreementSignature")
-    def agreement_signature(self) -> _builtins.str:
-        """
-        The agreement signature.
-        """
-        return pulumi.get(self, "agreement_signature")
-
-    @_builtins.property
-    @pulumi.getter(name="agreementUuid")
-    def agreement_uuid(self) -> _builtins.str:
-        """
-        The ID of the accepted agreement.
-        """
-        return pulumi.get(self, "agreement_uuid")
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWlmsWlsDomainAgreementRecordsAgreementRecordCollectionItemResult']:
-        """
-        List of agreement records.
-        """
-        return pulumi.get(self, "items")
-
-    @_builtins.property
-    @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> _builtins.str:
-        """
-        The accepted time for the agreement record.
-        """
-        return pulumi.get(self, "time_accepted")
-
-    @_builtins.property
-    @pulumi.getter(name="wlsDomainId")
-    def wls_domain_id(self) -> _builtins.str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-        """
-        return pulumi.get(self, "wls_domain_id")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainAgreementRecordsAgreementRecordCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 agreement_signature: _builtins.str,
-                 agreement_uuid: _builtins.str,
-                 time_accepted: _builtins.str):
-        """
-        :param _builtins.str agreement_signature: The agreement signature.
-        :param _builtins.str agreement_uuid: The ID of the accepted agreement.
-        :param _builtins.str time_accepted: The accepted time for the agreement record.
-        """
-        pulumi.set(__self__, "agreement_signature", agreement_signature)
-        pulumi.set(__self__, "agreement_uuid", agreement_uuid)
-        pulumi.set(__self__, "time_accepted", time_accepted)
-
-    @_builtins.property
-    @pulumi.getter(name="agreementSignature")
-    def agreement_signature(self) -> _builtins.str:
-        """
-        The agreement signature.
-        """
-        return pulumi.get(self, "agreement_signature")
-
-    @_builtins.property
-    @pulumi.getter(name="agreementUuid")
-    def agreement_uuid(self) -> _builtins.str:
-        """
-        The ID of the accepted agreement.
-        """
-        return pulumi.get(self, "agreement_uuid")
-
-    @_builtins.property
-    @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> _builtins.str:
-        """
-        The accepted time for the agreement record.
-        """
-        return pulumi.get(self, "time_accepted")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainAgreementRecordsFilterResult(dict):
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainApplicablePatchesApplicablePatchCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetWlmsWlsDomainApplicablePatchesApplicablePatchCollectionItemResult']):
-        """
-        :param Sequence['GetWlmsWlsDomainApplicablePatchesApplicablePatchCollectionItemArgs'] items: List of patches per WebLogic version and middleware type.
-        """
-        pulumi.set(__self__, "items", items)
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWlmsWlsDomainApplicablePatchesApplicablePatchCollectionItemResult']:
-        """
-        List of patches per WebLogic version and middleware type.
-        """
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainApplicablePatchesApplicablePatchCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 description: _builtins.str,
-                 display_name: _builtins.str,
-                 id: _builtins.str,
-                 middleware_types: Sequence[_builtins.str],
-                 os_arch: _builtins.str,
-                 weblogic_version: _builtins.str):
-        """
-        :param _builtins.str description: The description of the WebLogic patch.
-        :param _builtins.str display_name: The name of the WebLogic patch.
-        :param _builtins.str id: The ID of the WebLogic patch.
-        :param Sequence[_builtins.str] middleware_types: The type of middleware for which this patch is applicable. A patch can be applicable to more than one type of middleware.
-        :param _builtins.str os_arch: The operating system architecture for which the patch can be applied.
-        :param _builtins.str weblogic_version: The WebLogic version for this patch. The patch can be installed to domains with this version.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "middleware_types", middleware_types)
-        pulumi.set(__self__, "os_arch", os_arch)
-        pulumi.set(__self__, "weblogic_version", weblogic_version)
-
-    @_builtins.property
-    @pulumi.getter
-    def description(self) -> _builtins.str:
-        """
-        The description of the WebLogic patch.
-        """
-        return pulumi.get(self, "description")
-
-    @_builtins.property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> _builtins.str:
-        """
-        The name of the WebLogic patch.
-        """
-        return pulumi.get(self, "display_name")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The ID of the WebLogic patch.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter(name="middlewareTypes")
-    def middleware_types(self) -> Sequence[_builtins.str]:
-        """
-        The type of middleware for which this patch is applicable. A patch can be applicable to more than one type of middleware.
-        """
-        return pulumi.get(self, "middleware_types")
-
-    @_builtins.property
-    @pulumi.getter(name="osArch")
-    def os_arch(self) -> _builtins.str:
-        """
-        The operating system architecture for which the patch can be applied.
-        """
-        return pulumi.get(self, "os_arch")
-
-    @_builtins.property
-    @pulumi.getter(name="weblogicVersion")
-    def weblogic_version(self) -> _builtins.str:
-        """
-        The WebLogic version for this patch. The patch can be installed to domains with this version.
-        """
-        return pulumi.get(self, "weblogic_version")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainApplicablePatchesFilterResult(dict):
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainConfigurationResult(dict):
-    def __init__(__self__, *,
-                 admin_server_control_mode: _builtins.str,
-                 admin_server_start_script_path: _builtins.str,
-                 admin_server_stop_script_path: _builtins.str,
-                 is_patch_enabled: _builtins.bool,
-                 is_rollback_on_failure: _builtins.bool,
-                 managed_server_control_mode: _builtins.str,
-                 managed_server_start_script_path: _builtins.str,
-                 managed_server_stop_script_path: _builtins.str,
-                 servers_shutdown_timeout: _builtins.int):
-        """
-        :param _builtins.str admin_server_control_mode: Whether to manage the admin server using Node Manager or scripts.
-        :param _builtins.str admin_server_start_script_path: Path to admin server start script.
-        :param _builtins.str admin_server_stop_script_path: Path to admin server stop script.
-        :param _builtins.bool is_patch_enabled: Whether or not the WebLogic domain is enabled for patching.
-        :param _builtins.bool is_rollback_on_failure: Whether or not to rollback on failure during patching of WebLogic domain.
-        :param _builtins.str managed_server_control_mode: Whether to manage the managed server using Node Manager or scripts.
-        :param _builtins.str managed_server_start_script_path: Path to managed server start script.
-        :param _builtins.str managed_server_stop_script_path: Path to managed server stop script.
-        :param _builtins.int servers_shutdown_timeout: Servers shutdown timeout.
-        """
-        pulumi.set(__self__, "admin_server_control_mode", admin_server_control_mode)
-        pulumi.set(__self__, "admin_server_start_script_path", admin_server_start_script_path)
-        pulumi.set(__self__, "admin_server_stop_script_path", admin_server_stop_script_path)
-        pulumi.set(__self__, "is_patch_enabled", is_patch_enabled)
-        pulumi.set(__self__, "is_rollback_on_failure", is_rollback_on_failure)
-        pulumi.set(__self__, "managed_server_control_mode", managed_server_control_mode)
-        pulumi.set(__self__, "managed_server_start_script_path", managed_server_start_script_path)
-        pulumi.set(__self__, "managed_server_stop_script_path", managed_server_stop_script_path)
-        pulumi.set(__self__, "servers_shutdown_timeout", servers_shutdown_timeout)
-
-    @_builtins.property
-    @pulumi.getter(name="adminServerControlMode")
-    def admin_server_control_mode(self) -> _builtins.str:
-        """
-        Whether to manage the admin server using Node Manager or scripts.
-        """
-        return pulumi.get(self, "admin_server_control_mode")
-
-    @_builtins.property
-    @pulumi.getter(name="adminServerStartScriptPath")
-    def admin_server_start_script_path(self) -> _builtins.str:
-        """
-        Path to admin server start script.
-        """
-        return pulumi.get(self, "admin_server_start_script_path")
-
-    @_builtins.property
-    @pulumi.getter(name="adminServerStopScriptPath")
-    def admin_server_stop_script_path(self) -> _builtins.str:
-        """
-        Path to admin server stop script.
-        """
-        return pulumi.get(self, "admin_server_stop_script_path")
-
-    @_builtins.property
-    @pulumi.getter(name="isPatchEnabled")
-    def is_patch_enabled(self) -> _builtins.bool:
-        """
-        Whether or not the WebLogic domain is enabled for patching.
-        """
-        return pulumi.get(self, "is_patch_enabled")
-
-    @_builtins.property
-    @pulumi.getter(name="isRollbackOnFailure")
-    def is_rollback_on_failure(self) -> _builtins.bool:
-        """
-        Whether or not to rollback on failure during patching of WebLogic domain.
-        """
-        return pulumi.get(self, "is_rollback_on_failure")
-
-    @_builtins.property
-    @pulumi.getter(name="managedServerControlMode")
-    def managed_server_control_mode(self) -> _builtins.str:
-        """
-        Whether to manage the managed server using Node Manager or scripts.
-        """
-        return pulumi.get(self, "managed_server_control_mode")
-
-    @_builtins.property
-    @pulumi.getter(name="managedServerStartScriptPath")
-    def managed_server_start_script_path(self) -> _builtins.str:
-        """
-        Path to managed server start script.
-        """
-        return pulumi.get(self, "managed_server_start_script_path")
-
-    @_builtins.property
-    @pulumi.getter(name="managedServerStopScriptPath")
-    def managed_server_stop_script_path(self) -> _builtins.str:
-        """
-        Path to managed server stop script.
-        """
-        return pulumi.get(self, "managed_server_stop_script_path")
-
-    @_builtins.property
-    @pulumi.getter(name="serversShutdownTimeout")
-    def servers_shutdown_timeout(self) -> _builtins.int:
-        """
-        Servers shutdown timeout.
-        """
-        return pulumi.get(self, "servers_shutdown_timeout")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainScanResultsFilterResult(dict):
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainScanResultsScanResultCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetWlmsWlsDomainScanResultsScanResultCollectionItemResult']):
-        """
-        :param Sequence['GetWlmsWlsDomainScanResultsScanResultCollectionItemArgs'] items: List of scan results.
-        """
-        pulumi.set(__self__, "items", items)
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWlmsWlsDomainScanResultsScanResultCollectionItemResult']:
-        """
-        List of scan results.
-        """
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainScanResultsScanResultCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 server_check_name: _builtins.str,
-                 server_check_result: _builtins.str,
-                 server_check_result_id: _builtins.str,
-                 server_check_status: _builtins.str,
-                 server_name: _builtins.str,
-                 time_of_server_check: _builtins.str,
-                 wls_domain_id: _builtins.str):
-        """
-        :param _builtins.str server_check_name: The name of the check performed.
-        :param _builtins.str server_check_result: The result of the server check.
-        :param _builtins.str server_check_result_id: The identifier of the the server check result.
-        :param _builtins.str server_check_status: The status of the server check which is OK, FAILURE, or WARNING.
-        :param _builtins.str server_name: The name of the server.
-        :param _builtins.str time_of_server_check: The date when the WebLogic server health check is performed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        :param _builtins.str wls_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-        """
-        pulumi.set(__self__, "server_check_name", server_check_name)
-        pulumi.set(__self__, "server_check_result", server_check_result)
-        pulumi.set(__self__, "server_check_result_id", server_check_result_id)
-        pulumi.set(__self__, "server_check_status", server_check_status)
-        pulumi.set(__self__, "server_name", server_name)
-        pulumi.set(__self__, "time_of_server_check", time_of_server_check)
-        pulumi.set(__self__, "wls_domain_id", wls_domain_id)
-
-    @_builtins.property
-    @pulumi.getter(name="serverCheckName")
-    def server_check_name(self) -> _builtins.str:
-        """
-        The name of the check performed.
-        """
-        return pulumi.get(self, "server_check_name")
-
-    @_builtins.property
-    @pulumi.getter(name="serverCheckResult")
-    def server_check_result(self) -> _builtins.str:
-        """
-        The result of the server check.
-        """
-        return pulumi.get(self, "server_check_result")
-
-    @_builtins.property
-    @pulumi.getter(name="serverCheckResultId")
-    def server_check_result_id(self) -> _builtins.str:
-        """
-        The identifier of the the server check result.
-        """
-        return pulumi.get(self, "server_check_result_id")
-
-    @_builtins.property
-    @pulumi.getter(name="serverCheckStatus")
-    def server_check_status(self) -> _builtins.str:
-        """
-        The status of the server check which is OK, FAILURE, or WARNING.
-        """
-        return pulumi.get(self, "server_check_status")
-
-    @_builtins.property
-    @pulumi.getter(name="serverName")
-    def server_name(self) -> _builtins.str:
-        """
-        The name of the server.
-        """
-        return pulumi.get(self, "server_name")
-
-    @_builtins.property
-    @pulumi.getter(name="timeOfServerCheck")
-    def time_of_server_check(self) -> _builtins.str:
-        """
-        The date when the WebLogic server health check is performed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_of_server_check")
-
-    @_builtins.property
-    @pulumi.getter(name="wlsDomainId")
-    def wls_domain_id(self) -> _builtins.str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-        """
-        return pulumi.get(self, "wls_domain_id")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainServerBackupContentMiddlewareResult(dict):
-    def __init__(__self__, *,
-                 patches: Sequence['outputs.GetWlmsWlsDomainServerBackupContentMiddlewarePatchResult'],
-                 version: _builtins.str):
-        """
-        :param Sequence['GetWlmsWlsDomainServerBackupContentMiddlewarePatchArgs'] patches: The list of patches installed in the middleware included in the backup.
-        :param _builtins.str version: The version of the middleware binaries included in the backup.
-        """
-        pulumi.set(__self__, "patches", patches)
-        pulumi.set(__self__, "version", version)
-
-    @_builtins.property
-    @pulumi.getter
-    def patches(self) -> Sequence['outputs.GetWlmsWlsDomainServerBackupContentMiddlewarePatchResult']:
-        """
-        The list of patches installed in the middleware included in the backup.
-        """
-        return pulumi.get(self, "patches")
-
-    @_builtins.property
-    @pulumi.getter
-    def version(self) -> _builtins.str:
-        """
-        The version of the middleware binaries included in the backup.
-        """
-        return pulumi.get(self, "version")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainServerBackupContentMiddlewarePatchResult(dict):
-    def __init__(__self__, *,
-                 description: _builtins.str,
-                 display_name: _builtins.str,
-                 id: _builtins.str):
-        """
-        :param _builtins.str description: The description of the WebLogic patch.
-        :param _builtins.str display_name: The display name of the WebLogic patch.
-        :param _builtins.str id: The ID of the WebLogic patch.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-
-    @_builtins.property
-    @pulumi.getter
-    def description(self) -> _builtins.str:
-        """
-        The description of the WebLogic patch.
-        """
-        return pulumi.get(self, "description")
-
-    @_builtins.property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> _builtins.str:
-        """
-        The display name of the WebLogic patch.
-        """
-        return pulumi.get(self, "display_name")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The ID of the WebLogic patch.
-        """
-        return pulumi.get(self, "id")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainServerBackupsBackupCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetWlmsWlsDomainServerBackupsBackupCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWlmsWlsDomainServerBackupsBackupCollectionItemResult']:
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainServerBackupsBackupCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 backup_location: _builtins.str,
-                 content_type: _builtins.str,
-                 id: _builtins.str,
-                 managed_instance_id: _builtins.str,
-                 time_created: _builtins.str,
-                 type: _builtins.str):
-        """
-        :param _builtins.str backup_location: The location of the backup. For backups of type LOCAL_FILE this is the absolute path of the backup file.
-        :param _builtins.str content_type: The type of content of the backup.
-        :param _builtins.str id: The unique identifier of the backup.
-        :param _builtins.str managed_instance_id: The managed instance ID of the server for which the backup was created.
-        :param _builtins.str time_created: The date and time when the backup was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        :param _builtins.str type: The type of the backup.
-        """
-        pulumi.set(__self__, "backup_location", backup_location)
-        pulumi.set(__self__, "content_type", content_type)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "type", type)
-
-    @_builtins.property
-    @pulumi.getter(name="backupLocation")
-    def backup_location(self) -> _builtins.str:
-        """
-        The location of the backup. For backups of type LOCAL_FILE this is the absolute path of the backup file.
-        """
-        return pulumi.get(self, "backup_location")
-
-    @_builtins.property
-    @pulumi.getter(name="contentType")
-    def content_type(self) -> _builtins.str:
-        """
-        The type of content of the backup.
-        """
-        return pulumi.get(self, "content_type")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The unique identifier of the backup.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> _builtins.str:
-        """
-        The managed instance ID of the server for which the backup was created.
-        """
-        return pulumi.get(self, "managed_instance_id")
-
-    @_builtins.property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> _builtins.str:
-        """
-        The date and time when the backup was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_created")
-
-    @_builtins.property
-    @pulumi.getter
-    def type(self) -> _builtins.str:
-        """
-        The type of the backup.
-        """
-        return pulumi.get(self, "type")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainServerBackupsFilterResult(dict):
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @_builtins.property
     @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainServerInstalledPatchesFilterResult(dict):
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainServerInstalledPatchesInstalledPatchCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetWlmsWlsDomainServerInstalledPatchesInstalledPatchCollectionItemResult']):
-        """
-        :param Sequence['GetWlmsWlsDomainServerInstalledPatchesInstalledPatchCollectionItemArgs'] items: List of installed patches per server
-        """
-        pulumi.set(__self__, "items", items)
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWlmsWlsDomainServerInstalledPatchesInstalledPatchCollectionItemResult']:
-        """
-        List of installed patches per server
-        """
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainServerInstalledPatchesInstalledPatchCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 description: _builtins.str,
-                 display_name: _builtins.str,
-                 id: _builtins.str):
-        """
-        :param _builtins.str description: The description of the WebLogic patch.
-        :param _builtins.str display_name: The name of the WebLogic patch.
-        :param _builtins.str id: The ID of the WebLogic patch.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-
-    @_builtins.property
-    @pulumi.getter
-    def description(self) -> _builtins.str:
-        """
-        The description of the WebLogic patch.
-        """
-        return pulumi.get(self, "description")
-
-    @_builtins.property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> _builtins.str:
-        """
-        The name of the WebLogic patch.
-        """
-        return pulumi.get(self, "display_name")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The ID of the WebLogic patch.
-        """
-        return pulumi.get(self, "id")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainServersFilterResult(dict):
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        """
-        :param _builtins.str name: The name of the resource.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        """
-        The name of the resource.
-        """
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainServersServerCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetWlmsWlsDomainServersServerCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWlmsWlsDomainServersServerCollectionItemResult']:
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainServersServerCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 host_name: _builtins.str,
-                 id: _builtins.str,
-                 is_admin: _builtins.bool,
-                 jdk_path: _builtins.str,
-                 jdk_version: _builtins.str,
-                 latest_patches_status: _builtins.str,
-                 managed_instance_id: _builtins.str,
-                 middleware_path: _builtins.str,
-                 middleware_type: _builtins.str,
-                 name: _builtins.str,
-                 patch_readiness_status: _builtins.str,
-                 restart_order: _builtins.int,
-                 status: _builtins.str,
-                 time_created: _builtins.str,
-                 time_updated: _builtins.str,
-                 weblogic_version: _builtins.str,
-                 wls_domain_id: _builtins.str,
-                 wls_domain_name: _builtins.str,
-                 wls_domain_path: _builtins.str):
-        """
-        :param _builtins.str host_name: The name of the server.
-        :param _builtins.str id: The unique identifier of the server.
-        :param _builtins.bool is_admin: Whether or not the server is an admin node.
-        :param _builtins.str jdk_path: The JDK path on the server.
-        :param _builtins.str jdk_version: The JDK version on the server.
-        :param _builtins.str latest_patches_status: Whether or not the server has installed the latest patches.
-        :param _builtins.str managed_instance_id: The managed instance ID of the server.
-        :param _builtins.str middleware_path: The middleware path on the server.
-        :param _builtins.str middleware_type: The middleware type on the server.
-        :param _builtins.str name: The name of the resource.
-        :param _builtins.str patch_readiness_status: The patch readiness status of the server.
-        :param _builtins.int restart_order: The restart order assigned to the server.
-        :param _builtins.str status: The status of the server.
-        :param _builtins.str time_created: The date and time the server was first reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        :param _builtins.str time_updated: The date and time the server was last reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        :param _builtins.str weblogic_version: The version of the WebLogic domain of the server
-        :param _builtins.str wls_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-        :param _builtins.str wls_domain_name: The name of the WebLogic domain to which the server belongs.
-        :param _builtins.str wls_domain_path: The path of the WebLogic domain to which the server belongs.
-        """
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_admin", is_admin)
-        pulumi.set(__self__, "jdk_path", jdk_path)
-        pulumi.set(__self__, "jdk_version", jdk_version)
-        pulumi.set(__self__, "latest_patches_status", latest_patches_status)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "middleware_path", middleware_path)
-        pulumi.set(__self__, "middleware_type", middleware_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "patch_readiness_status", patch_readiness_status)
-        pulumi.set(__self__, "restart_order", restart_order)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "weblogic_version", weblogic_version)
-        pulumi.set(__self__, "wls_domain_id", wls_domain_id)
-        pulumi.set(__self__, "wls_domain_name", wls_domain_name)
-        pulumi.set(__self__, "wls_domain_path", wls_domain_path)
-
-    @_builtins.property
-    @pulumi.getter(name="hostName")
-    def host_name(self) -> _builtins.str:
-        """
-        The name of the server.
-        """
-        return pulumi.get(self, "host_name")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The unique identifier of the server.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter(name="isAdmin")
-    def is_admin(self) -> _builtins.bool:
-        """
-        Whether or not the server is an admin node.
-        """
-        return pulumi.get(self, "is_admin")
-
-    @_builtins.property
-    @pulumi.getter(name="jdkPath")
-    def jdk_path(self) -> _builtins.str:
-        """
-        The JDK path on the server.
-        """
-        return pulumi.get(self, "jdk_path")
-
-    @_builtins.property
-    @pulumi.getter(name="jdkVersion")
-    def jdk_version(self) -> _builtins.str:
-        """
-        The JDK version on the server.
-        """
-        return pulumi.get(self, "jdk_version")
-
-    @_builtins.property
-    @pulumi.getter(name="latestPatchesStatus")
-    def latest_patches_status(self) -> _builtins.str:
-        """
-        Whether or not the server has installed the latest patches.
-        """
-        return pulumi.get(self, "latest_patches_status")
-
-    @_builtins.property
-    @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> _builtins.str:
-        """
-        The managed instance ID of the server.
-        """
-        return pulumi.get(self, "managed_instance_id")
-
-    @_builtins.property
-    @pulumi.getter(name="middlewarePath")
-    def middleware_path(self) -> _builtins.str:
-        """
-        The middleware path on the server.
-        """
-        return pulumi.get(self, "middleware_path")
-
-    @_builtins.property
-    @pulumi.getter(name="middlewareType")
-    def middleware_type(self) -> _builtins.str:
-        """
-        The middleware type on the server.
-        """
-        return pulumi.get(self, "middleware_type")
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        """
-        The name of the resource.
-        """
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter(name="patchReadinessStatus")
-    def patch_readiness_status(self) -> _builtins.str:
-        """
-        The patch readiness status of the server.
-        """
-        return pulumi.get(self, "patch_readiness_status")
-
-    @_builtins.property
-    @pulumi.getter(name="restartOrder")
-    def restart_order(self) -> _builtins.int:
-        """
-        The restart order assigned to the server.
-        """
-        return pulumi.get(self, "restart_order")
-
-    @_builtins.property
-    @pulumi.getter
-    def status(self) -> _builtins.str:
-        """
-        The status of the server.
-        """
-        return pulumi.get(self, "status")
-
-    @_builtins.property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> _builtins.str:
-        """
-        The date and time the server was first reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_created")
-
-    @_builtins.property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> _builtins.str:
-        """
-        The date and time the server was last reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_updated")
-
-    @_builtins.property
-    @pulumi.getter(name="weblogicVersion")
-    def weblogic_version(self) -> _builtins.str:
-        """
-        The version of the WebLogic domain of the server
+    def currency(self) -> _builtins.str:
         """
-        return pulumi.get(self, "weblogic_version")
-
-    @_builtins.property
-    @pulumi.getter(name="wlsDomainId")
-    def wls_domain_id(self) -> _builtins.str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-        """
-        return pulumi.get(self, "wls_domain_id")
-
-    @_builtins.property
-    @pulumi.getter(name="wlsDomainName")
-    def wls_domain_name(self) -> _builtins.str:
-        """
-        The name of the WebLogic domain to which the server belongs.
-        """
-        return pulumi.get(self, "wls_domain_name")
-
-    @_builtins.property
-    @pulumi.getter(name="wlsDomainPath")
-    def wls_domain_path(self) -> _builtins.str:
-        """
-        The path of the WebLogic domain to which the server belongs.
-        """
-        return pulumi.get(self, "wls_domain_path")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainsFilterResult(dict):
-    def __init__(__self__, *,
-                 name: _builtins.str,
-                 values: Sequence[_builtins.str],
-                 regex: Optional[_builtins.bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> _builtins.str:
-        return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> Sequence[_builtins.str]:
-        return pulumi.get(self, "values")
-
-    @_builtins.property
-    @pulumi.getter
-    def regex(self) -> Optional[_builtins.bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainsWlsDomainCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetWlmsWlsDomainsWlsDomainCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWlmsWlsDomainsWlsDomainCollectionItemResult']:
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainsWlsDomainCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 compartment_id: _builtins.str,
-                 configurations: Sequence['outputs.GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationResult'],
-                 defined_tags: Mapping[str, _builtins.str],
-                 display_name: _builtins.str,
-                 freeform_tags: Mapping[str, _builtins.str],
-                 id: _builtins.str,
-                 is_accepted_terms_and_conditions: _builtins.bool,
-                 lifecycle_details: _builtins.str,
-                 middleware_type: _builtins.str,
-                 patch_readiness_status: _builtins.str,
-                 state: _builtins.str,
-                 system_tags: Mapping[str, _builtins.str],
-                 time_created: _builtins.str,
-                 time_updated: _builtins.str,
-                 weblogic_version: _builtins.str):
-        """
-        :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns  only resources contained within the specified compartment.
-        :param Sequence['GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArgs'] configurations: The WebLogic domain configuration.
-        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param _builtins.str display_name: The display name.
-        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-        :param _builtins.bool is_accepted_terms_and_conditions: Whether or not the terms of use agreement has been accepted for the WebLogic domain.
-        :param _builtins.str lifecycle_details: A message that describes the current state of the WebLogic domain in more detail. For example, it can be used to provide actionable information for a resource in the Failed state.
-        :param _builtins.str middleware_type: A filter to return WebLogic domains based on the type of middleware of the WebLogic domain.
-        :param _builtins.str patch_readiness_status: A filter to return domains based on the patch readiness status.
-        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.str time_created: The date and time the WebLogic domain was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        :param _builtins.str time_updated: The date and time the WebLogic domain was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        :param _builtins.str weblogic_version: A filter to return WebLogic domains based on the WebLogic version.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_accepted_terms_and_conditions", is_accepted_terms_and_conditions)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "middleware_type", middleware_type)
-        pulumi.set(__self__, "patch_readiness_status", patch_readiness_status)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "weblogic_version", weblogic_version)
-
-    @_builtins.property
-    @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> _builtins.str:
-        """
-        The OCID of the compartment that contains the resources to list. This filter returns  only resources contained within the specified compartment.
-        """
-        return pulumi.get(self, "compartment_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def configurations(self) -> Sequence['outputs.GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationResult']:
-        """
-        The WebLogic domain configuration.
-        """
-        return pulumi.get(self, "configurations")
-
-    @_builtins.property
-    @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, _builtins.str]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
-        return pulumi.get(self, "defined_tags")
-
-    @_builtins.property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> _builtins.str:
-        """
-        The display name.
-        """
-        return pulumi.get(self, "display_name")
-
-    @_builtins.property
-    @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, _builtins.str]:
-        """
-        Free-form tags for this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
-        return pulumi.get(self, "freeform_tags")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter(name="isAcceptedTermsAndConditions")
-    def is_accepted_terms_and_conditions(self) -> _builtins.bool:
-        """
-        Whether or not the terms of use agreement has been accepted for the WebLogic domain.
-        """
-        return pulumi.get(self, "is_accepted_terms_and_conditions")
-
-    @_builtins.property
-    @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> _builtins.str:
+        The currency supported, in the format specified by ISO-4217
         """
-        A message that describes the current state of the WebLogic domain in more detail. For example, it can be used to provide actionable information for a resource in the Failed state.
-        """
-        return pulumi.get(self, "lifecycle_details")
-
-    @_builtins.property
-    @pulumi.getter(name="middlewareType")
-    def middleware_type(self) -> _builtins.str:
-        """
-        A filter to return WebLogic domains based on the type of middleware of the WebLogic domain.
-        """
-        return pulumi.get(self, "middleware_type")
-
-    @_builtins.property
-    @pulumi.getter(name="patchReadinessStatus")
-    def patch_readiness_status(self) -> _builtins.str:
-        """
-        A filter to return domains based on the patch readiness status.
-        """
-        return pulumi.get(self, "patch_readiness_status")
+        return pulumi.get(self, "currency")
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> _builtins.str:
-        """
-        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-        """
-        return pulumi.get(self, "state")
-
-    @_builtins.property
-    @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, _builtins.str]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        return pulumi.get(self, "system_tags")
-
-    @_builtins.property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> _builtins.str:
-        """
-        The date and time the WebLogic domain was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_created")
-
-    @_builtins.property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> _builtins.str:
-        """
-        The date and time the WebLogic domain was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_updated")
-
-    @_builtins.property
-    @pulumi.getter(name="weblogicVersion")
-    def weblogic_version(self) -> _builtins.str:
-        """
-        A filter to return WebLogic domains based on the WebLogic version.
-        """
-        return pulumi.get(self, "weblogic_version")
-
-
-@pulumi.output_type
-class GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationResult(dict):
-    def __init__(__self__, *,
-                 admin_server_control_mode: _builtins.str,
-                 admin_server_start_script_path: _builtins.str,
-                 admin_server_stop_script_path: _builtins.str,
-                 is_patch_enabled: _builtins.bool,
-                 is_rollback_on_failure: _builtins.bool,
-                 managed_server_control_mode: _builtins.str,
-                 managed_server_start_script_path: _builtins.str,
-                 managed_server_stop_script_path: _builtins.str,
-                 servers_shutdown_timeout: _builtins.int):
-        """
-        :param _builtins.str admin_server_control_mode: Whether to manage the admin server using Node Manager or scripts.
-        :param _builtins.str admin_server_start_script_path: Path to admin server start script.
-        :param _builtins.str admin_server_stop_script_path: Path to admin server stop script.
-        :param _builtins.bool is_patch_enabled: Whether or not the WebLogic domain is enabled for patching.
-        :param _builtins.bool is_rollback_on_failure: Whether or not to rollback on failure during patching of WebLogic domain.
-        :param _builtins.str managed_server_control_mode: Whether to manage the managed server using Node Manager or scripts.
-        :param _builtins.str managed_server_start_script_path: Path to managed server start script.
-        :param _builtins.str managed_server_stop_script_path: Path to managed server stop script.
-        :param _builtins.int servers_shutdown_timeout: Servers shutdown timeout.
-        """
-        pulumi.set(__self__, "admin_server_control_mode", admin_server_control_mode)
-        pulumi.set(__self__, "admin_server_start_script_path", admin_server_start_script_path)
-        pulumi.set(__self__, "admin_server_stop_script_path", admin_server_stop_script_path)
-        pulumi.set(__self__, "is_patch_enabled", is_patch_enabled)
-        pulumi.set(__self__, "is_rollback_on_failure", is_rollback_on_failure)
-        pulumi.set(__self__, "managed_server_control_mode", managed_server_control_mode)
-        pulumi.set(__self__, "managed_server_start_script_path", managed_server_start_script_path)
-        pulumi.set(__self__, "managed_server_stop_script_path", managed_server_stop_script_path)
-        pulumi.set(__self__, "servers_shutdown_timeout", servers_shutdown_timeout)
-
-    @_builtins.property
-    @pulumi.getter(name="adminServerControlMode")
-    def admin_server_control_mode(self) -> _builtins.str:
-        """
-        Whether to manage the admin server using Node Manager or scripts.
-        """
-        return pulumi.get(self, "admin_server_control_mode")
-
-    @_builtins.property
-    @pulumi.getter(name="adminServerStartScriptPath")
-    def admin_server_start_script_path(self) -> _builtins.str:
-        """
-        Path to admin server start script.
-        """
-        return pulumi.get(self, "admin_server_start_script_path")
-
-    @_builtins.property
-    @pulumi.getter(name="adminServerStopScriptPath")
-    def admin_server_stop_script_path(self) -> _builtins.str:
-        """
-        Path to admin server stop script.
-        """
-        return pulumi.get(self, "admin_server_stop_script_path")
-
-    @_builtins.property
-    @pulumi.getter(name="isPatchEnabled")
-    def is_patch_enabled(self) -> _builtins.bool:
-        """
-        Whether or not the WebLogic domain is enabled for patching.
-        """
-        return pulumi.get(self, "is_patch_enabled")
-
-    @_builtins.property
-    @pulumi.getter(name="isRollbackOnFailure")
-    def is_rollback_on_failure(self) -> _builtins.bool:
-        """
-        Whether or not to rollback on failure during patching of WebLogic domain.
-        """
-        return pulumi.get(self, "is_rollback_on_failure")
-
-    @_builtins.property
-    @pulumi.getter(name="managedServerControlMode")
-    def managed_server_control_mode(self) -> _builtins.str:
-        """
-        Whether to manage the managed server using Node Manager or scripts.
-        """
-        return pulumi.get(self, "managed_server_control_mode")
-
-    @_builtins.property
-    @pulumi.getter(name="managedServerStartScriptPath")
-    def managed_server_start_script_path(self) -> _builtins.str:
-        """
-        Path to managed server start script.
-        """
-        return pulumi.get(self, "managed_server_start_script_path")
-
-    @_builtins.property
-    @pulumi.getter(name="managedServerStopScriptPath")
-    def managed_server_stop_script_path(self) -> _builtins.str:
-        """
-        Path to managed server stop script.
-        """
-        return pulumi.get(self, "managed_server_stop_script_path")
-
-    @_builtins.property
-    @pulumi.getter(name="serversShutdownTimeout")
-    def servers_shutdown_timeout(self) -> _builtins.int:
+    def rate(self) -> _builtins.float:
         """
-        Servers shutdown timeout.
+        The amount charged for the plan in the specified currency.
         """
-        return pulumi.get(self, "servers_shutdown_timeout")
+        return pulumi.get(self, "rate")
 
 

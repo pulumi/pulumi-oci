@@ -92,6 +92,11 @@ public final class GetAssessmentResult {
      */
     private String migrationId;
     /**
+     * @return Assessment migration scope.
+     * 
+     */
+    private String migrationScope;
+    /**
      * @return A network speed in Megabits per second.
      * 
      */
@@ -239,6 +244,13 @@ public final class GetAssessmentResult {
         return this.migrationId;
     }
     /**
+     * @return Assessment migration scope.
+     * 
+     */
+    public String migrationScope() {
+        return this.migrationScope;
+    }
+    /**
      * @return A network speed in Megabits per second.
      * 
      */
@@ -315,6 +327,7 @@ public final class GetAssessmentResult {
         private List<GetAssessmentIncludeObject> includeObjects;
         private Boolean isCdbSupported;
         private String migrationId;
+        private String migrationScope;
         private String networkSpeedMegabitPerSecond;
         private List<GetAssessmentSourceDatabaseConnection> sourceDatabaseConnections;
         private String state;
@@ -343,6 +356,7 @@ public final class GetAssessmentResult {
     	      this.includeObjects = defaults.includeObjects;
     	      this.isCdbSupported = defaults.isCdbSupported;
     	      this.migrationId = defaults.migrationId;
+    	      this.migrationScope = defaults.migrationScope;
     	      this.networkSpeedMegabitPerSecond = defaults.networkSpeedMegabitPerSecond;
     	      this.sourceDatabaseConnections = defaults.sourceDatabaseConnections;
     	      this.state = defaults.state;
@@ -503,6 +517,14 @@ public final class GetAssessmentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder migrationScope(String migrationScope) {
+            if (migrationScope == null) {
+              throw new MissingRequiredPropertyException("GetAssessmentResult", "migrationScope");
+            }
+            this.migrationScope = migrationScope;
+            return this;
+        }
+        @CustomType.Setter
         public Builder networkSpeedMegabitPerSecond(String networkSpeedMegabitPerSecond) {
             if (networkSpeedMegabitPerSecond == null) {
               throw new MissingRequiredPropertyException("GetAssessmentResult", "networkSpeedMegabitPerSecond");
@@ -584,6 +606,7 @@ public final class GetAssessmentResult {
             _resultValue.includeObjects = includeObjects;
             _resultValue.isCdbSupported = isCdbSupported;
             _resultValue.migrationId = migrationId;
+            _resultValue.migrationScope = migrationScope;
             _resultValue.networkSpeedMegabitPerSecond = networkSpeedMegabitPerSecond;
             _resultValue.sourceDatabaseConnections = sourceDatabaseConnections;
             _resultValue.state = state;

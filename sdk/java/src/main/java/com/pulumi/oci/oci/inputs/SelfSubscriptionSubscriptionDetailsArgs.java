@@ -36,14 +36,14 @@ public final class SelfSubscriptionSubscriptionDetailsArgs extends com.pulumi.re
     }
 
     /**
-     * Sku details for billing subscription.
+     * Billing details associated with the subscription plan and its usage dimensions.
      * 
      */
     @Import(name="billingDetails", required=true)
     private Output<SelfSubscriptionSubscriptionDetailsBillingDetailsArgs> billingDetails;
 
     /**
-     * @return Sku details for billing subscription.
+     * @return Billing details associated with the subscription plan and its usage dimensions.
      * 
      */
     public Output<SelfSubscriptionSubscriptionDetailsBillingDetailsArgs> billingDetails() {
@@ -161,7 +161,7 @@ public final class SelfSubscriptionSubscriptionDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param billingDetails Sku details for billing subscription.
+         * @param billingDetails Billing details associated with the subscription plan and its usage dimensions.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class SelfSubscriptionSubscriptionDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param billingDetails Sku details for billing subscription.
+         * @param billingDetails Billing details associated with the subscription plan and its usage dimensions.
          * 
          * @return builder
          * 

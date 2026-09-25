@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Functions.Outputs
     public sealed class FunctionTraceConfig
     {
         /// <summary>
-        /// (Updatable) Define if tracing is enabled for the resource. 
+        /// (Updatable) Define if tracing is enabled for the resource.
         /// 
         /// 
         /// ** IMPORTANT **

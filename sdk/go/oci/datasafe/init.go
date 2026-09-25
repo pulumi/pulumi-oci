@@ -53,6 +53,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CompareSecurityAssessment{}
 	case "oci:DataSafe/compareUserAssessment:CompareUserAssessment":
 		r = &CompareUserAssessment{}
+	case "oci:DataSafe/cryptoAssessment:CryptoAssessment":
+		r = &CryptoAssessment{}
+	case "oci:DataSafe/cryptoAssessmentManagement:CryptoAssessmentManagement":
+		r = &CryptoAssessmentManagement{}
 	case "oci:DataSafe/dataSafeConfiguration:DataSafeConfiguration":
 		r = &DataSafeConfiguration{}
 	case "oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint":
@@ -248,6 +252,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/compareUserAssessment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/cryptoAssessment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/cryptoAssessmentManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

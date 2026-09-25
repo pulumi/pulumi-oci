@@ -147,29 +147,37 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * (Updatable) Deprecated. The &#39;image&#39; field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image&#39; will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * 
+     * @deprecated
+     * The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
      * 
      */
+    @Deprecated /* The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used. */
     @Import(name="image")
     private @Nullable Output<String> image;
 
     /**
-     * @return (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * @return (Updatable) Deprecated. The &#39;image&#39; field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image&#39; will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * 
+     * @deprecated
+     * The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
      * 
      */
+    @Deprecated /* The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used. */
     public Optional<Output<String>> image() {
         return Optional.ofNullable(this.image);
     }
 
     /**
-     * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * (Updatable) Deprecated. The &#39;image_digest&#39; field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image_digest&#39; will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      * 
      */
     @Import(name="imageDigest")
     private @Nullable Output<String> imageDigest;
 
     /**
-     * @return (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * @return (Updatable) Deprecated. The &#39;image_digest&#39; field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image_digest&#39; will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      * 
      */
     public Optional<Output<String>> imageDigest() {
@@ -237,14 +245,14 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The source details for the Function. The function can be created from various sources.
+     * (Updatable) The source details for creating the Function. The function can be created from various sources.
      * 
      */
     @Import(name="sourceDetails")
     private @Nullable Output<FunctionSourceDetailsArgs> sourceDetails;
 
     /**
-     * @return The source details for the Function. The function can be created from various sources.
+     * @return (Updatable) The source details for creating the Function. The function can be created from various sources.
      * 
      */
     public Optional<Output<FunctionSourceDetailsArgs>> sourceDetails() {
@@ -558,28 +566,36 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param image (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+         * @param image (Updatable) Deprecated. The &#39;image&#39; field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image&#39; will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
+         * 
          */
+        @Deprecated /* The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used. */
         public Builder image(@Nullable Output<String> image) {
             $.image = image;
             return this;
         }
 
         /**
-         * @param image (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+         * @param image (Updatable) Deprecated. The &#39;image&#39; field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image&#39; will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
+         * 
          */
+        @Deprecated /* The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used. */
         public Builder image(String image) {
             return image(Output.of(image));
         }
 
         /**
-         * @param imageDigest (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+         * @param imageDigest (Updatable) Deprecated. The &#39;image_digest&#39; field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image_digest&#39; will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
          * 
          * @return builder
          * 
@@ -590,7 +606,7 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageDigest (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+         * @param imageDigest (Updatable) Deprecated. The &#39;image_digest&#39; field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image_digest&#39; will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
          * 
          * @return builder
          * 
@@ -684,7 +700,7 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceDetails The source details for the Function. The function can be created from various sources.
+         * @param sourceDetails (Updatable) The source details for creating the Function. The function can be created from various sources.
          * 
          * @return builder
          * 
@@ -695,7 +711,7 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceDetails The source details for the Function. The function can be created from various sources.
+         * @param sourceDetails (Updatable) The source details for creating the Function. The function can be created from various sources.
          * 
          * @return builder
          * 

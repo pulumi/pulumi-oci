@@ -82,6 +82,8 @@ export interface GetFunctionResult {
     readonly id: string;
     /**
      * The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     *
+     * @deprecated The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
      */
     readonly image: string;
     /**

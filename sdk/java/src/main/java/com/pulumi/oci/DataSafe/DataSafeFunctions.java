@@ -66,6 +66,30 @@ import com.pulumi.oci.DataSafe.inputs.GetAuditTrailsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAuditTrailsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetCompatibleFormatsForSensitiveTypeArgs;
 import com.pulumi.oci.DataSafe.inputs.GetCompatibleFormatsForSensitiveTypePlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentBackupSetsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentBackupSetsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCbomItemsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCbomItemsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCertificatesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCertificatesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingAnalyticsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingTargetsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingTargetsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentKeysArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentKeysPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentSqlnetParameterArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentSqlnetParameterPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentTdeObjectsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentTdeObjectsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentWalletsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentWalletsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetDataSafeConfigurationArgs;
 import com.pulumi.oci.DataSafe.inputs.GetDataSafeConfigurationPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointArgs;
@@ -348,6 +372,18 @@ import com.pulumi.oci.DataSafe.outputs.GetAuditTrailResult;
 import com.pulumi.oci.DataSafe.outputs.GetAuditTrailsResult;
 import com.pulumi.oci.DataSafe.outputs.GetCompatibleFormatsForDataTypeResult;
 import com.pulumi.oci.DataSafe.outputs.GetCompatibleFormatsForSensitiveTypeResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentBackupSetsResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentCbomItemsResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentCertificatesResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentFindingAnalyticsResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentFindingTargetsResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentFindingsResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentKeysResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentSqlnetParameterResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentTdeObjectsResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentWalletsResult;
+import com.pulumi.oci.DataSafe.outputs.GetCryptoAssessmentsResult;
 import com.pulumi.oci.DataSafe.outputs.GetDataSafeConfigurationResult;
 import com.pulumi.oci.DataSafe.outputs.GetDataSafePrivateEndpointResult;
 import com.pulumi.oci.DataSafe.outputs.GetDataSafePrivateEndpointsResult;
@@ -7963,6 +7999,2926 @@ public final class DataSafeFunctions {
      */
     public static CompletableFuture<GetCompatibleFormatsForSensitiveTypeResult> getCompatibleFormatsForSensitiveTypePlain(GetCompatibleFormatsForSensitiveTypePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", TypeShape.of(GetCompatibleFormatsForSensitiveTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Crypto Assessment resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessment = DataSafeFunctions.getCryptoAssessment(GetCryptoAssessmentArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentResult> getCryptoAssessment(GetCryptoAssessmentArgs args) {
+        return getCryptoAssessment(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Crypto Assessment resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessment = DataSafeFunctions.getCryptoAssessment(GetCryptoAssessmentArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentResult> getCryptoAssessmentPlain(GetCryptoAssessmentPlainArgs args) {
+        return getCryptoAssessmentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Crypto Assessment resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessment = DataSafeFunctions.getCryptoAssessment(GetCryptoAssessmentArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentResult> getCryptoAssessment(GetCryptoAssessmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessment:getCryptoAssessment", TypeShape.of(GetCryptoAssessmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Crypto Assessment resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessment = DataSafeFunctions.getCryptoAssessment(GetCryptoAssessmentArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentResult> getCryptoAssessment(GetCryptoAssessmentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessment:getCryptoAssessment", TypeShape.of(GetCryptoAssessmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Crypto Assessment resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessment = DataSafeFunctions.getCryptoAssessment(GetCryptoAssessmentArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentResult> getCryptoAssessmentPlain(GetCryptoAssessmentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessment:getCryptoAssessment", TypeShape.of(GetCryptoAssessmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Backup Sets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets backup set summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentBackupSetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentBackupSets = DataSafeFunctions.getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentBackupSetAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentBackupSetAssessmentType)
+     *             .backupSetKey(cryptoAssessmentBackupSetBackupSetKey)
+     *             .compartmentIdInSubtree(cryptoAssessmentBackupSetCompartmentIdInSubtree)
+     *             .isEncrypted(cryptoAssessmentBackupSetIsEncrypted)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentBackupSetTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentBackupSetsResult> getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs args) {
+        return getCryptoAssessmentBackupSets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Backup Sets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets backup set summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentBackupSetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentBackupSets = DataSafeFunctions.getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentBackupSetAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentBackupSetAssessmentType)
+     *             .backupSetKey(cryptoAssessmentBackupSetBackupSetKey)
+     *             .compartmentIdInSubtree(cryptoAssessmentBackupSetCompartmentIdInSubtree)
+     *             .isEncrypted(cryptoAssessmentBackupSetIsEncrypted)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentBackupSetTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentBackupSetsResult> getCryptoAssessmentBackupSetsPlain(GetCryptoAssessmentBackupSetsPlainArgs args) {
+        return getCryptoAssessmentBackupSetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Backup Sets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets backup set summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentBackupSetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentBackupSets = DataSafeFunctions.getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentBackupSetAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentBackupSetAssessmentType)
+     *             .backupSetKey(cryptoAssessmentBackupSetBackupSetKey)
+     *             .compartmentIdInSubtree(cryptoAssessmentBackupSetCompartmentIdInSubtree)
+     *             .isEncrypted(cryptoAssessmentBackupSetIsEncrypted)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentBackupSetTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentBackupSetsResult> getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentBackupSets:getCryptoAssessmentBackupSets", TypeShape.of(GetCryptoAssessmentBackupSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Backup Sets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets backup set summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentBackupSetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentBackupSets = DataSafeFunctions.getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentBackupSetAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentBackupSetAssessmentType)
+     *             .backupSetKey(cryptoAssessmentBackupSetBackupSetKey)
+     *             .compartmentIdInSubtree(cryptoAssessmentBackupSetCompartmentIdInSubtree)
+     *             .isEncrypted(cryptoAssessmentBackupSetIsEncrypted)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentBackupSetTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentBackupSetsResult> getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentBackupSets:getCryptoAssessmentBackupSets", TypeShape.of(GetCryptoAssessmentBackupSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Backup Sets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets backup set summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentBackupSetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentBackupSets = DataSafeFunctions.getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentBackupSetAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentBackupSetAssessmentType)
+     *             .backupSetKey(cryptoAssessmentBackupSetBackupSetKey)
+     *             .compartmentIdInSubtree(cryptoAssessmentBackupSetCompartmentIdInSubtree)
+     *             .isEncrypted(cryptoAssessmentBackupSetIsEncrypted)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentBackupSetTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentBackupSetsResult> getCryptoAssessmentBackupSetsPlain(GetCryptoAssessmentBackupSetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessmentBackupSets:getCryptoAssessmentBackupSets", TypeShape.of(GetCryptoAssessmentBackupSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Cbom Items in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists the CBOM items for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCbomItemsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentCbomItems = DataSafeFunctions.getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentCbomItemsResult> getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs args) {
+        return getCryptoAssessmentCbomItems(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Cbom Items in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists the CBOM items for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCbomItemsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentCbomItems = DataSafeFunctions.getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentCbomItemsResult> getCryptoAssessmentCbomItemsPlain(GetCryptoAssessmentCbomItemsPlainArgs args) {
+        return getCryptoAssessmentCbomItemsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Cbom Items in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists the CBOM items for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCbomItemsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentCbomItems = DataSafeFunctions.getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentCbomItemsResult> getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentCbomItems:getCryptoAssessmentCbomItems", TypeShape.of(GetCryptoAssessmentCbomItemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Cbom Items in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists the CBOM items for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCbomItemsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentCbomItems = DataSafeFunctions.getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentCbomItemsResult> getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentCbomItems:getCryptoAssessmentCbomItems", TypeShape.of(GetCryptoAssessmentCbomItemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Cbom Items in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists the CBOM items for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCbomItemsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentCbomItems = DataSafeFunctions.getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentCbomItemsResult> getCryptoAssessmentCbomItemsPlain(GetCryptoAssessmentCbomItemsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessmentCbomItems:getCryptoAssessmentCbomItems", TypeShape.of(GetCryptoAssessmentCbomItemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Certificates in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists certificates discovered across targets in a compartment, including target, wallet location, issuer, subject, validity window, expiry bucket, public key type, and status so expiring or weak certificates can be identified and prioritized.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCertificatesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentCertificates = DataSafeFunctions.getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentCertificateAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentCertificateAssessmentType)
+     *             .certificateTypes(cryptoAssessmentCertificateCertificateType)
+     *             .compartmentIdInSubtree(cryptoAssessmentCertificateCompartmentIdInSubtree)
+     *             .daysToExpiry(cryptoAssessmentCertificateDaysToExpiry)
+     *             .expiryBucket(cryptoAssessmentCertificateExpiryBucket)
+     *             .publicKeyTypes(cryptoAssessmentCertificatePublicKeyType)
+     *             .signatureAlgorithms(cryptoAssessmentCertificateSignatureAlgorithm)
+     *             .statuses(cryptoAssessmentCertificateStatus)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentCertificateTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentCertificatesResult> getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs args) {
+        return getCryptoAssessmentCertificates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Certificates in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists certificates discovered across targets in a compartment, including target, wallet location, issuer, subject, validity window, expiry bucket, public key type, and status so expiring or weak certificates can be identified and prioritized.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCertificatesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentCertificates = DataSafeFunctions.getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentCertificateAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentCertificateAssessmentType)
+     *             .certificateTypes(cryptoAssessmentCertificateCertificateType)
+     *             .compartmentIdInSubtree(cryptoAssessmentCertificateCompartmentIdInSubtree)
+     *             .daysToExpiry(cryptoAssessmentCertificateDaysToExpiry)
+     *             .expiryBucket(cryptoAssessmentCertificateExpiryBucket)
+     *             .publicKeyTypes(cryptoAssessmentCertificatePublicKeyType)
+     *             .signatureAlgorithms(cryptoAssessmentCertificateSignatureAlgorithm)
+     *             .statuses(cryptoAssessmentCertificateStatus)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentCertificateTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentCertificatesResult> getCryptoAssessmentCertificatesPlain(GetCryptoAssessmentCertificatesPlainArgs args) {
+        return getCryptoAssessmentCertificatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Certificates in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists certificates discovered across targets in a compartment, including target, wallet location, issuer, subject, validity window, expiry bucket, public key type, and status so expiring or weak certificates can be identified and prioritized.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCertificatesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentCertificates = DataSafeFunctions.getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentCertificateAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentCertificateAssessmentType)
+     *             .certificateTypes(cryptoAssessmentCertificateCertificateType)
+     *             .compartmentIdInSubtree(cryptoAssessmentCertificateCompartmentIdInSubtree)
+     *             .daysToExpiry(cryptoAssessmentCertificateDaysToExpiry)
+     *             .expiryBucket(cryptoAssessmentCertificateExpiryBucket)
+     *             .publicKeyTypes(cryptoAssessmentCertificatePublicKeyType)
+     *             .signatureAlgorithms(cryptoAssessmentCertificateSignatureAlgorithm)
+     *             .statuses(cryptoAssessmentCertificateStatus)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentCertificateTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentCertificatesResult> getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentCertificates:getCryptoAssessmentCertificates", TypeShape.of(GetCryptoAssessmentCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Certificates in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists certificates discovered across targets in a compartment, including target, wallet location, issuer, subject, validity window, expiry bucket, public key type, and status so expiring or weak certificates can be identified and prioritized.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCertificatesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentCertificates = DataSafeFunctions.getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentCertificateAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentCertificateAssessmentType)
+     *             .certificateTypes(cryptoAssessmentCertificateCertificateType)
+     *             .compartmentIdInSubtree(cryptoAssessmentCertificateCompartmentIdInSubtree)
+     *             .daysToExpiry(cryptoAssessmentCertificateDaysToExpiry)
+     *             .expiryBucket(cryptoAssessmentCertificateExpiryBucket)
+     *             .publicKeyTypes(cryptoAssessmentCertificatePublicKeyType)
+     *             .signatureAlgorithms(cryptoAssessmentCertificateSignatureAlgorithm)
+     *             .statuses(cryptoAssessmentCertificateStatus)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentCertificateTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentCertificatesResult> getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentCertificates:getCryptoAssessmentCertificates", TypeShape.of(GetCryptoAssessmentCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Certificates in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists certificates discovered across targets in a compartment, including target, wallet location, issuer, subject, validity window, expiry bucket, public key type, and status so expiring or weak certificates can be identified and prioritized.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentCertificatesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentCertificates = DataSafeFunctions.getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentCertificateAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentCertificateAssessmentType)
+     *             .certificateTypes(cryptoAssessmentCertificateCertificateType)
+     *             .compartmentIdInSubtree(cryptoAssessmentCertificateCompartmentIdInSubtree)
+     *             .daysToExpiry(cryptoAssessmentCertificateDaysToExpiry)
+     *             .expiryBucket(cryptoAssessmentCertificateExpiryBucket)
+     *             .publicKeyTypes(cryptoAssessmentCertificatePublicKeyType)
+     *             .signatureAlgorithms(cryptoAssessmentCertificateSignatureAlgorithm)
+     *             .statuses(cryptoAssessmentCertificateStatus)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentCertificateTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentCertificatesResult> getCryptoAssessmentCertificatesPlain(GetCryptoAssessmentCertificatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessmentCertificates:getCryptoAssessmentCertificates", TypeShape.of(GetCryptoAssessmentCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists findings in a compartment with the number of affected targets.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindingAnalytics = DataSafeFunctions.getCryptoAssessmentFindingAnalytics(GetCryptoAssessmentFindingAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentFindingAnalyticAccessLevel)
+     *             .category(cryptoAssessmentFindingAnalyticCategory)
+     *             .compartmentIdInSubtree(cryptoAssessmentFindingAnalyticCompartmentIdInSubtree)
+     *             .findingKeys(cryptoAssessmentFindingAnalyticFindingKey)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingAnalyticIsQuantumReadinessCheck)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentFindingAnalyticsResult> getCryptoAssessmentFindingAnalytics(GetCryptoAssessmentFindingAnalyticsArgs args) {
+        return getCryptoAssessmentFindingAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists findings in a compartment with the number of affected targets.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindingAnalytics = DataSafeFunctions.getCryptoAssessmentFindingAnalytics(GetCryptoAssessmentFindingAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentFindingAnalyticAccessLevel)
+     *             .category(cryptoAssessmentFindingAnalyticCategory)
+     *             .compartmentIdInSubtree(cryptoAssessmentFindingAnalyticCompartmentIdInSubtree)
+     *             .findingKeys(cryptoAssessmentFindingAnalyticFindingKey)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingAnalyticIsQuantumReadinessCheck)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentFindingAnalyticsResult> getCryptoAssessmentFindingAnalyticsPlain(GetCryptoAssessmentFindingAnalyticsPlainArgs args) {
+        return getCryptoAssessmentFindingAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists findings in a compartment with the number of affected targets.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindingAnalytics = DataSafeFunctions.getCryptoAssessmentFindingAnalytics(GetCryptoAssessmentFindingAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentFindingAnalyticAccessLevel)
+     *             .category(cryptoAssessmentFindingAnalyticCategory)
+     *             .compartmentIdInSubtree(cryptoAssessmentFindingAnalyticCompartmentIdInSubtree)
+     *             .findingKeys(cryptoAssessmentFindingAnalyticFindingKey)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingAnalyticIsQuantumReadinessCheck)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentFindingAnalyticsResult> getCryptoAssessmentFindingAnalytics(GetCryptoAssessmentFindingAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentFindingAnalytics:getCryptoAssessmentFindingAnalytics", TypeShape.of(GetCryptoAssessmentFindingAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists findings in a compartment with the number of affected targets.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindingAnalytics = DataSafeFunctions.getCryptoAssessmentFindingAnalytics(GetCryptoAssessmentFindingAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentFindingAnalyticAccessLevel)
+     *             .category(cryptoAssessmentFindingAnalyticCategory)
+     *             .compartmentIdInSubtree(cryptoAssessmentFindingAnalyticCompartmentIdInSubtree)
+     *             .findingKeys(cryptoAssessmentFindingAnalyticFindingKey)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingAnalyticIsQuantumReadinessCheck)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentFindingAnalyticsResult> getCryptoAssessmentFindingAnalytics(GetCryptoAssessmentFindingAnalyticsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentFindingAnalytics:getCryptoAssessmentFindingAnalytics", TypeShape.of(GetCryptoAssessmentFindingAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists findings in a compartment with the number of affected targets.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindingAnalytics = DataSafeFunctions.getCryptoAssessmentFindingAnalytics(GetCryptoAssessmentFindingAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentFindingAnalyticAccessLevel)
+     *             .category(cryptoAssessmentFindingAnalyticCategory)
+     *             .compartmentIdInSubtree(cryptoAssessmentFindingAnalyticCompartmentIdInSubtree)
+     *             .findingKeys(cryptoAssessmentFindingAnalyticFindingKey)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingAnalyticIsQuantumReadinessCheck)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentFindingAnalyticsResult> getCryptoAssessmentFindingAnalyticsPlain(GetCryptoAssessmentFindingAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessmentFindingAnalytics:getCryptoAssessmentFindingAnalytics", TypeShape.of(GetCryptoAssessmentFindingAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Finding Targets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * For a selected finding, lists targets where it occurs in assessments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingTargetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindingTargets = DataSafeFunctions.getCryptoAssessmentFindingTargets(GetCryptoAssessmentFindingTargetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .findingKeys(cryptoAssessmentFindingTargetFindingKey)
+     *             .accessLevel(cryptoAssessmentFindingTargetAccessLevel)
+     *             .assessmentType(cryptoAssessmentFindingTargetAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentFindingTargetCompartmentIdInSubtree)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingTargetIsQuantumReadinessCheck)
+     *             .status(cryptoAssessmentFindingTargetStatus)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentFindingTargetTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentFindingTargetsResult> getCryptoAssessmentFindingTargets(GetCryptoAssessmentFindingTargetsArgs args) {
+        return getCryptoAssessmentFindingTargets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Finding Targets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * For a selected finding, lists targets where it occurs in assessments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingTargetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindingTargets = DataSafeFunctions.getCryptoAssessmentFindingTargets(GetCryptoAssessmentFindingTargetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .findingKeys(cryptoAssessmentFindingTargetFindingKey)
+     *             .accessLevel(cryptoAssessmentFindingTargetAccessLevel)
+     *             .assessmentType(cryptoAssessmentFindingTargetAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentFindingTargetCompartmentIdInSubtree)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingTargetIsQuantumReadinessCheck)
+     *             .status(cryptoAssessmentFindingTargetStatus)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentFindingTargetTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentFindingTargetsResult> getCryptoAssessmentFindingTargetsPlain(GetCryptoAssessmentFindingTargetsPlainArgs args) {
+        return getCryptoAssessmentFindingTargetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Finding Targets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * For a selected finding, lists targets where it occurs in assessments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingTargetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindingTargets = DataSafeFunctions.getCryptoAssessmentFindingTargets(GetCryptoAssessmentFindingTargetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .findingKeys(cryptoAssessmentFindingTargetFindingKey)
+     *             .accessLevel(cryptoAssessmentFindingTargetAccessLevel)
+     *             .assessmentType(cryptoAssessmentFindingTargetAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentFindingTargetCompartmentIdInSubtree)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingTargetIsQuantumReadinessCheck)
+     *             .status(cryptoAssessmentFindingTargetStatus)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentFindingTargetTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentFindingTargetsResult> getCryptoAssessmentFindingTargets(GetCryptoAssessmentFindingTargetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentFindingTargets:getCryptoAssessmentFindingTargets", TypeShape.of(GetCryptoAssessmentFindingTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Finding Targets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * For a selected finding, lists targets where it occurs in assessments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingTargetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindingTargets = DataSafeFunctions.getCryptoAssessmentFindingTargets(GetCryptoAssessmentFindingTargetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .findingKeys(cryptoAssessmentFindingTargetFindingKey)
+     *             .accessLevel(cryptoAssessmentFindingTargetAccessLevel)
+     *             .assessmentType(cryptoAssessmentFindingTargetAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentFindingTargetCompartmentIdInSubtree)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingTargetIsQuantumReadinessCheck)
+     *             .status(cryptoAssessmentFindingTargetStatus)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentFindingTargetTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentFindingTargetsResult> getCryptoAssessmentFindingTargets(GetCryptoAssessmentFindingTargetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentFindingTargets:getCryptoAssessmentFindingTargets", TypeShape.of(GetCryptoAssessmentFindingTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Finding Targets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * For a selected finding, lists targets where it occurs in assessments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingTargetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindingTargets = DataSafeFunctions.getCryptoAssessmentFindingTargets(GetCryptoAssessmentFindingTargetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .findingKeys(cryptoAssessmentFindingTargetFindingKey)
+     *             .accessLevel(cryptoAssessmentFindingTargetAccessLevel)
+     *             .assessmentType(cryptoAssessmentFindingTargetAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentFindingTargetCompartmentIdInSubtree)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingTargetIsQuantumReadinessCheck)
+     *             .status(cryptoAssessmentFindingTargetStatus)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentFindingTargetTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentFindingTargetsResult> getCryptoAssessmentFindingTargetsPlain(GetCryptoAssessmentFindingTargetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessmentFindingTargets:getCryptoAssessmentFindingTargets", TypeShape.of(GetCryptoAssessmentFindingTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists crypto deviation findings for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindings = DataSafeFunctions.getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .category(cryptoAssessmentFindingCategory)
+     *             .findingKey(cryptoAssessmentFindingFindingKey)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingIsQuantumReadinessCheck)
+     *             .status(cryptoAssessmentFindingStatus)
+     *             .title(cryptoAssessmentFindingTitle)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentFindingsResult> getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs args) {
+        return getCryptoAssessmentFindings(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists crypto deviation findings for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindings = DataSafeFunctions.getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .category(cryptoAssessmentFindingCategory)
+     *             .findingKey(cryptoAssessmentFindingFindingKey)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingIsQuantumReadinessCheck)
+     *             .status(cryptoAssessmentFindingStatus)
+     *             .title(cryptoAssessmentFindingTitle)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentFindingsResult> getCryptoAssessmentFindingsPlain(GetCryptoAssessmentFindingsPlainArgs args) {
+        return getCryptoAssessmentFindingsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists crypto deviation findings for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindings = DataSafeFunctions.getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .category(cryptoAssessmentFindingCategory)
+     *             .findingKey(cryptoAssessmentFindingFindingKey)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingIsQuantumReadinessCheck)
+     *             .status(cryptoAssessmentFindingStatus)
+     *             .title(cryptoAssessmentFindingTitle)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentFindingsResult> getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentFindings:getCryptoAssessmentFindings", TypeShape.of(GetCryptoAssessmentFindingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists crypto deviation findings for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindings = DataSafeFunctions.getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .category(cryptoAssessmentFindingCategory)
+     *             .findingKey(cryptoAssessmentFindingFindingKey)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingIsQuantumReadinessCheck)
+     *             .status(cryptoAssessmentFindingStatus)
+     *             .title(cryptoAssessmentFindingTitle)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentFindingsResult> getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentFindings:getCryptoAssessmentFindings", TypeShape.of(GetCryptoAssessmentFindingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists crypto deviation findings for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentFindingsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentFindings = DataSafeFunctions.getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .category(cryptoAssessmentFindingCategory)
+     *             .findingKey(cryptoAssessmentFindingFindingKey)
+     *             .isQuantumReadinessCheck(cryptoAssessmentFindingIsQuantumReadinessCheck)
+     *             .status(cryptoAssessmentFindingStatus)
+     *             .title(cryptoAssessmentFindingTitle)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentFindingsResult> getCryptoAssessmentFindingsPlain(GetCryptoAssessmentFindingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessmentFindings:getCryptoAssessmentFindings", TypeShape.of(GetCryptoAssessmentFindingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Keys in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a paginated list of cryptographic keys across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentKeysArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentKeys = DataSafeFunctions.getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentKeyAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentKeyAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentKeyCompartmentIdInSubtree)
+     *             .feature(cryptoAssessmentKeyFeature)
+     *             .keyId(testKey.id())
+     *             .keyManagerTypes(cryptoAssessmentKeyKeyManagerType)
+     *             .keyType(cryptoAssessmentKeyKeyType)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentKeyTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentKeysResult> getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs args) {
+        return getCryptoAssessmentKeys(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Keys in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a paginated list of cryptographic keys across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentKeysArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentKeys = DataSafeFunctions.getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentKeyAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentKeyAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentKeyCompartmentIdInSubtree)
+     *             .feature(cryptoAssessmentKeyFeature)
+     *             .keyId(testKey.id())
+     *             .keyManagerTypes(cryptoAssessmentKeyKeyManagerType)
+     *             .keyType(cryptoAssessmentKeyKeyType)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentKeyTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentKeysResult> getCryptoAssessmentKeysPlain(GetCryptoAssessmentKeysPlainArgs args) {
+        return getCryptoAssessmentKeysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Keys in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a paginated list of cryptographic keys across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentKeysArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentKeys = DataSafeFunctions.getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentKeyAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentKeyAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentKeyCompartmentIdInSubtree)
+     *             .feature(cryptoAssessmentKeyFeature)
+     *             .keyId(testKey.id())
+     *             .keyManagerTypes(cryptoAssessmentKeyKeyManagerType)
+     *             .keyType(cryptoAssessmentKeyKeyType)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentKeyTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentKeysResult> getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentKeys:getCryptoAssessmentKeys", TypeShape.of(GetCryptoAssessmentKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Keys in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a paginated list of cryptographic keys across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentKeysArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentKeys = DataSafeFunctions.getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentKeyAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentKeyAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentKeyCompartmentIdInSubtree)
+     *             .feature(cryptoAssessmentKeyFeature)
+     *             .keyId(testKey.id())
+     *             .keyManagerTypes(cryptoAssessmentKeyKeyManagerType)
+     *             .keyType(cryptoAssessmentKeyKeyType)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentKeyTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentKeysResult> getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentKeys:getCryptoAssessmentKeys", TypeShape.of(GetCryptoAssessmentKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Keys in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a paginated list of cryptographic keys across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentKeysArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentKeys = DataSafeFunctions.getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentKeyAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentKeyAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentKeyCompartmentIdInSubtree)
+     *             .feature(cryptoAssessmentKeyFeature)
+     *             .keyId(testKey.id())
+     *             .keyManagerTypes(cryptoAssessmentKeyKeyManagerType)
+     *             .keyType(cryptoAssessmentKeyKeyType)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentKeyTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentKeysResult> getCryptoAssessmentKeysPlain(GetCryptoAssessmentKeysPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessmentKeys:getCryptoAssessmentKeys", TypeShape.of(GetCryptoAssessmentKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Crypto Assessment Sqlnet Parameter resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets SQLNET.ORA parameter values and quantum-readiness evaluation for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentSqlnetParameterArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentSqlnetParameter = DataSafeFunctions.getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .parameter(cryptoAssessmentSqlnetParameterParameter)
+     *             .quantumReadiness(cryptoAssessmentSqlnetParameterQuantumReadiness)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentSqlnetParameterResult> getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs args) {
+        return getCryptoAssessmentSqlnetParameter(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Crypto Assessment Sqlnet Parameter resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets SQLNET.ORA parameter values and quantum-readiness evaluation for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentSqlnetParameterArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentSqlnetParameter = DataSafeFunctions.getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .parameter(cryptoAssessmentSqlnetParameterParameter)
+     *             .quantumReadiness(cryptoAssessmentSqlnetParameterQuantumReadiness)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentSqlnetParameterResult> getCryptoAssessmentSqlnetParameterPlain(GetCryptoAssessmentSqlnetParameterPlainArgs args) {
+        return getCryptoAssessmentSqlnetParameterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Crypto Assessment Sqlnet Parameter resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets SQLNET.ORA parameter values and quantum-readiness evaluation for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentSqlnetParameterArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentSqlnetParameter = DataSafeFunctions.getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .parameter(cryptoAssessmentSqlnetParameterParameter)
+     *             .quantumReadiness(cryptoAssessmentSqlnetParameterQuantumReadiness)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentSqlnetParameterResult> getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentSqlnetParameter:getCryptoAssessmentSqlnetParameter", TypeShape.of(GetCryptoAssessmentSqlnetParameterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Crypto Assessment Sqlnet Parameter resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets SQLNET.ORA parameter values and quantum-readiness evaluation for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentSqlnetParameterArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentSqlnetParameter = DataSafeFunctions.getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .parameter(cryptoAssessmentSqlnetParameterParameter)
+     *             .quantumReadiness(cryptoAssessmentSqlnetParameterQuantumReadiness)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentSqlnetParameterResult> getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentSqlnetParameter:getCryptoAssessmentSqlnetParameter", TypeShape.of(GetCryptoAssessmentSqlnetParameterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Crypto Assessment Sqlnet Parameter resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets SQLNET.ORA parameter values and quantum-readiness evaluation for the specified crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentSqlnetParameterArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentSqlnetParameter = DataSafeFunctions.getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs.builder()
+     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .parameter(cryptoAssessmentSqlnetParameterParameter)
+     *             .quantumReadiness(cryptoAssessmentSqlnetParameterQuantumReadiness)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentSqlnetParameterResult> getCryptoAssessmentSqlnetParameterPlain(GetCryptoAssessmentSqlnetParameterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessmentSqlnetParameter:getCryptoAssessmentSqlnetParameter", TypeShape.of(GetCryptoAssessmentSqlnetParameterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Tde Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists TDE object encryption summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment, and objectType to return either tablespace-level or column-level TDE observations.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentTdeObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentTdeObjects = DataSafeFunctions.getCryptoAssessmentTdeObjects(GetCryptoAssessmentTdeObjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .objectType(cryptoAssessmentTdeObjectObjectType)
+     *             .accessLevel(cryptoAssessmentTdeObjectAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentTdeObjectAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentTdeObjectCompartmentIdInSubtree)
+     *             .encryptionObserveds(cryptoAssessmentTdeObjectEncryptionObserved)
+     *             .encryptionStatus(cryptoAssessmentTdeObjectEncryptionStatus)
+     *             .quantumReadiness(cryptoAssessmentTdeObjectQuantumReadiness)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentTdeObjectTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentTdeObjectsResult> getCryptoAssessmentTdeObjects(GetCryptoAssessmentTdeObjectsArgs args) {
+        return getCryptoAssessmentTdeObjects(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Tde Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists TDE object encryption summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment, and objectType to return either tablespace-level or column-level TDE observations.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentTdeObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentTdeObjects = DataSafeFunctions.getCryptoAssessmentTdeObjects(GetCryptoAssessmentTdeObjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .objectType(cryptoAssessmentTdeObjectObjectType)
+     *             .accessLevel(cryptoAssessmentTdeObjectAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentTdeObjectAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentTdeObjectCompartmentIdInSubtree)
+     *             .encryptionObserveds(cryptoAssessmentTdeObjectEncryptionObserved)
+     *             .encryptionStatus(cryptoAssessmentTdeObjectEncryptionStatus)
+     *             .quantumReadiness(cryptoAssessmentTdeObjectQuantumReadiness)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentTdeObjectTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentTdeObjectsResult> getCryptoAssessmentTdeObjectsPlain(GetCryptoAssessmentTdeObjectsPlainArgs args) {
+        return getCryptoAssessmentTdeObjectsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Tde Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists TDE object encryption summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment, and objectType to return either tablespace-level or column-level TDE observations.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentTdeObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentTdeObjects = DataSafeFunctions.getCryptoAssessmentTdeObjects(GetCryptoAssessmentTdeObjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .objectType(cryptoAssessmentTdeObjectObjectType)
+     *             .accessLevel(cryptoAssessmentTdeObjectAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentTdeObjectAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentTdeObjectCompartmentIdInSubtree)
+     *             .encryptionObserveds(cryptoAssessmentTdeObjectEncryptionObserved)
+     *             .encryptionStatus(cryptoAssessmentTdeObjectEncryptionStatus)
+     *             .quantumReadiness(cryptoAssessmentTdeObjectQuantumReadiness)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentTdeObjectTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentTdeObjectsResult> getCryptoAssessmentTdeObjects(GetCryptoAssessmentTdeObjectsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentTdeObjects:getCryptoAssessmentTdeObjects", TypeShape.of(GetCryptoAssessmentTdeObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Tde Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists TDE object encryption summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment, and objectType to return either tablespace-level or column-level TDE observations.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentTdeObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentTdeObjects = DataSafeFunctions.getCryptoAssessmentTdeObjects(GetCryptoAssessmentTdeObjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .objectType(cryptoAssessmentTdeObjectObjectType)
+     *             .accessLevel(cryptoAssessmentTdeObjectAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentTdeObjectAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentTdeObjectCompartmentIdInSubtree)
+     *             .encryptionObserveds(cryptoAssessmentTdeObjectEncryptionObserved)
+     *             .encryptionStatus(cryptoAssessmentTdeObjectEncryptionStatus)
+     *             .quantumReadiness(cryptoAssessmentTdeObjectQuantumReadiness)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentTdeObjectTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentTdeObjectsResult> getCryptoAssessmentTdeObjects(GetCryptoAssessmentTdeObjectsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentTdeObjects:getCryptoAssessmentTdeObjects", TypeShape.of(GetCryptoAssessmentTdeObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Tde Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists TDE object encryption summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment, and objectType to return either tablespace-level or column-level TDE observations.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentTdeObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentTdeObjects = DataSafeFunctions.getCryptoAssessmentTdeObjects(GetCryptoAssessmentTdeObjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .objectType(cryptoAssessmentTdeObjectObjectType)
+     *             .accessLevel(cryptoAssessmentTdeObjectAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentTdeObjectAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentTdeObjectCompartmentIdInSubtree)
+     *             .encryptionObserveds(cryptoAssessmentTdeObjectEncryptionObserved)
+     *             .encryptionStatus(cryptoAssessmentTdeObjectEncryptionStatus)
+     *             .quantumReadiness(cryptoAssessmentTdeObjectQuantumReadiness)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentTdeObjectTargetIds)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentTdeObjectsResult> getCryptoAssessmentTdeObjectsPlain(GetCryptoAssessmentTdeObjectsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessmentTdeObjects:getCryptoAssessmentTdeObjects", TypeShape.of(GetCryptoAssessmentTdeObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Wallets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets wallet details across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentWalletsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentWallets = DataSafeFunctions.getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentWalletAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentWalletAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentWalletCompartmentIdInSubtree)
+     *             .feature(cryptoAssessmentWalletFeature)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentWalletTargetIds)
+     *             .walletEncryptionAlgorithms(cryptoAssessmentWalletWalletEncryptionAlgorithm)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentWalletsResult> getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs args) {
+        return getCryptoAssessmentWallets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Wallets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets wallet details across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentWalletsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentWallets = DataSafeFunctions.getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentWalletAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentWalletAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentWalletCompartmentIdInSubtree)
+     *             .feature(cryptoAssessmentWalletFeature)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentWalletTargetIds)
+     *             .walletEncryptionAlgorithms(cryptoAssessmentWalletWalletEncryptionAlgorithm)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentWalletsResult> getCryptoAssessmentWalletsPlain(GetCryptoAssessmentWalletsPlainArgs args) {
+        return getCryptoAssessmentWalletsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Wallets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets wallet details across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentWalletsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentWallets = DataSafeFunctions.getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentWalletAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentWalletAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentWalletCompartmentIdInSubtree)
+     *             .feature(cryptoAssessmentWalletFeature)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentWalletTargetIds)
+     *             .walletEncryptionAlgorithms(cryptoAssessmentWalletWalletEncryptionAlgorithm)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentWalletsResult> getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentWallets:getCryptoAssessmentWallets", TypeShape.of(GetCryptoAssessmentWalletsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Wallets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets wallet details across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentWalletsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentWallets = DataSafeFunctions.getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentWalletAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentWalletAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentWalletCompartmentIdInSubtree)
+     *             .feature(cryptoAssessmentWalletFeature)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentWalletTargetIds)
+     *             .walletEncryptionAlgorithms(cryptoAssessmentWalletWalletEncryptionAlgorithm)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentWalletsResult> getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessmentWallets:getCryptoAssessmentWallets", TypeShape.of(GetCryptoAssessmentWalletsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessment Wallets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets wallet details across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentWalletsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessmentWallets = DataSafeFunctions.getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentWalletAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .assessmentType(cryptoAssessmentWalletAssessmentType)
+     *             .compartmentIdInSubtree(cryptoAssessmentWalletCompartmentIdInSubtree)
+     *             .feature(cryptoAssessmentWalletFeature)
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentWalletTargetIds)
+     *             .walletEncryptionAlgorithms(cryptoAssessmentWalletWalletEncryptionAlgorithm)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentWalletsResult> getCryptoAssessmentWalletsPlain(GetCryptoAssessmentWalletsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessmentWallets:getCryptoAssessmentWallets", TypeShape.of(GetCryptoAssessmentWalletsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessments in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of crypto assessments with filtering and pagination support.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessments = DataSafeFunctions.getCryptoAssessments(GetCryptoAssessmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .compartmentIdInSubtree(cryptoAssessmentCompartmentIdInSubtree)
+     *             .displayName(cryptoAssessmentDisplayName)
+     *             .isAssessmentScheduled(cryptoAssessmentIsAssessmentScheduled)
+     *             .postureCategories(cryptoAssessmentPostureCategory)
+     *             .state(cryptoAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentTargetIds)
+     *             .targetType(cryptoAssessmentTargetType)
+     *             .type(cryptoAssessmentType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentsResult> getCryptoAssessments(GetCryptoAssessmentsArgs args) {
+        return getCryptoAssessments(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessments in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of crypto assessments with filtering and pagination support.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessments = DataSafeFunctions.getCryptoAssessments(GetCryptoAssessmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .compartmentIdInSubtree(cryptoAssessmentCompartmentIdInSubtree)
+     *             .displayName(cryptoAssessmentDisplayName)
+     *             .isAssessmentScheduled(cryptoAssessmentIsAssessmentScheduled)
+     *             .postureCategories(cryptoAssessmentPostureCategory)
+     *             .state(cryptoAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentTargetIds)
+     *             .targetType(cryptoAssessmentTargetType)
+     *             .type(cryptoAssessmentType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentsResult> getCryptoAssessmentsPlain(GetCryptoAssessmentsPlainArgs args) {
+        return getCryptoAssessmentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Crypto Assessments in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of crypto assessments with filtering and pagination support.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessments = DataSafeFunctions.getCryptoAssessments(GetCryptoAssessmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .compartmentIdInSubtree(cryptoAssessmentCompartmentIdInSubtree)
+     *             .displayName(cryptoAssessmentDisplayName)
+     *             .isAssessmentScheduled(cryptoAssessmentIsAssessmentScheduled)
+     *             .postureCategories(cryptoAssessmentPostureCategory)
+     *             .state(cryptoAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentTargetIds)
+     *             .targetType(cryptoAssessmentTargetType)
+     *             .type(cryptoAssessmentType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentsResult> getCryptoAssessments(GetCryptoAssessmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessments:getCryptoAssessments", TypeShape.of(GetCryptoAssessmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessments in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of crypto assessments with filtering and pagination support.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessments = DataSafeFunctions.getCryptoAssessments(GetCryptoAssessmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .compartmentIdInSubtree(cryptoAssessmentCompartmentIdInSubtree)
+     *             .displayName(cryptoAssessmentDisplayName)
+     *             .isAssessmentScheduled(cryptoAssessmentIsAssessmentScheduled)
+     *             .postureCategories(cryptoAssessmentPostureCategory)
+     *             .state(cryptoAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentTargetIds)
+     *             .targetType(cryptoAssessmentTargetType)
+     *             .type(cryptoAssessmentType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCryptoAssessmentsResult> getCryptoAssessments(GetCryptoAssessmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getCryptoAssessments:getCryptoAssessments", TypeShape.of(GetCryptoAssessmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Crypto Assessments in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of crypto assessments with filtering and pagination support.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCryptoAssessmentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCryptoAssessments = DataSafeFunctions.getCryptoAssessments(GetCryptoAssessmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(cryptoAssessmentAccessLevel)
+     *             .assessmentId(testAssessment.id())
+     *             .compartmentIdInSubtree(cryptoAssessmentCompartmentIdInSubtree)
+     *             .displayName(cryptoAssessmentDisplayName)
+     *             .isAssessmentScheduled(cryptoAssessmentIsAssessmentScheduled)
+     *             .postureCategories(cryptoAssessmentPostureCategory)
+     *             .state(cryptoAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .targetIds(cryptoAssessmentTargetIds)
+     *             .targetType(cryptoAssessmentTargetType)
+     *             .type(cryptoAssessmentType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCryptoAssessmentsResult> getCryptoAssessmentsPlain(GetCryptoAssessmentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getCryptoAssessments:getCryptoAssessments", TypeShape.of(GetCryptoAssessmentsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.

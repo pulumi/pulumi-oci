@@ -577,20 +577,22 @@ class SelfSubscription(pulumi.CustomResource):
             product_id=test_product["id"],
             seller_id=test_seller["id"],
             subscription_details={
-                "billing_details": {
+                "billing_details": [{
+                    "billingModel": subscription_subscription_details_billing_details_billing_model,
                     "meters": [{
                         "name": subscription_subscription_details_billing_details_meters_name,
-                        "rate_allocation": subscription_subscription_details_billing_details_meters_rate_allocation,
-                        "extended_metadatas": [{
+                        "rateAllocation": subscription_subscription_details_billing_details_meters_rate_allocation,
+                        "extendedMetadatas": [{
                             "key": subscription_subscription_details_billing_details_meters_extended_metadata_key,
                             "value": subscription_subscription_details_billing_details_meters_extended_metadata_value,
                         }],
                     }],
-                    "metric_type": subscription_subscription_details_billing_details_metric_type,
-                    "rate_allocation": subscription_subscription_details_billing_details_rate_allocation,
+                    "metricType": subscription_subscription_details_billing_details_metric_type,
+                    "pricingPlanKey": subscription_subscription_details_billing_details_pricing_plan_key,
+                    "rateAllocation": subscription_subscription_details_billing_details_rate_allocation,
                     "sku": subscription_subscription_details_billing_details_sku,
-                    "has_gov_sku": subscription_subscription_details_billing_details_has_gov_sku == "true",
-                },
+                    "hasGovSku": subscription_subscription_details_billing_details_has_gov_sku,
+                }],
                 "partner_registration_url": subscription_subscription_details_partner_registration_url,
                 "pricing_plan": {
                     "billing_frequency": subscription_subscription_details_pricing_plan_billing_frequency,
@@ -599,6 +601,18 @@ class SelfSubscription(pulumi.CustomResource):
                     "rates": [{
                         "currency": subscription_subscription_details_pricing_plan_rates_currency,
                         "rate": subscription_subscription_details_pricing_plan_rates_rate,
+                    }],
+                    "dimensions": [{
+                        "dimension_billing_frequency": subscription_subscription_details_pricing_plan_dimensions_dimension_billing_frequency,
+                        "dimension_description": subscription_subscription_details_pricing_plan_dimensions_dimension_description,
+                        "dimension_key": subscription_subscription_details_pricing_plan_dimensions_dimension_key,
+                        "dimension_name": subscription_subscription_details_pricing_plan_dimensions_dimension_name,
+                        "metric_type": subscription_subscription_details_pricing_plan_dimensions_metric_type,
+                        "rates": [{
+                            "currency": subscription_subscription_details_pricing_plan_dimensions_rates_currency,
+                            "rate": subscription_subscription_details_pricing_plan_dimensions_rates_rate,
+                        }],
+                        "included_quantity": subscription_subscription_details_pricing_plan_dimensions_included_quantity,
                     }],
                     "plan_description": subscription_subscription_details_pricing_plan_plan_description,
                     "plan_duration": subscription_subscription_details_pricing_plan_plan_duration,
@@ -676,20 +690,22 @@ class SelfSubscription(pulumi.CustomResource):
             product_id=test_product["id"],
             seller_id=test_seller["id"],
             subscription_details={
-                "billing_details": {
+                "billing_details": [{
+                    "billingModel": subscription_subscription_details_billing_details_billing_model,
                     "meters": [{
                         "name": subscription_subscription_details_billing_details_meters_name,
-                        "rate_allocation": subscription_subscription_details_billing_details_meters_rate_allocation,
-                        "extended_metadatas": [{
+                        "rateAllocation": subscription_subscription_details_billing_details_meters_rate_allocation,
+                        "extendedMetadatas": [{
                             "key": subscription_subscription_details_billing_details_meters_extended_metadata_key,
                             "value": subscription_subscription_details_billing_details_meters_extended_metadata_value,
                         }],
                     }],
-                    "metric_type": subscription_subscription_details_billing_details_metric_type,
-                    "rate_allocation": subscription_subscription_details_billing_details_rate_allocation,
+                    "metricType": subscription_subscription_details_billing_details_metric_type,
+                    "pricingPlanKey": subscription_subscription_details_billing_details_pricing_plan_key,
+                    "rateAllocation": subscription_subscription_details_billing_details_rate_allocation,
                     "sku": subscription_subscription_details_billing_details_sku,
-                    "has_gov_sku": subscription_subscription_details_billing_details_has_gov_sku == "true",
-                },
+                    "hasGovSku": subscription_subscription_details_billing_details_has_gov_sku,
+                }],
                 "partner_registration_url": subscription_subscription_details_partner_registration_url,
                 "pricing_plan": {
                     "billing_frequency": subscription_subscription_details_pricing_plan_billing_frequency,
@@ -698,6 +714,18 @@ class SelfSubscription(pulumi.CustomResource):
                     "rates": [{
                         "currency": subscription_subscription_details_pricing_plan_rates_currency,
                         "rate": subscription_subscription_details_pricing_plan_rates_rate,
+                    }],
+                    "dimensions": [{
+                        "dimension_billing_frequency": subscription_subscription_details_pricing_plan_dimensions_dimension_billing_frequency,
+                        "dimension_description": subscription_subscription_details_pricing_plan_dimensions_dimension_description,
+                        "dimension_key": subscription_subscription_details_pricing_plan_dimensions_dimension_key,
+                        "dimension_name": subscription_subscription_details_pricing_plan_dimensions_dimension_name,
+                        "metric_type": subscription_subscription_details_pricing_plan_dimensions_metric_type,
+                        "rates": [{
+                            "currency": subscription_subscription_details_pricing_plan_dimensions_rates_currency,
+                            "rate": subscription_subscription_details_pricing_plan_dimensions_rates_rate,
+                        }],
+                        "included_quantity": subscription_subscription_details_pricing_plan_dimensions_included_quantity,
                     }],
                     "plan_description": subscription_subscription_details_pricing_plan_plan_description,
                     "plan_duration": subscription_subscription_details_pricing_plan_plan_duration,

@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
 //
-// Gets information about a Subscription.
+// Deprecated. This endpoint has moved permanently to `/partners/subscriptions`.
 //
 // ## Example Usage
 //

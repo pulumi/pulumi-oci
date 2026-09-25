@@ -38,23 +38,27 @@ import (
 //				ProductId:     pulumi.Any(testProduct.Id),
 //				SellerId:      pulumi.Any(testSeller.Id),
 //				SubscriptionDetails: &oci.SelfSubscriptionSubscriptionDetailsArgs{
-//					BillingDetails: &oci.SelfSubscriptionSubscriptionDetailsBillingDetailsArgs{
-//						Meters: oci.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArray{
-//							&oci.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs{
-//								Name:           pulumi.Any(subscriptionSubscriptionDetailsBillingDetailsMetersName),
-//								RateAllocation: pulumi.Any(subscriptionSubscriptionDetailsBillingDetailsMetersRateAllocation),
-//								ExtendedMetadatas: oci.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArray{
-//									&oci.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs{
-//										Key:   pulumi.Any(subscriptionSubscriptionDetailsBillingDetailsMetersExtendedMetadataKey),
-//										Value: pulumi.Any(subscriptionSubscriptionDetailsBillingDetailsMetersExtendedMetadataValue),
+//					BillingDetails: oci.SelfSubscriptionSubscriptionDetailsBillingDetailsArgs{
+//						map[string]interface{}{
+//							"billingModel": subscriptionSubscriptionDetailsBillingDetailsBillingModel,
+//							"meters": []map[string]interface{}{
+//								map[string]interface{}{
+//									"name":           subscriptionSubscriptionDetailsBillingDetailsMetersName,
+//									"rateAllocation": subscriptionSubscriptionDetailsBillingDetailsMetersRateAllocation,
+//									"extendedMetadatas": []map[string]interface{}{
+//										map[string]interface{}{
+//											"key":   subscriptionSubscriptionDetailsBillingDetailsMetersExtendedMetadataKey,
+//											"value": subscriptionSubscriptionDetailsBillingDetailsMetersExtendedMetadataValue,
+//										},
 //									},
 //								},
 //							},
+//							"metricType":     subscriptionSubscriptionDetailsBillingDetailsMetricType,
+//							"pricingPlanKey": subscriptionSubscriptionDetailsBillingDetailsPricingPlanKey,
+//							"rateAllocation": subscriptionSubscriptionDetailsBillingDetailsRateAllocation,
+//							"sku":            subscriptionSubscriptionDetailsBillingDetailsSku,
+//							"hasGovSku":      subscriptionSubscriptionDetailsBillingDetailsHasGovSku,
 //						},
-//						MetricType:     pulumi.Any(subscriptionSubscriptionDetailsBillingDetailsMetricType),
-//						RateAllocation: pulumi.Any(subscriptionSubscriptionDetailsBillingDetailsRateAllocation),
-//						Sku:            pulumi.Any(subscriptionSubscriptionDetailsBillingDetailsSku),
-//						HasGovSku:      pulumi.Any(subscriptionSubscriptionDetailsBillingDetailsHasGovSku),
 //					},
 //					PartnerRegistrationUrl: pulumi.Any(subscriptionSubscriptionDetailsPartnerRegistrationUrl),
 //					PricingPlan: &oci.SelfSubscriptionSubscriptionDetailsPricingPlanArgs{
@@ -65,6 +69,22 @@ import (
 //							&oci.SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs{
 //								Currency: pulumi.Any(subscriptionSubscriptionDetailsPricingPlanRatesCurrency),
 //								Rate:     pulumi.Any(subscriptionSubscriptionDetailsPricingPlanRatesRate),
+//							},
+//						},
+//						Dimensions: oci.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArray{
+//							&oci.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs{
+//								DimensionBillingFrequency: pulumi.Any(subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionBillingFrequency),
+//								DimensionDescription:      pulumi.Any(subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionDescription),
+//								DimensionKey:              pulumi.Any(subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionKey),
+//								DimensionName:             pulumi.Any(subscriptionSubscriptionDetailsPricingPlanDimensionsDimensionName),
+//								MetricType:                pulumi.Any(subscriptionSubscriptionDetailsPricingPlanDimensionsMetricType),
+//								Rates: oci.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArray{
+//									&oci.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRateArgs{
+//										Currency: pulumi.Any(subscriptionSubscriptionDetailsPricingPlanDimensionsRatesCurrency),
+//										Rate:     pulumi.Any(subscriptionSubscriptionDetailsPricingPlanDimensionsRatesRate),
+//									},
+//								},
+//								IncludedQuantity: pulumi.Any(subscriptionSubscriptionDetailsPricingPlanDimensionsIncludedQuantity),
 //							},
 //						},
 //						PlanDescription: pulumi.Any(subscriptionSubscriptionDetailsPricingPlanPlanDescription),

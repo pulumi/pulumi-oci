@@ -144,7 +144,6 @@ namespace Pulumi.Oci.DatabaseMigration
     ///         },
     ///         InitialLoadSettings = new Oci.DatabaseMigration.Inputs.MigrationInitialLoadSettingsArgs
     ///         {
-    ///             JobMode = migrationInitialLoadSettingsJobMode,
     ///             Compatibilities = migrationInitialLoadSettingsCompatibility,
     ///             DataPumpParameters = new Oci.DatabaseMigration.Inputs.MigrationInitialLoadSettingsDataPumpParametersArgs
     ///             {
@@ -169,6 +168,7 @@ namespace Pulumi.Oci.DatabaseMigration
     ///             IsConsistent = migrationInitialLoadSettingsIsConsistent,
     ///             IsIgnoreExistingObjects = migrationInitialLoadSettingsIsIgnoreExistingObjects,
     ///             IsTzUtc = migrationInitialLoadSettingsIsTzUtc,
+    ///             JobMode = migrationInitialLoadSettingsJobMode,
     ///             MetadataRemaps = new[]
     ///             {
     ///                 new Oci.DatabaseMigration.Inputs.MigrationInitialLoadSettingsMetadataRemapArgs

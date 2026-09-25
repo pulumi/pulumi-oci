@@ -34,6 +34,21 @@ public final class NotebookSessionNotebookSessionConfigurationDetailsArgs extend
     }
 
     /**
+     * (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+     * 
+     */
+    @Import(name="capacityReservationId")
+    private @Nullable Output<String> capacityReservationId;
+
+    /**
+     * @return (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+     * 
+     */
+    public Optional<Output<String>> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
+    }
+
+    /**
      * (Updatable) Details for the notebook session shape configuration.
      * 
      */
@@ -97,6 +112,7 @@ public final class NotebookSessionNotebookSessionConfigurationDetailsArgs extend
 
     private NotebookSessionNotebookSessionConfigurationDetailsArgs(NotebookSessionNotebookSessionConfigurationDetailsArgs $) {
         this.blockStorageSizeInGbs = $.blockStorageSizeInGbs;
+        this.capacityReservationId = $.capacityReservationId;
         this.notebookSessionShapeConfigDetails = $.notebookSessionShapeConfigDetails;
         this.privateEndpointId = $.privateEndpointId;
         this.shape = $.shape;
@@ -140,6 +156,27 @@ public final class NotebookSessionNotebookSessionConfigurationDetailsArgs extend
          */
         public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
             return blockStorageSizeInGbs(Output.of(blockStorageSizeInGbs));
+        }
+
+        /**
+         * @param capacityReservationId (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(@Nullable Output<String> capacityReservationId) {
+            $.capacityReservationId = capacityReservationId;
+            return this;
+        }
+
+        /**
+         * @param capacityReservationId (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            return capacityReservationId(Output.of(capacityReservationId));
         }
 
         /**

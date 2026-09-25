@@ -3106,10 +3106,6 @@ class MigrationIncludeObjectArgs:
 
 
 class MigrationInitialLoadSettingsArgsDict(TypedDict):
-    job_mode: pulumi.Input[_builtins.str]
-    """
-    (Updatable) Oracle Job Mode
-    """
     compatibilities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
@@ -3142,6 +3138,10 @@ class MigrationInitialLoadSettingsArgsDict(TypedDict):
     """
     (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
     """
+    job_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Oracle Job Mode
+    """
     metadata_remaps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgsDict']]]]]
     """
     (Updatable) Defines remapping to be applied to objects as they are processed.
@@ -3158,7 +3158,6 @@ class MigrationInitialLoadSettingsArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationInitialLoadSettingsArgs:
     def __init__(__self__, *,
-                 job_mode: pulumi.Input[_builtins.str],
                  compatibilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  data_pump_parameters: pulumi.Input[Optional['MigrationInitialLoadSettingsDataPumpParametersArgs']] = None,
                  export_directory_object: pulumi.Input[Optional['MigrationInitialLoadSettingsExportDirectoryObjectArgs']] = None,
@@ -3167,11 +3166,11 @@ class MigrationInitialLoadSettingsArgs:
                  is_consistent: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_ignore_existing_objects: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_tz_utc: pulumi.Input[Optional[_builtins.bool]] = None,
+                 job_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata_remaps: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgs']]]] = None,
                  primary_key_compatibility: pulumi.Input[Optional[_builtins.str]] = None,
                  tablespace_details: pulumi.Input[Optional['MigrationInitialLoadSettingsTablespaceDetailsArgs']] = None):
         """
-        :param pulumi.Input[_builtins.str] job_mode: (Updatable) Oracle Job Mode
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compatibilities: (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
         :param pulumi.Input['MigrationInitialLoadSettingsDataPumpParametersArgs'] data_pump_parameters: (Updatable) Optional parameters for Data Pump Export and Import.
         :param pulumi.Input['MigrationInitialLoadSettingsExportDirectoryObjectArgs'] export_directory_object: (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
@@ -3180,11 +3179,11 @@ class MigrationInitialLoadSettingsArgs:
         :param pulumi.Input[_builtins.bool] is_consistent: (Updatable) Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
         :param pulumi.Input[_builtins.bool] is_ignore_existing_objects: (Updatable) Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
         :param pulumi.Input[_builtins.bool] is_tz_utc: (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
+        :param pulumi.Input[_builtins.str] job_mode: (Updatable) Oracle Job Mode
         :param pulumi.Input[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgs']]] metadata_remaps: (Updatable) Defines remapping to be applied to objects as they are processed.
         :param pulumi.Input[_builtins.str] primary_key_compatibility: (Updatable) Primary key compatibility option
         :param pulumi.Input['MigrationInitialLoadSettingsTablespaceDetailsArgs'] tablespace_details: (Updatable) Migration tablespace settings.
         """
-        pulumi.set(__self__, "job_mode", job_mode)
         if compatibilities is not None:
             pulumi.set(__self__, "compatibilities", compatibilities)
         if data_pump_parameters is not None:
@@ -3201,24 +3200,14 @@ class MigrationInitialLoadSettingsArgs:
             pulumi.set(__self__, "is_ignore_existing_objects", is_ignore_existing_objects)
         if is_tz_utc is not None:
             pulumi.set(__self__, "is_tz_utc", is_tz_utc)
+        if job_mode is not None:
+            pulumi.set(__self__, "job_mode", job_mode)
         if metadata_remaps is not None:
             pulumi.set(__self__, "metadata_remaps", metadata_remaps)
         if primary_key_compatibility is not None:
             pulumi.set(__self__, "primary_key_compatibility", primary_key_compatibility)
         if tablespace_details is not None:
             pulumi.set(__self__, "tablespace_details", tablespace_details)
-
-    @_builtins.property
-    @pulumi.getter(name="jobMode")
-    def job_mode(self) -> pulumi.Input[_builtins.str]:
-        """
-        (Updatable) Oracle Job Mode
-        """
-        return pulumi.get(self, "job_mode")
-
-    @job_mode.setter
-    def job_mode(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "job_mode", value)
 
     @_builtins.property
     @pulumi.getter
@@ -3315,6 +3304,18 @@ class MigrationInitialLoadSettingsArgs:
     @is_tz_utc.setter
     def is_tz_utc(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_tz_utc", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jobMode")
+    def job_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Oracle Job Mode
+        """
+        return pulumi.get(self, "job_mode")
+
+    @job_mode.setter
+    def job_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "job_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="metadataRemaps")

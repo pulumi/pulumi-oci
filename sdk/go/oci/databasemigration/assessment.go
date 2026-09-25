@@ -41,6 +41,7 @@ import (
 //				DatabaseCombination:          pulumi.Any(assessmentDatabaseCombination),
 //				DatabaseDataSize:             pulumi.Any(assessmentDatabaseDataSize),
 //				DdlExpectation:               pulumi.Any(assessmentDdlExpectation),
+//				MigrationScope:               pulumi.Any(assessmentMigrationScope),
 //				NetworkSpeedMegabitPerSecond: pulumi.Any(assessmentNetworkSpeedMegabitPerSecond),
 //				SourceDatabaseConnection: &databasemigration.AssessmentSourceDatabaseConnectionArgs{
 //					Id: pulumi.Any(assessmentSourceDatabaseConnectionId),
@@ -130,6 +131,8 @@ type Assessment struct {
 	IsCdbSupported pulumi.BoolOutput `pulumi:"isCdbSupported"`
 	// The OCID of the resource being referenced.
 	MigrationId pulumi.StringOutput `pulumi:"migrationId"`
+	// (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+	MigrationScope pulumi.StringPtrOutput `pulumi:"migrationScope"`
 	// (Updatable) A network speed in Megabits per second.
 	NetworkSpeedMegabitPerSecond pulumi.StringOutput `pulumi:"networkSpeedMegabitPerSecond"`
 	// (Updatable) Source Assessment Connection object
@@ -232,6 +235,8 @@ type assessmentState struct {
 	IsCdbSupported *bool `pulumi:"isCdbSupported"`
 	// The OCID of the resource being referenced.
 	MigrationId *string `pulumi:"migrationId"`
+	// (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+	MigrationScope *string `pulumi:"migrationScope"`
 	// (Updatable) A network speed in Megabits per second.
 	NetworkSpeedMegabitPerSecond *string `pulumi:"networkSpeedMegabitPerSecond"`
 	// (Updatable) Source Assessment Connection object
@@ -281,6 +286,8 @@ type AssessmentState struct {
 	IsCdbSupported pulumi.BoolPtrInput
 	// The OCID of the resource being referenced.
 	MigrationId pulumi.StringPtrInput
+	// (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+	MigrationScope pulumi.StringPtrInput
 	// (Updatable) A network speed in Megabits per second.
 	NetworkSpeedMegabitPerSecond pulumi.StringPtrInput
 	// (Updatable) Source Assessment Connection object
@@ -328,6 +335,8 @@ type assessmentArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Database objects to include from migration, cannot be specified alongside 'excludeObjects'
 	IncludeObjects []AssessmentIncludeObject `pulumi:"includeObjects"`
+	// (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+	MigrationScope *string `pulumi:"migrationScope"`
 	// (Updatable) A network speed in Megabits per second.
 	NetworkSpeedMegabitPerSecond string `pulumi:"networkSpeedMegabitPerSecond"`
 	// (Updatable) Source Assessment Connection object
@@ -364,6 +373,8 @@ type AssessmentArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// Database objects to include from migration, cannot be specified alongside 'excludeObjects'
 	IncludeObjects AssessmentIncludeObjectArrayInput
+	// (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+	MigrationScope pulumi.StringPtrInput
 	// (Updatable) A network speed in Megabits per second.
 	NetworkSpeedMegabitPerSecond pulumi.StringInput
 	// (Updatable) Source Assessment Connection object
@@ -537,6 +548,11 @@ func (o AssessmentOutput) IsCdbSupported() pulumi.BoolOutput {
 // The OCID of the resource being referenced.
 func (o AssessmentOutput) MigrationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Assessment) pulumi.StringOutput { return v.MigrationId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+func (o AssessmentOutput) MigrationScope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Assessment) pulumi.StringPtrOutput { return v.MigrationScope }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A network speed in Megabits per second.

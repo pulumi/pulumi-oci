@@ -27,6 +27,14 @@ __all__ = [
     'AuditProfileManagementAuditTrail',
     'CalculateAuditVolumeAvailableAvailableAuditVolume',
     'CalculateAuditVolumeCollectedCollectedAuditVolume',
+    'CryptoAssessmentCryptoPosture',
+    'CryptoAssessmentCryptoPostureNne',
+    'CryptoAssessmentCryptoPostureTde',
+    'CryptoAssessmentCryptoPostureTl',
+    'CryptoAssessmentManagementCryptoPosture',
+    'CryptoAssessmentManagementCryptoPostureNne',
+    'CryptoAssessmentManagementCryptoPostureTde',
+    'CryptoAssessmentManagementCryptoPostureTl',
     'DataSafeConfigurationGlobalSetting',
     'DatabaseSecurityConfigManagementSqlFirewallConfig',
     'DatabaseSecurityConfigSqlFirewallConfig',
@@ -144,6 +152,52 @@ __all__ = [
     'GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatResult',
     'GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeResult',
     'GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatResult',
+    'GetCryptoAssessmentBackupSetsCryptoAssessmentBackupSetCollectionResult',
+    'GetCryptoAssessmentBackupSetsCryptoAssessmentBackupSetCollectionItemResult',
+    'GetCryptoAssessmentBackupSetsFilterResult',
+    'GetCryptoAssessmentCbomItemsCryptoAssessmentCbomItemCollectionResult',
+    'GetCryptoAssessmentCbomItemsCryptoAssessmentCbomItemCollectionItemResult',
+    'GetCryptoAssessmentCbomItemsFilterResult',
+    'GetCryptoAssessmentCertificatesCryptoAssessmentCertificateCollectionResult',
+    'GetCryptoAssessmentCertificatesCryptoAssessmentCertificateCollectionItemResult',
+    'GetCryptoAssessmentCertificatesFilterResult',
+    'GetCryptoAssessmentCryptoPostureResult',
+    'GetCryptoAssessmentCryptoPostureNneResult',
+    'GetCryptoAssessmentCryptoPostureTdeResult',
+    'GetCryptoAssessmentCryptoPostureTlResult',
+    'GetCryptoAssessmentFindingAnalyticsCryptoAssessmentFindingAnalyticsCollectionResult',
+    'GetCryptoAssessmentFindingAnalyticsCryptoAssessmentFindingAnalyticsCollectionItemResult',
+    'GetCryptoAssessmentFindingAnalyticsFilterResult',
+    'GetCryptoAssessmentFindingTargetsCryptoAssessmentFindingTargetCollectionResult',
+    'GetCryptoAssessmentFindingTargetsCryptoAssessmentFindingTargetCollectionItemResult',
+    'GetCryptoAssessmentFindingTargetsFilterResult',
+    'GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionResult',
+    'GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionItemResult',
+    'GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryResult',
+    'GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryBackupStatusResult',
+    'GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryDataEncryptionStatusResult',
+    'GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryNetworkEncryptionStatusResult',
+    'GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryWalletStatusResult',
+    'GetCryptoAssessmentFindingsFilterResult',
+    'GetCryptoAssessmentKeysCryptoAssessmentKeyCollectionResult',
+    'GetCryptoAssessmentKeysCryptoAssessmentKeyCollectionItemResult',
+    'GetCryptoAssessmentKeysFilterResult',
+    'GetCryptoAssessmentSqlnetParameterParameterResult',
+    'GetCryptoAssessmentSqlnetParameterParameterValueResult',
+    'GetCryptoAssessmentSqlnetParameterSourceResult',
+    'GetCryptoAssessmentTdeObjectsCryptoAssessmentTdeObjectCollectionResult',
+    'GetCryptoAssessmentTdeObjectsCryptoAssessmentTdeObjectCollectionItemResult',
+    'GetCryptoAssessmentTdeObjectsFilterResult',
+    'GetCryptoAssessmentWalletsCryptoAssessmentWalletCollectionResult',
+    'GetCryptoAssessmentWalletsCryptoAssessmentWalletCollectionItemResult',
+    'GetCryptoAssessmentWalletsFilterResult',
+    'GetCryptoAssessmentsCryptoAssessmentCollectionResult',
+    'GetCryptoAssessmentsCryptoAssessmentCollectionItemResult',
+    'GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureResult',
+    'GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureNneResult',
+    'GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTdeResult',
+    'GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTlResult',
+    'GetCryptoAssessmentsFilterResult',
     'GetDataSafeConfigurationGlobalSettingResult',
     'GetDataSafePrivateEndpointsDataSafePrivateEndpointResult',
     'GetDataSafePrivateEndpointsFilterResult',
@@ -2150,6 +2204,1150 @@ class CalculateAuditVolumeCollectedCollectedAuditVolume(dict):
     @pulumi.getter(name="onlineVolume")
     def online_volume(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "online_volume")
+
+
+@pulumi.output_type
+class CryptoAssessmentCryptoPosture(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupStatus":
+            suggest = "backup_status"
+        elif key == "encryptedBackupPiecesCount":
+            suggest = "encrypted_backup_pieces_count"
+        elif key == "fipsModeConfigured":
+            suggest = "fips_mode_configured"
+        elif key == "fipsStatus":
+            suggest = "fips_status"
+        elif key == "networkEncryptions":
+            suggest = "network_encryptions"
+        elif key == "unencryptedBackupPiecesCount":
+            suggest = "unencrypted_backup_pieces_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CryptoAssessmentCryptoPosture. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CryptoAssessmentCryptoPosture.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CryptoAssessmentCryptoPosture.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_status: Optional[_builtins.str] = None,
+                 encrypted_backup_pieces_count: Optional[_builtins.int] = None,
+                 fips_mode_configured: Optional[_builtins.str] = None,
+                 fips_status: Optional[_builtins.str] = None,
+                 network_encryptions: Optional[Sequence[_builtins.str]] = None,
+                 nnes: Optional[Sequence['outputs.CryptoAssessmentCryptoPostureNne']] = None,
+                 tdes: Optional[Sequence['outputs.CryptoAssessmentCryptoPostureTde']] = None,
+                 tls: Optional[Sequence['outputs.CryptoAssessmentCryptoPostureTl']] = None,
+                 unencrypted_backup_pieces_count: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str backup_status: Backup encryption status observed for the assessment.
+        :param _builtins.int encrypted_backup_pieces_count: Number of encrypted backup pieces.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param _builtins.str fips_status: Overall FIPS status for the assessment when the target uses common FIPS configuration.
+        :param Sequence[_builtins.str] network_encryptions: Network encryption details.
+        :param Sequence['CryptoAssessmentCryptoPostureNneArgs'] nnes: Native network encryption posture details.
+        :param Sequence['CryptoAssessmentCryptoPostureTdeArgs'] tdes: Transparent data encryption posture details.
+        :param Sequence['CryptoAssessmentCryptoPostureTlArgs'] tls: TLS posture details.
+        :param _builtins.int unencrypted_backup_pieces_count: Number of unencrypted backup pieces.
+        """
+        if backup_status is not None:
+            pulumi.set(__self__, "backup_status", backup_status)
+        if encrypted_backup_pieces_count is not None:
+            pulumi.set(__self__, "encrypted_backup_pieces_count", encrypted_backup_pieces_count)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if fips_status is not None:
+            pulumi.set(__self__, "fips_status", fips_status)
+        if network_encryptions is not None:
+            pulumi.set(__self__, "network_encryptions", network_encryptions)
+        if nnes is not None:
+            pulumi.set(__self__, "nnes", nnes)
+        if tdes is not None:
+            pulumi.set(__self__, "tdes", tdes)
+        if tls is not None:
+            pulumi.set(__self__, "tls", tls)
+        if unencrypted_backup_pieces_count is not None:
+            pulumi.set(__self__, "unencrypted_backup_pieces_count", unencrypted_backup_pieces_count)
+
+    @_builtins.property
+    @pulumi.getter(name="backupStatus")
+    def backup_status(self) -> Optional[_builtins.str]:
+        """
+        Backup encryption status observed for the assessment.
+        """
+        return pulumi.get(self, "backup_status")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedBackupPiecesCount")
+    def encrypted_backup_pieces_count(self) -> Optional[_builtins.int]:
+        """
+        Number of encrypted backup pieces.
+        """
+        return pulumi.get(self, "encrypted_backup_pieces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> Optional[_builtins.str]:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsStatus")
+    def fips_status(self) -> Optional[_builtins.str]:
+        """
+        Overall FIPS status for the assessment when the target uses common FIPS configuration.
+        """
+        return pulumi.get(self, "fips_status")
+
+    @_builtins.property
+    @pulumi.getter(name="networkEncryptions")
+    def network_encryptions(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Network encryption details.
+        """
+        return pulumi.get(self, "network_encryptions")
+
+    @_builtins.property
+    @pulumi.getter
+    def nnes(self) -> Optional[Sequence['outputs.CryptoAssessmentCryptoPostureNne']]:
+        """
+        Native network encryption posture details.
+        """
+        return pulumi.get(self, "nnes")
+
+    @_builtins.property
+    @pulumi.getter
+    def tdes(self) -> Optional[Sequence['outputs.CryptoAssessmentCryptoPostureTde']]:
+        """
+        Transparent data encryption posture details.
+        """
+        return pulumi.get(self, "tdes")
+
+    @_builtins.property
+    @pulumi.getter
+    def tls(self) -> Optional[Sequence['outputs.CryptoAssessmentCryptoPostureTl']]:
+        """
+        TLS posture details.
+        """
+        return pulumi.get(self, "tls")
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedBackupPiecesCount")
+    def unencrypted_backup_pieces_count(self) -> Optional[_builtins.int]:
+        """
+        Number of unencrypted backup pieces.
+        """
+        return pulumi.get(self, "unencrypted_backup_pieces_count")
+
+
+@pulumi.output_type
+class CryptoAssessmentCryptoPostureNne(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "areWeakOptionsAllowed":
+            suggest = "are_weak_options_allowed"
+        elif key == "encryptionConfigureds":
+            suggest = "encryption_configureds"
+        elif key == "fipsModeConfigured":
+            suggest = "fips_mode_configured"
+        elif key == "keyExchange":
+            suggest = "key_exchange"
+        elif key == "quantumReadiness":
+            suggest = "quantum_readiness"
+        elif key == "serverEncryption":
+            suggest = "server_encryption"
+        elif key == "serverIntegrities":
+            suggest = "server_integrities"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CryptoAssessmentCryptoPostureNne. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CryptoAssessmentCryptoPostureNne.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CryptoAssessmentCryptoPostureNne.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 are_weak_options_allowed: Optional[_builtins.str] = None,
+                 encryption_configureds: Optional[Sequence[_builtins.str]] = None,
+                 fips_mode_configured: Optional[_builtins.str] = None,
+                 integrities: Optional[Sequence[_builtins.str]] = None,
+                 key_exchange: Optional[_builtins.str] = None,
+                 quantum_readiness: Optional[_builtins.str] = None,
+                 server_encryption: Optional[_builtins.str] = None,
+                 server_integrities: Optional[Sequence[_builtins.str]] = None,
+                 status: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str are_weak_options_allowed: Indicates if weak NNE options are allowed.
+        :param Sequence[_builtins.str] encryption_configureds: Configured TDE encryption algorithm.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param Sequence[_builtins.str] integrities: NNE integrity algorithm(s).
+        :param _builtins.str key_exchange: Observed NNE key exchange setting.
+        :param _builtins.str quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param _builtins.str server_encryption: Observed server-side encryption requirement.
+        :param Sequence[_builtins.str] server_integrities: NNE server integrity algorithm(s).
+        :param _builtins.str status: TLS enablement status.
+        """
+        if are_weak_options_allowed is not None:
+            pulumi.set(__self__, "are_weak_options_allowed", are_weak_options_allowed)
+        if encryption_configureds is not None:
+            pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if integrities is not None:
+            pulumi.set(__self__, "integrities", integrities)
+        if key_exchange is not None:
+            pulumi.set(__self__, "key_exchange", key_exchange)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if server_encryption is not None:
+            pulumi.set(__self__, "server_encryption", server_encryption)
+        if server_integrities is not None:
+            pulumi.set(__self__, "server_integrities", server_integrities)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakOptionsAllowed")
+    def are_weak_options_allowed(self) -> Optional[_builtins.str]:
+        """
+        Indicates if weak NNE options are allowed.
+        """
+        return pulumi.get(self, "are_weak_options_allowed")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Configured TDE encryption algorithm.
+        """
+        return pulumi.get(self, "encryption_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> Optional[_builtins.str]:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter
+    def integrities(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        NNE integrity algorithm(s).
+        """
+        return pulumi.get(self, "integrities")
+
+    @_builtins.property
+    @pulumi.getter(name="keyExchange")
+    def key_exchange(self) -> Optional[_builtins.str]:
+        """
+        Observed NNE key exchange setting.
+        """
+        return pulumi.get(self, "key_exchange")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> Optional[_builtins.str]:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="serverEncryption")
+    def server_encryption(self) -> Optional[_builtins.str]:
+        """
+        Observed server-side encryption requirement.
+        """
+        return pulumi.get(self, "server_encryption")
+
+    @_builtins.property
+    @pulumi.getter(name="serverIntegrities")
+    def server_integrities(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        NNE server integrity algorithm(s).
+        """
+        return pulumi.get(self, "server_integrities")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class CryptoAssessmentCryptoPostureTde(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbCredentialsEncryptionObserved":
+            suggest = "db_credentials_encryption_observed"
+        elif key == "encryptedTablespacesCount":
+            suggest = "encrypted_tablespaces_count"
+        elif key == "encryptionConfigureds":
+            suggest = "encryption_configureds"
+        elif key == "fipsModeConfigured":
+            suggest = "fips_mode_configured"
+        elif key == "integrityConfigureds":
+            suggest = "integrity_configureds"
+        elif key == "keyCacheStatus":
+            suggest = "key_cache_status"
+        elif key == "keyStoreType":
+            suggest = "key_store_type"
+        elif key == "masterKeyEncryptionAlgorithm":
+            suggest = "master_key_encryption_algorithm"
+        elif key == "masterKeyId":
+            suggest = "master_key_id"
+        elif key == "quantumReadiness":
+            suggest = "quantum_readiness"
+        elif key == "redoEncryptionObserved":
+            suggest = "redo_encryption_observed"
+        elif key == "timeMasterKeyLastRotation":
+            suggest = "time_master_key_last_rotation"
+        elif key == "unencryptedTablespacesCount":
+            suggest = "unencrypted_tablespaces_count"
+        elif key == "walletLocation":
+            suggest = "wallet_location"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CryptoAssessmentCryptoPostureTde. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CryptoAssessmentCryptoPostureTde.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CryptoAssessmentCryptoPostureTde.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_credentials_encryption_observed: Optional[_builtins.str] = None,
+                 encrypted_tablespaces_count: Optional[_builtins.int] = None,
+                 encryption_configureds: Optional[Sequence[_builtins.str]] = None,
+                 fips_mode_configured: Optional[_builtins.str] = None,
+                 integrity_configureds: Optional[Sequence[_builtins.str]] = None,
+                 key_cache_status: Optional[_builtins.str] = None,
+                 key_store_type: Optional[_builtins.str] = None,
+                 master_key_encryption_algorithm: Optional[_builtins.str] = None,
+                 master_key_id: Optional[_builtins.str] = None,
+                 quantum_readiness: Optional[_builtins.str] = None,
+                 redo_encryption_observed: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None,
+                 time_master_key_last_rotation: Optional[_builtins.str] = None,
+                 unencrypted_tablespaces_count: Optional[_builtins.int] = None,
+                 wallet_location: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str db_credentials_encryption_observed: Observed DB credentials encryption algorithm.
+        :param _builtins.int encrypted_tablespaces_count: Number of encrypted tablespaces detected.
+        :param Sequence[_builtins.str] encryption_configureds: Configured TDE encryption algorithm.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param Sequence[_builtins.str] integrity_configureds: Configured TDE integrity-related setting.
+        :param _builtins.str key_cache_status: The observed TDE key cache status.
+        :param _builtins.str key_store_type: The observed TDE key store type.
+        :param _builtins.str master_key_encryption_algorithm: The observed encryption algorithm used by the master key.
+        :param _builtins.str master_key_id: The observed TDE master key identifier.
+        :param _builtins.str quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param _builtins.str redo_encryption_observed: Observed redo log encryption algorithm.
+        :param _builtins.str status: TLS enablement status.
+        :param _builtins.str time_master_key_last_rotation: The last observed rotation time for the TDE master key, in RFC3339 format.
+        :param _builtins.int unencrypted_tablespaces_count: Number of unencrypted tablespaces detected.
+        :param _builtins.str wallet_location: TLS wallet location observed on target.
+        """
+        if db_credentials_encryption_observed is not None:
+            pulumi.set(__self__, "db_credentials_encryption_observed", db_credentials_encryption_observed)
+        if encrypted_tablespaces_count is not None:
+            pulumi.set(__self__, "encrypted_tablespaces_count", encrypted_tablespaces_count)
+        if encryption_configureds is not None:
+            pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if integrity_configureds is not None:
+            pulumi.set(__self__, "integrity_configureds", integrity_configureds)
+        if key_cache_status is not None:
+            pulumi.set(__self__, "key_cache_status", key_cache_status)
+        if key_store_type is not None:
+            pulumi.set(__self__, "key_store_type", key_store_type)
+        if master_key_encryption_algorithm is not None:
+            pulumi.set(__self__, "master_key_encryption_algorithm", master_key_encryption_algorithm)
+        if master_key_id is not None:
+            pulumi.set(__self__, "master_key_id", master_key_id)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if redo_encryption_observed is not None:
+            pulumi.set(__self__, "redo_encryption_observed", redo_encryption_observed)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_master_key_last_rotation is not None:
+            pulumi.set(__self__, "time_master_key_last_rotation", time_master_key_last_rotation)
+        if unencrypted_tablespaces_count is not None:
+            pulumi.set(__self__, "unencrypted_tablespaces_count", unencrypted_tablespaces_count)
+        if wallet_location is not None:
+            pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="dbCredentialsEncryptionObserved")
+    def db_credentials_encryption_observed(self) -> Optional[_builtins.str]:
+        """
+        Observed DB credentials encryption algorithm.
+        """
+        return pulumi.get(self, "db_credentials_encryption_observed")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedTablespacesCount")
+    def encrypted_tablespaces_count(self) -> Optional[_builtins.int]:
+        """
+        Number of encrypted tablespaces detected.
+        """
+        return pulumi.get(self, "encrypted_tablespaces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Configured TDE encryption algorithm.
+        """
+        return pulumi.get(self, "encryption_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> Optional[_builtins.str]:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="integrityConfigureds")
+    def integrity_configureds(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Configured TDE integrity-related setting.
+        """
+        return pulumi.get(self, "integrity_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="keyCacheStatus")
+    def key_cache_status(self) -> Optional[_builtins.str]:
+        """
+        The observed TDE key cache status.
+        """
+        return pulumi.get(self, "key_cache_status")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreType")
+    def key_store_type(self) -> Optional[_builtins.str]:
+        """
+        The observed TDE key store type.
+        """
+        return pulumi.get(self, "key_store_type")
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyEncryptionAlgorithm")
+    def master_key_encryption_algorithm(self) -> Optional[_builtins.str]:
+        """
+        The observed encryption algorithm used by the master key.
+        """
+        return pulumi.get(self, "master_key_encryption_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyId")
+    def master_key_id(self) -> Optional[_builtins.str]:
+        """
+        The observed TDE master key identifier.
+        """
+        return pulumi.get(self, "master_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> Optional[_builtins.str]:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="redoEncryptionObserved")
+    def redo_encryption_observed(self) -> Optional[_builtins.str]:
+        """
+        Observed redo log encryption algorithm.
+        """
+        return pulumi.get(self, "redo_encryption_observed")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeMasterKeyLastRotation")
+    def time_master_key_last_rotation(self) -> Optional[_builtins.str]:
+        """
+        The last observed rotation time for the TDE master key, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_master_key_last_rotation")
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedTablespacesCount")
+    def unencrypted_tablespaces_count(self) -> Optional[_builtins.int]:
+        """
+        Number of unencrypted tablespaces detected.
+        """
+        return pulumi.get(self, "unencrypted_tablespaces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> Optional[_builtins.str]:
+        """
+        TLS wallet location observed on target.
+        """
+        return pulumi.get(self, "wallet_location")
+
+
+@pulumi.output_type
+class CryptoAssessmentCryptoPostureTl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "areWeakCipherSuitesAllowed":
+            suggest = "are_weak_cipher_suites_allowed"
+        elif key == "cipherSuitesConfigureds":
+            suggest = "cipher_suites_configureds"
+        elif key == "fipsModeConfigured":
+            suggest = "fips_mode_configured"
+        elif key == "isMtlsConfigured":
+            suggest = "is_mtls_configured"
+        elif key == "quantumReadiness":
+            suggest = "quantum_readiness"
+        elif key == "revocationMode":
+            suggest = "revocation_mode"
+        elif key == "walletLocation":
+            suggest = "wallet_location"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CryptoAssessmentCryptoPostureTl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CryptoAssessmentCryptoPostureTl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CryptoAssessmentCryptoPostureTl.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 are_weak_cipher_suites_allowed: Optional[_builtins.str] = None,
+                 cipher_suites_configureds: Optional[Sequence[_builtins.str]] = None,
+                 fips_mode_configured: Optional[_builtins.str] = None,
+                 is_mtls_configured: Optional[_builtins.str] = None,
+                 quantum_readiness: Optional[_builtins.str] = None,
+                 revocation_mode: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None,
+                 versions: Optional[Sequence[_builtins.str]] = None,
+                 wallet_location: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str are_weak_cipher_suites_allowed: Indicates if weak TLS cipher suites are allowed.
+        :param Sequence[_builtins.str] cipher_suites_configureds: TLS cipher suites configured on target.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param _builtins.str is_mtls_configured: Whether TLS client authentication is configured.
+        :param _builtins.str quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param _builtins.str revocation_mode: Certificate revocation checking mode.
+        :param _builtins.str status: TLS enablement status.
+        :param Sequence[_builtins.str] versions: TLS versions configured on target.
+        :param _builtins.str wallet_location: TLS wallet location observed on target.
+        """
+        if are_weak_cipher_suites_allowed is not None:
+            pulumi.set(__self__, "are_weak_cipher_suites_allowed", are_weak_cipher_suites_allowed)
+        if cipher_suites_configureds is not None:
+            pulumi.set(__self__, "cipher_suites_configureds", cipher_suites_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if is_mtls_configured is not None:
+            pulumi.set(__self__, "is_mtls_configured", is_mtls_configured)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if revocation_mode is not None:
+            pulumi.set(__self__, "revocation_mode", revocation_mode)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if versions is not None:
+            pulumi.set(__self__, "versions", versions)
+        if wallet_location is not None:
+            pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakCipherSuitesAllowed")
+    def are_weak_cipher_suites_allowed(self) -> Optional[_builtins.str]:
+        """
+        Indicates if weak TLS cipher suites are allowed.
+        """
+        return pulumi.get(self, "are_weak_cipher_suites_allowed")
+
+    @_builtins.property
+    @pulumi.getter(name="cipherSuitesConfigureds")
+    def cipher_suites_configureds(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        TLS cipher suites configured on target.
+        """
+        return pulumi.get(self, "cipher_suites_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> Optional[_builtins.str]:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="isMtlsConfigured")
+    def is_mtls_configured(self) -> Optional[_builtins.str]:
+        """
+        Whether TLS client authentication is configured.
+        """
+        return pulumi.get(self, "is_mtls_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> Optional[_builtins.str]:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="revocationMode")
+    def revocation_mode(self) -> Optional[_builtins.str]:
+        """
+        Certificate revocation checking mode.
+        """
+        return pulumi.get(self, "revocation_mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        TLS versions configured on target.
+        """
+        return pulumi.get(self, "versions")
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> Optional[_builtins.str]:
+        """
+        TLS wallet location observed on target.
+        """
+        return pulumi.get(self, "wallet_location")
+
+
+@pulumi.output_type
+class CryptoAssessmentManagementCryptoPosture(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupStatus":
+            suggest = "backup_status"
+        elif key == "encryptedBackupPiecesCount":
+            suggest = "encrypted_backup_pieces_count"
+        elif key == "fipsModeConfigured":
+            suggest = "fips_mode_configured"
+        elif key == "fipsStatus":
+            suggest = "fips_status"
+        elif key == "networkEncryptions":
+            suggest = "network_encryptions"
+        elif key == "unencryptedBackupPiecesCount":
+            suggest = "unencrypted_backup_pieces_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CryptoAssessmentManagementCryptoPosture. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CryptoAssessmentManagementCryptoPosture.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CryptoAssessmentManagementCryptoPosture.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_status: Optional[_builtins.str] = None,
+                 encrypted_backup_pieces_count: Optional[_builtins.int] = None,
+                 fips_mode_configured: Optional[_builtins.str] = None,
+                 fips_status: Optional[_builtins.str] = None,
+                 network_encryptions: Optional[Sequence[_builtins.str]] = None,
+                 nnes: Optional[Sequence['outputs.CryptoAssessmentManagementCryptoPostureNne']] = None,
+                 tdes: Optional[Sequence['outputs.CryptoAssessmentManagementCryptoPostureTde']] = None,
+                 tls: Optional[Sequence['outputs.CryptoAssessmentManagementCryptoPostureTl']] = None,
+                 unencrypted_backup_pieces_count: Optional[_builtins.int] = None):
+        if backup_status is not None:
+            pulumi.set(__self__, "backup_status", backup_status)
+        if encrypted_backup_pieces_count is not None:
+            pulumi.set(__self__, "encrypted_backup_pieces_count", encrypted_backup_pieces_count)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if fips_status is not None:
+            pulumi.set(__self__, "fips_status", fips_status)
+        if network_encryptions is not None:
+            pulumi.set(__self__, "network_encryptions", network_encryptions)
+        if nnes is not None:
+            pulumi.set(__self__, "nnes", nnes)
+        if tdes is not None:
+            pulumi.set(__self__, "tdes", tdes)
+        if tls is not None:
+            pulumi.set(__self__, "tls", tls)
+        if unencrypted_backup_pieces_count is not None:
+            pulumi.set(__self__, "unencrypted_backup_pieces_count", unencrypted_backup_pieces_count)
+
+    @_builtins.property
+    @pulumi.getter(name="backupStatus")
+    def backup_status(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "backup_status")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedBackupPiecesCount")
+    def encrypted_backup_pieces_count(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "encrypted_backup_pieces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsStatus")
+    def fips_status(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "fips_status")
+
+    @_builtins.property
+    @pulumi.getter(name="networkEncryptions")
+    def network_encryptions(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "network_encryptions")
+
+    @_builtins.property
+    @pulumi.getter
+    def nnes(self) -> Optional[Sequence['outputs.CryptoAssessmentManagementCryptoPostureNne']]:
+        return pulumi.get(self, "nnes")
+
+    @_builtins.property
+    @pulumi.getter
+    def tdes(self) -> Optional[Sequence['outputs.CryptoAssessmentManagementCryptoPostureTde']]:
+        return pulumi.get(self, "tdes")
+
+    @_builtins.property
+    @pulumi.getter
+    def tls(self) -> Optional[Sequence['outputs.CryptoAssessmentManagementCryptoPostureTl']]:
+        return pulumi.get(self, "tls")
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedBackupPiecesCount")
+    def unencrypted_backup_pieces_count(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "unencrypted_backup_pieces_count")
+
+
+@pulumi.output_type
+class CryptoAssessmentManagementCryptoPostureNne(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "areWeakOptionsAllowed":
+            suggest = "are_weak_options_allowed"
+        elif key == "encryptionConfigureds":
+            suggest = "encryption_configureds"
+        elif key == "fipsModeConfigured":
+            suggest = "fips_mode_configured"
+        elif key == "keyExchange":
+            suggest = "key_exchange"
+        elif key == "quantumReadiness":
+            suggest = "quantum_readiness"
+        elif key == "serverEncryption":
+            suggest = "server_encryption"
+        elif key == "serverIntegrities":
+            suggest = "server_integrities"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CryptoAssessmentManagementCryptoPostureNne. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CryptoAssessmentManagementCryptoPostureNne.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CryptoAssessmentManagementCryptoPostureNne.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 are_weak_options_allowed: Optional[_builtins.str] = None,
+                 encryption_configureds: Optional[Sequence[_builtins.str]] = None,
+                 fips_mode_configured: Optional[_builtins.str] = None,
+                 integrities: Optional[Sequence[_builtins.str]] = None,
+                 key_exchange: Optional[_builtins.str] = None,
+                 quantum_readiness: Optional[_builtins.str] = None,
+                 server_encryption: Optional[_builtins.str] = None,
+                 server_integrities: Optional[Sequence[_builtins.str]] = None,
+                 status: Optional[_builtins.str] = None):
+        if are_weak_options_allowed is not None:
+            pulumi.set(__self__, "are_weak_options_allowed", are_weak_options_allowed)
+        if encryption_configureds is not None:
+            pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if integrities is not None:
+            pulumi.set(__self__, "integrities", integrities)
+        if key_exchange is not None:
+            pulumi.set(__self__, "key_exchange", key_exchange)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if server_encryption is not None:
+            pulumi.set(__self__, "server_encryption", server_encryption)
+        if server_integrities is not None:
+            pulumi.set(__self__, "server_integrities", server_integrities)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakOptionsAllowed")
+    def are_weak_options_allowed(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "are_weak_options_allowed")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "encryption_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter
+    def integrities(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "integrities")
+
+    @_builtins.property
+    @pulumi.getter(name="keyExchange")
+    def key_exchange(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "key_exchange")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="serverEncryption")
+    def server_encryption(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "server_encryption")
+
+    @_builtins.property
+    @pulumi.getter(name="serverIntegrities")
+    def server_integrities(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "server_integrities")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class CryptoAssessmentManagementCryptoPostureTde(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbCredentialsEncryptionObserved":
+            suggest = "db_credentials_encryption_observed"
+        elif key == "encryptedTablespacesCount":
+            suggest = "encrypted_tablespaces_count"
+        elif key == "encryptionConfigureds":
+            suggest = "encryption_configureds"
+        elif key == "fipsModeConfigured":
+            suggest = "fips_mode_configured"
+        elif key == "integrityConfigureds":
+            suggest = "integrity_configureds"
+        elif key == "keyCacheStatus":
+            suggest = "key_cache_status"
+        elif key == "keyStoreType":
+            suggest = "key_store_type"
+        elif key == "masterKeyEncryptionAlgorithm":
+            suggest = "master_key_encryption_algorithm"
+        elif key == "masterKeyId":
+            suggest = "master_key_id"
+        elif key == "quantumReadiness":
+            suggest = "quantum_readiness"
+        elif key == "redoEncryptionObserved":
+            suggest = "redo_encryption_observed"
+        elif key == "timeMasterKeyLastRotation":
+            suggest = "time_master_key_last_rotation"
+        elif key == "unencryptedTablespacesCount":
+            suggest = "unencrypted_tablespaces_count"
+        elif key == "walletLocation":
+            suggest = "wallet_location"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CryptoAssessmentManagementCryptoPostureTde. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CryptoAssessmentManagementCryptoPostureTde.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CryptoAssessmentManagementCryptoPostureTde.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_credentials_encryption_observed: Optional[_builtins.str] = None,
+                 encrypted_tablespaces_count: Optional[_builtins.int] = None,
+                 encryption_configureds: Optional[Sequence[_builtins.str]] = None,
+                 fips_mode_configured: Optional[_builtins.str] = None,
+                 integrity_configureds: Optional[Sequence[_builtins.str]] = None,
+                 key_cache_status: Optional[_builtins.str] = None,
+                 key_store_type: Optional[_builtins.str] = None,
+                 master_key_encryption_algorithm: Optional[_builtins.str] = None,
+                 master_key_id: Optional[_builtins.str] = None,
+                 quantum_readiness: Optional[_builtins.str] = None,
+                 redo_encryption_observed: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None,
+                 time_master_key_last_rotation: Optional[_builtins.str] = None,
+                 unencrypted_tablespaces_count: Optional[_builtins.int] = None,
+                 wallet_location: Optional[_builtins.str] = None):
+        if db_credentials_encryption_observed is not None:
+            pulumi.set(__self__, "db_credentials_encryption_observed", db_credentials_encryption_observed)
+        if encrypted_tablespaces_count is not None:
+            pulumi.set(__self__, "encrypted_tablespaces_count", encrypted_tablespaces_count)
+        if encryption_configureds is not None:
+            pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if integrity_configureds is not None:
+            pulumi.set(__self__, "integrity_configureds", integrity_configureds)
+        if key_cache_status is not None:
+            pulumi.set(__self__, "key_cache_status", key_cache_status)
+        if key_store_type is not None:
+            pulumi.set(__self__, "key_store_type", key_store_type)
+        if master_key_encryption_algorithm is not None:
+            pulumi.set(__self__, "master_key_encryption_algorithm", master_key_encryption_algorithm)
+        if master_key_id is not None:
+            pulumi.set(__self__, "master_key_id", master_key_id)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if redo_encryption_observed is not None:
+            pulumi.set(__self__, "redo_encryption_observed", redo_encryption_observed)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_master_key_last_rotation is not None:
+            pulumi.set(__self__, "time_master_key_last_rotation", time_master_key_last_rotation)
+        if unencrypted_tablespaces_count is not None:
+            pulumi.set(__self__, "unencrypted_tablespaces_count", unencrypted_tablespaces_count)
+        if wallet_location is not None:
+            pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="dbCredentialsEncryptionObserved")
+    def db_credentials_encryption_observed(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "db_credentials_encryption_observed")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedTablespacesCount")
+    def encrypted_tablespaces_count(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "encrypted_tablespaces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "encryption_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="integrityConfigureds")
+    def integrity_configureds(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "integrity_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="keyCacheStatus")
+    def key_cache_status(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "key_cache_status")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreType")
+    def key_store_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "key_store_type")
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyEncryptionAlgorithm")
+    def master_key_encryption_algorithm(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "master_key_encryption_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyId")
+    def master_key_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "master_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="redoEncryptionObserved")
+    def redo_encryption_observed(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "redo_encryption_observed")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeMasterKeyLastRotation")
+    def time_master_key_last_rotation(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "time_master_key_last_rotation")
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedTablespacesCount")
+    def unencrypted_tablespaces_count(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "unencrypted_tablespaces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "wallet_location")
+
+
+@pulumi.output_type
+class CryptoAssessmentManagementCryptoPostureTl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "areWeakCipherSuitesAllowed":
+            suggest = "are_weak_cipher_suites_allowed"
+        elif key == "cipherSuitesConfigureds":
+            suggest = "cipher_suites_configureds"
+        elif key == "fipsModeConfigured":
+            suggest = "fips_mode_configured"
+        elif key == "isMtlsConfigured":
+            suggest = "is_mtls_configured"
+        elif key == "quantumReadiness":
+            suggest = "quantum_readiness"
+        elif key == "revocationMode":
+            suggest = "revocation_mode"
+        elif key == "walletLocation":
+            suggest = "wallet_location"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CryptoAssessmentManagementCryptoPostureTl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CryptoAssessmentManagementCryptoPostureTl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CryptoAssessmentManagementCryptoPostureTl.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 are_weak_cipher_suites_allowed: Optional[_builtins.str] = None,
+                 cipher_suites_configureds: Optional[Sequence[_builtins.str]] = None,
+                 fips_mode_configured: Optional[_builtins.str] = None,
+                 is_mtls_configured: Optional[_builtins.str] = None,
+                 quantum_readiness: Optional[_builtins.str] = None,
+                 revocation_mode: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None,
+                 versions: Optional[Sequence[_builtins.str]] = None,
+                 wallet_location: Optional[_builtins.str] = None):
+        if are_weak_cipher_suites_allowed is not None:
+            pulumi.set(__self__, "are_weak_cipher_suites_allowed", are_weak_cipher_suites_allowed)
+        if cipher_suites_configureds is not None:
+            pulumi.set(__self__, "cipher_suites_configureds", cipher_suites_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if is_mtls_configured is not None:
+            pulumi.set(__self__, "is_mtls_configured", is_mtls_configured)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if revocation_mode is not None:
+            pulumi.set(__self__, "revocation_mode", revocation_mode)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if versions is not None:
+            pulumi.set(__self__, "versions", versions)
+        if wallet_location is not None:
+            pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakCipherSuitesAllowed")
+    def are_weak_cipher_suites_allowed(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "are_weak_cipher_suites_allowed")
+
+    @_builtins.property
+    @pulumi.getter(name="cipherSuitesConfigureds")
+    def cipher_suites_configureds(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "cipher_suites_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="isMtlsConfigured")
+    def is_mtls_configured(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "is_mtls_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="revocationMode")
+    def revocation_mode(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "revocation_mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "versions")
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "wallet_location")
 
 
 @pulumi.output_type
@@ -12490,6 +13688,3389 @@ class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatRe
         The name of the masking format.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentBackupSetsCryptoAssessmentBackupSetCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCryptoAssessmentBackupSetsCryptoAssessmentBackupSetCollectionItemResult']):
+        """
+        :param Sequence['GetCryptoAssessmentBackupSetsCryptoAssessmentBackupSetCollectionItemArgs'] items: Backup set summary items for the specified crypto assessment.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCryptoAssessmentBackupSetsCryptoAssessmentBackupSetCollectionItemResult']:
+        """
+        Backup set summary items for the specified crypto assessment.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentBackupSetsCryptoAssessmentBackupSetCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 algorithm_observed: _builtins.str,
+                 assessment_id: _builtins.str,
+                 backup_pieces: _builtins.int,
+                 backup_set_key: _builtins.str,
+                 backup_type: _builtins.str,
+                 cipher_mode_observed: _builtins.str,
+                 is_compressed: _builtins.bool,
+                 is_encrypted: _builtins.bool,
+                 set_stamp: _builtins.str,
+                 size_in_gbs: _builtins.float,
+                 status: _builtins.str,
+                 target_id: _builtins.str,
+                 time_created: _builtins.str,
+                 time_last_assessed: _builtins.str):
+        """
+        :param _builtins.str algorithm_observed: Encryption algorithm observed for the backup set when encryption is enabled.
+        :param _builtins.str assessment_id: A filter to return only resources associated with the specified crypto assessment OCID.
+        :param _builtins.int backup_pieces: Number of backup pieces in the set.
+        :param _builtins.str backup_set_key: Filters backup set summary rows to an exact matching backupSetKey.
+        :param _builtins.str backup_type: Backup type observed for the set.
+        :param _builtins.str cipher_mode_observed: Cipher mode observed for the backup set when encryption is enabled.
+        :param _builtins.bool is_compressed: Indicates whether the backup set is compressed.
+        :param _builtins.bool is_encrypted: Filters backup set summary rows by whether the backup set is encrypted.
+        :param _builtins.str set_stamp: Backup set stamp.
+        :param _builtins.float size_in_gbs: Backup set size in gigabytes.
+        :param _builtins.str status: Current status of the backup set.
+        :param _builtins.str target_id: A filter to return only inventory rows associated with the specified target OCID.
+        :param _builtins.str time_created: Backup set creation time in RFC3339 format.
+        :param _builtins.str time_last_assessed: The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+        """
+        pulumi.set(__self__, "algorithm_observed", algorithm_observed)
+        pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "backup_pieces", backup_pieces)
+        pulumi.set(__self__, "backup_set_key", backup_set_key)
+        pulumi.set(__self__, "backup_type", backup_type)
+        pulumi.set(__self__, "cipher_mode_observed", cipher_mode_observed)
+        pulumi.set(__self__, "is_compressed", is_compressed)
+        pulumi.set(__self__, "is_encrypted", is_encrypted)
+        pulumi.set(__self__, "set_stamp", set_stamp)
+        pulumi.set(__self__, "size_in_gbs", size_in_gbs)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmObserved")
+    def algorithm_observed(self) -> _builtins.str:
+        """
+        Encryption algorithm observed for the backup set when encryption is enabled.
+        """
+        return pulumi.get(self, "algorithm_observed")
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> _builtins.str:
+        """
+        A filter to return only resources associated with the specified crypto assessment OCID.
+        """
+        return pulumi.get(self, "assessment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="backupPieces")
+    def backup_pieces(self) -> _builtins.int:
+        """
+        Number of backup pieces in the set.
+        """
+        return pulumi.get(self, "backup_pieces")
+
+    @_builtins.property
+    @pulumi.getter(name="backupSetKey")
+    def backup_set_key(self) -> _builtins.str:
+        """
+        Filters backup set summary rows to an exact matching backupSetKey.
+        """
+        return pulumi.get(self, "backup_set_key")
+
+    @_builtins.property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> _builtins.str:
+        """
+        Backup type observed for the set.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @_builtins.property
+    @pulumi.getter(name="cipherModeObserved")
+    def cipher_mode_observed(self) -> _builtins.str:
+        """
+        Cipher mode observed for the backup set when encryption is enabled.
+        """
+        return pulumi.get(self, "cipher_mode_observed")
+
+    @_builtins.property
+    @pulumi.getter(name="isCompressed")
+    def is_compressed(self) -> _builtins.bool:
+        """
+        Indicates whether the backup set is compressed.
+        """
+        return pulumi.get(self, "is_compressed")
+
+    @_builtins.property
+    @pulumi.getter(name="isEncrypted")
+    def is_encrypted(self) -> _builtins.bool:
+        """
+        Filters backup set summary rows by whether the backup set is encrypted.
+        """
+        return pulumi.get(self, "is_encrypted")
+
+    @_builtins.property
+    @pulumi.getter(name="setStamp")
+    def set_stamp(self) -> _builtins.str:
+        """
+        Backup set stamp.
+        """
+        return pulumi.get(self, "set_stamp")
+
+    @_builtins.property
+    @pulumi.getter(name="sizeInGbs")
+    def size_in_gbs(self) -> _builtins.float:
+        """
+        Backup set size in gigabytes.
+        """
+        return pulumi.get(self, "size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Current status of the backup set.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only inventory rows associated with the specified target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Backup set creation time in RFC3339 format.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> _builtins.str:
+        """
+        The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_last_assessed")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentBackupSetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentCbomItemsCryptoAssessmentCbomItemCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCryptoAssessmentCbomItemsCryptoAssessmentCbomItemCollectionItemResult']):
+        """
+        :param Sequence['GetCryptoAssessmentCbomItemsCryptoAssessmentCbomItemCollectionItemArgs'] items: CBOM items for the crypto assessment.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCryptoAssessmentCbomItemsCryptoAssessmentCbomItemCollectionItemResult']:
+        """
+        CBOM items for the crypto assessment.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentCbomItemsCryptoAssessmentCbomItemCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 algorithm: _builtins.str,
+                 compliance_driver: _builtins.str,
+                 component_type: _builtins.str,
+                 configuration_locations: Sequence[_builtins.str],
+                 feature: _builtins.str,
+                 format: _builtins.str,
+                 key_size: _builtins.str,
+                 protocol: _builtins.str):
+        """
+        :param _builtins.str algorithm: Cryptographic algorithm or integrity/checksum value observed for the feature.
+        :param _builtins.str compliance_driver: Static compliance standards applicable to the feature.
+        :param _builtins.str component_type: Type of component represented in the CBOM item.
+        :param Sequence[_builtins.str] configuration_locations: Locations where this item is configured or stored.
+        :param _builtins.str feature: Feature name represented by the CBOM item.
+        :param _builtins.str format: Cryptographic format used by the feature.
+        :param _builtins.str key_size: Observed key size for the feature.
+        :param _builtins.str protocol: Protocol used by the cryptographic feature.
+        """
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "compliance_driver", compliance_driver)
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "configuration_locations", configuration_locations)
+        pulumi.set(__self__, "feature", feature)
+        pulumi.set(__self__, "format", format)
+        pulumi.set(__self__, "key_size", key_size)
+        pulumi.set(__self__, "protocol", protocol)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithm(self) -> _builtins.str:
+        """
+        Cryptographic algorithm or integrity/checksum value observed for the feature.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="complianceDriver")
+    def compliance_driver(self) -> _builtins.str:
+        """
+        Static compliance standards applicable to the feature.
+        """
+        return pulumi.get(self, "compliance_driver")
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        Type of component represented in the CBOM item.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="configurationLocations")
+    def configuration_locations(self) -> Sequence[_builtins.str]:
+        """
+        Locations where this item is configured or stored.
+        """
+        return pulumi.get(self, "configuration_locations")
+
+    @_builtins.property
+    @pulumi.getter
+    def feature(self) -> _builtins.str:
+        """
+        Feature name represented by the CBOM item.
+        """
+        return pulumi.get(self, "feature")
+
+    @_builtins.property
+    @pulumi.getter
+    def format(self) -> _builtins.str:
+        """
+        Cryptographic format used by the feature.
+        """
+        return pulumi.get(self, "format")
+
+    @_builtins.property
+    @pulumi.getter(name="keySize")
+    def key_size(self) -> _builtins.str:
+        """
+        Observed key size for the feature.
+        """
+        return pulumi.get(self, "key_size")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        Protocol used by the cryptographic feature.
+        """
+        return pulumi.get(self, "protocol")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentCbomItemsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentCertificatesCryptoAssessmentCertificateCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCryptoAssessmentCertificatesCryptoAssessmentCertificateCollectionItemResult']):
+        """
+        :param Sequence['GetCryptoAssessmentCertificatesCryptoAssessmentCertificateCollectionItemArgs'] items: Certificate summaries that match the request filters.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCryptoAssessmentCertificatesCryptoAssessmentCertificateCollectionItemResult']:
+        """
+        Certificate summaries that match the request filters.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentCertificatesCryptoAssessmentCertificateCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 age: _builtins.str,
+                 assessment_id: _builtins.str,
+                 assessment_type: _builtins.str,
+                 certificate_type: _builtins.str,
+                 compartment_id: _builtins.str,
+                 days_to_expiry: _builtins.int,
+                 expiry_bucket: _builtins.str,
+                 issuer: _builtins.str,
+                 public_key_type: _builtins.str,
+                 serial_number: _builtins.str,
+                 signature_algorithm: _builtins.str,
+                 status: _builtins.str,
+                 subject: _builtins.str,
+                 target_id: _builtins.str,
+                 time_last_assessed: _builtins.str,
+                 time_valid_from: _builtins.str,
+                 time_valid_until: _builtins.str,
+                 wallet_location: _builtins.str):
+        """
+        :param _builtins.str age: Age of the certificate in whole days, calculated from timeValidFrom using the current UTC date.
+        :param _builtins.str assessment_id: A filter to return only resources associated with the specified crypto assessment OCID.
+        :param _builtins.str assessment_type: A filter to return targets from assessments of the specified type.
+        :param _builtins.str certificate_type: A filter to return only certificates of any of the specified types.
+        :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param _builtins.int days_to_expiry: A filter to return certificates whose validTill timestamp is on or before the current time plus the specified number of days. Negative values are allowed and filter certificates that expired on or before that many days ago.
+        :param _builtins.str expiry_bucket: A filter to return only certificates in the specified expiry bucket. Supported values are 0_15, 15_30, 30_60, 60_90, and 90_PLUS.
+        :param _builtins.str issuer: Issuer of the certificate.
+        :param _builtins.str public_key_type: A filter to return only certificates with any of the specified public key types. Stored values are normalized forms such as RSA2048, RSA4096, or EC256.
+        :param _builtins.str serial_number: Certificate serial number.
+        :param _builtins.str signature_algorithm: A filter to return only certificates whose signature algorithm contains any of the specified values. For example, use SHA1 to match SHA1-based certificate signatures.
+        :param _builtins.str status: A filter to return only certificates with any of the specified statuses.
+        :param _builtins.str subject: Subject of the certificate.
+        :param _builtins.str target_id: A filter to return only inventory rows associated with the specified target OCID.
+        :param _builtins.str time_last_assessed: The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+        :param _builtins.str time_valid_from: Certificate validity start time in RFC3339 format.
+        :param _builtins.str time_valid_until: Certificate validity end time in RFC3339 format.
+        :param _builtins.str wallet_location: Wallet location where the certificate was discovered, if available.
+        """
+        pulumi.set(__self__, "age", age)
+        pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "assessment_type", assessment_type)
+        pulumi.set(__self__, "certificate_type", certificate_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "days_to_expiry", days_to_expiry)
+        pulumi.set(__self__, "expiry_bucket", expiry_bucket)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "public_key_type", public_key_type)
+        pulumi.set(__self__, "serial_number", serial_number)
+        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "subject", subject)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
+        pulumi.set(__self__, "time_valid_from", time_valid_from)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
+        pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter
+    def age(self) -> _builtins.str:
+        """
+        Age of the certificate in whole days, calculated from timeValidFrom using the current UTC date.
+        """
+        return pulumi.get(self, "age")
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> _builtins.str:
+        """
+        A filter to return only resources associated with the specified crypto assessment OCID.
+        """
+        return pulumi.get(self, "assessment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentType")
+    def assessment_type(self) -> _builtins.str:
+        """
+        A filter to return targets from assessments of the specified type.
+        """
+        return pulumi.get(self, "assessment_type")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateType")
+    def certificate_type(self) -> _builtins.str:
+        """
+        A filter to return only certificates of any of the specified types.
+        """
+        return pulumi.get(self, "certificate_type")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="daysToExpiry")
+    def days_to_expiry(self) -> _builtins.int:
+        """
+        A filter to return certificates whose validTill timestamp is on or before the current time plus the specified number of days. Negative values are allowed and filter certificates that expired on or before that many days ago.
+        """
+        return pulumi.get(self, "days_to_expiry")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryBucket")
+    def expiry_bucket(self) -> _builtins.str:
+        """
+        A filter to return only certificates in the specified expiry bucket. Supported values are 0_15, 15_30, 30_60, 60_90, and 90_PLUS.
+        """
+        return pulumi.get(self, "expiry_bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> _builtins.str:
+        """
+        Issuer of the certificate.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="publicKeyType")
+    def public_key_type(self) -> _builtins.str:
+        """
+        A filter to return only certificates with any of the specified public key types. Stored values are normalized forms such as RSA2048, RSA4096, or EC256.
+        """
+        return pulumi.get(self, "public_key_type")
+
+    @_builtins.property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> _builtins.str:
+        """
+        Certificate serial number.
+        """
+        return pulumi.get(self, "serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> _builtins.str:
+        """
+        A filter to return only certificates whose signature algorithm contains any of the specified values. For example, use SHA1 to match SHA1-based certificate signatures.
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        A filter to return only certificates with any of the specified statuses.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> _builtins.str:
+        """
+        Subject of the certificate.
+        """
+        return pulumi.get(self, "subject")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only inventory rows associated with the specified target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> _builtins.str:
+        """
+        The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_last_assessed")
+
+    @_builtins.property
+    @pulumi.getter(name="timeValidFrom")
+    def time_valid_from(self) -> _builtins.str:
+        """
+        Certificate validity start time in RFC3339 format.
+        """
+        return pulumi.get(self, "time_valid_from")
+
+    @_builtins.property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> _builtins.str:
+        """
+        Certificate validity end time in RFC3339 format.
+        """
+        return pulumi.get(self, "time_valid_until")
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> _builtins.str:
+        """
+        Wallet location where the certificate was discovered, if available.
+        """
+        return pulumi.get(self, "wallet_location")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentCertificatesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentCryptoPostureResult(dict):
+    def __init__(__self__, *,
+                 backup_status: _builtins.str,
+                 encrypted_backup_pieces_count: _builtins.int,
+                 fips_mode_configured: _builtins.str,
+                 fips_status: _builtins.str,
+                 network_encryptions: Sequence[_builtins.str],
+                 nnes: Sequence['outputs.GetCryptoAssessmentCryptoPostureNneResult'],
+                 tdes: Sequence['outputs.GetCryptoAssessmentCryptoPostureTdeResult'],
+                 tls: Sequence['outputs.GetCryptoAssessmentCryptoPostureTlResult'],
+                 unencrypted_backup_pieces_count: _builtins.int):
+        """
+        :param _builtins.str backup_status: Backup encryption status observed for the assessment.
+        :param _builtins.int encrypted_backup_pieces_count: Number of encrypted backup pieces.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param _builtins.str fips_status: Overall FIPS status for the assessment when the target uses common FIPS configuration.
+        :param Sequence[_builtins.str] network_encryptions: Network encryption details.
+        :param Sequence['GetCryptoAssessmentCryptoPostureNneArgs'] nnes: Native network encryption posture details.
+        :param Sequence['GetCryptoAssessmentCryptoPostureTdeArgs'] tdes: Transparent data encryption posture details.
+        :param Sequence['GetCryptoAssessmentCryptoPostureTlArgs'] tls: TLS posture details.
+        :param _builtins.int unencrypted_backup_pieces_count: Number of unencrypted backup pieces.
+        """
+        pulumi.set(__self__, "backup_status", backup_status)
+        pulumi.set(__self__, "encrypted_backup_pieces_count", encrypted_backup_pieces_count)
+        pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        pulumi.set(__self__, "fips_status", fips_status)
+        pulumi.set(__self__, "network_encryptions", network_encryptions)
+        pulumi.set(__self__, "nnes", nnes)
+        pulumi.set(__self__, "tdes", tdes)
+        pulumi.set(__self__, "tls", tls)
+        pulumi.set(__self__, "unencrypted_backup_pieces_count", unencrypted_backup_pieces_count)
+
+    @_builtins.property
+    @pulumi.getter(name="backupStatus")
+    def backup_status(self) -> _builtins.str:
+        """
+        Backup encryption status observed for the assessment.
+        """
+        return pulumi.get(self, "backup_status")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedBackupPiecesCount")
+    def encrypted_backup_pieces_count(self) -> _builtins.int:
+        """
+        Number of encrypted backup pieces.
+        """
+        return pulumi.get(self, "encrypted_backup_pieces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> _builtins.str:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsStatus")
+    def fips_status(self) -> _builtins.str:
+        """
+        Overall FIPS status for the assessment when the target uses common FIPS configuration.
+        """
+        return pulumi.get(self, "fips_status")
+
+    @_builtins.property
+    @pulumi.getter(name="networkEncryptions")
+    def network_encryptions(self) -> Sequence[_builtins.str]:
+        """
+        Network encryption details.
+        """
+        return pulumi.get(self, "network_encryptions")
+
+    @_builtins.property
+    @pulumi.getter
+    def nnes(self) -> Sequence['outputs.GetCryptoAssessmentCryptoPostureNneResult']:
+        """
+        Native network encryption posture details.
+        """
+        return pulumi.get(self, "nnes")
+
+    @_builtins.property
+    @pulumi.getter
+    def tdes(self) -> Sequence['outputs.GetCryptoAssessmentCryptoPostureTdeResult']:
+        """
+        Transparent data encryption posture details.
+        """
+        return pulumi.get(self, "tdes")
+
+    @_builtins.property
+    @pulumi.getter
+    def tls(self) -> Sequence['outputs.GetCryptoAssessmentCryptoPostureTlResult']:
+        """
+        TLS posture details.
+        """
+        return pulumi.get(self, "tls")
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedBackupPiecesCount")
+    def unencrypted_backup_pieces_count(self) -> _builtins.int:
+        """
+        Number of unencrypted backup pieces.
+        """
+        return pulumi.get(self, "unencrypted_backup_pieces_count")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentCryptoPostureNneResult(dict):
+    def __init__(__self__, *,
+                 are_weak_options_allowed: _builtins.str,
+                 encryption_configureds: Sequence[_builtins.str],
+                 fips_mode_configured: _builtins.str,
+                 integrities: Sequence[_builtins.str],
+                 key_exchange: _builtins.str,
+                 quantum_readiness: _builtins.str,
+                 server_encryption: _builtins.str,
+                 server_integrities: Sequence[_builtins.str],
+                 status: _builtins.str):
+        """
+        :param _builtins.str are_weak_options_allowed: Indicates if weak NNE options are allowed.
+        :param Sequence[_builtins.str] encryption_configureds: Configured TDE encryption algorithm.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param Sequence[_builtins.str] integrities: NNE integrity algorithm(s).
+        :param _builtins.str key_exchange: Observed NNE key exchange setting.
+        :param _builtins.str quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param _builtins.str server_encryption: Observed server-side encryption requirement.
+        :param Sequence[_builtins.str] server_integrities: NNE server integrity algorithm(s).
+        :param _builtins.str status: TLS enablement status.
+        """
+        pulumi.set(__self__, "are_weak_options_allowed", are_weak_options_allowed)
+        pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        pulumi.set(__self__, "integrities", integrities)
+        pulumi.set(__self__, "key_exchange", key_exchange)
+        pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        pulumi.set(__self__, "server_encryption", server_encryption)
+        pulumi.set(__self__, "server_integrities", server_integrities)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakOptionsAllowed")
+    def are_weak_options_allowed(self) -> _builtins.str:
+        """
+        Indicates if weak NNE options are allowed.
+        """
+        return pulumi.get(self, "are_weak_options_allowed")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> Sequence[_builtins.str]:
+        """
+        Configured TDE encryption algorithm.
+        """
+        return pulumi.get(self, "encryption_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> _builtins.str:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter
+    def integrities(self) -> Sequence[_builtins.str]:
+        """
+        NNE integrity algorithm(s).
+        """
+        return pulumi.get(self, "integrities")
+
+    @_builtins.property
+    @pulumi.getter(name="keyExchange")
+    def key_exchange(self) -> _builtins.str:
+        """
+        Observed NNE key exchange setting.
+        """
+        return pulumi.get(self, "key_exchange")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> _builtins.str:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="serverEncryption")
+    def server_encryption(self) -> _builtins.str:
+        """
+        Observed server-side encryption requirement.
+        """
+        return pulumi.get(self, "server_encryption")
+
+    @_builtins.property
+    @pulumi.getter(name="serverIntegrities")
+    def server_integrities(self) -> Sequence[_builtins.str]:
+        """
+        NNE server integrity algorithm(s).
+        """
+        return pulumi.get(self, "server_integrities")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentCryptoPostureTdeResult(dict):
+    def __init__(__self__, *,
+                 db_credentials_encryption_observed: _builtins.str,
+                 encrypted_tablespaces_count: _builtins.int,
+                 encryption_configureds: Sequence[_builtins.str],
+                 fips_mode_configured: _builtins.str,
+                 integrity_configureds: Sequence[_builtins.str],
+                 key_cache_status: _builtins.str,
+                 key_store_type: _builtins.str,
+                 master_key_encryption_algorithm: _builtins.str,
+                 master_key_id: _builtins.str,
+                 quantum_readiness: _builtins.str,
+                 redo_encryption_observed: _builtins.str,
+                 status: _builtins.str,
+                 time_master_key_last_rotation: _builtins.str,
+                 unencrypted_tablespaces_count: _builtins.int,
+                 wallet_location: _builtins.str):
+        """
+        :param _builtins.str db_credentials_encryption_observed: Observed DB credentials encryption algorithm.
+        :param _builtins.int encrypted_tablespaces_count: Number of encrypted tablespaces detected.
+        :param Sequence[_builtins.str] encryption_configureds: Configured TDE encryption algorithm.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param Sequence[_builtins.str] integrity_configureds: Configured TDE integrity-related setting.
+        :param _builtins.str key_cache_status: The observed TDE key cache status.
+        :param _builtins.str key_store_type: The observed TDE key store type.
+        :param _builtins.str master_key_encryption_algorithm: The observed encryption algorithm used by the master key.
+        :param _builtins.str master_key_id: The observed TDE master key identifier.
+        :param _builtins.str quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param _builtins.str redo_encryption_observed: Observed redo log encryption algorithm.
+        :param _builtins.str status: TLS enablement status.
+        :param _builtins.str time_master_key_last_rotation: The last observed rotation time for the TDE master key, in RFC3339 format.
+        :param _builtins.int unencrypted_tablespaces_count: Number of unencrypted tablespaces detected.
+        :param _builtins.str wallet_location: TLS wallet location observed on target.
+        """
+        pulumi.set(__self__, "db_credentials_encryption_observed", db_credentials_encryption_observed)
+        pulumi.set(__self__, "encrypted_tablespaces_count", encrypted_tablespaces_count)
+        pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        pulumi.set(__self__, "integrity_configureds", integrity_configureds)
+        pulumi.set(__self__, "key_cache_status", key_cache_status)
+        pulumi.set(__self__, "key_store_type", key_store_type)
+        pulumi.set(__self__, "master_key_encryption_algorithm", master_key_encryption_algorithm)
+        pulumi.set(__self__, "master_key_id", master_key_id)
+        pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        pulumi.set(__self__, "redo_encryption_observed", redo_encryption_observed)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_master_key_last_rotation", time_master_key_last_rotation)
+        pulumi.set(__self__, "unencrypted_tablespaces_count", unencrypted_tablespaces_count)
+        pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="dbCredentialsEncryptionObserved")
+    def db_credentials_encryption_observed(self) -> _builtins.str:
+        """
+        Observed DB credentials encryption algorithm.
+        """
+        return pulumi.get(self, "db_credentials_encryption_observed")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedTablespacesCount")
+    def encrypted_tablespaces_count(self) -> _builtins.int:
+        """
+        Number of encrypted tablespaces detected.
+        """
+        return pulumi.get(self, "encrypted_tablespaces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> Sequence[_builtins.str]:
+        """
+        Configured TDE encryption algorithm.
+        """
+        return pulumi.get(self, "encryption_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> _builtins.str:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="integrityConfigureds")
+    def integrity_configureds(self) -> Sequence[_builtins.str]:
+        """
+        Configured TDE integrity-related setting.
+        """
+        return pulumi.get(self, "integrity_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="keyCacheStatus")
+    def key_cache_status(self) -> _builtins.str:
+        """
+        The observed TDE key cache status.
+        """
+        return pulumi.get(self, "key_cache_status")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreType")
+    def key_store_type(self) -> _builtins.str:
+        """
+        The observed TDE key store type.
+        """
+        return pulumi.get(self, "key_store_type")
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyEncryptionAlgorithm")
+    def master_key_encryption_algorithm(self) -> _builtins.str:
+        """
+        The observed encryption algorithm used by the master key.
+        """
+        return pulumi.get(self, "master_key_encryption_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyId")
+    def master_key_id(self) -> _builtins.str:
+        """
+        The observed TDE master key identifier.
+        """
+        return pulumi.get(self, "master_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> _builtins.str:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="redoEncryptionObserved")
+    def redo_encryption_observed(self) -> _builtins.str:
+        """
+        Observed redo log encryption algorithm.
+        """
+        return pulumi.get(self, "redo_encryption_observed")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeMasterKeyLastRotation")
+    def time_master_key_last_rotation(self) -> _builtins.str:
+        """
+        The last observed rotation time for the TDE master key, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_master_key_last_rotation")
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedTablespacesCount")
+    def unencrypted_tablespaces_count(self) -> _builtins.int:
+        """
+        Number of unencrypted tablespaces detected.
+        """
+        return pulumi.get(self, "unencrypted_tablespaces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> _builtins.str:
+        """
+        TLS wallet location observed on target.
+        """
+        return pulumi.get(self, "wallet_location")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentCryptoPostureTlResult(dict):
+    def __init__(__self__, *,
+                 are_weak_cipher_suites_allowed: _builtins.str,
+                 cipher_suites_configureds: Sequence[_builtins.str],
+                 fips_mode_configured: _builtins.str,
+                 is_mtls_configured: _builtins.str,
+                 quantum_readiness: _builtins.str,
+                 revocation_mode: _builtins.str,
+                 status: _builtins.str,
+                 versions: Sequence[_builtins.str],
+                 wallet_location: _builtins.str):
+        """
+        :param _builtins.str are_weak_cipher_suites_allowed: Indicates if weak TLS cipher suites are allowed.
+        :param Sequence[_builtins.str] cipher_suites_configureds: TLS cipher suites configured on target.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param _builtins.str is_mtls_configured: Whether TLS client authentication is configured.
+        :param _builtins.str quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param _builtins.str revocation_mode: Certificate revocation checking mode.
+        :param _builtins.str status: TLS enablement status.
+        :param Sequence[_builtins.str] versions: TLS versions configured on target.
+        :param _builtins.str wallet_location: TLS wallet location observed on target.
+        """
+        pulumi.set(__self__, "are_weak_cipher_suites_allowed", are_weak_cipher_suites_allowed)
+        pulumi.set(__self__, "cipher_suites_configureds", cipher_suites_configureds)
+        pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        pulumi.set(__self__, "is_mtls_configured", is_mtls_configured)
+        pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        pulumi.set(__self__, "revocation_mode", revocation_mode)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "versions", versions)
+        pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakCipherSuitesAllowed")
+    def are_weak_cipher_suites_allowed(self) -> _builtins.str:
+        """
+        Indicates if weak TLS cipher suites are allowed.
+        """
+        return pulumi.get(self, "are_weak_cipher_suites_allowed")
+
+    @_builtins.property
+    @pulumi.getter(name="cipherSuitesConfigureds")
+    def cipher_suites_configureds(self) -> Sequence[_builtins.str]:
+        """
+        TLS cipher suites configured on target.
+        """
+        return pulumi.get(self, "cipher_suites_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> _builtins.str:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="isMtlsConfigured")
+    def is_mtls_configured(self) -> _builtins.str:
+        """
+        Whether TLS client authentication is configured.
+        """
+        return pulumi.get(self, "is_mtls_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> _builtins.str:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="revocationMode")
+    def revocation_mode(self) -> _builtins.str:
+        """
+        Certificate revocation checking mode.
+        """
+        return pulumi.get(self, "revocation_mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> Sequence[_builtins.str]:
+        """
+        TLS versions configured on target.
+        """
+        return pulumi.get(self, "versions")
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> _builtins.str:
+        """
+        TLS wallet location observed on target.
+        """
+        return pulumi.get(self, "wallet_location")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingAnalyticsCryptoAssessmentFindingAnalyticsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCryptoAssessmentFindingAnalyticsCryptoAssessmentFindingAnalyticsCollectionItemResult']):
+        """
+        :param Sequence['GetCryptoAssessmentFindingAnalyticsCryptoAssessmentFindingAnalyticsCollectionItemArgs'] items: Array of crypto finding analytics summaries.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCryptoAssessmentFindingAnalyticsCryptoAssessmentFindingAnalyticsCollectionItemResult']:
+        """
+        Array of crypto finding analytics summaries.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingAnalyticsCryptoAssessmentFindingAnalyticsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 category: _builtins.str,
+                 finding_key: _builtins.str,
+                 priority: _builtins.int,
+                 severity: _builtins.str,
+                 short_remediation: _builtins.str,
+                 short_summary: _builtins.str,
+                 target_count: _builtins.int,
+                 title: _builtins.str):
+        """
+        :param _builtins.str category: A filter to return only findings in the specified category key.
+        :param _builtins.str finding_key: A filter to return only findings with any of the specified finding keys.
+        :param _builtins.int priority: Numeric priority of the finding. 1 is CRITICAL, 2 is HIGH, 3 is MEDIUM, and 4 is LOW.
+        :param _builtins.str severity: Text severity derived from priority using the static mapping 1=CRITICAL, 2=HIGH, 3=MEDIUM, 4=LOW.
+        :param _builtins.str short_remediation: Short remediation for the finding.
+        :param _builtins.str short_summary: Short summary of the finding.
+        :param _builtins.int target_count: Number of targets impacted by this finding in the queried scope.
+        :param _builtins.str title: Display title of the finding.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "finding_key", finding_key)
+        pulumi.set(__self__, "priority", priority)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "short_remediation", short_remediation)
+        pulumi.set(__self__, "short_summary", short_summary)
+        pulumi.set(__self__, "target_count", target_count)
+        pulumi.set(__self__, "title", title)
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> _builtins.str:
+        """
+        A filter to return only findings in the specified category key.
+        """
+        return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter(name="findingKey")
+    def finding_key(self) -> _builtins.str:
+        """
+        A filter to return only findings with any of the specified finding keys.
+        """
+        return pulumi.get(self, "finding_key")
+
+    @_builtins.property
+    @pulumi.getter
+    def priority(self) -> _builtins.int:
+        """
+        Numeric priority of the finding. 1 is CRITICAL, 2 is HIGH, 3 is MEDIUM, and 4 is LOW.
+        """
+        return pulumi.get(self, "priority")
+
+    @_builtins.property
+    @pulumi.getter
+    def severity(self) -> _builtins.str:
+        """
+        Text severity derived from priority using the static mapping 1=CRITICAL, 2=HIGH, 3=MEDIUM, 4=LOW.
+        """
+        return pulumi.get(self, "severity")
+
+    @_builtins.property
+    @pulumi.getter(name="shortRemediation")
+    def short_remediation(self) -> _builtins.str:
+        """
+        Short remediation for the finding.
+        """
+        return pulumi.get(self, "short_remediation")
+
+    @_builtins.property
+    @pulumi.getter(name="shortSummary")
+    def short_summary(self) -> _builtins.str:
+        """
+        Short summary of the finding.
+        """
+        return pulumi.get(self, "short_summary")
+
+    @_builtins.property
+    @pulumi.getter(name="targetCount")
+    def target_count(self) -> _builtins.int:
+        """
+        Number of targets impacted by this finding in the queried scope.
+        """
+        return pulumi.get(self, "target_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> _builtins.str:
+        """
+        Display title of the finding.
+        """
+        return pulumi.get(self, "title")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingAnalyticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingTargetsCryptoAssessmentFindingTargetCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCryptoAssessmentFindingTargetsCryptoAssessmentFindingTargetCollectionItemResult']):
+        """
+        :param Sequence['GetCryptoAssessmentFindingTargetsCryptoAssessmentFindingTargetCollectionItemArgs'] items: Array of target-level finding occurrences.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCryptoAssessmentFindingTargetsCryptoAssessmentFindingTargetCollectionItemResult']:
+        """
+        Array of target-level finding occurrences.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingTargetsCryptoAssessmentFindingTargetCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 assessment_id: _builtins.str,
+                 database_version: _builtins.str,
+                 finding_key: _builtins.str,
+                 is_quantum_readiness_check: _builtins.bool,
+                 observed_value: _builtins.str,
+                 priority: _builtins.int,
+                 severity: _builtins.str,
+                 target_id: _builtins.str):
+        """
+        :param _builtins.str assessment_id: The crypto assessment OCID associated with this finding occurrence.
+        :param _builtins.str database_version: Database version of the affected target.
+        :param _builtins.str finding_key: The finding keys for which target occurrences are listed.
+        :param _builtins.bool is_quantum_readiness_check: A filter to return only findings that are or are not part of quantum-readiness checks.
+        :param _builtins.str observed_value: The observed value for the selected finding on this target.
+        :param _builtins.int priority: Numeric priority of the finding. 1 is CRITICAL, 2 is HIGH, 3 is MEDIUM, and 4 is LOW.
+        :param _builtins.str severity: Text severity derived from priority using the static mapping 1=CRITICAL, 2=HIGH, 3=MEDIUM, 4=LOW.
+        :param _builtins.str target_id: Filters results to targets with an exact matching target OCID.
+        """
+        pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "database_version", database_version)
+        pulumi.set(__self__, "finding_key", finding_key)
+        pulumi.set(__self__, "is_quantum_readiness_check", is_quantum_readiness_check)
+        pulumi.set(__self__, "observed_value", observed_value)
+        pulumi.set(__self__, "priority", priority)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> _builtins.str:
+        """
+        The crypto assessment OCID associated with this finding occurrence.
+        """
+        return pulumi.get(self, "assessment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseVersion")
+    def database_version(self) -> _builtins.str:
+        """
+        Database version of the affected target.
+        """
+        return pulumi.get(self, "database_version")
+
+    @_builtins.property
+    @pulumi.getter(name="findingKey")
+    def finding_key(self) -> _builtins.str:
+        """
+        The finding keys for which target occurrences are listed.
+        """
+        return pulumi.get(self, "finding_key")
+
+    @_builtins.property
+    @pulumi.getter(name="isQuantumReadinessCheck")
+    def is_quantum_readiness_check(self) -> _builtins.bool:
+        """
+        A filter to return only findings that are or are not part of quantum-readiness checks.
+        """
+        return pulumi.get(self, "is_quantum_readiness_check")
+
+    @_builtins.property
+    @pulumi.getter(name="observedValue")
+    def observed_value(self) -> _builtins.str:
+        """
+        The observed value for the selected finding on this target.
+        """
+        return pulumi.get(self, "observed_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def priority(self) -> _builtins.int:
+        """
+        Numeric priority of the finding. 1 is CRITICAL, 2 is HIGH, 3 is MEDIUM, and 4 is LOW.
+        """
+        return pulumi.get(self, "priority")
+
+    @_builtins.property
+    @pulumi.getter
+    def severity(self) -> _builtins.str:
+        """
+        Text severity derived from priority using the static mapping 1=CRITICAL, 2=HIGH, 3=MEDIUM, 4=LOW.
+        """
+        return pulumi.get(self, "severity")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        Filters results to targets with an exact matching target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingTargetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionResult(dict):
+    def __init__(__self__, *,
+                 assessment_type: _builtins.str,
+                 database_version: _builtins.str,
+                 items: Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionItemResult'],
+                 summaries: Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryResult'],
+                 target_id: _builtins.str):
+        """
+        :param _builtins.str assessment_type: Assessment type recorded in the findings table.
+        :param _builtins.str database_version: Database version for the target database associated with the specified crypto assessment.
+        :param Sequence['GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionItemArgs'] items: Array of crypto deviation findings.
+        :param Sequence['GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryArgs'] summaries: Aggregate finding counts for the specified crypto assessment.
+        :param _builtins.str target_id: The OCID of the target database for the specified crypto assessment.
+        """
+        pulumi.set(__self__, "assessment_type", assessment_type)
+        pulumi.set(__self__, "database_version", database_version)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "summaries", summaries)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentType")
+    def assessment_type(self) -> _builtins.str:
+        """
+        Assessment type recorded in the findings table.
+        """
+        return pulumi.get(self, "assessment_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseVersion")
+    def database_version(self) -> _builtins.str:
+        """
+        Database version for the target database associated with the specified crypto assessment.
+        """
+        return pulumi.get(self, "database_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionItemResult']:
+        """
+        Array of crypto deviation findings.
+        """
+        return pulumi.get(self, "items")
+
+    @_builtins.property
+    @pulumi.getter
+    def summaries(self) -> Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryResult']:
+        """
+        Aggregate finding counts for the specified crypto assessment.
+        """
+        return pulumi.get(self, "summaries")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        The OCID of the target database for the specified crypto assessment.
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 category: _builtins.str,
+                 compliance: _builtins.str,
+                 expected_value: _builtins.str,
+                 finding_key: _builtins.str,
+                 is_quantum_readiness_check: _builtins.bool,
+                 observed_values: Sequence[_builtins.str],
+                 priority: _builtins.int,
+                 recommended_value: _builtins.str,
+                 remediation: _builtins.str,
+                 severity: _builtins.str,
+                 short_remediation: _builtins.str,
+                 short_summary: _builtins.str,
+                 status: _builtins.str,
+                 summary: _builtins.str,
+                 title: _builtins.str,
+                 url: _builtins.str):
+        """
+        :param _builtins.str category: A filter to return only findings in the specified category key.
+        :param _builtins.str compliance: Compliance mapping recorded for the finding.
+        :param _builtins.str expected_value: Expected value recorded for the finding.
+        :param _builtins.str finding_key: A filter to return only findings with the specified finding key.
+        :param _builtins.bool is_quantum_readiness_check: A filter to return only findings that are or are not part of quantum-readiness checks.
+        :param Sequence[_builtins.str] observed_values: Observed values recorded for the finding.
+        :param _builtins.int priority: Numeric priority of the finding. 1 is CRITICAL, 2 is HIGH, 3 is MEDIUM, and 4 is LOW.
+        :param _builtins.str recommended_value: Recommended value recorded for the finding.
+        :param _builtins.str remediation: Remediation text recorded for the finding.
+        :param _builtins.str severity: Text severity derived from priority using the static mapping 1=CRITICAL, 2=HIGH, 3=MEDIUM, 4=LOW.
+        :param _builtins.str short_remediation: Short remediation for the finding.
+        :param _builtins.str short_summary: Short summary of the finding.
+        :param _builtins.str status: A filter to return only findings with the specified status.
+        :param _builtins.str summary: Aggregate finding counts for the specified crypto assessment.
+        :param _builtins.str title: A filter to return only findings with the specified title.
+        :param _builtins.str url: URL recorded for the finding.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "compliance", compliance)
+        pulumi.set(__self__, "expected_value", expected_value)
+        pulumi.set(__self__, "finding_key", finding_key)
+        pulumi.set(__self__, "is_quantum_readiness_check", is_quantum_readiness_check)
+        pulumi.set(__self__, "observed_values", observed_values)
+        pulumi.set(__self__, "priority", priority)
+        pulumi.set(__self__, "recommended_value", recommended_value)
+        pulumi.set(__self__, "remediation", remediation)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "short_remediation", short_remediation)
+        pulumi.set(__self__, "short_summary", short_summary)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
+        pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> _builtins.str:
+        """
+        A filter to return only findings in the specified category key.
+        """
+        return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter
+    def compliance(self) -> _builtins.str:
+        """
+        Compliance mapping recorded for the finding.
+        """
+        return pulumi.get(self, "compliance")
+
+    @_builtins.property
+    @pulumi.getter(name="expectedValue")
+    def expected_value(self) -> _builtins.str:
+        """
+        Expected value recorded for the finding.
+        """
+        return pulumi.get(self, "expected_value")
+
+    @_builtins.property
+    @pulumi.getter(name="findingKey")
+    def finding_key(self) -> _builtins.str:
+        """
+        A filter to return only findings with the specified finding key.
+        """
+        return pulumi.get(self, "finding_key")
+
+    @_builtins.property
+    @pulumi.getter(name="isQuantumReadinessCheck")
+    def is_quantum_readiness_check(self) -> _builtins.bool:
+        """
+        A filter to return only findings that are or are not part of quantum-readiness checks.
+        """
+        return pulumi.get(self, "is_quantum_readiness_check")
+
+    @_builtins.property
+    @pulumi.getter(name="observedValues")
+    def observed_values(self) -> Sequence[_builtins.str]:
+        """
+        Observed values recorded for the finding.
+        """
+        return pulumi.get(self, "observed_values")
+
+    @_builtins.property
+    @pulumi.getter
+    def priority(self) -> _builtins.int:
+        """
+        Numeric priority of the finding. 1 is CRITICAL, 2 is HIGH, 3 is MEDIUM, and 4 is LOW.
+        """
+        return pulumi.get(self, "priority")
+
+    @_builtins.property
+    @pulumi.getter(name="recommendedValue")
+    def recommended_value(self) -> _builtins.str:
+        """
+        Recommended value recorded for the finding.
+        """
+        return pulumi.get(self, "recommended_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def remediation(self) -> _builtins.str:
+        """
+        Remediation text recorded for the finding.
+        """
+        return pulumi.get(self, "remediation")
+
+    @_builtins.property
+    @pulumi.getter
+    def severity(self) -> _builtins.str:
+        """
+        Text severity derived from priority using the static mapping 1=CRITICAL, 2=HIGH, 3=MEDIUM, 4=LOW.
+        """
+        return pulumi.get(self, "severity")
+
+    @_builtins.property
+    @pulumi.getter(name="shortRemediation")
+    def short_remediation(self) -> _builtins.str:
+        """
+        Short remediation for the finding.
+        """
+        return pulumi.get(self, "short_remediation")
+
+    @_builtins.property
+    @pulumi.getter(name="shortSummary")
+    def short_summary(self) -> _builtins.str:
+        """
+        Short summary of the finding.
+        """
+        return pulumi.get(self, "short_summary")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        A filter to return only findings with the specified status.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def summary(self) -> _builtins.str:
+        """
+        Aggregate finding counts for the specified crypto assessment.
+        """
+        return pulumi.get(self, "summary")
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> _builtins.str:
+        """
+        A filter to return only findings with the specified title.
+        """
+        return pulumi.get(self, "title")
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> _builtins.str:
+        """
+        URL recorded for the finding.
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryResult(dict):
+    def __init__(__self__, *,
+                 backup_statuses: Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryBackupStatusResult'],
+                 critical: _builtins.int,
+                 data_encryption_statuses: Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryDataEncryptionStatusResult'],
+                 high: _builtins.int,
+                 low: _builtins.int,
+                 med: _builtins.int,
+                 network_encryption_statuses: Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryNetworkEncryptionStatusResult'],
+                 status_counts: Mapping[str, _builtins.str],
+                 total_checks: _builtins.int,
+                 total_findings: _builtins.int,
+                 wallet_statuses: Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryWalletStatusResult']):
+        """
+        :param Sequence['GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryBackupStatusArgs'] backup_statuses: Aggregate finding counts for one crypto finding category.
+        :param _builtins.int critical: FAIL or EVALUATE findings with priority 1.
+        :param Sequence['GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryDataEncryptionStatusArgs'] data_encryption_statuses: Aggregate finding counts for one crypto finding category.
+        :param _builtins.int high: FAIL or EVALUATE findings with priority 2.
+        :param _builtins.int low: FAIL or EVALUATE findings with priority 4.
+        :param _builtins.int med: FAIL or EVALUATE findings with priority 3.
+        :param Sequence['GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryNetworkEncryptionStatusArgs'] network_encryption_statuses: Aggregate finding counts for one crypto finding category.
+        :param Mapping[str, _builtins.str] status_counts: Counts keyed by finding status. All supported statuses are included with a zero count when absent.
+        :param _builtins.int total_checks: Total findings across all statuses in this category.
+        :param _builtins.int total_findings: Findings with FAIL or EVALUATE status.
+        :param Sequence['GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryWalletStatusArgs'] wallet_statuses: Aggregate finding counts for one crypto finding category.
+        """
+        pulumi.set(__self__, "backup_statuses", backup_statuses)
+        pulumi.set(__self__, "critical", critical)
+        pulumi.set(__self__, "data_encryption_statuses", data_encryption_statuses)
+        pulumi.set(__self__, "high", high)
+        pulumi.set(__self__, "low", low)
+        pulumi.set(__self__, "med", med)
+        pulumi.set(__self__, "network_encryption_statuses", network_encryption_statuses)
+        pulumi.set(__self__, "status_counts", status_counts)
+        pulumi.set(__self__, "total_checks", total_checks)
+        pulumi.set(__self__, "total_findings", total_findings)
+        pulumi.set(__self__, "wallet_statuses", wallet_statuses)
+
+    @_builtins.property
+    @pulumi.getter(name="backupStatuses")
+    def backup_statuses(self) -> Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryBackupStatusResult']:
+        """
+        Aggregate finding counts for one crypto finding category.
+        """
+        return pulumi.get(self, "backup_statuses")
+
+    @_builtins.property
+    @pulumi.getter
+    def critical(self) -> _builtins.int:
+        """
+        FAIL or EVALUATE findings with priority 1.
+        """
+        return pulumi.get(self, "critical")
+
+    @_builtins.property
+    @pulumi.getter(name="dataEncryptionStatuses")
+    def data_encryption_statuses(self) -> Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryDataEncryptionStatusResult']:
+        """
+        Aggregate finding counts for one crypto finding category.
+        """
+        return pulumi.get(self, "data_encryption_statuses")
+
+    @_builtins.property
+    @pulumi.getter
+    def high(self) -> _builtins.int:
+        """
+        FAIL or EVALUATE findings with priority 2.
+        """
+        return pulumi.get(self, "high")
+
+    @_builtins.property
+    @pulumi.getter
+    def low(self) -> _builtins.int:
+        """
+        FAIL or EVALUATE findings with priority 4.
+        """
+        return pulumi.get(self, "low")
+
+    @_builtins.property
+    @pulumi.getter
+    def med(self) -> _builtins.int:
+        """
+        FAIL or EVALUATE findings with priority 3.
+        """
+        return pulumi.get(self, "med")
+
+    @_builtins.property
+    @pulumi.getter(name="networkEncryptionStatuses")
+    def network_encryption_statuses(self) -> Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryNetworkEncryptionStatusResult']:
+        """
+        Aggregate finding counts for one crypto finding category.
+        """
+        return pulumi.get(self, "network_encryption_statuses")
+
+    @_builtins.property
+    @pulumi.getter(name="statusCounts")
+    def status_counts(self) -> Mapping[str, _builtins.str]:
+        """
+        Counts keyed by finding status. All supported statuses are included with a zero count when absent.
+        """
+        return pulumi.get(self, "status_counts")
+
+    @_builtins.property
+    @pulumi.getter(name="totalChecks")
+    def total_checks(self) -> _builtins.int:
+        """
+        Total findings across all statuses in this category.
+        """
+        return pulumi.get(self, "total_checks")
+
+    @_builtins.property
+    @pulumi.getter(name="totalFindings")
+    def total_findings(self) -> _builtins.int:
+        """
+        Findings with FAIL or EVALUATE status.
+        """
+        return pulumi.get(self, "total_findings")
+
+    @_builtins.property
+    @pulumi.getter(name="walletStatuses")
+    def wallet_statuses(self) -> Sequence['outputs.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryWalletStatusResult']:
+        """
+        Aggregate finding counts for one crypto finding category.
+        """
+        return pulumi.get(self, "wallet_statuses")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryBackupStatusResult(dict):
+    def __init__(__self__, *,
+                 findings: _builtins.int,
+                 pass_checks: _builtins.int,
+                 total_checks: _builtins.int):
+        """
+        :param _builtins.int findings: Findings with FAIL or EVALUATE status.
+        :param _builtins.int pass_checks: Findings with PASS status.
+        :param _builtins.int total_checks: Total findings across all statuses in this category.
+        """
+        pulumi.set(__self__, "findings", findings)
+        pulumi.set(__self__, "pass_checks", pass_checks)
+        pulumi.set(__self__, "total_checks", total_checks)
+
+    @_builtins.property
+    @pulumi.getter
+    def findings(self) -> _builtins.int:
+        """
+        Findings with FAIL or EVALUATE status.
+        """
+        return pulumi.get(self, "findings")
+
+    @_builtins.property
+    @pulumi.getter(name="passChecks")
+    def pass_checks(self) -> _builtins.int:
+        """
+        Findings with PASS status.
+        """
+        return pulumi.get(self, "pass_checks")
+
+    @_builtins.property
+    @pulumi.getter(name="totalChecks")
+    def total_checks(self) -> _builtins.int:
+        """
+        Total findings across all statuses in this category.
+        """
+        return pulumi.get(self, "total_checks")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryDataEncryptionStatusResult(dict):
+    def __init__(__self__, *,
+                 findings: _builtins.int,
+                 pass_checks: _builtins.int,
+                 total_checks: _builtins.int):
+        """
+        :param _builtins.int findings: Findings with FAIL or EVALUATE status.
+        :param _builtins.int pass_checks: Findings with PASS status.
+        :param _builtins.int total_checks: Total findings across all statuses in this category.
+        """
+        pulumi.set(__self__, "findings", findings)
+        pulumi.set(__self__, "pass_checks", pass_checks)
+        pulumi.set(__self__, "total_checks", total_checks)
+
+    @_builtins.property
+    @pulumi.getter
+    def findings(self) -> _builtins.int:
+        """
+        Findings with FAIL or EVALUATE status.
+        """
+        return pulumi.get(self, "findings")
+
+    @_builtins.property
+    @pulumi.getter(name="passChecks")
+    def pass_checks(self) -> _builtins.int:
+        """
+        Findings with PASS status.
+        """
+        return pulumi.get(self, "pass_checks")
+
+    @_builtins.property
+    @pulumi.getter(name="totalChecks")
+    def total_checks(self) -> _builtins.int:
+        """
+        Total findings across all statuses in this category.
+        """
+        return pulumi.get(self, "total_checks")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryNetworkEncryptionStatusResult(dict):
+    def __init__(__self__, *,
+                 findings: _builtins.int,
+                 pass_checks: _builtins.int,
+                 total_checks: _builtins.int):
+        """
+        :param _builtins.int findings: Findings with FAIL or EVALUATE status.
+        :param _builtins.int pass_checks: Findings with PASS status.
+        :param _builtins.int total_checks: Total findings across all statuses in this category.
+        """
+        pulumi.set(__self__, "findings", findings)
+        pulumi.set(__self__, "pass_checks", pass_checks)
+        pulumi.set(__self__, "total_checks", total_checks)
+
+    @_builtins.property
+    @pulumi.getter
+    def findings(self) -> _builtins.int:
+        """
+        Findings with FAIL or EVALUATE status.
+        """
+        return pulumi.get(self, "findings")
+
+    @_builtins.property
+    @pulumi.getter(name="passChecks")
+    def pass_checks(self) -> _builtins.int:
+        """
+        Findings with PASS status.
+        """
+        return pulumi.get(self, "pass_checks")
+
+    @_builtins.property
+    @pulumi.getter(name="totalChecks")
+    def total_checks(self) -> _builtins.int:
+        """
+        Total findings across all statuses in this category.
+        """
+        return pulumi.get(self, "total_checks")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryWalletStatusResult(dict):
+    def __init__(__self__, *,
+                 findings: _builtins.int,
+                 pass_checks: _builtins.int,
+                 total_checks: _builtins.int):
+        """
+        :param _builtins.int findings: Findings with FAIL or EVALUATE status.
+        :param _builtins.int pass_checks: Findings with PASS status.
+        :param _builtins.int total_checks: Total findings across all statuses in this category.
+        """
+        pulumi.set(__self__, "findings", findings)
+        pulumi.set(__self__, "pass_checks", pass_checks)
+        pulumi.set(__self__, "total_checks", total_checks)
+
+    @_builtins.property
+    @pulumi.getter
+    def findings(self) -> _builtins.int:
+        """
+        Findings with FAIL or EVALUATE status.
+        """
+        return pulumi.get(self, "findings")
+
+    @_builtins.property
+    @pulumi.getter(name="passChecks")
+    def pass_checks(self) -> _builtins.int:
+        """
+        Findings with PASS status.
+        """
+        return pulumi.get(self, "pass_checks")
+
+    @_builtins.property
+    @pulumi.getter(name="totalChecks")
+    def total_checks(self) -> _builtins.int:
+        """
+        Total findings across all statuses in this category.
+        """
+        return pulumi.get(self, "total_checks")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentFindingsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentKeysCryptoAssessmentKeyCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCryptoAssessmentKeysCryptoAssessmentKeyCollectionItemResult']):
+        """
+        :param Sequence['GetCryptoAssessmentKeysCryptoAssessmentKeyCollectionItemArgs'] items: Cryptographic key summaries for the specified crypto assessment.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCryptoAssessmentKeysCryptoAssessmentKeyCollectionItemResult']:
+        """
+        Cryptographic key summaries for the specified crypto assessment.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentKeysCryptoAssessmentKeyCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 age: _builtins.str,
+                 algorithm: _builtins.str,
+                 assessment_id: _builtins.str,
+                 feature: _builtins.str,
+                 key_cache: _builtins.str,
+                 key_id: _builtins.str,
+                 key_type: _builtins.str,
+                 keystore_type: _builtins.str,
+                 secondary_keystore_type: _builtins.str,
+                 status: _builtins.str,
+                 target_id: _builtins.str,
+                 time_created: _builtins.str,
+                 time_last_assessed: _builtins.str,
+                 time_last_rotation: _builtins.str,
+                 wallet_location: _builtins.str):
+        """
+        :param _builtins.str age: Age of the key in whole days, calculated from timeCreated using the current UTC date.
+        :param _builtins.str algorithm: Cryptographic algorithm used by the key.
+        :param _builtins.str assessment_id: A filter to return only resources associated with the specified crypto assessment OCID.
+        :param _builtins.str feature: A filter to return only records for the specified feature.
+        :param _builtins.str key_cache: Key cache setting observed for the key.
+        :param _builtins.str key_id: Filters key results to rows with an exact matching keyId.
+        :param _builtins.str key_type: Filters key results to rows with the specified key type.
+        :param _builtins.str keystore_type: Primary keystore type observed for the key.
+        :param _builtins.str secondary_keystore_type: Secondary keystore type observed for the key, if configured.
+        :param _builtins.str status: Current status of the cryptographic key as observed on the target.
+        :param _builtins.str target_id: A filter to return only inventory rows associated with the specified target OCID.
+        :param _builtins.str time_created: Key creation time in RFC3339 format.
+        :param _builtins.str time_last_assessed: The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+        :param _builtins.str time_last_rotation: Most recent key rotation time in RFC3339 format.
+        :param _builtins.str wallet_location: Wallet location observed for the key.
+        """
+        pulumi.set(__self__, "age", age)
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "feature", feature)
+        pulumi.set(__self__, "key_cache", key_cache)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "key_type", key_type)
+        pulumi.set(__self__, "keystore_type", keystore_type)
+        pulumi.set(__self__, "secondary_keystore_type", secondary_keystore_type)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
+        pulumi.set(__self__, "time_last_rotation", time_last_rotation)
+        pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter
+    def age(self) -> _builtins.str:
+        """
+        Age of the key in whole days, calculated from timeCreated using the current UTC date.
+        """
+        return pulumi.get(self, "age")
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithm(self) -> _builtins.str:
+        """
+        Cryptographic algorithm used by the key.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> _builtins.str:
+        """
+        A filter to return only resources associated with the specified crypto assessment OCID.
+        """
+        return pulumi.get(self, "assessment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def feature(self) -> _builtins.str:
+        """
+        A filter to return only records for the specified feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @_builtins.property
+    @pulumi.getter(name="keyCache")
+    def key_cache(self) -> _builtins.str:
+        """
+        Key cache setting observed for the key.
+        """
+        return pulumi.get(self, "key_cache")
+
+    @_builtins.property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> _builtins.str:
+        """
+        Filters key results to rows with an exact matching keyId.
+        """
+        return pulumi.get(self, "key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="keyType")
+    def key_type(self) -> _builtins.str:
+        """
+        Filters key results to rows with the specified key type.
+        """
+        return pulumi.get(self, "key_type")
+
+    @_builtins.property
+    @pulumi.getter(name="keystoreType")
+    def keystore_type(self) -> _builtins.str:
+        """
+        Primary keystore type observed for the key.
+        """
+        return pulumi.get(self, "keystore_type")
+
+    @_builtins.property
+    @pulumi.getter(name="secondaryKeystoreType")
+    def secondary_keystore_type(self) -> _builtins.str:
+        """
+        Secondary keystore type observed for the key, if configured.
+        """
+        return pulumi.get(self, "secondary_keystore_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Current status of the cryptographic key as observed on the target.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only inventory rows associated with the specified target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Key creation time in RFC3339 format.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> _builtins.str:
+        """
+        The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_last_assessed")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastRotation")
+    def time_last_rotation(self) -> _builtins.str:
+        """
+        Most recent key rotation time in RFC3339 format.
+        """
+        return pulumi.get(self, "time_last_rotation")
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> _builtins.str:
+        """
+        Wallet location observed for the key.
+        """
+        return pulumi.get(self, "wallet_location")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentKeysFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentSqlnetParameterParameterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 quantum_readiness: _builtins.str,
+                 values: Sequence['outputs.GetCryptoAssessmentSqlnetParameterParameterValueResult']):
+        """
+        :param _builtins.str name: SQLNET parameter name.
+        :param _builtins.str quantum_readiness: Filters SQLNET parameters by quantum-readiness category.
+        :param Sequence['GetCryptoAssessmentSqlnetParameterParameterValueArgs'] values: Parsed SQLNET parameter value. TEXT returns a string, BOOLEAN returns a boolean, and LIST returns an array of strings.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        SQLNET parameter name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> _builtins.str:
+        """
+        Filters SQLNET parameters by quantum-readiness category.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence['outputs.GetCryptoAssessmentSqlnetParameterParameterValueResult']:
+        """
+        Parsed SQLNET parameter value. TEXT returns a string, BOOLEAN returns a boolean, and LIST returns an array of strings.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentSqlnetParameterParameterValueResult(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str type: Source type of SQLNET parameter data.
+        :param _builtins.str value: Parsed SQLNET parameter value. TEXT returns a string, BOOLEAN returns a boolean, and LIST returns an array of strings.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Source type of SQLNET parameter data.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Parsed SQLNET parameter value. TEXT returns a string, BOOLEAN returns a boolean, and LIST returns an array of strings.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentSqlnetParameterSourceResult(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str):
+        """
+        :param _builtins.str type: Source type of SQLNET parameter data.
+        """
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Source type of SQLNET parameter data.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentTdeObjectsCryptoAssessmentTdeObjectCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCryptoAssessmentTdeObjectsCryptoAssessmentTdeObjectCollectionItemResult']):
+        """
+        :param Sequence['GetCryptoAssessmentTdeObjectsCryptoAssessmentTdeObjectCollectionItemArgs'] items: TDE object encryption summary items.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCryptoAssessmentTdeObjectsCryptoAssessmentTdeObjectCollectionItemResult']:
+        """
+        TDE object encryption summary items.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentTdeObjectsCryptoAssessmentTdeObjectCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 assessment_id: _builtins.str,
+                 column_name: _builtins.str,
+                 encryption_observed: _builtins.str,
+                 mode_observed: _builtins.str,
+                 quantum_readiness: _builtins.str,
+                 schema_name: _builtins.str,
+                 size_in_gbs: _builtins.float,
+                 table_name: _builtins.str,
+                 tablespace_name: _builtins.str,
+                 target_id: _builtins.str,
+                 time_last_assessed: _builtins.str):
+        """
+        :param _builtins.str assessment_id: A filter to return only resources associated with the specified crypto assessment OCID.
+        :param _builtins.str column_name: Name of the encrypted column. This field is returned when objectType is COLUMN.
+        :param _builtins.str encryption_observed: Filters TDE object summary rows by any of the specified observed encryption algorithms.
+        :param _builtins.str mode_observed: Encryption mode observed for the tablespace. This field is returned when objectType is TABLESPACE.
+        :param _builtins.str quantum_readiness: Filters TDE object summary rows by quantum-readiness category.
+        :param _builtins.str schema_name: Name of the schema containing the encrypted column. This field is returned when objectType is COLUMN.
+        :param _builtins.float size_in_gbs: Tablespace size in gigabytes. This field is returned when objectType is TABLESPACE.
+        :param _builtins.str table_name: Name of the table containing the encrypted column. This field is returned when objectType is COLUMN.
+        :param _builtins.str tablespace_name: Name of the tablespace. This field is returned when objectType is TABLESPACE.
+        :param _builtins.str target_id: A filter to return only inventory rows associated with the specified target OCID.
+        :param _builtins.str time_last_assessed: The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+        """
+        pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "encryption_observed", encryption_observed)
+        pulumi.set(__self__, "mode_observed", mode_observed)
+        pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "size_in_gbs", size_in_gbs)
+        pulumi.set(__self__, "table_name", table_name)
+        pulumi.set(__self__, "tablespace_name", tablespace_name)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> _builtins.str:
+        """
+        A filter to return only resources associated with the specified crypto assessment OCID.
+        """
+        return pulumi.get(self, "assessment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="columnName")
+    def column_name(self) -> _builtins.str:
+        """
+        Name of the encrypted column. This field is returned when objectType is COLUMN.
+        """
+        return pulumi.get(self, "column_name")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionObserved")
+    def encryption_observed(self) -> _builtins.str:
+        """
+        Filters TDE object summary rows by any of the specified observed encryption algorithms.
+        """
+        return pulumi.get(self, "encryption_observed")
+
+    @_builtins.property
+    @pulumi.getter(name="modeObserved")
+    def mode_observed(self) -> _builtins.str:
+        """
+        Encryption mode observed for the tablespace. This field is returned when objectType is TABLESPACE.
+        """
+        return pulumi.get(self, "mode_observed")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> _builtins.str:
+        """
+        Filters TDE object summary rows by quantum-readiness category.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> _builtins.str:
+        """
+        Name of the schema containing the encrypted column. This field is returned when objectType is COLUMN.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="sizeInGbs")
+    def size_in_gbs(self) -> _builtins.float:
+        """
+        Tablespace size in gigabytes. This field is returned when objectType is TABLESPACE.
+        """
+        return pulumi.get(self, "size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="tableName")
+    def table_name(self) -> _builtins.str:
+        """
+        Name of the table containing the encrypted column. This field is returned when objectType is COLUMN.
+        """
+        return pulumi.get(self, "table_name")
+
+    @_builtins.property
+    @pulumi.getter(name="tablespaceName")
+    def tablespace_name(self) -> _builtins.str:
+        """
+        Name of the tablespace. This field is returned when objectType is TABLESPACE.
+        """
+        return pulumi.get(self, "tablespace_name")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only inventory rows associated with the specified target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> _builtins.str:
+        """
+        The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_last_assessed")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentTdeObjectsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentWalletsCryptoAssessmentWalletCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCryptoAssessmentWalletsCryptoAssessmentWalletCollectionItemResult']):
+        """
+        :param Sequence['GetCryptoAssessmentWalletsCryptoAssessmentWalletCollectionItemArgs'] items: Wallet details for the specified crypto assessment.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCryptoAssessmentWalletsCryptoAssessmentWalletCollectionItemResult']:
+        """
+        Wallet details for the specified crypto assessment.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentWalletsCryptoAssessmentWalletCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 assessment_id: _builtins.str,
+                 auto_login: _builtins.str,
+                 feature: _builtins.str,
+                 target_id: _builtins.str,
+                 time_created: _builtins.str,
+                 time_last_assessed: _builtins.str,
+                 wallet_encryption_algorithm: _builtins.str,
+                 wallet_location: _builtins.str):
+        """
+        :param _builtins.str assessment_id: A filter to return only resources associated with the specified crypto assessment OCID.
+        :param _builtins.str auto_login: Whether wallet auto-login is enabled.
+        :param _builtins.str feature: A filter to return only wallets for the specified feature.
+        :param _builtins.str target_id: A filter to return only inventory rows associated with the specified target OCID.
+        :param _builtins.str time_created: Wallet creation time in RFC3339 format.
+        :param _builtins.str time_last_assessed: The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+        :param _builtins.str wallet_encryption_algorithm: A filter to return only wallets whose encryption algorithm exactly matches any of the specified values, case-insensitively.
+        :param _builtins.str wallet_location: Wallet path for the feature.
+        """
+        pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "auto_login", auto_login)
+        pulumi.set(__self__, "feature", feature)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
+        pulumi.set(__self__, "wallet_encryption_algorithm", wallet_encryption_algorithm)
+        pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> _builtins.str:
+        """
+        A filter to return only resources associated with the specified crypto assessment OCID.
+        """
+        return pulumi.get(self, "assessment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="autoLogin")
+    def auto_login(self) -> _builtins.str:
+        """
+        Whether wallet auto-login is enabled.
+        """
+        return pulumi.get(self, "auto_login")
+
+    @_builtins.property
+    @pulumi.getter
+    def feature(self) -> _builtins.str:
+        """
+        A filter to return only wallets for the specified feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only inventory rows associated with the specified target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Wallet creation time in RFC3339 format.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> _builtins.str:
+        """
+        The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_last_assessed")
+
+    @_builtins.property
+    @pulumi.getter(name="walletEncryptionAlgorithm")
+    def wallet_encryption_algorithm(self) -> _builtins.str:
+        """
+        A filter to return only wallets whose encryption algorithm exactly matches any of the specified values, case-insensitively.
+        """
+        return pulumi.get(self, "wallet_encryption_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> _builtins.str:
+        """
+        Wallet path for the feature.
+        """
+        return pulumi.get(self, "wallet_location")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentWalletsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentsCryptoAssessmentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCryptoAssessmentsCryptoAssessmentCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCryptoAssessmentsCryptoAssessmentCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentsCryptoAssessmentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 crypto_assessment_id: _builtins.str,
+                 crypto_postures: Sequence['outputs.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureResult'],
+                 crypto_provider: _builtins.str,
+                 database_architecture: _builtins.str,
+                 database_name: _builtins.str,
+                 database_version: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 is_assessment_scheduled: _builtins.bool,
+                 issue_count: _builtins.int,
+                 lifecycle_details: _builtins.str,
+                 posture_category: _builtins.str,
+                 schedule: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 target_database_group_id: _builtins.str,
+                 target_id: _builtins.str,
+                 target_type: _builtins.str,
+                 targets_with_issues_count: _builtins.int,
+                 time_created: _builtins.str,
+                 time_last_assessed: _builtins.str,
+                 time_updated: _builtins.str,
+                 triggered_by: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Sequence['GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureArgs'] crypto_postures: Cryptographic posture details captured by the assessment.
+        :param _builtins.str crypto_provider: Cryptographic provider and version information observed on the target.
+        :param _builtins.str database_architecture: The architecture of the assessed target database.
+        :param _builtins.str database_name: The name of the assessed target database.
+        :param _builtins.str database_version: The version of the assessed target database.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: The description of the crypto assessment.
+        :param _builtins.str display_name: A filter to return only resources that match the specified display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The OCID of the crypto assessment.
+        :param _builtins.bool is_assessment_scheduled: A filter to return only crypto assessments whose scheduled execution state matches the specified value.
+        :param _builtins.int issue_count: Number of crypto issues detected in this assessment.
+        :param _builtins.str lifecycle_details: Details about the current lifecycle state of the crypto assessment.
+        :param _builtins.str posture_category: A filter to return only crypto assessments that match any of the specified posture categories.
+        :param _builtins.str schedule: The schedule used to run the crypto assessment periodically. The schedule uses the format: <version-string>;<version-specific-schedule>
+        :param _builtins.str state: A filter to return only resources that match the specified lifecycle state.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
+        :param _builtins.str target_id: A filter to return only crypto assessments associated with the specified target OCID. When provided, targetType must also be specified.
+        :param _builtins.str target_type: A filter to return crypto assessments belonging to the specified target type. `ListCryptoAssessments` returns assessment rows; use `targetDatabaseGroupId` to list the underlying target database assessments for a group.
+        :param _builtins.int targets_with_issues_count: Number of assessed targets with one or more crypto issues. For a target database assessment, this value is 1 when the target has issues and 0 otherwise. For a target database group assessment, this value is the number of targets in the group that have issues.
+        :param _builtins.str time_created: The date and time the crypto assessment was created, in RFC3339 format.
+        :param _builtins.str time_last_assessed: The date and time the crypto posture was last assessed, in RFC3339 format.
+        :param _builtins.str time_updated: The date and time the crypto assessment was last updated, in RFC3339 format.
+        :param _builtins.str triggered_by: The actor that created the assessment.
+        :param _builtins.str type: A filter to return only crypto assessments that match the specified type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "crypto_assessment_id", crypto_assessment_id)
+        pulumi.set(__self__, "crypto_postures", crypto_postures)
+        pulumi.set(__self__, "crypto_provider", crypto_provider)
+        pulumi.set(__self__, "database_architecture", database_architecture)
+        pulumi.set(__self__, "database_name", database_name)
+        pulumi.set(__self__, "database_version", database_version)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_assessment_scheduled", is_assessment_scheduled)
+        pulumi.set(__self__, "issue_count", issue_count)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "posture_category", posture_category)
+        pulumi.set(__self__, "schedule", schedule)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_type", target_type)
+        pulumi.set(__self__, "targets_with_issues_count", targets_with_issues_count)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "triggered_by", triggered_by)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cryptoAssessmentId")
+    def crypto_assessment_id(self) -> _builtins.str:
+        return pulumi.get(self, "crypto_assessment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cryptoPostures")
+    def crypto_postures(self) -> Sequence['outputs.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureResult']:
+        """
+        Cryptographic posture details captured by the assessment.
+        """
+        return pulumi.get(self, "crypto_postures")
+
+    @_builtins.property
+    @pulumi.getter(name="cryptoProvider")
+    def crypto_provider(self) -> _builtins.str:
+        """
+        Cryptographic provider and version information observed on the target.
+        """
+        return pulumi.get(self, "crypto_provider")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseArchitecture")
+    def database_architecture(self) -> _builtins.str:
+        """
+        The architecture of the assessed target database.
+        """
+        return pulumi.get(self, "database_architecture")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseName")
+    def database_name(self) -> _builtins.str:
+        """
+        The name of the assessed target database.
+        """
+        return pulumi.get(self, "database_name")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseVersion")
+    def database_version(self) -> _builtins.str:
+        """
+        The version of the assessed target database.
+        """
+        return pulumi.get(self, "database_version")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the crypto assessment.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the crypto assessment.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isAssessmentScheduled")
+    def is_assessment_scheduled(self) -> _builtins.bool:
+        """
+        A filter to return only crypto assessments whose scheduled execution state matches the specified value.
+        """
+        return pulumi.get(self, "is_assessment_scheduled")
+
+    @_builtins.property
+    @pulumi.getter(name="issueCount")
+    def issue_count(self) -> _builtins.int:
+        """
+        Number of crypto issues detected in this assessment.
+        """
+        return pulumi.get(self, "issue_count")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Details about the current lifecycle state of the crypto assessment.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="postureCategory")
+    def posture_category(self) -> _builtins.str:
+        """
+        A filter to return only crypto assessments that match any of the specified posture categories.
+        """
+        return pulumi.get(self, "posture_category")
+
+    @_builtins.property
+    @pulumi.getter
+    def schedule(self) -> _builtins.str:
+        """
+        The schedule used to run the crypto assessment periodically. The schedule uses the format: <version-string>;<version-specific-schedule>
+        """
+        return pulumi.get(self, "schedule")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> _builtins.str:
+        """
+        A filter to return the target database group that matches the specified OCID.
+        """
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only crypto assessments associated with the specified target OCID. When provided, targetType must also be specified.
+        """
+        return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> _builtins.str:
+        """
+        A filter to return crypto assessments belonging to the specified target type. `ListCryptoAssessments` returns assessment rows; use `targetDatabaseGroupId` to list the underlying target database assessments for a group.
+        """
+        return pulumi.get(self, "target_type")
+
+    @_builtins.property
+    @pulumi.getter(name="targetsWithIssuesCount")
+    def targets_with_issues_count(self) -> _builtins.int:
+        """
+        Number of assessed targets with one or more crypto issues. For a target database assessment, this value is 1 when the target has issues and 0 otherwise. For a target database group assessment, this value is the number of targets in the group that have issues.
+        """
+        return pulumi.get(self, "targets_with_issues_count")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the crypto assessment was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastAssessed")
+    def time_last_assessed(self) -> _builtins.str:
+        """
+        The date and time the crypto posture was last assessed, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_last_assessed")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the crypto assessment was last updated, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="triggeredBy")
+    def triggered_by(self) -> _builtins.str:
+        """
+        The actor that created the assessment.
+        """
+        return pulumi.get(self, "triggered_by")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only crypto assessments that match the specified type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureResult(dict):
+    def __init__(__self__, *,
+                 backup_status: _builtins.str,
+                 encrypted_backup_pieces_count: _builtins.int,
+                 fips_mode_configured: _builtins.str,
+                 fips_status: _builtins.str,
+                 network_encryptions: Sequence[_builtins.str],
+                 nnes: Sequence['outputs.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureNneResult'],
+                 tdes: Sequence['outputs.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTdeResult'],
+                 tls: Sequence['outputs.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTlResult'],
+                 unencrypted_backup_pieces_count: _builtins.int):
+        """
+        :param _builtins.str backup_status: Backup encryption status observed for the assessment.
+        :param _builtins.int encrypted_backup_pieces_count: Number of encrypted backup pieces.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param _builtins.str fips_status: Overall FIPS status for the assessment when the target uses common FIPS configuration.
+        :param Sequence[_builtins.str] network_encryptions: Network encryption details.
+        :param Sequence['GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureNneArgs'] nnes: Native network encryption posture details.
+        :param Sequence['GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTdeArgs'] tdes: Transparent data encryption posture details.
+        :param Sequence['GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTlArgs'] tls: TLS posture details.
+        :param _builtins.int unencrypted_backup_pieces_count: Number of unencrypted backup pieces.
+        """
+        pulumi.set(__self__, "backup_status", backup_status)
+        pulumi.set(__self__, "encrypted_backup_pieces_count", encrypted_backup_pieces_count)
+        pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        pulumi.set(__self__, "fips_status", fips_status)
+        pulumi.set(__self__, "network_encryptions", network_encryptions)
+        pulumi.set(__self__, "nnes", nnes)
+        pulumi.set(__self__, "tdes", tdes)
+        pulumi.set(__self__, "tls", tls)
+        pulumi.set(__self__, "unencrypted_backup_pieces_count", unencrypted_backup_pieces_count)
+
+    @_builtins.property
+    @pulumi.getter(name="backupStatus")
+    def backup_status(self) -> _builtins.str:
+        """
+        Backup encryption status observed for the assessment.
+        """
+        return pulumi.get(self, "backup_status")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedBackupPiecesCount")
+    def encrypted_backup_pieces_count(self) -> _builtins.int:
+        """
+        Number of encrypted backup pieces.
+        """
+        return pulumi.get(self, "encrypted_backup_pieces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> _builtins.str:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsStatus")
+    def fips_status(self) -> _builtins.str:
+        """
+        Overall FIPS status for the assessment when the target uses common FIPS configuration.
+        """
+        return pulumi.get(self, "fips_status")
+
+    @_builtins.property
+    @pulumi.getter(name="networkEncryptions")
+    def network_encryptions(self) -> Sequence[_builtins.str]:
+        """
+        Network encryption details.
+        """
+        return pulumi.get(self, "network_encryptions")
+
+    @_builtins.property
+    @pulumi.getter
+    def nnes(self) -> Sequence['outputs.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureNneResult']:
+        """
+        Native network encryption posture details.
+        """
+        return pulumi.get(self, "nnes")
+
+    @_builtins.property
+    @pulumi.getter
+    def tdes(self) -> Sequence['outputs.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTdeResult']:
+        """
+        Transparent data encryption posture details.
+        """
+        return pulumi.get(self, "tdes")
+
+    @_builtins.property
+    @pulumi.getter
+    def tls(self) -> Sequence['outputs.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTlResult']:
+        """
+        TLS posture details.
+        """
+        return pulumi.get(self, "tls")
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedBackupPiecesCount")
+    def unencrypted_backup_pieces_count(self) -> _builtins.int:
+        """
+        Number of unencrypted backup pieces.
+        """
+        return pulumi.get(self, "unencrypted_backup_pieces_count")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureNneResult(dict):
+    def __init__(__self__, *,
+                 are_weak_options_allowed: _builtins.str,
+                 encryption_configureds: Sequence[_builtins.str],
+                 fips_mode_configured: _builtins.str,
+                 integrities: Sequence[_builtins.str],
+                 key_exchange: _builtins.str,
+                 quantum_readiness: _builtins.str,
+                 server_encryption: _builtins.str,
+                 server_integrities: Sequence[_builtins.str],
+                 status: _builtins.str):
+        """
+        :param _builtins.str are_weak_options_allowed: Indicates if weak NNE options are allowed.
+        :param Sequence[_builtins.str] encryption_configureds: Configured TDE encryption algorithm.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param Sequence[_builtins.str] integrities: NNE integrity algorithm(s).
+        :param _builtins.str key_exchange: Observed NNE key exchange setting.
+        :param _builtins.str quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param _builtins.str server_encryption: Observed server-side encryption requirement.
+        :param Sequence[_builtins.str] server_integrities: NNE server integrity algorithm(s).
+        :param _builtins.str status: TLS enablement status.
+        """
+        pulumi.set(__self__, "are_weak_options_allowed", are_weak_options_allowed)
+        pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        pulumi.set(__self__, "integrities", integrities)
+        pulumi.set(__self__, "key_exchange", key_exchange)
+        pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        pulumi.set(__self__, "server_encryption", server_encryption)
+        pulumi.set(__self__, "server_integrities", server_integrities)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakOptionsAllowed")
+    def are_weak_options_allowed(self) -> _builtins.str:
+        """
+        Indicates if weak NNE options are allowed.
+        """
+        return pulumi.get(self, "are_weak_options_allowed")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> Sequence[_builtins.str]:
+        """
+        Configured TDE encryption algorithm.
+        """
+        return pulumi.get(self, "encryption_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> _builtins.str:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter
+    def integrities(self) -> Sequence[_builtins.str]:
+        """
+        NNE integrity algorithm(s).
+        """
+        return pulumi.get(self, "integrities")
+
+    @_builtins.property
+    @pulumi.getter(name="keyExchange")
+    def key_exchange(self) -> _builtins.str:
+        """
+        Observed NNE key exchange setting.
+        """
+        return pulumi.get(self, "key_exchange")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> _builtins.str:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="serverEncryption")
+    def server_encryption(self) -> _builtins.str:
+        """
+        Observed server-side encryption requirement.
+        """
+        return pulumi.get(self, "server_encryption")
+
+    @_builtins.property
+    @pulumi.getter(name="serverIntegrities")
+    def server_integrities(self) -> Sequence[_builtins.str]:
+        """
+        NNE server integrity algorithm(s).
+        """
+        return pulumi.get(self, "server_integrities")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTdeResult(dict):
+    def __init__(__self__, *,
+                 db_credentials_encryption_observed: _builtins.str,
+                 encrypted_tablespaces_count: _builtins.int,
+                 encryption_configureds: Sequence[_builtins.str],
+                 fips_mode_configured: _builtins.str,
+                 integrity_configureds: Sequence[_builtins.str],
+                 key_cache_status: _builtins.str,
+                 key_store_type: _builtins.str,
+                 master_key_encryption_algorithm: _builtins.str,
+                 master_key_id: _builtins.str,
+                 quantum_readiness: _builtins.str,
+                 redo_encryption_observed: _builtins.str,
+                 status: _builtins.str,
+                 time_master_key_last_rotation: _builtins.str,
+                 unencrypted_tablespaces_count: _builtins.int,
+                 wallet_location: _builtins.str):
+        """
+        :param _builtins.str db_credentials_encryption_observed: Observed DB credentials encryption algorithm.
+        :param _builtins.int encrypted_tablespaces_count: Number of encrypted tablespaces detected.
+        :param Sequence[_builtins.str] encryption_configureds: Configured TDE encryption algorithm.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param Sequence[_builtins.str] integrity_configureds: Configured TDE integrity-related setting.
+        :param _builtins.str key_cache_status: The observed TDE key cache status.
+        :param _builtins.str key_store_type: The observed TDE key store type.
+        :param _builtins.str master_key_encryption_algorithm: The observed encryption algorithm used by the master key.
+        :param _builtins.str master_key_id: The observed TDE master key identifier.
+        :param _builtins.str quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param _builtins.str redo_encryption_observed: Observed redo log encryption algorithm.
+        :param _builtins.str status: TLS enablement status.
+        :param _builtins.str time_master_key_last_rotation: The last observed rotation time for the TDE master key, in RFC3339 format.
+        :param _builtins.int unencrypted_tablespaces_count: Number of unencrypted tablespaces detected.
+        :param _builtins.str wallet_location: TLS wallet location observed on target.
+        """
+        pulumi.set(__self__, "db_credentials_encryption_observed", db_credentials_encryption_observed)
+        pulumi.set(__self__, "encrypted_tablespaces_count", encrypted_tablespaces_count)
+        pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        pulumi.set(__self__, "integrity_configureds", integrity_configureds)
+        pulumi.set(__self__, "key_cache_status", key_cache_status)
+        pulumi.set(__self__, "key_store_type", key_store_type)
+        pulumi.set(__self__, "master_key_encryption_algorithm", master_key_encryption_algorithm)
+        pulumi.set(__self__, "master_key_id", master_key_id)
+        pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        pulumi.set(__self__, "redo_encryption_observed", redo_encryption_observed)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_master_key_last_rotation", time_master_key_last_rotation)
+        pulumi.set(__self__, "unencrypted_tablespaces_count", unencrypted_tablespaces_count)
+        pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="dbCredentialsEncryptionObserved")
+    def db_credentials_encryption_observed(self) -> _builtins.str:
+        """
+        Observed DB credentials encryption algorithm.
+        """
+        return pulumi.get(self, "db_credentials_encryption_observed")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedTablespacesCount")
+    def encrypted_tablespaces_count(self) -> _builtins.int:
+        """
+        Number of encrypted tablespaces detected.
+        """
+        return pulumi.get(self, "encrypted_tablespaces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> Sequence[_builtins.str]:
+        """
+        Configured TDE encryption algorithm.
+        """
+        return pulumi.get(self, "encryption_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> _builtins.str:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="integrityConfigureds")
+    def integrity_configureds(self) -> Sequence[_builtins.str]:
+        """
+        Configured TDE integrity-related setting.
+        """
+        return pulumi.get(self, "integrity_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="keyCacheStatus")
+    def key_cache_status(self) -> _builtins.str:
+        """
+        The observed TDE key cache status.
+        """
+        return pulumi.get(self, "key_cache_status")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreType")
+    def key_store_type(self) -> _builtins.str:
+        """
+        The observed TDE key store type.
+        """
+        return pulumi.get(self, "key_store_type")
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyEncryptionAlgorithm")
+    def master_key_encryption_algorithm(self) -> _builtins.str:
+        """
+        The observed encryption algorithm used by the master key.
+        """
+        return pulumi.get(self, "master_key_encryption_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyId")
+    def master_key_id(self) -> _builtins.str:
+        """
+        The observed TDE master key identifier.
+        """
+        return pulumi.get(self, "master_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> _builtins.str:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="redoEncryptionObserved")
+    def redo_encryption_observed(self) -> _builtins.str:
+        """
+        Observed redo log encryption algorithm.
+        """
+        return pulumi.get(self, "redo_encryption_observed")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeMasterKeyLastRotation")
+    def time_master_key_last_rotation(self) -> _builtins.str:
+        """
+        The last observed rotation time for the TDE master key, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_master_key_last_rotation")
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedTablespacesCount")
+    def unencrypted_tablespaces_count(self) -> _builtins.int:
+        """
+        Number of unencrypted tablespaces detected.
+        """
+        return pulumi.get(self, "unencrypted_tablespaces_count")
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> _builtins.str:
+        """
+        TLS wallet location observed on target.
+        """
+        return pulumi.get(self, "wallet_location")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTlResult(dict):
+    def __init__(__self__, *,
+                 are_weak_cipher_suites_allowed: _builtins.str,
+                 cipher_suites_configureds: Sequence[_builtins.str],
+                 fips_mode_configured: _builtins.str,
+                 is_mtls_configured: _builtins.str,
+                 quantum_readiness: _builtins.str,
+                 revocation_mode: _builtins.str,
+                 status: _builtins.str,
+                 versions: Sequence[_builtins.str],
+                 wallet_location: _builtins.str):
+        """
+        :param _builtins.str are_weak_cipher_suites_allowed: Indicates if weak TLS cipher suites are allowed.
+        :param Sequence[_builtins.str] cipher_suites_configureds: TLS cipher suites configured on target.
+        :param _builtins.str fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param _builtins.str is_mtls_configured: Whether TLS client authentication is configured.
+        :param _builtins.str quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param _builtins.str revocation_mode: Certificate revocation checking mode.
+        :param _builtins.str status: TLS enablement status.
+        :param Sequence[_builtins.str] versions: TLS versions configured on target.
+        :param _builtins.str wallet_location: TLS wallet location observed on target.
+        """
+        pulumi.set(__self__, "are_weak_cipher_suites_allowed", are_weak_cipher_suites_allowed)
+        pulumi.set(__self__, "cipher_suites_configureds", cipher_suites_configureds)
+        pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        pulumi.set(__self__, "is_mtls_configured", is_mtls_configured)
+        pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        pulumi.set(__self__, "revocation_mode", revocation_mode)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "versions", versions)
+        pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakCipherSuitesAllowed")
+    def are_weak_cipher_suites_allowed(self) -> _builtins.str:
+        """
+        Indicates if weak TLS cipher suites are allowed.
+        """
+        return pulumi.get(self, "are_weak_cipher_suites_allowed")
+
+    @_builtins.property
+    @pulumi.getter(name="cipherSuitesConfigureds")
+    def cipher_suites_configureds(self) -> Sequence[_builtins.str]:
+        """
+        TLS cipher suites configured on target.
+        """
+        return pulumi.get(self, "cipher_suites_configureds")
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> _builtins.str:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="isMtlsConfigured")
+    def is_mtls_configured(self) -> _builtins.str:
+        """
+        Whether TLS client authentication is configured.
+        """
+        return pulumi.get(self, "is_mtls_configured")
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> _builtins.str:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="revocationMode")
+    def revocation_mode(self) -> _builtins.str:
+        """
+        Certificate revocation checking mode.
+        """
+        return pulumi.get(self, "revocation_mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> Sequence[_builtins.str]:
+        """
+        TLS versions configured on target.
+        """
+        return pulumi.get(self, "versions")
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> _builtins.str:
+        """
+        TLS wallet location observed on target.
+        """
+        return pulumi.get(self, "wallet_location")
+
+
+@pulumi.output_type
+class GetCryptoAssessmentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type

@@ -13,6 +13,18 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
     public sealed class ConfigMaintenanceWindowScheduleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Type of recurrence for a recurring maintenance window.
+        /// </summary>
+        [Input("recurrenceType")]
+        public Input<string>? RecurrenceType { get; set; }
+
+        /// <summary>
+        /// (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+        /// </summary>
+        [Input("scheduleType")]
+        public Input<string>? ScheduleType { get; set; }
+
+        /// <summary>
         /// (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         /// </summary>
         [Input("timeEnded")]

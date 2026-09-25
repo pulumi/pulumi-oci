@@ -158,8 +158,10 @@ import (
 //				IsRunNow:  pulumi.Any(monitorIsRunNow),
 //				IsRunOnce: pulumi.Any(monitorIsRunOnce),
 //				MaintenanceWindowSchedule: &apmsynthetics.ConfigMaintenanceWindowScheduleArgs{
-//					TimeEnded:   pulumi.Any(monitorMaintenanceWindowScheduleTimeEnded),
-//					TimeStarted: pulumi.Any(monitorMaintenanceWindowScheduleTimeStarted),
+//					RecurrenceType: pulumi.Any(monitorMaintenanceWindowScheduleRecurrenceType),
+//					ScheduleType:   pulumi.String("RECURRING"),
+//					TimeEnded:      pulumi.Any(monitorMaintenanceWindowScheduleTimeEnded),
+//					TimeStarted:    pulumi.Any(monitorMaintenanceWindowScheduleTimeStarted),
 //				},
 //				SchedulingPolicy: pulumi.Any(monitorSchedulingPolicy),
 //				ScriptId:         pulumi.Any(testScript.Id),

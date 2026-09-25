@@ -78,6 +78,8 @@ type LookupFunctionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
 	Id string `pulumi:"id"`
 	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+	//
+	// Deprecated: The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
 	Image string `pulumi:"image"`
 	// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
 	ImageDigest string `pulumi:"imageDigest"`
@@ -185,6 +187,8 @@ func (o LookupFunctionResultOutput) Id() pulumi.StringOutput {
 }
 
 // The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+//
+// Deprecated: The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
 func (o LookupFunctionResultOutput) Image() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFunctionResult) string { return v.Image }).(pulumi.StringOutput)
 }

@@ -18,7 +18,7 @@ public final class ConfigConfigurationDnsConfiguration {
      */
     private @Nullable Boolean isOverrideDns;
     /**
-     * @return (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+     * @return (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
      * 
      */
     private @Nullable String overrideDnsIp;
@@ -32,7 +32,7 @@ public final class ConfigConfigurationDnsConfiguration {
         return Optional.ofNullable(this.isOverrideDns);
     }
     /**
-     * @return (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+     * @return (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
      * 
      */
     public Optional<String> overrideDnsIp() {

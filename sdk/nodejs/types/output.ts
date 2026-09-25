@@ -14851,7 +14851,7 @@ export namespace ApmSynthetics {
          */
         isOverrideDns: boolean;
         /**
-         * (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+         * (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
          */
         overrideDnsIp: string;
     }
@@ -14981,6 +14981,14 @@ export namespace ApmSynthetics {
     }
 
     export interface ConfigMaintenanceWindowSchedule {
+        /**
+         * (Updatable) Type of recurrence for a recurring maintenance window.
+         */
+        recurrenceType: string;
+        /**
+         * (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+         */
+        scheduleType: string;
         /**
          * (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
          */
@@ -15444,7 +15452,7 @@ export namespace ApmSynthetics {
          */
         isOverrideDns: boolean;
         /**
-         * Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+         * Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
          */
         overrideDnsIp: string;
     }
@@ -15574,6 +15582,14 @@ export namespace ApmSynthetics {
     }
 
     export interface GetMonitorMaintenanceWindowSchedule {
+        /**
+         * Type of recurrence for a recurring maintenance window.
+         */
+        recurrenceType: string;
+        /**
+         * Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+         */
+        scheduleType: string;
         /**
          * End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
          */
@@ -15987,7 +16003,7 @@ export namespace ApmSynthetics {
          */
         isOverrideDns: boolean;
         /**
-         * Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+         * Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
          */
         overrideDnsIp: string;
     }
@@ -16117,6 +16133,14 @@ export namespace ApmSynthetics {
     }
 
     export interface GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule {
+        /**
+         * Type of recurrence for a recurring maintenance window.
+         */
+        recurrenceType: string;
+        /**
+         * Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+         */
+        scheduleType: string;
         /**
          * End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
          */
@@ -76347,6 +76371,240 @@ export namespace DataSafe {
         onlineVolume: string;
     }
 
+    export interface CryptoAssessmentCryptoPosture {
+        /**
+         * Backup encryption status observed for the assessment.
+         */
+        backupStatus: string;
+        /**
+         * Number of encrypted backup pieces.
+         */
+        encryptedBackupPiecesCount: number;
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * Overall FIPS status for the assessment when the target uses common FIPS configuration.
+         */
+        fipsStatus: string;
+        /**
+         * Network encryption details.
+         */
+        networkEncryptions: string[];
+        /**
+         * Native network encryption posture details.
+         */
+        nnes: outputs.DataSafe.CryptoAssessmentCryptoPostureNne[];
+        /**
+         * Transparent data encryption posture details.
+         */
+        tdes: outputs.DataSafe.CryptoAssessmentCryptoPostureTde[];
+        /**
+         * TLS posture details.
+         */
+        tls: outputs.DataSafe.CryptoAssessmentCryptoPostureTl[];
+        /**
+         * Number of unencrypted backup pieces.
+         */
+        unencryptedBackupPiecesCount: number;
+    }
+
+    export interface CryptoAssessmentCryptoPostureNne {
+        /**
+         * Indicates if weak NNE options are allowed.
+         */
+        areWeakOptionsAllowed: string;
+        /**
+         * Configured TDE encryption algorithm.
+         */
+        encryptionConfigureds: string[];
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * NNE integrity algorithm(s).
+         */
+        integrities: string[];
+        /**
+         * Observed NNE key exchange setting.
+         */
+        keyExchange: string;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness: string;
+        /**
+         * Observed server-side encryption requirement.
+         */
+        serverEncryption: string;
+        /**
+         * NNE server integrity algorithm(s).
+         */
+        serverIntegrities: string[];
+        /**
+         * TLS enablement status.
+         */
+        status: string;
+    }
+
+    export interface CryptoAssessmentCryptoPostureTde {
+        /**
+         * Observed DB credentials encryption algorithm.
+         */
+        dbCredentialsEncryptionObserved: string;
+        /**
+         * Number of encrypted tablespaces detected.
+         */
+        encryptedTablespacesCount: number;
+        /**
+         * Configured TDE encryption algorithm.
+         */
+        encryptionConfigureds: string[];
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * Configured TDE integrity-related setting.
+         */
+        integrityConfigureds: string[];
+        /**
+         * The observed TDE key cache status.
+         */
+        keyCacheStatus: string;
+        /**
+         * The observed TDE key store type.
+         */
+        keyStoreType: string;
+        /**
+         * The observed encryption algorithm used by the master key.
+         */
+        masterKeyEncryptionAlgorithm: string;
+        /**
+         * The observed TDE master key identifier.
+         */
+        masterKeyId: string;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness: string;
+        /**
+         * Observed redo log encryption algorithm.
+         */
+        redoEncryptionObserved: string;
+        /**
+         * TLS enablement status.
+         */
+        status: string;
+        /**
+         * The last observed rotation time for the TDE master key, in RFC3339 format.
+         */
+        timeMasterKeyLastRotation: string;
+        /**
+         * Number of unencrypted tablespaces detected.
+         */
+        unencryptedTablespacesCount: number;
+        /**
+         * TLS wallet location observed on target.
+         */
+        walletLocation: string;
+    }
+
+    export interface CryptoAssessmentCryptoPostureTl {
+        /**
+         * Indicates if weak TLS cipher suites are allowed.
+         */
+        areWeakCipherSuitesAllowed: string;
+        /**
+         * TLS cipher suites configured on target.
+         */
+        cipherSuitesConfigureds: string[];
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * Whether TLS client authentication is configured.
+         */
+        isMtlsConfigured: string;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness: string;
+        /**
+         * Certificate revocation checking mode.
+         */
+        revocationMode: string;
+        /**
+         * TLS enablement status.
+         */
+        status: string;
+        /**
+         * TLS versions configured on target.
+         */
+        versions: string[];
+        /**
+         * TLS wallet location observed on target.
+         */
+        walletLocation: string;
+    }
+
+    export interface CryptoAssessmentManagementCryptoPosture {
+        backupStatus: string;
+        encryptedBackupPiecesCount: number;
+        fipsModeConfigured: string;
+        fipsStatus: string;
+        networkEncryptions: string[];
+        nnes: outputs.DataSafe.CryptoAssessmentManagementCryptoPostureNne[];
+        tdes: outputs.DataSafe.CryptoAssessmentManagementCryptoPostureTde[];
+        tls: outputs.DataSafe.CryptoAssessmentManagementCryptoPostureTl[];
+        unencryptedBackupPiecesCount: number;
+    }
+
+    export interface CryptoAssessmentManagementCryptoPostureNne {
+        areWeakOptionsAllowed: string;
+        encryptionConfigureds: string[];
+        fipsModeConfigured: string;
+        integrities: string[];
+        keyExchange: string;
+        quantumReadiness: string;
+        serverEncryption: string;
+        serverIntegrities: string[];
+        status: string;
+    }
+
+    export interface CryptoAssessmentManagementCryptoPostureTde {
+        dbCredentialsEncryptionObserved: string;
+        encryptedTablespacesCount: number;
+        encryptionConfigureds: string[];
+        fipsModeConfigured: string;
+        integrityConfigureds: string[];
+        keyCacheStatus: string;
+        keyStoreType: string;
+        masterKeyEncryptionAlgorithm: string;
+        masterKeyId: string;
+        quantumReadiness: string;
+        redoEncryptionObserved: string;
+        status: string;
+        timeMasterKeyLastRotation: string;
+        unencryptedTablespacesCount: number;
+        walletLocation: string;
+    }
+
+    export interface CryptoAssessmentManagementCryptoPostureTl {
+        areWeakCipherSuitesAllowed: string;
+        cipherSuitesConfigureds: string[];
+        fipsModeConfigured: string;
+        isMtlsConfigured: string;
+        quantumReadiness: string;
+        revocationMode: string;
+        status: string;
+        versions: string[];
+        walletLocation: string;
+    }
+
     export interface DataSafeConfigurationGlobalSetting {
         /**
          * The paid usage option chosen by the customer admin.
@@ -78269,6 +78527,1212 @@ export namespace DataSafe {
          * The name of the masking format.
          */
         name: string;
+    }
+
+    export interface GetCryptoAssessmentBackupSetsCryptoAssessmentBackupSetCollection {
+        /**
+         * Backup set summary items for the specified crypto assessment.
+         */
+        items: outputs.DataSafe.GetCryptoAssessmentBackupSetsCryptoAssessmentBackupSetCollectionItem[];
+    }
+
+    export interface GetCryptoAssessmentBackupSetsCryptoAssessmentBackupSetCollectionItem {
+        /**
+         * Encryption algorithm observed for the backup set when encryption is enabled.
+         */
+        algorithmObserved: string;
+        /**
+         * A filter to return only resources associated with the specified crypto assessment OCID.
+         */
+        assessmentId: string;
+        /**
+         * Number of backup pieces in the set.
+         */
+        backupPieces: number;
+        /**
+         * Filters backup set summary rows to an exact matching backupSetKey.
+         */
+        backupSetKey: string;
+        /**
+         * Backup type observed for the set.
+         */
+        backupType: string;
+        /**
+         * Cipher mode observed for the backup set when encryption is enabled.
+         */
+        cipherModeObserved: string;
+        /**
+         * Indicates whether the backup set is compressed.
+         */
+        isCompressed: boolean;
+        /**
+         * Filters backup set summary rows by whether the backup set is encrypted.
+         */
+        isEncrypted: boolean;
+        /**
+         * Backup set stamp.
+         */
+        setStamp: string;
+        /**
+         * Backup set size in gigabytes.
+         */
+        sizeInGbs: number;
+        /**
+         * Current status of the backup set.
+         */
+        status: string;
+        /**
+         * A filter to return only inventory rows associated with the specified target OCID.
+         */
+        targetId: string;
+        /**
+         * Backup set creation time in RFC3339 format.
+         */
+        timeCreated: string;
+        /**
+         * The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+         */
+        timeLastAssessed: string;
+    }
+
+    export interface GetCryptoAssessmentBackupSetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentCbomItemsCryptoAssessmentCbomItemCollection {
+        /**
+         * CBOM items for the crypto assessment.
+         */
+        items: outputs.DataSafe.GetCryptoAssessmentCbomItemsCryptoAssessmentCbomItemCollectionItem[];
+    }
+
+    export interface GetCryptoAssessmentCbomItemsCryptoAssessmentCbomItemCollectionItem {
+        /**
+         * Cryptographic algorithm or integrity/checksum value observed for the feature.
+         */
+        algorithm: string;
+        /**
+         * Static compliance standards applicable to the feature.
+         */
+        complianceDriver: string;
+        /**
+         * Type of component represented in the CBOM item.
+         */
+        componentType: string;
+        /**
+         * Locations where this item is configured or stored.
+         */
+        configurationLocations: string[];
+        /**
+         * Feature name represented by the CBOM item.
+         */
+        feature: string;
+        /**
+         * Cryptographic format used by the feature.
+         */
+        format: string;
+        /**
+         * Observed key size for the feature.
+         */
+        keySize: string;
+        /**
+         * Protocol used by the cryptographic feature.
+         */
+        protocol: string;
+    }
+
+    export interface GetCryptoAssessmentCbomItemsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentCertificatesCryptoAssessmentCertificateCollection {
+        /**
+         * Certificate summaries that match the request filters.
+         */
+        items: outputs.DataSafe.GetCryptoAssessmentCertificatesCryptoAssessmentCertificateCollectionItem[];
+    }
+
+    export interface GetCryptoAssessmentCertificatesCryptoAssessmentCertificateCollectionItem {
+        /**
+         * Age of the certificate in whole days, calculated from timeValidFrom using the current UTC date.
+         */
+        age: string;
+        /**
+         * A filter to return only resources associated with the specified crypto assessment OCID.
+         */
+        assessmentId: string;
+        /**
+         * A filter to return targets from assessments of the specified type.
+         */
+        assessmentType: string;
+        /**
+         * A filter to return only certificates of any of the specified types.
+         */
+        certificateType: string;
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
+        compartmentId: string;
+        /**
+         * A filter to return certificates whose validTill timestamp is on or before the current time plus the specified number of days. Negative values are allowed and filter certificates that expired on or before that many days ago.
+         */
+        daysToExpiry: number;
+        /**
+         * A filter to return only certificates in the specified expiry bucket. Supported values are 0_15, 15_30, 30_60, 60_90, and 90_PLUS.
+         */
+        expiryBucket: string;
+        /**
+         * Issuer of the certificate.
+         */
+        issuer: string;
+        /**
+         * A filter to return only certificates with any of the specified public key types. Stored values are normalized forms such as RSA2048, RSA4096, or EC256.
+         */
+        publicKeyType: string;
+        /**
+         * Certificate serial number.
+         */
+        serialNumber: string;
+        /**
+         * A filter to return only certificates whose signature algorithm contains any of the specified values. For example, use SHA1 to match SHA1-based certificate signatures.
+         */
+        signatureAlgorithm: string;
+        /**
+         * A filter to return only certificates with any of the specified statuses.
+         */
+        status: string;
+        /**
+         * Subject of the certificate.
+         */
+        subject: string;
+        /**
+         * A filter to return only inventory rows associated with the specified target OCID.
+         */
+        targetId: string;
+        /**
+         * The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+         */
+        timeLastAssessed: string;
+        /**
+         * Certificate validity start time in RFC3339 format.
+         */
+        timeValidFrom: string;
+        /**
+         * Certificate validity end time in RFC3339 format.
+         */
+        timeValidUntil: string;
+        /**
+         * Wallet location where the certificate was discovered, if available.
+         */
+        walletLocation: string;
+    }
+
+    export interface GetCryptoAssessmentCertificatesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentCryptoPosture {
+        /**
+         * Backup encryption status observed for the assessment.
+         */
+        backupStatus: string;
+        /**
+         * Number of encrypted backup pieces.
+         */
+        encryptedBackupPiecesCount: number;
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * Overall FIPS status for the assessment when the target uses common FIPS configuration.
+         */
+        fipsStatus: string;
+        /**
+         * Network encryption details.
+         */
+        networkEncryptions: string[];
+        /**
+         * Native network encryption posture details.
+         */
+        nnes: outputs.DataSafe.GetCryptoAssessmentCryptoPostureNne[];
+        /**
+         * Transparent data encryption posture details.
+         */
+        tdes: outputs.DataSafe.GetCryptoAssessmentCryptoPostureTde[];
+        /**
+         * TLS posture details.
+         */
+        tls: outputs.DataSafe.GetCryptoAssessmentCryptoPostureTl[];
+        /**
+         * Number of unencrypted backup pieces.
+         */
+        unencryptedBackupPiecesCount: number;
+    }
+
+    export interface GetCryptoAssessmentCryptoPostureNne {
+        /**
+         * Indicates if weak NNE options are allowed.
+         */
+        areWeakOptionsAllowed: string;
+        /**
+         * Configured TDE encryption algorithm.
+         */
+        encryptionConfigureds: string[];
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * NNE integrity algorithm(s).
+         */
+        integrities: string[];
+        /**
+         * Observed NNE key exchange setting.
+         */
+        keyExchange: string;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness: string;
+        /**
+         * Observed server-side encryption requirement.
+         */
+        serverEncryption: string;
+        /**
+         * NNE server integrity algorithm(s).
+         */
+        serverIntegrities: string[];
+        /**
+         * TLS enablement status.
+         */
+        status: string;
+    }
+
+    export interface GetCryptoAssessmentCryptoPostureTde {
+        /**
+         * Observed DB credentials encryption algorithm.
+         */
+        dbCredentialsEncryptionObserved: string;
+        /**
+         * Number of encrypted tablespaces detected.
+         */
+        encryptedTablespacesCount: number;
+        /**
+         * Configured TDE encryption algorithm.
+         */
+        encryptionConfigureds: string[];
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * Configured TDE integrity-related setting.
+         */
+        integrityConfigureds: string[];
+        /**
+         * The observed TDE key cache status.
+         */
+        keyCacheStatus: string;
+        /**
+         * The observed TDE key store type.
+         */
+        keyStoreType: string;
+        /**
+         * The observed encryption algorithm used by the master key.
+         */
+        masterKeyEncryptionAlgorithm: string;
+        /**
+         * The observed TDE master key identifier.
+         */
+        masterKeyId: string;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness: string;
+        /**
+         * Observed redo log encryption algorithm.
+         */
+        redoEncryptionObserved: string;
+        /**
+         * TLS enablement status.
+         */
+        status: string;
+        /**
+         * The last observed rotation time for the TDE master key, in RFC3339 format.
+         */
+        timeMasterKeyLastRotation: string;
+        /**
+         * Number of unencrypted tablespaces detected.
+         */
+        unencryptedTablespacesCount: number;
+        /**
+         * TLS wallet location observed on target.
+         */
+        walletLocation: string;
+    }
+
+    export interface GetCryptoAssessmentCryptoPostureTl {
+        /**
+         * Indicates if weak TLS cipher suites are allowed.
+         */
+        areWeakCipherSuitesAllowed: string;
+        /**
+         * TLS cipher suites configured on target.
+         */
+        cipherSuitesConfigureds: string[];
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * Whether TLS client authentication is configured.
+         */
+        isMtlsConfigured: string;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness: string;
+        /**
+         * Certificate revocation checking mode.
+         */
+        revocationMode: string;
+        /**
+         * TLS enablement status.
+         */
+        status: string;
+        /**
+         * TLS versions configured on target.
+         */
+        versions: string[];
+        /**
+         * TLS wallet location observed on target.
+         */
+        walletLocation: string;
+    }
+
+    export interface GetCryptoAssessmentFindingAnalyticsCryptoAssessmentFindingAnalyticsCollection {
+        /**
+         * Array of crypto finding analytics summaries.
+         */
+        items: outputs.DataSafe.GetCryptoAssessmentFindingAnalyticsCryptoAssessmentFindingAnalyticsCollectionItem[];
+    }
+
+    export interface GetCryptoAssessmentFindingAnalyticsCryptoAssessmentFindingAnalyticsCollectionItem {
+        /**
+         * A filter to return only findings in the specified category key.
+         */
+        category: string;
+        /**
+         * A filter to return only findings with any of the specified finding keys.
+         */
+        findingKey: string;
+        /**
+         * Numeric priority of the finding. 1 is CRITICAL, 2 is HIGH, 3 is MEDIUM, and 4 is LOW.
+         */
+        priority: number;
+        /**
+         * Text severity derived from priority using the static mapping 1=CRITICAL, 2=HIGH, 3=MEDIUM, 4=LOW.
+         */
+        severity: string;
+        /**
+         * Short remediation for the finding.
+         */
+        shortRemediation: string;
+        /**
+         * Short summary of the finding.
+         */
+        shortSummary: string;
+        /**
+         * Number of targets impacted by this finding in the queried scope.
+         */
+        targetCount: number;
+        /**
+         * Display title of the finding.
+         */
+        title: string;
+    }
+
+    export interface GetCryptoAssessmentFindingAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentFindingTargetsCryptoAssessmentFindingTargetCollection {
+        /**
+         * Array of target-level finding occurrences.
+         */
+        items: outputs.DataSafe.GetCryptoAssessmentFindingTargetsCryptoAssessmentFindingTargetCollectionItem[];
+    }
+
+    export interface GetCryptoAssessmentFindingTargetsCryptoAssessmentFindingTargetCollectionItem {
+        /**
+         * The crypto assessment OCID associated with this finding occurrence.
+         */
+        assessmentId: string;
+        /**
+         * Database version of the affected target.
+         */
+        databaseVersion: string;
+        /**
+         * The finding keys for which target occurrences are listed.
+         */
+        findingKey: string;
+        /**
+         * A filter to return only findings that are or are not part of quantum-readiness checks.
+         */
+        isQuantumReadinessCheck: boolean;
+        /**
+         * The observed value for the selected finding on this target.
+         */
+        observedValue: string;
+        /**
+         * Numeric priority of the finding. 1 is CRITICAL, 2 is HIGH, 3 is MEDIUM, and 4 is LOW.
+         */
+        priority: number;
+        /**
+         * Text severity derived from priority using the static mapping 1=CRITICAL, 2=HIGH, 3=MEDIUM, 4=LOW.
+         */
+        severity: string;
+        /**
+         * Filters results to targets with an exact matching target OCID.
+         */
+        targetId: string;
+    }
+
+    export interface GetCryptoAssessmentFindingTargetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentFindingsCryptoAssessmentFindingCollection {
+        /**
+         * Assessment type recorded in the findings table.
+         */
+        assessmentType: string;
+        /**
+         * Database version for the target database associated with the specified crypto assessment.
+         */
+        databaseVersion: string;
+        /**
+         * Array of crypto deviation findings.
+         */
+        items: outputs.DataSafe.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionItem[];
+        /**
+         * Aggregate finding counts for the specified crypto assessment.
+         */
+        summaries: outputs.DataSafe.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummary[];
+        /**
+         * The OCID of the target database for the specified crypto assessment.
+         */
+        targetId: string;
+    }
+
+    export interface GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionItem {
+        /**
+         * A filter to return only findings in the specified category key.
+         */
+        category: string;
+        /**
+         * Compliance mapping recorded for the finding.
+         */
+        compliance: string;
+        /**
+         * Expected value recorded for the finding.
+         */
+        expectedValue: string;
+        /**
+         * A filter to return only findings with the specified finding key.
+         */
+        findingKey: string;
+        /**
+         * A filter to return only findings that are or are not part of quantum-readiness checks.
+         */
+        isQuantumReadinessCheck: boolean;
+        /**
+         * Observed values recorded for the finding.
+         */
+        observedValues: string[];
+        /**
+         * Numeric priority of the finding. 1 is CRITICAL, 2 is HIGH, 3 is MEDIUM, and 4 is LOW.
+         */
+        priority: number;
+        /**
+         * Recommended value recorded for the finding.
+         */
+        recommendedValue: string;
+        /**
+         * Remediation text recorded for the finding.
+         */
+        remediation: string;
+        /**
+         * Text severity derived from priority using the static mapping 1=CRITICAL, 2=HIGH, 3=MEDIUM, 4=LOW.
+         */
+        severity: string;
+        /**
+         * Short remediation for the finding.
+         */
+        shortRemediation: string;
+        /**
+         * Short summary of the finding.
+         */
+        shortSummary: string;
+        /**
+         * A filter to return only findings with the specified status.
+         */
+        status: string;
+        /**
+         * Aggregate finding counts for the specified crypto assessment.
+         */
+        summary: string;
+        /**
+         * A filter to return only findings with the specified title.
+         */
+        title: string;
+        /**
+         * URL recorded for the finding.
+         */
+        url: string;
+    }
+
+    export interface GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummary {
+        /**
+         * Aggregate finding counts for one crypto finding category.
+         */
+        backupStatuses: outputs.DataSafe.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryBackupStatus[];
+        /**
+         * FAIL or EVALUATE findings with priority 1.
+         */
+        critical: number;
+        /**
+         * Aggregate finding counts for one crypto finding category.
+         */
+        dataEncryptionStatuses: outputs.DataSafe.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryDataEncryptionStatus[];
+        /**
+         * FAIL or EVALUATE findings with priority 2.
+         */
+        high: number;
+        /**
+         * FAIL or EVALUATE findings with priority 4.
+         */
+        low: number;
+        /**
+         * FAIL or EVALUATE findings with priority 3.
+         */
+        med: number;
+        /**
+         * Aggregate finding counts for one crypto finding category.
+         */
+        networkEncryptionStatuses: outputs.DataSafe.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryNetworkEncryptionStatus[];
+        /**
+         * Counts keyed by finding status. All supported statuses are included with a zero count when absent.
+         */
+        statusCounts: {[key: string]: string};
+        /**
+         * Total findings across all statuses in this category.
+         */
+        totalChecks: number;
+        /**
+         * Findings with FAIL or EVALUATE status.
+         */
+        totalFindings: number;
+        /**
+         * Aggregate finding counts for one crypto finding category.
+         */
+        walletStatuses: outputs.DataSafe.GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryWalletStatus[];
+    }
+
+    export interface GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryBackupStatus {
+        /**
+         * Findings with FAIL or EVALUATE status.
+         */
+        findings: number;
+        /**
+         * Findings with PASS status.
+         */
+        passChecks: number;
+        /**
+         * Total findings across all statuses in this category.
+         */
+        totalChecks: number;
+    }
+
+    export interface GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryDataEncryptionStatus {
+        /**
+         * Findings with FAIL or EVALUATE status.
+         */
+        findings: number;
+        /**
+         * Findings with PASS status.
+         */
+        passChecks: number;
+        /**
+         * Total findings across all statuses in this category.
+         */
+        totalChecks: number;
+    }
+
+    export interface GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryNetworkEncryptionStatus {
+        /**
+         * Findings with FAIL or EVALUATE status.
+         */
+        findings: number;
+        /**
+         * Findings with PASS status.
+         */
+        passChecks: number;
+        /**
+         * Total findings across all statuses in this category.
+         */
+        totalChecks: number;
+    }
+
+    export interface GetCryptoAssessmentFindingsCryptoAssessmentFindingCollectionSummaryWalletStatus {
+        /**
+         * Findings with FAIL or EVALUATE status.
+         */
+        findings: number;
+        /**
+         * Findings with PASS status.
+         */
+        passChecks: number;
+        /**
+         * Total findings across all statuses in this category.
+         */
+        totalChecks: number;
+    }
+
+    export interface GetCryptoAssessmentFindingsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentKeysCryptoAssessmentKeyCollection {
+        /**
+         * Cryptographic key summaries for the specified crypto assessment.
+         */
+        items: outputs.DataSafe.GetCryptoAssessmentKeysCryptoAssessmentKeyCollectionItem[];
+    }
+
+    export interface GetCryptoAssessmentKeysCryptoAssessmentKeyCollectionItem {
+        /**
+         * Age of the key in whole days, calculated from timeCreated using the current UTC date.
+         */
+        age: string;
+        /**
+         * Cryptographic algorithm used by the key.
+         */
+        algorithm: string;
+        /**
+         * A filter to return only resources associated with the specified crypto assessment OCID.
+         */
+        assessmentId: string;
+        /**
+         * A filter to return only records for the specified feature.
+         */
+        feature: string;
+        /**
+         * Key cache setting observed for the key.
+         */
+        keyCache: string;
+        /**
+         * Filters key results to rows with an exact matching keyId.
+         */
+        keyId: string;
+        /**
+         * Filters key results to rows with the specified key type.
+         */
+        keyType: string;
+        /**
+         * Primary keystore type observed for the key.
+         */
+        keystoreType: string;
+        /**
+         * Secondary keystore type observed for the key, if configured.
+         */
+        secondaryKeystoreType: string;
+        /**
+         * Current status of the cryptographic key as observed on the target.
+         */
+        status: string;
+        /**
+         * A filter to return only inventory rows associated with the specified target OCID.
+         */
+        targetId: string;
+        /**
+         * Key creation time in RFC3339 format.
+         */
+        timeCreated: string;
+        /**
+         * The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+         */
+        timeLastAssessed: string;
+        /**
+         * Most recent key rotation time in RFC3339 format.
+         */
+        timeLastRotation: string;
+        /**
+         * Wallet location observed for the key.
+         */
+        walletLocation: string;
+    }
+
+    export interface GetCryptoAssessmentKeysFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentSqlnetParameterParameter {
+        /**
+         * SQLNET parameter name.
+         */
+        name: string;
+        /**
+         * Filters SQLNET parameters by quantum-readiness category.
+         */
+        quantumReadiness: string;
+        /**
+         * Parsed SQLNET parameter value. TEXT returns a string, BOOLEAN returns a boolean, and LIST returns an array of strings.
+         */
+        values: outputs.DataSafe.GetCryptoAssessmentSqlnetParameterParameterValue[];
+    }
+
+    export interface GetCryptoAssessmentSqlnetParameterParameterValue {
+        /**
+         * Source type of SQLNET parameter data.
+         */
+        type: string;
+        /**
+         * Parsed SQLNET parameter value. TEXT returns a string, BOOLEAN returns a boolean, and LIST returns an array of strings.
+         */
+        value: string;
+    }
+
+    export interface GetCryptoAssessmentSqlnetParameterSource {
+        /**
+         * Source type of SQLNET parameter data.
+         */
+        type: string;
+    }
+
+    export interface GetCryptoAssessmentTdeObjectsCryptoAssessmentTdeObjectCollection {
+        /**
+         * TDE object encryption summary items.
+         */
+        items: outputs.DataSafe.GetCryptoAssessmentTdeObjectsCryptoAssessmentTdeObjectCollectionItem[];
+    }
+
+    export interface GetCryptoAssessmentTdeObjectsCryptoAssessmentTdeObjectCollectionItem {
+        /**
+         * A filter to return only resources associated with the specified crypto assessment OCID.
+         */
+        assessmentId: string;
+        /**
+         * Name of the encrypted column. This field is returned when objectType is COLUMN.
+         */
+        columnName: string;
+        /**
+         * Filters TDE object summary rows by any of the specified observed encryption algorithms.
+         */
+        encryptionObserved: string;
+        /**
+         * Encryption mode observed for the tablespace. This field is returned when objectType is TABLESPACE.
+         */
+        modeObserved: string;
+        /**
+         * Filters TDE object summary rows by quantum-readiness category.
+         */
+        quantumReadiness: string;
+        /**
+         * Name of the schema containing the encrypted column. This field is returned when objectType is COLUMN.
+         */
+        schemaName: string;
+        /**
+         * Tablespace size in gigabytes. This field is returned when objectType is TABLESPACE.
+         */
+        sizeInGbs: number;
+        /**
+         * Name of the table containing the encrypted column. This field is returned when objectType is COLUMN.
+         */
+        tableName: string;
+        /**
+         * Name of the tablespace. This field is returned when objectType is TABLESPACE.
+         */
+        tablespaceName: string;
+        /**
+         * A filter to return only inventory rows associated with the specified target OCID.
+         */
+        targetId: string;
+        /**
+         * The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+         */
+        timeLastAssessed: string;
+    }
+
+    export interface GetCryptoAssessmentTdeObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentWalletsCryptoAssessmentWalletCollection {
+        /**
+         * Wallet details for the specified crypto assessment.
+         */
+        items: outputs.DataSafe.GetCryptoAssessmentWalletsCryptoAssessmentWalletCollectionItem[];
+    }
+
+    export interface GetCryptoAssessmentWalletsCryptoAssessmentWalletCollectionItem {
+        /**
+         * A filter to return only resources associated with the specified crypto assessment OCID.
+         */
+        assessmentId: string;
+        /**
+         * Whether wallet auto-login is enabled.
+         */
+        autoLogin: string;
+        /**
+         * A filter to return only wallets for the specified feature.
+         */
+        feature: string;
+        /**
+         * A filter to return only inventory rows associated with the specified target OCID.
+         */
+        targetId: string;
+        /**
+         * Wallet creation time in RFC3339 format.
+         */
+        timeCreated: string;
+        /**
+         * The date and time the associated crypto assessment was last assessed, in RFC3339 format.
+         */
+        timeLastAssessed: string;
+        /**
+         * A filter to return only wallets whose encryption algorithm exactly matches any of the specified values, case-insensitively.
+         */
+        walletEncryptionAlgorithm: string;
+        /**
+         * Wallet path for the feature.
+         */
+        walletLocation: string;
+    }
+
+    export interface GetCryptoAssessmentWalletsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCryptoAssessmentsCryptoAssessmentCollection {
+        items: outputs.DataSafe.GetCryptoAssessmentsCryptoAssessmentCollectionItem[];
+    }
+
+    export interface GetCryptoAssessmentsCryptoAssessmentCollectionItem {
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
+        compartmentId: string;
+        cryptoAssessmentId: string;
+        /**
+         * Cryptographic posture details captured by the assessment.
+         */
+        cryptoPostures: outputs.DataSafe.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPosture[];
+        /**
+         * Cryptographic provider and version information observed on the target.
+         */
+        cryptoProvider: string;
+        /**
+         * The architecture of the assessed target database.
+         */
+        databaseArchitecture: string;
+        /**
+         * The name of the assessed target database.
+         */
+        databaseName: string;
+        /**
+         * The version of the assessed target database.
+         */
+        databaseVersion: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * The description of the crypto assessment.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the specified display name.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The OCID of the crypto assessment.
+         */
+        id: string;
+        /**
+         * A filter to return only crypto assessments whose scheduled execution state matches the specified value.
+         */
+        isAssessmentScheduled: boolean;
+        /**
+         * Number of crypto issues detected in this assessment.
+         */
+        issueCount: number;
+        /**
+         * Details about the current lifecycle state of the crypto assessment.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only crypto assessments that match any of the specified posture categories.
+         */
+        postureCategory: string;
+        /**
+         * The schedule used to run the crypto assessment periodically. The schedule uses the format: <version-string>;<version-specific-schedule>
+         */
+        schedule: string;
+        /**
+         * A filter to return only resources that match the specified lifecycle state.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * A filter to return the target database group that matches the specified OCID.
+         */
+        targetDatabaseGroupId: string;
+        /**
+         * A filter to return only crypto assessments associated with the specified target OCID. When provided, targetType must also be specified.
+         */
+        targetId: string;
+        /**
+         * A filter to return crypto assessments belonging to the specified target type. `ListCryptoAssessments` returns assessment rows; use `targetDatabaseGroupId` to list the underlying target database assessments for a group.
+         */
+        targetType: string;
+        /**
+         * Number of assessed targets with one or more crypto issues. For a target database assessment, this value is 1 when the target has issues and 0 otherwise. For a target database group assessment, this value is the number of targets in the group that have issues.
+         */
+        targetsWithIssuesCount: number;
+        /**
+         * The date and time the crypto assessment was created, in RFC3339 format.
+         */
+        timeCreated: string;
+        /**
+         * The date and time the crypto posture was last assessed, in RFC3339 format.
+         */
+        timeLastAssessed: string;
+        /**
+         * The date and time the crypto assessment was last updated, in RFC3339 format.
+         */
+        timeUpdated: string;
+        /**
+         * The actor that created the assessment.
+         */
+        triggeredBy: string;
+        /**
+         * A filter to return only crypto assessments that match the specified type.
+         */
+        type: string;
+    }
+
+    export interface GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPosture {
+        /**
+         * Backup encryption status observed for the assessment.
+         */
+        backupStatus: string;
+        /**
+         * Number of encrypted backup pieces.
+         */
+        encryptedBackupPiecesCount: number;
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * Overall FIPS status for the assessment when the target uses common FIPS configuration.
+         */
+        fipsStatus: string;
+        /**
+         * Network encryption details.
+         */
+        networkEncryptions: string[];
+        /**
+         * Native network encryption posture details.
+         */
+        nnes: outputs.DataSafe.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureNne[];
+        /**
+         * Transparent data encryption posture details.
+         */
+        tdes: outputs.DataSafe.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTde[];
+        /**
+         * TLS posture details.
+         */
+        tls: outputs.DataSafe.GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTl[];
+        /**
+         * Number of unencrypted backup pieces.
+         */
+        unencryptedBackupPiecesCount: number;
+    }
+
+    export interface GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureNne {
+        /**
+         * Indicates if weak NNE options are allowed.
+         */
+        areWeakOptionsAllowed: string;
+        /**
+         * Configured TDE encryption algorithm.
+         */
+        encryptionConfigureds: string[];
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * NNE integrity algorithm(s).
+         */
+        integrities: string[];
+        /**
+         * Observed NNE key exchange setting.
+         */
+        keyExchange: string;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness: string;
+        /**
+         * Observed server-side encryption requirement.
+         */
+        serverEncryption: string;
+        /**
+         * NNE server integrity algorithm(s).
+         */
+        serverIntegrities: string[];
+        /**
+         * TLS enablement status.
+         */
+        status: string;
+    }
+
+    export interface GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTde {
+        /**
+         * Observed DB credentials encryption algorithm.
+         */
+        dbCredentialsEncryptionObserved: string;
+        /**
+         * Number of encrypted tablespaces detected.
+         */
+        encryptedTablespacesCount: number;
+        /**
+         * Configured TDE encryption algorithm.
+         */
+        encryptionConfigureds: string[];
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * Configured TDE integrity-related setting.
+         */
+        integrityConfigureds: string[];
+        /**
+         * The observed TDE key cache status.
+         */
+        keyCacheStatus: string;
+        /**
+         * The observed TDE key store type.
+         */
+        keyStoreType: string;
+        /**
+         * The observed encryption algorithm used by the master key.
+         */
+        masterKeyEncryptionAlgorithm: string;
+        /**
+         * The observed TDE master key identifier.
+         */
+        masterKeyId: string;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness: string;
+        /**
+         * Observed redo log encryption algorithm.
+         */
+        redoEncryptionObserved: string;
+        /**
+         * TLS enablement status.
+         */
+        status: string;
+        /**
+         * The last observed rotation time for the TDE master key, in RFC3339 format.
+         */
+        timeMasterKeyLastRotation: string;
+        /**
+         * Number of unencrypted tablespaces detected.
+         */
+        unencryptedTablespacesCount: number;
+        /**
+         * TLS wallet location observed on target.
+         */
+        walletLocation: string;
+    }
+
+    export interface GetCryptoAssessmentsCryptoAssessmentCollectionItemCryptoPostureTl {
+        /**
+         * Indicates if weak TLS cipher suites are allowed.
+         */
+        areWeakCipherSuitesAllowed: string;
+        /**
+         * TLS cipher suites configured on target.
+         */
+        cipherSuitesConfigureds: string[];
+        /**
+         * FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+         */
+        fipsModeConfigured: string;
+        /**
+         * Whether TLS client authentication is configured.
+         */
+        isMtlsConfigured: string;
+        /**
+         * Quantum-readiness classification for TLS posture.
+         */
+        quantumReadiness: string;
+        /**
+         * Certificate revocation checking mode.
+         */
+        revocationMode: string;
+        /**
+         * TLS enablement status.
+         */
+        status: string;
+        /**
+         * TLS versions configured on target.
+         */
+        versions: string[];
+        /**
+         * TLS wallet location observed on target.
+         */
+        walletLocation: string;
+    }
+
+    export interface GetCryptoAssessmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDataSafeConfigurationGlobalSetting {
@@ -95475,6 +96939,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         */
+        capacityReservationId: string;
+        /**
          * Details for the notebook session shape configuration.
          */
         notebookSessionShapeConfigDetails: outputs.DataScience.GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail[];
@@ -95512,6 +96980,10 @@ export namespace DataScience {
          * A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
          */
         blockStorageSizeInGbs: number;
+        /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         */
+        capacityReservationId: string;
         /**
          * Details for the notebook session shape configuration.
          */
@@ -95708,6 +97180,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         */
+        capacityReservationId: string;
+        /**
          * Details for the notebook session shape configuration.
          */
         notebookSessionShapeConfigDetails: outputs.DataScience.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail[];
@@ -95745,6 +97221,10 @@ export namespace DataScience {
          * A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
          */
         blockStorageSizeInGbs: number;
+        /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         */
+        capacityReservationId: string;
         /**
          * Details for the notebook session shape configuration.
          */
@@ -100653,6 +102133,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         */
+        capacityReservationId: string;
+        /**
          * Details for the notebook session shape configuration.
          */
         notebookSessionShapeConfigDetails: outputs.DataScience.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails;
@@ -100690,6 +102174,10 @@ export namespace DataScience {
          * (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
          */
         blockStorageSizeInGbs: number;
+        /**
+         * (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         */
+        capacityReservationId: string;
         /**
          * (Updatable) Details for the notebook session shape configuration.
          */
@@ -143441,6 +144929,10 @@ export namespace DatabaseMigration {
          */
         migrationId: string;
         /**
+         * Assessment migration scope.
+         */
+        migrationScope: string;
+        /**
          * A network speed in Megabits per second.
          */
         networkSpeedMegabitPerSecond: string;
@@ -174737,13 +176229,79 @@ export namespace Functions {
 
     export interface FunctionSourceDetails {
         /**
+         * (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+         */
+        archiveSourceDetails: outputs.Functions.FunctionSourceDetailsArchiveSourceDetails;
+        /**
+         * (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+         */
+        handler: string;
+        /**
+         * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+         */
+        image: string;
+        /**
+         * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+         */
+        imageDigest: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
          */
         pbfListingId: string;
         /**
-         * Type of the Function Source. Possible values: PBF.
+         * (Updatable) FunctionsRuntime configuration used to create a function.
+         */
+        runtimeConfig: outputs.Functions.FunctionSourceDetailsRuntimeConfig;
+        /**
+         * The SHA256 hash of the function source code archive, base64-encoded.
+         */
+        sourceCodeSha256: string;
+        /**
+         * Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
          */
         sourceType: string;
+    }
+
+    export interface FunctionSourceDetailsArchiveSourceDetails {
+        /**
+         * (Updatable) The base64-encoded archive file of the function code. The archive file must contain all the files for the function. Please refer to functions documentation for maximum allowed size and supported archive formats.
+         */
+        archiveFile: string;
+        /**
+         * (Updatable) Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+         */
+        archiveSourceType: string;
+        /**
+         * (Updatable) The name of the Object Storage bucket.
+         */
+        bucket: string;
+        /**
+         * (Updatable) The Object Storage namespace.
+         */
+        namespace: string;
+        /**
+         * (Updatable) The name of the Object Storage object.
+         */
+        object: string;
+        /**
+         * (Updatable) VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+         */
+        objectVersionId: string;
+    }
+
+    export interface FunctionSourceDetailsRuntimeConfig {
+        /**
+         * (Updatable) The name of the FunctionsRuntime this function is to be associated with.
+         */
+        functionsRuntimeName: string;
+        /**
+         * (Updatable) The OCID of the FunctionsRuntimeVersion to use for the Function in manual mode.
+         */
+        functionsRuntimeVersionId: string;
+        /**
+         * (Updatable) Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+         */
+        runtimeConfigType: string;
     }
 
     export interface FunctionSuccessDestination {
@@ -174964,13 +176522,76 @@ export namespace Functions {
 
     export interface GetFunctionSourceDetail {
         /**
+         * The details for the Archive source of the Function.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+         */
+        archiveSourceDetails: outputs.Functions.GetFunctionSourceDetailArchiveSourceDetail[];
+        /**
+         * The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+         */
+        handler: string;
+        /**
+         * The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+         */
+        image: string;
+        /**
+         * The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+         */
+        imageDigest: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
          */
         pbfListingId: string;
         /**
-         * Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+         * FunctionsRuntime configuration for a function.
+         */
+        runtimeConfigs: outputs.Functions.GetFunctionSourceDetailRuntimeConfig[];
+        /**
+         * The SHA256 hash of the function source code archive, base64-encoded.
+         */
+        sourceCodeSha256: string;
+        /**
+         * Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
          */
         sourceType: string;
+    }
+
+    export interface GetFunctionSourceDetailArchiveSourceDetail {
+        archiveFile: string;
+        /**
+         * Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+         */
+        archiveSourceType: string;
+        /**
+         * The name of the Object Storage bucket.
+         */
+        bucket: string;
+        /**
+         * The Object Storage namespace.
+         */
+        namespace: string;
+        /**
+         * The name of the Object Storage object.
+         */
+        object: string;
+        /**
+         * VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+         */
+        objectVersionId: string;
+    }
+
+    export interface GetFunctionSourceDetailRuntimeConfig {
+        /**
+         * The name of the FunctionsRuntime this function is to be associated with.
+         */
+        functionsRuntimeName: string;
+        /**
+         * The OCID of the FunctionsRuntimeVersion that is currently in use for the function.
+         */
+        functionsRuntimeVersionId: string;
+        /**
+         * Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+         */
+        runtimeConfigType: string;
     }
 
     export interface GetFunctionSuccessDestination {
@@ -175048,6 +176669,8 @@ export namespace Functions {
         id: string;
         /**
          * The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+         *
+         * @deprecated The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
          */
         image: string;
         /**
@@ -175136,13 +176759,76 @@ export namespace Functions {
 
     export interface GetFunctionsFunctionSourceDetail {
         /**
+         * The details for the Archive source of the Function.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+         */
+        archiveSourceDetails: outputs.Functions.GetFunctionsFunctionSourceDetailArchiveSourceDetail[];
+        /**
+         * The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+         */
+        handler: string;
+        /**
+         * The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+         */
+        image: string;
+        /**
+         * The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+         */
+        imageDigest: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
          */
         pbfListingId: string;
         /**
-         * Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+         * FunctionsRuntime configuration for a function.
+         */
+        runtimeConfigs: outputs.Functions.GetFunctionsFunctionSourceDetailRuntimeConfig[];
+        /**
+         * The SHA256 hash of the function source code archive, base64-encoded.
+         */
+        sourceCodeSha256: string;
+        /**
+         * Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
          */
         sourceType: string;
+    }
+
+    export interface GetFunctionsFunctionSourceDetailArchiveSourceDetail {
+        archiveFile: string;
+        /**
+         * Type of the Archive Source. Possible values: OBJECT_STORAGE_ARCHIVE and DIRECT_ARCHIVE.
+         */
+        archiveSourceType: string;
+        /**
+         * The name of the Object Storage bucket.
+         */
+        bucket: string;
+        /**
+         * The Object Storage namespace.
+         */
+        namespace: string;
+        /**
+         * The name of the Object Storage object.
+         */
+        object: string;
+        /**
+         * VersionId used to identify a particular version of the object. If not specified, the latest version of the object is used.
+         */
+        objectVersionId: string;
+    }
+
+    export interface GetFunctionsFunctionSourceDetailRuntimeConfig {
+        /**
+         * The name of the FunctionsRuntime this function is to be associated with.
+         */
+        functionsRuntimeName: string;
+        /**
+         * The OCID of the FunctionsRuntimeVersion that is currently in use for the function.
+         */
+        functionsRuntimeVersionId: string;
+        /**
+         * Type of the FunctionsRuntime Config. Possible values: FUNCTION_UPDATE and MANUAL.
+         */
+        runtimeConfigType: string;
     }
 
     export interface GetFunctionsFunctionSuccessDestination {
@@ -175173,6 +176859,143 @@ export namespace Functions {
          * Define if tracing is enabled for the resource.
          */
         isEnabled: boolean;
+    }
+
+    export interface GetFunctionsRuntimeVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollection {
+        items: outputs.Functions.GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem[];
+    }
+
+    export interface GetFunctionsRuntimeVersionsFunctionsRuntimeVersionCollectionItem {
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return only resources that match the entire FunctionsRuntimeVersion name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * unique FunctionsRuntime identifier
+         */
+        functionsRuntimeId: string;
+        /**
+         * The OCID of the FunctionsRuntimeVersion that is immutable on creation.
+         */
+        id: string;
+        /**
+         * A filter to return only resources that match the entire languageVersion name given.
+         */
+        languageVersion: string;
+        /**
+         * Details of the change in the FunctionsRuntimeVersion of the FunctionsRuntime.
+         */
+        metadata: string;
+        /**
+         * A filter to return only resources that match the entire osVersion name given.
+         */
+        osVersion: string;
+        /**
+         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         */
+        state: string;
+        /**
+         * The list of supported architectures for the FunctionsRuntimeVersion.
+         */
+        supportedArchitectures: string[];
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The time when the FunctionsRuntimeVersion was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time when the FunctionsRuntimeVersion was updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetFunctionsRuntimesFilter {
+        /**
+         * A filter to return only resources that match the entire FunctionsRuntime name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFunctionsRuntimesFunctionsRuntimeCollection {
+        items: outputs.Functions.GetFunctionsRuntimesFunctionsRuntimeCollectionItem[];
+    }
+
+    export interface GetFunctionsRuntimesFunctionsRuntimeCollectionItem {
+        /**
+         * The OCID of the current FunctionsRuntimeVersion for this FunctionsRuntime.
+         */
+        currentFunctionsRuntimeVersionId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The OCID of the FunctionsRuntime that is immutable on creation.
+         */
+        id: string;
+        /**
+         * A filter to return only resources that match the entire language name given.
+         */
+        language: string;
+        /**
+         * Metadata for the FunctionsRuntime Resource.
+         */
+        metadata: string;
+        /**
+         * A filter to return only resources that match the entire FunctionsRuntime name given.
+         */
+        name: string;
+        /**
+         * A filter to return only resources that match the entire os name given.
+         */
+        os: string;
+        /**
+         * A filter to return only resources where their lifecycleState matches the given lifecycleState.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The time when the FunctionsRuntime was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time when the FunctionsRuntime will be decommissioned. An RFC3339 formatted datetime string.
+         */
+        timeDecommissioned: string;
+        /**
+         * The time when the FunctionsRuntime will be deprecated. An RFC3339 formatted datetime string.
+         */
+        timeDeprecated: string;
+        /**
+         * The time when the FunctionsRuntime was updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
     }
 
     export interface GetFusionEnvironmentAdditionalEgressRule {
@@ -180462,6 +182285,126 @@ export namespace GenerativeAi {
         sourceType: string;
     }
 
+    export interface GetModelDiscoveriesFilter {
+        /**
+         * The name of this parameter.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetModelDiscoveriesModelDiscoveryCollection {
+        /**
+         * The list of discovered models matching the search criteria.
+         */
+        items: outputs.GenerativeAi.GetModelDiscoveriesModelDiscoveryCollectionItem[];
+    }
+
+    export interface GetModelDiscoveriesModelDiscoveryCollectionItem {
+        /**
+         * Filter models that support any of the specified API capabilities.
+         */
+        apiCapabilities: string[];
+        /**
+         * The list of availability details for the model across different regions and deployment modes.
+         */
+        availabilities: outputs.GenerativeAi.GetModelDiscoveriesModelDiscoveryCollectionItemAvailability[];
+        /**
+         * Describes what this model can be used for.
+         */
+        capabilities: string[];
+        /**
+         * The supported input-to-output modality transformations for this model. For example, a model can support TEXT to VIDEO or AUDIO to VIDEO.
+         */
+        modalitySupports: outputs.GenerativeAi.GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport[];
+        /**
+         * Filter models by access type.
+         */
+        modelAccess: string;
+        /**
+         * A filter to return only resources whose model identifier matches the given modelId.
+         */
+        modelId: string;
+        /**
+         * The list of configurable parameters supported by the model. For example, temperature and maxTokens for a text generation model.
+         */
+        parameters: outputs.GenerativeAi.GetModelDiscoveriesModelDiscoveryCollectionItemParameter[];
+        /**
+         * The vendor that offers the model.
+         */
+        vendor: string;
+    }
+
+    export interface GetModelDiscoveriesModelDiscoveryCollectionItemAvailability {
+        /**
+         * A filter to return only resources whose realm matches the given realm.
+         */
+        realm: string;
+        /**
+         * A filter to return only resources whose region matches the given region.
+         */
+        region: string;
+        /**
+         * The supported deployment modes for the model in this region (e.g., on-demand or dedicated).
+         */
+        servingModes: string[];
+        /**
+         * A list of model identifiers that are recommended as replacements after this model is retired.
+         */
+        supportedReplacements: string[];
+        /**
+         * The timestamp when dedicated deployments of the model will be fully retired.
+         */
+        timeDedicatedRetired: string;
+        /**
+         * The timestamp when the model is marked as deprecated and is no longer recommended for use.
+         */
+        timeDeprecated: string;
+        /**
+         * The timestamp when the model will no longer be available for on-demand (shared) usage.
+         */
+        timeOnDemandRetired: string;
+    }
+
+    export interface GetModelDiscoveriesModelDiscoveryCollectionItemModalitySupport {
+        /**
+         * The source modality accepted by the model.
+         */
+        input: string;
+        /**
+         * The target modality produced by the model.
+         */
+        output: string;
+    }
+
+    export interface GetModelDiscoveriesModelDiscoveryCollectionItemParameter {
+        /**
+         * The default value used when this parameter is not supplied.
+         */
+        defaultValue: string;
+        /**
+         * A human-readable description of this parameter.
+         */
+        description: string;
+        /**
+         * The maximum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+         */
+        maximum: number;
+        /**
+         * The minimum allowed value for this parameter. Applicable only when type is FLOAT or INTEGER.
+         */
+        minimum: number;
+        /**
+         * The name of this parameter.
+         */
+        name: string;
+        /**
+         * The data type of the parameter (e.g., float, integer, string).
+         */
+        type: string;
+    }
+
     export interface GetModelFineTuneDetail {
         dedicatedAiClusterId: string;
         trainingConfigs: outputs.GenerativeAi.GetModelFineTuneDetailTrainingConfig[];
@@ -180851,6 +182794,241 @@ export namespace GenerativeAi {
          * The id of the GenAI model
          */
         modelId: string;
+    }
+
+    export interface GetRoutingProfileModelRoutingPolicy {
+        /**
+         * The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+         */
+        allowedModels: string[];
+    }
+
+    export interface GetRoutingProfilePreviousState {
+        /**
+         * The OCID of the compartment in which the routing profile lives.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * An optional description of the routing profile.
+         */
+        description: string;
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * An OCID that uniquely identifies this routing profile resource.
+         */
+        id: string;
+        /**
+         * A message describing the current state of the routing profile in more detail that can provide actionable information.
+         */
+        lifecycleDetails: string;
+        /**
+         * The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+         */
+        modelRoutingPolicies: outputs.GenerativeAi.GetRoutingProfilePreviousStateModelRoutingPolicy[];
+        /**
+         * The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+         */
+        regionRoutingPolicies: outputs.GenerativeAi.GetRoutingProfilePreviousStateRegionRoutingPolicy[];
+        /**
+         * The current state of the routing profile.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetRoutingProfilePreviousStateModelRoutingPolicy {
+        /**
+         * The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+         */
+        allowedModels: string[];
+    }
+
+    export interface GetRoutingProfilePreviousStateRegionRoutingPolicy {
+        /**
+         * The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+         */
+        allowedRegions: string[];
+    }
+
+    export interface GetRoutingProfileRegionRoutingPolicy {
+        /**
+         * The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+         */
+        allowedRegions: string[];
+    }
+
+    export interface GetRoutingProfilesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRoutingProfilesRoutingProfileCollection {
+        items: outputs.GenerativeAi.GetRoutingProfilesRoutingProfileCollectionItem[];
+    }
+
+    export interface GetRoutingProfilesRoutingProfileCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * An optional description of the routing profile.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+         */
+        id: string;
+        /**
+         * A message describing the current state of the routing profile in more detail that can provide actionable information.
+         */
+        lifecycleDetails: string;
+        /**
+         * The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+         */
+        modelRoutingPolicies: outputs.GenerativeAi.GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy[];
+        /**
+         * A bounded snapshot of the previous state of a routing profile. This object intentionally omits `previousState` to avoid recursive nesting.
+         */
+        previousStates: outputs.GenerativeAi.GetRoutingProfilesRoutingProfileCollectionItemPreviousState[];
+        /**
+         * The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+         */
+        regionRoutingPolicies: outputs.GenerativeAi.GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy[];
+        /**
+         * A filter to return only resources whose lifecycle state matches the given value.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetRoutingProfilesRoutingProfileCollectionItemModelRoutingPolicy {
+        /**
+         * The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+         */
+        allowedModels: string[];
+    }
+
+    export interface GetRoutingProfilesRoutingProfileCollectionItemPreviousState {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * An optional description of the routing profile.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the routing profile.
+         */
+        id: string;
+        /**
+         * A message describing the current state of the routing profile in more detail that can provide actionable information.
+         */
+        lifecycleDetails: string;
+        /**
+         * The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+         */
+        modelRoutingPolicies: outputs.GenerativeAi.GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy[];
+        /**
+         * The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+         */
+        regionRoutingPolicies: outputs.GenerativeAi.GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy[];
+        /**
+         * A filter to return only resources whose lifecycle state matches the given value.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetRoutingProfilesRoutingProfileCollectionItemPreviousStateModelRoutingPolicy {
+        /**
+         * The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+         */
+        allowedModels: string[];
+    }
+
+    export interface GetRoutingProfilesRoutingProfileCollectionItemPreviousStateRegionRoutingPolicy {
+        /**
+         * The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+         */
+        allowedRegions: string[];
+    }
+
+    export interface GetRoutingProfilesRoutingProfileCollectionItemRegionRoutingPolicy {
+        /**
+         * The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+         */
+        allowedRegions: string[];
     }
 
     export interface GetSemanticStoreDataSource {
@@ -181532,6 +183710,103 @@ export namespace GenerativeAi {
          * (Updatable) The id of the GenAI model
          */
         modelId: string;
+    }
+
+    export interface RoutingProfileModelRoutingPolicy {
+        /**
+         * (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+         *
+         * The order of entries is preserved. Duplicate entries are not allowed.
+         */
+        allowedModels: string[];
+    }
+
+    export interface RoutingProfilePreviousState {
+        /**
+         * (Updatable) The OCID of the compartment in which to create the routing profile.
+         */
+        compartmentId: string;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * (Updatable) An optional description of the routing profile.
+         */
+        description: string;
+        /**
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
+         */
+        displayName: string;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * An OCID that uniquely identifies this routing profile resource.
+         */
+        id: string;
+        /**
+         * A message describing the current state of the routing profile in more detail that can provide actionable information.
+         */
+        lifecycleDetails: string;
+        /**
+         * (Updatable) The model routing policy for the routing profile. Routing candidates are selected from the allowed models list.
+         */
+        modelRoutingPolicies: outputs.GenerativeAi.RoutingProfilePreviousStateModelRoutingPolicy[];
+        /**
+         * (Updatable) The cross-region routing policy for the routing profile. If this policy is not specified, only the local region is allowed.
+         */
+        regionRoutingPolicies: outputs.GenerativeAi.RoutingProfilePreviousStateRegionRoutingPolicy[];
+        /**
+         * The current state of the routing profile.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time that the routing profile was created in the format of an RFC3339 datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The date and time that the routing profile was updated in the format of an RFC3339 datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface RoutingProfilePreviousStateModelRoutingPolicy {
+        /**
+         * (Updatable) The ordered list of model names the routing candidate is selected from (for example, `meta.llama-3-70b-instruct`).
+         *
+         * The order of entries is preserved. Duplicate entries are not allowed.
+         */
+        allowedModels: string[];
+    }
+
+    export interface RoutingProfilePreviousStateRegionRoutingPolicy {
+        /**
+         * (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+         *
+         * The order of entries is preserved. Duplicate entries are not allowed.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        allowedRegions: string[];
+    }
+
+    export interface RoutingProfileRegionRoutingPolicy {
+        /**
+         * (Updatable) The ordered list of regions that routing is allowed to reach. Each entry is a region identifier (for example, `us-chicago-1`).
+         *
+         * The order of entries is preserved. Duplicate entries are not allowed.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        allowedRegions: string[];
     }
 
     export interface SemanticStoreDataSource {
@@ -323376,6 +325651,102 @@ export namespace oci {
         timeStarted: string;
     }
 
+    export interface GetSelfPartnersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSelfPartnersPartnerCollection {
+        /**
+         * The list of marketplace publisher partners.
+         */
+        items: outputs.oci.GetSelfPartnersPartnerCollectionItem[];
+    }
+
+    export interface GetSelfPartnersPartnerCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return only resources that match the given name.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The unique identifier of the marketplace publisher partner.
+         */
+        id: string;
+        /**
+         * The current lifecycle state of the marketplace publisher partner.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+    }
+
+    export interface GetSelfSelfPartnerSubscriptionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollection {
+        /**
+         * List of subscriptions for particular listing.
+         */
+        items: outputs.oci.GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem[];
+    }
+
+    export interface GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem {
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return only resources that match the given name.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The unique identifier of marketplace listing in Oracle Cloud Infrastructure.
+         */
+        productId: string;
+        /**
+         * The current state of the Subscription.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeEnded: string;
+        /**
+         * The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeStarted: string;
+    }
+
     export interface GetSelfSubscriptionAdditionalDetail {
         /**
          * Additional attribute for extendedMetadata.
@@ -323393,7 +325764,7 @@ export namespace oci {
          */
         amount: number;
         /**
-         * Sku details for billing subscription.
+         * Billing details associated with the subscription plan and its usage dimensions.
          */
         billingDetails: outputs.oci.GetSelfSubscriptionSubscriptionDetailBillingDetail[];
         /**
@@ -323416,6 +325787,10 @@ export namespace oci {
 
     export interface GetSelfSubscriptionSubscriptionDetailBillingDetail {
         /**
+         * The billing model this billing detail applies to.
+         */
+        billingModel: string;
+        /**
          * Whether this sku is assign to gov product.
          */
         hasGovSku: boolean;
@@ -323424,9 +325799,13 @@ export namespace oci {
          */
         meters: outputs.oci.GetSelfSubscriptionSubscriptionDetailBillingDetailMeter[];
         /**
-         * The part's metric.
+         * The metric type in which usage is measured.
          */
         metricType: string;
+        /**
+         * Unique key used to map this SKU to the pricing plan.
+         */
+        pricingPlanKey: string;
         /**
          * Tha rate of this sku meter.
          */
@@ -323465,15 +325844,19 @@ export namespace oci {
 
     export interface GetSelfSubscriptionSubscriptionDetailPricingPlan {
         /**
-         * Specifies the interval at which billing occurs for the subscription plan.
+         * Specifies the interval at which billing occurs for the subscription plan or usage dimension.
          */
         billingFrequency: string;
+        /**
+         * Metered usage dimensions associated with the pricing plan.
+         */
+        dimensions: outputs.oci.GetSelfSubscriptionSubscriptionDetailPricingPlanDimension[];
         /**
          * A detailed explanation of the subscription plan.
          */
         planDescription: string;
         /**
-         * Specifies the interval at which billing occurs for the subscription plan.
+         * Specifies the duration of the subscription plan.
          */
         planDuration: string;
         /**
@@ -323488,6 +325871,48 @@ export namespace oci {
          * The pricing details of the subscription plan in various supported currencies.
          */
         rates: outputs.oci.GetSelfSubscriptionSubscriptionDetailPricingPlanRate[];
+    }
+
+    export interface GetSelfSubscriptionSubscriptionDetailPricingPlanDimension {
+        /**
+         * Specifies the interval at which the usage dimension is billed.
+         */
+        dimensionBillingFrequency: string;
+        /**
+         * A detailed explanation of the usage dimension.
+         */
+        dimensionDescription: string;
+        /**
+         * The stable key used internally to map this usage dimension to billing details.
+         */
+        dimensionKey: string;
+        /**
+         * The name of the usage dimension.
+         */
+        dimensionName: string;
+        /**
+         * Quantity included in the base fee for hybrid plans.
+         */
+        includedQuantity: number;
+        /**
+         * The metric type in which usage is measured.
+         */
+        metricType: string;
+        /**
+         * The pricing details of the subscription plan in various supported currencies.
+         */
+        rates: outputs.oci.GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate[];
+    }
+
+    export interface GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate {
+        /**
+         * The currency supported, in the format specified by ISO-4217
+         */
+        currency: string;
+        /**
+         * The amount charged for the plan in the specified currency.
+         */
+        rate: number;
     }
 
     export interface GetSelfSubscriptionSubscriptionDetailPricingPlanRate {
@@ -323614,7 +326039,7 @@ export namespace oci {
          */
         amount: number;
         /**
-         * Sku details for billing subscription.
+         * Billing details associated with the subscription plan and its usage dimensions.
          */
         billingDetails: outputs.oci.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetail[];
         /**
@@ -323637,6 +326062,10 @@ export namespace oci {
 
     export interface GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetail {
         /**
+         * The billing model this billing detail applies to.
+         */
+        billingModel: string;
+        /**
          * Whether this sku is assign to gov product.
          */
         hasGovSku: boolean;
@@ -323645,9 +326074,13 @@ export namespace oci {
          */
         meters: outputs.oci.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeter[];
         /**
-         * The part's metric.
+         * The metric type in which usage is measured.
          */
         metricType: string;
+        /**
+         * Unique key used to map this SKU to the pricing plan.
+         */
+        pricingPlanKey: string;
         /**
          * Tha rate of this sku meter.
          */
@@ -323686,15 +326119,19 @@ export namespace oci {
 
     export interface GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlan {
         /**
-         * Specifies the interval at which billing occurs for the subscription plan.
+         * Specifies the interval at which billing occurs for the subscription plan or usage dimension.
          */
         billingFrequency: string;
+        /**
+         * Metered usage dimensions associated with the pricing plan.
+         */
+        dimensions: outputs.oci.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimension[];
         /**
          * A detailed explanation of the subscription plan.
          */
         planDescription: string;
         /**
-         * Specifies the interval at which billing occurs for the subscription plan.
+         * Specifies the duration of the subscription plan.
          */
         planDuration: string;
         /**
@@ -323711,7 +326148,38 @@ export namespace oci {
         rates: outputs.oci.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRate[];
     }
 
-    export interface GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRate {
+    export interface GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimension {
+        /**
+         * Specifies the interval at which the usage dimension is billed.
+         */
+        dimensionBillingFrequency: string;
+        /**
+         * A detailed explanation of the usage dimension.
+         */
+        dimensionDescription: string;
+        /**
+         * The stable key used internally to map this usage dimension to billing details.
+         */
+        dimensionKey: string;
+        /**
+         * The name of the usage dimension.
+         */
+        dimensionName: string;
+        /**
+         * Quantity included in the base fee for hybrid plans.
+         */
+        includedQuantity: number;
+        /**
+         * The metric type in which usage is measured.
+         */
+        metricType: string;
+        /**
+         * The pricing details of the subscription plan in various supported currencies.
+         */
+        rates: outputs.oci.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionRate[];
+    }
+
+    export interface GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionRate {
         /**
          * The currency supported, in the format specified by ISO-4217
          */
@@ -323722,709 +326190,15 @@ export namespace oci {
         rate: number;
     }
 
-    export interface GetWlmsManagedInstanceConfiguration {
+    export interface GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRate {
         /**
-         * Frequency of domain discovery to be run on the managed instance. The unit is in hours.
+         * The currency supported, in the format specified by ISO-4217
          */
-        discoveryInterval: number;
+        currency: string;
         /**
-         * The whitelisted paths which domain discovery are run against.
+         * The amount charged for the plan in the specified currency.
          */
-        domainSearchPaths: string[];
-    }
-
-    export interface GetWlmsManagedInstanceScanResultsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsManagedInstanceScanResultsScanResultCollection {
-        /**
-         * List of scan results.
-         */
-        items: outputs.oci.GetWlmsManagedInstanceScanResultsScanResultCollectionItem[];
-    }
-
-    export interface GetWlmsManagedInstanceScanResultsScanResultCollectionItem {
-        /**
-         * The name of the check performed.
-         */
-        serverCheckName: string;
-        /**
-         * The result of the server check.
-         */
-        serverCheckResult: string;
-        /**
-         * The identifier of the the server check result.
-         */
-        serverCheckResultId: string;
-        /**
-         * The status of the server check which is OK, FAILURE, or WARNING.
-         */
-        serverCheckStatus: string;
-        /**
-         * The name of the server.
-         */
-        serverName: string;
-        /**
-         * The date when the WebLogic server health check is performed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-         */
-        timeOfServerCheck: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-         */
-        wlsDomainId: string;
-    }
-
-    export interface GetWlmsManagedInstanceServerInstalledPatchesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollection {
-        /**
-         * List of installed patches per server
-         */
-        items: outputs.oci.GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem[];
-    }
-
-    export interface GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem {
-        /**
-         * The description of the WebLogic patch.
-         */
-        description: string;
-        /**
-         * The name of the WebLogic patch.
-         */
-        displayName: string;
-        /**
-         * The ID of the WebLogic patch.
-         */
-        id: string;
-    }
-
-    export interface GetWlmsManagedInstanceServersFilter {
-        /**
-         * The name of the resource.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsManagedInstanceServersServerCollection {
-        items: outputs.oci.GetWlmsManagedInstanceServersServerCollectionItem[];
-    }
-
-    export interface GetWlmsManagedInstanceServersServerCollectionItem {
-        /**
-         * The name of the server.
-         */
-        hostName: string;
-        /**
-         * The unique identifier of the server.
-         */
-        id: string;
-        /**
-         * Whether or not the server is an admin node.
-         */
-        isAdmin: boolean;
-        /**
-         * The JDK path on the server.
-         */
-        jdkPath: string;
-        /**
-         * The JDK version on the server.
-         */
-        jdkVersion: string;
-        /**
-         * Whether or not the server has installed the latest patches.
-         */
-        latestPatchesStatus: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-         */
-        managedInstanceId: string;
-        /**
-         * The middleware path on the server.
-         */
-        middlewarePath: string;
-        /**
-         * The middleware type on the server.
-         */
-        middlewareType: string;
-        /**
-         * The name of the resource.
-         */
-        name: string;
-        /**
-         * The patch readiness status of the server.
-         */
-        patchReadinessStatus: string;
-        /**
-         * The restart order assigned to the server.
-         */
-        restartOrder: number;
-        /**
-         * The status of the server.
-         */
-        status: string;
-        /**
-         * The date and time the server was first reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-         */
-        timeCreated: string;
-        /**
-         * The date and time the server was last reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-         */
-        timeUpdated: string;
-        /**
-         * The version of the WebLogic domain of the server
-         */
-        weblogicVersion: string;
-        /**
-         * The ID of the WebLogic domain to which the server belongs.
-         */
-        wlsDomainId: string;
-        /**
-         * The name of the WebLogic domain to which the server belongs.
-         */
-        wlsDomainName: string;
-        /**
-         * The path of the WebLogic domain to which the server belongs.
-         */
-        wlsDomainPath: string;
-    }
-
-    export interface GetWlmsManagedInstancesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsManagedInstancesManagedInstanceCollection {
-        items: outputs.oci.GetWlmsManagedInstancesManagedInstanceCollectionItem[];
-    }
-
-    export interface GetWlmsManagedInstancesManagedInstanceCollectionItem {
-        /**
-         * The OCID of the compartment that contains the resources to list. This filter returns  only resources contained within the specified compartment.
-         */
-        compartmentId: string;
-        /**
-         * The configuration for a managed instance.
-         */
-        configurations: outputs.oci.GetWlmsManagedInstancesManagedInstanceCollectionItemConfiguration[];
-        /**
-         * The display name.
-         */
-        displayName: string;
-        /**
-         * The FQDN of the managed instance.
-         */
-        hostName: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-         */
-        id: string;
-        /**
-         * The operating system architecture on the managed instance.
-         */
-        osArch: string;
-        /**
-         * The operating system name on the managed instance.
-         */
-        osName: string;
-        /**
-         * The plugin status of the managed instance.
-         */
-        pluginStatus: string;
-        /**
-         * The number of servers running in the managed instance.
-         */
-        serverCount: number;
-        /**
-         * The date and time the managed instance was first reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-         */
-        timeCreated: string;
-        /**
-         * The date and time the managed instance was last report (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-         */
-        timeUpdated: string;
-    }
-
-    export interface GetWlmsManagedInstancesManagedInstanceCollectionItemConfiguration {
-        /**
-         * Frequency of domain discovery to be run on the managed instance. The unit is in hours.
-         */
-        discoveryInterval: number;
-        /**
-         * The whitelisted paths which domain discovery are run against.
-         */
-        domainSearchPaths: string[];
-    }
-
-    export interface GetWlmsWlsDomainAgreementRecordsAgreementRecordCollection {
-        /**
-         * The agreement signature.
-         */
-        agreementSignature: string;
-        /**
-         * The ID of the accepted agreement.
-         */
-        agreementUuid: string;
-        /**
-         * List of agreement records.
-         */
-        items: outputs.oci.GetWlmsWlsDomainAgreementRecordsAgreementRecordCollectionItem[];
-        /**
-         * The accepted time for the agreement record.
-         */
-        timeAccepted: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-         */
-        wlsDomainId: string;
-    }
-
-    export interface GetWlmsWlsDomainAgreementRecordsAgreementRecordCollectionItem {
-        /**
-         * The agreement signature.
-         */
-        agreementSignature: string;
-        /**
-         * The ID of the accepted agreement.
-         */
-        agreementUuid: string;
-        /**
-         * The accepted time for the agreement record.
-         */
-        timeAccepted: string;
-    }
-
-    export interface GetWlmsWlsDomainAgreementRecordsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainApplicablePatchesApplicablePatchCollection {
-        /**
-         * List of patches per WebLogic version and middleware type.
-         */
-        items: outputs.oci.GetWlmsWlsDomainApplicablePatchesApplicablePatchCollectionItem[];
-    }
-
-    export interface GetWlmsWlsDomainApplicablePatchesApplicablePatchCollectionItem {
-        /**
-         * The description of the WebLogic patch.
-         */
-        description: string;
-        /**
-         * The name of the WebLogic patch.
-         */
-        displayName: string;
-        /**
-         * The ID of the WebLogic patch.
-         */
-        id: string;
-        /**
-         * The type of middleware for which this patch is applicable. A patch can be applicable to more than one type of middleware.
-         */
-        middlewareTypes: string[];
-        /**
-         * The operating system architecture for which the patch can be applied.
-         */
-        osArch: string;
-        /**
-         * The WebLogic version for this patch. The patch can be installed to domains with this version.
-         */
-        weblogicVersion: string;
-    }
-
-    export interface GetWlmsWlsDomainApplicablePatchesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainConfiguration {
-        /**
-         * Whether to manage the admin server using Node Manager or scripts.
-         */
-        adminServerControlMode: string;
-        /**
-         * Path to admin server start script.
-         */
-        adminServerStartScriptPath: string;
-        /**
-         * Path to admin server stop script.
-         */
-        adminServerStopScriptPath: string;
-        /**
-         * Whether or not the WebLogic domain is enabled for patching.
-         */
-        isPatchEnabled: boolean;
-        /**
-         * Whether or not to rollback on failure during patching of WebLogic domain.
-         */
-        isRollbackOnFailure: boolean;
-        /**
-         * Whether to manage the managed server using Node Manager or scripts.
-         */
-        managedServerControlMode: string;
-        /**
-         * Path to managed server start script.
-         */
-        managedServerStartScriptPath: string;
-        /**
-         * Path to managed server stop script.
-         */
-        managedServerStopScriptPath: string;
-        /**
-         * Servers shutdown timeout.
-         */
-        serversShutdownTimeout: number;
-    }
-
-    export interface GetWlmsWlsDomainScanResultsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainScanResultsScanResultCollection {
-        /**
-         * List of scan results.
-         */
-        items: outputs.oci.GetWlmsWlsDomainScanResultsScanResultCollectionItem[];
-    }
-
-    export interface GetWlmsWlsDomainScanResultsScanResultCollectionItem {
-        /**
-         * The name of the check performed.
-         */
-        serverCheckName: string;
-        /**
-         * The result of the server check.
-         */
-        serverCheckResult: string;
-        /**
-         * The identifier of the the server check result.
-         */
-        serverCheckResultId: string;
-        /**
-         * The status of the server check which is OK, FAILURE, or WARNING.
-         */
-        serverCheckStatus: string;
-        /**
-         * The name of the server.
-         */
-        serverName: string;
-        /**
-         * The date when the WebLogic server health check is performed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-         */
-        timeOfServerCheck: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-         */
-        wlsDomainId: string;
-    }
-
-    export interface GetWlmsWlsDomainServerBackupContentMiddleware {
-        /**
-         * The list of patches installed in the middleware included in the backup.
-         */
-        patches: outputs.oci.GetWlmsWlsDomainServerBackupContentMiddlewarePatch[];
-        /**
-         * The version of the middleware binaries included in the backup.
-         */
-        version: string;
-    }
-
-    export interface GetWlmsWlsDomainServerBackupContentMiddlewarePatch {
-        /**
-         * The description of the WebLogic patch.
-         */
-        description: string;
-        /**
-         * The display name of the WebLogic patch.
-         */
-        displayName: string;
-        /**
-         * The ID of the WebLogic patch.
-         */
-        id: string;
-    }
-
-    export interface GetWlmsWlsDomainServerBackupsBackupCollection {
-        items: outputs.oci.GetWlmsWlsDomainServerBackupsBackupCollectionItem[];
-    }
-
-    export interface GetWlmsWlsDomainServerBackupsBackupCollectionItem {
-        /**
-         * The location of the backup. For backups of type LOCAL_FILE this is the absolute path of the backup file.
-         */
-        backupLocation: string;
-        /**
-         * The type of content of the backup.
-         */
-        contentType: string;
-        /**
-         * The unique identifier of the backup.
-         */
-        id: string;
-        /**
-         * The managed instance ID of the server for which the backup was created.
-         */
-        managedInstanceId: string;
-        /**
-         * The date and time when the backup was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-         */
-        timeCreated: string;
-        /**
-         * The type of the backup.
-         */
-        type: string;
-    }
-
-    export interface GetWlmsWlsDomainServerBackupsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainServerInstalledPatchesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainServerInstalledPatchesInstalledPatchCollection {
-        /**
-         * List of installed patches per server
-         */
-        items: outputs.oci.GetWlmsWlsDomainServerInstalledPatchesInstalledPatchCollectionItem[];
-    }
-
-    export interface GetWlmsWlsDomainServerInstalledPatchesInstalledPatchCollectionItem {
-        /**
-         * The description of the WebLogic patch.
-         */
-        description: string;
-        /**
-         * The name of the WebLogic patch.
-         */
-        displayName: string;
-        /**
-         * The ID of the WebLogic patch.
-         */
-        id: string;
-    }
-
-    export interface GetWlmsWlsDomainServersFilter {
-        /**
-         * The name of the resource.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainServersServerCollection {
-        items: outputs.oci.GetWlmsWlsDomainServersServerCollectionItem[];
-    }
-
-    export interface GetWlmsWlsDomainServersServerCollectionItem {
-        /**
-         * The name of the server.
-         */
-        hostName: string;
-        /**
-         * The unique identifier of the server.
-         */
-        id: string;
-        /**
-         * Whether or not the server is an admin node.
-         */
-        isAdmin: boolean;
-        /**
-         * The JDK path on the server.
-         */
-        jdkPath: string;
-        /**
-         * The JDK version on the server.
-         */
-        jdkVersion: string;
-        /**
-         * Whether or not the server has installed the latest patches.
-         */
-        latestPatchesStatus: string;
-        /**
-         * The managed instance ID of the server.
-         */
-        managedInstanceId: string;
-        /**
-         * The middleware path on the server.
-         */
-        middlewarePath: string;
-        /**
-         * The middleware type on the server.
-         */
-        middlewareType: string;
-        /**
-         * The name of the resource.
-         */
-        name: string;
-        /**
-         * The patch readiness status of the server.
-         */
-        patchReadinessStatus: string;
-        /**
-         * The restart order assigned to the server.
-         */
-        restartOrder: number;
-        /**
-         * The status of the server.
-         */
-        status: string;
-        /**
-         * The date and time the server was first reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-         */
-        timeCreated: string;
-        /**
-         * The date and time the server was last reported (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-         */
-        timeUpdated: string;
-        /**
-         * The version of the WebLogic domain of the server
-         */
-        weblogicVersion: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-         */
-        wlsDomainId: string;
-        /**
-         * The name of the WebLogic domain to which the server belongs.
-         */
-        wlsDomainName: string;
-        /**
-         * The path of the WebLogic domain to which the server belongs.
-         */
-        wlsDomainPath: string;
-    }
-
-    export interface GetWlmsWlsDomainsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetWlmsWlsDomainsWlsDomainCollection {
-        items: outputs.oci.GetWlmsWlsDomainsWlsDomainCollectionItem[];
-    }
-
-    export interface GetWlmsWlsDomainsWlsDomainCollectionItem {
-        /**
-         * The OCID of the compartment that contains the resources to list. This filter returns  only resources contained within the specified compartment.
-         */
-        compartmentId: string;
-        /**
-         * The WebLogic domain configuration.
-         */
-        configurations: outputs.oci.GetWlmsWlsDomainsWlsDomainCollectionItemConfiguration[];
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-         */
-        definedTags: {[key: string]: string};
-        /**
-         * The display name.
-         */
-        displayName: string;
-        /**
-         * Free-form tags for this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-         */
-        freeformTags: {[key: string]: string};
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
-         */
-        id: string;
-        /**
-         * Whether or not the terms of use agreement has been accepted for the WebLogic domain.
-         */
-        isAcceptedTermsAndConditions: boolean;
-        /**
-         * A message that describes the current state of the WebLogic domain in more detail. For example, it can be used to provide actionable information for a resource in the Failed state.
-         */
-        lifecycleDetails: string;
-        /**
-         * A filter to return WebLogic domains based on the type of middleware of the WebLogic domain.
-         */
-        middlewareType: string;
-        /**
-         * A filter to return domains based on the patch readiness status.
-         */
-        patchReadinessStatus: string;
-        /**
-         * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-         */
-        state: string;
-        /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-         */
-        systemTags: {[key: string]: string};
-        /**
-         * The date and time the WebLogic domain was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-         */
-        timeCreated: string;
-        /**
-         * The date and time the WebLogic domain was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
-         */
-        timeUpdated: string;
-        /**
-         * A filter to return WebLogic domains based on the WebLogic version.
-         */
-        weblogicVersion: string;
-    }
-
-    export interface GetWlmsWlsDomainsWlsDomainCollectionItemConfiguration {
-        /**
-         * Whether to manage the admin server using Node Manager or scripts.
-         */
-        adminServerControlMode: string;
-        /**
-         * Path to admin server start script.
-         */
-        adminServerStartScriptPath: string;
-        /**
-         * Path to admin server stop script.
-         */
-        adminServerStopScriptPath: string;
-        /**
-         * Whether or not the WebLogic domain is enabled for patching.
-         */
-        isPatchEnabled: boolean;
-        /**
-         * Whether or not to rollback on failure during patching of WebLogic domain.
-         */
-        isRollbackOnFailure: boolean;
-        /**
-         * Whether to manage the managed server using Node Manager or scripts.
-         */
-        managedServerControlMode: string;
-        /**
-         * Path to managed server start script.
-         */
-        managedServerStartScriptPath: string;
-        /**
-         * Path to managed server stop script.
-         */
-        managedServerStopScriptPath: string;
-        /**
-         * Servers shutdown timeout.
-         */
-        serversShutdownTimeout: number;
+        rate: number;
     }
 
     export interface IotDigitalTwinAdapterInboundEnvelope {
@@ -324747,7 +326521,7 @@ export namespace oci {
          */
         amount: number;
         /**
-         * Sku details for billing subscription.
+         * Billing details associated with the subscription plan and its usage dimensions.
          */
         billingDetails: outputs.oci.SelfSubscriptionSubscriptionDetailsBillingDetails;
         /**
@@ -324770,6 +326544,10 @@ export namespace oci {
 
     export interface SelfSubscriptionSubscriptionDetailsBillingDetails {
         /**
+         * The billing model this billing detail applies to.
+         */
+        billingModel: string;
+        /**
          * Whether this sku is assign to gov product.
          */
         hasGovSku: boolean;
@@ -324781,6 +326559,10 @@ export namespace oci {
          * The part's metric.
          */
         metricType: string;
+        /**
+         * Unique key used to map this SKU to the pricing plan.
+         */
+        pricingPlanKey: string;
         /**
          * Tha rate of this sku meter.
          */
@@ -324819,15 +326601,19 @@ export namespace oci {
 
     export interface SelfSubscriptionSubscriptionDetailsPricingPlan {
         /**
-         * Specifies the interval at which billing occurs for the subscription plan.
+         * Specifies the interval at which billing occurs for the subscription plan or usage dimension.
          */
         billingFrequency: string;
+        /**
+         * Metered usage dimensions associated with the pricing plan.
+         */
+        dimensions: outputs.oci.SelfSubscriptionSubscriptionDetailsPricingPlanDimension[];
         /**
          * A detailed explanation of the subscription plan.
          */
         planDescription: string;
         /**
-         * Specifies the interval at which billing occurs for the subscription plan.
+         * Specifies the duration of the subscription plan.
          */
         planDuration: string;
         /**
@@ -324842,6 +326628,48 @@ export namespace oci {
          * The pricing details of the subscription plan in various supported currencies.
          */
         rates: outputs.oci.SelfSubscriptionSubscriptionDetailsPricingPlanRate[];
+    }
+
+    export interface SelfSubscriptionSubscriptionDetailsPricingPlanDimension {
+        /**
+         * Specifies the interval at which the usage dimension is billed.
+         */
+        dimensionBillingFrequency: string;
+        /**
+         * A detailed explanation of the usage dimension.
+         */
+        dimensionDescription: string;
+        /**
+         * The stable key used internally to map this usage dimension to billing details.
+         */
+        dimensionKey: string;
+        /**
+         * The name of the usage dimension.
+         */
+        dimensionName: string;
+        /**
+         * Quantity included in the base fee for hybrid plans.
+         */
+        includedQuantity: number;
+        /**
+         * The metric type in which usage is measured.
+         */
+        metricType: string;
+        /**
+         * Dimension-level rates in various supported currencies.
+         */
+        rates: outputs.oci.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRate[];
+    }
+
+    export interface SelfSubscriptionSubscriptionDetailsPricingPlanDimensionRate {
+        /**
+         * The currency supported, in the format specified by ISO-4217
+         */
+        currency: string;
+        /**
+         * The amount charged for the plan in the specified currency.
+         */
+        rate: number;
     }
 
     export interface SelfSubscriptionSubscriptionDetailsPricingPlanRate {

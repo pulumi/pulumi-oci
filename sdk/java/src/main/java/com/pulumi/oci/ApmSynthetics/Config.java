@@ -185,6 +185,8 @@ import javax.annotation.Nullable;
  *             .isRunNow(monitorIsRunNow)
  *             .isRunOnce(monitorIsRunOnce)
  *             .maintenanceWindowSchedule(ConfigMaintenanceWindowScheduleArgs.builder()
+ *                 .recurrenceType(monitorMaintenanceWindowScheduleRecurrenceType)
+ *                 .scheduleType("RECURRING")
  *                 .timeEnded(monitorMaintenanceWindowScheduleTimeEnded)
  *                 .timeStarted(monitorMaintenanceWindowScheduleTimeStarted)
  *                 .build())

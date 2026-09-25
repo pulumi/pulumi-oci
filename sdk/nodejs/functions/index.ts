@@ -35,6 +35,26 @@ export const getFunctions: typeof import("./getFunctions").getFunctions = null a
 export const getFunctionsOutput: typeof import("./getFunctions").getFunctionsOutput = null as any;
 utilities.lazyLoad(exports, ["getFunctions","getFunctionsOutput"], () => require("./getFunctions"));
 
+export { GetFunctionsRuntimeArgs, GetFunctionsRuntimeResult, GetFunctionsRuntimeOutputArgs } from "./getFunctionsRuntime";
+export const getFunctionsRuntime: typeof import("./getFunctionsRuntime").getFunctionsRuntime = null as any;
+export const getFunctionsRuntimeOutput: typeof import("./getFunctionsRuntime").getFunctionsRuntimeOutput = null as any;
+utilities.lazyLoad(exports, ["getFunctionsRuntime","getFunctionsRuntimeOutput"], () => require("./getFunctionsRuntime"));
+
+export { GetFunctionsRuntimeVersionArgs, GetFunctionsRuntimeVersionResult, GetFunctionsRuntimeVersionOutputArgs } from "./getFunctionsRuntimeVersion";
+export const getFunctionsRuntimeVersion: typeof import("./getFunctionsRuntimeVersion").getFunctionsRuntimeVersion = null as any;
+export const getFunctionsRuntimeVersionOutput: typeof import("./getFunctionsRuntimeVersion").getFunctionsRuntimeVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getFunctionsRuntimeVersion","getFunctionsRuntimeVersionOutput"], () => require("./getFunctionsRuntimeVersion"));
+
+export { GetFunctionsRuntimeVersionsArgs, GetFunctionsRuntimeVersionsResult, GetFunctionsRuntimeVersionsOutputArgs } from "./getFunctionsRuntimeVersions";
+export const getFunctionsRuntimeVersions: typeof import("./getFunctionsRuntimeVersions").getFunctionsRuntimeVersions = null as any;
+export const getFunctionsRuntimeVersionsOutput: typeof import("./getFunctionsRuntimeVersions").getFunctionsRuntimeVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getFunctionsRuntimeVersions","getFunctionsRuntimeVersionsOutput"], () => require("./getFunctionsRuntimeVersions"));
+
+export { GetFunctionsRuntimesArgs, GetFunctionsRuntimesResult, GetFunctionsRuntimesOutputArgs } from "./getFunctionsRuntimes";
+export const getFunctionsRuntimes: typeof import("./getFunctionsRuntimes").getFunctionsRuntimes = null as any;
+export const getFunctionsRuntimesOutput: typeof import("./getFunctionsRuntimes").getFunctionsRuntimesOutput = null as any;
+utilities.lazyLoad(exports, ["getFunctionsRuntimes","getFunctionsRuntimesOutput"], () => require("./getFunctionsRuntimes"));
+
 export { GetFusionEnvironmentArgs, GetFusionEnvironmentResult, GetFusionEnvironmentOutputArgs } from "./getFusionEnvironment";
 export const getFusionEnvironment: typeof import("./getFusionEnvironment").getFusionEnvironment = null as any;
 export const getFusionEnvironmentOutput: typeof import("./getFusionEnvironment").getFusionEnvironmentOutput = null as any;

@@ -179,6 +179,8 @@ namespace Pulumi.Oci.ApmSynthetics
     ///         IsRunOnce = monitorIsRunOnce,
     ///         MaintenanceWindowSchedule = new Oci.ApmSynthetics.Inputs.ConfigMaintenanceWindowScheduleArgs
     ///         {
+    ///             RecurrenceType = monitorMaintenanceWindowScheduleRecurrenceType,
+    ///             ScheduleType = "RECURRING",
     ///             TimeEnded = monitorMaintenanceWindowScheduleTimeEnded,
     ///             TimeStarted = monitorMaintenanceWindowScheduleTimeStarted,
     ///         },

@@ -14,6 +14,14 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class ConfigMaintenanceWindowSchedule
     {
         /// <summary>
+        /// (Updatable) Type of recurrence for a recurring maintenance window.
+        /// </summary>
+        public readonly string? RecurrenceType;
+        /// <summary>
+        /// (Updatable) Type of maintenance window schedule. If not provided, a schedule with timeStarted and timeEnded is treated as ONE_TIME.
+        /// </summary>
+        public readonly string? ScheduleType;
+        /// <summary>
         /// (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         /// </summary>
         public readonly string? TimeEnded;
@@ -24,10 +32,16 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
 
         [OutputConstructor]
         private ConfigMaintenanceWindowSchedule(
+            string? recurrenceType,
+
+            string? scheduleType,
+
             string? timeEnded,
 
             string? timeStarted)
         {
+            RecurrenceType = recurrenceType;
+            ScheduleType = scheduleType;
             TimeEnded = timeEnded;
             TimeStarted = timeStarted;
         }

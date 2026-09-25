@@ -73,6 +73,10 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// </summary>
         public readonly string MigrationId;
         /// <summary>
+        /// Assessment migration scope.
+        /// </summary>
+        public readonly string MigrationScope;
+        /// <summary>
         /// A network speed in Megabits per second.
         /// </summary>
         public readonly string NetworkSpeedMegabitPerSecond;
@@ -137,6 +141,8 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             string migrationId,
 
+            string migrationScope,
+
             string networkSpeedMegabitPerSecond,
 
             ImmutableArray<Outputs.GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionResult> sourceDatabaseConnections,
@@ -168,6 +174,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
             IncludeObjects = includeObjects;
             IsCdbSupported = isCdbSupported;
             MigrationId = migrationId;
+            MigrationScope = migrationScope;
             NetworkSpeedMegabitPerSecond = networkSpeedMegabitPerSecond;
             SourceDatabaseConnections = sourceDatabaseConnections;
             State = state;

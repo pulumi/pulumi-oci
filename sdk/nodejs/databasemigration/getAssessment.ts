@@ -104,6 +104,10 @@ export interface GetAssessmentResult {
      */
     readonly migrationId: string;
     /**
+     * Assessment migration scope.
+     */
+    readonly migrationScope: string;
+    /**
      * A network speed in Megabits per second.
      */
     readonly networkSpeedMegabitPerSecond: string;

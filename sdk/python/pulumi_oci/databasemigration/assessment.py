@@ -36,7 +36,8 @@ class AssessmentArgs:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]] = None):
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]] = None,
+                 migration_scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Assessment resource.
 
@@ -56,6 +57,7 @@ class AssessmentArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AssessmentExcludeObjectArgs']]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+        :param pulumi.Input[_builtins.str] migration_scope: (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
         """
         pulumi.set(__self__, "acceptable_downtime", acceptable_downtime)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -81,6 +83,8 @@ class AssessmentArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if include_objects is not None:
             pulumi.set(__self__, "include_objects", include_objects)
+        if migration_scope is not None:
+            pulumi.set(__self__, "migration_scope", migration_scope)
 
     @_builtins.property
     @pulumi.getter(name="acceptableDowntime")
@@ -274,6 +278,18 @@ class AssessmentArgs:
     def include_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]]):
         pulumi.set(self, "include_objects", value)
 
+    @_builtins.property
+    @pulumi.getter(name="migrationScope")
+    def migration_scope(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+        """
+        return pulumi.get(self, "migration_scope")
+
+    @migration_scope.setter
+    def migration_scope(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "migration_scope", value)
+
 
 @pulumi.input_type
 class _AssessmentState:
@@ -294,6 +310,7 @@ class _AssessmentState:
                  include_objects: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]] = None,
                  is_cdb_supported: pulumi.Input[Optional[_builtins.bool]] = None,
                  migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 migration_scope: pulumi.Input[Optional[_builtins.str]] = None,
                  network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
                  source_database_connection: pulumi.Input[Optional['AssessmentSourceDatabaseConnectionArgs']] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -320,6 +337,7 @@ class _AssessmentState:
         :param pulumi.Input[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         :param pulumi.Input[_builtins.bool] is_cdb_supported: True if CDB should be defined, false otherwise.
         :param pulumi.Input[_builtins.str] migration_id: The OCID of the resource being referenced.
+        :param pulumi.Input[_builtins.str] migration_scope: (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
         :param pulumi.Input[_builtins.str] network_speed_megabit_per_second: (Updatable) A network speed in Megabits per second.
         :param pulumi.Input['AssessmentSourceDatabaseConnectionArgs'] source_database_connection: (Updatable) Source Assessment Connection object
         :param pulumi.Input[_builtins.str] state: The current state of the Assessment resource.
@@ -360,6 +378,8 @@ class _AssessmentState:
             pulumi.set(__self__, "is_cdb_supported", is_cdb_supported)
         if migration_id is not None:
             pulumi.set(__self__, "migration_id", migration_id)
+        if migration_scope is not None:
+            pulumi.set(__self__, "migration_scope", migration_scope)
         if network_speed_megabit_per_second is not None:
             pulumi.set(__self__, "network_speed_megabit_per_second", network_speed_megabit_per_second)
         if source_database_connection is not None:
@@ -568,6 +588,18 @@ class _AssessmentState:
         pulumi.set(self, "migration_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="migrationScope")
+    def migration_scope(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+        """
+        return pulumi.get(self, "migration_scope")
+
+    @migration_scope.setter
+    def migration_scope(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "migration_scope", value)
+
+    @_builtins.property
     @pulumi.getter(name="networkSpeedMegabitPerSecond")
     def network_speed_megabit_per_second(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -671,6 +703,7 @@ class Assessment(pulumi.CustomResource):
                  exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict', 'outputs.AssessmentExcludeObject']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict', 'outputs.AssessmentIncludeObject']]]]] = None,
+                 migration_scope: pulumi.Input[Optional[_builtins.str]] = None,
                  network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
                  source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict', 'outputs.AssessmentSourceDatabaseConnection']]] = None,
                  target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict', 'outputs.AssessmentTargetDatabaseConnection']]] = None,
@@ -697,6 +730,7 @@ class Assessment(pulumi.CustomResource):
             database_combination=assessment_database_combination,
             database_data_size=assessment_database_data_size,
             ddl_expectation=assessment_ddl_expectation,
+            migration_scope=assessment_migration_scope,
             network_speed_megabit_per_second=assessment_network_speed_megabit_per_second,
             source_database_connection={
                 "id": assessment_source_database_connection_id,
@@ -756,6 +790,7 @@ class Assessment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict', 'outputs.AssessmentExcludeObject']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict', 'outputs.AssessmentIncludeObject']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+        :param pulumi.Input[_builtins.str] migration_scope: (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
         :param pulumi.Input[_builtins.str] network_speed_megabit_per_second: (Updatable) A network speed in Megabits per second.
         :param pulumi.Input[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict', 'outputs.AssessmentSourceDatabaseConnection']] source_database_connection: (Updatable) Source Assessment Connection object
         :param pulumi.Input[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict', 'outputs.AssessmentTargetDatabaseConnection']] target_database_connection: (Updatable) Target Assessment Connection object
@@ -788,6 +823,7 @@ class Assessment(pulumi.CustomResource):
             database_combination=assessment_database_combination,
             database_data_size=assessment_database_data_size,
             ddl_expectation=assessment_ddl_expectation,
+            migration_scope=assessment_migration_scope,
             network_speed_megabit_per_second=assessment_network_speed_megabit_per_second,
             source_database_connection={
                 "id": assessment_source_database_connection_id,
@@ -860,6 +896,7 @@ class Assessment(pulumi.CustomResource):
                  exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict', 'outputs.AssessmentExcludeObject']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict', 'outputs.AssessmentIncludeObject']]]]] = None,
+                 migration_scope: pulumi.Input[Optional[_builtins.str]] = None,
                  network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
                  source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict', 'outputs.AssessmentSourceDatabaseConnection']]] = None,
                  target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict', 'outputs.AssessmentTargetDatabaseConnection']]] = None,
@@ -895,6 +932,7 @@ class Assessment(pulumi.CustomResource):
             __props__.__dict__["exclude_objects"] = exclude_objects
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["include_objects"] = include_objects
+            __props__.__dict__["migration_scope"] = migration_scope
             if network_speed_megabit_per_second is None and not opts.urn:
                 raise TypeError("Missing required property 'network_speed_megabit_per_second'")
             __props__.__dict__["network_speed_megabit_per_second"] = network_speed_megabit_per_second
@@ -937,6 +975,7 @@ class Assessment(pulumi.CustomResource):
             include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict', 'outputs.AssessmentIncludeObject']]]]] = None,
             is_cdb_supported: pulumi.Input[Optional[_builtins.bool]] = None,
             migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            migration_scope: pulumi.Input[Optional[_builtins.str]] = None,
             network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
             source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict', 'outputs.AssessmentSourceDatabaseConnection']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -967,6 +1006,7 @@ class Assessment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict', 'outputs.AssessmentIncludeObject']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         :param pulumi.Input[_builtins.bool] is_cdb_supported: True if CDB should be defined, false otherwise.
         :param pulumi.Input[_builtins.str] migration_id: The OCID of the resource being referenced.
+        :param pulumi.Input[_builtins.str] migration_scope: (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
         :param pulumi.Input[_builtins.str] network_speed_megabit_per_second: (Updatable) A network speed in Megabits per second.
         :param pulumi.Input[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict', 'outputs.AssessmentSourceDatabaseConnection']] source_database_connection: (Updatable) Source Assessment Connection object
         :param pulumi.Input[_builtins.str] state: The current state of the Assessment resource.
@@ -995,6 +1035,7 @@ class Assessment(pulumi.CustomResource):
         __props__.__dict__["include_objects"] = include_objects
         __props__.__dict__["is_cdb_supported"] = is_cdb_supported
         __props__.__dict__["migration_id"] = migration_id
+        __props__.__dict__["migration_scope"] = migration_scope
         __props__.__dict__["network_speed_megabit_per_second"] = network_speed_megabit_per_second
         __props__.__dict__["source_database_connection"] = source_database_connection
         __props__.__dict__["state"] = state
@@ -1131,6 +1172,14 @@ class Assessment(pulumi.CustomResource):
         The OCID of the resource being referenced.
         """
         return pulumi.get(self, "migration_id")
+
+    @_builtins.property
+    @pulumi.getter(name="migrationScope")
+    def migration_scope(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+        """
+        return pulumi.get(self, "migration_scope")
 
     @_builtins.property
     @pulumi.getter(name="networkSpeedMegabitPerSecond")

@@ -22,6 +22,8 @@ from .calculate_audit_volume_available import *
 from .calculate_audit_volume_collected import *
 from .compare_security_assessment import *
 from .compare_user_assessment import *
+from .crypto_assessment import *
+from .crypto_assessment_management import *
 from .data_safe_configuration import *
 from .data_safe_private_endpoint import *
 from .database_security_config import *
@@ -59,6 +61,18 @@ from .get_audit_trail_analytic import *
 from .get_audit_trails import *
 from .get_compatible_formats_for_data_type import *
 from .get_compatible_formats_for_sensitive_type import *
+from .get_crypto_assessment import *
+from .get_crypto_assessment_backup_sets import *
+from .get_crypto_assessment_cbom_items import *
+from .get_crypto_assessment_certificates import *
+from .get_crypto_assessment_finding_analytics import *
+from .get_crypto_assessment_finding_targets import *
+from .get_crypto_assessment_findings import *
+from .get_crypto_assessment_keys import *
+from .get_crypto_assessment_sqlnet_parameter import *
+from .get_crypto_assessment_tde_objects import *
+from .get_crypto_assessment_wallets import *
+from .get_crypto_assessments import *
 from .get_data_safe_configuration import *
 from .get_data_safe_private_endpoint import *
 from .get_data_safe_private_endpoints import *

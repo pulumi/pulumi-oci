@@ -4,7 +4,6 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationInitialLoadSettingsDataPumpParameters;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationInitialLoadSettingsExportDirectoryObject;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationInitialLoadSettingsImportDirectoryObject;
@@ -63,7 +62,7 @@ public final class MigrationInitialLoadSettings {
      * @return (Updatable) Oracle Job Mode
      * 
      */
-    private String jobMode;
+    private @Nullable String jobMode;
     /**
      * @return (Updatable) Defines remapping to be applied to objects as they are processed.
      * 
@@ -141,8 +140,8 @@ public final class MigrationInitialLoadSettings {
      * @return (Updatable) Oracle Job Mode
      * 
      */
-    public String jobMode() {
-        return this.jobMode;
+    public Optional<String> jobMode() {
+        return Optional.ofNullable(this.jobMode);
     }
     /**
      * @return (Updatable) Defines remapping to be applied to objects as they are processed.
@@ -183,7 +182,7 @@ public final class MigrationInitialLoadSettings {
         private @Nullable Boolean isConsistent;
         private @Nullable Boolean isIgnoreExistingObjects;
         private @Nullable Boolean isTzUtc;
-        private String jobMode;
+        private @Nullable String jobMode;
         private @Nullable List<MigrationInitialLoadSettingsMetadataRemap> metadataRemaps;
         private @Nullable String primaryKeyCompatibility;
         private @Nullable MigrationInitialLoadSettingsTablespaceDetails tablespaceDetails;
@@ -256,10 +255,8 @@ public final class MigrationInitialLoadSettings {
             return this;
         }
         @CustomType.Setter
-        public Builder jobMode(String jobMode) {
-            if (jobMode == null) {
-              throw new MissingRequiredPropertyException("MigrationInitialLoadSettings", "jobMode");
-            }
+        public Builder jobMode(@Nullable String jobMode) {
+
             this.jobMode = jobMode;
             return this;
         }

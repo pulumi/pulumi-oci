@@ -5,7 +5,6 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationInitialLoadSettingsDataPumpParametersArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationInitialLoadSettingsExportDirectoryObjectArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationInitialLoadSettingsImportDirectoryObjectArgs;
@@ -147,15 +146,15 @@ public final class MigrationInitialLoadSettingsArgs extends com.pulumi.resources
      * (Updatable) Oracle Job Mode
      * 
      */
-    @Import(name="jobMode", required=true)
-    private Output<String> jobMode;
+    @Import(name="jobMode")
+    private @Nullable Output<String> jobMode;
 
     /**
      * @return (Updatable) Oracle Job Mode
      * 
      */
-    public Output<String> jobMode() {
-        return this.jobMode;
+    public Optional<Output<String>> jobMode() {
+        return Optional.ofNullable(this.jobMode);
     }
 
     /**
@@ -422,7 +421,7 @@ public final class MigrationInitialLoadSettingsArgs extends com.pulumi.resources
          * @return builder
          * 
          */
-        public Builder jobMode(Output<String> jobMode) {
+        public Builder jobMode(@Nullable Output<String> jobMode) {
             $.jobMode = jobMode;
             return this;
         }
@@ -511,9 +510,6 @@ public final class MigrationInitialLoadSettingsArgs extends com.pulumi.resources
         }
 
         public MigrationInitialLoadSettingsArgs build() {
-            if ($.jobMode == null) {
-                throw new MissingRequiredPropertyException("MigrationInitialLoadSettingsArgs", "jobMode");
-            }
             return $;
         }
     }

@@ -71,6 +71,8 @@ import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetModelDiscoveriesArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetModelDiscoveriesPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelsArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelsPlainArgs;
@@ -78,6 +80,10 @@ import com.pulumi.oci.GenerativeAi.inputs.GetProjectArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetProjectPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetProjectsArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetProjectsPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfileArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfilePlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfilesArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfilesPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStorePlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
@@ -113,10 +119,13 @@ import com.pulumi.oci.GenerativeAi.outputs.GetHostedDeploymentResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetHostedDeploymentsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetImportedModelResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetImportedModelsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetModelDiscoveriesResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetModelResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetModelsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetProjectResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetProjectsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetRoutingProfileResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetRoutingProfilesResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetSemanticStoreResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetSemanticStoresResult;
 import com.pulumi.oci.Utilities;
@@ -7773,6 +7782,271 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Model Discoveries in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Retrieves a list of models along with their capabilities, supported features, and deployment availability.
+     * Results can be filtered by attributes such as region, realm, model identifier, supported inference APIs, serving modes, and access type.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetModelDiscoveriesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDiscoveries = GenerativeAiFunctions.getModelDiscoveries(GetModelDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .apiCapabilities(modelDiscoveryApiCapability)
+     *             .capabilities(modelDiscoveryCapability)
+     *             .isDedicatedRetired(modelDiscoveryIsDedicatedRetired)
+     *             .isDeprecated(modelDiscoveryIsDeprecated)
+     *             .isOnDemandRetired(modelDiscoveryIsOnDemandRetired)
+     *             .modelAccesses(modelDiscoveryModelAccess)
+     *             .modelId(testModel.id())
+     *             .realms(modelDiscoveryRealm)
+     *             .regions(modelDiscoveryRegion)
+     *             .servingModes(modelDiscoveryServingMode)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetModelDiscoveriesResult> getModelDiscoveries(GetModelDiscoveriesArgs args) {
+        return getModelDiscoveries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Discoveries in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Retrieves a list of models along with their capabilities, supported features, and deployment availability.
+     * Results can be filtered by attributes such as region, realm, model identifier, supported inference APIs, serving modes, and access type.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetModelDiscoveriesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDiscoveries = GenerativeAiFunctions.getModelDiscoveries(GetModelDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .apiCapabilities(modelDiscoveryApiCapability)
+     *             .capabilities(modelDiscoveryCapability)
+     *             .isDedicatedRetired(modelDiscoveryIsDedicatedRetired)
+     *             .isDeprecated(modelDiscoveryIsDeprecated)
+     *             .isOnDemandRetired(modelDiscoveryIsOnDemandRetired)
+     *             .modelAccesses(modelDiscoveryModelAccess)
+     *             .modelId(testModel.id())
+     *             .realms(modelDiscoveryRealm)
+     *             .regions(modelDiscoveryRegion)
+     *             .servingModes(modelDiscoveryServingMode)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetModelDiscoveriesResult> getModelDiscoveriesPlain(GetModelDiscoveriesPlainArgs args) {
+        return getModelDiscoveriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Discoveries in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Retrieves a list of models along with their capabilities, supported features, and deployment availability.
+     * Results can be filtered by attributes such as region, realm, model identifier, supported inference APIs, serving modes, and access type.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetModelDiscoveriesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDiscoveries = GenerativeAiFunctions.getModelDiscoveries(GetModelDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .apiCapabilities(modelDiscoveryApiCapability)
+     *             .capabilities(modelDiscoveryCapability)
+     *             .isDedicatedRetired(modelDiscoveryIsDedicatedRetired)
+     *             .isDeprecated(modelDiscoveryIsDeprecated)
+     *             .isOnDemandRetired(modelDiscoveryIsOnDemandRetired)
+     *             .modelAccesses(modelDiscoveryModelAccess)
+     *             .modelId(testModel.id())
+     *             .realms(modelDiscoveryRealm)
+     *             .regions(modelDiscoveryRegion)
+     *             .servingModes(modelDiscoveryServingMode)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetModelDiscoveriesResult> getModelDiscoveries(GetModelDiscoveriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getModelDiscoveries:getModelDiscoveries", TypeShape.of(GetModelDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Discoveries in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Retrieves a list of models along with their capabilities, supported features, and deployment availability.
+     * Results can be filtered by attributes such as region, realm, model identifier, supported inference APIs, serving modes, and access type.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetModelDiscoveriesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDiscoveries = GenerativeAiFunctions.getModelDiscoveries(GetModelDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .apiCapabilities(modelDiscoveryApiCapability)
+     *             .capabilities(modelDiscoveryCapability)
+     *             .isDedicatedRetired(modelDiscoveryIsDedicatedRetired)
+     *             .isDeprecated(modelDiscoveryIsDeprecated)
+     *             .isOnDemandRetired(modelDiscoveryIsOnDemandRetired)
+     *             .modelAccesses(modelDiscoveryModelAccess)
+     *             .modelId(testModel.id())
+     *             .realms(modelDiscoveryRealm)
+     *             .regions(modelDiscoveryRegion)
+     *             .servingModes(modelDiscoveryServingMode)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetModelDiscoveriesResult> getModelDiscoveries(GetModelDiscoveriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getModelDiscoveries:getModelDiscoveries", TypeShape.of(GetModelDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Discoveries in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Retrieves a list of models along with their capabilities, supported features, and deployment availability.
+     * Results can be filtered by attributes such as region, realm, model identifier, supported inference APIs, serving modes, and access type.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetModelDiscoveriesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDiscoveries = GenerativeAiFunctions.getModelDiscoveries(GetModelDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .apiCapabilities(modelDiscoveryApiCapability)
+     *             .capabilities(modelDiscoveryCapability)
+     *             .isDedicatedRetired(modelDiscoveryIsDedicatedRetired)
+     *             .isDeprecated(modelDiscoveryIsDeprecated)
+     *             .isOnDemandRetired(modelDiscoveryIsOnDemandRetired)
+     *             .modelAccesses(modelDiscoveryModelAccess)
+     *             .modelId(testModel.id())
+     *             .realms(modelDiscoveryRealm)
+     *             .regions(modelDiscoveryRegion)
+     *             .servingModes(modelDiscoveryServingMode)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetModelDiscoveriesResult> getModelDiscoveriesPlain(GetModelDiscoveriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getModelDiscoveries:getModelDiscoveries", TypeShape.of(GetModelDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
@@ -8441,6 +8715,441 @@ public final class GenerativeAiFunctions {
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Routing Profile resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a routing profile.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfileArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRoutingProfile = GenerativeAiFunctions.getRoutingProfile(GetRoutingProfileArgs.builder()
+     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRoutingProfileResult> getRoutingProfile(GetRoutingProfileArgs args) {
+        return getRoutingProfile(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Routing Profile resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a routing profile.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfileArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRoutingProfile = GenerativeAiFunctions.getRoutingProfile(GetRoutingProfileArgs.builder()
+     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRoutingProfileResult> getRoutingProfilePlain(GetRoutingProfilePlainArgs args) {
+        return getRoutingProfilePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Routing Profile resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a routing profile.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfileArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRoutingProfile = GenerativeAiFunctions.getRoutingProfile(GetRoutingProfileArgs.builder()
+     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRoutingProfileResult> getRoutingProfile(GetRoutingProfileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getRoutingProfile:getRoutingProfile", TypeShape.of(GetRoutingProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Routing Profile resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a routing profile.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfileArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRoutingProfile = GenerativeAiFunctions.getRoutingProfile(GetRoutingProfileArgs.builder()
+     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRoutingProfileResult> getRoutingProfile(GetRoutingProfileArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getRoutingProfile:getRoutingProfile", TypeShape.of(GetRoutingProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Routing Profile resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a routing profile.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfileArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRoutingProfile = GenerativeAiFunctions.getRoutingProfile(GetRoutingProfileArgs.builder()
+     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRoutingProfileResult> getRoutingProfilePlain(GetRoutingProfilePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getRoutingProfile:getRoutingProfile", TypeShape.of(GetRoutingProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Routing Profiles in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the routing profiles of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfilesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRoutingProfiles = GenerativeAiFunctions.getRoutingProfiles(GetRoutingProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(routingProfileDisplayName)
+     *             .id(routingProfileId)
+     *             .state(routingProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRoutingProfilesResult> getRoutingProfiles(GetRoutingProfilesArgs args) {
+        return getRoutingProfiles(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Routing Profiles in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the routing profiles of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfilesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRoutingProfiles = GenerativeAiFunctions.getRoutingProfiles(GetRoutingProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(routingProfileDisplayName)
+     *             .id(routingProfileId)
+     *             .state(routingProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRoutingProfilesResult> getRoutingProfilesPlain(GetRoutingProfilesPlainArgs args) {
+        return getRoutingProfilesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Routing Profiles in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the routing profiles of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfilesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRoutingProfiles = GenerativeAiFunctions.getRoutingProfiles(GetRoutingProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(routingProfileDisplayName)
+     *             .id(routingProfileId)
+     *             .state(routingProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRoutingProfilesResult> getRoutingProfiles(GetRoutingProfilesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getRoutingProfiles:getRoutingProfiles", TypeShape.of(GetRoutingProfilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Routing Profiles in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the routing profiles of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfilesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRoutingProfiles = GenerativeAiFunctions.getRoutingProfiles(GetRoutingProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(routingProfileDisplayName)
+     *             .id(routingProfileId)
+     *             .state(routingProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRoutingProfilesResult> getRoutingProfiles(GetRoutingProfilesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getRoutingProfiles:getRoutingProfiles", TypeShape.of(GetRoutingProfilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Routing Profiles in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the routing profiles of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetRoutingProfilesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRoutingProfiles = GenerativeAiFunctions.getRoutingProfiles(GetRoutingProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(routingProfileDisplayName)
+     *             .id(routingProfileId)
+     *             .state(routingProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRoutingProfilesResult> getRoutingProfilesPlain(GetRoutingProfilesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getRoutingProfiles:getRoutingProfiles", TypeShape.of(GetRoutingProfilesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Semantic Store resource in Oracle Cloud Infrastructure Generative AI service.

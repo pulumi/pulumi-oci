@@ -14,15 +14,19 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class SelfSubscriptionSubscriptionDetailsPricingPlan
     {
         /// <summary>
-        /// Specifies the interval at which billing occurs for the subscription plan.
+        /// Specifies the interval at which billing occurs for the subscription plan or usage dimension.
         /// </summary>
         public readonly string BillingFrequency;
+        /// <summary>
+        /// Metered usage dimensions associated with the pricing plan.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimension> Dimensions;
         /// <summary>
         /// A detailed explanation of the subscription plan.
         /// </summary>
         public readonly string? PlanDescription;
         /// <summary>
-        /// Specifies the interval at which billing occurs for the subscription plan.
+        /// Specifies the duration of the subscription plan.
         /// </summary>
         public readonly string? PlanDuration;
         /// <summary>
@@ -42,6 +46,8 @@ namespace Pulumi.Oci.Oci.Outputs
         private SelfSubscriptionSubscriptionDetailsPricingPlan(
             string billingFrequency,
 
+            ImmutableArray<Outputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimension> dimensions,
+
             string? planDescription,
 
             string? planDuration,
@@ -53,6 +59,7 @@ namespace Pulumi.Oci.Oci.Outputs
             ImmutableArray<Outputs.SelfSubscriptionSubscriptionDetailsPricingPlanRate> rates)
         {
             BillingFrequency = billingFrequency;
+            Dimensions = dimensions;
             PlanDescription = planDescription;
             PlanDuration = planDuration;
             PlanName = planName;

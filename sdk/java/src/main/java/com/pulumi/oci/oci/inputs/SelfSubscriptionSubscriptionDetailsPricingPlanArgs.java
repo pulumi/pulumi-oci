@@ -6,6 +6,7 @@ package com.pulumi.oci.oci.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs;
 import com.pulumi.oci.oci.inputs.SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs;
 import java.lang.String;
 import java.util.List;
@@ -19,18 +20,33 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlanArgs extends co
     public static final SelfSubscriptionSubscriptionDetailsPricingPlanArgs Empty = new SelfSubscriptionSubscriptionDetailsPricingPlanArgs();
 
     /**
-     * Specifies the interval at which billing occurs for the subscription plan.
+     * Specifies the interval at which billing occurs for the subscription plan or usage dimension.
      * 
      */
     @Import(name="billingFrequency", required=true)
     private Output<String> billingFrequency;
 
     /**
-     * @return Specifies the interval at which billing occurs for the subscription plan.
+     * @return Specifies the interval at which billing occurs for the subscription plan or usage dimension.
      * 
      */
     public Output<String> billingFrequency() {
         return this.billingFrequency;
+    }
+
+    /**
+     * Metered usage dimensions associated with the pricing plan.
+     * 
+     */
+    @Import(name="dimensions")
+    private @Nullable Output<List<SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs>> dimensions;
+
+    /**
+     * @return Metered usage dimensions associated with the pricing plan.
+     * 
+     */
+    public Optional<Output<List<SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs>>> dimensions() {
+        return Optional.ofNullable(this.dimensions);
     }
 
     /**
@@ -49,14 +65,14 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlanArgs extends co
     }
 
     /**
-     * Specifies the interval at which billing occurs for the subscription plan.
+     * Specifies the duration of the subscription plan.
      * 
      */
     @Import(name="planDuration")
     private @Nullable Output<String> planDuration;
 
     /**
-     * @return Specifies the interval at which billing occurs for the subscription plan.
+     * @return Specifies the duration of the subscription plan.
      * 
      */
     public Optional<Output<String>> planDuration() {
@@ -112,6 +128,7 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlanArgs extends co
 
     private SelfSubscriptionSubscriptionDetailsPricingPlanArgs(SelfSubscriptionSubscriptionDetailsPricingPlanArgs $) {
         this.billingFrequency = $.billingFrequency;
+        this.dimensions = $.dimensions;
         this.planDescription = $.planDescription;
         this.planDuration = $.planDuration;
         this.planName = $.planName;
@@ -138,7 +155,7 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlanArgs extends co
         }
 
         /**
-         * @param billingFrequency Specifies the interval at which billing occurs for the subscription plan.
+         * @param billingFrequency Specifies the interval at which billing occurs for the subscription plan or usage dimension.
          * 
          * @return builder
          * 
@@ -149,13 +166,44 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlanArgs extends co
         }
 
         /**
-         * @param billingFrequency Specifies the interval at which billing occurs for the subscription plan.
+         * @param billingFrequency Specifies the interval at which billing occurs for the subscription plan or usage dimension.
          * 
          * @return builder
          * 
          */
         public Builder billingFrequency(String billingFrequency) {
             return billingFrequency(Output.of(billingFrequency));
+        }
+
+        /**
+         * @param dimensions Metered usage dimensions associated with the pricing plan.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dimensions(@Nullable Output<List<SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs>> dimensions) {
+            $.dimensions = dimensions;
+            return this;
+        }
+
+        /**
+         * @param dimensions Metered usage dimensions associated with the pricing plan.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dimensions(List<SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs> dimensions) {
+            return dimensions(Output.of(dimensions));
+        }
+
+        /**
+         * @param dimensions Metered usage dimensions associated with the pricing plan.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dimensions(SelfSubscriptionSubscriptionDetailsPricingPlanDimensionArgs... dimensions) {
+            return dimensions(List.of(dimensions));
         }
 
         /**
@@ -180,7 +228,7 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlanArgs extends co
         }
 
         /**
-         * @param planDuration Specifies the interval at which billing occurs for the subscription plan.
+         * @param planDuration Specifies the duration of the subscription plan.
          * 
          * @return builder
          * 
@@ -191,7 +239,7 @@ public final class SelfSubscriptionSubscriptionDetailsPricingPlanArgs extends co
         }
 
         /**
-         * @param planDuration Specifies the interval at which billing occurs for the subscription plan.
+         * @param planDuration Specifies the duration of the subscription plan.
          * 
          * @return builder
          * 

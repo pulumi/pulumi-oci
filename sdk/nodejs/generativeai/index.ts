@@ -215,6 +215,11 @@ export const getModel: typeof import("./getModel").getModel = null as any;
 export const getModelOutput: typeof import("./getModel").getModelOutput = null as any;
 utilities.lazyLoad(exports, ["getModel","getModelOutput"], () => require("./getModel"));
 
+export { GetModelDiscoveriesArgs, GetModelDiscoveriesResult, GetModelDiscoveriesOutputArgs } from "./getModelDiscoveries";
+export const getModelDiscoveries: typeof import("./getModelDiscoveries").getModelDiscoveries = null as any;
+export const getModelDiscoveriesOutput: typeof import("./getModelDiscoveries").getModelDiscoveriesOutput = null as any;
+utilities.lazyLoad(exports, ["getModelDiscoveries","getModelDiscoveriesOutput"], () => require("./getModelDiscoveries"));
+
 export { GetModelsArgs, GetModelsResult, GetModelsOutputArgs } from "./getModels";
 export const getModels: typeof import("./getModels").getModels = null as any;
 export const getModelsOutput: typeof import("./getModels").getModelsOutput = null as any;
@@ -229,6 +234,16 @@ export { GetProjectsArgs, GetProjectsResult, GetProjectsOutputArgs } from "./get
 export const getProjects: typeof import("./getProjects").getProjects = null as any;
 export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
 utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
+
+export { GetRoutingProfileArgs, GetRoutingProfileResult, GetRoutingProfileOutputArgs } from "./getRoutingProfile";
+export const getRoutingProfile: typeof import("./getRoutingProfile").getRoutingProfile = null as any;
+export const getRoutingProfileOutput: typeof import("./getRoutingProfile").getRoutingProfileOutput = null as any;
+utilities.lazyLoad(exports, ["getRoutingProfile","getRoutingProfileOutput"], () => require("./getRoutingProfile"));
+
+export { GetRoutingProfilesArgs, GetRoutingProfilesResult, GetRoutingProfilesOutputArgs } from "./getRoutingProfiles";
+export const getRoutingProfiles: typeof import("./getRoutingProfiles").getRoutingProfiles = null as any;
+export const getRoutingProfilesOutput: typeof import("./getRoutingProfiles").getRoutingProfilesOutput = null as any;
+utilities.lazyLoad(exports, ["getRoutingProfiles","getRoutingProfilesOutput"], () => require("./getRoutingProfiles"));
 
 export { GetSemanticStoreArgs, GetSemanticStoreResult, GetSemanticStoreOutputArgs } from "./getSemanticStore";
 export const getSemanticStore: typeof import("./getSemanticStore").getSemanticStore = null as any;
@@ -275,6 +290,11 @@ export type Project = import("./project").Project;
 export const Project: typeof import("./project").Project = null as any;
 utilities.lazyLoad(exports, ["Project"], () => require("./project"));
 
+export { RoutingProfileArgs, RoutingProfileState } from "./routingProfile";
+export type RoutingProfile = import("./routingProfile").RoutingProfile;
+export const RoutingProfile: typeof import("./routingProfile").RoutingProfile = null as any;
+utilities.lazyLoad(exports, ["RoutingProfile"], () => require("./routingProfile"));
+
 export { SemanticStoreArgs, SemanticStoreState } from "./semanticStore";
 export type SemanticStore = import("./semanticStore").SemanticStore;
 export const SemanticStore: typeof import("./semanticStore").SemanticStore = null as any;
@@ -319,6 +339,8 @@ const _module = {
                 return new Model(name, <any>undefined, { urn })
             case "oci:GenerativeAi/project:Project":
                 return new Project(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/routingProfile:RoutingProfile":
+                return new RoutingProfile(name, <any>undefined, { urn })
             case "oci:GenerativeAi/semanticStore:SemanticStore":
                 return new SemanticStore(name, <any>undefined, { urn })
             default:
@@ -343,4 +365,5 @@ pulumi.runtime.registerResourceModule("oci", "GenerativeAi/hostedDeployment", _m
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/importedModel", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/model", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/project", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/routingProfile", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/semanticStore", _module)

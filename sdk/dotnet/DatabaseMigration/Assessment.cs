@@ -36,6 +36,7 @@ namespace Pulumi.Oci.DatabaseMigration
     ///         DatabaseCombination = assessmentDatabaseCombination,
     ///         DatabaseDataSize = assessmentDatabaseDataSize,
     ///         DdlExpectation = assessmentDdlExpectation,
+    ///         MigrationScope = assessmentMigrationScope,
     ///         NetworkSpeedMegabitPerSecond = assessmentNetworkSpeedMegabitPerSecond,
     ///         SourceDatabaseConnection = new Oci.DatabaseMigration.Inputs.AssessmentSourceDatabaseConnectionArgs
     ///         {
@@ -191,6 +192,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Output("migrationId")]
         public Output<string> MigrationId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+        /// </summary>
+        [Output("migrationScope")]
+        public Output<string?> MigrationScope { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A network speed in Megabits per second.
@@ -383,6 +390,12 @@ namespace Pulumi.Oci.DatabaseMigration
         }
 
         /// <summary>
+        /// (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+        /// </summary>
+        [Input("migrationScope")]
+        public Input<string>? MigrationScope { get; set; }
+
+        /// <summary>
         /// (Updatable) A network speed in Megabits per second.
         /// </summary>
         [Input("networkSpeedMegabitPerSecond", required: true)]
@@ -527,6 +540,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("migrationId")]
         public Input<string>? MigrationId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+        /// </summary>
+        [Input("migrationScope")]
+        public Input<string>? MigrationScope { get; set; }
 
         /// <summary>
         /// (Updatable) A network speed in Megabits per second.

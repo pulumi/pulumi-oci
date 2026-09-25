@@ -22,7 +22,7 @@ public final class SelfSubscriptionSubscriptionDetails {
      */
     private @Nullable Double amount;
     /**
-     * @return Sku details for billing subscription.
+     * @return Billing details associated with the subscription plan and its usage dimensions.
      * 
      */
     private SelfSubscriptionSubscriptionDetailsBillingDetails billingDetails;
@@ -56,7 +56,7 @@ public final class SelfSubscriptionSubscriptionDetails {
         return Optional.ofNullable(this.amount);
     }
     /**
-     * @return Sku details for billing subscription.
+     * @return Billing details associated with the subscription plan and its usage dimensions.
      * 
      */
     public SelfSubscriptionSubscriptionDetailsBillingDetails billingDetails() {

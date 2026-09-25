@@ -6,8 +6,12 @@ package com.pulumi.oci.Functions.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsArchiveSourceDetailsArgs;
+import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsRuntimeConfigArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class FunctionSourceDetailsArgs extends com.pulumi.resources.ResourceArgs {
@@ -15,29 +19,119 @@ public final class FunctionSourceDetailsArgs extends com.pulumi.resources.Resour
     public static final FunctionSourceDetailsArgs Empty = new FunctionSourceDetailsArgs();
 
     /**
+     * (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+     * 
+     */
+    @Import(name="archiveSourceDetails")
+    private @Nullable Output<FunctionSourceDetailsArchiveSourceDetailsArgs> archiveSourceDetails;
+
+    /**
+     * @return (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+     * 
+     */
+    public Optional<Output<FunctionSourceDetailsArchiveSourceDetailsArgs>> archiveSourceDetails() {
+        return Optional.ofNullable(this.archiveSourceDetails);
+    }
+
+    /**
+     * (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+     * 
+     */
+    @Import(name="handler")
+    private @Nullable Output<String> handler;
+
+    /**
+     * @return (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+     * 
+     */
+    public Optional<Output<String>> handler() {
+        return Optional.ofNullable(this.handler);
+    }
+
+    /**
+     * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * 
+     */
+    @Import(name="image")
+    private @Nullable Output<String> image;
+
+    /**
+     * @return (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * 
+     */
+    public Optional<Output<String>> image() {
+        return Optional.ofNullable(this.image);
+    }
+
+    /**
+     * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * 
+     */
+    @Import(name="imageDigest")
+    private @Nullable Output<String> imageDigest;
+
+    /**
+     * @return (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * 
+     */
+    public Optional<Output<String>> imageDigest() {
+        return Optional.ofNullable(this.imageDigest);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
      * 
      */
-    @Import(name="pbfListingId", required=true)
-    private Output<String> pbfListingId;
+    @Import(name="pbfListingId")
+    private @Nullable Output<String> pbfListingId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
      * 
      */
-    public Output<String> pbfListingId() {
-        return this.pbfListingId;
+    public Optional<Output<String>> pbfListingId() {
+        return Optional.ofNullable(this.pbfListingId);
     }
 
     /**
-     * Type of the Function Source. Possible values: PBF.
+     * (Updatable) FunctionsRuntime configuration used to create a function.
+     * 
+     */
+    @Import(name="runtimeConfig")
+    private @Nullable Output<FunctionSourceDetailsRuntimeConfigArgs> runtimeConfig;
+
+    /**
+     * @return (Updatable) FunctionsRuntime configuration used to create a function.
+     * 
+     */
+    public Optional<Output<FunctionSourceDetailsRuntimeConfigArgs>> runtimeConfig() {
+        return Optional.ofNullable(this.runtimeConfig);
+    }
+
+    /**
+     * The SHA256 hash of the function source code archive, base64-encoded.
+     * 
+     */
+    @Import(name="sourceCodeSha256")
+    private @Nullable Output<String> sourceCodeSha256;
+
+    /**
+     * @return The SHA256 hash of the function source code archive, base64-encoded.
+     * 
+     */
+    public Optional<Output<String>> sourceCodeSha256() {
+        return Optional.ofNullable(this.sourceCodeSha256);
+    }
+
+    /**
+     * Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
      * 
      */
     @Import(name="sourceType", required=true)
     private Output<String> sourceType;
 
     /**
-     * @return Type of the Function Source. Possible values: PBF.
+     * @return Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
      * 
      */
     public Output<String> sourceType() {
@@ -47,7 +141,13 @@ public final class FunctionSourceDetailsArgs extends com.pulumi.resources.Resour
     private FunctionSourceDetailsArgs() {}
 
     private FunctionSourceDetailsArgs(FunctionSourceDetailsArgs $) {
+        this.archiveSourceDetails = $.archiveSourceDetails;
+        this.handler = $.handler;
+        this.image = $.image;
+        this.imageDigest = $.imageDigest;
         this.pbfListingId = $.pbfListingId;
+        this.runtimeConfig = $.runtimeConfig;
+        this.sourceCodeSha256 = $.sourceCodeSha256;
         this.sourceType = $.sourceType;
     }
 
@@ -70,12 +170,96 @@ public final class FunctionSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
+         * @param archiveSourceDetails (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder archiveSourceDetails(@Nullable Output<FunctionSourceDetailsArchiveSourceDetailsArgs> archiveSourceDetails) {
+            $.archiveSourceDetails = archiveSourceDetails;
+            return this;
+        }
+
+        /**
+         * @param archiveSourceDetails (Updatable) The details required to create an Archive-based function source.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder archiveSourceDetails(FunctionSourceDetailsArchiveSourceDetailsArgs archiveSourceDetails) {
+            return archiveSourceDetails(Output.of(archiveSourceDetails));
+        }
+
+        /**
+         * @param handler (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+         * 
+         * @return builder
+         * 
+         */
+        public Builder handler(@Nullable Output<String> handler) {
+            $.handler = handler;
+            return this;
+        }
+
+        /**
+         * @param handler (Updatable) The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+         * 
+         * @return builder
+         * 
+         */
+        public Builder handler(String handler) {
+            return handler(Output.of(handler));
+        }
+
+        /**
+         * @param image (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder image(@Nullable Output<String> image) {
+            $.image = image;
+            return this;
+        }
+
+        /**
+         * @param image (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder image(String image) {
+            return image(Output.of(image));
+        }
+
+        /**
+         * @param imageDigest (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder imageDigest(@Nullable Output<String> imageDigest) {
+            $.imageDigest = imageDigest;
+            return this;
+        }
+
+        /**
+         * @param imageDigest (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder imageDigest(String imageDigest) {
+            return imageDigest(Output.of(imageDigest));
+        }
+
+        /**
          * @param pbfListingId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
          * 
          * @return builder
          * 
          */
-        public Builder pbfListingId(Output<String> pbfListingId) {
+        public Builder pbfListingId(@Nullable Output<String> pbfListingId) {
             $.pbfListingId = pbfListingId;
             return this;
         }
@@ -91,7 +275,49 @@ public final class FunctionSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceType Type of the Function Source. Possible values: PBF.
+         * @param runtimeConfig (Updatable) FunctionsRuntime configuration used to create a function.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeConfig(@Nullable Output<FunctionSourceDetailsRuntimeConfigArgs> runtimeConfig) {
+            $.runtimeConfig = runtimeConfig;
+            return this;
+        }
+
+        /**
+         * @param runtimeConfig (Updatable) FunctionsRuntime configuration used to create a function.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeConfig(FunctionSourceDetailsRuntimeConfigArgs runtimeConfig) {
+            return runtimeConfig(Output.of(runtimeConfig));
+        }
+
+        /**
+         * @param sourceCodeSha256 The SHA256 hash of the function source code archive, base64-encoded.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceCodeSha256(@Nullable Output<String> sourceCodeSha256) {
+            $.sourceCodeSha256 = sourceCodeSha256;
+            return this;
+        }
+
+        /**
+         * @param sourceCodeSha256 The SHA256 hash of the function source code archive, base64-encoded.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceCodeSha256(String sourceCodeSha256) {
+            return sourceCodeSha256(Output.of(sourceCodeSha256));
+        }
+
+        /**
+         * @param sourceType Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
          * 
          * @return builder
          * 
@@ -102,7 +328,7 @@ public final class FunctionSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceType Type of the Function Source. Possible values: PBF.
+         * @param sourceType Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
          * 
          * @return builder
          * 
@@ -112,9 +338,6 @@ public final class FunctionSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         public FunctionSourceDetailsArgs build() {
-            if ($.pbfListingId == null) {
-                throw new MissingRequiredPropertyException("FunctionSourceDetailsArgs", "pbfListingId");
-            }
             if ($.sourceType == null) {
                 throw new MissingRequiredPropertyException("FunctionSourceDetailsArgs", "sourceType");
             }

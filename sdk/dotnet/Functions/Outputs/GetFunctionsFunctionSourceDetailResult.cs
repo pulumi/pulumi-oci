@@ -14,21 +14,63 @@ namespace Pulumi.Oci.Functions.Outputs
     public sealed class GetFunctionsFunctionSourceDetailResult
     {
         /// <summary>
+        /// The details for the Archive source of the Function.  This mode is used when the function code is provided as an archive, either from Object Storage or directly uploaded by the API caller.  It is suitable for scenarios where the function code is packaged as a single archive file.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFunctionsFunctionSourceDetailArchiveSourceDetailResult> ArchiveSourceDetails;
+        /// <summary>
+        /// The function handler that is executed when the function is invoked. The value of this field depends on the runtime used
+        /// </summary>
+        public readonly string Handler;
+        /// <summary>
+        /// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+        /// </summary>
+        public readonly string Image;
+        /// <summary>
+        /// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+        /// </summary>
+        public readonly string ImageDigest;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
         /// </summary>
         public readonly string PbfListingId;
         /// <summary>
-        /// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        /// FunctionsRuntime configuration for a function.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFunctionsFunctionSourceDetailRuntimeConfigResult> RuntimeConfigs;
+        /// <summary>
+        /// The SHA256 hash of the function source code archive, base64-encoded.
+        /// </summary>
+        public readonly string SourceCodeSha256;
+        /// <summary>
+        /// Type of the Function Source. Possible values: CONTAINER_IMAGE, PRE_BUILT_FUNCTIONS and ARCHIVE.
         /// </summary>
         public readonly string SourceType;
 
         [OutputConstructor]
         private GetFunctionsFunctionSourceDetailResult(
+            ImmutableArray<Outputs.GetFunctionsFunctionSourceDetailArchiveSourceDetailResult> archiveSourceDetails,
+
+            string handler,
+
+            string image,
+
+            string imageDigest,
+
             string pbfListingId,
+
+            ImmutableArray<Outputs.GetFunctionsFunctionSourceDetailRuntimeConfigResult> runtimeConfigs,
+
+            string sourceCodeSha256,
 
             string sourceType)
         {
+            ArchiveSourceDetails = archiveSourceDetails;
+            Handler = handler;
+            Image = image;
+            ImageDigest = imageDigest;
             PbfListingId = pbfListingId;
+            RuntimeConfigs = runtimeConfigs;
+            SourceCodeSha256 = sourceCodeSha256;
             SourceType = sourceType;
         }
     }

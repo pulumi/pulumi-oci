@@ -129,7 +129,6 @@ import (
 //					},
 //				},
 //				InitialLoadSettings: &databasemigration.MigrationInitialLoadSettingsArgs{
-//					JobMode:         pulumi.Any(migrationInitialLoadSettingsJobMode),
 //					Compatibilities: pulumi.Any(migrationInitialLoadSettingsCompatibility),
 //					DataPumpParameters: &databasemigration.MigrationInitialLoadSettingsDataPumpParametersArgs{
 //						Estimate:                pulumi.Any(migrationInitialLoadSettingsDataPumpParametersEstimate),
@@ -151,6 +150,7 @@ import (
 //					IsConsistent:            pulumi.Any(migrationInitialLoadSettingsIsConsistent),
 //					IsIgnoreExistingObjects: pulumi.Any(migrationInitialLoadSettingsIsIgnoreExistingObjects),
 //					IsTzUtc:                 pulumi.Any(migrationInitialLoadSettingsIsTzUtc),
+//					JobMode:                 pulumi.Any(migrationInitialLoadSettingsJobMode),
 //					MetadataRemaps: databasemigration.MigrationInitialLoadSettingsMetadataRemapArray{
 //						&databasemigration.MigrationInitialLoadSettingsMetadataRemapArgs{
 //							NewValue: pulumi.Any(migrationInitialLoadSettingsMetadataRemapsNewValue),

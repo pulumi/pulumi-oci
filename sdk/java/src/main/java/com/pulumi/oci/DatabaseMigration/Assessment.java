@@ -18,6 +18,7 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -64,6 +65,7 @@ import javax.annotation.Nullable;
  *             .databaseCombination(assessmentDatabaseCombination)
  *             .databaseDataSize(assessmentDatabaseDataSize)
  *             .ddlExpectation(assessmentDdlExpectation)
+ *             .migrationScope(assessmentMigrationScope)
  *             .networkSpeedMegabitPerSecond(assessmentNetworkSpeedMegabitPerSecond)
  *             .sourceDatabaseConnection(AssessmentSourceDatabaseConnectionArgs.builder()
  *                 .id(assessmentSourceDatabaseConnectionId)
@@ -336,6 +338,20 @@ public class Assessment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> migrationId() {
         return this.migrationId;
+    }
+    /**
+     * (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+     * 
+     */
+    @Export(name="migrationScope", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> migrationScope;
+
+    /**
+     * @return (Updatable) Assessment migration scope. Defaults to `SCHEMA`.
+     * 
+     */
+    public Output<Optional<String>> migrationScope() {
+        return Codegen.optional(this.migrationScope);
     }
     /**
      * (Updatable) A network speed in Megabits per second.

@@ -55,6 +55,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Model{}
 	case "oci:GenerativeAi/project:Project":
 		r = &Project{}
+	case "oci:GenerativeAi/routingProfile:RoutingProfile":
+		r = &RoutingProfile{}
 	case "oci:GenerativeAi/semanticStore:SemanticStore":
 		r = &SemanticStore{}
 	default:
@@ -153,6 +155,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"GenerativeAi/project",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/routingProfile",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -48,7 +48,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// (Updatable) Oracle Job Mode
         /// </summary>
-        public readonly string JobMode;
+        public readonly string? JobMode;
         /// <summary>
         /// (Updatable) Defines remapping to be applied to objects as they are processed.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             bool? isTzUtc,
 
-            string jobMode,
+            string? jobMode,
 
             ImmutableArray<Outputs.MigrationInitialLoadSettingsMetadataRemap> metadataRemaps,
 

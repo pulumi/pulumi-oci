@@ -13,6 +13,7445 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetSqlFirewallViolationsSqlFirewallViolationsCollection struct {
+	// Array of SQL violation summary.
+	Items []GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallViolationsSqlFirewallViolationsCollectionInput is an input type that accepts GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs and GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsSqlFirewallViolationsCollectionInput` via:
+//
+//	GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs{...}
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutputWithContext(context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs struct {
+	// Array of SQL violation summary.
+	Items GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput {
+	return i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput)
+}
+
+// GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayInput is an input type that accepts GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray and GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayInput` via:
+//
+//	GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray{ GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs{...} }
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutputWithContext(context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray []GetSqlFirewallViolationsSqlFirewallViolationsCollectionInput
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsSqlFirewallViolationsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput {
+	return i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput)
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput {
+	return o
+}
+
+// Array of SQL violation summary.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput) Items() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollection) []GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsSqlFirewallViolationsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationsSqlFirewallViolationsCollection {
+		return vs[0].([]GetSqlFirewallViolationsSqlFirewallViolationsCollection)[vs[1].(int)]
+	}).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput)
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem struct {
+	// The IP address of the host machine from which the session was generated.
+	ClientIp string `pulumi:"clientIp"`
+	// The name of the operating system user for the database session.
+	ClientOsUserName string `pulumi:"clientOsUserName"`
+	// The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
+	ClientProgram string `pulumi:"clientProgram"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The name of the user that SQL was executed as.
+	CurrentDbUserName string `pulumi:"currentDbUserName"`
+	// The name of the database user.
+	DbUserName string `pulumi:"dbUserName"`
+	// The OCID of the SQL violation.
+	Id string `pulumi:"id"`
+	// The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
+	Operation string `pulumi:"operation"`
+	// The time of the SQL violation occurrence in the target database.
+	OperationTime string `pulumi:"operationTime"`
+	// The objects accessed by the SQL.
+	SqlAccessedObjects string `pulumi:"sqlAccessedObjects"`
+	// Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel string `pulumi:"sqlLevel"`
+	// The SQL text caught by the firewall.
+	SqlText string `pulumi:"sqlText"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The name of the target database.
+	TargetName string `pulumi:"targetName"`
+	// The timestamp when this SQL violation was collected from the target database by Data Safe.
+	TimeCollected string `pulumi:"timeCollected"`
+	// The action taken for this SQL violation.
+	ViolationAction string `pulumi:"violationAction"`
+	// Indicates whether SQL or context violation.
+	ViolationCause string `pulumi:"violationCause"`
+}
+
+// GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemInput is an input type that accepts GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs and GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemInput` via:
+//
+//	GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs{...}
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutputWithContext(context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs struct {
+	// The IP address of the host machine from which the session was generated.
+	ClientIp pulumi.StringInput `pulumi:"clientIp"`
+	// The name of the operating system user for the database session.
+	ClientOsUserName pulumi.StringInput `pulumi:"clientOsUserName"`
+	// The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
+	ClientProgram pulumi.StringInput `pulumi:"clientProgram"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The name of the user that SQL was executed as.
+	CurrentDbUserName pulumi.StringInput `pulumi:"currentDbUserName"`
+	// The name of the database user.
+	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
+	// The OCID of the SQL violation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
+	Operation pulumi.StringInput `pulumi:"operation"`
+	// The time of the SQL violation occurrence in the target database.
+	OperationTime pulumi.StringInput `pulumi:"operationTime"`
+	// The objects accessed by the SQL.
+	SqlAccessedObjects pulumi.StringInput `pulumi:"sqlAccessedObjects"`
+	// Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel pulumi.StringInput `pulumi:"sqlLevel"`
+	// The SQL text caught by the firewall.
+	SqlText pulumi.StringInput `pulumi:"sqlText"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The name of the target database.
+	TargetName pulumi.StringInput `pulumi:"targetName"`
+	// The timestamp when this SQL violation was collected from the target database by Data Safe.
+	TimeCollected pulumi.StringInput `pulumi:"timeCollected"`
+	// The action taken for this SQL violation.
+	ViolationAction pulumi.StringInput `pulumi:"violationAction"`
+	// Indicates whether SQL or context violation.
+	ViolationCause pulumi.StringInput `pulumi:"violationCause"`
+}
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput {
+	return i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput)
+}
+
+// GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayInput is an input type that accepts GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray and GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray{ GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs{...} }
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray []GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemInput
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput {
+	return o
+}
+
+// The IP address of the host machine from which the session was generated.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ClientIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.ClientIp }).(pulumi.StringOutput)
+}
+
+// The name of the operating system user for the database session.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ClientOsUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.ClientOsUserName }).(pulumi.StringOutput)
+}
+
+// The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ClientProgram() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.ClientProgram }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name of the user that SQL was executed as.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) CurrentDbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.CurrentDbUserName }).(pulumi.StringOutput)
+}
+
+// The name of the database user.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) DbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
+}
+
+// The OCID of the SQL violation.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) Operation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.Operation }).(pulumi.StringOutput)
+}
+
+// The time of the SQL violation occurrence in the target database.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) OperationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.OperationTime }).(pulumi.StringOutput)
+}
+
+// The objects accessed by the SQL.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) SqlAccessedObjects() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string {
+		return v.SqlAccessedObjects
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) SqlLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.SqlLevel }).(pulumi.StringOutput)
+}
+
+// The SQL text caught by the firewall.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) SqlText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.SqlText }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The name of the target database.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) TargetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.TargetName }).(pulumi.StringOutput)
+}
+
+// The timestamp when this SQL violation was collected from the target database by Data Safe.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) TimeCollected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.TimeCollected }).(pulumi.StringOutput)
+}
+
+// The action taken for this SQL violation.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ViolationAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.ViolationAction }).(pulumi.StringOutput)
+}
+
+// Indicates whether SQL or context violation.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ViolationCause() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.ViolationCause }).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem {
+		return vs[0].([]GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput)
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterInput is an input type that accepts GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs and GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterInput` via:
+//
+//	GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs{...}
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutputWithContext(context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput {
+	return i.ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput)
+}
+
+// GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayInput is an input type that accepts GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArray and GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayInput` via:
+//
+//	GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArray{ GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs{...} }
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutputWithContext(context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArray []GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterInput
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArray) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput {
+	return i.ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArray) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput)
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput) Index(i pulumi.IntInput) GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter {
+		return vs[0].([]GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter)[vs[1].(int)]
+	}).(GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput)
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollection struct {
+	// Array of unassociated target alert policy association summary.
+	Items []GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem `pulumi:"items"`
+}
+
+// GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionInput is an input type that accepts GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArgs and GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionInput` via:
+//
+//	GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArgs{...}
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutputWithContext(context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArgs struct {
+	// Array of unassociated target alert policy association summary.
+	Items GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollection)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArgs) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput {
+	return i.ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArgs) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput)
+}
+
+// GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayInput is an input type that accepts GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArray and GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayInput` via:
+//
+//	GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArray{ GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArgs{...} }
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutputWithContext(context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArray []GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionInput
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollection)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArray) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput {
+	return i.ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArray) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput)
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollection)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput {
+	return o
+}
+
+// Array of unassociated target alert policy association summary.
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput) Items() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollection) []GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem {
+		return v.Items
+	}).(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput)
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollection)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput) Index(i pulumi.IntInput) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollection {
+		return vs[0].([]GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollection)[vs[1].(int)]
+	}).(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput)
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Indicates if the target-alert policy association is enabled or disabled by user.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// Details on why policy is not applied on target.
+	NotAppliedReason string `pulumi:"notAppliedReason"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The OCID of the target database that differs from the alert policy association of the target database group.
+	TargetDatabaseId string `pulumi:"targetDatabaseId"`
+}
+
+// GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemInput is an input type that accepts GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArgs and GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemInput` via:
+//
+//	GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArgs{...}
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutputWithContext(context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Indicates if the target-alert policy association is enabled or disabled by user.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// Details on why policy is not applied on target.
+	NotAppliedReason pulumi.StringInput `pulumi:"notAppliedReason"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The OCID of the target database that differs from the alert policy association of the target database group.
+	TargetDatabaseId pulumi.StringInput `pulumi:"targetDatabaseId"`
+}
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArgs) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput {
+	return i.ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArgs) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput)
+}
+
+// GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayInput is an input type that accepts GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArray and GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayInput` via:
+//
+//	GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArray{ GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArgs{...} }
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput
+	ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutputWithContext(context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArray []GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemInput
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArray) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput {
+	return i.ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArray) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput)
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Indicates if the target-alert policy association is enabled or disabled by user.
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Details on why policy is not applied on target.
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput) NotAppliedReason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem) string {
+		return v.NotAppliedReason
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the target database that differs from the alert policy association of the target database group.
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput) TargetDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem) string {
+		return v.TargetDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+type GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput() GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput) ToGetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem {
+		return vs[0].([]GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItem)[vs[1].(int)]
+	}).(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput)
+}
+
+type GetTargetAlertPolicyAssociationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetAlertPolicyAssociationsFilterInput is an input type that accepts GetTargetAlertPolicyAssociationsFilterArgs and GetTargetAlertPolicyAssociationsFilterOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationsFilterInput` via:
+//
+//	GetTargetAlertPolicyAssociationsFilterArgs{...}
+type GetTargetAlertPolicyAssociationsFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationsFilterOutput() GetTargetAlertPolicyAssociationsFilterOutput
+	ToGetTargetAlertPolicyAssociationsFilterOutputWithContext(context.Context) GetTargetAlertPolicyAssociationsFilterOutput
+}
+
+type GetTargetAlertPolicyAssociationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetAlertPolicyAssociationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationsFilter)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationsFilterArgs) ToGetTargetAlertPolicyAssociationsFilterOutput() GetTargetAlertPolicyAssociationsFilterOutput {
+	return i.ToGetTargetAlertPolicyAssociationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationsFilterArgs) ToGetTargetAlertPolicyAssociationsFilterOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsFilterOutput)
+}
+
+// GetTargetAlertPolicyAssociationsFilterArrayInput is an input type that accepts GetTargetAlertPolicyAssociationsFilterArray and GetTargetAlertPolicyAssociationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationsFilterArrayInput` via:
+//
+//	GetTargetAlertPolicyAssociationsFilterArray{ GetTargetAlertPolicyAssociationsFilterArgs{...} }
+type GetTargetAlertPolicyAssociationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationsFilterArrayOutput() GetTargetAlertPolicyAssociationsFilterArrayOutput
+	ToGetTargetAlertPolicyAssociationsFilterArrayOutputWithContext(context.Context) GetTargetAlertPolicyAssociationsFilterArrayOutput
+}
+
+type GetTargetAlertPolicyAssociationsFilterArray []GetTargetAlertPolicyAssociationsFilterInput
+
+func (GetTargetAlertPolicyAssociationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationsFilter)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationsFilterArray) ToGetTargetAlertPolicyAssociationsFilterArrayOutput() GetTargetAlertPolicyAssociationsFilterArrayOutput {
+	return i.ToGetTargetAlertPolicyAssociationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationsFilterArray) ToGetTargetAlertPolicyAssociationsFilterArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsFilterArrayOutput)
+}
+
+type GetTargetAlertPolicyAssociationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationsFilter)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationsFilterOutput) ToGetTargetAlertPolicyAssociationsFilterOutput() GetTargetAlertPolicyAssociationsFilterOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsFilterOutput) ToGetTargetAlertPolicyAssociationsFilterOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsFilterOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetAlertPolicyAssociationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetAlertPolicyAssociationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetAlertPolicyAssociationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationsFilter)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationsFilterArrayOutput) ToGetTargetAlertPolicyAssociationsFilterArrayOutput() GetTargetAlertPolicyAssociationsFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsFilterArrayOutput) ToGetTargetAlertPolicyAssociationsFilterArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsFilterArrayOutput) Index(i pulumi.IntInput) GetTargetAlertPolicyAssociationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAlertPolicyAssociationsFilter {
+		return vs[0].([]GetTargetAlertPolicyAssociationsFilter)[vs[1].(int)]
+	}).(GetTargetAlertPolicyAssociationsFilterOutput)
+}
+
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection struct {
+	Items []GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem `pulumi:"items"`
+}
+
+// GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionInput is an input type that accepts GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs and GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionInput` via:
+//
+//	GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs{...}
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput
+	ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutputWithContext(context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput
+}
+
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs struct {
+	Items GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput {
+	return i.ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput)
+}
+
+// GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayInput is an input type that accepts GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray and GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayInput` via:
+//
+//	GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray{ GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs{...} }
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput
+	ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutputWithContext(context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput
+}
+
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray []GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionInput
+
+func (GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput {
+	return i.ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput)
+}
+
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput) Items() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection) []GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem {
+		return v.Items
+	}).(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput)
+}
+
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput) Index(i pulumi.IntInput) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection {
+		return vs[0].([]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection)[vs[1].(int)]
+	}).(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput)
+}
+
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Describes the target-alert policy association.
+	Description string `pulumi:"description"`
+	// The display name of the target-alert policy association.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the target-alert policy association.
+	Id string `pulumi:"id"`
+	// Indicates if the target-alert policy association is enabled or disabled by user.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// Details about the current state of the target-alert policy association.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The OCID of the alert policy.
+	PolicyId string `pulumi:"policyId"`
+	// An optional filter to return only alert policies that have the given life-cycle state.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// A optional filter to return only resources that belong to the specified alert policy association type.
+	TargetType string `pulumi:"targetType"`
+	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemInput is an input type that accepts GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs and GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemInput` via:
+//
+//	GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs{...}
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput
+	ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutputWithContext(context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput
+}
+
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Describes the target-alert policy association.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The display name of the target-alert policy association.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the target-alert policy association.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if the target-alert policy association is enabled or disabled by user.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// Details about the current state of the target-alert policy association.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The OCID of the alert policy.
+	PolicyId pulumi.StringInput `pulumi:"policyId"`
+	// An optional filter to return only alert policies that have the given life-cycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// A optional filter to return only resources that belong to the specified alert policy association type.
+	TargetType pulumi.StringInput `pulumi:"targetType"`
+	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput {
+	return i.ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput)
+}
+
+// GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayInput is an input type that accepts GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray and GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayInput` via:
+//
+//	GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray{ GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs{...} }
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput
+	ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutputWithContext(context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput
+}
+
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray []GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemInput
+
+func (GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput {
+	return i.ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput)
+}
+
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Describes the target-alert policy association.
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The display name of the target-alert policy association.
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the target-alert policy association.
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates if the target-alert policy association is enabled or disabled by user.
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Details about the current state of the target-alert policy association.
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the alert policy.
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) PolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string {
+		return v.PolicyId
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return only alert policies that have the given life-cycle state.
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string {
+		return v.TargetId
+	}).(pulumi.StringOutput)
+}
+
+// A optional filter to return only resources that belong to the specified alert policy association type.
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string {
+		return v.TargetType
+	}).(pulumi.StringOutput)
+}
+
+// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem {
+		return vs[0].([]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem)[vs[1].(int)]
+	}).(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput)
+}
+
+type GetTargetDatabaseConnectionOption struct {
+	// The connection type used to connect to the database. Allowed values:
+	// * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+	// * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+	ConnectionType string `pulumi:"connectionType"`
+	// The OCID of the Data Safe private endpoint.
+	DatasafePrivateEndpointId string `pulumi:"datasafePrivateEndpointId"`
+	// The OCID of the on-premises connector.
+	OnPremConnectorId string `pulumi:"onPremConnectorId"`
+}
+
+// GetTargetDatabaseConnectionOptionInput is an input type that accepts GetTargetDatabaseConnectionOptionArgs and GetTargetDatabaseConnectionOptionOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseConnectionOptionInput` via:
+//
+//	GetTargetDatabaseConnectionOptionArgs{...}
+type GetTargetDatabaseConnectionOptionInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseConnectionOptionOutput() GetTargetDatabaseConnectionOptionOutput
+	ToGetTargetDatabaseConnectionOptionOutputWithContext(context.Context) GetTargetDatabaseConnectionOptionOutput
+}
+
+type GetTargetDatabaseConnectionOptionArgs struct {
+	// The connection type used to connect to the database. Allowed values:
+	// * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+	// * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// The OCID of the Data Safe private endpoint.
+	DatasafePrivateEndpointId pulumi.StringInput `pulumi:"datasafePrivateEndpointId"`
+	// The OCID of the on-premises connector.
+	OnPremConnectorId pulumi.StringInput `pulumi:"onPremConnectorId"`
+}
+
+func (GetTargetDatabaseConnectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseConnectionOption)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseConnectionOptionArgs) ToGetTargetDatabaseConnectionOptionOutput() GetTargetDatabaseConnectionOptionOutput {
+	return i.ToGetTargetDatabaseConnectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseConnectionOptionArgs) ToGetTargetDatabaseConnectionOptionOutputWithContext(ctx context.Context) GetTargetDatabaseConnectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseConnectionOptionOutput)
+}
+
+// GetTargetDatabaseConnectionOptionArrayInput is an input type that accepts GetTargetDatabaseConnectionOptionArray and GetTargetDatabaseConnectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseConnectionOptionArrayInput` via:
+//
+//	GetTargetDatabaseConnectionOptionArray{ GetTargetDatabaseConnectionOptionArgs{...} }
+type GetTargetDatabaseConnectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseConnectionOptionArrayOutput() GetTargetDatabaseConnectionOptionArrayOutput
+	ToGetTargetDatabaseConnectionOptionArrayOutputWithContext(context.Context) GetTargetDatabaseConnectionOptionArrayOutput
+}
+
+type GetTargetDatabaseConnectionOptionArray []GetTargetDatabaseConnectionOptionInput
+
+func (GetTargetDatabaseConnectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseConnectionOption)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseConnectionOptionArray) ToGetTargetDatabaseConnectionOptionArrayOutput() GetTargetDatabaseConnectionOptionArrayOutput {
+	return i.ToGetTargetDatabaseConnectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseConnectionOptionArray) ToGetTargetDatabaseConnectionOptionArrayOutputWithContext(ctx context.Context) GetTargetDatabaseConnectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseConnectionOptionArrayOutput)
+}
+
+type GetTargetDatabaseConnectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseConnectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseConnectionOption)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseConnectionOptionOutput) ToGetTargetDatabaseConnectionOptionOutput() GetTargetDatabaseConnectionOptionOutput {
+	return o
+}
+
+func (o GetTargetDatabaseConnectionOptionOutput) ToGetTargetDatabaseConnectionOptionOutputWithContext(ctx context.Context) GetTargetDatabaseConnectionOptionOutput {
+	return o
+}
+
+// The connection type used to connect to the database. Allowed values:
+// * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+// * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+func (o GetTargetDatabaseConnectionOptionOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseConnectionOption) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+// The OCID of the Data Safe private endpoint.
+func (o GetTargetDatabaseConnectionOptionOutput) DatasafePrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseConnectionOption) string { return v.DatasafePrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// The OCID of the on-premises connector.
+func (o GetTargetDatabaseConnectionOptionOutput) OnPremConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseConnectionOption) string { return v.OnPremConnectorId }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabaseConnectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseConnectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseConnectionOption)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseConnectionOptionArrayOutput) ToGetTargetDatabaseConnectionOptionArrayOutput() GetTargetDatabaseConnectionOptionArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseConnectionOptionArrayOutput) ToGetTargetDatabaseConnectionOptionArrayOutputWithContext(ctx context.Context) GetTargetDatabaseConnectionOptionArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseConnectionOptionArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseConnectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseConnectionOption {
+		return vs[0].([]GetTargetDatabaseConnectionOption)[vs[1].(int)]
+	}).(GetTargetDatabaseConnectionOptionOutput)
+}
+
+type GetTargetDatabaseCredential struct {
+	// The password of the database user.
+	Password string `pulumi:"password"`
+	// The database user name.
+	UserName string `pulumi:"userName"`
+}
+
+// GetTargetDatabaseCredentialInput is an input type that accepts GetTargetDatabaseCredentialArgs and GetTargetDatabaseCredentialOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseCredentialInput` via:
+//
+//	GetTargetDatabaseCredentialArgs{...}
+type GetTargetDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseCredentialOutput() GetTargetDatabaseCredentialOutput
+	ToGetTargetDatabaseCredentialOutputWithContext(context.Context) GetTargetDatabaseCredentialOutput
+}
+
+type GetTargetDatabaseCredentialArgs struct {
+	// The password of the database user.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The database user name.
+	UserName pulumi.StringInput `pulumi:"userName"`
+}
+
+func (GetTargetDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseCredentialArgs) ToGetTargetDatabaseCredentialOutput() GetTargetDatabaseCredentialOutput {
+	return i.ToGetTargetDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseCredentialArgs) ToGetTargetDatabaseCredentialOutputWithContext(ctx context.Context) GetTargetDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseCredentialOutput)
+}
+
+// GetTargetDatabaseCredentialArrayInput is an input type that accepts GetTargetDatabaseCredentialArray and GetTargetDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseCredentialArrayInput` via:
+//
+//	GetTargetDatabaseCredentialArray{ GetTargetDatabaseCredentialArgs{...} }
+type GetTargetDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseCredentialArrayOutput() GetTargetDatabaseCredentialArrayOutput
+	ToGetTargetDatabaseCredentialArrayOutputWithContext(context.Context) GetTargetDatabaseCredentialArrayOutput
+}
+
+type GetTargetDatabaseCredentialArray []GetTargetDatabaseCredentialInput
+
+func (GetTargetDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseCredentialArray) ToGetTargetDatabaseCredentialArrayOutput() GetTargetDatabaseCredentialArrayOutput {
+	return i.ToGetTargetDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseCredentialArray) ToGetTargetDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetTargetDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseCredentialArrayOutput)
+}
+
+type GetTargetDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseCredentialOutput) ToGetTargetDatabaseCredentialOutput() GetTargetDatabaseCredentialOutput {
+	return o
+}
+
+func (o GetTargetDatabaseCredentialOutput) ToGetTargetDatabaseCredentialOutputWithContext(ctx context.Context) GetTargetDatabaseCredentialOutput {
+	return o
+}
+
+// The password of the database user.
+func (o GetTargetDatabaseCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// The database user name.
+func (o GetTargetDatabaseCredentialOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseCredential) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseCredentialArrayOutput) ToGetTargetDatabaseCredentialArrayOutput() GetTargetDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseCredentialArrayOutput) ToGetTargetDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetTargetDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseCredential {
+		return vs[0].([]GetTargetDatabaseCredential)[vs[1].(int)]
+	}).(GetTargetDatabaseCredentialOutput)
+}
+
+type GetTargetDatabaseDatabaseDetail struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabaseDatabaseDetailInput is an input type that accepts GetTargetDatabaseDatabaseDetailArgs and GetTargetDatabaseDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseDatabaseDetailInput` via:
+//
+//	GetTargetDatabaseDatabaseDetailArgs{...}
+type GetTargetDatabaseDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseDatabaseDetailOutput() GetTargetDatabaseDatabaseDetailOutput
+	ToGetTargetDatabaseDatabaseDetailOutputWithContext(context.Context) GetTargetDatabaseDatabaseDetailOutput
+}
+
+type GetTargetDatabaseDatabaseDetailArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId pulumi.StringInput `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabaseDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabaseDatabaseDetailOutput() GetTargetDatabaseDatabaseDetailOutput {
+	return i.ToGetTargetDatabaseDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabaseDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseDatabaseDetailOutput)
+}
+
+// GetTargetDatabaseDatabaseDetailArrayInput is an input type that accepts GetTargetDatabaseDatabaseDetailArray and GetTargetDatabaseDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabaseDatabaseDetailArray{ GetTargetDatabaseDatabaseDetailArgs{...} }
+type GetTargetDatabaseDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabaseDatabaseDetailArrayOutput
+	ToGetTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabaseDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabaseDatabaseDetailArray []GetTargetDatabaseDatabaseDetailInput
+
+func (GetTargetDatabaseDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseDatabaseDetailArray) ToGetTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabaseDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseDatabaseDetailArray) ToGetTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabaseDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabaseDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabaseDatabaseDetailOutput() GetTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabaseDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
+}
+
+// The database type.
+func (o GetTargetDatabaseDatabaseDetailOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabaseDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// The infrastructure type the database is running on.
+func (o GetTargetDatabaseDatabaseDetailOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) string { return v.InfrastructureType }).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabaseDatabaseDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabaseDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabaseDatabaseDetailOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) int { return v.ListenerPort }).(pulumi.IntOutput)
+}
+
+// The OCID of the pluggable database registered as a target database in Data Safe.
+func (o GetTargetDatabaseDatabaseDetailOutput) PluggableDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) string { return v.PluggableDatabaseId }).(pulumi.StringOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabaseDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabaseDatabaseDetailOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseDatabaseDetail) string { return v.VmClusterId }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabaseDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseDatabaseDetail {
+		return vs[0].([]GetTargetDatabaseDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabaseDatabaseDetailOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteria struct {
+	// Criteria to exclude certain target databases from the target database group.
+	Excludes []GetTargetDatabaseGroupMatchingCriteriaExclude `pulumi:"excludes"`
+	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+	Includes []GetTargetDatabaseGroupMatchingCriteriaInclude `pulumi:"includes"`
+}
+
+// GetTargetDatabaseGroupMatchingCriteriaInput is an input type that accepts GetTargetDatabaseGroupMatchingCriteriaArgs and GetTargetDatabaseGroupMatchingCriteriaOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupMatchingCriteriaInput` via:
+//
+//	GetTargetDatabaseGroupMatchingCriteriaArgs{...}
+type GetTargetDatabaseGroupMatchingCriteriaInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupMatchingCriteriaOutput() GetTargetDatabaseGroupMatchingCriteriaOutput
+	ToGetTargetDatabaseGroupMatchingCriteriaOutputWithContext(context.Context) GetTargetDatabaseGroupMatchingCriteriaOutput
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaArgs struct {
+	// Criteria to exclude certain target databases from the target database group.
+	Excludes GetTargetDatabaseGroupMatchingCriteriaExcludeArrayInput `pulumi:"excludes"`
+	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+	Includes GetTargetDatabaseGroupMatchingCriteriaIncludeArrayInput `pulumi:"includes"`
+}
+
+func (GetTargetDatabaseGroupMatchingCriteriaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteria)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaArgs) ToGetTargetDatabaseGroupMatchingCriteriaOutput() GetTargetDatabaseGroupMatchingCriteriaOutput {
+	return i.ToGetTargetDatabaseGroupMatchingCriteriaOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaArgs) ToGetTargetDatabaseGroupMatchingCriteriaOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupMatchingCriteriaOutput)
+}
+
+// GetTargetDatabaseGroupMatchingCriteriaArrayInput is an input type that accepts GetTargetDatabaseGroupMatchingCriteriaArray and GetTargetDatabaseGroupMatchingCriteriaArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupMatchingCriteriaArrayInput` via:
+//
+//	GetTargetDatabaseGroupMatchingCriteriaArray{ GetTargetDatabaseGroupMatchingCriteriaArgs{...} }
+type GetTargetDatabaseGroupMatchingCriteriaArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupMatchingCriteriaArrayOutput() GetTargetDatabaseGroupMatchingCriteriaArrayOutput
+	ToGetTargetDatabaseGroupMatchingCriteriaArrayOutputWithContext(context.Context) GetTargetDatabaseGroupMatchingCriteriaArrayOutput
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaArray []GetTargetDatabaseGroupMatchingCriteriaInput
+
+func (GetTargetDatabaseGroupMatchingCriteriaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupMatchingCriteria)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaArray) ToGetTargetDatabaseGroupMatchingCriteriaArrayOutput() GetTargetDatabaseGroupMatchingCriteriaArrayOutput {
+	return i.ToGetTargetDatabaseGroupMatchingCriteriaArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaArray) ToGetTargetDatabaseGroupMatchingCriteriaArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupMatchingCriteriaArrayOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupMatchingCriteriaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteria)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaOutput) ToGetTargetDatabaseGroupMatchingCriteriaOutput() GetTargetDatabaseGroupMatchingCriteriaOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaOutput) ToGetTargetDatabaseGroupMatchingCriteriaOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaOutput {
+	return o
+}
+
+// Criteria to exclude certain target databases from the target database group.
+func (o GetTargetDatabaseGroupMatchingCriteriaOutput) Excludes() GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteria) []GetTargetDatabaseGroupMatchingCriteriaExclude {
+		return v.Excludes
+	}).(GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput)
+}
+
+// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+func (o GetTargetDatabaseGroupMatchingCriteriaOutput) Includes() GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteria) []GetTargetDatabaseGroupMatchingCriteriaInclude {
+		return v.Includes
+	}).(GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupMatchingCriteriaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupMatchingCriteria)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaArrayOutput) ToGetTargetDatabaseGroupMatchingCriteriaArrayOutput() GetTargetDatabaseGroupMatchingCriteriaArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaArrayOutput) ToGetTargetDatabaseGroupMatchingCriteriaArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseGroupMatchingCriteriaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseGroupMatchingCriteria {
+		return vs[0].([]GetTargetDatabaseGroupMatchingCriteria)[vs[1].(int)]
+	}).(GetTargetDatabaseGroupMatchingCriteriaOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaExclude struct {
+	// The list of target database OCIDs to be included in the target database group.
+	TargetDatabaseIds []string `pulumi:"targetDatabaseIds"`
+}
+
+// GetTargetDatabaseGroupMatchingCriteriaExcludeInput is an input type that accepts GetTargetDatabaseGroupMatchingCriteriaExcludeArgs and GetTargetDatabaseGroupMatchingCriteriaExcludeOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupMatchingCriteriaExcludeInput` via:
+//
+//	GetTargetDatabaseGroupMatchingCriteriaExcludeArgs{...}
+type GetTargetDatabaseGroupMatchingCriteriaExcludeInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupMatchingCriteriaExcludeOutput() GetTargetDatabaseGroupMatchingCriteriaExcludeOutput
+	ToGetTargetDatabaseGroupMatchingCriteriaExcludeOutputWithContext(context.Context) GetTargetDatabaseGroupMatchingCriteriaExcludeOutput
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaExcludeArgs struct {
+	// The list of target database OCIDs to be included in the target database group.
+	TargetDatabaseIds pulumi.StringArrayInput `pulumi:"targetDatabaseIds"`
+}
+
+func (GetTargetDatabaseGroupMatchingCriteriaExcludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaExclude)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaExcludeArgs) ToGetTargetDatabaseGroupMatchingCriteriaExcludeOutput() GetTargetDatabaseGroupMatchingCriteriaExcludeOutput {
+	return i.ToGetTargetDatabaseGroupMatchingCriteriaExcludeOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaExcludeArgs) ToGetTargetDatabaseGroupMatchingCriteriaExcludeOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaExcludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupMatchingCriteriaExcludeOutput)
+}
+
+// GetTargetDatabaseGroupMatchingCriteriaExcludeArrayInput is an input type that accepts GetTargetDatabaseGroupMatchingCriteriaExcludeArray and GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupMatchingCriteriaExcludeArrayInput` via:
+//
+//	GetTargetDatabaseGroupMatchingCriteriaExcludeArray{ GetTargetDatabaseGroupMatchingCriteriaExcludeArgs{...} }
+type GetTargetDatabaseGroupMatchingCriteriaExcludeArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput() GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput
+	ToGetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutputWithContext(context.Context) GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaExcludeArray []GetTargetDatabaseGroupMatchingCriteriaExcludeInput
+
+func (GetTargetDatabaseGroupMatchingCriteriaExcludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupMatchingCriteriaExclude)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaExcludeArray) ToGetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput() GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput {
+	return i.ToGetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaExcludeArray) ToGetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaExcludeOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupMatchingCriteriaExcludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaExclude)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaExcludeOutput) ToGetTargetDatabaseGroupMatchingCriteriaExcludeOutput() GetTargetDatabaseGroupMatchingCriteriaExcludeOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaExcludeOutput) ToGetTargetDatabaseGroupMatchingCriteriaExcludeOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaExcludeOutput {
+	return o
+}
+
+// The list of target database OCIDs to be included in the target database group.
+func (o GetTargetDatabaseGroupMatchingCriteriaExcludeOutput) TargetDatabaseIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteriaExclude) []string { return v.TargetDatabaseIds }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupMatchingCriteriaExclude)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput) ToGetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput() GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput) ToGetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseGroupMatchingCriteriaExcludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseGroupMatchingCriteriaExclude {
+		return vs[0].([]GetTargetDatabaseGroupMatchingCriteriaExclude)[vs[1].(int)]
+	}).(GetTargetDatabaseGroupMatchingCriteriaExcludeOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaInclude struct {
+	// List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
+	Compartments []GetTargetDatabaseGroupMatchingCriteriaIncludeCompartment `pulumi:"compartments"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The list of target database OCIDs to be included in the target database group.
+	TargetDatabaseIds []string `pulumi:"targetDatabaseIds"`
+}
+
+// GetTargetDatabaseGroupMatchingCriteriaIncludeInput is an input type that accepts GetTargetDatabaseGroupMatchingCriteriaIncludeArgs and GetTargetDatabaseGroupMatchingCriteriaIncludeOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupMatchingCriteriaIncludeInput` via:
+//
+//	GetTargetDatabaseGroupMatchingCriteriaIncludeArgs{...}
+type GetTargetDatabaseGroupMatchingCriteriaIncludeInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupMatchingCriteriaIncludeOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeOutput
+	ToGetTargetDatabaseGroupMatchingCriteriaIncludeOutputWithContext(context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeOutput
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaIncludeArgs struct {
+	// List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
+	Compartments GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayInput `pulumi:"compartments"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The list of target database OCIDs to be included in the target database group.
+	TargetDatabaseIds pulumi.StringArrayInput `pulumi:"targetDatabaseIds"`
+}
+
+func (GetTargetDatabaseGroupMatchingCriteriaIncludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaInclude)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaIncludeArgs) ToGetTargetDatabaseGroupMatchingCriteriaIncludeOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeOutput {
+	return i.ToGetTargetDatabaseGroupMatchingCriteriaIncludeOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaIncludeArgs) ToGetTargetDatabaseGroupMatchingCriteriaIncludeOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupMatchingCriteriaIncludeOutput)
+}
+
+// GetTargetDatabaseGroupMatchingCriteriaIncludeArrayInput is an input type that accepts GetTargetDatabaseGroupMatchingCriteriaIncludeArray and GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupMatchingCriteriaIncludeArrayInput` via:
+//
+//	GetTargetDatabaseGroupMatchingCriteriaIncludeArray{ GetTargetDatabaseGroupMatchingCriteriaIncludeArgs{...} }
+type GetTargetDatabaseGroupMatchingCriteriaIncludeArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput
+	ToGetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutputWithContext(context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaIncludeArray []GetTargetDatabaseGroupMatchingCriteriaIncludeInput
+
+func (GetTargetDatabaseGroupMatchingCriteriaIncludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupMatchingCriteriaInclude)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaIncludeArray) ToGetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput {
+	return i.ToGetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaIncludeArray) ToGetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaIncludeOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupMatchingCriteriaIncludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaInclude)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeOutput) ToGetTargetDatabaseGroupMatchingCriteriaIncludeOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeOutput) ToGetTargetDatabaseGroupMatchingCriteriaIncludeOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeOutput {
+	return o
+}
+
+// List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeOutput) Compartments() GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteriaInclude) []GetTargetDatabaseGroupMatchingCriteriaIncludeCompartment {
+		return v.Compartments
+	}).(GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteriaInclude) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteriaInclude) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The list of target database OCIDs to be included in the target database group.
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeOutput) TargetDatabaseIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteriaInclude) []string { return v.TargetDatabaseIds }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupMatchingCriteriaInclude)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput) ToGetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput) ToGetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseGroupMatchingCriteriaIncludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseGroupMatchingCriteriaInclude {
+		return vs[0].([]GetTargetDatabaseGroupMatchingCriteriaInclude)[vs[1].(int)]
+	}).(GetTargetDatabaseGroupMatchingCriteriaIncludeOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaIncludeCompartment struct {
+	// The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+	Id string `pulumi:"id"`
+	// This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
+	IsIncludeSubtree bool `pulumi:"isIncludeSubtree"`
+}
+
+// GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentInput is an input type that accepts GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs and GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentInput` via:
+//
+//	GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs{...}
+type GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput
+	ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutputWithContext(context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs struct {
+	// The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+	Id pulumi.StringInput `pulumi:"id"`
+	// This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
+	IsIncludeSubtree pulumi.BoolInput `pulumi:"isIncludeSubtree"`
+}
+
+func (GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaIncludeCompartment)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs) ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput {
+	return i.ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs) ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput)
+}
+
+// GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayInput is an input type that accepts GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArray and GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayInput` via:
+//
+//	GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArray{ GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs{...} }
+type GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput
+	ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutputWithContext(context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArray []GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentInput
+
+func (GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupMatchingCriteriaIncludeCompartment)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArray) ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput {
+	return i.ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArray) ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaIncludeCompartment)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput) ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput) ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput {
+	return o
+}
+
+// The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteriaIncludeCompartment) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput) IsIncludeSubtree() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteriaIncludeCompartment) bool { return v.IsIncludeSubtree }).(pulumi.BoolOutput)
+}
+
+type GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupMatchingCriteriaIncludeCompartment)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput) ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput() GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput) ToGetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseGroupMatchingCriteriaIncludeCompartment {
+		return vs[0].([]GetTargetDatabaseGroupMatchingCriteriaIncludeCompartment)[vs[1].(int)]
+	}).(GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput)
+}
+
+type GetTargetDatabaseGroupsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetDatabaseGroupsFilterInput is an input type that accepts GetTargetDatabaseGroupsFilterArgs and GetTargetDatabaseGroupsFilterOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsFilterInput` via:
+//
+//	GetTargetDatabaseGroupsFilterArgs{...}
+type GetTargetDatabaseGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsFilterOutput() GetTargetDatabaseGroupsFilterOutput
+	ToGetTargetDatabaseGroupsFilterOutputWithContext(context.Context) GetTargetDatabaseGroupsFilterOutput
+}
+
+type GetTargetDatabaseGroupsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetDatabaseGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsFilterArgs) ToGetTargetDatabaseGroupsFilterOutput() GetTargetDatabaseGroupsFilterOutput {
+	return i.ToGetTargetDatabaseGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsFilterArgs) ToGetTargetDatabaseGroupsFilterOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsFilterOutput)
+}
+
+// GetTargetDatabaseGroupsFilterArrayInput is an input type that accepts GetTargetDatabaseGroupsFilterArray and GetTargetDatabaseGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsFilterArrayInput` via:
+//
+//	GetTargetDatabaseGroupsFilterArray{ GetTargetDatabaseGroupsFilterArgs{...} }
+type GetTargetDatabaseGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsFilterArrayOutput() GetTargetDatabaseGroupsFilterArrayOutput
+	ToGetTargetDatabaseGroupsFilterArrayOutputWithContext(context.Context) GetTargetDatabaseGroupsFilterArrayOutput
+}
+
+type GetTargetDatabaseGroupsFilterArray []GetTargetDatabaseGroupsFilterInput
+
+func (GetTargetDatabaseGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsFilterArray) ToGetTargetDatabaseGroupsFilterArrayOutput() GetTargetDatabaseGroupsFilterArrayOutput {
+	return i.ToGetTargetDatabaseGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsFilterArray) ToGetTargetDatabaseGroupsFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsFilterArrayOutput)
+}
+
+type GetTargetDatabaseGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsFilterOutput) ToGetTargetDatabaseGroupsFilterOutput() GetTargetDatabaseGroupsFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsFilterOutput) ToGetTargetDatabaseGroupsFilterOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabaseGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetDatabaseGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabaseGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsFilterArrayOutput) ToGetTargetDatabaseGroupsFilterArrayOutput() GetTargetDatabaseGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsFilterArrayOutput) ToGetTargetDatabaseGroupsFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseGroupsFilter {
+		return vs[0].([]GetTargetDatabaseGroupsFilter)[vs[1].(int)]
+	}).(GetTargetDatabaseGroupsFilterOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollection struct {
+	Items []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem `pulumi:"items"`
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArgs and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArgs{...}
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArgs struct {
+	Items GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollection)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput)
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArray and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArray{ GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArgs{...} }
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArray []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionInput
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollection)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollection)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput) Items() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollection) []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem {
+		return v.Items
+	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollection)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseGroupsTargetDatabaseGroupCollection {
+		return vs[0].([]GetTargetDatabaseGroupsTargetDatabaseGroupCollection)[vs[1].(int)]
+	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of the target database group.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+	Id string `pulumi:"id"`
+	// Details for the lifecycle status of the target database group.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Criteria to either include or exclude target databases from the target database group. These criteria can be based on compartments or tags or a list of target databases. See examples below for more details. Include: Target databases will be added to the target database group if they match at least one of the include criteria. Exclude: Target databases that will be excluded from the target database group (even if they match any of the include criteria).
+	MatchingCriterias []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria `pulumi:"matchingCriterias"`
+	// The number of target databases in the specified target database group.
+	MembershipCount int `pulumi:"membershipCount"`
+	// Time when the members of the target database group were last changed, i.e. the list was refreshed, a target database was added or removed.
+	MembershipUpdateTime string `pulumi:"membershipUpdateTime"`
+	// A filter to retrieve resources that exclusively align with the designated lifecycle state.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Time when the target database group was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the target database group was last updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArgs and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArgs{...}
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of the target database group.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details for the lifecycle status of the target database group.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Criteria to either include or exclude target databases from the target database group. These criteria can be based on compartments or tags or a list of target databases. See examples below for more details. Include: Target databases will be added to the target database group if they match at least one of the include criteria. Exclude: Target databases that will be excluded from the target database group (even if they match any of the include criteria).
+	MatchingCriterias GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayInput `pulumi:"matchingCriterias"`
+	// The number of target databases in the specified target database group.
+	MembershipCount pulumi.IntInput `pulumi:"membershipCount"`
+	// Time when the members of the target database group were last changed, i.e. the list was refreshed, a target database was added or removed.
+	MembershipUpdateTime pulumi.StringInput `pulumi:"membershipUpdateTime"`
+	// A filter to retrieve resources that exclusively align with the designated lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Time when the target database group was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the target database group was last updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput)
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArray and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArray{ GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArgs{...} }
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArray []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemInput
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Description of the target database group.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details for the lifecycle status of the target database group.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Criteria to either include or exclude target databases from the target database group. These criteria can be based on compartments or tags or a list of target databases. See examples below for more details. Include: Target databases will be added to the target database group if they match at least one of the include criteria. Exclude: Target databases that will be excluded from the target database group (even if they match any of the include criteria).
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) MatchingCriterias() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria {
+		return v.MatchingCriterias
+	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput)
+}
+
+// The number of target databases in the specified target database group.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) MembershipCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) int { return v.MembershipCount }).(pulumi.IntOutput)
+}
+
+// Time when the members of the target database group were last changed, i.e. the list was refreshed, a target database was added or removed.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) MembershipUpdateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) string { return v.MembershipUpdateTime }).(pulumi.StringOutput)
+}
+
+// A filter to retrieve resources that exclusively align with the designated lifecycle state.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Time when the target database group was created.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Time when the target database group was last updated.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem {
+		return vs[0].([]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItem)[vs[1].(int)]
+	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria struct {
+	// Criteria to exclude certain target databases from the target database group.
+	Excludes []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude `pulumi:"excludes"`
+	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+	Includes []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude `pulumi:"includes"`
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArgs and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArgs{...}
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArgs struct {
+	// Criteria to exclude certain target databases from the target database group.
+	Excludes GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayInput `pulumi:"excludes"`
+	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+	Includes GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayInput `pulumi:"includes"`
+}
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput)
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArray and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArray{ GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArgs{...} }
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArray []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInput
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput {
+	return o
+}
+
+// Criteria to exclude certain target databases from the target database group.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput) Excludes() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria) []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude {
+		return v.Excludes
+	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput)
+}
+
+// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput) Includes() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria) []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude {
+		return v.Includes
+	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria {
+		return vs[0].([]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria)[vs[1].(int)]
+	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude struct {
+	// The list of target database OCIDs to be included in the target database group.
+	TargetDatabaseIds []string `pulumi:"targetDatabaseIds"`
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArgs and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArgs{...}
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArgs struct {
+	// The list of target database OCIDs to be included in the target database group.
+	TargetDatabaseIds pulumi.StringArrayInput `pulumi:"targetDatabaseIds"`
+}
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput)
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArray and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArray{ GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArgs{...} }
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArray []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeInput
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput {
+	return o
+}
+
+// The list of target database OCIDs to be included in the target database group.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput) TargetDatabaseIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude) []string {
+		return v.TargetDatabaseIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude {
+		return vs[0].([]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude)[vs[1].(int)]
+	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude struct {
+	// List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
+	Compartments []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment `pulumi:"compartments"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The list of target database OCIDs to be included in the target database group.
+	TargetDatabaseIds []string `pulumi:"targetDatabaseIds"`
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArgs and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArgs{...}
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArgs struct {
+	// List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
+	Compartments GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayInput `pulumi:"compartments"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The list of target database OCIDs to be included in the target database group.
+	TargetDatabaseIds pulumi.StringArrayInput `pulumi:"targetDatabaseIds"`
+}
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput)
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArray and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArray{ GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArgs{...} }
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArray []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeInput
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput {
+	return o
+}
+
+// List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput) Compartments() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude) []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment {
+		return v.Compartments
+	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The list of target database OCIDs to be included in the target database group.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput) TargetDatabaseIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude) []string {
+		return v.TargetDatabaseIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude {
+		return vs[0].([]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude)[vs[1].(int)]
+	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment struct {
+	// The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+	Id string `pulumi:"id"`
+	// This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
+	IsIncludeSubtree bool `pulumi:"isIncludeSubtree"`
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArgs and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArgs{...}
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArgs struct {
+	// The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+	Id pulumi.StringInput `pulumi:"id"`
+	// This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
+	IsIncludeSubtree pulumi.BoolInput `pulumi:"isIncludeSubtree"`
+}
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArgs) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput)
+}
+
+// GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayInput is an input type that accepts GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArray and GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayInput` via:
+//
+//	GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArray{ GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArgs{...} }
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput
+	ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutputWithContext(context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArray []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentInput
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput {
+	return i.ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArray) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput {
+	return o
+}
+
+// The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput) IsIncludeSubtree() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment) bool {
+		return v.IsIncludeSubtree
+	}).(pulumi.BoolOutput)
+}
+
+type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput) ToGetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutputWithContext(ctx context.Context) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment {
+		return vs[0].([]GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment)[vs[1].(int)]
+	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseType struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails []GetTargetDatabasePeerTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName string `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description string `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName string `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key int `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role string `pulumi:"role"`
+	// The current state of the target database in Data Safe.
+	State string `pulumi:"state"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs []GetTargetDatabasePeerTargetDatabaseTlsConfig `pulumi:"tlsConfigs"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseTypeInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseTypeArgs and GetTargetDatabasePeerTargetDatabaseTypeOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseTypeInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseTypeArgs{...}
+type GetTargetDatabasePeerTargetDatabaseTypeInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseTypeOutput() GetTargetDatabasePeerTargetDatabaseTypeOutput
+	ToGetTargetDatabasePeerTargetDatabaseTypeOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseTypeOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseTypeArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName pulumi.StringInput `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key pulumi.IntInput `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The current state of the target database in Data Safe.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs GetTargetDatabasePeerTargetDatabaseTlsConfigArrayInput `pulumi:"tlsConfigs"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTypeArgs) ToGetTargetDatabasePeerTargetDatabaseTypeOutput() GetTargetDatabasePeerTargetDatabaseTypeOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseTypeOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTypeArgs) ToGetTargetDatabasePeerTargetDatabaseTypeOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseTypeOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseTypeArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseTypeArray and GetTargetDatabasePeerTargetDatabaseTypeArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseTypeArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseTypeArray{ GetTargetDatabasePeerTargetDatabaseTypeArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutput() GetTargetDatabasePeerTargetDatabaseTypeArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseTypeArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseTypeArray []GetTargetDatabasePeerTargetDatabaseTypeInput
+
+func (GetTargetDatabasePeerTargetDatabaseTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTypeArray) ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutput() GetTargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTypeArray) ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseTypeArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseTypeOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) ToGetTargetDatabasePeerTargetDatabaseTypeOutput() GetTargetDatabasePeerTargetDatabaseTypeOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) ToGetTargetDatabasePeerTargetDatabaseTypeOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTypeOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) DatabaseDetails() GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) []GetTargetDatabasePeerTargetDatabaseDatabaseDetail {
+		return v.DatabaseDetails
+	}).(GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+// Unique name of the database associated to the peer target database.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) DatabaseUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.DatabaseUniqueName }).(pulumi.StringOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) DataguardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.DataguardAssociationId }).(pulumi.StringOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The display name of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The secondary key assigned for the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) Key() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) int { return v.Key }).(pulumi.IntOutput)
+}
+
+// Details about the current state of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Role of the database associated to the peer target database.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The current state of the target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The details required to establish a TLS enabled connection.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) TlsConfigs() GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) []GetTargetDatabasePeerTargetDatabaseTlsConfig {
+		return v.TlsConfigs
+	}).(GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTypeArrayOutput) ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutput() GetTargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTypeArrayOutput) ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTypeArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseType {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseType)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseTypeOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetail struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseDatabaseDetailInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs and GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDatabaseDetailInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{...}
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput
+	ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId pulumi.StringInput `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray and GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray{ GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray []GetTargetDatabasePeerTargetDatabaseDatabaseDetailInput
+
+func (GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
+}
+
+// The database type.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// The infrastructure type the database is running on.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.InfrastructureType }).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) int { return v.ListenerPort }).(pulumi.IntOutput)
+}
+
+// The OCID of the pluggable database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) PluggableDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.PluggableDatabaseId }).(pulumi.StringOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.VmClusterId }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseDatabaseDetail {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetail struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails []GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail `pulumi:"databaseDetails"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description string `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName string `pulumi:"displayName"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs []GetTargetDatabasePeerTargetDatabaseDetailTlsConfig `pulumi:"tlsConfigs"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailArgs and GetTargetDatabasePeerTargetDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailArgs{...}
+type GetTargetDatabasePeerTargetDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput `pulumi:"databaseDetails"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput `pulumi:"tlsConfigs"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailArray and GetTargetDatabasePeerTargetDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailArray{ GetTargetDatabasePeerTargetDatabaseDetailArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailArray []GetTargetDatabasePeerTargetDatabaseDetailInput
+
+func (GetTargetDatabasePeerTargetDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) DatabaseDetails() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetail) []GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail {
+		return v.DatabaseDetails
+	}).(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) DataguardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetail) string { return v.DataguardAssociationId }).(pulumi.StringOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetail) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The display name of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The details required to establish a TLS enabled connection.
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) TlsConfigs() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetail) []GetTargetDatabasePeerTargetDatabaseDetailTlsConfig {
+		return v.TlsConfigs
+	}).(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseDetail {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseDetailOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs and GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{...}
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId pulumi.StringInput `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray and GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray{ GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray []GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput
+
+func (GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
+}
+
+// The database type.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// The infrastructure type the database is running on.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.InfrastructureType }).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) int { return v.ListenerPort }).(pulumi.IntOutput)
+}
+
+// The OCID of the pluggable database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) PluggableDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.PluggableDatabaseId }).(pulumi.StringOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.VmClusterId }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailTlsConfigInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs and GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailTlsConfigInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{...}
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray and GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray{ GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray []GetTargetDatabasePeerTargetDatabaseDetailTlsConfigInput
+
+func (GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.CertificateStoreType }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.KeyStoreContent }).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.StorePassword }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.TrustStoreContent }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseDetailTlsConfig {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseDetailTlsConfig)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseTlsConfigInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseTlsConfigArgs and GetTargetDatabasePeerTargetDatabaseTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseTlsConfigInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseTlsConfigArgs{...}
+type GetTargetDatabasePeerTargetDatabaseTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigOutput
+	ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseTlsConfigOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseTlsConfigArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseTlsConfigArray and GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseTlsConfigArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseTlsConfigArray{ GetTargetDatabasePeerTargetDatabaseTlsConfigArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseTlsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseTlsConfigArray []GetTargetDatabasePeerTargetDatabaseTlsConfigInput
+
+func (GetTargetDatabasePeerTargetDatabaseTlsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTlsConfigArray) ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTlsConfigArray) ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.CertificateStoreType }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.KeyStoreContent }).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.StorePassword }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.TrustStoreContent }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseTlsConfig {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseTlsConfig)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseTlsConfigOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetDatabasePeerTargetDatabasesFilterInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesFilterArgs and GetTargetDatabasePeerTargetDatabasesFilterOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesFilterInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesFilterArgs{...}
+type GetTargetDatabasePeerTargetDatabasesFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesFilterOutput() GetTargetDatabasePeerTargetDatabasesFilterOutput
+	ToGetTargetDatabasePeerTargetDatabasesFilterOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesFilterOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetDatabasePeerTargetDatabasesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesFilterArgs) ToGetTargetDatabasePeerTargetDatabasesFilterOutput() GetTargetDatabasePeerTargetDatabasesFilterOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesFilterArgs) ToGetTargetDatabasePeerTargetDatabasesFilterOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesFilterOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabasesFilterArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesFilterArray and GetTargetDatabasePeerTargetDatabasesFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesFilterArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesFilterArray{ GetTargetDatabasePeerTargetDatabasesFilterArgs{...} }
+type GetTargetDatabasePeerTargetDatabasesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutput() GetTargetDatabasePeerTargetDatabasesFilterArrayOutput
+	ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesFilterArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesFilterArray []GetTargetDatabasePeerTargetDatabasesFilterInput
+
+func (GetTargetDatabasePeerTargetDatabasesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesFilterArray) ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutput() GetTargetDatabasePeerTargetDatabasesFilterArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesFilterArray) ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesFilterArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterOutput) ToGetTargetDatabasePeerTargetDatabasesFilterOutput() GetTargetDatabasePeerTargetDatabasesFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterOutput) ToGetTargetDatabasePeerTargetDatabasesFilterOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterArrayOutput) ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutput() GetTargetDatabasePeerTargetDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterArrayOutput) ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabasesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabasesFilter {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabasesFilter)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabasesFilterOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection struct {
+	CompartmentId string                                                                 `pulumi:"compartmentId"`
+	Items         []GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem `pulumi:"items"`
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs{...}
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs struct {
+	CompartmentId pulumi.StringInput                                                             `pulumi:"compartmentId"`
+	Items         GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray{ GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs{...} }
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray []GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionInput
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput) Items() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection) []GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem {
+		return v.Items
+	}).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName string `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description string `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName string `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key int `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role string `pulumi:"role"`
+	// The current state of the peer target database in Data Safe.
+	State string `pulumi:"state"`
+	// The OCID of the Data Safe target database.
+	TargetDatabaseId string `pulumi:"targetDatabaseId"`
+	// The date and time of the peer target database registration in Data Safe.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfig GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig `pulumi:"tlsConfig"`
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs{...}
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsInput `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName pulumi.StringInput `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key pulumi.IntInput `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The current state of the peer target database in Data Safe.
+	State pulumi.StringInput `pulumi:"state"`
+	// The OCID of the Data Safe target database.
+	TargetDatabaseId pulumi.StringInput `pulumi:"targetDatabaseId"`
+	// The date and time of the peer target database registration in Data Safe.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfig GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigInput `pulumi:"tlsConfig"`
+}
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray{ GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs{...} }
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray []GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemInput
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) DatabaseDetails() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails {
+		return v.DatabaseDetails
+	}).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput)
+}
+
+// Unique name of the database associated to the peer target database.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) DatabaseUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.DatabaseUniqueName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) DataguardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.DataguardAssociationId
+	}).(pulumi.StringOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The display name of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The secondary key assigned for the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) Key() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) int { return v.Key }).(pulumi.IntOutput)
+}
+
+// Details about the current state of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Role of the database associated to the peer target database.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The current state of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID of the Data Safe target database.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) TargetDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.TargetDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of the peer target database registration in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The details required to establish a TLS enabled connection.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) TlsConfig() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig {
+		return v.TlsConfig
+	}).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs{...}
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId pulumi.StringInput `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.AutonomousDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// The database type.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.DatabaseType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.DbSystemId
+	}).(pulumi.StringOutput)
+}
+
+// The infrastructure type the database is running on.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.InfrastructureType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.InstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) []string {
+		return v.IpAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) int {
+		return v.ListenerPort
+	}).(pulumi.IntOutput)
+}
+
+// The OCID of the pluggable database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) PluggableDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.PluggableDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.VmClusterId
+	}).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs{...}
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig) string {
+		return v.CertificateStoreType
+	}).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig) string {
+		return v.KeyStoreContent
+	}).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig) string {
+		return v.StorePassword
+	}).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig) string {
+		return v.TrustStoreContent
+	}).(pulumi.StringOutput)
+}
+
+type GetTargetDatabaseRoleFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetDatabaseRoleFilterInput is an input type that accepts GetTargetDatabaseRoleFilterArgs and GetTargetDatabaseRoleFilterOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseRoleFilterInput` via:
+//
+//	GetTargetDatabaseRoleFilterArgs{...}
+type GetTargetDatabaseRoleFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseRoleFilterOutput() GetTargetDatabaseRoleFilterOutput
+	ToGetTargetDatabaseRoleFilterOutputWithContext(context.Context) GetTargetDatabaseRoleFilterOutput
+}
+
+type GetTargetDatabaseRoleFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetDatabaseRoleFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseRoleFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseRoleFilterArgs) ToGetTargetDatabaseRoleFilterOutput() GetTargetDatabaseRoleFilterOutput {
+	return i.ToGetTargetDatabaseRoleFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseRoleFilterArgs) ToGetTargetDatabaseRoleFilterOutputWithContext(ctx context.Context) GetTargetDatabaseRoleFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRoleFilterOutput)
+}
+
+// GetTargetDatabaseRoleFilterArrayInput is an input type that accepts GetTargetDatabaseRoleFilterArray and GetTargetDatabaseRoleFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseRoleFilterArrayInput` via:
+//
+//	GetTargetDatabaseRoleFilterArray{ GetTargetDatabaseRoleFilterArgs{...} }
+type GetTargetDatabaseRoleFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseRoleFilterArrayOutput() GetTargetDatabaseRoleFilterArrayOutput
+	ToGetTargetDatabaseRoleFilterArrayOutputWithContext(context.Context) GetTargetDatabaseRoleFilterArrayOutput
+}
+
+type GetTargetDatabaseRoleFilterArray []GetTargetDatabaseRoleFilterInput
+
+func (GetTargetDatabaseRoleFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseRoleFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseRoleFilterArray) ToGetTargetDatabaseRoleFilterArrayOutput() GetTargetDatabaseRoleFilterArrayOutput {
+	return i.ToGetTargetDatabaseRoleFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseRoleFilterArray) ToGetTargetDatabaseRoleFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabaseRoleFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRoleFilterArrayOutput)
+}
+
+type GetTargetDatabaseRoleFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseRoleFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseRoleFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseRoleFilterOutput) ToGetTargetDatabaseRoleFilterOutput() GetTargetDatabaseRoleFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRoleFilterOutput) ToGetTargetDatabaseRoleFilterOutputWithContext(ctx context.Context) GetTargetDatabaseRoleFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRoleFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRoleFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabaseRoleFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRoleFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetDatabaseRoleFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRoleFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabaseRoleFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseRoleFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseRoleFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseRoleFilterArrayOutput) ToGetTargetDatabaseRoleFilterArrayOutput() GetTargetDatabaseRoleFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRoleFilterArrayOutput) ToGetTargetDatabaseRoleFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabaseRoleFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRoleFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseRoleFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseRoleFilter {
+		return vs[0].([]GetTargetDatabaseRoleFilter)[vs[1].(int)]
+	}).(GetTargetDatabaseRoleFilterOutput)
+}
+
+type GetTargetDatabaseRoleRole struct {
+	AuthenticationType string `pulumi:"authenticationType"`
+	IsCommon           bool   `pulumi:"isCommon"`
+	IsImplicit         bool   `pulumi:"isImplicit"`
+	IsInherited        bool   `pulumi:"isInherited"`
+	IsOracleMaintained bool   `pulumi:"isOracleMaintained"`
+	IsPasswordRequired bool   `pulumi:"isPasswordRequired"`
+	RoleName           string `pulumi:"roleName"`
+}
+
+// GetTargetDatabaseRoleRoleInput is an input type that accepts GetTargetDatabaseRoleRoleArgs and GetTargetDatabaseRoleRoleOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseRoleRoleInput` via:
+//
+//	GetTargetDatabaseRoleRoleArgs{...}
+type GetTargetDatabaseRoleRoleInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseRoleRoleOutput() GetTargetDatabaseRoleRoleOutput
+	ToGetTargetDatabaseRoleRoleOutputWithContext(context.Context) GetTargetDatabaseRoleRoleOutput
+}
+
+type GetTargetDatabaseRoleRoleArgs struct {
+	AuthenticationType pulumi.StringInput `pulumi:"authenticationType"`
+	IsCommon           pulumi.BoolInput   `pulumi:"isCommon"`
+	IsImplicit         pulumi.BoolInput   `pulumi:"isImplicit"`
+	IsInherited        pulumi.BoolInput   `pulumi:"isInherited"`
+	IsOracleMaintained pulumi.BoolInput   `pulumi:"isOracleMaintained"`
+	IsPasswordRequired pulumi.BoolInput   `pulumi:"isPasswordRequired"`
+	RoleName           pulumi.StringInput `pulumi:"roleName"`
+}
+
+func (GetTargetDatabaseRoleRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseRoleRole)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseRoleRoleArgs) ToGetTargetDatabaseRoleRoleOutput() GetTargetDatabaseRoleRoleOutput {
+	return i.ToGetTargetDatabaseRoleRoleOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseRoleRoleArgs) ToGetTargetDatabaseRoleRoleOutputWithContext(ctx context.Context) GetTargetDatabaseRoleRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRoleRoleOutput)
+}
+
+// GetTargetDatabaseRoleRoleArrayInput is an input type that accepts GetTargetDatabaseRoleRoleArray and GetTargetDatabaseRoleRoleArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseRoleRoleArrayInput` via:
+//
+//	GetTargetDatabaseRoleRoleArray{ GetTargetDatabaseRoleRoleArgs{...} }
+type GetTargetDatabaseRoleRoleArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseRoleRoleArrayOutput() GetTargetDatabaseRoleRoleArrayOutput
+	ToGetTargetDatabaseRoleRoleArrayOutputWithContext(context.Context) GetTargetDatabaseRoleRoleArrayOutput
+}
+
+type GetTargetDatabaseRoleRoleArray []GetTargetDatabaseRoleRoleInput
+
+func (GetTargetDatabaseRoleRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseRoleRole)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseRoleRoleArray) ToGetTargetDatabaseRoleRoleArrayOutput() GetTargetDatabaseRoleRoleArrayOutput {
+	return i.ToGetTargetDatabaseRoleRoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseRoleRoleArray) ToGetTargetDatabaseRoleRoleArrayOutputWithContext(ctx context.Context) GetTargetDatabaseRoleRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRoleRoleArrayOutput)
+}
+
+type GetTargetDatabaseRoleRoleOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseRoleRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseRoleRole)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseRoleRoleOutput) ToGetTargetDatabaseRoleRoleOutput() GetTargetDatabaseRoleRoleOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRoleRoleOutput) ToGetTargetDatabaseRoleRoleOutputWithContext(ctx context.Context) GetTargetDatabaseRoleRoleOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRoleRoleOutput) AuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRoleRole) string { return v.AuthenticationType }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabaseRoleRoleOutput) IsCommon() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRoleRole) bool { return v.IsCommon }).(pulumi.BoolOutput)
+}
+
+func (o GetTargetDatabaseRoleRoleOutput) IsImplicit() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRoleRole) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+}
+
+func (o GetTargetDatabaseRoleRoleOutput) IsInherited() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRoleRole) bool { return v.IsInherited }).(pulumi.BoolOutput)
+}
+
+func (o GetTargetDatabaseRoleRoleOutput) IsOracleMaintained() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRoleRole) bool { return v.IsOracleMaintained }).(pulumi.BoolOutput)
+}
+
+func (o GetTargetDatabaseRoleRoleOutput) IsPasswordRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRoleRole) bool { return v.IsPasswordRequired }).(pulumi.BoolOutput)
+}
+
+func (o GetTargetDatabaseRoleRoleOutput) RoleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRoleRole) string { return v.RoleName }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabaseRoleRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseRoleRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseRoleRole)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseRoleRoleArrayOutput) ToGetTargetDatabaseRoleRoleArrayOutput() GetTargetDatabaseRoleRoleArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRoleRoleArrayOutput) ToGetTargetDatabaseRoleRoleArrayOutputWithContext(ctx context.Context) GetTargetDatabaseRoleRoleArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRoleRoleArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseRoleRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseRoleRole {
+		return vs[0].([]GetTargetDatabaseRoleRole)[vs[1].(int)]
+	}).(GetTargetDatabaseRoleRoleOutput)
+}
+
+type GetTargetDatabaseRolesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetDatabaseRolesFilterInput is an input type that accepts GetTargetDatabaseRolesFilterArgs and GetTargetDatabaseRolesFilterOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseRolesFilterInput` via:
+//
+//	GetTargetDatabaseRolesFilterArgs{...}
+type GetTargetDatabaseRolesFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseRolesFilterOutput() GetTargetDatabaseRolesFilterOutput
+	ToGetTargetDatabaseRolesFilterOutputWithContext(context.Context) GetTargetDatabaseRolesFilterOutput
+}
+
+type GetTargetDatabaseRolesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetDatabaseRolesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseRolesFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseRolesFilterArgs) ToGetTargetDatabaseRolesFilterOutput() GetTargetDatabaseRolesFilterOutput {
+	return i.ToGetTargetDatabaseRolesFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseRolesFilterArgs) ToGetTargetDatabaseRolesFilterOutputWithContext(ctx context.Context) GetTargetDatabaseRolesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRolesFilterOutput)
+}
+
+// GetTargetDatabaseRolesFilterArrayInput is an input type that accepts GetTargetDatabaseRolesFilterArray and GetTargetDatabaseRolesFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseRolesFilterArrayInput` via:
+//
+//	GetTargetDatabaseRolesFilterArray{ GetTargetDatabaseRolesFilterArgs{...} }
+type GetTargetDatabaseRolesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseRolesFilterArrayOutput() GetTargetDatabaseRolesFilterArrayOutput
+	ToGetTargetDatabaseRolesFilterArrayOutputWithContext(context.Context) GetTargetDatabaseRolesFilterArrayOutput
+}
+
+type GetTargetDatabaseRolesFilterArray []GetTargetDatabaseRolesFilterInput
+
+func (GetTargetDatabaseRolesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseRolesFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseRolesFilterArray) ToGetTargetDatabaseRolesFilterArrayOutput() GetTargetDatabaseRolesFilterArrayOutput {
+	return i.ToGetTargetDatabaseRolesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseRolesFilterArray) ToGetTargetDatabaseRolesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabaseRolesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRolesFilterArrayOutput)
+}
+
+type GetTargetDatabaseRolesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseRolesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseRolesFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseRolesFilterOutput) ToGetTargetDatabaseRolesFilterOutput() GetTargetDatabaseRolesFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRolesFilterOutput) ToGetTargetDatabaseRolesFilterOutputWithContext(ctx context.Context) GetTargetDatabaseRolesFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRolesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRolesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabaseRolesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRolesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetDatabaseRolesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRolesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabaseRolesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseRolesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseRolesFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseRolesFilterArrayOutput) ToGetTargetDatabaseRolesFilterArrayOutput() GetTargetDatabaseRolesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRolesFilterArrayOutput) ToGetTargetDatabaseRolesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabaseRolesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRolesFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseRolesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseRolesFilter {
+		return vs[0].([]GetTargetDatabaseRolesFilter)[vs[1].(int)]
+	}).(GetTargetDatabaseRolesFilterOutput)
+}
+
+type GetTargetDatabaseRolesRole struct {
+	// A filter to return roles based on authentication type.
+	AuthenticationType string `pulumi:"authenticationType"`
+	// Is the role common.
+	IsCommon bool `pulumi:"isCommon"`
+	// Is the role implicit.
+	IsImplicit bool `pulumi:"isImplicit"`
+	// Is the role inherited.
+	IsInherited bool `pulumi:"isInherited"`
+	// A filter to return roles based on whether they are maintained by oracle or not.
+	IsOracleMaintained bool `pulumi:"isOracleMaintained"`
+	// Is password required.
+	IsPasswordRequired bool `pulumi:"isPasswordRequired"`
+	// A filter to return only a specific role based on role name.
+	RoleName string `pulumi:"roleName"`
+}
+
+// GetTargetDatabaseRolesRoleInput is an input type that accepts GetTargetDatabaseRolesRoleArgs and GetTargetDatabaseRolesRoleOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseRolesRoleInput` via:
+//
+//	GetTargetDatabaseRolesRoleArgs{...}
+type GetTargetDatabaseRolesRoleInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseRolesRoleOutput() GetTargetDatabaseRolesRoleOutput
+	ToGetTargetDatabaseRolesRoleOutputWithContext(context.Context) GetTargetDatabaseRolesRoleOutput
+}
+
+type GetTargetDatabaseRolesRoleArgs struct {
+	// A filter to return roles based on authentication type.
+	AuthenticationType pulumi.StringInput `pulumi:"authenticationType"`
+	// Is the role common.
+	IsCommon pulumi.BoolInput `pulumi:"isCommon"`
+	// Is the role implicit.
+	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
+	// Is the role inherited.
+	IsInherited pulumi.BoolInput `pulumi:"isInherited"`
+	// A filter to return roles based on whether they are maintained by oracle or not.
+	IsOracleMaintained pulumi.BoolInput `pulumi:"isOracleMaintained"`
+	// Is password required.
+	IsPasswordRequired pulumi.BoolInput `pulumi:"isPasswordRequired"`
+	// A filter to return only a specific role based on role name.
+	RoleName pulumi.StringInput `pulumi:"roleName"`
+}
+
+func (GetTargetDatabaseRolesRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseRolesRole)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseRolesRoleArgs) ToGetTargetDatabaseRolesRoleOutput() GetTargetDatabaseRolesRoleOutput {
+	return i.ToGetTargetDatabaseRolesRoleOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseRolesRoleArgs) ToGetTargetDatabaseRolesRoleOutputWithContext(ctx context.Context) GetTargetDatabaseRolesRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRolesRoleOutput)
+}
+
+// GetTargetDatabaseRolesRoleArrayInput is an input type that accepts GetTargetDatabaseRolesRoleArray and GetTargetDatabaseRolesRoleArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseRolesRoleArrayInput` via:
+//
+//	GetTargetDatabaseRolesRoleArray{ GetTargetDatabaseRolesRoleArgs{...} }
+type GetTargetDatabaseRolesRoleArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseRolesRoleArrayOutput() GetTargetDatabaseRolesRoleArrayOutput
+	ToGetTargetDatabaseRolesRoleArrayOutputWithContext(context.Context) GetTargetDatabaseRolesRoleArrayOutput
+}
+
+type GetTargetDatabaseRolesRoleArray []GetTargetDatabaseRolesRoleInput
+
+func (GetTargetDatabaseRolesRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseRolesRole)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseRolesRoleArray) ToGetTargetDatabaseRolesRoleArrayOutput() GetTargetDatabaseRolesRoleArrayOutput {
+	return i.ToGetTargetDatabaseRolesRoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseRolesRoleArray) ToGetTargetDatabaseRolesRoleArrayOutputWithContext(ctx context.Context) GetTargetDatabaseRolesRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRolesRoleArrayOutput)
+}
+
+type GetTargetDatabaseRolesRoleOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseRolesRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseRolesRole)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseRolesRoleOutput) ToGetTargetDatabaseRolesRoleOutput() GetTargetDatabaseRolesRoleOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRolesRoleOutput) ToGetTargetDatabaseRolesRoleOutputWithContext(ctx context.Context) GetTargetDatabaseRolesRoleOutput {
+	return o
+}
+
+// A filter to return roles based on authentication type.
+func (o GetTargetDatabaseRolesRoleOutput) AuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRolesRole) string { return v.AuthenticationType }).(pulumi.StringOutput)
+}
+
+// Is the role common.
+func (o GetTargetDatabaseRolesRoleOutput) IsCommon() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRolesRole) bool { return v.IsCommon }).(pulumi.BoolOutput)
+}
+
+// Is the role implicit.
+func (o GetTargetDatabaseRolesRoleOutput) IsImplicit() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRolesRole) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+}
+
+// Is the role inherited.
+func (o GetTargetDatabaseRolesRoleOutput) IsInherited() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRolesRole) bool { return v.IsInherited }).(pulumi.BoolOutput)
+}
+
+// A filter to return roles based on whether they are maintained by oracle or not.
+func (o GetTargetDatabaseRolesRoleOutput) IsOracleMaintained() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRolesRole) bool { return v.IsOracleMaintained }).(pulumi.BoolOutput)
+}
+
+// Is password required.
+func (o GetTargetDatabaseRolesRoleOutput) IsPasswordRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRolesRole) bool { return v.IsPasswordRequired }).(pulumi.BoolOutput)
+}
+
+// A filter to return only a specific role based on role name.
+func (o GetTargetDatabaseRolesRoleOutput) RoleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRolesRole) string { return v.RoleName }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabaseRolesRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseRolesRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseRolesRole)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseRolesRoleArrayOutput) ToGetTargetDatabaseRolesRoleArrayOutput() GetTargetDatabaseRolesRoleArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRolesRoleArrayOutput) ToGetTargetDatabaseRolesRoleArrayOutputWithContext(ctx context.Context) GetTargetDatabaseRolesRoleArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseRolesRoleArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseRolesRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseRolesRole {
+		return vs[0].([]GetTargetDatabaseRolesRole)[vs[1].(int)]
+	}).(GetTargetDatabaseRolesRoleOutput)
+}
+
+type GetTargetDatabaseTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabaseTlsConfigInput is an input type that accepts GetTargetDatabaseTlsConfigArgs and GetTargetDatabaseTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseTlsConfigInput` via:
+//
+//	GetTargetDatabaseTlsConfigArgs{...}
+type GetTargetDatabaseTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseTlsConfigOutput() GetTargetDatabaseTlsConfigOutput
+	ToGetTargetDatabaseTlsConfigOutputWithContext(context.Context) GetTargetDatabaseTlsConfigOutput
+}
+
+type GetTargetDatabaseTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabaseTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseTlsConfigArgs) ToGetTargetDatabaseTlsConfigOutput() GetTargetDatabaseTlsConfigOutput {
+	return i.ToGetTargetDatabaseTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseTlsConfigArgs) ToGetTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabaseTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseTlsConfigOutput)
+}
+
+// GetTargetDatabaseTlsConfigArrayInput is an input type that accepts GetTargetDatabaseTlsConfigArray and GetTargetDatabaseTlsConfigArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabaseTlsConfigArrayInput` via:
+//
+//	GetTargetDatabaseTlsConfigArray{ GetTargetDatabaseTlsConfigArgs{...} }
+type GetTargetDatabaseTlsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabaseTlsConfigArrayOutput() GetTargetDatabaseTlsConfigArrayOutput
+	ToGetTargetDatabaseTlsConfigArrayOutputWithContext(context.Context) GetTargetDatabaseTlsConfigArrayOutput
+}
+
+type GetTargetDatabaseTlsConfigArray []GetTargetDatabaseTlsConfigInput
+
+func (GetTargetDatabaseTlsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabaseTlsConfigArray) ToGetTargetDatabaseTlsConfigArrayOutput() GetTargetDatabaseTlsConfigArrayOutput {
+	return i.ToGetTargetDatabaseTlsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabaseTlsConfigArray) ToGetTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabaseTlsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseTlsConfigArrayOutput)
+}
+
+type GetTargetDatabaseTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseTlsConfigOutput) ToGetTargetDatabaseTlsConfigOutput() GetTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabaseTlsConfigOutput) ToGetTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabaseTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseTlsConfig) string { return v.CertificateStoreType }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabaseTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseTlsConfig) string { return v.KeyStoreContent }).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabaseTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabaseTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseTlsConfig) string { return v.StorePassword }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabaseTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabaseTlsConfig) string { return v.TrustStoreContent }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabaseTlsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabaseTlsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabaseTlsConfigArrayOutput() GetTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabaseTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseTlsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseTlsConfig {
+		return vs[0].([]GetTargetDatabaseTlsConfig)[vs[1].(int)]
+	}).(GetTargetDatabaseTlsConfigOutput)
+}
+
+type GetTargetDatabasesColumnsColumn struct {
+	// Character length.
+	CharacterLength int `pulumi:"characterLength"`
+	// A filter to return only a specific column based on column name.
+	ColumnName string `pulumi:"columnName"`
+	// Data type of the column.
+	DataType string `pulumi:"dataType"`
+	// Length of the data represented by the column.
+	Length string `pulumi:"length"`
+	// Precision of the column.
+	Precision int `pulumi:"precision"`
+	// Scale of the column.
+	Scale int `pulumi:"scale"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// A filter to return only items related to specific table name.
+	TableName string `pulumi:"tableName"`
+}
+
+// GetTargetDatabasesColumnsColumnInput is an input type that accepts GetTargetDatabasesColumnsColumnArgs and GetTargetDatabasesColumnsColumnOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesColumnsColumnInput` via:
+//
+//	GetTargetDatabasesColumnsColumnArgs{...}
+type GetTargetDatabasesColumnsColumnInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesColumnsColumnOutput() GetTargetDatabasesColumnsColumnOutput
+	ToGetTargetDatabasesColumnsColumnOutputWithContext(context.Context) GetTargetDatabasesColumnsColumnOutput
+}
+
+type GetTargetDatabasesColumnsColumnArgs struct {
+	// Character length.
+	CharacterLength pulumi.IntInput `pulumi:"characterLength"`
+	// A filter to return only a specific column based on column name.
+	ColumnName pulumi.StringInput `pulumi:"columnName"`
+	// Data type of the column.
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// Length of the data represented by the column.
+	Length pulumi.StringInput `pulumi:"length"`
+	// Precision of the column.
+	Precision pulumi.IntInput `pulumi:"precision"`
+	// Scale of the column.
+	Scale pulumi.IntInput `pulumi:"scale"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// A filter to return only items related to specific table name.
+	TableName pulumi.StringInput `pulumi:"tableName"`
+}
+
+func (GetTargetDatabasesColumnsColumnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesColumnsColumn)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesColumnsColumnArgs) ToGetTargetDatabasesColumnsColumnOutput() GetTargetDatabasesColumnsColumnOutput {
+	return i.ToGetTargetDatabasesColumnsColumnOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesColumnsColumnArgs) ToGetTargetDatabasesColumnsColumnOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsColumnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesColumnsColumnOutput)
+}
+
+// GetTargetDatabasesColumnsColumnArrayInput is an input type that accepts GetTargetDatabasesColumnsColumnArray and GetTargetDatabasesColumnsColumnArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesColumnsColumnArrayInput` via:
+//
+//	GetTargetDatabasesColumnsColumnArray{ GetTargetDatabasesColumnsColumnArgs{...} }
+type GetTargetDatabasesColumnsColumnArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesColumnsColumnArrayOutput() GetTargetDatabasesColumnsColumnArrayOutput
+	ToGetTargetDatabasesColumnsColumnArrayOutputWithContext(context.Context) GetTargetDatabasesColumnsColumnArrayOutput
+}
+
+type GetTargetDatabasesColumnsColumnArray []GetTargetDatabasesColumnsColumnInput
+
+func (GetTargetDatabasesColumnsColumnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesColumnsColumn)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesColumnsColumnArray) ToGetTargetDatabasesColumnsColumnArrayOutput() GetTargetDatabasesColumnsColumnArrayOutput {
+	return i.ToGetTargetDatabasesColumnsColumnArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesColumnsColumnArray) ToGetTargetDatabasesColumnsColumnArrayOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsColumnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesColumnsColumnArrayOutput)
+}
+
+type GetTargetDatabasesColumnsColumnOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesColumnsColumnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesColumnsColumn)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesColumnsColumnOutput) ToGetTargetDatabasesColumnsColumnOutput() GetTargetDatabasesColumnsColumnOutput {
+	return o
+}
+
+func (o GetTargetDatabasesColumnsColumnOutput) ToGetTargetDatabasesColumnsColumnOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsColumnOutput {
+	return o
+}
+
+// Character length.
+func (o GetTargetDatabasesColumnsColumnOutput) CharacterLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsColumn) int { return v.CharacterLength }).(pulumi.IntOutput)
+}
+
+// A filter to return only a specific column based on column name.
+func (o GetTargetDatabasesColumnsColumnOutput) ColumnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsColumn) string { return v.ColumnName }).(pulumi.StringOutput)
+}
+
+// Data type of the column.
+func (o GetTargetDatabasesColumnsColumnOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsColumn) string { return v.DataType }).(pulumi.StringOutput)
+}
+
+// Length of the data represented by the column.
+func (o GetTargetDatabasesColumnsColumnOutput) Length() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsColumn) string { return v.Length }).(pulumi.StringOutput)
+}
+
+// Precision of the column.
+func (o GetTargetDatabasesColumnsColumnOutput) Precision() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsColumn) int { return v.Precision }).(pulumi.IntOutput)
+}
+
+// Scale of the column.
+func (o GetTargetDatabasesColumnsColumnOutput) Scale() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsColumn) int { return v.Scale }).(pulumi.IntOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetTargetDatabasesColumnsColumnOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsColumn) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific table name.
+func (o GetTargetDatabasesColumnsColumnOutput) TableName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsColumn) string { return v.TableName }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesColumnsColumnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesColumnsColumnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesColumnsColumn)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesColumnsColumnArrayOutput) ToGetTargetDatabasesColumnsColumnArrayOutput() GetTargetDatabasesColumnsColumnArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesColumnsColumnArrayOutput) ToGetTargetDatabasesColumnsColumnArrayOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsColumnArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesColumnsColumnArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesColumnsColumnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesColumnsColumn {
+		return vs[0].([]GetTargetDatabasesColumnsColumn)[vs[1].(int)]
+	}).(GetTargetDatabasesColumnsColumnOutput)
+}
+
+type GetTargetDatabasesColumnsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetDatabasesColumnsFilterInput is an input type that accepts GetTargetDatabasesColumnsFilterArgs and GetTargetDatabasesColumnsFilterOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesColumnsFilterInput` via:
+//
+//	GetTargetDatabasesColumnsFilterArgs{...}
+type GetTargetDatabasesColumnsFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesColumnsFilterOutput() GetTargetDatabasesColumnsFilterOutput
+	ToGetTargetDatabasesColumnsFilterOutputWithContext(context.Context) GetTargetDatabasesColumnsFilterOutput
+}
+
+type GetTargetDatabasesColumnsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetDatabasesColumnsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesColumnsFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesColumnsFilterArgs) ToGetTargetDatabasesColumnsFilterOutput() GetTargetDatabasesColumnsFilterOutput {
+	return i.ToGetTargetDatabasesColumnsFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesColumnsFilterArgs) ToGetTargetDatabasesColumnsFilterOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesColumnsFilterOutput)
+}
+
+// GetTargetDatabasesColumnsFilterArrayInput is an input type that accepts GetTargetDatabasesColumnsFilterArray and GetTargetDatabasesColumnsFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesColumnsFilterArrayInput` via:
+//
+//	GetTargetDatabasesColumnsFilterArray{ GetTargetDatabasesColumnsFilterArgs{...} }
+type GetTargetDatabasesColumnsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesColumnsFilterArrayOutput() GetTargetDatabasesColumnsFilterArrayOutput
+	ToGetTargetDatabasesColumnsFilterArrayOutputWithContext(context.Context) GetTargetDatabasesColumnsFilterArrayOutput
+}
+
+type GetTargetDatabasesColumnsFilterArray []GetTargetDatabasesColumnsFilterInput
+
+func (GetTargetDatabasesColumnsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesColumnsFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesColumnsFilterArray) ToGetTargetDatabasesColumnsFilterArrayOutput() GetTargetDatabasesColumnsFilterArrayOutput {
+	return i.ToGetTargetDatabasesColumnsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesColumnsFilterArray) ToGetTargetDatabasesColumnsFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesColumnsFilterArrayOutput)
+}
+
+type GetTargetDatabasesColumnsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesColumnsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesColumnsFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesColumnsFilterOutput) ToGetTargetDatabasesColumnsFilterOutput() GetTargetDatabasesColumnsFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasesColumnsFilterOutput) ToGetTargetDatabasesColumnsFilterOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasesColumnsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabasesColumnsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetDatabasesColumnsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabasesColumnsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesColumnsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesColumnsFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesColumnsFilterArrayOutput) ToGetTargetDatabasesColumnsFilterArrayOutput() GetTargetDatabasesColumnsFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesColumnsFilterArrayOutput) ToGetTargetDatabasesColumnsFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesColumnsFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesColumnsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesColumnsFilter {
+		return vs[0].([]GetTargetDatabasesColumnsFilter)[vs[1].(int)]
+	}).(GetTargetDatabasesColumnsFilterOutput)
+}
+
+type GetTargetDatabasesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetDatabasesFilterInput is an input type that accepts GetTargetDatabasesFilterArgs and GetTargetDatabasesFilterOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesFilterInput` via:
+//
+//	GetTargetDatabasesFilterArgs{...}
+type GetTargetDatabasesFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesFilterOutput() GetTargetDatabasesFilterOutput
+	ToGetTargetDatabasesFilterOutputWithContext(context.Context) GetTargetDatabasesFilterOutput
+}
+
+type GetTargetDatabasesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetDatabasesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesFilterArgs) ToGetTargetDatabasesFilterOutput() GetTargetDatabasesFilterOutput {
+	return i.ToGetTargetDatabasesFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesFilterArgs) ToGetTargetDatabasesFilterOutputWithContext(ctx context.Context) GetTargetDatabasesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesFilterOutput)
+}
+
+// GetTargetDatabasesFilterArrayInput is an input type that accepts GetTargetDatabasesFilterArray and GetTargetDatabasesFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesFilterArrayInput` via:
+//
+//	GetTargetDatabasesFilterArray{ GetTargetDatabasesFilterArgs{...} }
+type GetTargetDatabasesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesFilterArrayOutput() GetTargetDatabasesFilterArrayOutput
+	ToGetTargetDatabasesFilterArrayOutputWithContext(context.Context) GetTargetDatabasesFilterArrayOutput
+}
+
+type GetTargetDatabasesFilterArray []GetTargetDatabasesFilterInput
+
+func (GetTargetDatabasesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesFilterArray) ToGetTargetDatabasesFilterArrayOutput() GetTargetDatabasesFilterArrayOutput {
+	return i.ToGetTargetDatabasesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesFilterArray) ToGetTargetDatabasesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesFilterArrayOutput)
+}
+
+type GetTargetDatabasesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesFilterOutput) ToGetTargetDatabasesFilterOutput() GetTargetDatabasesFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasesFilterOutput) ToGetTargetDatabasesFilterOutputWithContext(ctx context.Context) GetTargetDatabasesFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabasesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabasesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetDatabasesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabasesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesFilterArrayOutput) ToGetTargetDatabasesFilterArrayOutput() GetTargetDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesFilterArrayOutput) ToGetTargetDatabasesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesFilter {
+		return vs[0].([]GetTargetDatabasesFilter)[vs[1].(int)]
+	}).(GetTargetDatabasesFilterOutput)
+}
+
+type GetTargetDatabasesSchemasFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetDatabasesSchemasFilterInput is an input type that accepts GetTargetDatabasesSchemasFilterArgs and GetTargetDatabasesSchemasFilterOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesSchemasFilterInput` via:
+//
+//	GetTargetDatabasesSchemasFilterArgs{...}
+type GetTargetDatabasesSchemasFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesSchemasFilterOutput() GetTargetDatabasesSchemasFilterOutput
+	ToGetTargetDatabasesSchemasFilterOutputWithContext(context.Context) GetTargetDatabasesSchemasFilterOutput
+}
+
+type GetTargetDatabasesSchemasFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetDatabasesSchemasFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesSchemasFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesSchemasFilterArgs) ToGetTargetDatabasesSchemasFilterOutput() GetTargetDatabasesSchemasFilterOutput {
+	return i.ToGetTargetDatabasesSchemasFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesSchemasFilterArgs) ToGetTargetDatabasesSchemasFilterOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesSchemasFilterOutput)
+}
+
+// GetTargetDatabasesSchemasFilterArrayInput is an input type that accepts GetTargetDatabasesSchemasFilterArray and GetTargetDatabasesSchemasFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesSchemasFilterArrayInput` via:
+//
+//	GetTargetDatabasesSchemasFilterArray{ GetTargetDatabasesSchemasFilterArgs{...} }
+type GetTargetDatabasesSchemasFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesSchemasFilterArrayOutput() GetTargetDatabasesSchemasFilterArrayOutput
+	ToGetTargetDatabasesSchemasFilterArrayOutputWithContext(context.Context) GetTargetDatabasesSchemasFilterArrayOutput
+}
+
+type GetTargetDatabasesSchemasFilterArray []GetTargetDatabasesSchemasFilterInput
+
+func (GetTargetDatabasesSchemasFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesSchemasFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesSchemasFilterArray) ToGetTargetDatabasesSchemasFilterArrayOutput() GetTargetDatabasesSchemasFilterArrayOutput {
+	return i.ToGetTargetDatabasesSchemasFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesSchemasFilterArray) ToGetTargetDatabasesSchemasFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesSchemasFilterArrayOutput)
+}
+
+type GetTargetDatabasesSchemasFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesSchemasFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesSchemasFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesSchemasFilterOutput) ToGetTargetDatabasesSchemasFilterOutput() GetTargetDatabasesSchemasFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasesSchemasFilterOutput) ToGetTargetDatabasesSchemasFilterOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasesSchemasFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesSchemasFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabasesSchemasFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabasesSchemasFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetDatabasesSchemasFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesSchemasFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabasesSchemasFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesSchemasFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesSchemasFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesSchemasFilterArrayOutput) ToGetTargetDatabasesSchemasFilterArrayOutput() GetTargetDatabasesSchemasFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesSchemasFilterArrayOutput) ToGetTargetDatabasesSchemasFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesSchemasFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesSchemasFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesSchemasFilter {
+		return vs[0].([]GetTargetDatabasesSchemasFilter)[vs[1].(int)]
+	}).(GetTargetDatabasesSchemasFilterOutput)
+}
+
+type GetTargetDatabasesSchemasSchema struct {
+	// A filter to return only items related to specific type of schema.
+	IsOracleMaintained bool `pulumi:"isOracleMaintained"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+}
+
+// GetTargetDatabasesSchemasSchemaInput is an input type that accepts GetTargetDatabasesSchemasSchemaArgs and GetTargetDatabasesSchemasSchemaOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesSchemasSchemaInput` via:
+//
+//	GetTargetDatabasesSchemasSchemaArgs{...}
+type GetTargetDatabasesSchemasSchemaInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesSchemasSchemaOutput() GetTargetDatabasesSchemasSchemaOutput
+	ToGetTargetDatabasesSchemasSchemaOutputWithContext(context.Context) GetTargetDatabasesSchemasSchemaOutput
+}
+
+type GetTargetDatabasesSchemasSchemaArgs struct {
+	// A filter to return only items related to specific type of schema.
+	IsOracleMaintained pulumi.BoolInput `pulumi:"isOracleMaintained"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+}
+
+func (GetTargetDatabasesSchemasSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesSchemasSchema)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesSchemasSchemaArgs) ToGetTargetDatabasesSchemasSchemaOutput() GetTargetDatabasesSchemasSchemaOutput {
+	return i.ToGetTargetDatabasesSchemasSchemaOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesSchemasSchemaArgs) ToGetTargetDatabasesSchemasSchemaOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesSchemasSchemaOutput)
+}
+
+// GetTargetDatabasesSchemasSchemaArrayInput is an input type that accepts GetTargetDatabasesSchemasSchemaArray and GetTargetDatabasesSchemasSchemaArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesSchemasSchemaArrayInput` via:
+//
+//	GetTargetDatabasesSchemasSchemaArray{ GetTargetDatabasesSchemasSchemaArgs{...} }
+type GetTargetDatabasesSchemasSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesSchemasSchemaArrayOutput() GetTargetDatabasesSchemasSchemaArrayOutput
+	ToGetTargetDatabasesSchemasSchemaArrayOutputWithContext(context.Context) GetTargetDatabasesSchemasSchemaArrayOutput
+}
+
+type GetTargetDatabasesSchemasSchemaArray []GetTargetDatabasesSchemasSchemaInput
+
+func (GetTargetDatabasesSchemasSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesSchemasSchema)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesSchemasSchemaArray) ToGetTargetDatabasesSchemasSchemaArrayOutput() GetTargetDatabasesSchemasSchemaArrayOutput {
+	return i.ToGetTargetDatabasesSchemasSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesSchemasSchemaArray) ToGetTargetDatabasesSchemasSchemaArrayOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesSchemasSchemaArrayOutput)
+}
+
+type GetTargetDatabasesSchemasSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesSchemasSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesSchemasSchema)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesSchemasSchemaOutput) ToGetTargetDatabasesSchemasSchemaOutput() GetTargetDatabasesSchemasSchemaOutput {
+	return o
+}
+
+func (o GetTargetDatabasesSchemasSchemaOutput) ToGetTargetDatabasesSchemasSchemaOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasSchemaOutput {
+	return o
+}
+
+// A filter to return only items related to specific type of schema.
+func (o GetTargetDatabasesSchemasSchemaOutput) IsOracleMaintained() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTargetDatabasesSchemasSchema) bool { return v.IsOracleMaintained }).(pulumi.BoolOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetTargetDatabasesSchemasSchemaOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesSchemasSchema) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesSchemasSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesSchemasSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesSchemasSchema)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesSchemasSchemaArrayOutput) ToGetTargetDatabasesSchemasSchemaArrayOutput() GetTargetDatabasesSchemasSchemaArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesSchemasSchemaArrayOutput) ToGetTargetDatabasesSchemasSchemaArrayOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasSchemaArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesSchemasSchemaArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesSchemasSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesSchemasSchema {
+		return vs[0].([]GetTargetDatabasesSchemasSchema)[vs[1].(int)]
+	}).(GetTargetDatabasesSchemasSchemaOutput)
+}
+
+type GetTargetDatabasesTablesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetDatabasesTablesFilterInput is an input type that accepts GetTargetDatabasesTablesFilterArgs and GetTargetDatabasesTablesFilterOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTablesFilterInput` via:
+//
+//	GetTargetDatabasesTablesFilterArgs{...}
+type GetTargetDatabasesTablesFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTablesFilterOutput() GetTargetDatabasesTablesFilterOutput
+	ToGetTargetDatabasesTablesFilterOutputWithContext(context.Context) GetTargetDatabasesTablesFilterOutput
+}
+
+type GetTargetDatabasesTablesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetDatabasesTablesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTablesFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTablesFilterArgs) ToGetTargetDatabasesTablesFilterOutput() GetTargetDatabasesTablesFilterOutput {
+	return i.ToGetTargetDatabasesTablesFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTablesFilterArgs) ToGetTargetDatabasesTablesFilterOutputWithContext(ctx context.Context) GetTargetDatabasesTablesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTablesFilterOutput)
+}
+
+// GetTargetDatabasesTablesFilterArrayInput is an input type that accepts GetTargetDatabasesTablesFilterArray and GetTargetDatabasesTablesFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTablesFilterArrayInput` via:
+//
+//	GetTargetDatabasesTablesFilterArray{ GetTargetDatabasesTablesFilterArgs{...} }
+type GetTargetDatabasesTablesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTablesFilterArrayOutput() GetTargetDatabasesTablesFilterArrayOutput
+	ToGetTargetDatabasesTablesFilterArrayOutputWithContext(context.Context) GetTargetDatabasesTablesFilterArrayOutput
+}
+
+type GetTargetDatabasesTablesFilterArray []GetTargetDatabasesTablesFilterInput
+
+func (GetTargetDatabasesTablesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTablesFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTablesFilterArray) ToGetTargetDatabasesTablesFilterArrayOutput() GetTargetDatabasesTablesFilterArrayOutput {
+	return i.ToGetTargetDatabasesTablesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTablesFilterArray) ToGetTargetDatabasesTablesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTablesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTablesFilterArrayOutput)
+}
+
+type GetTargetDatabasesTablesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTablesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTablesFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTablesFilterOutput) ToGetTargetDatabasesTablesFilterOutput() GetTargetDatabasesTablesFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTablesFilterOutput) ToGetTargetDatabasesTablesFilterOutputWithContext(ctx context.Context) GetTargetDatabasesTablesFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTablesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTablesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabasesTablesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTablesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetDatabasesTablesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTablesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabasesTablesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTablesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTablesFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTablesFilterArrayOutput) ToGetTargetDatabasesTablesFilterArrayOutput() GetTargetDatabasesTablesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTablesFilterArrayOutput) ToGetTargetDatabasesTablesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTablesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTablesFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTablesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTablesFilter {
+		return vs[0].([]GetTargetDatabasesTablesFilter)[vs[1].(int)]
+	}).(GetTargetDatabasesTablesFilterOutput)
+}
+
+type GetTargetDatabasesTablesTable struct {
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// A filter to return only items related to specific table name.
+	TableName string `pulumi:"tableName"`
+}
+
+// GetTargetDatabasesTablesTableInput is an input type that accepts GetTargetDatabasesTablesTableArgs and GetTargetDatabasesTablesTableOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTablesTableInput` via:
+//
+//	GetTargetDatabasesTablesTableArgs{...}
+type GetTargetDatabasesTablesTableInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTablesTableOutput() GetTargetDatabasesTablesTableOutput
+	ToGetTargetDatabasesTablesTableOutputWithContext(context.Context) GetTargetDatabasesTablesTableOutput
+}
+
+type GetTargetDatabasesTablesTableArgs struct {
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// A filter to return only items related to specific table name.
+	TableName pulumi.StringInput `pulumi:"tableName"`
+}
+
+func (GetTargetDatabasesTablesTableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTablesTable)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTablesTableArgs) ToGetTargetDatabasesTablesTableOutput() GetTargetDatabasesTablesTableOutput {
+	return i.ToGetTargetDatabasesTablesTableOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTablesTableArgs) ToGetTargetDatabasesTablesTableOutputWithContext(ctx context.Context) GetTargetDatabasesTablesTableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTablesTableOutput)
+}
+
+// GetTargetDatabasesTablesTableArrayInput is an input type that accepts GetTargetDatabasesTablesTableArray and GetTargetDatabasesTablesTableArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTablesTableArrayInput` via:
+//
+//	GetTargetDatabasesTablesTableArray{ GetTargetDatabasesTablesTableArgs{...} }
+type GetTargetDatabasesTablesTableArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTablesTableArrayOutput() GetTargetDatabasesTablesTableArrayOutput
+	ToGetTargetDatabasesTablesTableArrayOutputWithContext(context.Context) GetTargetDatabasesTablesTableArrayOutput
+}
+
+type GetTargetDatabasesTablesTableArray []GetTargetDatabasesTablesTableInput
+
+func (GetTargetDatabasesTablesTableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTablesTable)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTablesTableArray) ToGetTargetDatabasesTablesTableArrayOutput() GetTargetDatabasesTablesTableArrayOutput {
+	return i.ToGetTargetDatabasesTablesTableArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTablesTableArray) ToGetTargetDatabasesTablesTableArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTablesTableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTablesTableArrayOutput)
+}
+
+type GetTargetDatabasesTablesTableOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTablesTableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTablesTable)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTablesTableOutput) ToGetTargetDatabasesTablesTableOutput() GetTargetDatabasesTablesTableOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTablesTableOutput) ToGetTargetDatabasesTablesTableOutputWithContext(ctx context.Context) GetTargetDatabasesTablesTableOutput {
+	return o
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetTargetDatabasesTablesTableOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTablesTable) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific table name.
+func (o GetTargetDatabasesTablesTableOutput) TableName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTablesTable) string { return v.TableName }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTablesTableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTablesTableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTablesTable)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTablesTableArrayOutput) ToGetTargetDatabasesTablesTableArrayOutput() GetTargetDatabasesTablesTableArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTablesTableArrayOutput) ToGetTargetDatabasesTablesTableArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTablesTableArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTablesTableArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTablesTableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTablesTable {
+		return vs[0].([]GetTargetDatabasesTablesTable)[vs[1].(int)]
+	}).(GetTargetDatabasesTablesTableOutput)
+}
+
+type GetTargetDatabasesTargetDatabase struct {
+	// The OCIDs of associated resources like database, Data Safe private endpoint etc.
+	AssociatedResourceIds []string `pulumi:"associatedResourceIds"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Types of connection supported by Data Safe.
+	ConnectionOptions []GetTargetDatabasesTargetDatabaseConnectionOption `pulumi:"connectionOptions"`
+	// The database credentials required for Data Safe to connect to the database.
+	Credentials []GetTargetDatabasesTargetDatabaseCredential `pulumi:"credentials"`
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails []GetTargetDatabasesTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the peer target database in Data Safe.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the Data Safe target database.
+	Id string `pulumi:"id"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails          string                                                     `pulumi:"lifecycleDetails"`
+	PeerTargetDatabaseDetails []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail `pulumi:"peerTargetDatabaseDetails"`
+	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+	PeerTargetDatabases []GetTargetDatabasesTargetDatabasePeerTargetDatabase `pulumi:"peerTargetDatabases"`
+	// A filter to return only target databases that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of the target database update in Data Safe.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs []GetTargetDatabasesTargetDatabaseTlsConfig `pulumi:"tlsConfigs"`
+}
+
+// GetTargetDatabasesTargetDatabaseInput is an input type that accepts GetTargetDatabasesTargetDatabaseArgs and GetTargetDatabasesTargetDatabaseOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseInput` via:
+//
+//	GetTargetDatabasesTargetDatabaseArgs{...}
+type GetTargetDatabasesTargetDatabaseInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabaseOutput() GetTargetDatabasesTargetDatabaseOutput
+	ToGetTargetDatabasesTargetDatabaseOutputWithContext(context.Context) GetTargetDatabasesTargetDatabaseOutput
+}
+
+type GetTargetDatabasesTargetDatabaseArgs struct {
+	// The OCIDs of associated resources like database, Data Safe private endpoint etc.
+	AssociatedResourceIds pulumi.StringArrayInput `pulumi:"associatedResourceIds"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Types of connection supported by Data Safe.
+	ConnectionOptions GetTargetDatabasesTargetDatabaseConnectionOptionArrayInput `pulumi:"connectionOptions"`
+	// The database credentials required for Data Safe to connect to the database.
+	Credentials GetTargetDatabasesTargetDatabaseCredentialArrayInput `pulumi:"credentials"`
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput `pulumi:"databaseDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the Data Safe target database.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails          pulumi.StringInput                                                 `pulumi:"lifecycleDetails"`
+	PeerTargetDatabaseDetails GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayInput `pulumi:"peerTargetDatabaseDetails"`
+	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+	PeerTargetDatabases GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayInput `pulumi:"peerTargetDatabases"`
+	// A filter to return only target databases that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time of the target database update in Data Safe.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs GetTargetDatabasesTargetDatabaseTlsConfigArrayInput `pulumi:"tlsConfigs"`
+}
+
+func (GetTargetDatabasesTargetDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabase)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabaseArgs) ToGetTargetDatabasesTargetDatabaseOutput() GetTargetDatabasesTargetDatabaseOutput {
+	return i.ToGetTargetDatabasesTargetDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabaseArgs) ToGetTargetDatabasesTargetDatabaseOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseOutput)
+}
+
+// GetTargetDatabasesTargetDatabaseArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseArray and GetTargetDatabasesTargetDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabaseArray{ GetTargetDatabasesTargetDatabaseArgs{...} }
+type GetTargetDatabasesTargetDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabaseArrayOutput() GetTargetDatabasesTargetDatabaseArrayOutput
+	ToGetTargetDatabasesTargetDatabaseArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabaseArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabaseArray []GetTargetDatabasesTargetDatabaseInput
+
+func (GetTargetDatabasesTargetDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabase)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabaseArray) ToGetTargetDatabasesTargetDatabaseArrayOutput() GetTargetDatabasesTargetDatabaseArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabaseArray) ToGetTargetDatabasesTargetDatabaseArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabase)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabaseOutput) ToGetTargetDatabasesTargetDatabaseOutput() GetTargetDatabasesTargetDatabaseOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseOutput) ToGetTargetDatabasesTargetDatabaseOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseOutput {
+	return o
+}
+
+// The OCIDs of associated resources like database, Data Safe private endpoint etc.
+func (o GetTargetDatabasesTargetDatabaseOutput) AssociatedResourceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []string { return v.AssociatedResourceIds }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetTargetDatabasesTargetDatabaseOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Types of connection supported by Data Safe.
+func (o GetTargetDatabasesTargetDatabaseOutput) ConnectionOptions() GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []GetTargetDatabasesTargetDatabaseConnectionOption {
+		return v.ConnectionOptions
+	}).(GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput)
+}
+
+// The database credentials required for Data Safe to connect to the database.
+func (o GetTargetDatabasesTargetDatabaseOutput) Credentials() GetTargetDatabasesTargetDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []GetTargetDatabasesTargetDatabaseCredential {
+		return v.Credentials
+	}).(GetTargetDatabasesTargetDatabaseCredentialArrayOutput)
+}
+
+// Details of the database for the registration in Data Safe.
+func (o GetTargetDatabasesTargetDatabaseOutput) DatabaseDetails() GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []GetTargetDatabasesTargetDatabaseDatabaseDetail {
+		return v.DatabaseDetails
+	}).(GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetTargetDatabasesTargetDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabaseOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetTargetDatabasesTargetDatabaseOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetTargetDatabasesTargetDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the Data Safe target database.
+func (o GetTargetDatabasesTargetDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the peer target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabasesTargetDatabaseOutput) PeerTargetDatabaseDetails() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail {
+		return v.PeerTargetDatabaseDetails
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput)
+}
+
+// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+func (o GetTargetDatabasesTargetDatabaseOutput) PeerTargetDatabases() GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []GetTargetDatabasesTargetDatabasePeerTargetDatabase {
+		return v.PeerTargetDatabases
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput)
+}
+
+// A filter to return only target databases that match the specified lifecycle state.
+func (o GetTargetDatabasesTargetDatabaseOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetTargetDatabasesTargetDatabaseOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabaseOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of the target database update in Data Safe.
+func (o GetTargetDatabasesTargetDatabaseOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The details required to establish a TLS enabled connection.
+func (o GetTargetDatabasesTargetDatabaseOutput) TlsConfigs() GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []GetTargetDatabasesTargetDatabaseTlsConfig {
+		return v.TlsConfigs
+	}).(GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabase)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabaseArrayOutput) ToGetTargetDatabasesTargetDatabaseArrayOutput() GetTargetDatabasesTargetDatabaseArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseArrayOutput) ToGetTargetDatabasesTargetDatabaseArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabase {
+		return vs[0].([]GetTargetDatabasesTargetDatabase)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabaseOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseConnectionOption struct {
+	// The connection type used to connect to the database. Allowed values:
+	// * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+	// * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+	ConnectionType string `pulumi:"connectionType"`
+	// The OCID of the Data Safe private endpoint.
+	DatasafePrivateEndpointId string `pulumi:"datasafePrivateEndpointId"`
+	// The OCID of the on-premises connector.
+	OnPremConnectorId string `pulumi:"onPremConnectorId"`
+}
+
+// GetTargetDatabasesTargetDatabaseConnectionOptionInput is an input type that accepts GetTargetDatabasesTargetDatabaseConnectionOptionArgs and GetTargetDatabasesTargetDatabaseConnectionOptionOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseConnectionOptionInput` via:
+//
+//	GetTargetDatabasesTargetDatabaseConnectionOptionArgs{...}
+type GetTargetDatabasesTargetDatabaseConnectionOptionInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabaseConnectionOptionOutput() GetTargetDatabasesTargetDatabaseConnectionOptionOutput
+	ToGetTargetDatabasesTargetDatabaseConnectionOptionOutputWithContext(context.Context) GetTargetDatabasesTargetDatabaseConnectionOptionOutput
+}
+
+type GetTargetDatabasesTargetDatabaseConnectionOptionArgs struct {
+	// The connection type used to connect to the database. Allowed values:
+	// * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+	// * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// The OCID of the Data Safe private endpoint.
+	DatasafePrivateEndpointId pulumi.StringInput `pulumi:"datasafePrivateEndpointId"`
+	// The OCID of the on-premises connector.
+	OnPremConnectorId pulumi.StringInput `pulumi:"onPremConnectorId"`
+}
+
+func (GetTargetDatabasesTargetDatabaseConnectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabaseConnectionOption)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabaseConnectionOptionArgs) ToGetTargetDatabasesTargetDatabaseConnectionOptionOutput() GetTargetDatabasesTargetDatabaseConnectionOptionOutput {
+	return i.ToGetTargetDatabasesTargetDatabaseConnectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabaseConnectionOptionArgs) ToGetTargetDatabasesTargetDatabaseConnectionOptionOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseConnectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseConnectionOptionOutput)
+}
+
+// GetTargetDatabasesTargetDatabaseConnectionOptionArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseConnectionOptionArray and GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseConnectionOptionArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabaseConnectionOptionArray{ GetTargetDatabasesTargetDatabaseConnectionOptionArgs{...} }
+type GetTargetDatabasesTargetDatabaseConnectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput() GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput
+	ToGetTargetDatabasesTargetDatabaseConnectionOptionArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabaseConnectionOptionArray []GetTargetDatabasesTargetDatabaseConnectionOptionInput
+
+func (GetTargetDatabasesTargetDatabaseConnectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabaseConnectionOption)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabaseConnectionOptionArray) ToGetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput() GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabaseConnectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabaseConnectionOptionArray) ToGetTargetDatabasesTargetDatabaseConnectionOptionArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseConnectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabaseConnectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabaseConnectionOption)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabaseConnectionOptionOutput) ToGetTargetDatabasesTargetDatabaseConnectionOptionOutput() GetTargetDatabasesTargetDatabaseConnectionOptionOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseConnectionOptionOutput) ToGetTargetDatabasesTargetDatabaseConnectionOptionOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseConnectionOptionOutput {
+	return o
+}
+
+// The connection type used to connect to the database. Allowed values:
+// * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+// * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+func (o GetTargetDatabasesTargetDatabaseConnectionOptionOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseConnectionOption) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+// The OCID of the Data Safe private endpoint.
+func (o GetTargetDatabasesTargetDatabaseConnectionOptionOutput) DatasafePrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseConnectionOption) string { return v.DatasafePrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// The OCID of the on-premises connector.
+func (o GetTargetDatabasesTargetDatabaseConnectionOptionOutput) OnPremConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseConnectionOption) string { return v.OnPremConnectorId }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabaseConnectionOption)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput) ToGetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput() GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput) ToGetTargetDatabasesTargetDatabaseConnectionOptionArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabaseConnectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabaseConnectionOption {
+		return vs[0].([]GetTargetDatabasesTargetDatabaseConnectionOption)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabaseConnectionOptionOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseCredential struct {
+	// The password of the database user.
+	Password string `pulumi:"password"`
+	// The database user name.
+	UserName string `pulumi:"userName"`
+}
+
+// GetTargetDatabasesTargetDatabaseCredentialInput is an input type that accepts GetTargetDatabasesTargetDatabaseCredentialArgs and GetTargetDatabasesTargetDatabaseCredentialOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseCredentialInput` via:
+//
+//	GetTargetDatabasesTargetDatabaseCredentialArgs{...}
+type GetTargetDatabasesTargetDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabaseCredentialOutput() GetTargetDatabasesTargetDatabaseCredentialOutput
+	ToGetTargetDatabasesTargetDatabaseCredentialOutputWithContext(context.Context) GetTargetDatabasesTargetDatabaseCredentialOutput
+}
+
+type GetTargetDatabasesTargetDatabaseCredentialArgs struct {
+	// The password of the database user.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The database user name.
+	UserName pulumi.StringInput `pulumi:"userName"`
+}
+
+func (GetTargetDatabasesTargetDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabaseCredentialArgs) ToGetTargetDatabasesTargetDatabaseCredentialOutput() GetTargetDatabasesTargetDatabaseCredentialOutput {
+	return i.ToGetTargetDatabasesTargetDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabaseCredentialArgs) ToGetTargetDatabasesTargetDatabaseCredentialOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseCredentialOutput)
+}
+
+// GetTargetDatabasesTargetDatabaseCredentialArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseCredentialArray and GetTargetDatabasesTargetDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseCredentialArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabaseCredentialArray{ GetTargetDatabasesTargetDatabaseCredentialArgs{...} }
+type GetTargetDatabasesTargetDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabaseCredentialArrayOutput() GetTargetDatabasesTargetDatabaseCredentialArrayOutput
+	ToGetTargetDatabasesTargetDatabaseCredentialArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabaseCredentialArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabaseCredentialArray []GetTargetDatabasesTargetDatabaseCredentialInput
+
+func (GetTargetDatabasesTargetDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabaseCredentialArray) ToGetTargetDatabasesTargetDatabaseCredentialArrayOutput() GetTargetDatabasesTargetDatabaseCredentialArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabaseCredentialArray) ToGetTargetDatabasesTargetDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseCredentialArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabaseCredentialOutput) ToGetTargetDatabasesTargetDatabaseCredentialOutput() GetTargetDatabasesTargetDatabaseCredentialOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseCredentialOutput) ToGetTargetDatabasesTargetDatabaseCredentialOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseCredentialOutput {
+	return o
+}
+
+// The password of the database user.
+func (o GetTargetDatabasesTargetDatabaseCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// The database user name.
+func (o GetTargetDatabasesTargetDatabaseCredentialOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseCredential) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabaseCredentialArrayOutput) ToGetTargetDatabasesTargetDatabaseCredentialArrayOutput() GetTargetDatabasesTargetDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseCredentialArrayOutput) ToGetTargetDatabasesTargetDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabaseCredential {
+		return vs[0].([]GetTargetDatabasesTargetDatabaseCredential)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabaseCredentialOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseDatabaseDetail struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// A filter to return only target databases that match the specified database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// A filter to return only target databases that match the specified infrastructure type.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabasesTargetDatabaseDatabaseDetailInput is an input type that accepts GetTargetDatabasesTargetDatabaseDatabaseDetailArgs and GetTargetDatabasesTargetDatabaseDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseDatabaseDetailInput` via:
+//
+//	GetTargetDatabasesTargetDatabaseDatabaseDetailArgs{...}
+type GetTargetDatabasesTargetDatabaseDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabaseDatabaseDetailOutput() GetTargetDatabasesTargetDatabaseDatabaseDetailOutput
+	ToGetTargetDatabasesTargetDatabaseDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasesTargetDatabaseDatabaseDetailOutput
+}
+
+type GetTargetDatabasesTargetDatabaseDatabaseDetailArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// A filter to return only target databases that match the specified database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// A filter to return only target databases that match the specified infrastructure type.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId pulumi.StringInput `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabasesTargetDatabaseDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabaseDatabaseDetailOutput() GetTargetDatabasesTargetDatabaseDatabaseDetailOutput {
+	return i.ToGetTargetDatabasesTargetDatabaseDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseDatabaseDetailOutput)
+}
+
+// GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseDatabaseDetailArray and GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabaseDatabaseDetailArray{ GetTargetDatabasesTargetDatabaseDatabaseDetailArgs{...} }
+type GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput
+	ToGetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabaseDatabaseDetailArray []GetTargetDatabasesTargetDatabaseDatabaseDetailInput
+
+func (GetTargetDatabasesTargetDatabaseDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabaseDatabaseDetailArray) ToGetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabaseDatabaseDetailArray) ToGetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabaseDatabaseDetailOutput() GetTargetDatabasesTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified database type.
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified infrastructure type.
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.InfrastructureType }).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) int { return v.ListenerPort }).(pulumi.IntOutput)
+}
+
+// The OCID of the pluggable database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) PluggableDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.PluggableDatabaseId }).(pulumi.StringOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseDatabaseDetail) string { return v.VmClusterId }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabaseDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabaseDatabaseDetail {
+		return vs[0].([]GetTargetDatabasesTargetDatabaseDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabaseDatabaseDetailOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabase struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName string `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key int `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role string `pulumi:"role"`
+	// A filter to return only target databases that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs []GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig `pulumi:"tlsConfigs"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName pulumi.StringInput `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key pulumi.IntInput `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role pulumi.StringInput `pulumi:"role"`
+	// A filter to return only target databases that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayInput `pulumi:"tlsConfigs"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabase)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabase)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabase)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) DatabaseDetails() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail {
+		return v.DatabaseDetails
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+// Unique name of the database associated to the peer target database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) DatabaseUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.DatabaseUniqueName }).(pulumi.StringOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) DataguardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.DataguardAssociationId }).(pulumi.StringOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The secondary key assigned for the peer target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) Key() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) int { return v.Key }).(pulumi.IntOutput)
+}
+
+// Details about the current state of the peer target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Role of the database associated to the peer target database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified lifecycle state.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The details required to establish a TLS enabled connection.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) TlsConfigs() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) []GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig {
+		return v.TlsConfigs
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabase)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabase {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabase)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// A filter to return only target databases that match the specified database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// A filter to return only target databases that match the specified infrastructure type.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// A filter to return only target databases that match the specified database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// A filter to return only target databases that match the specified infrastructure type.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId pulumi.StringInput `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string {
+		return v.AutonomousDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified database type.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified infrastructure type.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string {
+		return v.InfrastructureType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) []string {
+		return v.IpAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) int { return v.ListenerPort }).(pulumi.IntOutput)
+}
+
+// The OCID of the pluggable database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) PluggableDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string {
+		return v.PluggableDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.VmClusterId }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail `pulumi:"databaseDetails"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig `pulumi:"tlsConfigs"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput `pulumi:"databaseDetails"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput `pulumi:"tlsConfigs"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) DatabaseDetails() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail) []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail {
+		return v.DatabaseDetails
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) DataguardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail) string {
+		return v.DataguardAssociationId
+	}).(pulumi.StringOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The details required to establish a TLS enabled connection.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) TlsConfigs() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail) []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig {
+		return v.TlsConfigs
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// A filter to return only target databases that match the specified database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// A filter to return only target databases that match the specified infrastructure type.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// A filter to return only target databases that match the specified database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// A filter to return only target databases that match the specified infrastructure type.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The OCID of the pluggable database registered as a target database in Data Safe.
+	PluggableDatabaseId pulumi.StringInput `pulumi:"pluggableDatabaseId"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.AutonomousDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified database type.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.DatabaseType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.DbSystemId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified infrastructure type.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.InfrastructureType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.InstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) []string {
+		return v.IpAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) int {
+		return v.ListenerPort
+	}).(pulumi.IntOutput)
+}
+
+// The OCID of the pluggable database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) PluggableDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.PluggableDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.VmClusterId
+	}).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig) string {
+		return v.CertificateStoreType
+	}).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig) string {
+		return v.KeyStoreContent
+	}).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig) string {
+		return v.StorePassword
+	}).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig) string {
+		return v.TrustStoreContent
+	}).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput)
+}
+
 type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig struct {
 	// The format of the certificate store.
 	CertificateStoreType string `pulumi:"certificateStoreType"`
@@ -4457,6 +11896,112 @@ func (o GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput) Index(i pulumi
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterInput)(nil)).Elem(), GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayInput)(nil)).Elem(), GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionInput)(nil)).Elem(), GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayInput)(nil)).Elem(), GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemInput)(nil)).Elem(), GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayInput)(nil)).Elem(), GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationsFilterInput)(nil)).Elem(), GetTargetAlertPolicyAssociationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationsFilterArrayInput)(nil)).Elem(), GetTargetAlertPolicyAssociationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionInput)(nil)).Elem(), GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayInput)(nil)).Elem(), GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemInput)(nil)).Elem(), GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayInput)(nil)).Elem(), GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseConnectionOptionInput)(nil)).Elem(), GetTargetDatabaseConnectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseConnectionOptionArrayInput)(nil)).Elem(), GetTargetDatabaseConnectionOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseCredentialInput)(nil)).Elem(), GetTargetDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseCredentialArrayInput)(nil)).Elem(), GetTargetDatabaseCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseDatabaseDetailInput)(nil)).Elem(), GetTargetDatabaseDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabaseDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaInput)(nil)).Elem(), GetTargetDatabaseGroupMatchingCriteriaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaArrayInput)(nil)).Elem(), GetTargetDatabaseGroupMatchingCriteriaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaExcludeInput)(nil)).Elem(), GetTargetDatabaseGroupMatchingCriteriaExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaExcludeArrayInput)(nil)).Elem(), GetTargetDatabaseGroupMatchingCriteriaExcludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaIncludeInput)(nil)).Elem(), GetTargetDatabaseGroupMatchingCriteriaIncludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaIncludeArrayInput)(nil)).Elem(), GetTargetDatabaseGroupMatchingCriteriaIncludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentInput)(nil)).Elem(), GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayInput)(nil)).Elem(), GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsFilterInput)(nil)).Elem(), GetTargetDatabaseGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsFilterArrayInput)(nil)).Elem(), GetTargetDatabaseGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayInput)(nil)).Elem(), GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTypeInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTypeArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailTlsConfigInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTlsConfigInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseTlsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesFilterInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesFilterArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseRoleFilterInput)(nil)).Elem(), GetTargetDatabaseRoleFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseRoleFilterArrayInput)(nil)).Elem(), GetTargetDatabaseRoleFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseRoleRoleInput)(nil)).Elem(), GetTargetDatabaseRoleRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseRoleRoleArrayInput)(nil)).Elem(), GetTargetDatabaseRoleRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseRolesFilterInput)(nil)).Elem(), GetTargetDatabaseRolesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseRolesFilterArrayInput)(nil)).Elem(), GetTargetDatabaseRolesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseRolesRoleInput)(nil)).Elem(), GetTargetDatabaseRolesRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseRolesRoleArrayInput)(nil)).Elem(), GetTargetDatabaseRolesRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseTlsConfigInput)(nil)).Elem(), GetTargetDatabaseTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabaseTlsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesColumnsColumnInput)(nil)).Elem(), GetTargetDatabasesColumnsColumnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesColumnsColumnArrayInput)(nil)).Elem(), GetTargetDatabasesColumnsColumnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesColumnsFilterInput)(nil)).Elem(), GetTargetDatabasesColumnsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesColumnsFilterArrayInput)(nil)).Elem(), GetTargetDatabasesColumnsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesFilterInput)(nil)).Elem(), GetTargetDatabasesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesFilterArrayInput)(nil)).Elem(), GetTargetDatabasesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesSchemasFilterInput)(nil)).Elem(), GetTargetDatabasesSchemasFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesSchemasFilterArrayInput)(nil)).Elem(), GetTargetDatabasesSchemasFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesSchemasSchemaInput)(nil)).Elem(), GetTargetDatabasesSchemasSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesSchemasSchemaArrayInput)(nil)).Elem(), GetTargetDatabasesSchemasSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTablesFilterInput)(nil)).Elem(), GetTargetDatabasesTablesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTablesFilterArrayInput)(nil)).Elem(), GetTargetDatabasesTablesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTablesTableInput)(nil)).Elem(), GetTargetDatabasesTablesTableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTablesTableArrayInput)(nil)).Elem(), GetTargetDatabasesTablesTableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseConnectionOptionInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseConnectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseConnectionOptionArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseConnectionOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseCredentialInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseCredentialArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseTlsConfigInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseTlsConfigArgs{})
@@ -4523,6 +12068,112 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArray{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationsFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseConnectionOptionOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseConnectionOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupMatchingCriteriaOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupMatchingCriteriaArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupMatchingCriteriaExcludeOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupMatchingCriteriaIncludeOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseTypeOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseRoleFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseRoleFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseRoleRoleOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseRoleRoleArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseRolesFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseRolesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseRolesRoleOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseRolesRoleArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabaseTlsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesColumnsColumnOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesColumnsColumnArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesColumnsFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesColumnsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesSchemasFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesSchemasFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesSchemasSchemaOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesSchemasSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTablesFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTablesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTablesTableOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTablesTableArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseConnectionOptionOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseTlsConfigOutput{})

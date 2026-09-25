@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<double>? Amount { get; set; }
 
         /// <summary>
-        /// Sku details for billing subscription.
+        /// Billing details associated with the subscription plan and its usage dimensions.
         /// </summary>
         [Input("billingDetails", required: true)]
         public Input<Inputs.SelfSubscriptionSubscriptionDetailsBillingDetailsArgs> BillingDetails { get; set; } = null!;

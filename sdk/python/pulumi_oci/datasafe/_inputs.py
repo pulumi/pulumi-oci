@@ -37,6 +37,22 @@ __all__ = [
     'CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict',
     'CalculateAuditVolumeCollectedCollectedAuditVolumeArgs',
     'CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict',
+    'CryptoAssessmentCryptoPostureArgs',
+    'CryptoAssessmentCryptoPostureArgsDict',
+    'CryptoAssessmentCryptoPostureNneArgs',
+    'CryptoAssessmentCryptoPostureNneArgsDict',
+    'CryptoAssessmentCryptoPostureTdeArgs',
+    'CryptoAssessmentCryptoPostureTdeArgsDict',
+    'CryptoAssessmentCryptoPostureTlArgs',
+    'CryptoAssessmentCryptoPostureTlArgsDict',
+    'CryptoAssessmentManagementCryptoPostureArgs',
+    'CryptoAssessmentManagementCryptoPostureArgsDict',
+    'CryptoAssessmentManagementCryptoPostureNneArgs',
+    'CryptoAssessmentManagementCryptoPostureNneArgsDict',
+    'CryptoAssessmentManagementCryptoPostureTdeArgs',
+    'CryptoAssessmentManagementCryptoPostureTdeArgsDict',
+    'CryptoAssessmentManagementCryptoPostureTlArgs',
+    'CryptoAssessmentManagementCryptoPostureTlArgsDict',
     'DataSafeConfigurationGlobalSettingArgs',
     'DataSafeConfigurationGlobalSettingArgsDict',
     'DatabaseSecurityConfigManagementSqlFirewallConfigArgs',
@@ -169,6 +185,26 @@ __all__ = [
     'GetAuditProfilesFilterArgsDict',
     'GetAuditTrailsFilterArgs',
     'GetAuditTrailsFilterArgsDict',
+    'GetCryptoAssessmentBackupSetsFilterArgs',
+    'GetCryptoAssessmentBackupSetsFilterArgsDict',
+    'GetCryptoAssessmentCbomItemsFilterArgs',
+    'GetCryptoAssessmentCbomItemsFilterArgsDict',
+    'GetCryptoAssessmentCertificatesFilterArgs',
+    'GetCryptoAssessmentCertificatesFilterArgsDict',
+    'GetCryptoAssessmentFindingAnalyticsFilterArgs',
+    'GetCryptoAssessmentFindingAnalyticsFilterArgsDict',
+    'GetCryptoAssessmentFindingTargetsFilterArgs',
+    'GetCryptoAssessmentFindingTargetsFilterArgsDict',
+    'GetCryptoAssessmentFindingsFilterArgs',
+    'GetCryptoAssessmentFindingsFilterArgsDict',
+    'GetCryptoAssessmentKeysFilterArgs',
+    'GetCryptoAssessmentKeysFilterArgsDict',
+    'GetCryptoAssessmentTdeObjectsFilterArgs',
+    'GetCryptoAssessmentTdeObjectsFilterArgsDict',
+    'GetCryptoAssessmentWalletsFilterArgs',
+    'GetCryptoAssessmentWalletsFilterArgsDict',
+    'GetCryptoAssessmentsFilterArgs',
+    'GetCryptoAssessmentsFilterArgsDict',
     'GetDataSafePrivateEndpointsFilterArgs',
     'GetDataSafePrivateEndpointsFilterArgsDict',
     'GetDatabaseSecurityConfigsFilterArgs',
@@ -2392,6 +2428,1456 @@ class CalculateAuditVolumeCollectedCollectedAuditVolumeArgs:
     @online_volume.setter
     def online_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "online_volume", value)
+
+
+class CryptoAssessmentCryptoPostureArgsDict(TypedDict):
+    backup_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Backup encryption status observed for the assessment.
+    """
+    encrypted_backup_pieces_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Number of encrypted backup pieces.
+    """
+    fips_mode_configured: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+    """
+    fips_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Overall FIPS status for the assessment when the target uses common FIPS configuration.
+    """
+    network_encryptions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Network encryption details.
+    """
+    nnes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureNneArgsDict']]]]]
+    """
+    Native network encryption posture details.
+    """
+    tdes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureTdeArgsDict']]]]]
+    """
+    Transparent data encryption posture details.
+    """
+    tls: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureTlArgsDict']]]]]
+    """
+    TLS posture details.
+    """
+    unencrypted_backup_pieces_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Number of unencrypted backup pieces.
+    """
+
+@pulumi.input_type
+class CryptoAssessmentCryptoPostureArgs:
+    def __init__(__self__, *,
+                 backup_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 encrypted_backup_pieces_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 fips_mode_configured: pulumi.Input[Optional[_builtins.str]] = None,
+                 fips_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_encryptions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 nnes: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureNneArgs']]]] = None,
+                 tdes: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureTdeArgs']]]] = None,
+                 tls: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureTlArgs']]]] = None,
+                 unencrypted_backup_pieces_count: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] backup_status: Backup encryption status observed for the assessment.
+        :param pulumi.Input[_builtins.int] encrypted_backup_pieces_count: Number of encrypted backup pieces.
+        :param pulumi.Input[_builtins.str] fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param pulumi.Input[_builtins.str] fips_status: Overall FIPS status for the assessment when the target uses common FIPS configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_encryptions: Network encryption details.
+        :param pulumi.Input[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureNneArgs']]] nnes: Native network encryption posture details.
+        :param pulumi.Input[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureTdeArgs']]] tdes: Transparent data encryption posture details.
+        :param pulumi.Input[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureTlArgs']]] tls: TLS posture details.
+        :param pulumi.Input[_builtins.int] unencrypted_backup_pieces_count: Number of unencrypted backup pieces.
+        """
+        if backup_status is not None:
+            pulumi.set(__self__, "backup_status", backup_status)
+        if encrypted_backup_pieces_count is not None:
+            pulumi.set(__self__, "encrypted_backup_pieces_count", encrypted_backup_pieces_count)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if fips_status is not None:
+            pulumi.set(__self__, "fips_status", fips_status)
+        if network_encryptions is not None:
+            pulumi.set(__self__, "network_encryptions", network_encryptions)
+        if nnes is not None:
+            pulumi.set(__self__, "nnes", nnes)
+        if tdes is not None:
+            pulumi.set(__self__, "tdes", tdes)
+        if tls is not None:
+            pulumi.set(__self__, "tls", tls)
+        if unencrypted_backup_pieces_count is not None:
+            pulumi.set(__self__, "unencrypted_backup_pieces_count", unencrypted_backup_pieces_count)
+
+    @_builtins.property
+    @pulumi.getter(name="backupStatus")
+    def backup_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup encryption status observed for the assessment.
+        """
+        return pulumi.get(self, "backup_status")
+
+    @backup_status.setter
+    def backup_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedBackupPiecesCount")
+    def encrypted_backup_pieces_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Number of encrypted backup pieces.
+        """
+        return pulumi.get(self, "encrypted_backup_pieces_count")
+
+    @encrypted_backup_pieces_count.setter
+    def encrypted_backup_pieces_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "encrypted_backup_pieces_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @fips_mode_configured.setter
+    def fips_mode_configured(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "fips_mode_configured", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsStatus")
+    def fips_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Overall FIPS status for the assessment when the target uses common FIPS configuration.
+        """
+        return pulumi.get(self, "fips_status")
+
+    @fips_status.setter
+    def fips_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "fips_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkEncryptions")
+    def network_encryptions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Network encryption details.
+        """
+        return pulumi.get(self, "network_encryptions")
+
+    @network_encryptions.setter
+    def network_encryptions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "network_encryptions", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def nnes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureNneArgs']]]]:
+        """
+        Native network encryption posture details.
+        """
+        return pulumi.get(self, "nnes")
+
+    @nnes.setter
+    def nnes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureNneArgs']]]]):
+        pulumi.set(self, "nnes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tdes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureTdeArgs']]]]:
+        """
+        Transparent data encryption posture details.
+        """
+        return pulumi.get(self, "tdes")
+
+    @tdes.setter
+    def tdes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureTdeArgs']]]]):
+        pulumi.set(self, "tdes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureTlArgs']]]]:
+        """
+        TLS posture details.
+        """
+        return pulumi.get(self, "tls")
+
+    @tls.setter
+    def tls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentCryptoPostureTlArgs']]]]):
+        pulumi.set(self, "tls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedBackupPiecesCount")
+    def unencrypted_backup_pieces_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Number of unencrypted backup pieces.
+        """
+        return pulumi.get(self, "unencrypted_backup_pieces_count")
+
+    @unencrypted_backup_pieces_count.setter
+    def unencrypted_backup_pieces_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "unencrypted_backup_pieces_count", value)
+
+
+class CryptoAssessmentCryptoPostureNneArgsDict(TypedDict):
+    are_weak_options_allowed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Indicates if weak NNE options are allowed.
+    """
+    encryption_configureds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Configured TDE encryption algorithm.
+    """
+    fips_mode_configured: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+    """
+    integrities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    NNE integrity algorithm(s).
+    """
+    key_exchange: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Observed NNE key exchange setting.
+    """
+    quantum_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Quantum-readiness classification for TLS posture.
+    """
+    server_encryption: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Observed server-side encryption requirement.
+    """
+    server_integrities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    NNE server integrity algorithm(s).
+    """
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    TLS enablement status.
+    """
+
+@pulumi.input_type
+class CryptoAssessmentCryptoPostureNneArgs:
+    def __init__(__self__, *,
+                 are_weak_options_allowed: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_configureds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 fips_mode_configured: pulumi.Input[Optional[_builtins.str]] = None,
+                 integrities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 key_exchange: pulumi.Input[Optional[_builtins.str]] = None,
+                 quantum_readiness: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_integrities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] are_weak_options_allowed: Indicates if weak NNE options are allowed.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] encryption_configureds: Configured TDE encryption algorithm.
+        :param pulumi.Input[_builtins.str] fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] integrities: NNE integrity algorithm(s).
+        :param pulumi.Input[_builtins.str] key_exchange: Observed NNE key exchange setting.
+        :param pulumi.Input[_builtins.str] quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param pulumi.Input[_builtins.str] server_encryption: Observed server-side encryption requirement.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] server_integrities: NNE server integrity algorithm(s).
+        :param pulumi.Input[_builtins.str] status: TLS enablement status.
+        """
+        if are_weak_options_allowed is not None:
+            pulumi.set(__self__, "are_weak_options_allowed", are_weak_options_allowed)
+        if encryption_configureds is not None:
+            pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if integrities is not None:
+            pulumi.set(__self__, "integrities", integrities)
+        if key_exchange is not None:
+            pulumi.set(__self__, "key_exchange", key_exchange)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if server_encryption is not None:
+            pulumi.set(__self__, "server_encryption", server_encryption)
+        if server_integrities is not None:
+            pulumi.set(__self__, "server_integrities", server_integrities)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakOptionsAllowed")
+    def are_weak_options_allowed(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates if weak NNE options are allowed.
+        """
+        return pulumi.get(self, "are_weak_options_allowed")
+
+    @are_weak_options_allowed.setter
+    def are_weak_options_allowed(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "are_weak_options_allowed", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Configured TDE encryption algorithm.
+        """
+        return pulumi.get(self, "encryption_configureds")
+
+    @encryption_configureds.setter
+    def encryption_configureds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "encryption_configureds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @fips_mode_configured.setter
+    def fips_mode_configured(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "fips_mode_configured", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def integrities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        NNE integrity algorithm(s).
+        """
+        return pulumi.get(self, "integrities")
+
+    @integrities.setter
+    def integrities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "integrities", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyExchange")
+    def key_exchange(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Observed NNE key exchange setting.
+        """
+        return pulumi.get(self, "key_exchange")
+
+    @key_exchange.setter
+    def key_exchange(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_exchange", value)
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @quantum_readiness.setter
+    def quantum_readiness(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "quantum_readiness", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serverEncryption")
+    def server_encryption(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Observed server-side encryption requirement.
+        """
+        return pulumi.get(self, "server_encryption")
+
+    @server_encryption.setter
+    def server_encryption(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "server_encryption", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serverIntegrities")
+    def server_integrities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        NNE server integrity algorithm(s).
+        """
+        return pulumi.get(self, "server_integrities")
+
+    @server_integrities.setter
+    def server_integrities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "server_integrities", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+
+class CryptoAssessmentCryptoPostureTdeArgsDict(TypedDict):
+    db_credentials_encryption_observed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Observed DB credentials encryption algorithm.
+    """
+    encrypted_tablespaces_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Number of encrypted tablespaces detected.
+    """
+    encryption_configureds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Configured TDE encryption algorithm.
+    """
+    fips_mode_configured: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+    """
+    integrity_configureds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Configured TDE integrity-related setting.
+    """
+    key_cache_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The observed TDE key cache status.
+    """
+    key_store_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The observed TDE key store type.
+    """
+    master_key_encryption_algorithm: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The observed encryption algorithm used by the master key.
+    """
+    master_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The observed TDE master key identifier.
+    """
+    quantum_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Quantum-readiness classification for TLS posture.
+    """
+    redo_encryption_observed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Observed redo log encryption algorithm.
+    """
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    TLS enablement status.
+    """
+    time_master_key_last_rotation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The last observed rotation time for the TDE master key, in RFC3339 format.
+    """
+    unencrypted_tablespaces_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Number of unencrypted tablespaces detected.
+    """
+    wallet_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    TLS wallet location observed on target.
+    """
+
+@pulumi.input_type
+class CryptoAssessmentCryptoPostureTdeArgs:
+    def __init__(__self__, *,
+                 db_credentials_encryption_observed: pulumi.Input[Optional[_builtins.str]] = None,
+                 encrypted_tablespaces_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 encryption_configureds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 fips_mode_configured: pulumi.Input[Optional[_builtins.str]] = None,
+                 integrity_configureds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 key_cache_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 master_key_encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 master_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 quantum_readiness: pulumi.Input[Optional[_builtins.str]] = None,
+                 redo_encryption_observed: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_master_key_last_rotation: pulumi.Input[Optional[_builtins.str]] = None,
+                 unencrypted_tablespaces_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 wallet_location: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] db_credentials_encryption_observed: Observed DB credentials encryption algorithm.
+        :param pulumi.Input[_builtins.int] encrypted_tablespaces_count: Number of encrypted tablespaces detected.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] encryption_configureds: Configured TDE encryption algorithm.
+        :param pulumi.Input[_builtins.str] fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] integrity_configureds: Configured TDE integrity-related setting.
+        :param pulumi.Input[_builtins.str] key_cache_status: The observed TDE key cache status.
+        :param pulumi.Input[_builtins.str] key_store_type: The observed TDE key store type.
+        :param pulumi.Input[_builtins.str] master_key_encryption_algorithm: The observed encryption algorithm used by the master key.
+        :param pulumi.Input[_builtins.str] master_key_id: The observed TDE master key identifier.
+        :param pulumi.Input[_builtins.str] quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param pulumi.Input[_builtins.str] redo_encryption_observed: Observed redo log encryption algorithm.
+        :param pulumi.Input[_builtins.str] status: TLS enablement status.
+        :param pulumi.Input[_builtins.str] time_master_key_last_rotation: The last observed rotation time for the TDE master key, in RFC3339 format.
+        :param pulumi.Input[_builtins.int] unencrypted_tablespaces_count: Number of unencrypted tablespaces detected.
+        :param pulumi.Input[_builtins.str] wallet_location: TLS wallet location observed on target.
+        """
+        if db_credentials_encryption_observed is not None:
+            pulumi.set(__self__, "db_credentials_encryption_observed", db_credentials_encryption_observed)
+        if encrypted_tablespaces_count is not None:
+            pulumi.set(__self__, "encrypted_tablespaces_count", encrypted_tablespaces_count)
+        if encryption_configureds is not None:
+            pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if integrity_configureds is not None:
+            pulumi.set(__self__, "integrity_configureds", integrity_configureds)
+        if key_cache_status is not None:
+            pulumi.set(__self__, "key_cache_status", key_cache_status)
+        if key_store_type is not None:
+            pulumi.set(__self__, "key_store_type", key_store_type)
+        if master_key_encryption_algorithm is not None:
+            pulumi.set(__self__, "master_key_encryption_algorithm", master_key_encryption_algorithm)
+        if master_key_id is not None:
+            pulumi.set(__self__, "master_key_id", master_key_id)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if redo_encryption_observed is not None:
+            pulumi.set(__self__, "redo_encryption_observed", redo_encryption_observed)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_master_key_last_rotation is not None:
+            pulumi.set(__self__, "time_master_key_last_rotation", time_master_key_last_rotation)
+        if unencrypted_tablespaces_count is not None:
+            pulumi.set(__self__, "unencrypted_tablespaces_count", unencrypted_tablespaces_count)
+        if wallet_location is not None:
+            pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="dbCredentialsEncryptionObserved")
+    def db_credentials_encryption_observed(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Observed DB credentials encryption algorithm.
+        """
+        return pulumi.get(self, "db_credentials_encryption_observed")
+
+    @db_credentials_encryption_observed.setter
+    def db_credentials_encryption_observed(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "db_credentials_encryption_observed", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedTablespacesCount")
+    def encrypted_tablespaces_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Number of encrypted tablespaces detected.
+        """
+        return pulumi.get(self, "encrypted_tablespaces_count")
+
+    @encrypted_tablespaces_count.setter
+    def encrypted_tablespaces_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "encrypted_tablespaces_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Configured TDE encryption algorithm.
+        """
+        return pulumi.get(self, "encryption_configureds")
+
+    @encryption_configureds.setter
+    def encryption_configureds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "encryption_configureds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @fips_mode_configured.setter
+    def fips_mode_configured(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "fips_mode_configured", value)
+
+    @_builtins.property
+    @pulumi.getter(name="integrityConfigureds")
+    def integrity_configureds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Configured TDE integrity-related setting.
+        """
+        return pulumi.get(self, "integrity_configureds")
+
+    @integrity_configureds.setter
+    def integrity_configureds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "integrity_configureds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyCacheStatus")
+    def key_cache_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The observed TDE key cache status.
+        """
+        return pulumi.get(self, "key_cache_status")
+
+    @key_cache_status.setter
+    def key_cache_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_cache_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreType")
+    def key_store_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The observed TDE key store type.
+        """
+        return pulumi.get(self, "key_store_type")
+
+    @key_store_type.setter
+    def key_store_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_store_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyEncryptionAlgorithm")
+    def master_key_encryption_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The observed encryption algorithm used by the master key.
+        """
+        return pulumi.get(self, "master_key_encryption_algorithm")
+
+    @master_key_encryption_algorithm.setter
+    def master_key_encryption_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "master_key_encryption_algorithm", value)
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyId")
+    def master_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The observed TDE master key identifier.
+        """
+        return pulumi.get(self, "master_key_id")
+
+    @master_key_id.setter
+    def master_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "master_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @quantum_readiness.setter
+    def quantum_readiness(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "quantum_readiness", value)
+
+    @_builtins.property
+    @pulumi.getter(name="redoEncryptionObserved")
+    def redo_encryption_observed(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Observed redo log encryption algorithm.
+        """
+        return pulumi.get(self, "redo_encryption_observed")
+
+    @redo_encryption_observed.setter
+    def redo_encryption_observed(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "redo_encryption_observed", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeMasterKeyLastRotation")
+    def time_master_key_last_rotation(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The last observed rotation time for the TDE master key, in RFC3339 format.
+        """
+        return pulumi.get(self, "time_master_key_last_rotation")
+
+    @time_master_key_last_rotation.setter
+    def time_master_key_last_rotation(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_master_key_last_rotation", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedTablespacesCount")
+    def unencrypted_tablespaces_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Number of unencrypted tablespaces detected.
+        """
+        return pulumi.get(self, "unencrypted_tablespaces_count")
+
+    @unencrypted_tablespaces_count.setter
+    def unencrypted_tablespaces_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "unencrypted_tablespaces_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TLS wallet location observed on target.
+        """
+        return pulumi.get(self, "wallet_location")
+
+    @wallet_location.setter
+    def wallet_location(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "wallet_location", value)
+
+
+class CryptoAssessmentCryptoPostureTlArgsDict(TypedDict):
+    are_weak_cipher_suites_allowed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Indicates if weak TLS cipher suites are allowed.
+    """
+    cipher_suites_configureds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    TLS cipher suites configured on target.
+    """
+    fips_mode_configured: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+    """
+    is_mtls_configured: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Whether TLS client authentication is configured.
+    """
+    quantum_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Quantum-readiness classification for TLS posture.
+    """
+    revocation_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Certificate revocation checking mode.
+    """
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    TLS enablement status.
+    """
+    versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    TLS versions configured on target.
+    """
+    wallet_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    TLS wallet location observed on target.
+    """
+
+@pulumi.input_type
+class CryptoAssessmentCryptoPostureTlArgs:
+    def __init__(__self__, *,
+                 are_weak_cipher_suites_allowed: pulumi.Input[Optional[_builtins.str]] = None,
+                 cipher_suites_configureds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 fips_mode_configured: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_mtls_configured: pulumi.Input[Optional[_builtins.str]] = None,
+                 quantum_readiness: pulumi.Input[Optional[_builtins.str]] = None,
+                 revocation_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wallet_location: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] are_weak_cipher_suites_allowed: Indicates if weak TLS cipher suites are allowed.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cipher_suites_configureds: TLS cipher suites configured on target.
+        :param pulumi.Input[_builtins.str] fips_mode_configured: FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        :param pulumi.Input[_builtins.str] is_mtls_configured: Whether TLS client authentication is configured.
+        :param pulumi.Input[_builtins.str] quantum_readiness: Quantum-readiness classification for TLS posture.
+        :param pulumi.Input[_builtins.str] revocation_mode: Certificate revocation checking mode.
+        :param pulumi.Input[_builtins.str] status: TLS enablement status.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] versions: TLS versions configured on target.
+        :param pulumi.Input[_builtins.str] wallet_location: TLS wallet location observed on target.
+        """
+        if are_weak_cipher_suites_allowed is not None:
+            pulumi.set(__self__, "are_weak_cipher_suites_allowed", are_weak_cipher_suites_allowed)
+        if cipher_suites_configureds is not None:
+            pulumi.set(__self__, "cipher_suites_configureds", cipher_suites_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if is_mtls_configured is not None:
+            pulumi.set(__self__, "is_mtls_configured", is_mtls_configured)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if revocation_mode is not None:
+            pulumi.set(__self__, "revocation_mode", revocation_mode)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if versions is not None:
+            pulumi.set(__self__, "versions", versions)
+        if wallet_location is not None:
+            pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakCipherSuitesAllowed")
+    def are_weak_cipher_suites_allowed(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates if weak TLS cipher suites are allowed.
+        """
+        return pulumi.get(self, "are_weak_cipher_suites_allowed")
+
+    @are_weak_cipher_suites_allowed.setter
+    def are_weak_cipher_suites_allowed(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "are_weak_cipher_suites_allowed", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cipherSuitesConfigureds")
+    def cipher_suites_configureds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        TLS cipher suites configured on target.
+        """
+        return pulumi.get(self, "cipher_suites_configureds")
+
+    @cipher_suites_configureds.setter
+    def cipher_suites_configureds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "cipher_suites_configureds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        FIPS mode configured for TLS when the target uses legacy per-feature FIPS configuration.
+        """
+        return pulumi.get(self, "fips_mode_configured")
+
+    @fips_mode_configured.setter
+    def fips_mode_configured(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "fips_mode_configured", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isMtlsConfigured")
+    def is_mtls_configured(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Whether TLS client authentication is configured.
+        """
+        return pulumi.get(self, "is_mtls_configured")
+
+    @is_mtls_configured.setter
+    def is_mtls_configured(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "is_mtls_configured", value)
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Quantum-readiness classification for TLS posture.
+        """
+        return pulumi.get(self, "quantum_readiness")
+
+    @quantum_readiness.setter
+    def quantum_readiness(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "quantum_readiness", value)
+
+    @_builtins.property
+    @pulumi.getter(name="revocationMode")
+    def revocation_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Certificate revocation checking mode.
+        """
+        return pulumi.get(self, "revocation_mode")
+
+    @revocation_mode.setter
+    def revocation_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "revocation_mode", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TLS enablement status.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        TLS versions configured on target.
+        """
+        return pulumi.get(self, "versions")
+
+    @versions.setter
+    def versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "versions", value)
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TLS wallet location observed on target.
+        """
+        return pulumi.get(self, "wallet_location")
+
+    @wallet_location.setter
+    def wallet_location(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "wallet_location", value)
+
+
+class CryptoAssessmentManagementCryptoPostureArgsDict(TypedDict):
+    backup_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    encrypted_backup_pieces_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    fips_mode_configured: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    fips_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    network_encryptions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    nnes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureNneArgsDict']]]]]
+    tdes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureTdeArgsDict']]]]]
+    tls: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureTlArgsDict']]]]]
+    unencrypted_backup_pieces_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class CryptoAssessmentManagementCryptoPostureArgs:
+    def __init__(__self__, *,
+                 backup_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 encrypted_backup_pieces_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 fips_mode_configured: pulumi.Input[Optional[_builtins.str]] = None,
+                 fips_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_encryptions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 nnes: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureNneArgs']]]] = None,
+                 tdes: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureTdeArgs']]]] = None,
+                 tls: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureTlArgs']]]] = None,
+                 unencrypted_backup_pieces_count: pulumi.Input[Optional[_builtins.int]] = None):
+        if backup_status is not None:
+            pulumi.set(__self__, "backup_status", backup_status)
+        if encrypted_backup_pieces_count is not None:
+            pulumi.set(__self__, "encrypted_backup_pieces_count", encrypted_backup_pieces_count)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if fips_status is not None:
+            pulumi.set(__self__, "fips_status", fips_status)
+        if network_encryptions is not None:
+            pulumi.set(__self__, "network_encryptions", network_encryptions)
+        if nnes is not None:
+            pulumi.set(__self__, "nnes", nnes)
+        if tdes is not None:
+            pulumi.set(__self__, "tdes", tdes)
+        if tls is not None:
+            pulumi.set(__self__, "tls", tls)
+        if unencrypted_backup_pieces_count is not None:
+            pulumi.set(__self__, "unencrypted_backup_pieces_count", unencrypted_backup_pieces_count)
+
+    @_builtins.property
+    @pulumi.getter(name="backupStatus")
+    def backup_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "backup_status")
+
+    @backup_status.setter
+    def backup_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedBackupPiecesCount")
+    def encrypted_backup_pieces_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "encrypted_backup_pieces_count")
+
+    @encrypted_backup_pieces_count.setter
+    def encrypted_backup_pieces_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "encrypted_backup_pieces_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "fips_mode_configured")
+
+    @fips_mode_configured.setter
+    def fips_mode_configured(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "fips_mode_configured", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsStatus")
+    def fips_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "fips_status")
+
+    @fips_status.setter
+    def fips_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "fips_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkEncryptions")
+    def network_encryptions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "network_encryptions")
+
+    @network_encryptions.setter
+    def network_encryptions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "network_encryptions", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def nnes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureNneArgs']]]]:
+        return pulumi.get(self, "nnes")
+
+    @nnes.setter
+    def nnes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureNneArgs']]]]):
+        pulumi.set(self, "nnes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tdes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureTdeArgs']]]]:
+        return pulumi.get(self, "tdes")
+
+    @tdes.setter
+    def tdes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureTdeArgs']]]]):
+        pulumi.set(self, "tdes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureTlArgs']]]]:
+        return pulumi.get(self, "tls")
+
+    @tls.setter
+    def tls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CryptoAssessmentManagementCryptoPostureTlArgs']]]]):
+        pulumi.set(self, "tls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedBackupPiecesCount")
+    def unencrypted_backup_pieces_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "unencrypted_backup_pieces_count")
+
+    @unencrypted_backup_pieces_count.setter
+    def unencrypted_backup_pieces_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "unencrypted_backup_pieces_count", value)
+
+
+class CryptoAssessmentManagementCryptoPostureNneArgsDict(TypedDict):
+    are_weak_options_allowed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    encryption_configureds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    fips_mode_configured: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    integrities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    key_exchange: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    quantum_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    server_encryption: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    server_integrities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class CryptoAssessmentManagementCryptoPostureNneArgs:
+    def __init__(__self__, *,
+                 are_weak_options_allowed: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_configureds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 fips_mode_configured: pulumi.Input[Optional[_builtins.str]] = None,
+                 integrities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 key_exchange: pulumi.Input[Optional[_builtins.str]] = None,
+                 quantum_readiness: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_integrities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
+        if are_weak_options_allowed is not None:
+            pulumi.set(__self__, "are_weak_options_allowed", are_weak_options_allowed)
+        if encryption_configureds is not None:
+            pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if integrities is not None:
+            pulumi.set(__self__, "integrities", integrities)
+        if key_exchange is not None:
+            pulumi.set(__self__, "key_exchange", key_exchange)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if server_encryption is not None:
+            pulumi.set(__self__, "server_encryption", server_encryption)
+        if server_integrities is not None:
+            pulumi.set(__self__, "server_integrities", server_integrities)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakOptionsAllowed")
+    def are_weak_options_allowed(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "are_weak_options_allowed")
+
+    @are_weak_options_allowed.setter
+    def are_weak_options_allowed(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "are_weak_options_allowed", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "encryption_configureds")
+
+    @encryption_configureds.setter
+    def encryption_configureds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "encryption_configureds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "fips_mode_configured")
+
+    @fips_mode_configured.setter
+    def fips_mode_configured(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "fips_mode_configured", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def integrities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "integrities")
+
+    @integrities.setter
+    def integrities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "integrities", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyExchange")
+    def key_exchange(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "key_exchange")
+
+    @key_exchange.setter
+    def key_exchange(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_exchange", value)
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "quantum_readiness")
+
+    @quantum_readiness.setter
+    def quantum_readiness(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "quantum_readiness", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serverEncryption")
+    def server_encryption(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "server_encryption")
+
+    @server_encryption.setter
+    def server_encryption(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "server_encryption", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serverIntegrities")
+    def server_integrities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "server_integrities")
+
+    @server_integrities.setter
+    def server_integrities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "server_integrities", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+
+class CryptoAssessmentManagementCryptoPostureTdeArgsDict(TypedDict):
+    db_credentials_encryption_observed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    encrypted_tablespaces_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    encryption_configureds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    fips_mode_configured: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    integrity_configureds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    key_cache_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    key_store_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    master_key_encryption_algorithm: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    master_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    quantum_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    redo_encryption_observed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    time_master_key_last_rotation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    unencrypted_tablespaces_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    wallet_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class CryptoAssessmentManagementCryptoPostureTdeArgs:
+    def __init__(__self__, *,
+                 db_credentials_encryption_observed: pulumi.Input[Optional[_builtins.str]] = None,
+                 encrypted_tablespaces_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 encryption_configureds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 fips_mode_configured: pulumi.Input[Optional[_builtins.str]] = None,
+                 integrity_configureds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 key_cache_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 master_key_encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 master_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 quantum_readiness: pulumi.Input[Optional[_builtins.str]] = None,
+                 redo_encryption_observed: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_master_key_last_rotation: pulumi.Input[Optional[_builtins.str]] = None,
+                 unencrypted_tablespaces_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 wallet_location: pulumi.Input[Optional[_builtins.str]] = None):
+        if db_credentials_encryption_observed is not None:
+            pulumi.set(__self__, "db_credentials_encryption_observed", db_credentials_encryption_observed)
+        if encrypted_tablespaces_count is not None:
+            pulumi.set(__self__, "encrypted_tablespaces_count", encrypted_tablespaces_count)
+        if encryption_configureds is not None:
+            pulumi.set(__self__, "encryption_configureds", encryption_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if integrity_configureds is not None:
+            pulumi.set(__self__, "integrity_configureds", integrity_configureds)
+        if key_cache_status is not None:
+            pulumi.set(__self__, "key_cache_status", key_cache_status)
+        if key_store_type is not None:
+            pulumi.set(__self__, "key_store_type", key_store_type)
+        if master_key_encryption_algorithm is not None:
+            pulumi.set(__self__, "master_key_encryption_algorithm", master_key_encryption_algorithm)
+        if master_key_id is not None:
+            pulumi.set(__self__, "master_key_id", master_key_id)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if redo_encryption_observed is not None:
+            pulumi.set(__self__, "redo_encryption_observed", redo_encryption_observed)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_master_key_last_rotation is not None:
+            pulumi.set(__self__, "time_master_key_last_rotation", time_master_key_last_rotation)
+        if unencrypted_tablespaces_count is not None:
+            pulumi.set(__self__, "unencrypted_tablespaces_count", unencrypted_tablespaces_count)
+        if wallet_location is not None:
+            pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="dbCredentialsEncryptionObserved")
+    def db_credentials_encryption_observed(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "db_credentials_encryption_observed")
+
+    @db_credentials_encryption_observed.setter
+    def db_credentials_encryption_observed(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "db_credentials_encryption_observed", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptedTablespacesCount")
+    def encrypted_tablespaces_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "encrypted_tablespaces_count")
+
+    @encrypted_tablespaces_count.setter
+    def encrypted_tablespaces_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "encrypted_tablespaces_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionConfigureds")
+    def encryption_configureds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "encryption_configureds")
+
+    @encryption_configureds.setter
+    def encryption_configureds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "encryption_configureds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "fips_mode_configured")
+
+    @fips_mode_configured.setter
+    def fips_mode_configured(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "fips_mode_configured", value)
+
+    @_builtins.property
+    @pulumi.getter(name="integrityConfigureds")
+    def integrity_configureds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "integrity_configureds")
+
+    @integrity_configureds.setter
+    def integrity_configureds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "integrity_configureds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyCacheStatus")
+    def key_cache_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "key_cache_status")
+
+    @key_cache_status.setter
+    def key_cache_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_cache_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreType")
+    def key_store_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "key_store_type")
+
+    @key_store_type.setter
+    def key_store_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_store_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyEncryptionAlgorithm")
+    def master_key_encryption_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "master_key_encryption_algorithm")
+
+    @master_key_encryption_algorithm.setter
+    def master_key_encryption_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "master_key_encryption_algorithm", value)
+
+    @_builtins.property
+    @pulumi.getter(name="masterKeyId")
+    def master_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "master_key_id")
+
+    @master_key_id.setter
+    def master_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "master_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "quantum_readiness")
+
+    @quantum_readiness.setter
+    def quantum_readiness(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "quantum_readiness", value)
+
+    @_builtins.property
+    @pulumi.getter(name="redoEncryptionObserved")
+    def redo_encryption_observed(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "redo_encryption_observed")
+
+    @redo_encryption_observed.setter
+    def redo_encryption_observed(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "redo_encryption_observed", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeMasterKeyLastRotation")
+    def time_master_key_last_rotation(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "time_master_key_last_rotation")
+
+    @time_master_key_last_rotation.setter
+    def time_master_key_last_rotation(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_master_key_last_rotation", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unencryptedTablespacesCount")
+    def unencrypted_tablespaces_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "unencrypted_tablespaces_count")
+
+    @unencrypted_tablespaces_count.setter
+    def unencrypted_tablespaces_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "unencrypted_tablespaces_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "wallet_location")
+
+    @wallet_location.setter
+    def wallet_location(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "wallet_location", value)
+
+
+class CryptoAssessmentManagementCryptoPostureTlArgsDict(TypedDict):
+    are_weak_cipher_suites_allowed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    cipher_suites_configureds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    fips_mode_configured: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    is_mtls_configured: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    quantum_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    revocation_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    wallet_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class CryptoAssessmentManagementCryptoPostureTlArgs:
+    def __init__(__self__, *,
+                 are_weak_cipher_suites_allowed: pulumi.Input[Optional[_builtins.str]] = None,
+                 cipher_suites_configureds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 fips_mode_configured: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_mtls_configured: pulumi.Input[Optional[_builtins.str]] = None,
+                 quantum_readiness: pulumi.Input[Optional[_builtins.str]] = None,
+                 revocation_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wallet_location: pulumi.Input[Optional[_builtins.str]] = None):
+        if are_weak_cipher_suites_allowed is not None:
+            pulumi.set(__self__, "are_weak_cipher_suites_allowed", are_weak_cipher_suites_allowed)
+        if cipher_suites_configureds is not None:
+            pulumi.set(__self__, "cipher_suites_configureds", cipher_suites_configureds)
+        if fips_mode_configured is not None:
+            pulumi.set(__self__, "fips_mode_configured", fips_mode_configured)
+        if is_mtls_configured is not None:
+            pulumi.set(__self__, "is_mtls_configured", is_mtls_configured)
+        if quantum_readiness is not None:
+            pulumi.set(__self__, "quantum_readiness", quantum_readiness)
+        if revocation_mode is not None:
+            pulumi.set(__self__, "revocation_mode", revocation_mode)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if versions is not None:
+            pulumi.set(__self__, "versions", versions)
+        if wallet_location is not None:
+            pulumi.set(__self__, "wallet_location", wallet_location)
+
+    @_builtins.property
+    @pulumi.getter(name="areWeakCipherSuitesAllowed")
+    def are_weak_cipher_suites_allowed(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "are_weak_cipher_suites_allowed")
+
+    @are_weak_cipher_suites_allowed.setter
+    def are_weak_cipher_suites_allowed(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "are_weak_cipher_suites_allowed", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cipherSuitesConfigureds")
+    def cipher_suites_configureds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "cipher_suites_configureds")
+
+    @cipher_suites_configureds.setter
+    def cipher_suites_configureds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "cipher_suites_configureds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fipsModeConfigured")
+    def fips_mode_configured(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "fips_mode_configured")
+
+    @fips_mode_configured.setter
+    def fips_mode_configured(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "fips_mode_configured", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isMtlsConfigured")
+    def is_mtls_configured(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "is_mtls_configured")
+
+    @is_mtls_configured.setter
+    def is_mtls_configured(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "is_mtls_configured", value)
+
+    @_builtins.property
+    @pulumi.getter(name="quantumReadiness")
+    def quantum_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "quantum_readiness")
+
+    @quantum_readiness.setter
+    def quantum_readiness(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "quantum_readiness", value)
+
+    @_builtins.property
+    @pulumi.getter(name="revocationMode")
+    def revocation_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "revocation_mode")
+
+    @revocation_mode.setter
+    def revocation_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "revocation_mode", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "versions")
+
+    @versions.setter
+    def versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "versions", value)
+
+    @_builtins.property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "wallet_location")
+
+    @wallet_location.setter
+    def wallet_location(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "wallet_location", value)
 
 
 class DataSafeConfigurationGlobalSettingArgsDict(TypedDict):
@@ -9432,6 +10918,446 @@ class GetAuditTrailsFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetAuditTrailsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCryptoAssessmentBackupSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCryptoAssessmentBackupSetsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCryptoAssessmentCbomItemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCryptoAssessmentCbomItemsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCryptoAssessmentCertificatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCryptoAssessmentCertificatesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCryptoAssessmentFindingAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCryptoAssessmentFindingAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCryptoAssessmentFindingTargetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCryptoAssessmentFindingTargetsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCryptoAssessmentFindingsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCryptoAssessmentFindingsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCryptoAssessmentKeysFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCryptoAssessmentKeysFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCryptoAssessmentTdeObjectsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCryptoAssessmentTdeObjectsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCryptoAssessmentWalletsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCryptoAssessmentWalletsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCryptoAssessmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCryptoAssessmentsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

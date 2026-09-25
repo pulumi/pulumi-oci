@@ -19,7 +19,7 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public Input<bool>? IsOverrideDns { get; set; }
 
         /// <summary>
-        /// (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+        /// (Updatable) Attribute to override the DNS IP value. This value is required only if isOverrideDns is set to true.
         /// </summary>
         [Input("overrideDnsIp")]
         public Input<string>? OverrideDnsIp { get; set; }

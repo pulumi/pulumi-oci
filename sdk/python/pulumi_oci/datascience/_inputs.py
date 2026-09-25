@@ -10732,6 +10732,10 @@ class NotebookSessionNotebookSessionConfigDetailsArgsDict(TypedDict):
     """
     A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
     """
+    capacity_reservation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+    """
     notebook_session_shape_config_details: NotRequired[pulumi.Input[Optional['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgsDict']]]
     """
     Details for the notebook session shape configuration.
@@ -10750,12 +10754,14 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
     def __init__(__self__, *,
                  shape: pulumi.Input[_builtins.str],
                  block_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  notebook_session_shape_config_details: pulumi.Input[Optional['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs']] = None,
                  private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param pulumi.Input[_builtins.int] block_storage_size_in_gbs: A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+        :param pulumi.Input[_builtins.str] capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
         :param pulumi.Input['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs'] notebook_session_shape_config_details: Details for the notebook session shape configuration.
         :param pulumi.Input[_builtins.str] private_endpoint_id: The OCID of a Data Science private endpoint.
         :param pulumi.Input[_builtins.str] subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -10763,6 +10769,8 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
         pulumi.set(__self__, "shape", shape)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if notebook_session_shape_config_details is not None:
             pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
         if private_endpoint_id is not None:
@@ -10793,6 +10801,18 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
     @block_storage_size_in_gbs.setter
     def block_storage_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_storage_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="notebookSessionShapeConfigDetails")
@@ -10913,6 +10933,10 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgsDict(TypedDict):
     """
     (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
     """
+    capacity_reservation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+    """
     notebook_session_shape_config_details: NotRequired[pulumi.Input[Optional['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgsDict']]]
     """
     (Updatable) Details for the notebook session shape configuration.
@@ -10928,12 +10952,14 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
                  shape: pulumi.Input[_builtins.str],
                  subnet_id: pulumi.Input[_builtins.str],
                  block_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  notebook_session_shape_config_details: pulumi.Input[Optional['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs']] = None,
                  private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] shape: (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         :param pulumi.Input[_builtins.int] block_storage_size_in_gbs: (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+        :param pulumi.Input[_builtins.str] capacity_reservation_id: (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
         :param pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs'] notebook_session_shape_config_details: (Updatable) Details for the notebook session shape configuration.
         :param pulumi.Input[_builtins.str] private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         """
@@ -10941,6 +10967,8 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
         pulumi.set(__self__, "subnet_id", subnet_id)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if notebook_session_shape_config_details is not None:
             pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
         if private_endpoint_id is not None:
@@ -10981,6 +11009,18 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
     @block_storage_size_in_gbs.setter
     def block_storage_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_storage_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="notebookSessionShapeConfigDetails")

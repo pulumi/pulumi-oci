@@ -24,6 +24,26 @@ import * as utilities from "../utilities";
  *     applicationId: testApplication.id,
  *     displayName: functionDisplayName,
  *     memoryInMbs: functionMemoryInMbs,
+ *     sourceDetails: {
+ *         sourceType: functionSourceDetailsSourceType,
+ *         archiveSourceDetails: {
+ *             archiveSourceType: functionSourceDetailsArchiveSourceDetailsArchiveSourceType,
+ *             archiveFile: functionSourceDetailsArchiveSourceDetailsArchiveFile,
+ *             bucket: functionSourceDetailsArchiveSourceDetailsBucket,
+ *             namespace: functionSourceDetailsArchiveSourceDetailsNamespace,
+ *             object: functionSourceDetailsArchiveSourceDetailsObject,
+ *             objectVersionId: testObjectVersion.id,
+ *         },
+ *         handler: functionSourceDetailsHandler,
+ *         image: functionSourceDetailsImage,
+ *         imageDigest: functionSourceDetailsImageDigest,
+ *         pbfListingId: testPbfListing.id,
+ *         runtimeConfig: {
+ *             functionsRuntimeName: functionsRuntimeName,
+ *             functionsRuntimeVersionId: functionsRuntimeVersionId,
+ *             runtimeConfigType: functionSourceDetailsRuntimeConfigRuntimeConfigType,
+ *         },
+ *     },
  *     config: functionConfig,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -39,15 +59,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     image: functionImage,
- *     imageDigest: functionImageDigest,
  *     provisionedConcurrencyConfig: {
  *         strategy: functionProvisionedConcurrencyConfigStrategy,
  *         count: Number(functionProvisionedConcurrencyConfigCount),
- *     },
- *     sourceDetails: {
- *         pbfListingId: testPbfListing.id,
- *         sourceType: functionSourceDetailsSourceType,
  *     },
  *     successDestination: {
  *         kind: functionSuccessDestinationKind,
@@ -134,11 +148,13 @@ export class Function extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     *
+     * @deprecated The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
      */
     declare public readonly image: pulumi.Output<string>;
     /**
-     * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      */
     declare public readonly imageDigest: pulumi.Output<string>;
     /**
@@ -158,7 +174,7 @@ export class Function extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly shape: pulumi.Output<string>;
     /**
-     * The source details for the Function. The function can be created from various sources.
+     * (Updatable) The source details for creating the Function. The function can be created from various sources.
      */
     declare public readonly sourceDetails: pulumi.Output<outputs.Functions.FunctionSourceDetails>;
     /**
@@ -297,11 +313,13 @@ export interface FunctionState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     *
+     * @deprecated The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
      */
     image?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      */
     imageDigest?: pulumi.Input<string | undefined>;
     /**
@@ -321,7 +339,7 @@ export interface FunctionState {
      */
     shape?: pulumi.Input<string | undefined>;
     /**
-     * The source details for the Function. The function can be created from various sources.
+     * (Updatable) The source details for creating the Function. The function can be created from various sources.
      */
     sourceDetails?: pulumi.Input<inputs.Functions.FunctionSourceDetails | undefined>;
     /**
@@ -385,11 +403,13 @@ export interface FunctionArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     * (Updatable) Deprecated. The 'image' field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image' will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+     *
+     * @deprecated The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used.
      */
     image?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
+     * (Updatable) Deprecated. The 'image_digest' field has been deprecated. Use `source_details.image_digest` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then 'source_details.image_digest' will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      */
     imageDigest?: pulumi.Input<string | undefined>;
     /**
@@ -401,7 +421,7 @@ export interface FunctionArgs {
      */
     provisionedConcurrencyConfig?: pulumi.Input<inputs.Functions.FunctionProvisionedConcurrencyConfig | undefined>;
     /**
-     * The source details for the Function. The function can be created from various sources.
+     * (Updatable) The source details for creating the Function. The function can be created from various sources.
      */
     sourceDetails?: pulumi.Input<inputs.Functions.FunctionSourceDetails | undefined>;
     /**

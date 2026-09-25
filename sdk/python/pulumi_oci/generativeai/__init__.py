@@ -48,9 +48,12 @@ from .get_hosted_deployments import *
 from .get_imported_model import *
 from .get_imported_models import *
 from .get_model import *
+from .get_model_discoveries import *
 from .get_models import *
 from .get_project import *
 from .get_projects import *
+from .get_routing_profile import *
+from .get_routing_profiles import *
 from .get_semantic_store import *
 from .get_semantic_stores import *
 from .hosted_application import *
@@ -60,6 +63,7 @@ from .hosted_deployment import *
 from .imported_model import *
 from .model import *
 from .project import *
+from .routing_profile import *
 from .semantic_store import *
 from ._inputs import *
 from . import outputs

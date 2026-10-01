@@ -39,6 +39,7 @@ import (
 //				AttachmentType:  pulumi.StringRef(drgAttachmentAttachmentType),
 //				DisplayName:     pulumi.StringRef(drgAttachmentDisplayName),
 //				DrgId:           pulumi.StringRef(testDrg.Id),
+//				DrgNatPolicyId:  pulumi.StringRef(testDrgNatPolicy.Id),
 //				DrgRouteTableId: pulumi.StringRef(testDrgRouteTable.Id),
 //				NetworkId:       pulumi.StringRef(testNetwork.Id),
 //				State:           pulumi.StringRef(drgAttachmentState),
@@ -72,6 +73,8 @@ type GetDrgAttachmentsArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId *string `pulumi:"drgId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+	DrgNatPolicyId *string `pulumi:"drgNatPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId *string                   `pulumi:"drgRouteTableId"`
 	Filters         []GetDrgAttachmentsFilter `pulumi:"filters"`
@@ -94,6 +97,8 @@ type GetDrgAttachmentsResult struct {
 	DrgAttachments []GetDrgAttachmentsDrgAttachment `pulumi:"drgAttachments"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId *string `pulumi:"drgId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+	DrgNatPolicyId *string `pulumi:"drgNatPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
 	DrgRouteTableId *string                   `pulumi:"drgRouteTableId"`
 	Filters         []GetDrgAttachmentsFilter `pulumi:"filters"`
@@ -121,6 +126,8 @@ type GetDrgAttachmentsOutputArgs struct {
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId pulumi.StringPtrInput `pulumi:"drgId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+	DrgNatPolicyId pulumi.StringPtrInput `pulumi:"drgNatPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId pulumi.StringPtrInput             `pulumi:"drgRouteTableId"`
 	Filters         GetDrgAttachmentsFilterArrayInput `pulumi:"filters"`
@@ -173,6 +180,11 @@ func (o GetDrgAttachmentsResultOutput) DrgAttachments() GetDrgAttachmentsDrgAtta
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 func (o GetDrgAttachmentsResultOutput) DrgId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDrgAttachmentsResult) *string { return v.DrgId }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+func (o GetDrgAttachmentsResultOutput) DrgNatPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgAttachmentsResult) *string { return v.DrgNatPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.

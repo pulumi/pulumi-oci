@@ -60,6 +60,13 @@ public final class SecurityAssessmentFindingReferenceArgs extends com.pulumi.res
         return Optional.ofNullable(this.obp);
     }
 
+    @Import(name="orp")
+    private @Nullable Output<String> orp;
+
+    public Optional<Output<String>> orp() {
+        return Optional.ofNullable(this.orp);
+    }
+
     /**
      * Relevant section from STIG.
      * 
@@ -81,6 +88,7 @@ public final class SecurityAssessmentFindingReferenceArgs extends com.pulumi.res
         this.cis = $.cis;
         this.gdpr = $.gdpr;
         this.obp = $.obp;
+        this.orp = $.orp;
         this.stig = $.stig;
     }
 
@@ -163,6 +171,15 @@ public final class SecurityAssessmentFindingReferenceArgs extends com.pulumi.res
          */
         public Builder obp(String obp) {
             return obp(Output.of(obp));
+        }
+
+        public Builder orp(@Nullable Output<String> orp) {
+            $.orp = orp;
+            return this;
+        }
+
+        public Builder orp(String orp) {
+            return orp(Output.of(orp));
         }
 
         /**

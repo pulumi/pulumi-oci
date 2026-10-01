@@ -18,7 +18,7 @@ public final class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatch
      */
     private List<GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude> excludes;
     /**
-     * @return Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+     * @return Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
      * 
      */
     private List<GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude> includes;
@@ -32,7 +32,7 @@ public final class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatch
         return this.excludes;
     }
     /**
-     * @return Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+     * @return Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
      * 
      */
     public List<GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude> includes() {

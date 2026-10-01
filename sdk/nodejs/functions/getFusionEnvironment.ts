@@ -107,6 +107,8 @@ export interface GetFusionEnvironmentResult {
     readonly isIpv6dualStackEnabled: boolean;
     /**
      * BYOK key id
+     *
+     * @deprecated Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
      */
     readonly kmsKeyId: string;
     /**

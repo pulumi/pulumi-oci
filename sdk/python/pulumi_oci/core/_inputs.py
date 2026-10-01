@@ -515,6 +515,10 @@ __all__ = [
     'GetDhcpOptionsFilterArgsDict',
     'GetDrgAttachmentsFilterArgs',
     'GetDrgAttachmentsFilterArgsDict',
+    'GetDrgNatPoliciesFilterArgs',
+    'GetDrgNatPoliciesFilterArgsDict',
+    'GetDrgNatPolicyDrgNatRulesFilterArgs',
+    'GetDrgNatPolicyDrgNatRulesFilterArgsDict',
     'GetDrgRouteDistributionStatementsFilterArgs',
     'GetDrgRouteDistributionStatementsFilterArgsDict',
     'GetDrgRouteDistributionsFilterArgs',
@@ -7737,6 +7741,10 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgsDict(Typed
     """
     Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
     """
+    is_reservations_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+    """
     kms_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the Vault service key to assign as the master encryption key for the volume.
@@ -7770,6 +7778,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_auto_tune_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_reservations_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
                  source_details: pulumi.Input[Optional['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs']] = None,
@@ -7786,6 +7795,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param pulumi.Input[_builtins.bool] is_reservations_enabled: Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[_builtins.str] size_in_gbs: The size of the volume in GBs.
         :param pulumi.Input[_builtins.str] vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -7813,6 +7823,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_tune_enabled is not None:
             pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
+        if is_reservations_enabled is not None:
+            pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
@@ -7943,6 +7955,18 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @is_auto_tune_enabled.setter
     def is_auto_tune_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_tune_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
+
+    @is_reservations_enabled.setter
+    def is_reservations_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_reservations_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -10897,6 +10921,10 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgsDict
     """
     Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
     """
+    is_reservations_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+    """
     kms_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the Vault service key to assign as the master encryption key for the volume.
@@ -10930,6 +10958,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_auto_tune_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_reservations_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
                  source_details: pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs']] = None,
@@ -10946,6 +10975,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param pulumi.Input[_builtins.bool] is_reservations_enabled: Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[_builtins.str] size_in_gbs: The size of the volume in GBs.
         :param pulumi.Input[_builtins.str] vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -10973,6 +11003,8 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_tune_enabled is not None:
             pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
+        if is_reservations_enabled is not None:
+            pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
@@ -11103,6 +11135,18 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @is_auto_tune_enabled.setter
     def is_auto_tune_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_tune_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
+
+    @is_reservations_enabled.setter
+    def is_reservations_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_reservations_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -12863,6 +12907,10 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgsD
     """
     Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
     """
+    config_map: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Instance Platform Configuration Configuration Map for flexible setting input.
+    """
     is_access_control_service_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
@@ -12905,6 +12953,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
                  are_virtual_instructions_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 config_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_access_control_service_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_input_output_memory_management_unit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_measured_boot_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -12917,6 +12966,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
         """
         :param pulumi.Input[_builtins.str] type: The type of action to run when the instance is interrupted for eviction.
         :param pulumi.Input[_builtins.bool] are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param pulumi.Input[_builtins.bool] is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param pulumi.Input[_builtins.bool] is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param pulumi.Input[_builtins.bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
@@ -12930,6 +12980,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
             pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        if config_map is not None:
+            pulumi.set(__self__, "config_map", config_map)
         if is_access_control_service_enabled is not None:
             pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         if is_input_output_memory_management_unit_enabled is not None:
@@ -12972,6 +13024,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @are_virtual_instructions_enabled.setter
     def are_virtual_instructions_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_virtual_instructions_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="configMap")
+    def config_map(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Instance Platform Configuration Configuration Map for flexible setting input.
+        """
+        return pulumi.get(self, "config_map")
+
+    @config_map.setter
+    def config_map(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "config_map", value)
 
     @_builtins.property
     @pulumi.getter(name="isAccessControlServiceEnabled")
@@ -23744,6 +23808,94 @@ class GetDrgAttachmentsFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetDrgAttachmentsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDrgNatPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDrgNatPoliciesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDrgNatPolicyDrgNatRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDrgNatPolicyDrgNatRulesFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

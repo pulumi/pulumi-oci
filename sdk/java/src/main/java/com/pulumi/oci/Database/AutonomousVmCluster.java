@@ -510,14 +510,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.memoryPerComputeUnitInGbs;
     }
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
     @Export(name="memoryPerOracleComputeUnitInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * @return (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
     public Output<Integer> memoryPerOracleComputeUnitInGbs() {
@@ -688,14 +688,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.scanListenerPortTls;
     }
     /**
-     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
      * 
      */
     @Export(name="sgaPercentage", refs={Double.class}, tree="[0]")
     private Output<Double> sgaPercentage;
 
     /**
-     * @return Percentage of ECPU memory allocated for SGA(System Global Area).
+     * @return (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
      * 
      */
     public Output<Double> sgaPercentage() {

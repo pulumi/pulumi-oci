@@ -167,6 +167,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// List of enabled features based on granted ORA_DSCS_* roles in target database
+        /// </summary>
+        [Output("features")]
+        public Output<ImmutableArray<string>> Features { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
@@ -177,6 +183,16 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("managePrivilegesTrigger")]
+        public Output<int?> ManagePrivilegesTrigger { get; private set; } = null!;
 
         /// <summary>
         /// The details of the database to be registered as a peer target database.
@@ -326,6 +342,16 @@ namespace Pulumi.Oci.DataSafe
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("managePrivilegesTrigger")]
+        public Input<int>? ManagePrivilegesTrigger { get; set; }
+
         [Input("peerTargetDatabaseDetails")]
         private InputList<Inputs.TargetDatabasePeerTargetDatabaseDetailArgs>? _peerTargetDatabaseDetails;
 
@@ -412,6 +438,18 @@ namespace Pulumi.Oci.DataSafe
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        [Input("features")]
+        private InputList<string>? _features;
+
+        /// <summary>
+        /// List of enabled features based on granted ORA_DSCS_* roles in target database
+        /// </summary>
+        public InputList<string> Features
+        {
+            get => _features ?? (_features = new InputList<string>());
+            set => _features = value;
+        }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -429,6 +467,16 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("managePrivilegesTrigger")]
+        public Input<int>? ManagePrivilegesTrigger { get; set; }
 
         [Input("peerTargetDatabaseDetails")]
         private InputList<Inputs.TargetDatabasePeerTargetDatabaseDetailGetArgs>? _peerTargetDatabaseDetails;

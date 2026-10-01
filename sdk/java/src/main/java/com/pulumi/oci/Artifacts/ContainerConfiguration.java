@@ -30,6 +30,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Artifacts.ContainerConfiguration;
+ * import com.pulumi.oci.Artifacts.ContainerConfigurationArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -43,7 +44,10 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testContainerConfiguration = new ContainerConfiguration("testContainerConfiguration");
+ *         var testContainerConfiguration = new ContainerConfiguration("testContainerConfiguration", ContainerConfigurationArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .isRepositoryCreatedOnFirstPush(containerConfigurationIsRepositoryCreatedOnFirstPush)
+ *             .build());
  * 
  *     }
  * }
@@ -61,21 +65,35 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Artifacts/containerConfiguration:ContainerConfiguration")
 public class ContainerConfiguration extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Export(name="isRepositoryCreatedOnFirstPush", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRepositoryCreatedOnFirstPush;
 
     /**
-     * @return Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * @return (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> isRepositoryCreatedOnFirstPush() {

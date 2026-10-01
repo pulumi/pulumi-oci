@@ -171,7 +171,7 @@ type CloudAutonomousVmCluster struct {
 	MaxAcdsLowestScaledValue pulumi.IntOutput `pulumi:"maxAcdsLowestScaledValue"`
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerComputeUnitInGbs pulumi.Float64Output `pulumi:"memoryPerComputeUnitInGbs"`
-	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
@@ -210,7 +210,7 @@ type CloudAutonomousVmCluster struct {
 	ScanListenerPortTls pulumi.IntOutput `pulumi:"scanListenerPortTls"`
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
-	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 	SgaPercentage pulumi.Float64Output `pulumi:"sgaPercentage"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape pulumi.StringOutput `pulumi:"shape"`
@@ -357,7 +357,7 @@ type cloudAutonomousVmClusterState struct {
 	MaxAcdsLowestScaledValue *int `pulumi:"maxAcdsLowestScaledValue"`
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerComputeUnitInGbs *float64 `pulumi:"memoryPerComputeUnitInGbs"`
-	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
@@ -396,7 +396,7 @@ type cloudAutonomousVmClusterState struct {
 	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
-	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 	SgaPercentage *float64 `pulumi:"sgaPercentage"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape *string `pulumi:"shape"`
@@ -502,7 +502,7 @@ type CloudAutonomousVmClusterState struct {
 	MaxAcdsLowestScaledValue pulumi.IntPtrInput
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerComputeUnitInGbs pulumi.Float64PtrInput
-	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntPtrInput
@@ -541,7 +541,7 @@ type CloudAutonomousVmClusterState struct {
 	ScanListenerPortTls pulumi.IntPtrInput
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes pulumi.StringMapInput
-	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 	SgaPercentage pulumi.Float64PtrInput
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape pulumi.StringPtrInput
@@ -613,7 +613,7 @@ type cloudAutonomousVmClusterArgs struct {
 	LicenseModel *string `pulumi:"licenseModel"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails *CloudAutonomousVmClusterMaintenanceWindowDetails `pulumi:"maintenanceWindowDetails"`
-	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -628,7 +628,7 @@ type cloudAutonomousVmClusterArgs struct {
 	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
-	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 	SgaPercentage *float64 `pulumi:"sgaPercentage"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId string `pulumi:"subnetId"`
@@ -681,7 +681,7 @@ type CloudAutonomousVmClusterArgs struct {
 	LicenseModel pulumi.StringPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails CloudAutonomousVmClusterMaintenanceWindowDetailsPtrInput
-	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -696,7 +696,7 @@ type CloudAutonomousVmClusterArgs struct {
 	ScanListenerPortTls pulumi.IntPtrInput
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes pulumi.StringMapInput
-	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 	SgaPercentage pulumi.Float64PtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId pulumi.StringInput
@@ -980,7 +980,7 @@ func (o CloudAutonomousVmClusterOutput) MemoryPerComputeUnitInGbs() pulumi.Float
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.MemoryPerComputeUnitInGbs }).(pulumi.Float64Output)
 }
 
-// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 func (o CloudAutonomousVmClusterOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }
@@ -1080,7 +1080,7 @@ func (o CloudAutonomousVmClusterOutput) SecurityAttributes() pulumi.StringMapOut
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
-// Percentage of ECPU memory allocated for SGA(System Global Area).
+// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 func (o CloudAutonomousVmClusterOutput) SgaPercentage() pulumi.Float64Output {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.SgaPercentage }).(pulumi.Float64Output)
 }

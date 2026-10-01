@@ -63,10 +63,10 @@ class AutonomousVmClusterArgs:
         :param pulumi.Input[_builtins.bool] is_mtls_enabled: (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailArgs']]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port number. Default value is 2484.
-        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
+        :param pulumi.Input[_builtins.float] sga_percentage: (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         :param pulumi.Input[_builtins.str] time_zone: (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[_builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
         """
@@ -296,7 +296,7 @@ class AutonomousVmClusterArgs:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -332,7 +332,7 @@ class AutonomousVmClusterArgs:
     @pulumi.getter(name="sgaPercentage")
     def sga_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
-        Percentage of ECPU memory allocated for SGA(System Global Area).
+        (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         """
         return pulumi.get(self, "sga_percentage")
 
@@ -452,7 +452,7 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
         :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
-        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[_builtins.int] node_count: The number of nodes in the Autonomous VM Cluster.
@@ -466,7 +466,7 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[_builtins.float] reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port number. Default value is 2484.
-        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
+        :param pulumi.Input[_builtins.float] sga_percentage: (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         :param pulumi.Input[_builtins.str] state: The current state of the Autonomous VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time that the Autonomous VM cluster was created.
@@ -952,7 +952,7 @@ class _AutonomousVmClusterState:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -1107,7 +1107,7 @@ class _AutonomousVmClusterState:
     @pulumi.getter(name="sgaPercentage")
     def sga_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
-        Percentage of ECPU memory allocated for SGA(System Global Area).
+        (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         """
         return pulumi.get(self, "sga_percentage")
 
@@ -1329,10 +1329,10 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_mtls_enabled: (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowDetailArgs', 'AutonomousVmClusterMaintenanceWindowDetailArgsDict', 'outputs.AutonomousVmClusterMaintenanceWindowDetail']]]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port number. Default value is 2484.
-        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
+        :param pulumi.Input[_builtins.float] sga_percentage: (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         :param pulumi.Input[_builtins.str] time_zone: (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[_builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
         :param pulumi.Input[_builtins.str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -1612,7 +1612,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowArgs', 'AutonomousVmClusterMaintenanceWindowArgsDict', 'outputs.AutonomousVmClusterMaintenanceWindow']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
         :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
-        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[_builtins.int] node_count: The number of nodes in the Autonomous VM Cluster.
@@ -1626,7 +1626,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.float] reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port number. Default value is 2484.
-        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
+        :param pulumi.Input[_builtins.float] sga_percentage: (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         :param pulumi.Input[_builtins.str] state: The current state of the Autonomous VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time that the Autonomous VM cluster was created.
@@ -1939,7 +1939,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Output[_builtins.int]:
         """
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -2042,7 +2042,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="sgaPercentage")
     def sga_percentage(self) -> pulumi.Output[_builtins.float]:
         """
-        Percentage of ECPU memory allocated for SGA(System Global Area).
+        (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         """
         return pulumi.get(self, "sga_percentage")
 

@@ -28,7 +28,7 @@ class GetTargetDatabasesResult:
     """
     A collection of values returned by getTargetDatabases.
     """
-    def __init__(__self__, access_level=None, associated_resource_id=None, compartment_id=None, compartment_id_in_subtree=None, database_type=None, display_name=None, filters=None, id=None, infrastructure_type=None, state=None, target_database_id=None, target_databases=None):
+    def __init__(__self__, access_level=None, associated_resource_id=None, compartment_id=None, compartment_id_in_subtree=None, database_type=None, display_name=None, enablement_resource_ocid=None, filters=None, id=None, infrastructure_type=None, state=None, target_database_id=None, target_databases=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -47,6 +47,9 @@ class GetTargetDatabasesResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if enablement_resource_ocid and not isinstance(enablement_resource_ocid, str):
+            raise TypeError("Expected argument 'enablement_resource_ocid' to be a str")
+        pulumi.set(__self__, "enablement_resource_ocid", enablement_resource_ocid)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -106,6 +109,11 @@ class GetTargetDatabasesResult:
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter(name="enablementResourceOcid")
+    def enablement_resource_ocid(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "enablement_resource_ocid")
+
+    @_builtins.property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetTargetDatabasesFilterResult']]:
         return pulumi.get(self, "filters")
@@ -160,6 +168,7 @@ class AwaitableGetTargetDatabasesResult(GetTargetDatabasesResult):
             compartment_id_in_subtree=self.compartment_id_in_subtree,
             database_type=self.database_type,
             display_name=self.display_name,
+            enablement_resource_ocid=self.enablement_resource_ocid,
             filters=self.filters,
             id=self.id,
             infrastructure_type=self.infrastructure_type,
@@ -174,6 +183,7 @@ def get_target_databases(access_level: Optional[_builtins.str] = None,
                          compartment_id_in_subtree: Optional[_builtins.bool] = None,
                          database_type: Optional[_builtins.str] = None,
                          display_name: Optional[_builtins.str] = None,
+                         enablement_resource_ocid: Optional[_builtins.str] = None,
                          filters: Optional[Sequence[Union['GetTargetDatabasesFilterArgs', 'GetTargetDatabasesFilterArgsDict', 'outputs.GetTargetDatabasesFilterResult']]] = None,
                          infrastructure_type: Optional[_builtins.str] = None,
                          state: Optional[_builtins.str] = None,
@@ -196,6 +206,7 @@ def get_target_databases(access_level: Optional[_builtins.str] = None,
         compartment_id_in_subtree=target_database_compartment_id_in_subtree == "true",
         database_type=target_database_database_type,
         display_name=target_database_display_name,
+        enablement_resource_ocid=target_database_enablement_resource_ocid,
         infrastructure_type=target_database_infrastructure_type,
         state=target_database_state,
         target_database_id=test_target_database["id"])
@@ -208,6 +219,7 @@ def get_target_databases(access_level: Optional[_builtins.str] = None,
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param _builtins.str database_type: A filter to return only target databases that match the specified database type.
     :param _builtins.str display_name: A filter to return only resources that match the specified display name.
+    :param _builtins.str enablement_resource_ocid: A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
     :param _builtins.str infrastructure_type: A filter to return only target databases that match the specified infrastructure type.
     :param _builtins.str state: A filter to return only target databases that match the specified lifecycle state.
     :param _builtins.str target_database_id: A filter to return the target database that matches the specified OCID.
@@ -219,6 +231,7 @@ def get_target_databases(access_level: Optional[_builtins.str] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['databaseType'] = database_type
     __args__['displayName'] = display_name
+    __args__['enablementResourceOcid'] = enablement_resource_ocid
     __args__['filters'] = filters
     __args__['infrastructureType'] = infrastructure_type
     __args__['state'] = state
@@ -233,6 +246,7 @@ def get_target_databases(access_level: Optional[_builtins.str] = None,
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
         database_type=pulumi.get(__ret__, 'database_type'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        enablement_resource_ocid=pulumi.get(__ret__, 'enablement_resource_ocid'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         infrastructure_type=pulumi.get(__ret__, 'infrastructure_type'),
@@ -245,6 +259,7 @@ def get_target_databases_output(access_level: pulumi.Input[Optional[Optional[_bu
                                 compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                 database_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                enablement_resource_ocid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabasesFilterArgs', 'GetTargetDatabasesFilterArgsDict', 'outputs.GetTargetDatabasesFilterResult']]]]] = None,
                                 infrastructure_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -267,6 +282,7 @@ def get_target_databases_output(access_level: pulumi.Input[Optional[Optional[_bu
         compartment_id_in_subtree=target_database_compartment_id_in_subtree == "true",
         database_type=target_database_database_type,
         display_name=target_database_display_name,
+        enablement_resource_ocid=target_database_enablement_resource_ocid,
         infrastructure_type=target_database_infrastructure_type,
         state=target_database_state,
         target_database_id=test_target_database["id"])
@@ -279,6 +295,7 @@ def get_target_databases_output(access_level: pulumi.Input[Optional[Optional[_bu
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param _builtins.str database_type: A filter to return only target databases that match the specified database type.
     :param _builtins.str display_name: A filter to return only resources that match the specified display name.
+    :param _builtins.str enablement_resource_ocid: A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
     :param _builtins.str infrastructure_type: A filter to return only target databases that match the specified infrastructure type.
     :param _builtins.str state: A filter to return only target databases that match the specified lifecycle state.
     :param _builtins.str target_database_id: A filter to return the target database that matches the specified OCID.
@@ -290,6 +307,7 @@ def get_target_databases_output(access_level: pulumi.Input[Optional[Optional[_bu
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['databaseType'] = database_type
     __args__['displayName'] = display_name
+    __args__['enablementResourceOcid'] = enablement_resource_ocid
     __args__['filters'] = filters
     __args__['infrastructureType'] = infrastructure_type
     __args__['state'] = state
@@ -303,6 +321,7 @@ def get_target_databases_output(access_level: pulumi.Input[Optional[Optional[_bu
         compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
         database_type=pulumi.get(__response__, 'database_type'),
         display_name=pulumi.get(__response__, 'display_name'),
+        enablement_resource_ocid=pulumi.get(__response__, 'enablement_resource_ocid'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         infrastructure_type=pulumi.get(__response__, 'infrastructure_type'),

@@ -68,6 +68,7 @@ type SecurityAssessmentFinding struct {
 	Category pulumi.StringOutput `pulumi:"category"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayOutput `pulumi:"details"`
+	Doclink pulumi.StringOutput      `pulumi:"doclink"`
 	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
 	HasTargetDbRiskLevelChanged pulumi.BoolOutput `pulumi:"hasTargetDbRiskLevelChanged"`
 	// Determines if this risk level was modified by user.
@@ -148,6 +149,7 @@ type securityAssessmentFindingState struct {
 	Category *string `pulumi:"category"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	Doclink *string  `pulumi:"doclink"`
 	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
 	HasTargetDbRiskLevelChanged *bool `pulumi:"hasTargetDbRiskLevelChanged"`
 	// Determines if this risk level was modified by user.
@@ -196,6 +198,7 @@ type SecurityAssessmentFindingState struct {
 	Category pulumi.StringPtrInput
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput
+	Doclink pulumi.StringPtrInput
 	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
 	HasTargetDbRiskLevelChanged pulumi.BoolPtrInput
 	// Determines if this risk level was modified by user.
@@ -358,6 +361,10 @@ func (o SecurityAssessmentFindingOutput) Category() pulumi.StringOutput {
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o SecurityAssessmentFindingOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SecurityAssessmentFinding) pulumi.StringArrayOutput { return v.Details }).(pulumi.StringArrayOutput)
+}
+
+func (o SecurityAssessmentFindingOutput) Doclink() pulumi.StringOutput {
+	return o.ApplyT(func(v *SecurityAssessmentFinding) pulumi.StringOutput { return v.Doclink }).(pulumi.StringOutput)
 }
 
 // Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.

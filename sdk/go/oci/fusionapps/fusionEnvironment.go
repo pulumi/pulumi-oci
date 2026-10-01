@@ -128,7 +128,9 @@ type FusionEnvironment struct {
 	IsBreakGlassEnabled pulumi.BoolOutput `pulumi:"isBreakGlassEnabled"`
 	// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
 	IsIpv6dualStackEnabled pulumi.BoolOutput `pulumi:"isIpv6dualStackEnabled"`
-	// (Updatable) byok kms keyId
+	// (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
+	//
+	// Deprecated: Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// BYOK key info
 	KmsKeyInfos FusionEnvironmentKmsKeyInfoArrayOutput `pulumi:"kmsKeyInfos"`
@@ -235,7 +237,9 @@ type fusionEnvironmentState struct {
 	IsBreakGlassEnabled *bool `pulumi:"isBreakGlassEnabled"`
 	// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
 	IsIpv6dualStackEnabled *bool `pulumi:"isIpv6dualStackEnabled"`
-	// (Updatable) byok kms keyId
+	// (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
+	//
+	// Deprecated: Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// BYOK key info
 	KmsKeyInfos []FusionEnvironmentKmsKeyInfo `pulumi:"kmsKeyInfos"`
@@ -298,7 +302,9 @@ type FusionEnvironmentState struct {
 	IsBreakGlassEnabled pulumi.BoolPtrInput
 	// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
 	IsIpv6dualStackEnabled pulumi.BoolPtrInput
-	// (Updatable) byok kms keyId
+	// (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
+	//
+	// Deprecated: Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
 	KmsKeyId pulumi.StringPtrInput
 	// BYOK key info
 	KmsKeyInfos FusionEnvironmentKmsKeyInfoArrayInput
@@ -357,7 +363,9 @@ type fusionEnvironmentArgs struct {
 	FusionEnvironmentType string `pulumi:"fusionEnvironmentType"`
 	// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
 	IsIpv6dualStackEnabled *bool `pulumi:"isIpv6dualStackEnabled"`
-	// (Updatable) byok kms keyId
+	// (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
+	//
+	// Deprecated: Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	MaintenancePolicy *FusionEnvironmentMaintenancePolicy `pulumi:"maintenancePolicy"`
@@ -389,7 +397,9 @@ type FusionEnvironmentArgs struct {
 	FusionEnvironmentType pulumi.StringInput
 	// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
 	IsIpv6dualStackEnabled pulumi.BoolPtrInput
-	// (Updatable) byok kms keyId
+	// (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
+	//
+	// Deprecated: Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	MaintenancePolicy FusionEnvironmentMaintenancePolicyPtrInput
@@ -563,7 +573,9 @@ func (o FusionEnvironmentOutput) IsIpv6dualStackEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FusionEnvironment) pulumi.BoolOutput { return v.IsIpv6dualStackEnabled }).(pulumi.BoolOutput)
 }
 
-// (Updatable) byok kms keyId
+// (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
+//
+// Deprecated: Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
 func (o FusionEnvironmentOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
 }

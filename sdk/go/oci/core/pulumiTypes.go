@@ -14212,6 +14212,8 @@ type InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
+	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled *bool `pulumi:"isReservationsEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
@@ -14257,6 +14259,8 @@ type InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolPtrInput `pulumi:"isAutoTuneEnabled"`
+	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled pulumi.BoolPtrInput `pulumi:"isReservationsEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
@@ -14409,6 +14413,13 @@ func (o InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsOutput) IsAu
 	return o.ApplyT(func(v InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails) *bool { return v.IsAutoTuneEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+func (o InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsOutput) IsReservationsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails) *bool {
+		return v.IsReservationsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
 // The OCID of the Vault service key to assign as the master encryption key for the volume.
 func (o InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsOutput) KmsKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
@@ -14558,6 +14569,16 @@ func (o InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsPtrOutput) I
 			return nil
 		}
 		return v.IsAutoTuneEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+func (o InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsPtrOutput) IsReservationsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsReservationsEnabled
 	}).(pulumi.BoolPtrOutput)
 }
 
@@ -19752,6 +19773,8 @@ type InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
+	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled *bool `pulumi:"isReservationsEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
@@ -19797,6 +19820,8 @@ type InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs stru
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolPtrInput `pulumi:"isAutoTuneEnabled"`
+	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled pulumi.BoolPtrInput `pulumi:"isReservationsEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
@@ -19957,6 +19982,13 @@ func (o InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsOutput
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+func (o InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsOutput) IsReservationsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails) *bool {
+		return v.IsReservationsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
 // The OCID of the Vault service key to assign as the master encryption key for the volume.
 func (o InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsOutput) KmsKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
@@ -20108,6 +20140,16 @@ func (o InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsPtrOut
 			return nil
 		}
 		return v.IsAutoTuneEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+func (o InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsPtrOutput) IsReservationsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsReservationsEnabled
 	}).(pulumi.BoolPtrOutput)
 }
 
@@ -23210,6 +23252,8 @@ func (o InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstrai
 type InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig struct {
 	// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
 	AreVirtualInstructionsEnabled *bool `pulumi:"areVirtualInstructionsEnabled"`
+	// Instance Platform Configuration Configuration Map for flexible setting input.
+	ConfigMap map[string]string `pulumi:"configMap"`
 	// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
 	IsAccessControlServiceEnabled *bool `pulumi:"isAccessControlServiceEnabled"`
 	// Whether the input-output memory management unit is enabled.
@@ -23246,6 +23290,8 @@ type InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigInput 
 type InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs struct {
 	// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
 	AreVirtualInstructionsEnabled pulumi.BoolPtrInput `pulumi:"areVirtualInstructionsEnabled"`
+	// Instance Platform Configuration Configuration Map for flexible setting input.
+	ConfigMap pulumi.StringMapInput `pulumi:"configMap"`
 	// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
 	IsAccessControlServiceEnabled pulumi.BoolPtrInput `pulumi:"isAccessControlServiceEnabled"`
 	// Whether the input-output memory management unit is enabled.
@@ -23352,6 +23398,13 @@ func (o InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigOut
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Instance Platform Configuration Configuration Map for flexible setting input.
+func (o InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigOutput) ConfigMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig) map[string]string {
+		return v.ConfigMap
+	}).(pulumi.StringMapOutput)
+}
+
 // Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
 func (o InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigOutput) IsAccessControlServiceEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig) *bool {
@@ -23452,6 +23505,16 @@ func (o InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigPtr
 		}
 		return v.AreVirtualInstructionsEnabled
 	}).(pulumi.BoolPtrOutput)
+}
+
+// Instance Platform Configuration Configuration Map for flexible setting input.
+func (o InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigPtrOutput) ConfigMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.ConfigMap
+	}).(pulumi.StringMapOutput)
 }
 
 // Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
@@ -67470,9 +67533,12 @@ type GetDrgAttachmentsDrgAttachment struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName                       string `pulumi:"displayName"`
+	DoesPreserveOriginalRoutesWithNat bool   `pulumi:"doesPreserveOriginalRoutesWithNat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId string `pulumi:"drgId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+	DrgNatPolicyId string `pulumi:"drgNatPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId string `pulumi:"drgRouteTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
@@ -67484,6 +67550,7 @@ type GetDrgAttachmentsDrgAttachment struct {
 	// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
 	IsCrossTenancy                          bool                                          `pulumi:"isCrossTenancy"`
 	NetworkDetails                          []GetDrgAttachmentsDrgAttachmentNetworkDetail `pulumi:"networkDetails"`
+	RemoveDrgNatPolicyTrigger               bool                                          `pulumi:"removeDrgNatPolicyTrigger"`
 	RemoveExportDrgRouteDistributionTrigger bool                                          `pulumi:"removeExportDrgRouteDistributionTrigger"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
 	RouteTableId string `pulumi:"routeTableId"`
@@ -67512,9 +67579,12 @@ type GetDrgAttachmentsDrgAttachmentArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName                       pulumi.StringInput `pulumi:"displayName"`
+	DoesPreserveOriginalRoutesWithNat pulumi.BoolInput   `pulumi:"doesPreserveOriginalRoutesWithNat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId pulumi.StringInput `pulumi:"drgId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+	DrgNatPolicyId pulumi.StringInput `pulumi:"drgNatPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId pulumi.StringInput `pulumi:"drgRouteTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
@@ -67526,6 +67596,7 @@ type GetDrgAttachmentsDrgAttachmentArgs struct {
 	// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
 	IsCrossTenancy                          pulumi.BoolInput                                      `pulumi:"isCrossTenancy"`
 	NetworkDetails                          GetDrgAttachmentsDrgAttachmentNetworkDetailArrayInput `pulumi:"networkDetails"`
+	RemoveDrgNatPolicyTrigger               pulumi.BoolInput                                      `pulumi:"removeDrgNatPolicyTrigger"`
 	RemoveExportDrgRouteDistributionTrigger pulumi.BoolInput                                      `pulumi:"removeExportDrgRouteDistributionTrigger"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
 	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
@@ -67603,9 +67674,18 @@ func (o GetDrgAttachmentsDrgAttachmentOutput) DisplayName() pulumi.StringOutput 
 	return o.ApplyT(func(v GetDrgAttachmentsDrgAttachment) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+func (o GetDrgAttachmentsDrgAttachmentOutput) DoesPreserveOriginalRoutesWithNat() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrgAttachmentsDrgAttachment) bool { return v.DoesPreserveOriginalRoutesWithNat }).(pulumi.BoolOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 func (o GetDrgAttachmentsDrgAttachmentOutput) DrgId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrgAttachmentsDrgAttachment) string { return v.DrgId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+func (o GetDrgAttachmentsDrgAttachmentOutput) DrgNatPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgAttachmentsDrgAttachment) string { return v.DrgNatPolicyId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
@@ -67637,6 +67717,10 @@ func (o GetDrgAttachmentsDrgAttachmentOutput) NetworkDetails() GetDrgAttachments
 	return o.ApplyT(func(v GetDrgAttachmentsDrgAttachment) []GetDrgAttachmentsDrgAttachmentNetworkDetail {
 		return v.NetworkDetails
 	}).(GetDrgAttachmentsDrgAttachmentNetworkDetailArrayOutput)
+}
+
+func (o GetDrgAttachmentsDrgAttachmentOutput) RemoveDrgNatPolicyTrigger() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrgAttachmentsDrgAttachment) bool { return v.RemoveDrgNatPolicyTrigger }).(pulumi.BoolOutput)
 }
 
 func (o GetDrgAttachmentsDrgAttachmentOutput) RemoveExportDrgRouteDistributionTrigger() pulumi.BoolOutput {
@@ -67947,6 +68031,529 @@ func (o GetDrgAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetDrgAttac
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrgAttachmentsFilter {
 		return vs[0].([]GetDrgAttachmentsFilter)[vs[1].(int)]
 	}).(GetDrgAttachmentsFilterOutput)
+}
+
+type GetDrgNatPoliciesDrgNatPolicy struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The DrgNatPolicy's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id string `pulumi:"id"`
+	// The DrgNatPolicy's current state.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the DrgNatPolicy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetDrgNatPoliciesDrgNatPolicyInput is an input type that accepts GetDrgNatPoliciesDrgNatPolicyArgs and GetDrgNatPoliciesDrgNatPolicyOutput values.
+// You can construct a concrete instance of `GetDrgNatPoliciesDrgNatPolicyInput` via:
+//
+//	GetDrgNatPoliciesDrgNatPolicyArgs{...}
+type GetDrgNatPoliciesDrgNatPolicyInput interface {
+	pulumi.Input
+
+	ToGetDrgNatPoliciesDrgNatPolicyOutput() GetDrgNatPoliciesDrgNatPolicyOutput
+	ToGetDrgNatPoliciesDrgNatPolicyOutputWithContext(context.Context) GetDrgNatPoliciesDrgNatPolicyOutput
+}
+
+type GetDrgNatPoliciesDrgNatPolicyArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The DrgNatPolicy's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id pulumi.StringInput `pulumi:"id"`
+	// The DrgNatPolicy's current state.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the DrgNatPolicy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetDrgNatPoliciesDrgNatPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrgNatPoliciesDrgNatPolicy)(nil)).Elem()
+}
+
+func (i GetDrgNatPoliciesDrgNatPolicyArgs) ToGetDrgNatPoliciesDrgNatPolicyOutput() GetDrgNatPoliciesDrgNatPolicyOutput {
+	return i.ToGetDrgNatPoliciesDrgNatPolicyOutputWithContext(context.Background())
+}
+
+func (i GetDrgNatPoliciesDrgNatPolicyArgs) ToGetDrgNatPoliciesDrgNatPolicyOutputWithContext(ctx context.Context) GetDrgNatPoliciesDrgNatPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrgNatPoliciesDrgNatPolicyOutput)
+}
+
+// GetDrgNatPoliciesDrgNatPolicyArrayInput is an input type that accepts GetDrgNatPoliciesDrgNatPolicyArray and GetDrgNatPoliciesDrgNatPolicyArrayOutput values.
+// You can construct a concrete instance of `GetDrgNatPoliciesDrgNatPolicyArrayInput` via:
+//
+//	GetDrgNatPoliciesDrgNatPolicyArray{ GetDrgNatPoliciesDrgNatPolicyArgs{...} }
+type GetDrgNatPoliciesDrgNatPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetDrgNatPoliciesDrgNatPolicyArrayOutput() GetDrgNatPoliciesDrgNatPolicyArrayOutput
+	ToGetDrgNatPoliciesDrgNatPolicyArrayOutputWithContext(context.Context) GetDrgNatPoliciesDrgNatPolicyArrayOutput
+}
+
+type GetDrgNatPoliciesDrgNatPolicyArray []GetDrgNatPoliciesDrgNatPolicyInput
+
+func (GetDrgNatPoliciesDrgNatPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrgNatPoliciesDrgNatPolicy)(nil)).Elem()
+}
+
+func (i GetDrgNatPoliciesDrgNatPolicyArray) ToGetDrgNatPoliciesDrgNatPolicyArrayOutput() GetDrgNatPoliciesDrgNatPolicyArrayOutput {
+	return i.ToGetDrgNatPoliciesDrgNatPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrgNatPoliciesDrgNatPolicyArray) ToGetDrgNatPoliciesDrgNatPolicyArrayOutputWithContext(ctx context.Context) GetDrgNatPoliciesDrgNatPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrgNatPoliciesDrgNatPolicyArrayOutput)
+}
+
+type GetDrgNatPoliciesDrgNatPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetDrgNatPoliciesDrgNatPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrgNatPoliciesDrgNatPolicy)(nil)).Elem()
+}
+
+func (o GetDrgNatPoliciesDrgNatPolicyOutput) ToGetDrgNatPoliciesDrgNatPolicyOutput() GetDrgNatPoliciesDrgNatPolicyOutput {
+	return o
+}
+
+func (o GetDrgNatPoliciesDrgNatPolicyOutput) ToGetDrgNatPoliciesDrgNatPolicyOutputWithContext(ctx context.Context) GetDrgNatPoliciesDrgNatPolicyOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDrgNatPoliciesDrgNatPolicyOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPoliciesDrgNatPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDrgNatPoliciesDrgNatPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrgNatPoliciesDrgNatPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetDrgNatPoliciesDrgNatPolicyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPoliciesDrgNatPolicy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDrgNatPoliciesDrgNatPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrgNatPoliciesDrgNatPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The DrgNatPolicy's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+func (o GetDrgNatPoliciesDrgNatPolicyOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPoliciesDrgNatPolicy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The DrgNatPolicy's current state.
+func (o GetDrgNatPoliciesDrgNatPolicyOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPoliciesDrgNatPolicy) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDrgNatPoliciesDrgNatPolicyOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrgNatPoliciesDrgNatPolicy) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the DrgNatPolicy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetDrgNatPoliciesDrgNatPolicyOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPoliciesDrgNatPolicy) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetDrgNatPoliciesDrgNatPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrgNatPoliciesDrgNatPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrgNatPoliciesDrgNatPolicy)(nil)).Elem()
+}
+
+func (o GetDrgNatPoliciesDrgNatPolicyArrayOutput) ToGetDrgNatPoliciesDrgNatPolicyArrayOutput() GetDrgNatPoliciesDrgNatPolicyArrayOutput {
+	return o
+}
+
+func (o GetDrgNatPoliciesDrgNatPolicyArrayOutput) ToGetDrgNatPoliciesDrgNatPolicyArrayOutputWithContext(ctx context.Context) GetDrgNatPoliciesDrgNatPolicyArrayOutput {
+	return o
+}
+
+func (o GetDrgNatPoliciesDrgNatPolicyArrayOutput) Index(i pulumi.IntInput) GetDrgNatPoliciesDrgNatPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrgNatPoliciesDrgNatPolicy {
+		return vs[0].([]GetDrgNatPoliciesDrgNatPolicy)[vs[1].(int)]
+	}).(GetDrgNatPoliciesDrgNatPolicyOutput)
+}
+
+type GetDrgNatPoliciesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDrgNatPoliciesFilterInput is an input type that accepts GetDrgNatPoliciesFilterArgs and GetDrgNatPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetDrgNatPoliciesFilterInput` via:
+//
+//	GetDrgNatPoliciesFilterArgs{...}
+type GetDrgNatPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetDrgNatPoliciesFilterOutput() GetDrgNatPoliciesFilterOutput
+	ToGetDrgNatPoliciesFilterOutputWithContext(context.Context) GetDrgNatPoliciesFilterOutput
+}
+
+type GetDrgNatPoliciesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDrgNatPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrgNatPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetDrgNatPoliciesFilterArgs) ToGetDrgNatPoliciesFilterOutput() GetDrgNatPoliciesFilterOutput {
+	return i.ToGetDrgNatPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDrgNatPoliciesFilterArgs) ToGetDrgNatPoliciesFilterOutputWithContext(ctx context.Context) GetDrgNatPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrgNatPoliciesFilterOutput)
+}
+
+// GetDrgNatPoliciesFilterArrayInput is an input type that accepts GetDrgNatPoliciesFilterArray and GetDrgNatPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDrgNatPoliciesFilterArrayInput` via:
+//
+//	GetDrgNatPoliciesFilterArray{ GetDrgNatPoliciesFilterArgs{...} }
+type GetDrgNatPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDrgNatPoliciesFilterArrayOutput() GetDrgNatPoliciesFilterArrayOutput
+	ToGetDrgNatPoliciesFilterArrayOutputWithContext(context.Context) GetDrgNatPoliciesFilterArrayOutput
+}
+
+type GetDrgNatPoliciesFilterArray []GetDrgNatPoliciesFilterInput
+
+func (GetDrgNatPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrgNatPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetDrgNatPoliciesFilterArray) ToGetDrgNatPoliciesFilterArrayOutput() GetDrgNatPoliciesFilterArrayOutput {
+	return i.ToGetDrgNatPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrgNatPoliciesFilterArray) ToGetDrgNatPoliciesFilterArrayOutputWithContext(ctx context.Context) GetDrgNatPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrgNatPoliciesFilterArrayOutput)
+}
+
+type GetDrgNatPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDrgNatPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrgNatPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetDrgNatPoliciesFilterOutput) ToGetDrgNatPoliciesFilterOutput() GetDrgNatPoliciesFilterOutput {
+	return o
+}
+
+func (o GetDrgNatPoliciesFilterOutput) ToGetDrgNatPoliciesFilterOutputWithContext(ctx context.Context) GetDrgNatPoliciesFilterOutput {
+	return o
+}
+
+func (o GetDrgNatPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDrgNatPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrgNatPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDrgNatPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDrgNatPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDrgNatPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrgNatPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrgNatPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetDrgNatPoliciesFilterArrayOutput) ToGetDrgNatPoliciesFilterArrayOutput() GetDrgNatPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetDrgNatPoliciesFilterArrayOutput) ToGetDrgNatPoliciesFilterArrayOutputWithContext(ctx context.Context) GetDrgNatPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetDrgNatPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetDrgNatPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrgNatPoliciesFilter {
+		return vs[0].([]GetDrgNatPoliciesFilter)[vs[1].(int)]
+	}).(GetDrgNatPoliciesFilterOutput)
+}
+
+type GetDrgNatPolicyDrgNatRulesDrgNatRule struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+	DrgNatPolicyId string `pulumi:"drgNatPolicyId"`
+	// The priority associated with each DrgNatRule.
+	DrgNatRulePriority string `pulumi:"drgNatRulePriority"`
+	// The Oracle-assigned ID of the DrgNatRule.
+	Id string `pulumi:"id"`
+	// Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Destination NAT.
+	OriginalDestination string `pulumi:"originalDestination"`
+	// Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Source NAT.
+	OriginalSource string `pulumi:"originalSource"`
+	// Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Destination NAT.
+	TranslatedDestination string `pulumi:"translatedDestination"`
+	// Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Source NAT.
+	TranslatedSource string `pulumi:"translatedSource"`
+}
+
+// GetDrgNatPolicyDrgNatRulesDrgNatRuleInput is an input type that accepts GetDrgNatPolicyDrgNatRulesDrgNatRuleArgs and GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput values.
+// You can construct a concrete instance of `GetDrgNatPolicyDrgNatRulesDrgNatRuleInput` via:
+//
+//	GetDrgNatPolicyDrgNatRulesDrgNatRuleArgs{...}
+type GetDrgNatPolicyDrgNatRulesDrgNatRuleInput interface {
+	pulumi.Input
+
+	ToGetDrgNatPolicyDrgNatRulesDrgNatRuleOutput() GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput
+	ToGetDrgNatPolicyDrgNatRulesDrgNatRuleOutputWithContext(context.Context) GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput
+}
+
+type GetDrgNatPolicyDrgNatRulesDrgNatRuleArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+	DrgNatPolicyId pulumi.StringInput `pulumi:"drgNatPolicyId"`
+	// The priority associated with each DrgNatRule.
+	DrgNatRulePriority pulumi.StringInput `pulumi:"drgNatRulePriority"`
+	// The Oracle-assigned ID of the DrgNatRule.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Destination NAT.
+	OriginalDestination pulumi.StringInput `pulumi:"originalDestination"`
+	// Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Source NAT.
+	OriginalSource pulumi.StringInput `pulumi:"originalSource"`
+	// Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Destination NAT.
+	TranslatedDestination pulumi.StringInput `pulumi:"translatedDestination"`
+	// Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Source NAT.
+	TranslatedSource pulumi.StringInput `pulumi:"translatedSource"`
+}
+
+func (GetDrgNatPolicyDrgNatRulesDrgNatRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrgNatPolicyDrgNatRulesDrgNatRule)(nil)).Elem()
+}
+
+func (i GetDrgNatPolicyDrgNatRulesDrgNatRuleArgs) ToGetDrgNatPolicyDrgNatRulesDrgNatRuleOutput() GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput {
+	return i.ToGetDrgNatPolicyDrgNatRulesDrgNatRuleOutputWithContext(context.Background())
+}
+
+func (i GetDrgNatPolicyDrgNatRulesDrgNatRuleArgs) ToGetDrgNatPolicyDrgNatRulesDrgNatRuleOutputWithContext(ctx context.Context) GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput)
+}
+
+// GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayInput is an input type that accepts GetDrgNatPolicyDrgNatRulesDrgNatRuleArray and GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput values.
+// You can construct a concrete instance of `GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayInput` via:
+//
+//	GetDrgNatPolicyDrgNatRulesDrgNatRuleArray{ GetDrgNatPolicyDrgNatRulesDrgNatRuleArgs{...} }
+type GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput() GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput
+	ToGetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutputWithContext(context.Context) GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput
+}
+
+type GetDrgNatPolicyDrgNatRulesDrgNatRuleArray []GetDrgNatPolicyDrgNatRulesDrgNatRuleInput
+
+func (GetDrgNatPolicyDrgNatRulesDrgNatRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrgNatPolicyDrgNatRulesDrgNatRule)(nil)).Elem()
+}
+
+func (i GetDrgNatPolicyDrgNatRulesDrgNatRuleArray) ToGetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput() GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput {
+	return i.ToGetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrgNatPolicyDrgNatRulesDrgNatRuleArray) ToGetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutputWithContext(ctx context.Context) GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput)
+}
+
+type GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput struct{ *pulumi.OutputState }
+
+func (GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrgNatPolicyDrgNatRulesDrgNatRule)(nil)).Elem()
+}
+
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput) ToGetDrgNatPolicyDrgNatRulesDrgNatRuleOutput() GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput {
+	return o
+}
+
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput) ToGetDrgNatPolicyDrgNatRulesDrgNatRuleOutputWithContext(ctx context.Context) GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput) DrgNatPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPolicyDrgNatRulesDrgNatRule) string { return v.DrgNatPolicyId }).(pulumi.StringOutput)
+}
+
+// The priority associated with each DrgNatRule.
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput) DrgNatRulePriority() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPolicyDrgNatRulesDrgNatRule) string { return v.DrgNatRulePriority }).(pulumi.StringOutput)
+}
+
+// The Oracle-assigned ID of the DrgNatRule.
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPolicyDrgNatRulesDrgNatRule) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Destination NAT.
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput) OriginalDestination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPolicyDrgNatRulesDrgNatRule) string { return v.OriginalDestination }).(pulumi.StringOutput)
+}
+
+// Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Source NAT.
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput) OriginalSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPolicyDrgNatRulesDrgNatRule) string { return v.OriginalSource }).(pulumi.StringOutput)
+}
+
+// Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Destination NAT.
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput) TranslatedDestination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPolicyDrgNatRulesDrgNatRule) string { return v.TranslatedDestination }).(pulumi.StringOutput)
+}
+
+// Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Source NAT.
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput) TranslatedSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPolicyDrgNatRulesDrgNatRule) string { return v.TranslatedSource }).(pulumi.StringOutput)
+}
+
+type GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrgNatPolicyDrgNatRulesDrgNatRule)(nil)).Elem()
+}
+
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput) ToGetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput() GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput {
+	return o
+}
+
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput) ToGetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutputWithContext(ctx context.Context) GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput {
+	return o
+}
+
+func (o GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput) Index(i pulumi.IntInput) GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrgNatPolicyDrgNatRulesDrgNatRule {
+		return vs[0].([]GetDrgNatPolicyDrgNatRulesDrgNatRule)[vs[1].(int)]
+	}).(GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput)
+}
+
+type GetDrgNatPolicyDrgNatRulesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDrgNatPolicyDrgNatRulesFilterInput is an input type that accepts GetDrgNatPolicyDrgNatRulesFilterArgs and GetDrgNatPolicyDrgNatRulesFilterOutput values.
+// You can construct a concrete instance of `GetDrgNatPolicyDrgNatRulesFilterInput` via:
+//
+//	GetDrgNatPolicyDrgNatRulesFilterArgs{...}
+type GetDrgNatPolicyDrgNatRulesFilterInput interface {
+	pulumi.Input
+
+	ToGetDrgNatPolicyDrgNatRulesFilterOutput() GetDrgNatPolicyDrgNatRulesFilterOutput
+	ToGetDrgNatPolicyDrgNatRulesFilterOutputWithContext(context.Context) GetDrgNatPolicyDrgNatRulesFilterOutput
+}
+
+type GetDrgNatPolicyDrgNatRulesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDrgNatPolicyDrgNatRulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrgNatPolicyDrgNatRulesFilter)(nil)).Elem()
+}
+
+func (i GetDrgNatPolicyDrgNatRulesFilterArgs) ToGetDrgNatPolicyDrgNatRulesFilterOutput() GetDrgNatPolicyDrgNatRulesFilterOutput {
+	return i.ToGetDrgNatPolicyDrgNatRulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDrgNatPolicyDrgNatRulesFilterArgs) ToGetDrgNatPolicyDrgNatRulesFilterOutputWithContext(ctx context.Context) GetDrgNatPolicyDrgNatRulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrgNatPolicyDrgNatRulesFilterOutput)
+}
+
+// GetDrgNatPolicyDrgNatRulesFilterArrayInput is an input type that accepts GetDrgNatPolicyDrgNatRulesFilterArray and GetDrgNatPolicyDrgNatRulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDrgNatPolicyDrgNatRulesFilterArrayInput` via:
+//
+//	GetDrgNatPolicyDrgNatRulesFilterArray{ GetDrgNatPolicyDrgNatRulesFilterArgs{...} }
+type GetDrgNatPolicyDrgNatRulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDrgNatPolicyDrgNatRulesFilterArrayOutput() GetDrgNatPolicyDrgNatRulesFilterArrayOutput
+	ToGetDrgNatPolicyDrgNatRulesFilterArrayOutputWithContext(context.Context) GetDrgNatPolicyDrgNatRulesFilterArrayOutput
+}
+
+type GetDrgNatPolicyDrgNatRulesFilterArray []GetDrgNatPolicyDrgNatRulesFilterInput
+
+func (GetDrgNatPolicyDrgNatRulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrgNatPolicyDrgNatRulesFilter)(nil)).Elem()
+}
+
+func (i GetDrgNatPolicyDrgNatRulesFilterArray) ToGetDrgNatPolicyDrgNatRulesFilterArrayOutput() GetDrgNatPolicyDrgNatRulesFilterArrayOutput {
+	return i.ToGetDrgNatPolicyDrgNatRulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrgNatPolicyDrgNatRulesFilterArray) ToGetDrgNatPolicyDrgNatRulesFilterArrayOutputWithContext(ctx context.Context) GetDrgNatPolicyDrgNatRulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrgNatPolicyDrgNatRulesFilterArrayOutput)
+}
+
+type GetDrgNatPolicyDrgNatRulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDrgNatPolicyDrgNatRulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrgNatPolicyDrgNatRulesFilter)(nil)).Elem()
+}
+
+func (o GetDrgNatPolicyDrgNatRulesFilterOutput) ToGetDrgNatPolicyDrgNatRulesFilterOutput() GetDrgNatPolicyDrgNatRulesFilterOutput {
+	return o
+}
+
+func (o GetDrgNatPolicyDrgNatRulesFilterOutput) ToGetDrgNatPolicyDrgNatRulesFilterOutputWithContext(ctx context.Context) GetDrgNatPolicyDrgNatRulesFilterOutput {
+	return o
+}
+
+func (o GetDrgNatPolicyDrgNatRulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrgNatPolicyDrgNatRulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDrgNatPolicyDrgNatRulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrgNatPolicyDrgNatRulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDrgNatPolicyDrgNatRulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDrgNatPolicyDrgNatRulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDrgNatPolicyDrgNatRulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrgNatPolicyDrgNatRulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrgNatPolicyDrgNatRulesFilter)(nil)).Elem()
+}
+
+func (o GetDrgNatPolicyDrgNatRulesFilterArrayOutput) ToGetDrgNatPolicyDrgNatRulesFilterArrayOutput() GetDrgNatPolicyDrgNatRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetDrgNatPolicyDrgNatRulesFilterArrayOutput) ToGetDrgNatPolicyDrgNatRulesFilterArrayOutputWithContext(ctx context.Context) GetDrgNatPolicyDrgNatRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetDrgNatPolicyDrgNatRulesFilterArrayOutput) Index(i pulumi.IntInput) GetDrgNatPolicyDrgNatRulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrgNatPolicyDrgNatRulesFilter {
+		return vs[0].([]GetDrgNatPolicyDrgNatRulesFilter)[vs[1].(int)]
+	}).(GetDrgNatPolicyDrgNatRulesFilterOutput)
 }
 
 type GetDrgRouteDistributionStatementsDrgRouteDistributionStatement struct {
@@ -73836,6 +74443,8 @@ type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
+	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled bool `pulumi:"isReservationsEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
@@ -73879,6 +74488,8 @@ type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolInput `pulumi:"isAutoTuneEnabled"`
+	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled pulumi.BoolInput `pulumi:"isReservationsEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
@@ -74001,6 +74612,13 @@ func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) Fre
 // Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) bool { return v.IsAutoTuneEnabled }).(pulumi.BoolOutput)
+}
+
+// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) IsReservationsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) bool {
+		return v.IsReservationsEnabled
+	}).(pulumi.BoolOutput)
 }
 
 // The OCID of the Vault service key to assign as the master encryption key for the volume.
@@ -77312,6 +77930,8 @@ type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail struct 
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
+	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled bool `pulumi:"isReservationsEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
@@ -77355,6 +77975,8 @@ type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs str
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolInput `pulumi:"isAutoTuneEnabled"`
+	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled pulumi.BoolInput `pulumi:"isReservationsEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
@@ -77484,6 +78106,13 @@ func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutpu
 func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) bool {
 		return v.IsAutoTuneEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) IsReservationsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) bool {
+		return v.IsReservationsEnabled
 	}).(pulumi.BoolOutput)
 }
 
@@ -77643,772 +78272,6 @@ func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutot
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy {
 		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy)[vs[1].(int)]
 	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica struct {
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs and GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs struct {
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray and GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray{ GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaInput
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput {
-	return o
-}
-
-// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica) string {
-		return v.AvailabilityDomain
-	}).(pulumi.StringOutput)
-}
-
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica) string {
-		return v.DisplayName
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail struct {
-	// The OCID of the volume backup.
-	Id string `pulumi:"id"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs and GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs struct {
-	// The OCID of the volume backup.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray and GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray{ GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailInput
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput {
-	return o
-}
-
-// The OCID of the volume backup.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail) string {
-		return v.Id
-	}).(pulumi.StringOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail) string {
-		return v.Type
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetail struct {
-	// Configuration options for the Oracle Cloud Agent software running on the instance.
-	AgentConfigs []GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig `pulumi:"agentConfigs"`
-	// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-	AvailabilityConfigs []GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig `pulumi:"availabilityConfigs"`
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// The OCID of the compute capacity reservation this instance is launched under.
-	CapacityReservationId string `pulumi:"capacityReservationId"`
-	// The OCID of the cluster placement group of the instance.
-	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
-	// The OCID of the compartment containing images to search
-	CompartmentId string `pulumi:"compartmentId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
-	ComputeClusterId string `pulumi:"computeClusterId"`
-	// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-	CreateVnicDetails []GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail `pulumi:"createVnicDetails"`
-	// The OCID of the dedicated virtual machine host to place the instance on.
-	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
-	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-	FaultDomain string `pulumi:"faultDomain"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
-	InstanceOptions []GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption `pulumi:"instanceOptions"`
-	// This is an advanced option.
-	IpxeScript string `pulumi:"ipxeScript"`
-	// Whether to enable AI enterprise on the instance.
-	IsAiEnterpriseEnabled bool `pulumi:"isAiEnterpriseEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
-	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-	LaunchMode string `pulumi:"launchMode"`
-	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-	LaunchOptions []GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption `pulumi:"launchOptions"`
-	// List of licensing configurations associated with target launch values.
-	LicensingConfigs []GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig `pulumi:"licensingConfigs"`
-	// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-	Metadata map[string]string `pulumi:"metadata"`
-	// The details for providing placement constraints.
-	PlacementConstraintDetails []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetail `pulumi:"placementConstraintDetails"`
-	// The platform configuration requested for the instance.
-	PlatformConfigs []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig `pulumi:"platformConfigs"`
-	// Configuration options for preemptible instances.
-	PreemptibleInstanceConfigs []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig `pulumi:"preemptibleInstanceConfigs"`
-	// The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
-	// * `LIVE_MIGRATE` - Run maintenance using a live migration.
-	// * `REBOOT` - Run maintenance using a reboot.
-	PreferredMaintenanceAction string `pulumi:"preferredMaintenanceAction"`
-	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
-	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-	Shape string `pulumi:"shape"`
-	// The shape configuration requested for the instance.
-	ShapeConfigs  []GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig  `pulumi:"shapeConfigs"`
-	SourceDetails []GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail `pulumi:"sourceDetails"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailArgs struct {
-	// Configuration options for the Oracle Cloud Agent software running on the instance.
-	AgentConfigs GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayInput `pulumi:"agentConfigs"`
-	// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-	AvailabilityConfigs GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayInput `pulumi:"availabilityConfigs"`
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// The OCID of the compute capacity reservation this instance is launched under.
-	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
-	// The OCID of the cluster placement group of the instance.
-	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
-	// The OCID of the compartment containing images to search
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
-	ComputeClusterId pulumi.StringInput `pulumi:"computeClusterId"`
-	// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-	CreateVnicDetails GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayInput `pulumi:"createVnicDetails"`
-	// The OCID of the dedicated virtual machine host to place the instance on.
-	DedicatedVmHostId pulumi.StringInput `pulumi:"dedicatedVmHostId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata pulumi.StringMapInput `pulumi:"extendedMetadata"`
-	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
-	InstanceOptions GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayInput `pulumi:"instanceOptions"`
-	// This is an advanced option.
-	IpxeScript pulumi.StringInput `pulumi:"ipxeScript"`
-	// Whether to enable AI enterprise on the instance.
-	IsAiEnterpriseEnabled pulumi.BoolInput `pulumi:"isAiEnterpriseEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
-	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-	LaunchMode pulumi.StringInput `pulumi:"launchMode"`
-	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-	LaunchOptions GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayInput `pulumi:"launchOptions"`
-	// List of licensing configurations associated with target launch values.
-	LicensingConfigs GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayInput `pulumi:"licensingConfigs"`
-	// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-	Metadata pulumi.StringMapInput `pulumi:"metadata"`
-	// The details for providing placement constraints.
-	PlacementConstraintDetails GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayInput `pulumi:"placementConstraintDetails"`
-	// The platform configuration requested for the instance.
-	PlatformConfigs GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayInput `pulumi:"platformConfigs"`
-	// Configuration options for preemptible instances.
-	PreemptibleInstanceConfigs GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput `pulumi:"preemptibleInstanceConfigs"`
-	// The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
-	// * `LIVE_MIGRATE` - Run maintenance using a live migration.
-	// * `REBOOT` - Run maintenance using a reboot.
-	PreferredMaintenanceAction pulumi.StringInput `pulumi:"preferredMaintenanceAction"`
-	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
-	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-	Shape pulumi.StringInput `pulumi:"shape"`
-	// The shape configuration requested for the instance.
-	ShapeConfigs  GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput  `pulumi:"shapeConfigs"`
-	SourceDetails GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailArrayInput `pulumi:"sourceDetails"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput {
-	return o
-}
-
-// Configuration options for the Oracle Cloud Agent software running on the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) AgentConfigs() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig {
-		return v.AgentConfigs
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput)
-}
-
-// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) AvailabilityConfigs() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig {
-		return v.AvailabilityConfigs
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput)
-}
-
-// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
-}
-
-// The OCID of the compute capacity reservation this instance is launched under.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
-		return v.CapacityReservationId
-	}).(pulumi.StringOutput)
-}
-
-// The OCID of the cluster placement group of the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ClusterPlacementGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
-		return v.ClusterPlacementGroupId
-	}).(pulumi.StringOutput)
-}
-
-// The OCID of the compartment containing images to search
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ComputeClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string { return v.ComputeClusterId }).(pulumi.StringOutput)
-}
-
-// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) CreateVnicDetails() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail {
-		return v.CreateVnicDetails
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput)
-}
-
-// The OCID of the dedicated virtual machine host to place the instance on.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) DedicatedVmHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string { return v.DedicatedVmHostId }).(pulumi.StringOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) map[string]string {
-		return v.DefinedTags
-	}).(pulumi.StringMapOutput)
-}
-
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ExtendedMetadata() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) map[string]string {
-		return v.ExtendedMetadata
-	}).(pulumi.StringMapOutput)
-}
-
-// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string { return v.FaultDomain }).(pulumi.StringOutput)
-}
-
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) map[string]string {
-		return v.FreeformTags
-	}).(pulumi.StringMapOutput)
-}
-
-// Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) InstanceOptions() GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption {
-		return v.InstanceOptions
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput)
-}
-
-// This is an advanced option.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) IpxeScript() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string { return v.IpxeScript }).(pulumi.StringOutput)
-}
-
-// Whether to enable AI enterprise on the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) IsAiEnterpriseEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) bool { return v.IsAiEnterpriseEnabled }).(pulumi.BoolOutput)
-}
-
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) bool {
-		return v.IsPvEncryptionInTransitEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
-// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) LaunchMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string { return v.LaunchMode }).(pulumi.StringOutput)
-}
-
-// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) LaunchOptions() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption {
-		return v.LaunchOptions
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput)
-}
-
-// List of licensing configurations associated with target launch values.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) LicensingConfigs() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig {
-		return v.LicensingConfigs
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput)
-}
-
-// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) Metadata() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
-}
-
-// The details for providing placement constraints.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) PlacementConstraintDetails() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetail {
-		return v.PlacementConstraintDetails
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput)
-}
-
-// The platform configuration requested for the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) PlatformConfigs() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig {
-		return v.PlatformConfigs
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput)
-}
-
-// Configuration options for preemptible instances.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) PreemptibleInstanceConfigs() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig {
-		return v.PreemptibleInstanceConfigs
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput)
-}
-
-// The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
-// * `LIVE_MIGRATE` - Run maintenance using a live migration.
-// * `REBOOT` - Run maintenance using a reboot.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) PreferredMaintenanceAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
-		return v.PreferredMaintenanceAction
-	}).(pulumi.StringOutput)
-}
-
-// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) map[string]string {
-		return v.SecurityAttributes
-	}).(pulumi.StringMapOutput)
-}
-
-// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) string { return v.Shape }).(pulumi.StringOutput)
-}
-
-// The shape configuration requested for the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ShapeConfigs() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig {
-		return v.ShapeConfigs
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput)
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) SourceDetails() GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail {
-		return v.SourceDetails
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig struct {
-	// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-	AreAllPluginsDisabled bool `pulumi:"areAllPluginsDisabled"`
-	// Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-	IsManagementDisabled bool `pulumi:"isManagementDisabled"`
-	// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-	IsMonitoringDisabled bool `pulumi:"isMonitoringDisabled"`
-	// The configuration of plugins associated with this instance.
-	PluginsConfigs []GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig `pulumi:"pluginsConfigs"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs struct {
-	// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-	AreAllPluginsDisabled pulumi.BoolInput `pulumi:"areAllPluginsDisabled"`
-	// Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-	IsManagementDisabled pulumi.BoolInput `pulumi:"isManagementDisabled"`
-	// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-	IsMonitoringDisabled pulumi.BoolInput `pulumi:"isMonitoringDisabled"`
-	// The configuration of plugins associated with this instance.
-	PluginsConfigs GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayInput `pulumi:"pluginsConfigs"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput {
-	return o
-}
-
-// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) AreAllPluginsDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig) bool {
-		return v.AreAllPluginsDisabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) IsManagementDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig) bool {
-		return v.IsManagementDisabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) IsMonitoringDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig) bool {
-		return v.IsMonitoringDisabled
-	}).(pulumi.BoolOutput)
-}
-
-// The configuration of plugins associated with this instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) PluginsConfigs() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig {
-		return v.PluginsConfigs
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput)
 }
 
 func init() {
@@ -79264,6 +79127,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgAttachmentsDrgAttachmentNetworkDetailArrayInput)(nil)).Elem(), GetDrgAttachmentsDrgAttachmentNetworkDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgAttachmentsFilterInput)(nil)).Elem(), GetDrgAttachmentsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgAttachmentsFilterArrayInput)(nil)).Elem(), GetDrgAttachmentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgNatPoliciesDrgNatPolicyInput)(nil)).Elem(), GetDrgNatPoliciesDrgNatPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgNatPoliciesDrgNatPolicyArrayInput)(nil)).Elem(), GetDrgNatPoliciesDrgNatPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgNatPoliciesFilterInput)(nil)).Elem(), GetDrgNatPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgNatPoliciesFilterArrayInput)(nil)).Elem(), GetDrgNatPoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgNatPolicyDrgNatRulesDrgNatRuleInput)(nil)).Elem(), GetDrgNatPolicyDrgNatRulesDrgNatRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayInput)(nil)).Elem(), GetDrgNatPolicyDrgNatRulesDrgNatRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgNatPolicyDrgNatRulesFilterInput)(nil)).Elem(), GetDrgNatPolicyDrgNatRulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgNatPolicyDrgNatRulesFilterArrayInput)(nil)).Elem(), GetDrgNatPolicyDrgNatRulesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgRouteDistributionStatementsDrgRouteDistributionStatementInput)(nil)).Elem(), GetDrgRouteDistributionStatementsDrgRouteDistributionStatementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgRouteDistributionStatementsDrgRouteDistributionStatementArrayInput)(nil)).Elem(), GetDrgRouteDistributionStatementsDrgRouteDistributionStatementArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteriaInput)(nil)).Elem(), GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteriaArgs{})
@@ -79404,14 +79275,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray{})
 	pulumi.RegisterOutputType(BootVolumeAutotunePolicyOutput{})
 	pulumi.RegisterOutputType(BootVolumeAutotunePolicyArrayOutput{})
 	pulumi.RegisterOutputType(BootVolumeBackupRetentionPeriodOutput{})
@@ -80264,6 +80127,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDrgAttachmentsDrgAttachmentNetworkDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrgAttachmentsFilterOutput{})
 	pulumi.RegisterOutputType(GetDrgAttachmentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDrgNatPoliciesDrgNatPolicyOutput{})
+	pulumi.RegisterOutputType(GetDrgNatPoliciesDrgNatPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetDrgNatPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetDrgNatPoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDrgNatPolicyDrgNatRulesDrgNatRuleOutput{})
+	pulumi.RegisterOutputType(GetDrgNatPolicyDrgNatRulesDrgNatRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetDrgNatPolicyDrgNatRulesFilterOutput{})
+	pulumi.RegisterOutputType(GetDrgNatPolicyDrgNatRulesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDrgRouteDistributionStatementsDrgRouteDistributionStatementOutput{})
 	pulumi.RegisterOutputType(GetDrgRouteDistributionStatementsDrgRouteDistributionStatementArrayOutput{})
 	pulumi.RegisterOutputType(GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteriaOutput{})
@@ -80404,12 +80275,4 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput{})
 }

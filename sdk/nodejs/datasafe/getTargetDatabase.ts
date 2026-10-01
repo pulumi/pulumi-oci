@@ -76,6 +76,10 @@ export interface GetTargetDatabaseResult {
      */
     readonly displayName: string;
     /**
+     * List of enabled features based on granted ORA_DSCS_* roles in target database
+     */
+    readonly features: string[];
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: string};
@@ -87,6 +91,7 @@ export interface GetTargetDatabaseResult {
      * Details about the current state of the peer target database in Data Safe.
      */
     readonly lifecycleDetails: string;
+    readonly managePrivilegesTrigger: number;
     readonly peerTargetDatabaseDetails: outputs.DataSafe.GetTargetDatabasePeerTargetDatabaseDetail[];
     /**
      * The OCIDs of associated resources like Database, Data Safe private endpoint etc.

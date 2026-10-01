@@ -69,6 +69,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DiscoveryJobsResult{}
 	case "oci:DataSafe/discoveryMod:DiscoveryMod":
 		r = &DiscoveryMod{}
+	case "oci:DataSafe/estimateTableSizes:EstimateTableSizes":
+		r = &EstimateTableSizes{}
 	case "oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration":
 		r = &GenerateOnPremConnectorConfiguration{}
 	case "oci:DataSafe/libraryMasingFormat:LibraryMasingFormat":
@@ -87,6 +89,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MaskingReportManagement{}
 	case "oci:DataSafe/onPremConnector:OnPremConnector":
 		r = &OnPremConnector{}
+	case "oci:DataSafe/registrationPolicy:RegistrationPolicy":
+		r = &RegistrationPolicy{}
 	case "oci:DataSafe/report:Report":
 		r = &Report{}
 	case "oci:DataSafe/reportDefinition:ReportDefinition":
@@ -139,6 +143,20 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SqlFirewallPolicy{}
 	case "oci:DataSafe/sqlFirewallPolicyManagement:SqlFirewallPolicyManagement":
 		r = &SqlFirewallPolicyManagement{}
+	case "oci:DataSafe/subsetData:SubsetData":
+		r = &SubsetData{}
+	case "oci:DataSafe/subsettingPolicy:SubsettingPolicy":
+		r = &SubsettingPolicy{}
+	case "oci:DataSafe/subsettingPolicyHealthReportManagement:SubsettingPolicyHealthReportManagement":
+		r = &SubsettingPolicyHealthReportManagement{}
+	case "oci:DataSafe/subsettingPolicySubsettingRule:SubsettingPolicySubsettingRule":
+		r = &SubsettingPolicySubsettingRule{}
+	case "oci:DataSafe/subsettingPolicySubsettingRuleProcessingChainObject:SubsettingPolicySubsettingRuleProcessingChainObject":
+		r = &SubsettingPolicySubsettingRuleProcessingChainObject{}
+	case "oci:DataSafe/subsettingPolicySubsettingSchemaRelation:SubsettingPolicySubsettingSchemaRelation":
+		r = &SubsettingPolicySubsettingSchemaRelation{}
+	case "oci:DataSafe/subsettingReportManagement:SubsettingReportManagement":
+		r = &SubsettingReportManagement{}
 	case "oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation":
 		r = &TargetAlertPolicyAssociation{}
 	case "oci:DataSafe/targetDatabase:TargetDatabase":
@@ -296,6 +314,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/estimateTableSizes",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/generateOnPremConnectorConfiguration",
 		&module{version},
 	)
@@ -337,6 +360,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/onPremConnector",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/registrationPolicy",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -467,6 +495,41 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/sqlFirewallPolicyManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/subsetData",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/subsettingPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/subsettingPolicyHealthReportManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/subsettingPolicySubsettingRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/subsettingPolicySubsettingRuleProcessingChainObject",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/subsettingPolicySubsettingSchemaRelation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/subsettingReportManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

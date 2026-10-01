@@ -74,12 +74,15 @@ type LookupTargetDatabaseResult struct {
 	Description string `pulumi:"description"`
 	// The display name of the peer target database in Data Safe.
 	DisplayName string `pulumi:"displayName"`
+	// List of enabled features based on granted ORA_DSCS_* roles in target database
+	Features []string `pulumi:"features"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Data Safe target database.
 	Id string `pulumi:"id"`
 	// Details about the current state of the peer target database in Data Safe.
 	LifecycleDetails          string                                      `pulumi:"lifecycleDetails"`
+	ManagePrivilegesTrigger   int                                         `pulumi:"managePrivilegesTrigger"`
 	PeerTargetDatabaseDetails []GetTargetDatabasePeerTargetDatabaseDetail `pulumi:"peerTargetDatabaseDetails"`
 	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
 	PeerTargetDatabases []GetTargetDatabasePeerTargetDatabaseType `pulumi:"peerTargetDatabases"`
@@ -166,6 +169,11 @@ func (o LookupTargetDatabaseResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTargetDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// List of enabled features based on granted ORA_DSCS_* roles in target database
+func (o LookupTargetDatabaseResultOutput) Features() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupTargetDatabaseResult) []string { return v.Features }).(pulumi.StringArrayOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 func (o LookupTargetDatabaseResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupTargetDatabaseResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -179,6 +187,10 @@ func (o LookupTargetDatabaseResultOutput) Id() pulumi.StringOutput {
 // Details about the current state of the peer target database in Data Safe.
 func (o LookupTargetDatabaseResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTargetDatabaseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o LookupTargetDatabaseResultOutput) ManagePrivilegesTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupTargetDatabaseResult) int { return v.ManagePrivilegesTrigger }).(pulumi.IntOutput)
 }
 
 func (o LookupTargetDatabaseResultOutput) PeerTargetDatabaseDetails() GetTargetDatabasePeerTargetDatabaseDetailArrayOutput {

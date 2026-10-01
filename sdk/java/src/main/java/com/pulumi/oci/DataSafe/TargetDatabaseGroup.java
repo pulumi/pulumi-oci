@@ -63,6 +63,8 @@ import javax.annotation.Nullable;
  *                         .build())
  *                     .definedTags(Map.of("Operations.CostCenter", "42"))
  *                     .freeformTags(Map.of("Department", "Finance"))
+ *                     .freeformTagsIn(targetDatabaseGroupMatchingCriteriaIncludeFreeformTagsIn)
+ *                     .systemTags(targetDatabaseGroupMatchingCriteriaIncludeSystemTags)
  *                     .targetDatabaseIds(targetDatabaseGroupMatchingCriteriaIncludeTargetDatabaseIds)
  *                     .build())
  *                 .exclude(TargetDatabaseGroupMatchingCriteriaExcludeArgs.builder()

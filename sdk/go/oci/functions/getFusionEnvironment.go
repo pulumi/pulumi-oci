@@ -91,6 +91,8 @@ type GetFusionEnvironmentResult struct {
 	// Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
 	IsIpv6dualStackEnabled bool `pulumi:"isIpv6dualStackEnabled"`
 	// BYOK key id
+	//
+	// Deprecated: Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// BYOK key info
 	KmsKeyInfos []GetFusionEnvironmentKmsKeyInfo `pulumi:"kmsKeyInfos"`
@@ -240,6 +242,8 @@ func (o GetFusionEnvironmentResultOutput) IsIpv6dualStackEnabled() pulumi.BoolOu
 }
 
 // BYOK key id
+//
+// Deprecated: Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
 func (o GetFusionEnvironmentResultOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }

@@ -64,6 +64,36 @@ public final class TargetDatabaseGroupMatchingCriteriaIncludeArgs extends com.pu
     }
 
     /**
+     * (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it&#39;s tag value equals any of the values in the array.
+     * 
+     */
+    @Import(name="freeformTagsIn")
+    private @Nullable Output<Map<String,List<String>>> freeformTagsIn;
+
+    /**
+     * @return (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it&#39;s tag value equals any of the values in the array.
+     * 
+     */
+    public Optional<Output<Map<String,List<String>>>> freeformTagsIn() {
+        return Optional.ofNullable(this.freeformTagsIn);
+    }
+
+    /**
+     * (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,List<String>>> systemTags;
+
+    /**
+     * @return (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+     * 
+     */
+    public Optional<Output<Map<String,List<String>>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * (Updatable) The list of target database OCIDs to be included in the target database group.
      * 
      * ** IMPORTANT **
@@ -90,6 +120,8 @@ public final class TargetDatabaseGroupMatchingCriteriaIncludeArgs extends com.pu
         this.compartments = $.compartments;
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
+        this.freeformTagsIn = $.freeformTagsIn;
+        this.systemTags = $.systemTags;
         this.targetDatabaseIds = $.targetDatabaseIds;
     }
 
@@ -182,6 +214,48 @@ public final class TargetDatabaseGroupMatchingCriteriaIncludeArgs extends com.pu
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param freeformTagsIn (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it&#39;s tag value equals any of the values in the array.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagsIn(@Nullable Output<Map<String,List<String>>> freeformTagsIn) {
+            $.freeformTagsIn = freeformTagsIn;
+            return this;
+        }
+
+        /**
+         * @param freeformTagsIn (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it&#39;s tag value equals any of the values in the array.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagsIn(Map<String,List<String>> freeformTagsIn) {
+            return freeformTagsIn(Output.of(freeformTagsIn));
+        }
+
+        /**
+         * @param systemTags (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,List<String>>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,List<String>> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

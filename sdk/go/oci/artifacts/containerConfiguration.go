@@ -31,7 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := artifacts.NewContainerConfiguration(ctx, "test_container_configuration", nil)
+//			_, err := artifacts.NewContainerConfiguration(ctx, "test_container_configuration", &artifacts.ContainerConfigurationArgs{
+//				CompartmentId:                  pulumi.Any(compartmentId),
+//				IsRepositoryCreatedOnFirstPush: pulumi.Any(containerConfigurationIsRepositoryCreatedOnFirstPush),
+//			})
 //			if err != nil {
 //				return err
 //			}
@@ -51,8 +54,12 @@ import (
 type ContainerConfiguration struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+	// (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsRepositoryCreatedOnFirstPush pulumi.BoolOutput `pulumi:"isRepositoryCreatedOnFirstPush"`
 	// The tenancy namespace used in the container repository path.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
@@ -94,16 +101,24 @@ func GetContainerConfiguration(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ContainerConfiguration resources.
 type containerConfigurationState struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+	// (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsRepositoryCreatedOnFirstPush *bool `pulumi:"isRepositoryCreatedOnFirstPush"`
 	// The tenancy namespace used in the container repository path.
 	Namespace *string `pulumi:"namespace"`
 }
 
 type ContainerConfigurationState struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
-	// Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+	// (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsRepositoryCreatedOnFirstPush pulumi.BoolPtrInput
 	// The tenancy namespace used in the container repository path.
 	Namespace pulumi.StringPtrInput
@@ -114,15 +129,23 @@ func (ContainerConfigurationState) ElementType() reflect.Type {
 }
 
 type containerConfigurationArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+	// (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsRepositoryCreatedOnFirstPush bool `pulumi:"isRepositoryCreatedOnFirstPush"`
 }
 
 // The set of arguments for constructing a ContainerConfiguration resource.
 type ContainerConfigurationArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
-	// Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+	// (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsRepositoryCreatedOnFirstPush pulumi.BoolInput
 }
 
@@ -213,11 +236,15 @@ func (o ContainerConfigurationOutput) ToContainerConfigurationOutputWithContext(
 	return o
 }
 
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o ContainerConfigurationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerConfiguration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+// (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ContainerConfigurationOutput) IsRepositoryCreatedOnFirstPush() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerConfiguration) pulumi.BoolOutput { return v.IsRepositoryCreatedOnFirstPush }).(pulumi.BoolOutput)
 }

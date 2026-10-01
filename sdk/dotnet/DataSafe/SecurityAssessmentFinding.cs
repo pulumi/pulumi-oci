@@ -73,6 +73,9 @@ namespace Pulumi.Oci.DataSafe
         [Output("details")]
         public Output<ImmutableArray<string>> Details { get; private set; } = null!;
 
+        [Output("doclink")]
+        public Output<string> Doclink { get; private set; } = null!;
+
         /// <summary>
         /// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
         /// </summary>
@@ -284,6 +287,9 @@ namespace Pulumi.Oci.DataSafe
             get => _details ?? (_details = new InputList<string>());
             set => _details = value;
         }
+
+        [Input("doclink")]
+        public Input<string>? Doclink { get; set; }
 
         /// <summary>
         /// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.

@@ -38,6 +38,7 @@ namespace Pulumi.Oci.Core
         ///         AttachmentType = drgAttachmentAttachmentType,
         ///         DisplayName = drgAttachmentDisplayName,
         ///         DrgId = testDrg.Id,
+        ///         DrgNatPolicyId = testDrgNatPolicy.Id,
         ///         DrgRouteTableId = testDrgRouteTable.Id,
         ///         NetworkId = testNetwork.Id,
         ///         State = drgAttachmentState,
@@ -77,6 +78,7 @@ namespace Pulumi.Oci.Core
         ///         AttachmentType = drgAttachmentAttachmentType,
         ///         DisplayName = drgAttachmentDisplayName,
         ///         DrgId = testDrg.Id,
+        ///         DrgNatPolicyId = testDrgNatPolicy.Id,
         ///         DrgRouteTableId = testDrgRouteTable.Id,
         ///         NetworkId = testNetwork.Id,
         ///         State = drgAttachmentState,
@@ -116,6 +118,7 @@ namespace Pulumi.Oci.Core
         ///         AttachmentType = drgAttachmentAttachmentType,
         ///         DisplayName = drgAttachmentDisplayName,
         ///         DrgId = testDrg.Id,
+        ///         DrgNatPolicyId = testDrgNatPolicy.Id,
         ///         DrgRouteTableId = testDrgRouteTable.Id,
         ///         NetworkId = testNetwork.Id,
         ///         State = drgAttachmentState,
@@ -155,6 +158,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("drgId")]
         public string? DrgId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+        /// </summary>
+        [Input("drgNatPolicyId")]
+        public string? DrgNatPolicyId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
@@ -221,6 +230,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? DrgId { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+        /// </summary>
+        [Input("drgNatPolicyId")]
+        public Input<string>? DrgNatPolicyId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
         /// </summary>
         [Input("drgRouteTableId")]
@@ -280,6 +295,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string? DrgId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+        /// </summary>
+        public readonly string? DrgNatPolicyId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
         /// </summary>
         public readonly string? DrgRouteTableId;
@@ -310,6 +329,8 @@ namespace Pulumi.Oci.Core
 
             string? drgId,
 
+            string? drgNatPolicyId,
+
             string? drgRouteTableId,
 
             ImmutableArray<Outputs.GetDrgAttachmentsFilterResult> filters,
@@ -327,6 +348,7 @@ namespace Pulumi.Oci.Core
             DisplayName = displayName;
             DrgAttachments = drgAttachments;
             DrgId = drgId;
+            DrgNatPolicyId = drgNatPolicyId;
             DrgRouteTableId = drgRouteTableId;
             Filters = filters;
             Id = id;

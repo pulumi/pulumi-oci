@@ -57,6 +57,9 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("type")]
         public Input<string>? Type { get; set; }
 
+        [Input("vpcUser")]
+        public Input<string>? VpcUser { get; set; }
+
         public DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailGetArgs()
         {
         }

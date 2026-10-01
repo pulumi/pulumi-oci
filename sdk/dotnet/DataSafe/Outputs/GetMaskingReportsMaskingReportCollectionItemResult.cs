@@ -58,6 +58,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The OCID of the subsetting report associated with this masking report
+        /// </summary>
+        public readonly string SubsettingReportId;
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         public readonly string TargetId;
@@ -126,6 +130,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string state,
 
+            string subsettingReportId,
+
             string targetId,
 
             string timeCreated,
@@ -159,6 +165,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             ParallelDegree = parallelDegree;
             Recompile = recompile;
             State = state;
+            SubsettingReportId = subsettingReportId;
             TargetId = targetId;
             TimeCreated = timeCreated;
             TimeMaskingFinished = timeMaskingFinished;

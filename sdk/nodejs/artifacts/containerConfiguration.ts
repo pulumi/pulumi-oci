@@ -16,7 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerConfiguration = new oci.artifacts.ContainerConfiguration("test_container_configuration", {});
+ * const testContainerConfiguration = new oci.artifacts.ContainerConfiguration("test_container_configuration", {
+ *     compartmentId: compartmentId,
+ *     isRepositoryCreatedOnFirstPush: containerConfigurationIsRepositoryCreatedOnFirstPush === "true",
+ * });
  * ```
  *
  * ## Import
@@ -55,9 +58,15 @@ export class ContainerConfiguration extends pulumi.CustomResource {
         return obj['__pulumiType'] === ContainerConfiguration.__pulumiType;
     }
 
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly isRepositoryCreatedOnFirstPush: pulumi.Output<boolean>;
     /**
@@ -102,9 +111,15 @@ export class ContainerConfiguration extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ContainerConfiguration resources.
  */
 export interface ContainerConfigurationState {
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     compartmentId?: pulumi.Input<string | undefined>;
     /**
-     * Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isRepositoryCreatedOnFirstPush?: pulumi.Input<boolean | undefined>;
     /**
@@ -117,9 +132,15 @@ export interface ContainerConfigurationState {
  * The set of arguments for constructing a ContainerConfiguration resource.
  */
 export interface ContainerConfigurationArgs {
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     compartmentId: pulumi.Input<string>;
     /**
-     * Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isRepositoryCreatedOnFirstPush: pulumi.Input<boolean>;
 }

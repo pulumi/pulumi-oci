@@ -91,6 +91,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? IsAutoTuneEnabled { get; set; }
 
         /// <summary>
+        /// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        /// </summary>
+        [Input("isReservationsEnabled")]
+        public Input<bool>? IsReservationsEnabled { get; set; }
+
+        /// <summary>
         /// The OCID of the Vault service key to assign as the master encryption key for the volume.
         /// </summary>
         [Input("kmsKeyId")]

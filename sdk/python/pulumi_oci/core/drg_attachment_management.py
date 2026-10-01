@@ -26,11 +26,14 @@ class DrgAttachmentManagementArgs:
                  drg_id: pulumi.Input[_builtins.str],
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 does_preserve_original_routes_with_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+                 drg_nat_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  network_details: pulumi.Input[Optional['DrgAttachmentManagementNetworkDetailsArgs']] = None,
                  network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_drg_nat_policy_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
@@ -42,11 +45,13 @@ class DrgAttachmentManagementArgs:
         :param pulumi.Input[_builtins.str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] drg_nat_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
         :param pulumi.Input[_builtins.str] drg_route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
         :param pulumi.Input[_builtins.str] export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input['DrgAttachmentManagementNetworkDetailsArgs'] network_details: (Updatable)
         :param pulumi.Input[_builtins.str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
+        :param pulumi.Input[_builtins.bool] remove_drg_nat_policy_trigger: (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
         :param pulumi.Input[_builtins.bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
         :param pulumi.Input[_builtins.str] route_table_id: The OCID of the route table the DRG attachment is using.
                
@@ -62,6 +67,10 @@ class DrgAttachmentManagementArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if does_preserve_original_routes_with_nat is not None:
+            pulumi.set(__self__, "does_preserve_original_routes_with_nat", does_preserve_original_routes_with_nat)
+        if drg_nat_policy_id is not None:
+            pulumi.set(__self__, "drg_nat_policy_id", drg_nat_policy_id)
         if drg_route_table_id is not None:
             pulumi.set(__self__, "drg_route_table_id", drg_route_table_id)
         if export_drg_route_distribution_id is not None:
@@ -72,6 +81,8 @@ class DrgAttachmentManagementArgs:
             pulumi.set(__self__, "network_details", network_details)
         if network_id is not None:
             pulumi.set(__self__, "network_id", network_id)
+        if remove_drg_nat_policy_trigger is not None:
+            pulumi.set(__self__, "remove_drg_nat_policy_trigger", remove_drg_nat_policy_trigger)
         if remove_export_drg_route_distribution_trigger is not None:
             pulumi.set(__self__, "remove_export_drg_route_distribution_trigger", remove_export_drg_route_distribution_trigger)
         if route_table_id is not None:
@@ -140,6 +151,27 @@ class DrgAttachmentManagementArgs:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="doesPreserveOriginalRoutesWithNat")
+    def does_preserve_original_routes_with_nat(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "does_preserve_original_routes_with_nat")
+
+    @does_preserve_original_routes_with_nat.setter
+    def does_preserve_original_routes_with_nat(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "does_preserve_original_routes_with_nat", value)
+
+    @_builtins.property
+    @pulumi.getter(name="drgNatPolicyId")
+    def drg_nat_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+        """
+        return pulumi.get(self, "drg_nat_policy_id")
+
+    @drg_nat_policy_id.setter
+    def drg_nat_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "drg_nat_policy_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="drgRouteTableId")
     def drg_route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -200,6 +232,18 @@ class DrgAttachmentManagementArgs:
         pulumi.set(self, "network_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="removeDrgNatPolicyTrigger")
+    def remove_drg_nat_policy_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+        """
+        return pulumi.get(self, "remove_drg_nat_policy_trigger")
+
+    @remove_drg_nat_policy_trigger.setter
+    def remove_drg_nat_policy_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "remove_drg_nat_policy_trigger", value)
+
+    @_builtins.property
     @pulumi.getter(name="removeExportDrgRouteDistributionTrigger")
     def remove_export_drg_route_distribution_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -247,13 +291,16 @@ class _DrgAttachmentManagementState:
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 does_preserve_original_routes_with_nat: pulumi.Input[Optional[_builtins.bool]] = None,
                  drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_nat_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_cross_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
                  network_details: pulumi.Input[Optional['DrgAttachmentManagementNetworkDetailsArgs']] = None,
                  network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_drg_nat_policy_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -267,12 +314,14 @@ class _DrgAttachmentManagementState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+        :param pulumi.Input[_builtins.str] drg_nat_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
         :param pulumi.Input[_builtins.str] drg_route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
         :param pulumi.Input[_builtins.str] export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_cross_tenancy: Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
         :param pulumi.Input['DrgAttachmentManagementNetworkDetailsArgs'] network_details: (Updatable)
         :param pulumi.Input[_builtins.str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
+        :param pulumi.Input[_builtins.bool] remove_drg_nat_policy_trigger: (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
         :param pulumi.Input[_builtins.bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
         :param pulumi.Input[_builtins.str] route_table_id: The OCID of the route table the DRG attachment is using.
                
@@ -291,8 +340,12 @@ class _DrgAttachmentManagementState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if does_preserve_original_routes_with_nat is not None:
+            pulumi.set(__self__, "does_preserve_original_routes_with_nat", does_preserve_original_routes_with_nat)
         if drg_id is not None:
             pulumi.set(__self__, "drg_id", drg_id)
+        if drg_nat_policy_id is not None:
+            pulumi.set(__self__, "drg_nat_policy_id", drg_nat_policy_id)
         if drg_route_table_id is not None:
             pulumi.set(__self__, "drg_route_table_id", drg_route_table_id)
         if export_drg_route_distribution_id is not None:
@@ -305,6 +358,8 @@ class _DrgAttachmentManagementState:
             pulumi.set(__self__, "network_details", network_details)
         if network_id is not None:
             pulumi.set(__self__, "network_id", network_id)
+        if remove_drg_nat_policy_trigger is not None:
+            pulumi.set(__self__, "remove_drg_nat_policy_trigger", remove_drg_nat_policy_trigger)
         if remove_export_drg_route_distribution_trigger is not None:
             pulumi.set(__self__, "remove_export_drg_route_distribution_trigger", remove_export_drg_route_distribution_trigger)
         if route_table_id is not None:
@@ -365,6 +420,15 @@ class _DrgAttachmentManagementState:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="doesPreserveOriginalRoutesWithNat")
+    def does_preserve_original_routes_with_nat(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "does_preserve_original_routes_with_nat")
+
+    @does_preserve_original_routes_with_nat.setter
+    def does_preserve_original_routes_with_nat(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "does_preserve_original_routes_with_nat", value)
+
+    @_builtins.property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -375,6 +439,18 @@ class _DrgAttachmentManagementState:
     @drg_id.setter
     def drg_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "drg_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="drgNatPolicyId")
+    def drg_nat_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+        """
+        return pulumi.get(self, "drg_nat_policy_id")
+
+    @drg_nat_policy_id.setter
+    def drg_nat_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "drg_nat_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="drgRouteTableId")
@@ -447,6 +523,18 @@ class _DrgAttachmentManagementState:
     @network_id.setter
     def network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="removeDrgNatPolicyTrigger")
+    def remove_drg_nat_policy_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+        """
+        return pulumi.get(self, "remove_drg_nat_policy_trigger")
+
+    @remove_drg_nat_policy_trigger.setter
+    def remove_drg_nat_policy_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "remove_drg_nat_policy_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="removeExportDrgRouteDistributionTrigger")
@@ -523,12 +611,15 @@ class DrgAttachmentManagement(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 does_preserve_original_routes_with_nat: pulumi.Input[Optional[_builtins.bool]] = None,
                  drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_nat_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  network_details: pulumi.Input[Optional[Union['DrgAttachmentManagementNetworkDetailsArgs', 'DrgAttachmentManagementNetworkDetailsArgsDict', 'outputs.DrgAttachmentManagementNetworkDetails']]] = None,
                  network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_drg_nat_policy_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -560,7 +651,8 @@ class DrgAttachmentManagement(pulumi.CustomResource):
             network_id=test_rpc["id"],
             drg_id=test_drg["id"],
             display_name="MyTestDrgAttachmentForRpc",
-            drg_route_table_id=test_drg_route_table["id"])
+            drg_route_table_id=test_drg_route_table["id"],
+            drg_nat_policy_id=test_drg_nat_policy["id"])
         ```
 
 
@@ -571,11 +663,13 @@ class DrgAttachmentManagement(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+        :param pulumi.Input[_builtins.str] drg_nat_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
         :param pulumi.Input[_builtins.str] drg_route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
         :param pulumi.Input[_builtins.str] export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Union['DrgAttachmentManagementNetworkDetailsArgs', 'DrgAttachmentManagementNetworkDetailsArgsDict', 'outputs.DrgAttachmentManagementNetworkDetails']] network_details: (Updatable)
         :param pulumi.Input[_builtins.str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
+        :param pulumi.Input[_builtins.bool] remove_drg_nat_policy_trigger: (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
         :param pulumi.Input[_builtins.bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
         :param pulumi.Input[_builtins.str] route_table_id: The OCID of the route table the DRG attachment is using.
                
@@ -617,7 +711,8 @@ class DrgAttachmentManagement(pulumi.CustomResource):
             network_id=test_rpc["id"],
             drg_id=test_drg["id"],
             display_name="MyTestDrgAttachmentForRpc",
-            drg_route_table_id=test_drg_route_table["id"])
+            drg_route_table_id=test_drg_route_table["id"],
+            drg_nat_policy_id=test_drg_nat_policy["id"])
         ```
 
 
@@ -640,12 +735,15 @@ class DrgAttachmentManagement(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 does_preserve_original_routes_with_nat: pulumi.Input[Optional[_builtins.bool]] = None,
                  drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_nat_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  network_details: pulumi.Input[Optional[Union['DrgAttachmentManagementNetworkDetailsArgs', 'DrgAttachmentManagementNetworkDetailsArgsDict', 'outputs.DrgAttachmentManagementNetworkDetails']]] = None,
                  network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_drg_nat_policy_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -666,14 +764,17 @@ class DrgAttachmentManagement(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["does_preserve_original_routes_with_nat"] = does_preserve_original_routes_with_nat
             if drg_id is None and not opts.urn:
                 raise TypeError("Missing required property 'drg_id'")
             __props__.__dict__["drg_id"] = drg_id
+            __props__.__dict__["drg_nat_policy_id"] = drg_nat_policy_id
             __props__.__dict__["drg_route_table_id"] = drg_route_table_id
             __props__.__dict__["export_drg_route_distribution_id"] = export_drg_route_distribution_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["network_details"] = network_details
             __props__.__dict__["network_id"] = network_id
+            __props__.__dict__["remove_drg_nat_policy_trigger"] = remove_drg_nat_policy_trigger
             __props__.__dict__["remove_export_drg_route_distribution_trigger"] = remove_export_drg_route_distribution_trigger
             __props__.__dict__["route_table_id"] = route_table_id
             __props__.__dict__["vcn_id"] = vcn_id
@@ -694,13 +795,16 @@ class DrgAttachmentManagement(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            does_preserve_original_routes_with_nat: pulumi.Input[Optional[_builtins.bool]] = None,
             drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_nat_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
             drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
             export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_cross_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
             network_details: pulumi.Input[Optional[Union['DrgAttachmentManagementNetworkDetailsArgs', 'DrgAttachmentManagementNetworkDetailsArgsDict', 'outputs.DrgAttachmentManagementNetworkDetails']]] = None,
             network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            remove_drg_nat_policy_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
             remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
             route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -718,12 +822,14 @@ class DrgAttachmentManagement(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+        :param pulumi.Input[_builtins.str] drg_nat_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
         :param pulumi.Input[_builtins.str] drg_route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
         :param pulumi.Input[_builtins.str] export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_cross_tenancy: Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
         :param pulumi.Input[Union['DrgAttachmentManagementNetworkDetailsArgs', 'DrgAttachmentManagementNetworkDetailsArgsDict', 'outputs.DrgAttachmentManagementNetworkDetails']] network_details: (Updatable)
         :param pulumi.Input[_builtins.str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
+        :param pulumi.Input[_builtins.bool] remove_drg_nat_policy_trigger: (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
         :param pulumi.Input[_builtins.bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
         :param pulumi.Input[_builtins.str] route_table_id: The OCID of the route table the DRG attachment is using.
                
@@ -742,13 +848,16 @@ class DrgAttachmentManagement(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["does_preserve_original_routes_with_nat"] = does_preserve_original_routes_with_nat
         __props__.__dict__["drg_id"] = drg_id
+        __props__.__dict__["drg_nat_policy_id"] = drg_nat_policy_id
         __props__.__dict__["drg_route_table_id"] = drg_route_table_id
         __props__.__dict__["export_drg_route_distribution_id"] = export_drg_route_distribution_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_cross_tenancy"] = is_cross_tenancy
         __props__.__dict__["network_details"] = network_details
         __props__.__dict__["network_id"] = network_id
+        __props__.__dict__["remove_drg_nat_policy_trigger"] = remove_drg_nat_policy_trigger
         __props__.__dict__["remove_export_drg_route_distribution_trigger"] = remove_export_drg_route_distribution_trigger
         __props__.__dict__["route_table_id"] = route_table_id
         __props__.__dict__["state"] = state
@@ -789,12 +898,25 @@ class DrgAttachmentManagement(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter(name="doesPreserveOriginalRoutesWithNat")
+    def does_preserve_original_routes_with_nat(self) -> pulumi.Output[_builtins.bool]:
+        return pulumi.get(self, "does_preserve_original_routes_with_nat")
+
+    @_builtins.property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         """
         return pulumi.get(self, "drg_id")
+
+    @_builtins.property
+    @pulumi.getter(name="drgNatPolicyId")
+    def drg_nat_policy_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+        """
+        return pulumi.get(self, "drg_nat_policy_id")
 
     @_builtins.property
     @pulumi.getter(name="drgRouteTableId")
@@ -843,6 +965,14 @@ class DrgAttachmentManagement(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
         """
         return pulumi.get(self, "network_id")
+
+    @_builtins.property
+    @pulumi.getter(name="removeDrgNatPolicyTrigger")
+    def remove_drg_nat_policy_trigger(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+        """
+        return pulumi.get(self, "remove_drg_nat_policy_trigger")
 
     @_builtins.property
     @pulumi.getter(name="removeExportDrgRouteDistributionTrigger")

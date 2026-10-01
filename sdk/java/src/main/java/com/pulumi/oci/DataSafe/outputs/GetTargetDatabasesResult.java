@@ -34,6 +34,7 @@ public final class GetTargetDatabasesResult {
      * 
      */
     private @Nullable String displayName;
+    private @Nullable String enablementResourceOcid;
     private @Nullable List<GetTargetDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -88,6 +89,9 @@ public final class GetTargetDatabasesResult {
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
+    public Optional<String> enablementResourceOcid() {
+        return Optional.ofNullable(this.enablementResourceOcid);
+    }
     public List<GetTargetDatabasesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -138,6 +142,7 @@ public final class GetTargetDatabasesResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String databaseType;
         private @Nullable String displayName;
+        private @Nullable String enablementResourceOcid;
         private @Nullable List<GetTargetDatabasesFilter> filters;
         private String id;
         private @Nullable String infrastructureType;
@@ -153,6 +158,7 @@ public final class GetTargetDatabasesResult {
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.databaseType = defaults.databaseType;
     	      this.displayName = defaults.displayName;
+    	      this.enablementResourceOcid = defaults.enablementResourceOcid;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.infrastructureType = defaults.infrastructureType;
@@ -197,6 +203,12 @@ public final class GetTargetDatabasesResult {
         public Builder displayName(@Nullable String displayName) {
 
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder enablementResourceOcid(@Nullable String enablementResourceOcid) {
+
+            this.enablementResourceOcid = enablementResourceOcid;
             return this;
         }
         @CustomType.Setter
@@ -253,6 +265,7 @@ public final class GetTargetDatabasesResult {
             _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.databaseType = databaseType;
             _resultValue.displayName = displayName;
+            _resultValue.enablementResourceOcid = enablementResourceOcid;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.infrastructureType = infrastructureType;

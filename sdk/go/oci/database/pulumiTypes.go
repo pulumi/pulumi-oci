@@ -12715,6 +12715,7 @@ type CloudAutonomousVmClusterMaintenanceWindowDetails struct {
 	// (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
 	SkipRus []bool `pulumi:"skipRus"`
 	// (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	// <<<<<<< ours
 	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
 }
 
@@ -12754,6 +12755,7 @@ type CloudAutonomousVmClusterMaintenanceWindowDetailsArgs struct {
 	// (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
 	SkipRus pulumi.BoolArrayInput `pulumi:"skipRus"`
 	// (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	// <<<<<<< ours
 	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
 }
 
@@ -12892,6 +12894,7 @@ func (o CloudAutonomousVmClusterMaintenanceWindowDetailsOutput) SkipRus() pulumi
 }
 
 // (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+// <<<<<<< ours
 func (o CloudAutonomousVmClusterMaintenanceWindowDetailsOutput) WeeksOfMonths() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v CloudAutonomousVmClusterMaintenanceWindowDetails) []int { return v.WeeksOfMonths }).(pulumi.IntArrayOutput)
 }
@@ -13024,6 +13027,7 @@ func (o CloudAutonomousVmClusterMaintenanceWindowDetailsPtrOutput) SkipRus() pul
 }
 
 // (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+// <<<<<<< ours
 func (o CloudAutonomousVmClusterMaintenanceWindowDetailsPtrOutput) WeeksOfMonths() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmClusterMaintenanceWindowDetails) []int {
 		if v == nil {
@@ -27801,7 +27805,8 @@ type DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
 	// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
 	RemoteRegion *string `pulumi:"remoteRegion"`
 	// Type of the database backup destination.
-	Type *string `pulumi:"type"`
+	Type    *string `pulumi:"type"`
+	VpcUser *string `pulumi:"vpcUser"`
 }
 
 // DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
@@ -27830,7 +27835,8 @@ type DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
 	// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
 	RemoteRegion pulumi.StringPtrInput `pulumi:"remoteRegion"`
 	// Type of the database backup destination.
-	Type pulumi.StringPtrInput `pulumi:"type"`
+	Type    pulumi.StringPtrInput `pulumi:"type"`
+	VpcUser pulumi.StringPtrInput `pulumi:"vpcUser"`
 }
 
 func (DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
@@ -27927,6 +27933,10 @@ func (o DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Remot
 // Type of the database backup destination.
 func (o DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+func (o DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) VpcUser() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) *string { return v.VpcUser }).(pulumi.StringPtrOutput)
 }
 
 type DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput struct{ *pulumi.OutputState }

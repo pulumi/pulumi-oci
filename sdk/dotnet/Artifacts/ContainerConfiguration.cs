@@ -25,7 +25,11 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testContainerConfiguration = new Oci.Artifacts.ContainerConfiguration("test_container_configuration");
+    ///     var testContainerConfiguration = new Oci.Artifacts.ContainerConfiguration("test_container_configuration", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         IsRepositoryCreatedOnFirstPush = containerConfigurationIsRepositoryCreatedOnFirstPush,
+    ///     });
     /// 
     /// });
     /// ```
@@ -41,11 +45,18 @@ namespace Pulumi.Oci.Artifacts
     [OciResourceType("oci:Artifacts/containerConfiguration:ContainerConfiguration")]
     public partial class ContainerConfiguration : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        /// (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("isRepositoryCreatedOnFirstPush")]
         public Output<bool> IsRepositoryCreatedOnFirstPush { get; private set; } = null!;
@@ -102,11 +113,18 @@ namespace Pulumi.Oci.Artifacts
 
     public sealed class ContainerConfigurationArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        /// (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isRepositoryCreatedOnFirstPush", required: true)]
         public Input<bool> IsRepositoryCreatedOnFirstPush { get; set; } = null!;
@@ -119,11 +137,18 @@ namespace Pulumi.Oci.Artifacts
 
     public sealed class ContainerConfigurationState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        /// (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isRepositoryCreatedOnFirstPush")]
         public Input<bool>? IsRepositoryCreatedOnFirstPush { get; set; }

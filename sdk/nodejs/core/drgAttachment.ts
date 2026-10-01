@@ -72,10 +72,15 @@ export class DrgAttachment extends pulumi.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     declare public readonly displayName: pulumi.Output<string>;
+    declare public readonly doesPreserveOriginalRoutesWithNat: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
     declare public readonly drgId: pulumi.Output<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+     */
+    declare public readonly drgNatPolicyId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
      *
@@ -99,6 +104,10 @@ export class DrgAttachment extends pulumi.CustomResource {
      * (Updatable)
      */
     declare public readonly networkDetails: pulumi.Output<outputs.Core.DrgAttachmentNetworkDetails>;
+    /**
+     * (Updatable) An optional property that, when set or updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+     */
+    declare public readonly removeDrgNatPolicyTrigger: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      *
@@ -144,12 +153,15 @@ export class DrgAttachment extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["doesPreserveOriginalRoutesWithNat"] = state?.doesPreserveOriginalRoutesWithNat;
             resourceInputs["drgId"] = state?.drgId;
+            resourceInputs["drgNatPolicyId"] = state?.drgNatPolicyId;
             resourceInputs["drgRouteTableId"] = state?.drgRouteTableId;
             resourceInputs["exportDrgRouteDistributionId"] = state?.exportDrgRouteDistributionId;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["isCrossTenancy"] = state?.isCrossTenancy;
             resourceInputs["networkDetails"] = state?.networkDetails;
+            resourceInputs["removeDrgNatPolicyTrigger"] = state?.removeDrgNatPolicyTrigger;
             resourceInputs["removeExportDrgRouteDistributionTrigger"] = state?.removeExportDrgRouteDistributionTrigger;
             resourceInputs["routeTableId"] = state?.routeTableId;
             resourceInputs["state"] = state?.state;
@@ -162,11 +174,14 @@ export class DrgAttachment extends pulumi.CustomResource {
             }
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["doesPreserveOriginalRoutesWithNat"] = args?.doesPreserveOriginalRoutesWithNat;
             resourceInputs["drgId"] = args?.drgId;
+            resourceInputs["drgNatPolicyId"] = args?.drgNatPolicyId;
             resourceInputs["drgRouteTableId"] = args?.drgRouteTableId;
             resourceInputs["exportDrgRouteDistributionId"] = args?.exportDrgRouteDistributionId;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["networkDetails"] = args?.networkDetails;
+            resourceInputs["removeDrgNatPolicyTrigger"] = args?.removeDrgNatPolicyTrigger;
             resourceInputs["removeExportDrgRouteDistributionTrigger"] = args?.removeExportDrgRouteDistributionTrigger;
             resourceInputs["routeTableId"] = args?.routeTableId;
             resourceInputs["vcnId"] = args?.vcnId;
@@ -196,10 +211,15 @@ export interface DrgAttachmentState {
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string | undefined>;
+    doesPreserveOriginalRoutesWithNat?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
     drgId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+     */
+    drgNatPolicyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
      *
@@ -223,6 +243,10 @@ export interface DrgAttachmentState {
      * (Updatable)
      */
     networkDetails?: pulumi.Input<inputs.Core.DrgAttachmentNetworkDetails | undefined>;
+    /**
+     * (Updatable) An optional property that, when set or updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+     */
+    removeDrgNatPolicyTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      *
@@ -265,10 +289,15 @@ export interface DrgAttachmentArgs {
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string | undefined>;
+    doesPreserveOriginalRoutesWithNat?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
     drgId: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+     */
+    drgNatPolicyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
      *
@@ -288,6 +317,10 @@ export interface DrgAttachmentArgs {
      * (Updatable)
      */
     networkDetails?: pulumi.Input<inputs.Core.DrgAttachmentNetworkDetails | undefined>;
+    /**
+     * (Updatable) An optional property that, when set or updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+     */
+    removeDrgNatPolicyTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      *

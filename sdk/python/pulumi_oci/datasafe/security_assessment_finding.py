@@ -66,6 +66,7 @@ class _SecurityAssessmentFindingState:
                  assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  category: pulumi.Input[Optional[_builtins.str]] = None,
                  details: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 doclink: pulumi.Input[Optional[_builtins.str]] = None,
                  has_target_db_risk_level_changed: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_risk_modified: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_top_finding: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -118,6 +119,8 @@ class _SecurityAssessmentFindingState:
             pulumi.set(__self__, "category", category)
         if details is not None:
             pulumi.set(__self__, "details", details)
+        if doclink is not None:
+            pulumi.set(__self__, "doclink", doclink)
         if has_target_db_risk_level_changed is not None:
             pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
         if is_risk_modified is not None:
@@ -192,6 +195,15 @@ class _SecurityAssessmentFindingState:
     @details.setter
     def details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "details", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def doclink(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "doclink")
+
+    @doclink.setter
+    def doclink(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "doclink", value)
 
     @_builtins.property
     @pulumi.getter(name="hasTargetDbRiskLevelChanged")
@@ -541,6 +553,7 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
             __props__.__dict__["assessment_id"] = None
             __props__.__dict__["category"] = None
             __props__.__dict__["details"] = None
+            __props__.__dict__["doclink"] = None
             __props__.__dict__["has_target_db_risk_level_changed"] = None
             __props__.__dict__["is_risk_modified"] = None
             __props__.__dict__["is_top_finding"] = None
@@ -571,6 +584,7 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
             assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
             category: pulumi.Input[Optional[_builtins.str]] = None,
             details: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            doclink: pulumi.Input[Optional[_builtins.str]] = None,
             has_target_db_risk_level_changed: pulumi.Input[Optional[_builtins.bool]] = None,
             is_risk_modified: pulumi.Input[Optional[_builtins.bool]] = None,
             is_top_finding: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -628,6 +642,7 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
         __props__.__dict__["assessment_id"] = assessment_id
         __props__.__dict__["category"] = category
         __props__.__dict__["details"] = details
+        __props__.__dict__["doclink"] = doclink
         __props__.__dict__["has_target_db_risk_level_changed"] = has_target_db_risk_level_changed
         __props__.__dict__["is_risk_modified"] = is_risk_modified
         __props__.__dict__["is_top_finding"] = is_top_finding
@@ -672,6 +687,11 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
         The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
         """
         return pulumi.get(self, "details")
+
+    @_builtins.property
+    @pulumi.getter
+    def doclink(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "doclink")
 
     @_builtins.property
     @pulumi.getter(name="hasTargetDbRiskLevelChanged")

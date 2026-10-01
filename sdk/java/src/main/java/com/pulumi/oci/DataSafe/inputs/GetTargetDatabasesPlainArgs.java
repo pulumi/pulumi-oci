@@ -108,6 +108,21 @@ public final class GetTargetDatabasesPlainArgs extends com.pulumi.resources.Invo
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+     * 
+     */
+    @Import(name="enablementResourceOcid")
+    private @Nullable String enablementResourceOcid;
+
+    /**
+     * @return A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+     * 
+     */
+    public Optional<String> enablementResourceOcid() {
+        return Optional.ofNullable(this.enablementResourceOcid);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetTargetDatabasesFilter> filters;
 
@@ -169,6 +184,7 @@ public final class GetTargetDatabasesPlainArgs extends com.pulumi.resources.Invo
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.databaseType = $.databaseType;
         this.displayName = $.displayName;
+        this.enablementResourceOcid = $.enablementResourceOcid;
         this.filters = $.filters;
         this.infrastructureType = $.infrastructureType;
         this.state = $.state;
@@ -256,6 +272,17 @@ public final class GetTargetDatabasesPlainArgs extends com.pulumi.resources.Invo
          */
         public Builder displayName(@Nullable String displayName) {
             $.displayName = displayName;
+            return this;
+        }
+
+        /**
+         * @param enablementResourceOcid A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enablementResourceOcid(@Nullable String enablementResourceOcid) {
+            $.enablementResourceOcid = enablementResourceOcid;
             return this;
         }
 

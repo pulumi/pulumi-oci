@@ -305,7 +305,7 @@ namespace Pulumi.Oci.Database
         public Output<double> MemoryPerComputeUnitInGbs { get; private set; } = null!;
 
         /// <summary>
-        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        /// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         /// </summary>
         [Output("memoryPerOracleComputeUnitInGbs")]
         public Output<int> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
@@ -420,7 +420,7 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
-        /// Percentage of ECPU memory allocated for SGA(System Global Area).
+        /// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         /// </summary>
         [Output("sgaPercentage")]
         public Output<double> SgaPercentage { get; private set; } = null!;
@@ -669,7 +669,7 @@ namespace Pulumi.Oci.Database
         public Input<Inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs>? MaintenanceWindowDetails { get; set; }
 
         /// <summary>
-        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        /// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         /// </summary>
         [Input("memoryPerOracleComputeUnitInGbs")]
         public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }
@@ -724,7 +724,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// Percentage of ECPU memory allocated for SGA(System Global Area).
+        /// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         /// </summary>
         [Input("sgaPercentage")]
         public Input<double>? SgaPercentage { get; set; }
@@ -1007,7 +1007,7 @@ namespace Pulumi.Oci.Database
         public Input<double>? MemoryPerComputeUnitInGbs { get; set; }
 
         /// <summary>
-        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        /// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         /// </summary>
         [Input("memoryPerOracleComputeUnitInGbs")]
         public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }
@@ -1140,7 +1140,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// Percentage of ECPU memory allocated for SGA(System Global Area).
+        /// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         /// </summary>
         [Input("sgaPercentage")]
         public Input<double>? SgaPercentage { get; set; }

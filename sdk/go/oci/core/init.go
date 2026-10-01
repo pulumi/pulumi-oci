@@ -81,6 +81,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DrgAttachmentManagement{}
 	case "oci:Core/drgAttachmentsList:DrgAttachmentsList":
 		r = &DrgAttachmentsList{}
+	case "oci:Core/drgNatPolicy:DrgNatPolicy":
+		r = &DrgNatPolicy{}
+	case "oci:Core/drgNatPolicyDrgNatRule:DrgNatPolicyDrgNatRule":
+		r = &DrgNatPolicyDrgNatRule{}
 	case "oci:Core/drgRouteDistribution:DrgRouteDistribution":
 		r = &DrgRouteDistribution{}
 	case "oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement":
@@ -330,6 +334,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Core/drgAttachmentsList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Core/drgNatPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Core/drgNatPolicyDrgNatRule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -25,10 +25,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         public readonly string DisplayName;
+        public readonly bool DoesPreserveOriginalRoutesWithNat;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         /// </summary>
         public readonly string DrgId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+        /// </summary>
+        public readonly string DrgNatPolicyId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
         /// </summary>
@@ -50,6 +55,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool IsCrossTenancy;
         public readonly ImmutableArray<Outputs.GetDrgAttachmentsDrgAttachmentNetworkDetailResult> NetworkDetails;
+        public readonly bool RemoveDrgNatPolicyTrigger;
         public readonly bool RemoveExportDrgRouteDistributionTrigger;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
@@ -76,7 +82,11 @@ namespace Pulumi.Oci.Core.Outputs
 
             string displayName,
 
+            bool doesPreserveOriginalRoutesWithNat,
+
             string drgId,
+
+            string drgNatPolicyId,
 
             string drgRouteTableId,
 
@@ -89,6 +99,8 @@ namespace Pulumi.Oci.Core.Outputs
             bool isCrossTenancy,
 
             ImmutableArray<Outputs.GetDrgAttachmentsDrgAttachmentNetworkDetailResult> networkDetails,
+
+            bool removeDrgNatPolicyTrigger,
 
             bool removeExportDrgRouteDistributionTrigger,
 
@@ -103,13 +115,16 @@ namespace Pulumi.Oci.Core.Outputs
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            DoesPreserveOriginalRoutesWithNat = doesPreserveOriginalRoutesWithNat;
             DrgId = drgId;
+            DrgNatPolicyId = drgNatPolicyId;
             DrgRouteTableId = drgRouteTableId;
             ExportDrgRouteDistributionId = exportDrgRouteDistributionId;
             FreeformTags = freeformTags;
             Id = id;
             IsCrossTenancy = isCrossTenancy;
             NetworkDetails = networkDetails;
+            RemoveDrgNatPolicyTrigger = removeDrgNatPolicyTrigger;
             RemoveExportDrgRouteDistributionTrigger = removeExportDrgRouteDistributionTrigger;
             RouteTableId = routeTableId;
             State = state;

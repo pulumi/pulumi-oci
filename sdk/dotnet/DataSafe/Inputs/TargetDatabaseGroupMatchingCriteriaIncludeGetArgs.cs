@@ -48,6 +48,30 @@ namespace Pulumi.Oci.DataSafe.Inputs
             set => _freeformTags = value;
         }
 
+        [Input("freeformTagsIn")]
+        private InputMap<ImmutableArray<string>>? _freeformTagsIn;
+
+        /// <summary>
+        /// (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+        /// </summary>
+        public InputMap<ImmutableArray<string>> FreeformTagsIn
+        {
+            get => _freeformTagsIn ?? (_freeformTagsIn = new InputMap<ImmutableArray<string>>());
+            set => _freeformTagsIn = value;
+        }
+
+        [Input("systemTags")]
+        private InputMap<ImmutableArray<string>>? _systemTags;
+
+        /// <summary>
+        /// (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+        /// </summary>
+        public InputMap<ImmutableArray<string>> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<ImmutableArray<string>>());
+            set => _systemTags = value;
+        }
+
         [Input("targetDatabaseIds")]
         private InputList<string>? _targetDatabaseIds;
 

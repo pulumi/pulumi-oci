@@ -148,6 +148,12 @@ import com.pulumi.oci.Core.inputs.GetDhcpOptionsArgs;
 import com.pulumi.oci.Core.inputs.GetDhcpOptionsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetDrgAttachmentsArgs;
 import com.pulumi.oci.Core.inputs.GetDrgAttachmentsPlainArgs;
+import com.pulumi.oci.Core.inputs.GetDrgNatPoliciesArgs;
+import com.pulumi.oci.Core.inputs.GetDrgNatPoliciesPlainArgs;
+import com.pulumi.oci.Core.inputs.GetDrgNatPolicyArgs;
+import com.pulumi.oci.Core.inputs.GetDrgNatPolicyDrgNatRulesArgs;
+import com.pulumi.oci.Core.inputs.GetDrgNatPolicyDrgNatRulesPlainArgs;
+import com.pulumi.oci.Core.inputs.GetDrgNatPolicyPlainArgs;
 import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionArgs;
 import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionPlainArgs;
 import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsArgs;
@@ -408,6 +414,9 @@ import com.pulumi.oci.Core.outputs.GetDedicatedVmHostShapesResult;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostsResult;
 import com.pulumi.oci.Core.outputs.GetDhcpOptionsResult;
 import com.pulumi.oci.Core.outputs.GetDrgAttachmentsResult;
+import com.pulumi.oci.Core.outputs.GetDrgNatPoliciesResult;
+import com.pulumi.oci.Core.outputs.GetDrgNatPolicyDrgNatRulesResult;
+import com.pulumi.oci.Core.outputs.GetDrgNatPolicyResult;
 import com.pulumi.oci.Core.outputs.GetDrgRouteDistributionResult;
 import com.pulumi.oci.Core.outputs.GetDrgRouteDistributionStatementsResult;
 import com.pulumi.oci.Core.outputs.GetDrgRouteDistributionsResult;
@@ -16263,6 +16272,7 @@ public final class CoreFunctions {
      *             .attachmentType(drgAttachmentAttachmentType)
      *             .displayName(drgAttachmentDisplayName)
      *             .drgId(testDrg.id())
+     *             .drgNatPolicyId(testDrgNatPolicy.id())
      *             .drgRouteTableId(testDrgRouteTable.id())
      *             .networkId(testNetwork.id())
      *             .state(drgAttachmentState)
@@ -16317,6 +16327,7 @@ public final class CoreFunctions {
      *             .attachmentType(drgAttachmentAttachmentType)
      *             .displayName(drgAttachmentDisplayName)
      *             .drgId(testDrg.id())
+     *             .drgNatPolicyId(testDrgNatPolicy.id())
      *             .drgRouteTableId(testDrgRouteTable.id())
      *             .networkId(testNetwork.id())
      *             .state(drgAttachmentState)
@@ -16371,6 +16382,7 @@ public final class CoreFunctions {
      *             .attachmentType(drgAttachmentAttachmentType)
      *             .displayName(drgAttachmentDisplayName)
      *             .drgId(testDrg.id())
+     *             .drgNatPolicyId(testDrgNatPolicy.id())
      *             .drgRouteTableId(testDrgRouteTable.id())
      *             .networkId(testNetwork.id())
      *             .state(drgAttachmentState)
@@ -16425,6 +16437,7 @@ public final class CoreFunctions {
      *             .attachmentType(drgAttachmentAttachmentType)
      *             .displayName(drgAttachmentDisplayName)
      *             .drgId(testDrg.id())
+     *             .drgNatPolicyId(testDrgNatPolicy.id())
      *             .drgRouteTableId(testDrgRouteTable.id())
      *             .networkId(testNetwork.id())
      *             .state(drgAttachmentState)
@@ -16479,6 +16492,7 @@ public final class CoreFunctions {
      *             .attachmentType(drgAttachmentAttachmentType)
      *             .displayName(drgAttachmentDisplayName)
      *             .drgId(testDrg.id())
+     *             .drgNatPolicyId(testDrgNatPolicy.id())
      *             .drgRouteTableId(testDrgRouteTable.id())
      *             .networkId(testNetwork.id())
      *             .state(drgAttachmentState)
@@ -16493,6 +16507,641 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetDrgAttachmentsResult> getDrgAttachmentsPlain(GetDrgAttachmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getDrgAttachments:getDrgAttachments", TypeShape.of(GetDrgAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of DrgNatPolicies in Oracle Cloud Infrastructure Core service.
+     * 
+     * The list of DrgNatPolicies in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicies = CoreFunctions.getDrgNatPolicies(GetDrgNatPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(drgNatPolicyDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDrgNatPoliciesResult> getDrgNatPolicies(GetDrgNatPoliciesArgs args) {
+        return getDrgNatPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of DrgNatPolicies in Oracle Cloud Infrastructure Core service.
+     * 
+     * The list of DrgNatPolicies in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicies = CoreFunctions.getDrgNatPolicies(GetDrgNatPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(drgNatPolicyDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDrgNatPoliciesResult> getDrgNatPoliciesPlain(GetDrgNatPoliciesPlainArgs args) {
+        return getDrgNatPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of DrgNatPolicies in Oracle Cloud Infrastructure Core service.
+     * 
+     * The list of DrgNatPolicies in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicies = CoreFunctions.getDrgNatPolicies(GetDrgNatPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(drgNatPolicyDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDrgNatPoliciesResult> getDrgNatPolicies(GetDrgNatPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgNatPolicies:getDrgNatPolicies", TypeShape.of(GetDrgNatPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of DrgNatPolicies in Oracle Cloud Infrastructure Core service.
+     * 
+     * The list of DrgNatPolicies in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicies = CoreFunctions.getDrgNatPolicies(GetDrgNatPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(drgNatPolicyDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDrgNatPoliciesResult> getDrgNatPolicies(GetDrgNatPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgNatPolicies:getDrgNatPolicies", TypeShape.of(GetDrgNatPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of DrgNatPolicies in Oracle Cloud Infrastructure Core service.
+     * 
+     * The list of DrgNatPolicies in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicies = CoreFunctions.getDrgNatPolicies(GetDrgNatPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(drgNatPolicyDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDrgNatPoliciesResult> getDrgNatPoliciesPlain(GetDrgNatPoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getDrgNatPolicies:getDrgNatPolicies", TypeShape.of(GetDrgNatPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Drg Nat Policy resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified DRG NAT policy&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicy = CoreFunctions.getDrgNatPolicy(GetDrgNatPolicyArgs.builder()
+     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDrgNatPolicyResult> getDrgNatPolicy(GetDrgNatPolicyArgs args) {
+        return getDrgNatPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Drg Nat Policy resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified DRG NAT policy&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicy = CoreFunctions.getDrgNatPolicy(GetDrgNatPolicyArgs.builder()
+     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDrgNatPolicyResult> getDrgNatPolicyPlain(GetDrgNatPolicyPlainArgs args) {
+        return getDrgNatPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Drg Nat Policy resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified DRG NAT policy&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicy = CoreFunctions.getDrgNatPolicy(GetDrgNatPolicyArgs.builder()
+     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDrgNatPolicyResult> getDrgNatPolicy(GetDrgNatPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgNatPolicy:getDrgNatPolicy", TypeShape.of(GetDrgNatPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Drg Nat Policy resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified DRG NAT policy&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicy = CoreFunctions.getDrgNatPolicy(GetDrgNatPolicyArgs.builder()
+     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDrgNatPolicyResult> getDrgNatPolicy(GetDrgNatPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgNatPolicy:getDrgNatPolicy", TypeShape.of(GetDrgNatPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Drg Nat Policy resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified DRG NAT policy&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicy = CoreFunctions.getDrgNatPolicy(GetDrgNatPolicyArgs.builder()
+     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDrgNatPolicyResult> getDrgNatPolicyPlain(GetDrgNatPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getDrgNatPolicy:getDrgNatPolicy", TypeShape.of(GetDrgNatPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of DrgNatRules that are associated with a DrgNatPolicy in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the rules for the specified DrgNatPolicy
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPolicyDrgNatRulesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicyDrgNatRules = CoreFunctions.getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs.builder()
+     *             .drgNatPolicyId(testDrgNatPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDrgNatPolicyDrgNatRulesResult> getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs args) {
+        return getDrgNatPolicyDrgNatRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of DrgNatRules that are associated with a DrgNatPolicy in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the rules for the specified DrgNatPolicy
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPolicyDrgNatRulesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicyDrgNatRules = CoreFunctions.getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs.builder()
+     *             .drgNatPolicyId(testDrgNatPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDrgNatPolicyDrgNatRulesResult> getDrgNatPolicyDrgNatRulesPlain(GetDrgNatPolicyDrgNatRulesPlainArgs args) {
+        return getDrgNatPolicyDrgNatRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of DrgNatRules that are associated with a DrgNatPolicy in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the rules for the specified DrgNatPolicy
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPolicyDrgNatRulesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicyDrgNatRules = CoreFunctions.getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs.builder()
+     *             .drgNatPolicyId(testDrgNatPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDrgNatPolicyDrgNatRulesResult> getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgNatPolicyDrgNatRules:getDrgNatPolicyDrgNatRules", TypeShape.of(GetDrgNatPolicyDrgNatRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of DrgNatRules that are associated with a DrgNatPolicy in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the rules for the specified DrgNatPolicy
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPolicyDrgNatRulesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicyDrgNatRules = CoreFunctions.getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs.builder()
+     *             .drgNatPolicyId(testDrgNatPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDrgNatPolicyDrgNatRulesResult> getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getDrgNatPolicyDrgNatRules:getDrgNatPolicyDrgNatRules", TypeShape.of(GetDrgNatPolicyDrgNatRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of DrgNatRules that are associated with a DrgNatPolicy in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the rules for the specified DrgNatPolicy
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgNatPolicyDrgNatRulesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgNatPolicyDrgNatRules = CoreFunctions.getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs.builder()
+     *             .drgNatPolicyId(testDrgNatPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDrgNatPolicyDrgNatRulesResult> getDrgNatPolicyDrgNatRulesPlain(GetDrgNatPolicyDrgNatRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getDrgNatPolicyDrgNatRules:getDrgNatPolicyDrgNatRules", TypeShape.of(GetDrgNatPolicyDrgNatRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Drg Route Distribution resource in Oracle Cloud Infrastructure Core service.

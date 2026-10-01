@@ -36,6 +36,8 @@ from .drg import *
 from .drg_attachment import *
 from .drg_attachment_management import *
 from .drg_attachments_list import *
+from .drg_nat_policy import *
+from .drg_nat_policy_drg_nat_rule import *
 from .drg_route_distribution import *
 from .drg_route_distribution_statement import *
 from .drg_route_table import *
@@ -110,6 +112,9 @@ from .get_dedicated_vm_host_shapes import *
 from .get_dedicated_vm_hosts import *
 from .get_dhcp_options import *
 from .get_drg_attachments import *
+from .get_drg_nat_policies import *
+from .get_drg_nat_policy import *
+from .get_drg_nat_policy_drg_nat_rules import *
 from .get_drg_route_distribution import *
 from .get_drg_route_distribution_statements import *
 from .get_drg_route_distributions import *

@@ -41,11 +41,13 @@ __all__ = [
     'DiscoveryJobsResultConfidenceLevelDetail',
     'DiscoveryJobsResultModifiedAttribute',
     'DiscoveryModTablesForDiscovery',
+    'EstimateTableSizesTargetCredentials',
     'LibraryMasingFormatFormatEntry',
     'MaskDataTargetCredentials',
     'MaskingPoliciesMaskingColumnMaskingFormat',
     'MaskingPoliciesMaskingColumnMaskingFormatFormatEntry',
     'MaskingPolicyColumnSource',
+    'RegistrationPolicyConnectionOption',
     'ReportDefinitionColumnFilter',
     'ReportDefinitionColumnInfo',
     'ReportDefinitionColumnSorting',
@@ -71,6 +73,14 @@ __all__ = [
     'SensitiveDataModelsSensitiveColumnConfidenceLevelDetail',
     'SensitiveTypeGroupGroupedSensitiveTypeItem',
     'SensitiveTypeGroupGroupedSensitiveTypePatchOperation',
+    'SubsetDataTargetCredentials',
+    'SubsettingPolicyHealthReportManagementTargetCredentials',
+    'SubsettingPolicySchemaSource',
+    'SubsettingPolicySubsettingRuleProcessingChainObjectItem',
+    'SubsettingPolicySubsettingRuleScope',
+    'SubsettingPolicySubsettingRuleSubsetRuleEntry',
+    'SubsettingPolicyTargetCredentials',
+    'SubsettingReportManagementTargetCredentials',
     'TargetDatabaseConnectionOption',
     'TargetDatabaseCredentials',
     'TargetDatabaseDatabaseDetails',
@@ -274,6 +284,14 @@ __all__ = [
     'GetMaskingReportsMaskingReportCollectionItemResult',
     'GetOnpremConnectorsFilterResult',
     'GetOnpremConnectorsOnPremConnectorResult',
+    'GetRegistrationPoliciesFilterResult',
+    'GetRegistrationPoliciesRegistrationPolicyCollectionResult',
+    'GetRegistrationPoliciesRegistrationPolicyCollectionItemResult',
+    'GetRegistrationPoliciesRegistrationPolicyCollectionItemConnectionOptionResult',
+    'GetRegistrationPolicyConnectionOptionResult',
+    'GetRegistrationPolicyTargetDatabasesFilterResult',
+    'GetRegistrationPolicyTargetDatabasesRegistrationPolicyTargetDatabaseSummaryCollectionResult',
+    'GetRegistrationPolicyTargetDatabasesRegistrationPolicyTargetDatabaseSummaryCollectionItemResult',
     'GetReportDefinitionColumnFilterResult',
     'GetReportDefinitionColumnInfoResult',
     'GetReportDefinitionColumnSortingResult',
@@ -518,6 +536,54 @@ __all__ = [
     'GetSqlFirewallViolationsFilterResult',
     'GetSqlFirewallViolationsSqlFirewallViolationsCollectionResult',
     'GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemResult',
+    'GetSubsettingAnalyticsFilterResult',
+    'GetSubsettingAnalyticsSubsettingAnalyticsCollectionResult',
+    'GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemResult',
+    'GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionResult',
+    'GetSubsettingPoliciesFilterResult',
+    'GetSubsettingPoliciesSubsettingPolicyCollectionResult',
+    'GetSubsettingPoliciesSubsettingPolicyCollectionItemResult',
+    'GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceResult',
+    'GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialResult',
+    'GetSubsettingPolicyHealthReportLogsFilterResult',
+    'GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionResult',
+    'GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemResult',
+    'GetSubsettingPolicyHealthReportsFilterResult',
+    'GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionResult',
+    'GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemResult',
+    'GetSubsettingPolicySchemaSourceResult',
+    'GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterResult',
+    'GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionResult',
+    'GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemResult',
+    'GetSubsettingPolicySubsettingRuleScopeResult',
+    'GetSubsettingPolicySubsettingRuleSubsetRuleEntryResult',
+    'GetSubsettingPolicySubsettingRulesFilterResult',
+    'GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionResult',
+    'GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemResult',
+    'GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeResult',
+    'GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryResult',
+    'GetSubsettingPolicySubsettingSchemaObjectsFilterResult',
+    'GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionResult',
+    'GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemResult',
+    'GetSubsettingPolicySubsettingSchemaRelationsFilterResult',
+    'GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionResult',
+    'GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemResult',
+    'GetSubsettingPolicySubsettingSchemasFilterResult',
+    'GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionResult',
+    'GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemResult',
+    'GetSubsettingPolicyTableEstimatesFilterResult',
+    'GetSubsettingPolicyTableEstimatesTableEstimateCollectionResult',
+    'GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemResult',
+    'GetSubsettingPolicyTargetCredentialResult',
+    'GetSubsettingReportSubsettedObjectsFilterResult',
+    'GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionResult',
+    'GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemResult',
+    'GetSubsettingReportSubsettingErrorsFilterResult',
+    'GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionResult',
+    'GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemResult',
+    'GetSubsettingReportsFilterResult',
+    'GetSubsettingReportsSubsettingReportCollectionResult',
+    'GetSubsettingReportsSubsettingReportCollectionItemResult',
     'GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterResult',
     'GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionResult',
     'GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemResult',
@@ -3752,6 +3818,52 @@ class DiscoveryModTablesForDiscovery(dict):
 
 
 @pulumi.output_type
+class EstimateTableSizesTargetCredentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in EstimateTableSizesTargetCredentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        EstimateTableSizesTargetCredentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        EstimateTableSizesTargetCredentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str password: The password for the target database user.
+        :param _builtins.str user_name: The user name for the target database.
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        """
+        The password for the target database user.
+        """
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name for the target database.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
 class LibraryMasingFormatFormatEntry(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -4624,6 +4736,60 @@ class MaskingPolicyColumnSource(dict):
 
 
 @pulumi.output_type
+class RegistrationPolicyConnectionOption(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionType":
+            suggest = "connection_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RegistrationPolicyConnectionOption. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RegistrationPolicyConnectionOption.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RegistrationPolicyConnectionOption.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 identifiers: Sequence[_builtins.str]):
+        """
+        :param _builtins.str connection_type: (Updatable) The connection type used to connect to the database. Allowed values:
+               * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+               * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+        :param Sequence[_builtins.str] identifiers: (Updatable) List of OCIDs required to establish the connection.
+               * For `PRIVATE_ENDPOINT`, provide the OCID(s) of Data Safe private endpoint(s).
+               * For `ONPREM_CONNECTOR`, provide the OCID(s) of on-premises connector(s).
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "identifiers", identifiers)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        (Updatable) The connection type used to connect to the database. Allowed values:
+        * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+        * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def identifiers(self) -> Sequence[_builtins.str]:
+        """
+        (Updatable) List of OCIDs required to establish the connection.
+        * For `PRIVATE_ENDPOINT`, provide the OCID(s) of Data Safe private endpoint(s).
+        * For `ONPREM_CONNECTOR`, provide the OCID(s) of on-premises connector(s).
+        """
+        return pulumi.get(self, "identifiers")
+
+
+@pulumi.output_type
 class ReportDefinitionColumnFilter(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -5240,6 +5406,7 @@ class SecurityAssessmentFindingReference(dict):
                  cis: Optional[_builtins.str] = None,
                  gdpr: Optional[_builtins.str] = None,
                  obp: Optional[_builtins.str] = None,
+                 orp: Optional[_builtins.str] = None,
                  stig: Optional[_builtins.str] = None):
         """
         :param _builtins.str cis: Relevant section from CIS.
@@ -5253,6 +5420,8 @@ class SecurityAssessmentFindingReference(dict):
             pulumi.set(__self__, "gdpr", gdpr)
         if obp is not None:
             pulumi.set(__self__, "obp", obp)
+        if orp is not None:
+            pulumi.set(__self__, "orp", orp)
         if stig is not None:
             pulumi.set(__self__, "stig", stig)
 
@@ -5279,6 +5448,11 @@ class SecurityAssessmentFindingReference(dict):
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -6875,6 +7049,606 @@ class SensitiveTypeGroupGroupedSensitiveTypePatchOperation(dict):
 
 
 @pulumi.output_type
+class SubsetDataTargetCredentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SubsetDataTargetCredentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SubsetDataTargetCredentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SubsetDataTargetCredentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str password: The password for the target database user.
+        :param _builtins.str user_name: The user name for the target database.
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        """
+        The password for the target database user.
+        """
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name for the target database.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class SubsettingPolicyHealthReportManagementTargetCredentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SubsettingPolicyHealthReportManagementTargetCredentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SubsettingPolicyHealthReportManagementTargetCredentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SubsettingPolicyHealthReportManagementTargetCredentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str password: The password for the target database user.
+        :param _builtins.str user_name: The user name for the target database.
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        """
+        The password for the target database user.
+        """
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name for the target database.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class SubsettingPolicySchemaSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "schemaSource":
+            suggest = "schema_source"
+        elif key == "derivedSchemas":
+            suggest = "derived_schemas"
+        elif key == "schemasForSubsettings":
+            suggest = "schemas_for_subsettings"
+        elif key == "sensitiveDataModelId":
+            suggest = "sensitive_data_model_id"
+        elif key == "targetId":
+            suggest = "target_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SubsettingPolicySchemaSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SubsettingPolicySchemaSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SubsettingPolicySchemaSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 schema_source: _builtins.str,
+                 derived_schemas: Optional[Sequence[_builtins.str]] = None,
+                 schemas_for_subsettings: Optional[Sequence[_builtins.str]] = None,
+                 sensitive_data_model_id: Optional[_builtins.str] = None,
+                 target_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str schema_source: (Updatable) The source of subsetting schemas
+        :param Sequence[_builtins.str] derived_schemas: The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+        :param Sequence[_builtins.str] schemas_for_subsettings: (Updatable) The schemas to be subsetted
+        :param _builtins.str sensitive_data_model_id: (Updatable) The OCID of the sensitive data model that's used as the source of subsetting schemas
+        :param _builtins.str target_id: (Updatable) The OCID of the target database that's used as the source of subsetting schemas
+        """
+        pulumi.set(__self__, "schema_source", schema_source)
+        if derived_schemas is not None:
+            pulumi.set(__self__, "derived_schemas", derived_schemas)
+        if schemas_for_subsettings is not None:
+            pulumi.set(__self__, "schemas_for_subsettings", schemas_for_subsettings)
+        if sensitive_data_model_id is not None:
+            pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+
+    @_builtins.property
+    @pulumi.getter(name="schemaSource")
+    def schema_source(self) -> _builtins.str:
+        """
+        (Updatable) The source of subsetting schemas
+        """
+        return pulumi.get(self, "schema_source")
+
+    @_builtins.property
+    @pulumi.getter(name="derivedSchemas")
+    def derived_schemas(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+        """
+        return pulumi.get(self, "derived_schemas")
+
+    @_builtins.property
+    @pulumi.getter(name="schemasForSubsettings")
+    def schemas_for_subsettings(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The schemas to be subsetted
+        """
+        return pulumi.get(self, "schemas_for_subsettings")
+
+    @_builtins.property
+    @pulumi.getter(name="sensitiveDataModelId")
+    def sensitive_data_model_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the sensitive data model that's used as the source of subsetting schemas
+        """
+        return pulumi.get(self, "sensitive_data_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the target database that's used as the source of subsetting schemas
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class SubsettingPolicySubsettingRuleProcessingChainObjectItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "approximateRowCountBeforeSubsetting":
+            suggest = "approximate_row_count_before_subsetting"
+        elif key == "childColumns":
+            suggest = "child_columns"
+        elif key == "childObjectName":
+            suggest = "child_object_name"
+        elif key == "childSchemaName":
+            suggest = "child_schema_name"
+        elif key == "estimatedRowCountAfterSubsetting":
+            suggest = "estimated_row_count_after_subsetting"
+        elif key == "isEnabledForProcessing":
+            suggest = "is_enabled_for_processing"
+        elif key == "parentColumns":
+            suggest = "parent_columns"
+        elif key == "parentObjectName":
+            suggest = "parent_object_name"
+        elif key == "parentSchemaName":
+            suggest = "parent_schema_name"
+        elif key == "propagationImpact":
+            suggest = "propagation_impact"
+        elif key == "subsettingSchemaRelationKey":
+            suggest = "subsetting_schema_relation_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SubsettingPolicySubsettingRuleProcessingChainObjectItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SubsettingPolicySubsettingRuleProcessingChainObjectItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SubsettingPolicySubsettingRuleProcessingChainObjectItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 approximate_row_count_before_subsetting: Optional[_builtins.str] = None,
+                 child_columns: Optional[Sequence[_builtins.str]] = None,
+                 child_object_name: Optional[_builtins.str] = None,
+                 child_schema_name: Optional[_builtins.str] = None,
+                 estimated_row_count_after_subsetting: Optional[_builtins.str] = None,
+                 is_enabled_for_processing: Optional[_builtins.bool] = None,
+                 key: Optional[_builtins.str] = None,
+                 parent_columns: Optional[Sequence[_builtins.str]] = None,
+                 parent_object_name: Optional[_builtins.str] = None,
+                 parent_schema_name: Optional[_builtins.str] = None,
+                 propagation_impact: Optional[_builtins.str] = None,
+                 subsetting_schema_relation_key: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str approximate_row_count_before_subsetting: The approximate count of rows in the subsetting table before subsetting
+        :param Sequence[_builtins.str] child_columns: Unique identifiers identifying the child columns in the relation.
+        :param _builtins.str child_object_name: The name of the child subsetting table
+        :param _builtins.str child_schema_name: The database schema that contains the child subsetting table
+        :param _builtins.str estimated_row_count_after_subsetting: The estimated count of rows in the subsetting table after subsetting
+        :param _builtins.bool is_enabled_for_processing: (Updatable) Indicates if this object/edge is enabled for processing
+        :param _builtins.str key: The unique key that identifies a subsetting relation processed. The key is numeric and unique within a processing order
+        :param Sequence[_builtins.str] parent_columns: Unique identifiers identifying the parents columns in the relation.
+        :param _builtins.str parent_object_name: The name of the parent subsetting table
+        :param _builtins.str parent_schema_name: The database schema that contains the parent subsetting table
+        :param _builtins.str propagation_impact: The impact on the related table due to the processing of subsetting rule
+        :param _builtins.str subsetting_schema_relation_key: The unique key that identifies a subsetting relation.
+        """
+        if approximate_row_count_before_subsetting is not None:
+            pulumi.set(__self__, "approximate_row_count_before_subsetting", approximate_row_count_before_subsetting)
+        if child_columns is not None:
+            pulumi.set(__self__, "child_columns", child_columns)
+        if child_object_name is not None:
+            pulumi.set(__self__, "child_object_name", child_object_name)
+        if child_schema_name is not None:
+            pulumi.set(__self__, "child_schema_name", child_schema_name)
+        if estimated_row_count_after_subsetting is not None:
+            pulumi.set(__self__, "estimated_row_count_after_subsetting", estimated_row_count_after_subsetting)
+        if is_enabled_for_processing is not None:
+            pulumi.set(__self__, "is_enabled_for_processing", is_enabled_for_processing)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if parent_columns is not None:
+            pulumi.set(__self__, "parent_columns", parent_columns)
+        if parent_object_name is not None:
+            pulumi.set(__self__, "parent_object_name", parent_object_name)
+        if parent_schema_name is not None:
+            pulumi.set(__self__, "parent_schema_name", parent_schema_name)
+        if propagation_impact is not None:
+            pulumi.set(__self__, "propagation_impact", propagation_impact)
+        if subsetting_schema_relation_key is not None:
+            pulumi.set(__self__, "subsetting_schema_relation_key", subsetting_schema_relation_key)
+
+    @_builtins.property
+    @pulumi.getter(name="approximateRowCountBeforeSubsetting")
+    def approximate_row_count_before_subsetting(self) -> Optional[_builtins.str]:
+        """
+        The approximate count of rows in the subsetting table before subsetting
+        """
+        return pulumi.get(self, "approximate_row_count_before_subsetting")
+
+    @_builtins.property
+    @pulumi.getter(name="childColumns")
+    def child_columns(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Unique identifiers identifying the child columns in the relation.
+        """
+        return pulumi.get(self, "child_columns")
+
+    @_builtins.property
+    @pulumi.getter(name="childObjectName")
+    def child_object_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the child subsetting table
+        """
+        return pulumi.get(self, "child_object_name")
+
+    @_builtins.property
+    @pulumi.getter(name="childSchemaName")
+    def child_schema_name(self) -> Optional[_builtins.str]:
+        """
+        The database schema that contains the child subsetting table
+        """
+        return pulumi.get(self, "child_schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="estimatedRowCountAfterSubsetting")
+    def estimated_row_count_after_subsetting(self) -> Optional[_builtins.str]:
+        """
+        The estimated count of rows in the subsetting table after subsetting
+        """
+        return pulumi.get(self, "estimated_row_count_after_subsetting")
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabledForProcessing")
+    def is_enabled_for_processing(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates if this object/edge is enabled for processing
+        """
+        return pulumi.get(self, "is_enabled_for_processing")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique key that identifies a subsetting relation processed. The key is numeric and unique within a processing order
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="parentColumns")
+    def parent_columns(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Unique identifiers identifying the parents columns in the relation.
+        """
+        return pulumi.get(self, "parent_columns")
+
+    @_builtins.property
+    @pulumi.getter(name="parentObjectName")
+    def parent_object_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the parent subsetting table
+        """
+        return pulumi.get(self, "parent_object_name")
+
+    @_builtins.property
+    @pulumi.getter(name="parentSchemaName")
+    def parent_schema_name(self) -> Optional[_builtins.str]:
+        """
+        The database schema that contains the parent subsetting table
+        """
+        return pulumi.get(self, "parent_schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="propagationImpact")
+    def propagation_impact(self) -> Optional[_builtins.str]:
+        """
+        The impact on the related table due to the processing of subsetting rule
+        """
+        return pulumi.get(self, "propagation_impact")
+
+    @_builtins.property
+    @pulumi.getter(name="subsettingSchemaRelationKey")
+    def subsetting_schema_relation_key(self) -> Optional[_builtins.str]:
+        """
+        The unique key that identifies a subsetting relation.
+        """
+        return pulumi.get(self, "subsetting_schema_relation_key")
+
+
+@pulumi.output_type
+class SubsettingPolicySubsettingRuleScope(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "schemaName":
+            suggest = "schema_name"
+        elif key == "scopeType":
+            suggest = "scope_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SubsettingPolicySubsettingRuleScope. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SubsettingPolicySubsettingRuleScope.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SubsettingPolicySubsettingRuleScope.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 schema_name: _builtins.str,
+                 scope_type: _builtins.str,
+                 object: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str schema_name: (Updatable) The name of the schema containing the specific object to be subsetted
+        :param _builtins.str scope_type: (Updatable) Scope of a subsetting rule
+        :param _builtins.str object: (Updatable) The name of the specific object (e.g., table) to be subsetted
+        """
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "scope_type", scope_type)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+
+    @_builtins.property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> _builtins.str:
+        """
+        (Updatable) The name of the schema containing the specific object to be subsetted
+        """
+        return pulumi.get(self, "schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scopeType")
+    def scope_type(self) -> _builtins.str:
+        """
+        (Updatable) Scope of a subsetting rule
+        """
+        return pulumi.get(self, "scope_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The name of the specific object (e.g., table) to be subsetted
+        """
+        return pulumi.get(self, "object")
+
+
+@pulumi.output_type
+class SubsettingPolicySubsettingRuleSubsetRuleEntry(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ruleType":
+            suggest = "rule_type"
+        elif key == "partitionsLists":
+            suggest = "partitions_lists"
+        elif key == "subPartitionsLists":
+            suggest = "sub_partitions_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SubsettingPolicySubsettingRuleSubsetRuleEntry. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SubsettingPolicySubsettingRuleSubsetRuleEntry.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SubsettingPolicySubsettingRuleSubsetRuleEntry.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 rule_type: _builtins.str,
+                 condition: Optional[_builtins.str] = None,
+                 partitions_lists: Optional[Sequence[_builtins.str]] = None,
+                 percent: Optional[_builtins.int] = None,
+                 sub_partitions_lists: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str rule_type: (Updatable) type of subset rule
+        :param _builtins.str condition: (Updatable) The SQL WHERE clause condition used to filter rows for the subset
+        :param Sequence[_builtins.str] partitions_lists: (Updatable) A list of partition names which are to be part of the subset data
+        :param _builtins.int percent: (Updatable) The percentage of rows to retain in the subset (between 0 and 100)
+        :param Sequence[_builtins.str] sub_partitions_lists: (Updatable) A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+        """
+        pulumi.set(__self__, "rule_type", rule_type)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if partitions_lists is not None:
+            pulumi.set(__self__, "partitions_lists", partitions_lists)
+        if percent is not None:
+            pulumi.set(__self__, "percent", percent)
+        if sub_partitions_lists is not None:
+            pulumi.set(__self__, "sub_partitions_lists", sub_partitions_lists)
+
+    @_builtins.property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> _builtins.str:
+        """
+        (Updatable) type of subset rule
+        """
+        return pulumi.get(self, "rule_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The SQL WHERE clause condition used to filter rows for the subset
+        """
+        return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter(name="partitionsLists")
+    def partitions_lists(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) A list of partition names which are to be part of the subset data
+        """
+        return pulumi.get(self, "partitions_lists")
+
+    @_builtins.property
+    @pulumi.getter
+    def percent(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The percentage of rows to retain in the subset (between 0 and 100)
+        """
+        return pulumi.get(self, "percent")
+
+    @_builtins.property
+    @pulumi.getter(name="subPartitionsLists")
+    def sub_partitions_lists(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+        """
+        return pulumi.get(self, "sub_partitions_lists")
+
+
+@pulumi.output_type
+class SubsettingPolicyTargetCredentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SubsettingPolicyTargetCredentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SubsettingPolicyTargetCredentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SubsettingPolicyTargetCredentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password: _builtins.str,
+                 user_name: _builtins.str):
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class SubsettingReportManagementTargetCredentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SubsettingReportManagementTargetCredentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SubsettingReportManagementTargetCredentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SubsettingReportManagementTargetCredentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str password: The password for the target database user.
+        :param _builtins.str user_name: The user name for the target database.
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        """
+        The password for the target database user.
+        """
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name for the target database.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
 class TargetDatabaseConnectionOption(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -7153,7 +7927,7 @@ class TargetDatabaseGroupMatchingCriteria(dict):
                  include: 'outputs.TargetDatabaseGroupMatchingCriteriaInclude',
                  exclude: Optional['outputs.TargetDatabaseGroupMatchingCriteriaExclude'] = None):
         """
-        :param 'TargetDatabaseGroupMatchingCriteriaIncludeArgs' include: (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+        :param 'TargetDatabaseGroupMatchingCriteriaIncludeArgs' include: (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
         :param 'TargetDatabaseGroupMatchingCriteriaExcludeArgs' exclude: (Updatable) Criteria to exclude certain target databases from the target database group.
         """
         pulumi.set(__self__, "include", include)
@@ -7164,7 +7938,7 @@ class TargetDatabaseGroupMatchingCriteria(dict):
     @pulumi.getter
     def include(self) -> 'outputs.TargetDatabaseGroupMatchingCriteriaInclude':
         """
-        (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+        (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
         """
         return pulumi.get(self, "include")
 
@@ -7221,6 +7995,10 @@ class TargetDatabaseGroupMatchingCriteriaInclude(dict):
             suggest = "defined_tags"
         elif key == "freeformTags":
             suggest = "freeform_tags"
+        elif key == "freeformTagsIn":
+            suggest = "freeform_tags_in"
+        elif key == "systemTags":
+            suggest = "system_tags"
         elif key == "targetDatabaseIds":
             suggest = "target_database_ids"
 
@@ -7239,11 +8017,15 @@ class TargetDatabaseGroupMatchingCriteriaInclude(dict):
                  compartments: Optional[Sequence['outputs.TargetDatabaseGroupMatchingCriteriaIncludeCompartment']] = None,
                  defined_tags: Optional[Mapping[str, _builtins.str]] = None,
                  freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 freeform_tags_in: Optional[Mapping[str, Sequence[_builtins.str]]] = None,
+                 system_tags: Optional[Mapping[str, Sequence[_builtins.str]]] = None,
                  target_database_ids: Optional[Sequence[_builtins.str]] = None):
         """
         :param Sequence['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs'] compartments: (Updatable) List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
         :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param Mapping[str, Sequence[_builtins.str]] freeform_tags_in: (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+        :param Mapping[str, Sequence[_builtins.str]] system_tags: (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
         :param Sequence[_builtins.str] target_database_ids: (Updatable) The list of target database OCIDs to be included in the target database group.
                
                ** IMPORTANT **
@@ -7255,6 +8037,10 @@ class TargetDatabaseGroupMatchingCriteriaInclude(dict):
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if freeform_tags_in is not None:
+            pulumi.set(__self__, "freeform_tags_in", freeform_tags_in)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_database_ids is not None:
             pulumi.set(__self__, "target_database_ids", target_database_ids)
 
@@ -7281,6 +8067,22 @@ class TargetDatabaseGroupMatchingCriteriaInclude(dict):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTagsIn")
+    def freeform_tags_in(self) -> Optional[Mapping[str, Sequence[_builtins.str]]]:
+        """
+        (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+        """
+        return pulumi.get(self, "freeform_tags_in")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, Sequence[_builtins.str]]]:
+        """
+        (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="targetDatabaseIds")
@@ -8301,9 +9103,6 @@ class TargetDatabaseTlsConfig(dict):
         :param _builtins.str key_store_content: (Updatable) Base64 encoded string of key store file content.
         :param _builtins.str store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
         :param _builtins.str trust_store_content: (Updatable) Base64 encoded string of trust store file content.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "status", status)
         if certificate_store_type is not None:
@@ -8352,9 +9151,6 @@ class TargetDatabaseTlsConfig(dict):
     def trust_store_content(self) -> Optional[_builtins.str]:
         """
         (Updatable) Base64 encoded string of trust store file content.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "trust_store_content")
 
@@ -21608,6 +22404,7 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
                  parallel_degree: _builtins.str,
                  recompile: _builtins.str,
                  state: _builtins.str,
+                 subsetting_report_id: _builtins.str,
                  target_id: _builtins.str,
                  time_created: _builtins.str,
                  time_masking_finished: _builtins.str,
@@ -21631,6 +22428,7 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         :param _builtins.str parallel_degree: Indicates if parallel execution was enabled during the masking operation.
         :param _builtins.str recompile: Indicates how invalid objects were recompiled post the masking operation.
         :param _builtins.str state: The current state of the masking report.
+        :param _builtins.str subsetting_report_id: The OCID of the subsetting report associated with this masking report
         :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
         :param _builtins.str time_created: The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param _builtins.str time_masking_finished: The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
@@ -21654,6 +22452,7 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         pulumi.set(__self__, "parallel_degree", parallel_degree)
         pulumi.set(__self__, "recompile", recompile)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subsetting_report_id", subsetting_report_id)
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_masking_finished", time_masking_finished)
@@ -21753,6 +22552,14 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         The current state of the masking report.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="subsettingReportId")
+    def subsetting_report_id(self) -> _builtins.str:
+        """
+        The OCID of the subsetting report associated with this masking report
+        """
+        return pulumi.get(self, "subsetting_report_id")
 
     @_builtins.property
     @pulumi.getter(name="targetId")
@@ -22007,6 +22814,408 @@ class GetOnpremConnectorsOnPremConnectorResult(dict):
         The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetRegistrationPoliciesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRegistrationPoliciesRegistrationPolicyCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRegistrationPoliciesRegistrationPolicyCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRegistrationPoliciesRegistrationPolicyCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRegistrationPoliciesRegistrationPolicyCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 can_override_features: _builtins.bool,
+                 compartment_id: _builtins.str,
+                 connection_options: Sequence['outputs.GetRegistrationPoliciesRegistrationPolicyCollectionItemConnectionOptionResult'],
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 enablement_level: _builtins.str,
+                 features: Sequence[_builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_state_details: _builtins.str,
+                 opc_dry_run: _builtins.bool,
+                 resource_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 x_cluster_id: _builtins.str):
+        """
+        :param _builtins.bool can_override_features: Indicates whether features will be overridden.
+        :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Sequence['GetRegistrationPoliciesRegistrationPolicyCollectionItemConnectionOptionArgs'] connection_options: Types of connection supported by Data Safe.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: A description of the registration policy.
+        :param _builtins.str display_name: A filter to return only resources that match the specified display name.
+        :param _builtins.str enablement_level: Filter registration policies by resource type.
+        :param Sequence[_builtins.str] features: The Data Safe features granted to the databases registering under the registration policy.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The OCID of the registration policy.
+        :param _builtins.str lifecycle_state_details: Details about the lifecycle state of the registration policy
+        :param _builtins.str resource_id: Filter to return the registration policy matching the specified resource OCID.
+        :param _builtins.str state: Filter registration policies by their lifecycle state.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time when the registration policy was created.
+        :param _builtins.str time_updated: The date and time when the registration policy was last updated.
+        """
+        pulumi.set(__self__, "can_override_features", can_override_features)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_options", connection_options)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "enablement_level", enablement_level)
+        pulumi.set(__self__, "features", features)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "opc_dry_run", opc_dry_run)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "x_cluster_id", x_cluster_id)
+
+    @_builtins.property
+    @pulumi.getter(name="canOverrideFeatures")
+    def can_override_features(self) -> _builtins.bool:
+        """
+        Indicates whether features will be overridden.
+        """
+        return pulumi.get(self, "can_override_features")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionOptions")
+    def connection_options(self) -> Sequence['outputs.GetRegistrationPoliciesRegistrationPolicyCollectionItemConnectionOptionResult']:
+        """
+        Types of connection supported by Data Safe.
+        """
+        return pulumi.get(self, "connection_options")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A description of the registration policy.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="enablementLevel")
+    def enablement_level(self) -> _builtins.str:
+        """
+        Filter registration policies by resource type.
+        """
+        return pulumi.get(self, "enablement_level")
+
+    @_builtins.property
+    @pulumi.getter
+    def features(self) -> Sequence[_builtins.str]:
+        """
+        The Data Safe features granted to the databases registering under the registration policy.
+        """
+        return pulumi.get(self, "features")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the registration policy.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> _builtins.str:
+        """
+        Details about the lifecycle state of the registration policy
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @_builtins.property
+    @pulumi.getter(name="opcDryRun")
+    def opc_dry_run(self) -> _builtins.bool:
+        return pulumi.get(self, "opc_dry_run")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        Filter to return the registration policy matching the specified resource OCID.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filter registration policies by their lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time when the registration policy was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time when the registration policy was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="xClusterId")
+    def x_cluster_id(self) -> _builtins.str:
+        return pulumi.get(self, "x_cluster_id")
+
+
+@pulumi.output_type
+class GetRegistrationPoliciesRegistrationPolicyCollectionItemConnectionOptionResult(dict):
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 identifiers: Sequence[_builtins.str]):
+        """
+        :param _builtins.str connection_type: Filter to return the registration policies matching the specified connectionType i.e ONPREM_CONNECTOR or PRIVATE_ENDPOINT.
+        :param Sequence[_builtins.str] identifiers: List of OCIDs required to establish the connection.
+               * For `PRIVATE_ENDPOINT`, provide the OCID(s) of Data Safe private endpoint(s).
+               * For `ONPREM_CONNECTOR`, provide the OCID(s) of on-premises connector(s).
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "identifiers", identifiers)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        Filter to return the registration policies matching the specified connectionType i.e ONPREM_CONNECTOR or PRIVATE_ENDPOINT.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def identifiers(self) -> Sequence[_builtins.str]:
+        """
+        List of OCIDs required to establish the connection.
+        * For `PRIVATE_ENDPOINT`, provide the OCID(s) of Data Safe private endpoint(s).
+        * For `ONPREM_CONNECTOR`, provide the OCID(s) of on-premises connector(s).
+        """
+        return pulumi.get(self, "identifiers")
+
+
+@pulumi.output_type
+class GetRegistrationPolicyConnectionOptionResult(dict):
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 identifiers: Sequence[_builtins.str]):
+        """
+        :param _builtins.str connection_type: The connection type used to connect to the database. Allowed values:
+               * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+               * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+        :param Sequence[_builtins.str] identifiers: List of OCIDs required to establish the connection.
+               * For `PRIVATE_ENDPOINT`, provide the OCID(s) of Data Safe private endpoint(s).
+               * For `ONPREM_CONNECTOR`, provide the OCID(s) of on-premises connector(s).
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "identifiers", identifiers)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        The connection type used to connect to the database. Allowed values:
+        * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+        * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def identifiers(self) -> Sequence[_builtins.str]:
+        """
+        List of OCIDs required to establish the connection.
+        * For `PRIVATE_ENDPOINT`, provide the OCID(s) of Data Safe private endpoint(s).
+        * For `ONPREM_CONNECTOR`, provide the OCID(s) of on-premises connector(s).
+        """
+        return pulumi.get(self, "identifiers")
+
+
+@pulumi.output_type
+class GetRegistrationPolicyTargetDatabasesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRegistrationPolicyTargetDatabasesRegistrationPolicyTargetDatabaseSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRegistrationPolicyTargetDatabasesRegistrationPolicyTargetDatabaseSummaryCollectionItemResult']):
+        """
+        :param Sequence['GetRegistrationPolicyTargetDatabasesRegistrationPolicyTargetDatabaseSummaryCollectionItemArgs'] items: Array of RegistrationPolicyTargetDatabaseSummary items.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRegistrationPolicyTargetDatabasesRegistrationPolicyTargetDatabaseSummaryCollectionItemResult']:
+        """
+        Array of RegistrationPolicyTargetDatabaseSummary items.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRegistrationPolicyTargetDatabasesRegistrationPolicyTargetDatabaseSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 discovered_resource_id: _builtins.str,
+                 discovered_resource_type: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 target_database_id: _builtins.str):
+        """
+        :param _builtins.str discovered_resource_id: The ID of the discovered database resource (for example, a Database or Pluggable Database) that is part of discovery.
+        :param _builtins.str discovered_resource_type: The type of the discovered database resource.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str target_database_id: A filter to return the target database only if it is registered via the registration policy.
+        """
+        pulumi.set(__self__, "discovered_resource_id", discovered_resource_id)
+        pulumi.set(__self__, "discovered_resource_type", discovered_resource_type)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_database_id", target_database_id)
+
+    @_builtins.property
+    @pulumi.getter(name="discoveredResourceId")
+    def discovered_resource_id(self) -> _builtins.str:
+        """
+        The ID of the discovered database resource (for example, a Database or Pluggable Database) that is part of discovery.
+        """
+        return pulumi.get(self, "discovered_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveredResourceType")
+    def discovered_resource_type(self) -> _builtins.str:
+        """
+        The type of the discovered database resource.
+        """
+        return pulumi.get(self, "discovered_resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetDatabaseId")
+    def target_database_id(self) -> _builtins.str:
+        """
+        A filter to return the target database only if it is registered via the registration policy.
+        """
+        return pulumi.get(self, "target_database_id")
 
 
 @pulumi.output_type
@@ -39840,6 +41049,2483 @@ class GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetSubsettingAnalyticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingAnalyticsSubsettingAnalyticsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemResult']):
+        """
+        :param Sequence['GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArgs'] items: An array of subsetting analytics summary objects
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemResult']:
+        """
+        An array of subsetting analytics summary objects
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 dimensions: Sequence['outputs.GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionResult'],
+                 metric_name: _builtins.str,
+                 subsetting_analytic_count: _builtins.str,
+                 time_last_subsetted: _builtins.str):
+        """
+        :param Sequence['GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArgs'] dimensions: The scope of analytics data
+        :param _builtins.str metric_name: The name of the aggregation metric
+        :param _builtins.str subsetting_analytic_count: The total count for the aggregation metric
+        :param _builtins.str time_last_subsetted: The date and time the target database was last subsetted using a subsetting policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        """
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "subsetting_analytic_count", subsetting_analytic_count)
+        pulumi.set(__self__, "time_last_subsetted", time_last_subsetted)
+
+    @_builtins.property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionResult']:
+        """
+        The scope of analytics data
+        """
+        return pulumi.get(self, "dimensions")
+
+    @_builtins.property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> _builtins.str:
+        """
+        The name of the aggregation metric
+        """
+        return pulumi.get(self, "metric_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subsettingAnalyticCount")
+    def subsetting_analytic_count(self) -> _builtins.str:
+        """
+        The total count for the aggregation metric
+        """
+        return pulumi.get(self, "subsetting_analytic_count")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastSubsetted")
+    def time_last_subsetted(self) -> _builtins.str:
+        """
+        The date and time the target database was last subsetted using a subsetting policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        """
+        return pulumi.get(self, "time_last_subsetted")
+
+
+@pulumi.output_type
+class GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionResult(dict):
+    def __init__(__self__, *,
+                 policy_id: _builtins.str,
+                 target_id: _builtins.str):
+        """
+        :param _builtins.str policy_id: The OCID of the subsetting policy
+        :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+        """
+        pulumi.set(__self__, "policy_id", policy_id)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @_builtins.property
+    @pulumi.getter(name="policyId")
+    def policy_id(self) -> _builtins.str:
+        """
+        The OCID of the subsetting policy
+        """
+        return pulumi.get(self, "policy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetSubsettingPoliciesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingPoliciesSubsettingPolicyCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingPoliciesSubsettingPolicyCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingPoliciesSubsettingPolicyCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingPoliciesSubsettingPolicyCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 check_type: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 generate_health_report_trigger: _builtins.int,
+                 id: _builtins.str,
+                 is_redo_logging_enabled: _builtins.bool,
+                 is_refresh_stats_enabled: _builtins.bool,
+                 masking_policy_id: _builtins.str,
+                 parallel_degree: _builtins.str,
+                 post_subsetting_script: _builtins.str,
+                 pre_subsetting_script: _builtins.str,
+                 recompile: _builtins.str,
+                 schema_sources: Sequence['outputs.GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceResult'],
+                 state: _builtins.str,
+                 tablespace: _builtins.str,
+                 target_credentials: Sequence['outputs.GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialResult'],
+                 target_id: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 unrelated_tables_action: _builtins.str):
+        """
+        :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: The description of the subsetting policy
+        :param _builtins.str display_name: A filter to return only resources that match the specified display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The OCID of the subsetting policy
+        :param _builtins.bool is_redo_logging_enabled: Indicates if redo logging is enabled during a subsetting operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, subsetting disables redo logging and flashback logging to purge any original   data from logs. However, in certain circumstances when you only want to test subsetting, rollback changes, and retry subsetting, you could enable logging and use a flashback database to retrieve the original data after it has been subsetted.
+        :param _builtins.bool is_refresh_stats_enabled: Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The subsetting process gathers statistics on database tables after subsetting completes
+        :param _builtins.str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
+        :param _builtins.str parallel_degree: Specifies options to enable parallel execution when running data subsetting. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve subsetting performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism
+        :param _builtins.str post_subsetting_script: A post-subsetting script, which can contain SQL and PL/SQL statements. It's executed after the core subsetting script generated using the subsetting policy. It's usually used to perform additional transformation or cleanup work after subsetting.
+        :param _builtins.str pre_subsetting_script: A pre-subsetting script, which can contain SQL and PL/SQL statements. It's executed before  the core subsetting script generated using the subsetting policy. It's usually used to perform any preparation or prerequisite work before subsetting data
+        :param _builtins.str recompile: Specifies how to recompile invalid objects post data subsetting. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after subsetting completes
+        :param Sequence['GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArgs'] schema_sources: The source of subsetting schemas
+        :param _builtins.str state: A filter to return only the resources that match the specified lifecycle states.
+        :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+        :param _builtins.str time_created: The date and time the subsetting policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        :param _builtins.str time_updated: The date and time the subsetting policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        :param _builtins.str unrelated_tables_action: Strategy to be applied for tables which are not impacted by any of the subsetting rules
+        """
+        pulumi.set(__self__, "check_type", check_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "generate_health_report_trigger", generate_health_report_trigger)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
+        pulumi.set(__self__, "is_refresh_stats_enabled", is_refresh_stats_enabled)
+        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        pulumi.set(__self__, "parallel_degree", parallel_degree)
+        pulumi.set(__self__, "post_subsetting_script", post_subsetting_script)
+        pulumi.set(__self__, "pre_subsetting_script", pre_subsetting_script)
+        pulumi.set(__self__, "recompile", recompile)
+        pulumi.set(__self__, "schema_sources", schema_sources)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "tablespace", tablespace)
+        pulumi.set(__self__, "target_credentials", target_credentials)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "unrelated_tables_action", unrelated_tables_action)
+
+    @_builtins.property
+    @pulumi.getter(name="checkType")
+    def check_type(self) -> _builtins.str:
+        return pulumi.get(self, "check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the subsetting policy
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="generateHealthReportTrigger")
+    def generate_health_report_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "generate_health_report_trigger")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the subsetting policy
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isRedoLoggingEnabled")
+    def is_redo_logging_enabled(self) -> _builtins.bool:
+        """
+        Indicates if redo logging is enabled during a subsetting operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, subsetting disables redo logging and flashback logging to purge any original   data from logs. However, in certain circumstances when you only want to test subsetting, rollback changes, and retry subsetting, you could enable logging and use a flashback database to retrieve the original data after it has been subsetted.
+        """
+        return pulumi.get(self, "is_redo_logging_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isRefreshStatsEnabled")
+    def is_refresh_stats_enabled(self) -> _builtins.bool:
+        """
+        Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The subsetting process gathers statistics on database tables after subsetting completes
+        """
+        return pulumi.get(self, "is_refresh_stats_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="maskingPolicyId")
+    def masking_policy_id(self) -> _builtins.str:
+        """
+        A filter to return only the resources that match the specified masking policy OCID.
+        """
+        return pulumi.get(self, "masking_policy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="parallelDegree")
+    def parallel_degree(self) -> _builtins.str:
+        """
+        Specifies options to enable parallel execution when running data subsetting. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve subsetting performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism
+        """
+        return pulumi.get(self, "parallel_degree")
+
+    @_builtins.property
+    @pulumi.getter(name="postSubsettingScript")
+    def post_subsetting_script(self) -> _builtins.str:
+        """
+        A post-subsetting script, which can contain SQL and PL/SQL statements. It's executed after the core subsetting script generated using the subsetting policy. It's usually used to perform additional transformation or cleanup work after subsetting.
+        """
+        return pulumi.get(self, "post_subsetting_script")
+
+    @_builtins.property
+    @pulumi.getter(name="preSubsettingScript")
+    def pre_subsetting_script(self) -> _builtins.str:
+        """
+        A pre-subsetting script, which can contain SQL and PL/SQL statements. It's executed before  the core subsetting script generated using the subsetting policy. It's usually used to perform any preparation or prerequisite work before subsetting data
+        """
+        return pulumi.get(self, "pre_subsetting_script")
+
+    @_builtins.property
+    @pulumi.getter
+    def recompile(self) -> _builtins.str:
+        """
+        Specifies how to recompile invalid objects post data subsetting. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after subsetting completes
+        """
+        return pulumi.get(self, "recompile")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaSources")
+    def schema_sources(self) -> Sequence['outputs.GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceResult']:
+        """
+        The source of subsetting schemas
+        """
+        return pulumi.get(self, "schema_sources")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only the resources that match the specified lifecycle states.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter
+    def tablespace(self) -> _builtins.str:
+        return pulumi.get(self, "tablespace")
+
+    @_builtins.property
+    @pulumi.getter(name="targetCredentials")
+    def target_credentials(self) -> Sequence['outputs.GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialResult']:
+        return pulumi.get(self, "target_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the subsetting policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the subsetting policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="unrelatedTablesAction")
+    def unrelated_tables_action(self) -> _builtins.str:
+        """
+        Strategy to be applied for tables which are not impacted by any of the subsetting rules
+        """
+        return pulumi.get(self, "unrelated_tables_action")
+
+
+@pulumi.output_type
+class GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceResult(dict):
+    def __init__(__self__, *,
+                 derived_schemas: Sequence[_builtins.str],
+                 schema_source: _builtins.str,
+                 schemas_for_subsettings: Sequence[_builtins.str],
+                 sensitive_data_model_id: _builtins.str,
+                 target_id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] derived_schemas: The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+        :param _builtins.str schema_source: The source of subsetting schemas
+        :param Sequence[_builtins.str] schemas_for_subsettings: The schemas to be subsetted
+        :param _builtins.str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
+        :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+        """
+        pulumi.set(__self__, "derived_schemas", derived_schemas)
+        pulumi.set(__self__, "schema_source", schema_source)
+        pulumi.set(__self__, "schemas_for_subsettings", schemas_for_subsettings)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @_builtins.property
+    @pulumi.getter(name="derivedSchemas")
+    def derived_schemas(self) -> Sequence[_builtins.str]:
+        """
+        The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+        """
+        return pulumi.get(self, "derived_schemas")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaSource")
+    def schema_source(self) -> _builtins.str:
+        """
+        The source of subsetting schemas
+        """
+        return pulumi.get(self, "schema_source")
+
+    @_builtins.property
+    @pulumi.getter(name="schemasForSubsettings")
+    def schemas_for_subsettings(self) -> Sequence[_builtins.str]:
+        """
+        The schemas to be subsetted
+        """
+        return pulumi.get(self, "schemas_for_subsettings")
+
+    @_builtins.property
+    @pulumi.getter(name="sensitiveDataModelId")
+    def sensitive_data_model_id(self) -> _builtins.str:
+        """
+        A filter to return only the resources that match the specified sensitive data model OCID.
+        """
+        return pulumi.get(self, "sensitive_data_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialResult(dict):
+    def __init__(__self__, *,
+                 password: _builtins.str,
+                 user_name: _builtins.str):
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetSubsettingPolicyHealthReportLogsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemResult']):
+        """
+        :param Sequence['GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArgs'] items: An array of subsetting policy health report objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemResult']:
+        """
+        An array of subsetting policy health report objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 health_check_type: _builtins.str,
+                 message: _builtins.str,
+                 message_type: _builtins.str,
+                 remediation: _builtins.str,
+                 timestamp: _builtins.str):
+        """
+        :param _builtins.str description: A human-readable description for the log entry.
+        :param _builtins.str health_check_type: An enum type entry for each health check in the subsetting policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the subsetting tables. PRIVILEGE_CHECK checks if the subsetting user has sufficient privilege to run subsetting. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the subsetting table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the subsetting tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled ACTIVE_JOB_CHECK checks if there is any active subsetting job running on the target database. TABLE_EXIST_CHECK checks if the subsetting tables are available in the target database. TIME_TRAVEL_CHECK checks if the subsetting tables have Time Travel enabled. SYSTEM_OBJECTS_CHECK checks if the subsetting tables have dependent objects present in SYS schema. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state. AUDIT_POLICY_CHECK checks if the subsetting tables have Audit policies enabled. VALID_RULES_CHECK if the subsetting rules on the tables are valid.
+        :param _builtins.str message: A human-readable log entry.
+        :param _builtins.str message_type: A filter to return only the resources that match the specified log message type.
+        :param _builtins.str remediation: A human-readable log entry to remedy any error or warnings in the subsetting policy.
+        :param _builtins.str timestamp: The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "health_check_type", health_check_type)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "message_type", message_type)
+        pulumi.set(__self__, "remediation", remediation)
+        pulumi.set(__self__, "timestamp", timestamp)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A human-readable description for the log entry.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="healthCheckType")
+    def health_check_type(self) -> _builtins.str:
+        """
+        An enum type entry for each health check in the subsetting policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the subsetting tables. PRIVILEGE_CHECK checks if the subsetting user has sufficient privilege to run subsetting. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the subsetting table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the subsetting tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled ACTIVE_JOB_CHECK checks if there is any active subsetting job running on the target database. TABLE_EXIST_CHECK checks if the subsetting tables are available in the target database. TIME_TRAVEL_CHECK checks if the subsetting tables have Time Travel enabled. SYSTEM_OBJECTS_CHECK checks if the subsetting tables have dependent objects present in SYS schema. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state. AUDIT_POLICY_CHECK checks if the subsetting tables have Audit policies enabled. VALID_RULES_CHECK if the subsetting rules on the tables are valid.
+        """
+        return pulumi.get(self, "health_check_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A human-readable log entry.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="messageType")
+    def message_type(self) -> _builtins.str:
+        """
+        A filter to return only the resources that match the specified log message type.
+        """
+        return pulumi.get(self, "message_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def remediation(self) -> _builtins.str:
+        """
+        A human-readable log entry to remedy any error or warnings in the subsetting policy.
+        """
+        return pulumi.get(self, "remediation")
+
+    @_builtins.property
+    @pulumi.getter
+    def timestamp(self) -> _builtins.str:
+        """
+        The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "timestamp")
+
+
+@pulumi.output_type
+class GetSubsettingPolicyHealthReportsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 error_count: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 subsetting_policy_id: _builtins.str,
+                 target_id: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 warning_count: _builtins.str):
+        """
+        :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the specified display name.
+        :param _builtins.str error_count: The count of errors in the subsetting health report.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The OCID of the health report.
+        :param _builtins.str state: A filter to return only the resources that match the specified lifecycle states.
+        :param _builtins.str subsetting_policy_id: A filter to return only the resources that match the specified subsetting policy OCID.
+        :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+        :param _builtins.str time_created: The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_updated: The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        :param _builtins.str warning_count: The count of warnings in the subsetting health report.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "error_count", error_count)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subsetting_policy_id", subsetting_policy_id)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "warning_count", warning_count)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="errorCount")
+    def error_count(self) -> _builtins.str:
+        """
+        The count of errors in the subsetting health report.
+        """
+        return pulumi.get(self, "error_count")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the health report.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only the resources that match the specified lifecycle states.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="subsettingPolicyId")
+    def subsetting_policy_id(self) -> _builtins.str:
+        """
+        A filter to return only the resources that match the specified subsetting policy OCID.
+        """
+        return pulumi.get(self, "subsetting_policy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="warningCount")
+    def warning_count(self) -> _builtins.str:
+        """
+        The count of warnings in the subsetting health report.
+        """
+        return pulumi.get(self, "warning_count")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySchemaSourceResult(dict):
+    def __init__(__self__, *,
+                 derived_schemas: Sequence[_builtins.str],
+                 schema_source: _builtins.str,
+                 schemas_for_subsettings: Sequence[_builtins.str],
+                 sensitive_data_model_id: _builtins.str,
+                 target_id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] derived_schemas: The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+        :param _builtins.str schema_source: The source of subsetting schemas
+        :param Sequence[_builtins.str] schemas_for_subsettings: The schemas to be subsetted
+        :param _builtins.str sensitive_data_model_id: The OCID of the sensitive data model that's used as the source of subsetting schemas
+        :param _builtins.str target_id: The OCID of the target database that's used as the source of subsetting schemas
+        """
+        pulumi.set(__self__, "derived_schemas", derived_schemas)
+        pulumi.set(__self__, "schema_source", schema_source)
+        pulumi.set(__self__, "schemas_for_subsettings", schemas_for_subsettings)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @_builtins.property
+    @pulumi.getter(name="derivedSchemas")
+    def derived_schemas(self) -> Sequence[_builtins.str]:
+        """
+        The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+        """
+        return pulumi.get(self, "derived_schemas")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaSource")
+    def schema_source(self) -> _builtins.str:
+        """
+        The source of subsetting schemas
+        """
+        return pulumi.get(self, "schema_source")
+
+    @_builtins.property
+    @pulumi.getter(name="schemasForSubsettings")
+    def schemas_for_subsettings(self) -> Sequence[_builtins.str]:
+        """
+        The schemas to be subsetted
+        """
+        return pulumi.get(self, "schemas_for_subsettings")
+
+    @_builtins.property
+    @pulumi.getter(name="sensitiveDataModelId")
+    def sensitive_data_model_id(self) -> _builtins.str:
+        """
+        The OCID of the sensitive data model that's used as the source of subsetting schemas
+        """
+        return pulumi.get(self, "sensitive_data_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        The OCID of the target database that's used as the source of subsetting schemas
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemResult']):
+        """
+        :param Sequence['GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArgs'] items: An array of subsetting processing chain summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemResult']:
+        """
+        An array of subsetting processing chain summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 approximate_row_count_before_subsetting: _builtins.str,
+                 child_columns: Sequence[_builtins.str],
+                 child_object_name: _builtins.str,
+                 child_schema_name: _builtins.str,
+                 estimated_row_count_after_subsetting: _builtins.str,
+                 is_enabled_for_processing: _builtins.bool,
+                 key: _builtins.str,
+                 parent_columns: Sequence[_builtins.str],
+                 parent_object_name: _builtins.str,
+                 parent_schema_name: _builtins.str,
+                 propagation_impact: _builtins.str,
+                 subsetting_schema_relation_key: _builtins.str):
+        """
+        :param _builtins.str approximate_row_count_before_subsetting: The approximate count of rows in the subsetting table before subsetting
+        :param Sequence[_builtins.str] child_columns: Unique identifiers identifying the child columns in the relation.
+        :param _builtins.str child_object_name: The name of the child subsetting table
+        :param _builtins.str child_schema_name: The database schema that contains the child subsetting table
+        :param _builtins.str estimated_row_count_after_subsetting: The estimated count of rows in the subsetting table after subsetting
+        :param _builtins.bool is_enabled_for_processing: A filter to return the processing chain objects which are enabled for processing.
+        :param _builtins.str key: The unique key that identifies a subsetting relation processed. The key is numeric and unique within a processing order
+        :param Sequence[_builtins.str] parent_columns: Unique identifiers identifying the parents columns in the relation.
+        :param _builtins.str parent_object_name: The name of the parent subsetting table
+        :param _builtins.str parent_schema_name: The database schema that contains the parent subsetting table
+        :param _builtins.str propagation_impact: The impact on the related table due to the processing of subsetting rule
+        :param _builtins.str subsetting_schema_relation_key: The unique key that identifies a subsetting relation.
+        """
+        pulumi.set(__self__, "approximate_row_count_before_subsetting", approximate_row_count_before_subsetting)
+        pulumi.set(__self__, "child_columns", child_columns)
+        pulumi.set(__self__, "child_object_name", child_object_name)
+        pulumi.set(__self__, "child_schema_name", child_schema_name)
+        pulumi.set(__self__, "estimated_row_count_after_subsetting", estimated_row_count_after_subsetting)
+        pulumi.set(__self__, "is_enabled_for_processing", is_enabled_for_processing)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "parent_columns", parent_columns)
+        pulumi.set(__self__, "parent_object_name", parent_object_name)
+        pulumi.set(__self__, "parent_schema_name", parent_schema_name)
+        pulumi.set(__self__, "propagation_impact", propagation_impact)
+        pulumi.set(__self__, "subsetting_schema_relation_key", subsetting_schema_relation_key)
+
+    @_builtins.property
+    @pulumi.getter(name="approximateRowCountBeforeSubsetting")
+    def approximate_row_count_before_subsetting(self) -> _builtins.str:
+        """
+        The approximate count of rows in the subsetting table before subsetting
+        """
+        return pulumi.get(self, "approximate_row_count_before_subsetting")
+
+    @_builtins.property
+    @pulumi.getter(name="childColumns")
+    def child_columns(self) -> Sequence[_builtins.str]:
+        """
+        Unique identifiers identifying the child columns in the relation.
+        """
+        return pulumi.get(self, "child_columns")
+
+    @_builtins.property
+    @pulumi.getter(name="childObjectName")
+    def child_object_name(self) -> _builtins.str:
+        """
+        The name of the child subsetting table
+        """
+        return pulumi.get(self, "child_object_name")
+
+    @_builtins.property
+    @pulumi.getter(name="childSchemaName")
+    def child_schema_name(self) -> _builtins.str:
+        """
+        The database schema that contains the child subsetting table
+        """
+        return pulumi.get(self, "child_schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="estimatedRowCountAfterSubsetting")
+    def estimated_row_count_after_subsetting(self) -> _builtins.str:
+        """
+        The estimated count of rows in the subsetting table after subsetting
+        """
+        return pulumi.get(self, "estimated_row_count_after_subsetting")
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabledForProcessing")
+    def is_enabled_for_processing(self) -> _builtins.bool:
+        """
+        A filter to return the processing chain objects which are enabled for processing.
+        """
+        return pulumi.get(self, "is_enabled_for_processing")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique key that identifies a subsetting relation processed. The key is numeric and unique within a processing order
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="parentColumns")
+    def parent_columns(self) -> Sequence[_builtins.str]:
+        """
+        Unique identifiers identifying the parents columns in the relation.
+        """
+        return pulumi.get(self, "parent_columns")
+
+    @_builtins.property
+    @pulumi.getter(name="parentObjectName")
+    def parent_object_name(self) -> _builtins.str:
+        """
+        The name of the parent subsetting table
+        """
+        return pulumi.get(self, "parent_object_name")
+
+    @_builtins.property
+    @pulumi.getter(name="parentSchemaName")
+    def parent_schema_name(self) -> _builtins.str:
+        """
+        The database schema that contains the parent subsetting table
+        """
+        return pulumi.get(self, "parent_schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="propagationImpact")
+    def propagation_impact(self) -> _builtins.str:
+        """
+        The impact on the related table due to the processing of subsetting rule
+        """
+        return pulumi.get(self, "propagation_impact")
+
+    @_builtins.property
+    @pulumi.getter(name="subsettingSchemaRelationKey")
+    def subsetting_schema_relation_key(self) -> _builtins.str:
+        """
+        The unique key that identifies a subsetting relation.
+        """
+        return pulumi.get(self, "subsetting_schema_relation_key")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingRuleScopeResult(dict):
+    def __init__(__self__, *,
+                 object: _builtins.str,
+                 schema_name: _builtins.str,
+                 scope_type: _builtins.str):
+        """
+        :param _builtins.str object: The name of the specific object (e.g., table) to be subsetted
+        :param _builtins.str schema_name: The name of the schema containing the specific object to be subsetted
+        :param _builtins.str scope_type: Scope of a subsetting rule
+        """
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "scope_type", scope_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        The name of the specific object (e.g., table) to be subsetted
+        """
+        return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> _builtins.str:
+        """
+        The name of the schema containing the specific object to be subsetted
+        """
+        return pulumi.get(self, "schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scopeType")
+    def scope_type(self) -> _builtins.str:
+        """
+        Scope of a subsetting rule
+        """
+        return pulumi.get(self, "scope_type")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingRuleSubsetRuleEntryResult(dict):
+    def __init__(__self__, *,
+                 condition: _builtins.str,
+                 partitions_lists: Sequence[_builtins.str],
+                 percent: _builtins.int,
+                 rule_type: _builtins.str,
+                 sub_partitions_lists: Sequence[_builtins.str]):
+        """
+        :param _builtins.str condition: The SQL WHERE clause condition used to filter rows for the subset
+        :param Sequence[_builtins.str] partitions_lists: A list of partition names which are to be part of the subset data
+        :param _builtins.int percent: The percentage of rows to retain in the subset (between 0 and 100)
+        :param _builtins.str rule_type: type of subset rule
+        :param Sequence[_builtins.str] sub_partitions_lists: A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "partitions_lists", partitions_lists)
+        pulumi.set(__self__, "percent", percent)
+        pulumi.set(__self__, "rule_type", rule_type)
+        pulumi.set(__self__, "sub_partitions_lists", sub_partitions_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> _builtins.str:
+        """
+        The SQL WHERE clause condition used to filter rows for the subset
+        """
+        return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter(name="partitionsLists")
+    def partitions_lists(self) -> Sequence[_builtins.str]:
+        """
+        A list of partition names which are to be part of the subset data
+        """
+        return pulumi.get(self, "partitions_lists")
+
+    @_builtins.property
+    @pulumi.getter
+    def percent(self) -> _builtins.int:
+        """
+        The percentage of rows to retain in the subset (between 0 and 100)
+        """
+        return pulumi.get(self, "percent")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> _builtins.str:
+        """
+        type of subset rule
+        """
+        return pulumi.get(self, "rule_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subPartitionsLists")
+    def sub_partitions_lists(self) -> Sequence[_builtins.str]:
+        """
+        A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+        """
+        return pulumi.get(self, "sub_partitions_lists")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingRulesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 key: _builtins.str,
+                 peer_tables_action: _builtins.str,
+                 related_tables_propagation: _builtins.str,
+                 rule_combination_mode: _builtins.str,
+                 scope: 'outputs.GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeResult',
+                 subset_rule_entry: 'outputs.GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryResult',
+                 subsetting_policy_id: _builtins.str):
+        """
+        :param _builtins.str description: The description of the subset rule
+        :param _builtins.str display_name: The display name of the subset rule
+        :param _builtins.str key: The unique key that identifies a subsetting rule. The key is numeric and unique within a subsetting policy
+        :param _builtins.str peer_tables_action: Strategy to be applied while processing peer tables
+        :param _builtins.str related_tables_propagation: Strategy to be applied while propagating subsetting rule to related tables
+        :param _builtins.str rule_combination_mode: Specifies how this rule combines with other rules. UNION evaluates this rule independently and adds matching rows to the result set. SERIAL applies this rule sequentially to filter rows selected by a compatible preceding rule.
+        :param 'GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeArgs' scope: The scope of the subset rule
+        :param 'GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryArgs' subset_rule_entry: The details of the subset rule
+        :param _builtins.str subsetting_policy_id: The OCID of the subsetting policy.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "peer_tables_action", peer_tables_action)
+        pulumi.set(__self__, "related_tables_propagation", related_tables_propagation)
+        pulumi.set(__self__, "rule_combination_mode", rule_combination_mode)
+        pulumi.set(__self__, "scope", scope)
+        pulumi.set(__self__, "subset_rule_entry", subset_rule_entry)
+        pulumi.set(__self__, "subsetting_policy_id", subsetting_policy_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the subset rule
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The display name of the subset rule
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique key that identifies a subsetting rule. The key is numeric and unique within a subsetting policy
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="peerTablesAction")
+    def peer_tables_action(self) -> _builtins.str:
+        """
+        Strategy to be applied while processing peer tables
+        """
+        return pulumi.get(self, "peer_tables_action")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedTablesPropagation")
+    def related_tables_propagation(self) -> _builtins.str:
+        """
+        Strategy to be applied while propagating subsetting rule to related tables
+        """
+        return pulumi.get(self, "related_tables_propagation")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleCombinationMode")
+    def rule_combination_mode(self) -> _builtins.str:
+        """
+        Specifies how this rule combines with other rules. UNION evaluates this rule independently and adds matching rows to the result set. SERIAL applies this rule sequentially to filter rows selected by a compatible preceding rule.
+        """
+        return pulumi.get(self, "rule_combination_mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> 'outputs.GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeResult':
+        """
+        The scope of the subset rule
+        """
+        return pulumi.get(self, "scope")
+
+    @_builtins.property
+    @pulumi.getter(name="subsetRuleEntry")
+    def subset_rule_entry(self) -> 'outputs.GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryResult':
+        """
+        The details of the subset rule
+        """
+        return pulumi.get(self, "subset_rule_entry")
+
+    @_builtins.property
+    @pulumi.getter(name="subsettingPolicyId")
+    def subsetting_policy_id(self) -> _builtins.str:
+        """
+        The OCID of the subsetting policy.
+        """
+        return pulumi.get(self, "subsetting_policy_id")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeResult(dict):
+    def __init__(__self__, *,
+                 object: _builtins.str,
+                 schema_name: _builtins.str,
+                 scope_type: _builtins.str):
+        """
+        :param _builtins.str object: A filter to return only items related to a specific object name.
+        :param _builtins.str schema_name: A filter to return only items related to specific schema name.
+        :param _builtins.str scope_type: Scope of a subsetting rule
+        """
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "scope_type", scope_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        A filter to return only items related to a specific object name.
+        """
+        return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> _builtins.str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scopeType")
+    def scope_type(self) -> _builtins.str:
+        """
+        Scope of a subsetting rule
+        """
+        return pulumi.get(self, "scope_type")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryResult(dict):
+    def __init__(__self__, *,
+                 condition: _builtins.str,
+                 partitions_lists: Sequence[_builtins.str],
+                 percent: _builtins.int,
+                 rule_type: _builtins.str,
+                 sub_partitions_lists: Sequence[_builtins.str]):
+        """
+        :param _builtins.str condition: The SQL WHERE clause condition used to filter rows for the subset
+        :param Sequence[_builtins.str] partitions_lists: A list of partition names which are to be part of the subset data
+        :param _builtins.int percent: The percentage of rows to retain in the subset (between 0 and 100)
+        :param _builtins.str rule_type: type of subset rule
+        :param Sequence[_builtins.str] sub_partitions_lists: A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "partitions_lists", partitions_lists)
+        pulumi.set(__self__, "percent", percent)
+        pulumi.set(__self__, "rule_type", rule_type)
+        pulumi.set(__self__, "sub_partitions_lists", sub_partitions_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> _builtins.str:
+        """
+        The SQL WHERE clause condition used to filter rows for the subset
+        """
+        return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter(name="partitionsLists")
+    def partitions_lists(self) -> Sequence[_builtins.str]:
+        """
+        A list of partition names which are to be part of the subset data
+        """
+        return pulumi.get(self, "partitions_lists")
+
+    @_builtins.property
+    @pulumi.getter
+    def percent(self) -> _builtins.int:
+        """
+        The percentage of rows to retain in the subset (between 0 and 100)
+        """
+        return pulumi.get(self, "percent")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> _builtins.str:
+        """
+        type of subset rule
+        """
+        return pulumi.get(self, "rule_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subPartitionsLists")
+    def sub_partitions_lists(self) -> Sequence[_builtins.str]:
+        """
+        A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+        """
+        return pulumi.get(self, "sub_partitions_lists")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingSchemaObjectsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemResult']):
+        """
+        :param Sequence['GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArgs'] items: An array of subsetting table summary objects
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemResult']:
+        """
+        An array of subsetting table summary objects
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 initial_row_count: _builtins.str,
+                 is_stats_stale: _builtins.bool,
+                 key: _builtins.str,
+                 object: _builtins.str,
+                 object_type: _builtins.str,
+                 schema_name: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str initial_row_count: The initial number of rows in this object/table
+        :param _builtins.bool is_stats_stale: Indicates if the table stats are stale. This can be used to judge the accuracy of initialRowCount
+        :param _builtins.str key: The unique key that identifies a subsetting table. The key is numeric and unique within a subsetting policy
+        :param _builtins.str object: A filter to return only items related to a specific object name.
+        :param _builtins.str object_type: The type of the database object that contains the subsetting table
+        :param _builtins.str schema_name: A filter to return only items related to specific schema name.
+        :param _builtins.str time_created: The date and time the subsetting table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_updated: The date and time the subsetting table was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "initial_row_count", initial_row_count)
+        pulumi.set(__self__, "is_stats_stale", is_stats_stale)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="initialRowCount")
+    def initial_row_count(self) -> _builtins.str:
+        """
+        The initial number of rows in this object/table
+        """
+        return pulumi.get(self, "initial_row_count")
+
+    @_builtins.property
+    @pulumi.getter(name="isStatsStale")
+    def is_stats_stale(self) -> _builtins.bool:
+        """
+        Indicates if the table stats are stale. This can be used to judge the accuracy of initialRowCount
+        """
+        return pulumi.get(self, "is_stats_stale")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique key that identifies a subsetting table. The key is numeric and unique within a subsetting policy
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        A filter to return only items related to a specific object name.
+        """
+        return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> _builtins.str:
+        """
+        The type of the database object that contains the subsetting table
+        """
+        return pulumi.get(self, "object_type")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> _builtins.str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the subsetting table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the subsetting table was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingSchemaRelationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 child_columns: Sequence[_builtins.str],
+                 child_object_key: _builtins.str,
+                 child_object_name: _builtins.str,
+                 child_schema_name: _builtins.str,
+                 key: _builtins.str,
+                 parent_columns: Sequence[_builtins.str],
+                 parent_object_key: _builtins.str,
+                 parent_object_name: _builtins.str,
+                 parent_schema_name: _builtins.str,
+                 relation_type: _builtins.str,
+                 subsetting_policy_id: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Sequence[_builtins.str] child_columns: Unique identifiers identifying the child columns in the relation.
+        :param _builtins.str child_object_key: The key that identifies the child subsetting table in this relation.
+        :param _builtins.str child_object_name: The name of the child subsetting table
+        :param _builtins.str child_schema_name: The database schema that contains the child subsetting table
+        :param _builtins.str key: The unique key that identifies a relation between subsetting tables. The key is numeric and unique within a subsetting policy.
+        :param Sequence[_builtins.str] parent_columns: Unique identifiers identifying the parents columns in the relation.
+        :param _builtins.str parent_object_key: The key that identifies the parent subsetting table in this relation.
+        :param _builtins.str parent_object_name: The name of the parent subsetting table
+        :param _builtins.str parent_schema_name: The database schema that contains the parent subsetting table
+        :param _builtins.str relation_type: A filter to return columns based on their relationship with their parent columns. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+        :param _builtins.str subsetting_policy_id: The OCID of the subsetting policy.
+        :param _builtins.str time_created: The date and time the subsetting relation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_updated: The date and time the subsetting relation was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "child_columns", child_columns)
+        pulumi.set(__self__, "child_object_key", child_object_key)
+        pulumi.set(__self__, "child_object_name", child_object_name)
+        pulumi.set(__self__, "child_schema_name", child_schema_name)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "parent_columns", parent_columns)
+        pulumi.set(__self__, "parent_object_key", parent_object_key)
+        pulumi.set(__self__, "parent_object_name", parent_object_name)
+        pulumi.set(__self__, "parent_schema_name", parent_schema_name)
+        pulumi.set(__self__, "relation_type", relation_type)
+        pulumi.set(__self__, "subsetting_policy_id", subsetting_policy_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="childColumns")
+    def child_columns(self) -> Sequence[_builtins.str]:
+        """
+        Unique identifiers identifying the child columns in the relation.
+        """
+        return pulumi.get(self, "child_columns")
+
+    @_builtins.property
+    @pulumi.getter(name="childObjectKey")
+    def child_object_key(self) -> _builtins.str:
+        """
+        The key that identifies the child subsetting table in this relation.
+        """
+        return pulumi.get(self, "child_object_key")
+
+    @_builtins.property
+    @pulumi.getter(name="childObjectName")
+    def child_object_name(self) -> _builtins.str:
+        """
+        The name of the child subsetting table
+        """
+        return pulumi.get(self, "child_object_name")
+
+    @_builtins.property
+    @pulumi.getter(name="childSchemaName")
+    def child_schema_name(self) -> _builtins.str:
+        """
+        The database schema that contains the child subsetting table
+        """
+        return pulumi.get(self, "child_schema_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique key that identifies a relation between subsetting tables. The key is numeric and unique within a subsetting policy.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="parentColumns")
+    def parent_columns(self) -> Sequence[_builtins.str]:
+        """
+        Unique identifiers identifying the parents columns in the relation.
+        """
+        return pulumi.get(self, "parent_columns")
+
+    @_builtins.property
+    @pulumi.getter(name="parentObjectKey")
+    def parent_object_key(self) -> _builtins.str:
+        """
+        The key that identifies the parent subsetting table in this relation.
+        """
+        return pulumi.get(self, "parent_object_key")
+
+    @_builtins.property
+    @pulumi.getter(name="parentObjectName")
+    def parent_object_name(self) -> _builtins.str:
+        """
+        The name of the parent subsetting table
+        """
+        return pulumi.get(self, "parent_object_name")
+
+    @_builtins.property
+    @pulumi.getter(name="parentSchemaName")
+    def parent_schema_name(self) -> _builtins.str:
+        """
+        The database schema that contains the parent subsetting table
+        """
+        return pulumi.get(self, "parent_schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="relationType")
+    def relation_type(self) -> _builtins.str:
+        """
+        A filter to return columns based on their relationship with their parent columns. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+        """
+        return pulumi.get(self, "relation_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subsettingPolicyId")
+    def subsetting_policy_id(self) -> _builtins.str:
+        """
+        The OCID of the subsetting policy.
+        """
+        return pulumi.get(self, "subsetting_policy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the subsetting relation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the subsetting relation was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingSchemasFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemResult']):
+        """
+        :param Sequence['GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArgs'] items: An array of subsetting schema summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemResult']:
+        """
+        An array of subsetting schema summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 is_derived: _builtins.bool,
+                 schema_name: _builtins.str):
+        """
+        :param _builtins.bool is_derived: Indicates if the schema is a derived schema and not directly came as input from the user. A schema is derived if it is related to a input schema
+        :param _builtins.str schema_name: A filter to return only items related to specific schema name.
+        """
+        pulumi.set(__self__, "is_derived", is_derived)
+        pulumi.set(__self__, "schema_name", schema_name)
+
+    @_builtins.property
+    @pulumi.getter(name="isDerived")
+    def is_derived(self) -> _builtins.bool:
+        """
+        Indicates if the schema is a derived schema and not directly came as input from the user. A schema is derived if it is related to a input schema
+        """
+        return pulumi.get(self, "is_derived")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> _builtins.str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+
+@pulumi.output_type
+class GetSubsettingPolicyTableEstimatesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingPolicyTableEstimatesTableEstimateCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemResult']):
+        """
+        :param Sequence['GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArgs'] items: An array of table estimate objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemResult']:
+        """
+        An array of table estimate objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 estimated_row_count: _builtins.str,
+                 estimated_size_in_kbs: _builtins.str,
+                 initial_row_count: _builtins.str,
+                 initial_size_in_kbs: _builtins.str,
+                 object_type: _builtins.str,
+                 schema_name: _builtins.str,
+                 table_name: _builtins.str,
+                 target_id: _builtins.str):
+        """
+        :param _builtins.str estimated_row_count: The estimated number of rows in the table after subsetting.
+        :param _builtins.str estimated_size_in_kbs: The estimated size of the table in KBs after subsetting.
+        :param _builtins.str initial_row_count: The initial number of rows in the table.
+        :param _builtins.str initial_size_in_kbs: The initial size of the table in KBs.
+        :param _builtins.str object_type: The type of the database object.
+        :param _builtins.str schema_name: A filter to return only items related to specific schema name.
+        :param _builtins.str table_name: The name of the table.
+        :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+        """
+        pulumi.set(__self__, "estimated_row_count", estimated_row_count)
+        pulumi.set(__self__, "estimated_size_in_kbs", estimated_size_in_kbs)
+        pulumi.set(__self__, "initial_row_count", initial_row_count)
+        pulumi.set(__self__, "initial_size_in_kbs", initial_size_in_kbs)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "table_name", table_name)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @_builtins.property
+    @pulumi.getter(name="estimatedRowCount")
+    def estimated_row_count(self) -> _builtins.str:
+        """
+        The estimated number of rows in the table after subsetting.
+        """
+        return pulumi.get(self, "estimated_row_count")
+
+    @_builtins.property
+    @pulumi.getter(name="estimatedSizeInKbs")
+    def estimated_size_in_kbs(self) -> _builtins.str:
+        """
+        The estimated size of the table in KBs after subsetting.
+        """
+        return pulumi.get(self, "estimated_size_in_kbs")
+
+    @_builtins.property
+    @pulumi.getter(name="initialRowCount")
+    def initial_row_count(self) -> _builtins.str:
+        """
+        The initial number of rows in the table.
+        """
+        return pulumi.get(self, "initial_row_count")
+
+    @_builtins.property
+    @pulumi.getter(name="initialSizeInKbs")
+    def initial_size_in_kbs(self) -> _builtins.str:
+        """
+        The initial size of the table in KBs.
+        """
+        return pulumi.get(self, "initial_size_in_kbs")
+
+    @_builtins.property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> _builtins.str:
+        """
+        The type of the database object.
+        """
+        return pulumi.get(self, "object_type")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> _builtins.str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="tableName")
+    def table_name(self) -> _builtins.str:
+        """
+        The name of the table.
+        """
+        return pulumi.get(self, "table_name")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetSubsettingPolicyTargetCredentialResult(dict):
+    def __init__(__self__, *,
+                 password: _builtins.str,
+                 user_name: _builtins.str):
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetSubsettingReportSubsettedObjectsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemResult']):
+        """
+        :param Sequence['GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArgs'] items: An array of subsetted summary objects
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemResult']:
+        """
+        An array of subsetted summary objects
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 object: _builtins.str,
+                 object_type: _builtins.str,
+                 row_count_after_subsetting: _builtins.str,
+                 row_count_before_subsetting: _builtins.str,
+                 schema_name: _builtins.str,
+                 size_after_subsetting_in_kbs: _builtins.str,
+                 size_before_subsetting_in_kbs: _builtins.str):
+        """
+        :param _builtins.str object: A filter to return only items related to a specific object name.
+        :param _builtins.str object_type: The type of the object (table or editioning view) subsetted
+        :param _builtins.str row_count_after_subsetting: The count of rows in the subsetted table after subsetting
+        :param _builtins.str row_count_before_subsetting: The count of rows in the subsetted table before subsetting
+        :param _builtins.str schema_name: A filter to return only items related to specific schema name.
+        :param _builtins.str size_after_subsetting_in_kbs: The size of the subsetted table after subsetting in KBs
+        :param _builtins.str size_before_subsetting_in_kbs: The size of the subsetted table before subsetting in KBs
+        """
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "row_count_after_subsetting", row_count_after_subsetting)
+        pulumi.set(__self__, "row_count_before_subsetting", row_count_before_subsetting)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "size_after_subsetting_in_kbs", size_after_subsetting_in_kbs)
+        pulumi.set(__self__, "size_before_subsetting_in_kbs", size_before_subsetting_in_kbs)
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        A filter to return only items related to a specific object name.
+        """
+        return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> _builtins.str:
+        """
+        The type of the object (table or editioning view) subsetted
+        """
+        return pulumi.get(self, "object_type")
+
+    @_builtins.property
+    @pulumi.getter(name="rowCountAfterSubsetting")
+    def row_count_after_subsetting(self) -> _builtins.str:
+        """
+        The count of rows in the subsetted table after subsetting
+        """
+        return pulumi.get(self, "row_count_after_subsetting")
+
+    @_builtins.property
+    @pulumi.getter(name="rowCountBeforeSubsetting")
+    def row_count_before_subsetting(self) -> _builtins.str:
+        """
+        The count of rows in the subsetted table before subsetting
+        """
+        return pulumi.get(self, "row_count_before_subsetting")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> _builtins.str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="sizeAfterSubsettingInKbs")
+    def size_after_subsetting_in_kbs(self) -> _builtins.str:
+        """
+        The size of the subsetted table after subsetting in KBs
+        """
+        return pulumi.get(self, "size_after_subsetting_in_kbs")
+
+    @_builtins.property
+    @pulumi.getter(name="sizeBeforeSubsettingInKbs")
+    def size_before_subsetting_in_kbs(self) -> _builtins.str:
+        """
+        The size of the subsetted table before subsetting in KBs
+        """
+        return pulumi.get(self, "size_before_subsetting_in_kbs")
+
+
+@pulumi.output_type
+class GetSubsettingReportSubsettingErrorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemResult']):
+        """
+        :param Sequence['GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArgs'] items: An array of subsetting error objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemResult']:
+        """
+        An array of subsetting error objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 error: _builtins.str,
+                 failed_statement: _builtins.str,
+                 step_name: _builtins.str,
+                 time_created: _builtins.str):
+        """
+        :param _builtins.str error: The text of the subsetting error.
+        :param _builtins.str failed_statement: The statement resulting into the error.
+        :param _builtins.str step_name: A filter to return only subsetting errors that match the specified step name.
+        :param _builtins.str time_created: The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "error", error)
+        pulumi.set(__self__, "failed_statement", failed_statement)
+        pulumi.set(__self__, "step_name", step_name)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def error(self) -> _builtins.str:
+        """
+        The text of the subsetting error.
+        """
+        return pulumi.get(self, "error")
+
+    @_builtins.property
+    @pulumi.getter(name="failedStatement")
+    def failed_statement(self) -> _builtins.str:
+        """
+        The statement resulting into the error.
+        """
+        return pulumi.get(self, "failed_statement")
+
+    @_builtins.property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> _builtins.str:
+        """
+        A filter to return only subsetting errors that match the specified step name.
+        """
+        return pulumi.get(self, "step_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetSubsettingReportsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubsettingReportsSubsettingReportCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubsettingReportsSubsettingReportCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubsettingReportsSubsettingReportCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubsettingReportsSubsettingReportCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 database_size_after_subsetting_in_kbs: _builtins.str,
+                 database_size_before_subsetting_in_kbs: _builtins.str,
+                 id: _builtins.str,
+                 is_redo_logging_enabled: _builtins.bool,
+                 is_refresh_stats_enabled: _builtins.bool,
+                 masking_policy_id: _builtins.str,
+                 masking_report_id: _builtins.str,
+                 masking_work_request_id: _builtins.str,
+                 parallel_degree: _builtins.str,
+                 recompile: _builtins.str,
+                 state: _builtins.str,
+                 subsetting_policy_id: _builtins.str,
+                 subsetting_status: _builtins.str,
+                 subsetting_work_request_id: _builtins.str,
+                 target_id: _builtins.str,
+                 time_created: _builtins.str,
+                 time_subsetting_finished: _builtins.str,
+                 time_subsetting_started: _builtins.str,
+                 total_post_subsetting_script_errors: _builtins.str,
+                 total_pre_subsetting_script_errors: _builtins.str,
+                 total_subsetted_objects: _builtins.str,
+                 total_subsetted_rows: _builtins.str,
+                 total_subsetted_schemas: _builtins.str):
+        """
+        :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param _builtins.str database_size_after_subsetting_in_kbs: The size of the target database after subsetting in KBs
+        :param _builtins.str database_size_before_subsetting_in_kbs: The size of the target database before subsetting in KBs
+        :param _builtins.str id: The OCID of the subsetting report
+        :param _builtins.bool is_redo_logging_enabled: Indicates if redo logging was enabled during the subsetting operation
+        :param _builtins.bool is_refresh_stats_enabled: Indicates if statistics gathering was enabled during the subsetting operation
+        :param _builtins.str masking_policy_id: The OCID of the masking policy associated with this subsetting report
+        :param _builtins.str masking_report_id: The OCID of the masking report associated with this subsetting report
+        :param _builtins.str masking_work_request_id: The OCID of the masking work request triggered after this subsetting job
+        :param _builtins.str parallel_degree: Indicates if parallel execution was enabled during the subsetting operation
+        :param _builtins.str recompile: Indicates how invalid objects were recompiled post the subsetting operation
+        :param _builtins.str state: The current state of the subsetting report
+        :param _builtins.str subsetting_policy_id: A filter to return only the resources that match the specified subsetting policy OCID.
+        :param _builtins.str subsetting_status: The status of the subsetting job
+        :param _builtins.str subsetting_work_request_id: The OCID of the subsetting work request that resulted in this subsetting report
+        :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+        :param _builtins.str time_created: The date and time the subsetting report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        :param _builtins.str time_subsetting_finished: The date and time data subsetting finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        :param _builtins.str time_subsetting_started: The date and time data subsetting started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        :param _builtins.str total_post_subsetting_script_errors: The total number of errors in post-subsetting script
+        :param _builtins.str total_pre_subsetting_script_errors: The total number of errors in pre-subsetting script
+        :param _builtins.str total_subsetted_objects: The total number of subsetted objects
+        :param _builtins.str total_subsetted_rows: The count of rows reduced in the subsetting job
+        :param _builtins.str total_subsetted_schemas: The total number of subsetted schemas
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_size_after_subsetting_in_kbs", database_size_after_subsetting_in_kbs)
+        pulumi.set(__self__, "database_size_before_subsetting_in_kbs", database_size_before_subsetting_in_kbs)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
+        pulumi.set(__self__, "is_refresh_stats_enabled", is_refresh_stats_enabled)
+        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        pulumi.set(__self__, "masking_report_id", masking_report_id)
+        pulumi.set(__self__, "masking_work_request_id", masking_work_request_id)
+        pulumi.set(__self__, "parallel_degree", parallel_degree)
+        pulumi.set(__self__, "recompile", recompile)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subsetting_policy_id", subsetting_policy_id)
+        pulumi.set(__self__, "subsetting_status", subsetting_status)
+        pulumi.set(__self__, "subsetting_work_request_id", subsetting_work_request_id)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_subsetting_finished", time_subsetting_finished)
+        pulumi.set(__self__, "time_subsetting_started", time_subsetting_started)
+        pulumi.set(__self__, "total_post_subsetting_script_errors", total_post_subsetting_script_errors)
+        pulumi.set(__self__, "total_pre_subsetting_script_errors", total_pre_subsetting_script_errors)
+        pulumi.set(__self__, "total_subsetted_objects", total_subsetted_objects)
+        pulumi.set(__self__, "total_subsetted_rows", total_subsetted_rows)
+        pulumi.set(__self__, "total_subsetted_schemas", total_subsetted_schemas)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseSizeAfterSubsettingInKbs")
+    def database_size_after_subsetting_in_kbs(self) -> _builtins.str:
+        """
+        The size of the target database after subsetting in KBs
+        """
+        return pulumi.get(self, "database_size_after_subsetting_in_kbs")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseSizeBeforeSubsettingInKbs")
+    def database_size_before_subsetting_in_kbs(self) -> _builtins.str:
+        """
+        The size of the target database before subsetting in KBs
+        """
+        return pulumi.get(self, "database_size_before_subsetting_in_kbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the subsetting report
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isRedoLoggingEnabled")
+    def is_redo_logging_enabled(self) -> _builtins.bool:
+        """
+        Indicates if redo logging was enabled during the subsetting operation
+        """
+        return pulumi.get(self, "is_redo_logging_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isRefreshStatsEnabled")
+    def is_refresh_stats_enabled(self) -> _builtins.bool:
+        """
+        Indicates if statistics gathering was enabled during the subsetting operation
+        """
+        return pulumi.get(self, "is_refresh_stats_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="maskingPolicyId")
+    def masking_policy_id(self) -> _builtins.str:
+        """
+        The OCID of the masking policy associated with this subsetting report
+        """
+        return pulumi.get(self, "masking_policy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="maskingReportId")
+    def masking_report_id(self) -> _builtins.str:
+        """
+        The OCID of the masking report associated with this subsetting report
+        """
+        return pulumi.get(self, "masking_report_id")
+
+    @_builtins.property
+    @pulumi.getter(name="maskingWorkRequestId")
+    def masking_work_request_id(self) -> _builtins.str:
+        """
+        The OCID of the masking work request triggered after this subsetting job
+        """
+        return pulumi.get(self, "masking_work_request_id")
+
+    @_builtins.property
+    @pulumi.getter(name="parallelDegree")
+    def parallel_degree(self) -> _builtins.str:
+        """
+        Indicates if parallel execution was enabled during the subsetting operation
+        """
+        return pulumi.get(self, "parallel_degree")
+
+    @_builtins.property
+    @pulumi.getter
+    def recompile(self) -> _builtins.str:
+        """
+        Indicates how invalid objects were recompiled post the subsetting operation
+        """
+        return pulumi.get(self, "recompile")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the subsetting report
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="subsettingPolicyId")
+    def subsetting_policy_id(self) -> _builtins.str:
+        """
+        A filter to return only the resources that match the specified subsetting policy OCID.
+        """
+        return pulumi.get(self, "subsetting_policy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subsettingStatus")
+    def subsetting_status(self) -> _builtins.str:
+        """
+        The status of the subsetting job
+        """
+        return pulumi.get(self, "subsetting_status")
+
+    @_builtins.property
+    @pulumi.getter(name="subsettingWorkRequestId")
+    def subsetting_work_request_id(self) -> _builtins.str:
+        """
+        The OCID of the subsetting work request that resulted in this subsetting report
+        """
+        return pulumi.get(self, "subsetting_work_request_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the subsetting report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeSubsettingFinished")
+    def time_subsetting_finished(self) -> _builtins.str:
+        """
+        The date and time data subsetting finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        """
+        return pulumi.get(self, "time_subsetting_finished")
+
+    @_builtins.property
+    @pulumi.getter(name="timeSubsettingStarted")
+    def time_subsetting_started(self) -> _builtins.str:
+        """
+        The date and time data subsetting started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        """
+        return pulumi.get(self, "time_subsetting_started")
+
+    @_builtins.property
+    @pulumi.getter(name="totalPostSubsettingScriptErrors")
+    def total_post_subsetting_script_errors(self) -> _builtins.str:
+        """
+        The total number of errors in post-subsetting script
+        """
+        return pulumi.get(self, "total_post_subsetting_script_errors")
+
+    @_builtins.property
+    @pulumi.getter(name="totalPreSubsettingScriptErrors")
+    def total_pre_subsetting_script_errors(self) -> _builtins.str:
+        """
+        The total number of errors in pre-subsetting script
+        """
+        return pulumi.get(self, "total_pre_subsetting_script_errors")
+
+    @_builtins.property
+    @pulumi.getter(name="totalSubsettedObjects")
+    def total_subsetted_objects(self) -> _builtins.str:
+        """
+        The total number of subsetted objects
+        """
+        return pulumi.get(self, "total_subsetted_objects")
+
+    @_builtins.property
+    @pulumi.getter(name="totalSubsettedRows")
+    def total_subsetted_rows(self) -> _builtins.str:
+        """
+        The count of rows reduced in the subsetting job
+        """
+        return pulumi.get(self, "total_subsetted_rows")
+
+    @_builtins.property
+    @pulumi.getter(name="totalSubsettedSchemas")
+    def total_subsetted_schemas(self) -> _builtins.str:
+        """
+        The total number of subsetted schemas
+        """
+        return pulumi.get(self, "total_subsetted_schemas")
+
+
+@pulumi.output_type
 class GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -40365,7 +44051,7 @@ class GetTargetDatabaseGroupMatchingCriteriaResult(dict):
                  includes: Sequence['outputs.GetTargetDatabaseGroupMatchingCriteriaIncludeResult']):
         """
         :param Sequence['GetTargetDatabaseGroupMatchingCriteriaExcludeArgs'] excludes: Criteria to exclude certain target databases from the target database group.
-        :param Sequence['GetTargetDatabaseGroupMatchingCriteriaIncludeArgs'] includes: Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+        :param Sequence['GetTargetDatabaseGroupMatchingCriteriaIncludeArgs'] includes: Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
         """
         pulumi.set(__self__, "excludes", excludes)
         pulumi.set(__self__, "includes", includes)
@@ -40382,7 +44068,7 @@ class GetTargetDatabaseGroupMatchingCriteriaResult(dict):
     @pulumi.getter
     def includes(self) -> Sequence['outputs.GetTargetDatabaseGroupMatchingCriteriaIncludeResult']:
         """
-        Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+        Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
         """
         return pulumi.get(self, "includes")
 
@@ -40411,16 +44097,22 @@ class GetTargetDatabaseGroupMatchingCriteriaIncludeResult(dict):
                  compartments: Sequence['outputs.GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentResult'],
                  defined_tags: Mapping[str, _builtins.str],
                  freeform_tags: Mapping[str, _builtins.str],
+                 freeform_tags_in: Mapping[str, Sequence[_builtins.str]],
+                 system_tags: Mapping[str, Sequence[_builtins.str]],
                  target_database_ids: Sequence[_builtins.str]):
         """
         :param Sequence['GetTargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs'] compartments: List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param Mapping[str, Sequence[_builtins.str]] freeform_tags_in: Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+        :param Mapping[str, Sequence[_builtins.str]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param Sequence[_builtins.str] target_database_ids: The list of target database OCIDs to be included in the target database group.
         """
         pulumi.set(__self__, "compartments", compartments)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "freeform_tags_in", freeform_tags_in)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_database_ids", target_database_ids)
 
     @_builtins.property
@@ -40446,6 +44138,22 @@ class GetTargetDatabaseGroupMatchingCriteriaIncludeResult(dict):
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTagsIn")
+    def freeform_tags_in(self) -> Mapping[str, Sequence[_builtins.str]]:
+        """
+        Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+        """
+        return pulumi.get(self, "freeform_tags_in")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Sequence[_builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="targetDatabaseIds")
@@ -40692,7 +44400,7 @@ class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaRe
                  includes: Sequence['outputs.GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeResult']):
         """
         :param Sequence['GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArgs'] excludes: Criteria to exclude certain target databases from the target database group.
-        :param Sequence['GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArgs'] includes: Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+        :param Sequence['GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArgs'] includes: Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
         """
         pulumi.set(__self__, "excludes", excludes)
         pulumi.set(__self__, "includes", includes)
@@ -40709,7 +44417,7 @@ class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaRe
     @pulumi.getter
     def includes(self) -> Sequence['outputs.GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeResult']:
         """
-        Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+        Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
         """
         return pulumi.get(self, "includes")
 
@@ -40738,16 +44446,22 @@ class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIn
                  compartments: Sequence['outputs.GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentResult'],
                  defined_tags: Mapping[str, _builtins.str],
                  freeform_tags: Mapping[str, _builtins.str],
+                 freeform_tags_in: Mapping[str, Sequence[_builtins.str]],
+                 system_tags: Mapping[str, Sequence[_builtins.str]],
                  target_database_ids: Sequence[_builtins.str]):
         """
         :param Sequence['GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartmentArgs'] compartments: List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param Mapping[str, Sequence[_builtins.str]] freeform_tags_in: Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+        :param Mapping[str, Sequence[_builtins.str]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param Sequence[_builtins.str] target_database_ids: The list of target database OCIDs to be included in the target database group.
         """
         pulumi.set(__self__, "compartments", compartments)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "freeform_tags_in", freeform_tags_in)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_database_ids", target_database_ids)
 
     @_builtins.property
@@ -40773,6 +44487,22 @@ class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIn
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTagsIn")
+    def freeform_tags_in(self) -> Mapping[str, Sequence[_builtins.str]]:
+        """
+        Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+        """
+        return pulumi.get(self, "freeform_tags_in")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Sequence[_builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="targetDatabaseIds")
@@ -42250,9 +45980,11 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
                  display_name: _builtins.str,
+                 features: Sequence[_builtins.str],
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
+                 manage_privileges_trigger: _builtins.int,
                  peer_target_database_details: Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailResult'],
                  peer_target_databases: Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseResult'],
                  state: _builtins.str,
@@ -42269,6 +46001,7 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: The description of the peer target database in Data Safe.
         :param _builtins.str display_name: A filter to return only resources that match the specified display name.
+        :param Sequence[_builtins.str] features: List of enabled features based on granted ORA_DSCS_* roles in target database
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The OCID of the Data Safe target database.
         :param _builtins.str lifecycle_details: Details about the current state of the peer target database in Data Safe.
@@ -42287,9 +46020,11 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "features", features)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "manage_privileges_trigger", manage_privileges_trigger)
         pulumi.set(__self__, "peer_target_database_details", peer_target_database_details)
         pulumi.set(__self__, "peer_target_databases", peer_target_databases)
         pulumi.set(__self__, "state", state)
@@ -42363,6 +46098,14 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter
+    def features(self) -> Sequence[_builtins.str]:
+        """
+        List of enabled features based on granted ORA_DSCS_* roles in target database
+        """
+        return pulumi.get(self, "features")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -42385,6 +46128,11 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
         Details about the current state of the peer target database in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="managePrivilegesTrigger")
+    def manage_privileges_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "manage_privileges_trigger")
 
     @_builtins.property
     @pulumi.getter(name="peerTargetDatabaseDetails")

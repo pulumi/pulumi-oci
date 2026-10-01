@@ -23,6 +23,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     private Boolean isZeroDataLossEnabled;
     private String remoteRegion;
     private String type;
+    private String vpcUser;
 
     private GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail() {}
     public String backupRetentionPolicyOnTerminate() {
@@ -53,6 +54,9 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     public String type() {
         return this.type;
     }
+    public String vpcUser() {
+        return this.vpcUser;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -71,6 +75,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
         private Boolean isZeroDataLossEnabled;
         private String remoteRegion;
         private String type;
+        private String vpcUser;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -82,6 +87,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     	      this.isZeroDataLossEnabled = defaults.isZeroDataLossEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
+    	      this.vpcUser = defaults.vpcUser;
         }
 
         @CustomType.Setter
@@ -148,6 +154,14 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
             this.type = type;
             return this;
         }
+        @CustomType.Setter
+        public Builder vpcUser(String vpcUser) {
+            if (vpcUser == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "vpcUser");
+            }
+            this.vpcUser = vpcUser;
+            return this;
+        }
         public GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail build() {
             final var _resultValue = new GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail();
             _resultValue.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
@@ -158,6 +172,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
             _resultValue.isZeroDataLossEnabled = isZeroDataLossEnabled;
             _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
+            _resultValue.vpcUser = vpcUser;
             return _resultValue;
         }
     }

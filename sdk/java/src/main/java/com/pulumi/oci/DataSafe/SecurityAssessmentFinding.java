@@ -118,6 +118,12 @@ public class SecurityAssessmentFinding extends com.pulumi.resources.CustomResour
     public Output<List<String>> details() {
         return this.details;
     }
+    @Export(name="doclink", refs={String.class}, tree="[0]")
+    private Output<String> doclink;
+
+    public Output<String> doclink() {
+        return this.doclink;
+    }
     /**
      * Determines if this risk level has changed on the target database since the last time &#39;severity&#39; was modified by user.
      * 

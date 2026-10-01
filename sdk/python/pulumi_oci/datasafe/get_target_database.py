@@ -27,7 +27,7 @@ class GetTargetDatabaseResult:
     """
     A collection of values returned by getTargetDatabase.
     """
-    def __init__(__self__, associated_resource_ids=None, compartment_id=None, connection_options=None, credentials=None, database_details=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, peer_target_database_details=None, peer_target_databases=None, state=None, system_tags=None, target_database_id=None, time_created=None, time_updated=None, tls_configs=None):
+    def __init__(__self__, associated_resource_ids=None, compartment_id=None, connection_options=None, credentials=None, database_details=None, defined_tags=None, description=None, display_name=None, features=None, freeform_tags=None, id=None, lifecycle_details=None, manage_privileges_trigger=None, peer_target_database_details=None, peer_target_databases=None, state=None, system_tags=None, target_database_id=None, time_created=None, time_updated=None, tls_configs=None):
         if associated_resource_ids and not isinstance(associated_resource_ids, list):
             raise TypeError("Expected argument 'associated_resource_ids' to be a list")
         pulumi.set(__self__, "associated_resource_ids", associated_resource_ids)
@@ -52,6 +52,9 @@ class GetTargetDatabaseResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if features and not isinstance(features, list):
+            raise TypeError("Expected argument 'features' to be a list")
+        pulumi.set(__self__, "features", features)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -61,6 +64,9 @@ class GetTargetDatabaseResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if manage_privileges_trigger and not isinstance(manage_privileges_trigger, int):
+            raise TypeError("Expected argument 'manage_privileges_trigger' to be a int")
+        pulumi.set(__self__, "manage_privileges_trigger", manage_privileges_trigger)
         if peer_target_database_details and not isinstance(peer_target_database_details, list):
             raise TypeError("Expected argument 'peer_target_database_details' to be a list")
         pulumi.set(__self__, "peer_target_database_details", peer_target_database_details)
@@ -151,6 +157,14 @@ class GetTargetDatabaseResult:
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter
+    def features(self) -> Sequence[_builtins.str]:
+        """
+        List of enabled features based on granted ORA_DSCS_* roles in target database
+        """
+        return pulumi.get(self, "features")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -173,6 +187,11 @@ class GetTargetDatabaseResult:
         Details about the current state of the peer target database in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="managePrivilegesTrigger")
+    def manage_privileges_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "manage_privileges_trigger")
 
     @_builtins.property
     @pulumi.getter(name="peerTargetDatabaseDetails")
@@ -247,9 +266,11 @@ class AwaitableGetTargetDatabaseResult(GetTargetDatabaseResult):
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
+            features=self.features,
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
+            manage_privileges_trigger=self.manage_privileges_trigger,
             peer_target_database_details=self.peer_target_database_details,
             peer_target_databases=self.peer_target_databases,
             state=self.state,
@@ -293,9 +314,11 @@ def get_target_database(target_database_id: Optional[_builtins.str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        features=pulumi.get(__ret__, 'features'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        manage_privileges_trigger=pulumi.get(__ret__, 'manage_privileges_trigger'),
         peer_target_database_details=pulumi.get(__ret__, 'peer_target_database_details'),
         peer_target_databases=pulumi.get(__ret__, 'peer_target_databases'),
         state=pulumi.get(__ret__, 'state'),
@@ -336,9 +359,11 @@ def get_target_database_output(target_database_id: pulumi.Input[Optional[_builti
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
+        features=pulumi.get(__response__, 'features'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        manage_privileges_trigger=pulumi.get(__response__, 'manage_privileges_trigger'),
         peer_target_database_details=pulumi.get(__response__, 'peer_target_database_details'),
         peer_target_databases=pulumi.get(__response__, 'peer_target_databases'),
         state=pulumi.get(__response__, 'state'),

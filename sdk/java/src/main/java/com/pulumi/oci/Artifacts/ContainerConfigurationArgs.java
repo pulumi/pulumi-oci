@@ -15,22 +15,36 @@ public final class ContainerConfigurationArgs extends com.pulumi.resources.Resou
 
     public static final ContainerConfigurationArgs Empty = new ContainerConfigurationArgs();
 
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
 
     /**
-     * Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="isRepositoryCreatedOnFirstPush", required=true)
     private Output<Boolean> isRepositoryCreatedOnFirstPush;
 
     /**
-     * @return Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * @return (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> isRepositoryCreatedOnFirstPush() {
@@ -62,17 +76,32 @@ public final class ContainerConfigurationArgs extends com.pulumi.resources.Resou
             $ = new ContainerConfigurationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
+        /**
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
         }
 
         /**
-         * @param isRepositoryCreatedOnFirstPush Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+         * @param isRepositoryCreatedOnFirstPush (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -83,7 +112,10 @@ public final class ContainerConfigurationArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param isRepositoryCreatedOnFirstPush Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+         * @param isRepositoryCreatedOnFirstPush (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

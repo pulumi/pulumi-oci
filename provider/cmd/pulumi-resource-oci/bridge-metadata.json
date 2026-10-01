@@ -4443,6 +4443,14 @@
                     }
                 }
             },
+            "oci_core_drg_nat_policy": {
+                "current": "oci:Core/drgNatPolicy:DrgNatPolicy",
+                "majorVersion": 5
+            },
+            "oci_core_drg_nat_policy_drg_nat_rule": {
+                "current": "oci:Core/drgNatPolicyDrgNatRule:DrgNatPolicyDrgNatRule",
+                "majorVersion": 5
+            },
             "oci_core_drg_route_distribution": {
                 "current": "oci:Core/drgRouteDistribution:DrgRouteDistribution",
                 "majorVersion": 5
@@ -5785,6 +5793,15 @@
                     }
                 }
             },
+            "oci_data_safe_estimate_table_sizes": {
+                "current": "oci:DataSafe/estimateTableSizes:EstimateTableSizes",
+                "majorVersion": 5,
+                "fields": {
+                    "target_credentials": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
             "oci_data_safe_generate_on_prem_connector_configuration": {
                 "current": "oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration",
                 "majorVersion": 5
@@ -5873,6 +5890,25 @@
             "oci_data_safe_on_prem_connector": {
                 "current": "oci:DataSafe/onPremConnector:OnPremConnector",
                 "majorVersion": 5
+            },
+            "oci_data_safe_registration_policy": {
+                "current": "oci:DataSafe/registrationPolicy:RegistrationPolicy",
+                "majorVersion": 5,
+                "fields": {
+                    "connection_option": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "identifiers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "features": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "oci_data_safe_report": {
                 "current": "oci:DataSafe/report:Report",
@@ -6209,6 +6245,108 @@
                     }
                 }
             },
+            "oci_data_safe_subset_data": {
+                "current": "oci:DataSafe/subsetData:SubsetData",
+                "majorVersion": 5,
+                "fields": {
+                    "target_credentials": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy": {
+                "current": "oci:DataSafe/subsettingPolicy:SubsettingPolicy",
+                "majorVersion": 5,
+                "fields": {
+                    "schema_source": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "derived_schemas": {
+                                    "maxItemsOne": false
+                                },
+                                "schemas_for_subsetting": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "target_credentials": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_health_report_management": {
+                "current": "oci:DataSafe/subsettingPolicyHealthReportManagement:SubsettingPolicyHealthReportManagement",
+                "majorVersion": 5,
+                "fields": {
+                    "target_credentials": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_subsetting_rule": {
+                "current": "oci:DataSafe/subsettingPolicySubsettingRule:SubsettingPolicySubsettingRule",
+                "majorVersion": 5,
+                "fields": {
+                    "scope": {
+                        "maxItemsOne": true
+                    },
+                    "subset_rule_entry": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "partitions_list": {
+                                    "maxItemsOne": false
+                                },
+                                "sub_partitions_list": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_subsetting_rule_processing_chain_object": {
+                "current": "oci:DataSafe/subsettingPolicySubsettingRuleProcessingChainObject:SubsettingPolicySubsettingRuleProcessingChainObject",
+                "majorVersion": 5,
+                "fields": {
+                    "items": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "child_columns": {
+                                    "maxItemsOne": false
+                                },
+                                "parent_columns": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_subsetting_schema_relation": {
+                "current": "oci:DataSafe/subsettingPolicySubsettingSchemaRelation:SubsettingPolicySubsettingSchemaRelation",
+                "majorVersion": 5,
+                "fields": {
+                    "child_columns": {
+                        "maxItemsOne": false
+                    },
+                    "parent_columns": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_report_management": {
+                "current": "oci:DataSafe/subsettingReportManagement:SubsettingReportManagement",
+                "majorVersion": 5,
+                "fields": {
+                    "target_credentials": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
             "oci_data_safe_target_alert_policy_association": {
                 "current": "oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation",
                 "majorVersion": 5
@@ -6235,6 +6373,9 @@
                                 }
                             }
                         }
+                    },
+                    "features": {
+                        "maxItemsOne": false
                     },
                     "peer_target_database_details": {
                         "maxItemsOne": false,
@@ -6305,6 +6446,16 @@
                                         "fields": {
                                             "compartments": {
                                                 "maxItemsOne": false
+                                            },
+                                            "freeform_tags_in": {
+                                                "elem": {
+                                                    "maxItemsOne": false
+                                                }
+                                            },
+                                            "system_tags": {
+                                                "elem": {
+                                                    "maxItemsOne": false
+                                                }
                                             },
                                             "target_database_ids": {
                                                 "maxItemsOne": false
@@ -38146,6 +38297,48 @@
                     }
                 }
             },
+            "oci_core_drg_nat_policies": {
+                "current": "oci:Core/getDrgNatPolicies:getDrgNatPolicies",
+                "majorVersion": 5,
+                "fields": {
+                    "drg_nat_policies": {
+                        "maxItemsOne": false
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_core_drg_nat_policy": {
+                "current": "oci:Core/getDrgNatPolicy:getDrgNatPolicy",
+                "majorVersion": 5
+            },
+            "oci_core_drg_nat_policy_drg_nat_rules": {
+                "current": "oci:Core/getDrgNatPolicyDrgNatRules:getDrgNatPolicyDrgNatRules",
+                "majorVersion": 5,
+                "fields": {
+                    "drg_nat_rules": {
+                        "maxItemsOne": false
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "oci_core_drg_route_distribution": {
                 "current": "oci:Core/getDrgRouteDistribution:getDrgRouteDistribution",
                 "majorVersion": 5
@@ -43571,6 +43764,94 @@
                     }
                 }
             },
+            "oci_data_safe_registration_policies": {
+                "current": "oci:DataSafe/getRegistrationPolicies:getRegistrationPolicies",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "registration_policy_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "connection_option": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "identifiers": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "features": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_registration_policy": {
+                "current": "oci:DataSafe/getRegistrationPolicy:getRegistrationPolicy",
+                "majorVersion": 5,
+                "fields": {
+                    "connection_option": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "identifiers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "features": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_registration_policy_target_databases": {
+                "current": "oci:DataSafe/getRegistrationPolicyTargetDatabases:getRegistrationPolicyTargetDatabases",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "registration_policy_target_database_summary_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "oci_data_safe_report": {
                 "current": "oci:DataSafe/getReport:getReport",
                 "majorVersion": 5
@@ -45859,6 +46140,508 @@
                     }
                 }
             },
+            "oci_data_safe_subsetting_analytics": {
+                "current": "oci:DataSafe/getSubsettingAnalytics:getSubsettingAnalytics",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "subsetting_analytics_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "dimensions": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policies": {
+                "current": "oci:DataSafe/getSubsettingPolicies:getSubsettingPolicies",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "subsetting_policy_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "schema_source": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "derived_schemas": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "schemas_for_subsetting": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "target_credentials": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy": {
+                "current": "oci:DataSafe/getSubsettingPolicy:getSubsettingPolicy",
+                "majorVersion": 5,
+                "fields": {
+                    "schema_source": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "derived_schemas": {
+                                    "maxItemsOne": false
+                                },
+                                "schemas_for_subsetting": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "target_credentials": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_health_report": {
+                "current": "oci:DataSafe/getSubsettingPolicyHealthReport:getSubsettingPolicyHealthReport",
+                "majorVersion": 5
+            },
+            "oci_data_safe_subsetting_policy_health_report_logs": {
+                "current": "oci:DataSafe/getSubsettingPolicyHealthReportLogs:getSubsettingPolicyHealthReportLogs",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "subsetting_policy_health_report_log_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_health_reports": {
+                "current": "oci:DataSafe/getSubsettingPolicyHealthReports:getSubsettingPolicyHealthReports",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "subsetting_policy_health_report_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_subsetting_rule": {
+                "current": "oci:DataSafe/getSubsettingPolicySubsettingRule:getSubsettingPolicySubsettingRule",
+                "majorVersion": 5,
+                "fields": {
+                    "scope": {
+                        "maxItemsOne": false
+                    },
+                    "subset_rule_entry": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "partitions_list": {
+                                    "maxItemsOne": false
+                                },
+                                "sub_partitions_list": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_subsetting_rule_processing_chain_objects": {
+                "current": "oci:DataSafe/getSubsettingPolicySubsettingRuleProcessingChainObjects:getSubsettingPolicySubsettingRuleProcessingChainObjects",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "subsetting_rule_processing_chain_objects_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "child_columns": {
+                                                "maxItemsOne": false
+                                            },
+                                            "parent_columns": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_subsetting_rules": {
+                "current": "oci:DataSafe/getSubsettingPolicySubsettingRules:getSubsettingPolicySubsettingRules",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "object": {
+                        "maxItemsOne": false
+                    },
+                    "schema_name": {
+                        "maxItemsOne": false
+                    },
+                    "subsetting_rule_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "scope": {
+                                                "maxItemsOne": true
+                                            },
+                                            "subset_rule_entry": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "partitions_list": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "sub_partitions_list": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_subsetting_schema_objects": {
+                "current": "oci:DataSafe/getSubsettingPolicySubsettingSchemaObjects:getSubsettingPolicySubsettingSchemaObjects",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "object": {
+                        "maxItemsOne": false
+                    },
+                    "schema_name": {
+                        "maxItemsOne": false
+                    },
+                    "subsetting_schema_object_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_subsetting_schema_relation": {
+                "current": "oci:DataSafe/getSubsettingPolicySubsettingSchemaRelation:getSubsettingPolicySubsettingSchemaRelation",
+                "majorVersion": 5,
+                "fields": {
+                    "child_columns": {
+                        "maxItemsOne": false
+                    },
+                    "parent_columns": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_subsetting_schema_relations": {
+                "current": "oci:DataSafe/getSubsettingPolicySubsettingSchemaRelations:getSubsettingPolicySubsettingSchemaRelations",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "object": {
+                        "maxItemsOne": false
+                    },
+                    "schema_name": {
+                        "maxItemsOne": false
+                    },
+                    "subsetting_schema_relation_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "child_columns": {
+                                                "maxItemsOne": false
+                                            },
+                                            "parent_columns": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_subsetting_schemas": {
+                "current": "oci:DataSafe/getSubsettingPolicySubsettingSchemas:getSubsettingPolicySubsettingSchemas",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "schema_name": {
+                        "maxItemsOne": false
+                    },
+                    "subsetting_schema_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_policy_table_estimates": {
+                "current": "oci:DataSafe/getSubsettingPolicyTableEstimates:getSubsettingPolicyTableEstimates",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "object": {
+                        "maxItemsOne": false
+                    },
+                    "schema_name": {
+                        "maxItemsOne": false
+                    },
+                    "table_estimate_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_report": {
+                "current": "oci:DataSafe/getSubsettingReport:getSubsettingReport",
+                "majorVersion": 5
+            },
+            "oci_data_safe_subsetting_report_subsetted_objects": {
+                "current": "oci:DataSafe/getSubsettingReportSubsettedObjects:getSubsettingReportSubsettedObjects",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "object": {
+                        "maxItemsOne": false
+                    },
+                    "schema_name": {
+                        "maxItemsOne": false
+                    },
+                    "subsetted_object_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_report_subsetting_errors": {
+                "current": "oci:DataSafe/getSubsettingReportSubsettingErrors:getSubsettingReportSubsettingErrors",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "subsetting_error_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_data_safe_subsetting_reports": {
+                "current": "oci:DataSafe/getSubsettingReports:getSubsettingReports",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "subsetting_report_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "oci_data_safe_target_alert_policy_association": {
                 "current": "oci:DataSafe/getTargetAlertPolicyAssociation:getTargetAlertPolicyAssociation",
                 "majorVersion": 5
@@ -45938,6 +46721,9 @@
                             }
                         }
                     },
+                    "features": {
+                        "maxItemsOne": false
+                    },
                     "peer_target_database_details": {
                         "maxItemsOne": false,
                         "elem": {
@@ -46008,6 +46794,16 @@
                                             "compartments": {
                                                 "maxItemsOne": false
                                             },
+                                            "freeform_tags_in": {
+                                                "elem": {
+                                                    "maxItemsOne": false
+                                                }
+                                            },
+                                            "system_tags": {
+                                                "elem": {
+                                                    "maxItemsOne": false
+                                                }
+                                            },
                                             "target_database_ids": {
                                                 "maxItemsOne": false
                                             }
@@ -46070,6 +46866,16 @@
                                                                 "fields": {
                                                                     "compartments": {
                                                                         "maxItemsOne": false
+                                                                    },
+                                                                    "freeform_tags_in": {
+                                                                        "elem": {
+                                                                            "maxItemsOne": false
+                                                                        }
+                                                                    },
+                                                                    "system_tags": {
+                                                                        "elem": {
+                                                                            "maxItemsOne": false
+                                                                        }
                                                                     },
                                                                     "target_database_ids": {
                                                                         "maxItemsOne": false
@@ -46230,6 +47036,9 @@
                                             }
                                         }
                                     }
+                                },
+                                "features": {
+                                    "maxItemsOne": false
                                 },
                                 "peer_target_database_details": {
                                     "maxItemsOne": false,

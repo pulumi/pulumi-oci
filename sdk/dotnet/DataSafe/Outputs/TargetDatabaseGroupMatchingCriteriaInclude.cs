@@ -26,6 +26,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string>? FreeformTags;
         /// <summary>
+        /// (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+        /// </summary>
+        public readonly ImmutableDictionary<string, ImmutableArray<string>>? FreeformTagsIn;
+        /// <summary>
+        /// (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+        /// </summary>
+        public readonly ImmutableDictionary<string, ImmutableArray<string>>? SystemTags;
+        /// <summary>
         /// (Updatable) The list of target database OCIDs to be included in the target database group.
         /// 
         /// 
@@ -42,11 +50,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableDictionary<string, string>? freeformTags,
 
+            ImmutableDictionary<string, ImmutableArray<string>>? freeformTagsIn,
+
+            ImmutableDictionary<string, ImmutableArray<string>>? systemTags,
+
             ImmutableArray<string> targetDatabaseIds)
         {
             Compartments = compartments;
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
+            FreeformTagsIn = freeformTagsIn;
+            SystemTags = systemTags;
             TargetDatabaseIds = targetDatabaseIds;
         }
     }

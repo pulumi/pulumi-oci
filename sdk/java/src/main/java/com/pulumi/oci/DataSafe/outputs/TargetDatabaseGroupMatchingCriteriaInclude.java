@@ -29,6 +29,16 @@ public final class TargetDatabaseGroupMatchingCriteriaInclude {
      */
     private @Nullable Map<String,String> freeformTags;
     /**
+     * @return (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it&#39;s tag value equals any of the values in the array.
+     * 
+     */
+    private @Nullable Map<String,List<String>> freeformTagsIn;
+    /**
+     * @return (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+     * 
+     */
+    private @Nullable Map<String,List<String>> systemTags;
+    /**
      * @return (Updatable) The list of target database OCIDs to be included in the target database group.
      * 
      * ** IMPORTANT **
@@ -60,6 +70,20 @@ public final class TargetDatabaseGroupMatchingCriteriaInclude {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
+     * @return (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it&#39;s tag value equals any of the values in the array.
+     * 
+     */
+    public Map<String,List<String>> freeformTagsIn() {
+        return this.freeformTagsIn == null ? Map.of() : this.freeformTagsIn;
+    }
+    /**
+     * @return (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+     * 
+     */
+    public Map<String,List<String>> systemTags() {
+        return this.systemTags == null ? Map.of() : this.systemTags;
+    }
+    /**
      * @return (Updatable) The list of target database OCIDs to be included in the target database group.
      * 
      * ** IMPORTANT **
@@ -82,6 +106,8 @@ public final class TargetDatabaseGroupMatchingCriteriaInclude {
         private @Nullable List<TargetDatabaseGroupMatchingCriteriaIncludeCompartment> compartments;
         private @Nullable Map<String,String> definedTags;
         private @Nullable Map<String,String> freeformTags;
+        private @Nullable Map<String,List<String>> freeformTagsIn;
+        private @Nullable Map<String,List<String>> systemTags;
         private @Nullable List<String> targetDatabaseIds;
         public Builder() {}
         public Builder(TargetDatabaseGroupMatchingCriteriaInclude defaults) {
@@ -89,6 +115,8 @@ public final class TargetDatabaseGroupMatchingCriteriaInclude {
     	      this.compartments = defaults.compartments;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.freeformTagsIn = defaults.freeformTagsIn;
+    	      this.systemTags = defaults.systemTags;
     	      this.targetDatabaseIds = defaults.targetDatabaseIds;
         }
 
@@ -114,6 +142,18 @@ public final class TargetDatabaseGroupMatchingCriteriaInclude {
             return this;
         }
         @CustomType.Setter
+        public Builder freeformTagsIn(@Nullable Map<String,List<String>> freeformTagsIn) {
+
+            this.freeformTagsIn = freeformTagsIn;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(@Nullable Map<String,List<String>> systemTags) {
+
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetDatabaseIds(@Nullable List<String> targetDatabaseIds) {
 
             this.targetDatabaseIds = targetDatabaseIds;
@@ -127,6 +167,8 @@ public final class TargetDatabaseGroupMatchingCriteriaInclude {
             _resultValue.compartments = compartments;
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.freeformTagsIn = freeformTagsIn;
+            _resultValue.systemTags = systemTags;
             _resultValue.targetDatabaseIds = targetDatabaseIds;
             return _resultValue;
         }

@@ -30,6 +30,9 @@ namespace Pulumi.Oci.DataSafe.Inputs
         [Input("obp")]
         public Input<string>? Obp { get; set; }
 
+        [Input("orp")]
+        public Input<string>? Orp { get; set; }
+
         /// <summary>
         /// Relevant section from STIG.
         /// </summary>

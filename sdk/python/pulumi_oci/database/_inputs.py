@@ -10272,6 +10272,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict(TypedDict):
     weeks_of_months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]]
     """
     (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    <<<<<<< ours
     """
 
 @pulumi.input_type
@@ -10303,6 +10304,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
         :param pulumi.Input[_builtins.str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+               <<<<<<< ours
         """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -10455,6 +10457,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     def weeks_of_months(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        <<<<<<< ours
         """
         return pulumi.get(self, "weeks_of_months")
 
@@ -20479,6 +20482,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedD
     """
     Type of the database backup destination.
     """
+    vpc_user: NotRequired[pulumi.Input[Optional[_builtins.str]]]
 
 @pulumi.input_type
 class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
@@ -20490,7 +20494,8 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
                  is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_zero_data_loss_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  remote_region: pulumi.Input[Optional[_builtins.str]] = None,
-                 type: pulumi.Input[Optional[_builtins.str]] = None):
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_user: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
@@ -20516,6 +20521,8 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
 
     @_builtins.property
     @pulumi.getter(name="backupRetentionPolicyOnTerminate")
@@ -20609,6 +20616,15 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @type.setter
     def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "vpc_user")
+
+    @vpc_user.setter
+    def vpc_user(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vpc_user", value)
 
 
 class DbSystemDbSystemOptionsArgsDict(TypedDict):

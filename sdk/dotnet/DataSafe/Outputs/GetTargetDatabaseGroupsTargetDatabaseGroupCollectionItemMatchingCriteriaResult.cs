@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeResult> Excludes;
         /// <summary>
-        /// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+        /// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeResult> Includes;
 

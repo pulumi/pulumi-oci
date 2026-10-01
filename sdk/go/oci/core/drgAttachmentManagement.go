@@ -47,6 +47,7 @@ import (
 //				DrgId:           pulumi.Any(testDrg.Id),
 //				DisplayName:     pulumi.String("MyTestDrgAttachmentForRpc"),
 //				DrgRouteTableId: pulumi.Any(testDrgRouteTable.Id),
+//				DrgNatPolicyId:  pulumi.Any(testDrgNatPolicy.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -66,9 +67,12 @@ type DrgAttachmentManagement struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName                       pulumi.StringOutput `pulumi:"displayName"`
+	DoesPreserveOriginalRoutesWithNat pulumi.BoolOutput   `pulumi:"doesPreserveOriginalRoutesWithNat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId pulumi.StringOutput `pulumi:"drgId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+	DrgNatPolicyId pulumi.StringOutput `pulumi:"drgNatPolicyId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId pulumi.StringOutput `pulumi:"drgRouteTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
@@ -81,6 +85,8 @@ type DrgAttachmentManagement struct {
 	NetworkDetails DrgAttachmentManagementNetworkDetailsOutput `pulumi:"networkDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
 	NetworkId pulumi.StringPtrOutput `pulumi:"networkId"`
+	// (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+	RemoveDrgNatPolicyTrigger pulumi.BoolPtrOutput `pulumi:"removeDrgNatPolicyTrigger"`
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger pulumi.BoolPtrOutput `pulumi:"removeExportDrgRouteDistributionTrigger"`
 	// The OCID of the route table the DRG attachment is using.
@@ -143,9 +149,12 @@ type drgAttachmentManagementState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName *string `pulumi:"displayName"`
+	DisplayName                       *string `pulumi:"displayName"`
+	DoesPreserveOriginalRoutesWithNat *bool   `pulumi:"doesPreserveOriginalRoutesWithNat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId *string `pulumi:"drgId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+	DrgNatPolicyId *string `pulumi:"drgNatPolicyId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId *string `pulumi:"drgRouteTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
@@ -158,6 +167,8 @@ type drgAttachmentManagementState struct {
 	NetworkDetails *DrgAttachmentManagementNetworkDetails `pulumi:"networkDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
 	NetworkId *string `pulumi:"networkId"`
+	// (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+	RemoveDrgNatPolicyTrigger *bool `pulumi:"removeDrgNatPolicyTrigger"`
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger *bool `pulumi:"removeExportDrgRouteDistributionTrigger"`
 	// The OCID of the route table the DRG attachment is using.
@@ -182,9 +193,12 @@ type DrgAttachmentManagementState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringPtrInput
+	DisplayName                       pulumi.StringPtrInput
+	DoesPreserveOriginalRoutesWithNat pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+	DrgNatPolicyId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
@@ -197,6 +211,8 @@ type DrgAttachmentManagementState struct {
 	NetworkDetails DrgAttachmentManagementNetworkDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
 	NetworkId pulumi.StringPtrInput
+	// (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+	RemoveDrgNatPolicyTrigger pulumi.BoolPtrInput
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger pulumi.BoolPtrInput
 	// The OCID of the route table the DRG attachment is using.
@@ -225,9 +241,12 @@ type drgAttachmentManagementArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName *string `pulumi:"displayName"`
+	DisplayName                       *string `pulumi:"displayName"`
+	DoesPreserveOriginalRoutesWithNat *bool   `pulumi:"doesPreserveOriginalRoutesWithNat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId string `pulumi:"drgId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+	DrgNatPolicyId *string `pulumi:"drgNatPolicyId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId *string `pulumi:"drgRouteTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
@@ -238,6 +257,8 @@ type drgAttachmentManagementArgs struct {
 	NetworkDetails *DrgAttachmentManagementNetworkDetails `pulumi:"networkDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
 	NetworkId *string `pulumi:"networkId"`
+	// (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+	RemoveDrgNatPolicyTrigger *bool `pulumi:"removeDrgNatPolicyTrigger"`
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger *bool `pulumi:"removeExportDrgRouteDistributionTrigger"`
 	// The OCID of the route table the DRG attachment is using.
@@ -259,9 +280,12 @@ type DrgAttachmentManagementArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringPtrInput
+	DisplayName                       pulumi.StringPtrInput
+	DoesPreserveOriginalRoutesWithNat pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId pulumi.StringInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+	DrgNatPolicyId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
 	DrgRouteTableId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
@@ -272,6 +296,8 @@ type DrgAttachmentManagementArgs struct {
 	NetworkDetails DrgAttachmentManagementNetworkDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
 	NetworkId pulumi.StringPtrInput
+	// (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+	RemoveDrgNatPolicyTrigger pulumi.BoolPtrInput
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger pulumi.BoolPtrInput
 	// The OCID of the route table the DRG attachment is using.
@@ -391,9 +417,18 @@ func (o DrgAttachmentManagementOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+func (o DrgAttachmentManagementOutput) DoesPreserveOriginalRoutesWithNat() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.BoolOutput { return v.DoesPreserveOriginalRoutesWithNat }).(pulumi.BoolOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 func (o DrgAttachmentManagementOutput) DrgId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.DrgId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+func (o DrgAttachmentManagementOutput) DrgNatPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.DrgNatPolicyId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
@@ -424,6 +459,11 @@ func (o DrgAttachmentManagementOutput) NetworkDetails() DrgAttachmentManagementN
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
 func (o DrgAttachmentManagementOutput) NetworkId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringPtrOutput { return v.NetworkId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+func (o DrgAttachmentManagementOutput) RemoveDrgNatPolicyTrigger() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.BoolPtrOutput { return v.RemoveDrgNatPolicyTrigger }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.

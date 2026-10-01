@@ -155,6 +155,16 @@ export type DrgAttachmentsList = import("./drgAttachmentsList").DrgAttachmentsLi
 export const DrgAttachmentsList: typeof import("./drgAttachmentsList").DrgAttachmentsList = null as any;
 utilities.lazyLoad(exports, ["DrgAttachmentsList"], () => require("./drgAttachmentsList"));
 
+export { DrgNatPolicyArgs, DrgNatPolicyState } from "./drgNatPolicy";
+export type DrgNatPolicy = import("./drgNatPolicy").DrgNatPolicy;
+export const DrgNatPolicy: typeof import("./drgNatPolicy").DrgNatPolicy = null as any;
+utilities.lazyLoad(exports, ["DrgNatPolicy"], () => require("./drgNatPolicy"));
+
+export { DrgNatPolicyDrgNatRuleArgs, DrgNatPolicyDrgNatRuleState } from "./drgNatPolicyDrgNatRule";
+export type DrgNatPolicyDrgNatRule = import("./drgNatPolicyDrgNatRule").DrgNatPolicyDrgNatRule;
+export const DrgNatPolicyDrgNatRule: typeof import("./drgNatPolicyDrgNatRule").DrgNatPolicyDrgNatRule = null as any;
+utilities.lazyLoad(exports, ["DrgNatPolicyDrgNatRule"], () => require("./drgNatPolicyDrgNatRule"));
+
 export { DrgRouteDistributionArgs, DrgRouteDistributionState } from "./drgRouteDistribution";
 export type DrgRouteDistribution = import("./drgRouteDistribution").DrgRouteDistribution;
 export const DrgRouteDistribution: typeof import("./drgRouteDistribution").DrgRouteDistribution = null as any;
@@ -524,6 +534,21 @@ export { GetDrgAttachmentsArgs, GetDrgAttachmentsResult, GetDrgAttachmentsOutput
 export const getDrgAttachments: typeof import("./getDrgAttachments").getDrgAttachments = null as any;
 export const getDrgAttachmentsOutput: typeof import("./getDrgAttachments").getDrgAttachmentsOutput = null as any;
 utilities.lazyLoad(exports, ["getDrgAttachments","getDrgAttachmentsOutput"], () => require("./getDrgAttachments"));
+
+export { GetDrgNatPoliciesArgs, GetDrgNatPoliciesResult, GetDrgNatPoliciesOutputArgs } from "./getDrgNatPolicies";
+export const getDrgNatPolicies: typeof import("./getDrgNatPolicies").getDrgNatPolicies = null as any;
+export const getDrgNatPoliciesOutput: typeof import("./getDrgNatPolicies").getDrgNatPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getDrgNatPolicies","getDrgNatPoliciesOutput"], () => require("./getDrgNatPolicies"));
+
+export { GetDrgNatPolicyArgs, GetDrgNatPolicyResult, GetDrgNatPolicyOutputArgs } from "./getDrgNatPolicy";
+export const getDrgNatPolicy: typeof import("./getDrgNatPolicy").getDrgNatPolicy = null as any;
+export const getDrgNatPolicyOutput: typeof import("./getDrgNatPolicy").getDrgNatPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getDrgNatPolicy","getDrgNatPolicyOutput"], () => require("./getDrgNatPolicy"));
+
+export { GetDrgNatPolicyDrgNatRulesArgs, GetDrgNatPolicyDrgNatRulesResult, GetDrgNatPolicyDrgNatRulesOutputArgs } from "./getDrgNatPolicyDrgNatRules";
+export const getDrgNatPolicyDrgNatRules: typeof import("./getDrgNatPolicyDrgNatRules").getDrgNatPolicyDrgNatRules = null as any;
+export const getDrgNatPolicyDrgNatRulesOutput: typeof import("./getDrgNatPolicyDrgNatRules").getDrgNatPolicyDrgNatRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getDrgNatPolicyDrgNatRules","getDrgNatPolicyDrgNatRulesOutput"], () => require("./getDrgNatPolicyDrgNatRules"));
 
 export { GetDrgRouteDistributionArgs, GetDrgRouteDistributionResult, GetDrgRouteDistributionOutputArgs } from "./getDrgRouteDistribution";
 export const getDrgRouteDistribution: typeof import("./getDrgRouteDistribution").getDrgRouteDistribution = null as any;
@@ -1270,6 +1295,10 @@ const _module = {
                 return new DrgAttachmentManagement(name, <any>undefined, { urn })
             case "oci:Core/drgAttachmentsList:DrgAttachmentsList":
                 return new DrgAttachmentsList(name, <any>undefined, { urn })
+            case "oci:Core/drgNatPolicy:DrgNatPolicy":
+                return new DrgNatPolicy(name, <any>undefined, { urn })
+            case "oci:Core/drgNatPolicyDrgNatRule:DrgNatPolicyDrgNatRule":
+                return new DrgNatPolicyDrgNatRule(name, <any>undefined, { urn })
             case "oci:Core/drgRouteDistribution:DrgRouteDistribution":
                 return new DrgRouteDistribution(name, <any>undefined, { urn })
             case "oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement":
@@ -1393,6 +1422,8 @@ pulumi.runtime.registerResourceModule("oci", "Core/drg", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/drgAttachment", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/drgAttachmentManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/drgAttachmentsList", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/drgNatPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/drgNatPolicyDrgNatRule", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/drgRouteDistribution", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/drgRouteDistributionStatement", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/drgRouteTable", _module)

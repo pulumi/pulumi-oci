@@ -46,6 +46,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// List of enabled features based on granted ORA_DSCS_* roles in target database
+        /// </summary>
+        public readonly ImmutableArray<string> Features;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -57,6 +61,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// Details about the current state of the peer target database in Data Safe.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly int ManagePrivilegesTrigger;
         public readonly ImmutableArray<Outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailResult> PeerTargetDatabaseDetails;
         /// <summary>
         /// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
@@ -101,11 +106,15 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string displayName,
 
+            ImmutableArray<string> features,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
             string lifecycleDetails,
+
+            int managePrivilegesTrigger,
 
             ImmutableArray<Outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailResult> peerTargetDatabaseDetails,
 
@@ -129,9 +138,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
+            Features = features;
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            ManagePrivilegesTrigger = managePrivilegesTrigger;
             PeerTargetDatabaseDetails = peerTargetDatabaseDetails;
             PeerTargetDatabases = peerTargetDatabases;
             State = state;

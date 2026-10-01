@@ -67,6 +67,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
      */
     private Boolean isAutoTuneEnabled;
     /**
+     * @return Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     * 
+     */
+    private Boolean isReservationsEnabled;
+    /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
@@ -160,6 +165,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
         return this.isAutoTuneEnabled;
     }
     /**
+     * @return Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     * 
+     */
+    public Boolean isReservationsEnabled() {
+        return this.isReservationsEnabled;
+    }
+    /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
@@ -210,6 +222,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
         private String displayName;
         private Map<String,String> freeformTags;
         private Boolean isAutoTuneEnabled;
+        private Boolean isReservationsEnabled;
         private String kmsKeyId;
         private String sizeInGbs;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail> sourceDetails;
@@ -228,6 +241,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isAutoTuneEnabled = defaults.isAutoTuneEnabled;
+    	      this.isReservationsEnabled = defaults.isReservationsEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sizeInGbs = defaults.sizeInGbs;
     	      this.sourceDetails = defaults.sourceDetails;
@@ -322,6 +336,14 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
             return this;
         }
         @CustomType.Setter
+        public Builder isReservationsEnabled(Boolean isReservationsEnabled) {
+            if (isReservationsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "isReservationsEnabled");
+            }
+            this.isReservationsEnabled = isReservationsEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             if (kmsKeyId == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetail", "kmsKeyId");
@@ -376,6 +398,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.isAutoTuneEnabled = isAutoTuneEnabled;
+            _resultValue.isReservationsEnabled = isReservationsEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.sizeInGbs = sizeInGbs;
             _resultValue.sourceDetails = sourceDetails;

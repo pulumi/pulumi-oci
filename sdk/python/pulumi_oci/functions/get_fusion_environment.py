@@ -257,6 +257,7 @@ class GetFusionEnvironmentResult:
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
+    @_utilities.deprecated("""Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.""")
     def kms_key_id(self) -> _builtins.str:
         """
         BYOK key id

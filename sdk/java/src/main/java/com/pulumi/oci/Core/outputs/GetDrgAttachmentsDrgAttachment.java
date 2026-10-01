@@ -29,11 +29,17 @@ public final class GetDrgAttachmentsDrgAttachment {
      * 
      */
     private String displayName;
+    private Boolean doesPreserveOriginalRoutesWithNat;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
      */
     private String drgId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+     * 
+     */
+    private String drgNatPolicyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
      * 
@@ -60,6 +66,7 @@ public final class GetDrgAttachmentsDrgAttachment {
      */
     private Boolean isCrossTenancy;
     private List<GetDrgAttachmentsDrgAttachmentNetworkDetail> networkDetails;
+    private Boolean removeDrgNatPolicyTrigger;
     private Boolean removeExportDrgRouteDistributionTrigger;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
@@ -104,12 +111,22 @@ public final class GetDrgAttachmentsDrgAttachment {
     public String displayName() {
         return this.displayName;
     }
+    public Boolean doesPreserveOriginalRoutesWithNat() {
+        return this.doesPreserveOriginalRoutesWithNat;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
      */
     public String drgId() {
         return this.drgId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+     * 
+     */
+    public String drgNatPolicyId() {
+        return this.drgNatPolicyId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
@@ -148,6 +165,9 @@ public final class GetDrgAttachmentsDrgAttachment {
     }
     public List<GetDrgAttachmentsDrgAttachmentNetworkDetail> networkDetails() {
         return this.networkDetails;
+    }
+    public Boolean removeDrgNatPolicyTrigger() {
+        return this.removeDrgNatPolicyTrigger;
     }
     public Boolean removeExportDrgRouteDistributionTrigger() {
         return this.removeExportDrgRouteDistributionTrigger;
@@ -193,13 +213,16 @@ public final class GetDrgAttachmentsDrgAttachment {
         private String compartmentId;
         private Map<String,String> definedTags;
         private String displayName;
+        private Boolean doesPreserveOriginalRoutesWithNat;
         private String drgId;
+        private String drgNatPolicyId;
         private String drgRouteTableId;
         private String exportDrgRouteDistributionId;
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isCrossTenancy;
         private List<GetDrgAttachmentsDrgAttachmentNetworkDetail> networkDetails;
+        private Boolean removeDrgNatPolicyTrigger;
         private Boolean removeExportDrgRouteDistributionTrigger;
         private String routeTableId;
         private String state;
@@ -211,13 +234,16 @@ public final class GetDrgAttachmentsDrgAttachment {
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.doesPreserveOriginalRoutesWithNat = defaults.doesPreserveOriginalRoutesWithNat;
     	      this.drgId = defaults.drgId;
+    	      this.drgNatPolicyId = defaults.drgNatPolicyId;
     	      this.drgRouteTableId = defaults.drgRouteTableId;
     	      this.exportDrgRouteDistributionId = defaults.exportDrgRouteDistributionId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isCrossTenancy = defaults.isCrossTenancy;
     	      this.networkDetails = defaults.networkDetails;
+    	      this.removeDrgNatPolicyTrigger = defaults.removeDrgNatPolicyTrigger;
     	      this.removeExportDrgRouteDistributionTrigger = defaults.removeExportDrgRouteDistributionTrigger;
     	      this.routeTableId = defaults.routeTableId;
     	      this.state = defaults.state;
@@ -250,11 +276,27 @@ public final class GetDrgAttachmentsDrgAttachment {
             return this;
         }
         @CustomType.Setter
+        public Builder doesPreserveOriginalRoutesWithNat(Boolean doesPreserveOriginalRoutesWithNat) {
+            if (doesPreserveOriginalRoutesWithNat == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachment", "doesPreserveOriginalRoutesWithNat");
+            }
+            this.doesPreserveOriginalRoutesWithNat = doesPreserveOriginalRoutesWithNat;
+            return this;
+        }
+        @CustomType.Setter
         public Builder drgId(String drgId) {
             if (drgId == null) {
               throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachment", "drgId");
             }
             this.drgId = drgId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder drgNatPolicyId(String drgNatPolicyId) {
+            if (drgNatPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachment", "drgNatPolicyId");
+            }
+            this.drgNatPolicyId = drgNatPolicyId;
             return this;
         }
         @CustomType.Setter
@@ -309,6 +351,14 @@ public final class GetDrgAttachmentsDrgAttachment {
             return networkDetails(List.of(networkDetails));
         }
         @CustomType.Setter
+        public Builder removeDrgNatPolicyTrigger(Boolean removeDrgNatPolicyTrigger) {
+            if (removeDrgNatPolicyTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachment", "removeDrgNatPolicyTrigger");
+            }
+            this.removeDrgNatPolicyTrigger = removeDrgNatPolicyTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder removeExportDrgRouteDistributionTrigger(Boolean removeExportDrgRouteDistributionTrigger) {
             if (removeExportDrgRouteDistributionTrigger == null) {
               throw new MissingRequiredPropertyException("GetDrgAttachmentsDrgAttachment", "removeExportDrgRouteDistributionTrigger");
@@ -353,13 +403,16 @@ public final class GetDrgAttachmentsDrgAttachment {
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
+            _resultValue.doesPreserveOriginalRoutesWithNat = doesPreserveOriginalRoutesWithNat;
             _resultValue.drgId = drgId;
+            _resultValue.drgNatPolicyId = drgNatPolicyId;
             _resultValue.drgRouteTableId = drgRouteTableId;
             _resultValue.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isCrossTenancy = isCrossTenancy;
             _resultValue.networkDetails = networkDetails;
+            _resultValue.removeDrgNatPolicyTrigger = removeDrgNatPolicyTrigger;
             _resultValue.removeExportDrgRouteDistributionTrigger = removeExportDrgRouteDistributionTrigger;
             _resultValue.routeTableId = routeTableId;
             _resultValue.state = state;

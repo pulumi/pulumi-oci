@@ -11,6 +11,7 @@ import com.pulumi.oci.DataSafe.inputs.TargetDatabaseCredentialsArgs;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabaseDatabaseDetailsArgs;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabasePeerTargetDatabaseDetailArgs;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabaseTlsConfigArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -144,6 +145,27 @@ public final class TargetDatabaseArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="managePrivilegesTrigger")
+    private @Nullable Output<Integer> managePrivilegesTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> managePrivilegesTrigger() {
+        return Optional.ofNullable(this.managePrivilegesTrigger);
+    }
+
+    /**
      * The details of the database to be registered as a peer target database.
      * 
      */
@@ -184,6 +206,7 @@ public final class TargetDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.managePrivilegesTrigger = $.managePrivilegesTrigger;
         this.peerTargetDatabaseDetails = $.peerTargetDatabaseDetails;
         this.tlsConfig = $.tlsConfig;
     }
@@ -372,6 +395,33 @@ public final class TargetDatabaseArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param managePrivilegesTrigger (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managePrivilegesTrigger(@Nullable Output<Integer> managePrivilegesTrigger) {
+            $.managePrivilegesTrigger = managePrivilegesTrigger;
+            return this;
+        }
+
+        /**
+         * @param managePrivilegesTrigger (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managePrivilegesTrigger(Integer managePrivilegesTrigger) {
+            return managePrivilegesTrigger(Output.of(managePrivilegesTrigger));
         }
 
         /**

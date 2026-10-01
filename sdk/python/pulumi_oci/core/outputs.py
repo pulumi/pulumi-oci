@@ -442,6 +442,10 @@ __all__ = [
     'GetDrgAttachmentsDrgAttachmentResult',
     'GetDrgAttachmentsDrgAttachmentNetworkDetailResult',
     'GetDrgAttachmentsFilterResult',
+    'GetDrgNatPoliciesDrgNatPolicyResult',
+    'GetDrgNatPoliciesFilterResult',
+    'GetDrgNatPolicyDrgNatRulesDrgNatRuleResult',
+    'GetDrgNatPolicyDrgNatRulesFilterResult',
     'GetDrgRouteDistributionStatementsDrgRouteDistributionStatementResult',
     'GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteriaResult',
     'GetDrgRouteDistributionStatementsFilterResult',
@@ -6757,6 +6761,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
             suggest = "freeform_tags"
         elif key == "isAutoTuneEnabled":
             suggest = "is_auto_tune_enabled"
+        elif key == "isReservationsEnabled":
+            suggest = "is_reservations_enabled"
         elif key == "kmsKeyId":
             suggest = "kms_key_id"
         elif key == "sizeInGbs":
@@ -6790,6 +6796,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
                  display_name: Optional[_builtins.str] = None,
                  freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
                  is_auto_tune_enabled: Optional[_builtins.bool] = None,
+                 is_reservations_enabled: Optional[_builtins.bool] = None,
                  kms_key_id: Optional[_builtins.str] = None,
                  size_in_gbs: Optional[_builtins.str] = None,
                  source_details: Optional['outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails'] = None,
@@ -6806,6 +6813,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param _builtins.bool is_reservations_enabled: Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param _builtins.str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param _builtins.str size_in_gbs: The size of the volume in GBs.
         :param _builtins.str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -6833,6 +6841,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_tune_enabled is not None:
             pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
+        if is_reservations_enabled is not None:
+            pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
@@ -6923,6 +6933,14 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
         Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -9270,6 +9288,8 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
             suggest = "freeform_tags"
         elif key == "isAutoTuneEnabled":
             suggest = "is_auto_tune_enabled"
+        elif key == "isReservationsEnabled":
+            suggest = "is_reservations_enabled"
         elif key == "kmsKeyId":
             suggest = "kms_key_id"
         elif key == "sizeInGbs":
@@ -9303,6 +9323,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
                  display_name: Optional[_builtins.str] = None,
                  freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
                  is_auto_tune_enabled: Optional[_builtins.bool] = None,
+                 is_reservations_enabled: Optional[_builtins.bool] = None,
                  kms_key_id: Optional[_builtins.str] = None,
                  size_in_gbs: Optional[_builtins.str] = None,
                  source_details: Optional['outputs.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetails'] = None,
@@ -9319,6 +9340,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param _builtins.bool is_reservations_enabled: Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param _builtins.str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param _builtins.str size_in_gbs: The size of the volume in GBs.
         :param _builtins.str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -9346,6 +9368,8 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_tune_enabled is not None:
             pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
+        if is_reservations_enabled is not None:
+            pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
@@ -9436,6 +9460,14 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
         Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -10831,6 +10863,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig(dict
         suggest = None
         if key == "areVirtualInstructionsEnabled":
             suggest = "are_virtual_instructions_enabled"
+        elif key == "configMap":
+            suggest = "config_map"
         elif key == "isAccessControlServiceEnabled":
             suggest = "is_access_control_service_enabled"
         elif key == "isInputOutputMemoryManagementUnitEnabled":
@@ -10864,6 +10898,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig(dict
     def __init__(__self__, *,
                  type: _builtins.str,
                  are_virtual_instructions_enabled: Optional[_builtins.bool] = None,
+                 config_map: Optional[Mapping[str, _builtins.str]] = None,
                  is_access_control_service_enabled: Optional[_builtins.bool] = None,
                  is_input_output_memory_management_unit_enabled: Optional[_builtins.bool] = None,
                  is_measured_boot_enabled: Optional[_builtins.bool] = None,
@@ -10876,6 +10911,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig(dict
         """
         :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
         :param _builtins.bool are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+        :param Mapping[str, _builtins.str] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param _builtins.bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param _builtins.bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param _builtins.bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
@@ -10889,6 +10925,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig(dict
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
             pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        if config_map is not None:
+            pulumi.set(__self__, "config_map", config_map)
         if is_access_control_service_enabled is not None:
             pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         if is_input_output_memory_management_unit_enabled is not None:
@@ -10923,6 +10961,14 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig(dict
         Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
         """
         return pulumi.get(self, "are_virtual_instructions_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="configMap")
+    def config_map(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Instance Platform Configuration Configuration Map for flexible setting input.
+        """
+        return pulumi.get(self, "config_map")
 
     @_builtins.property
     @pulumi.getter(name="isAccessControlServiceEnabled")
@@ -29942,13 +29988,16 @@ class GetDrgAttachmentsDrgAttachmentResult(dict):
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
+                 does_preserve_original_routes_with_nat: _builtins.bool,
                  drg_id: _builtins.str,
+                 drg_nat_policy_id: _builtins.str,
                  drg_route_table_id: _builtins.str,
                  export_drg_route_distribution_id: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  is_cross_tenancy: _builtins.bool,
                  network_details: Sequence['outputs.GetDrgAttachmentsDrgAttachmentNetworkDetailResult'],
+                 remove_drg_nat_policy_trigger: _builtins.bool,
                  remove_export_drg_route_distribution_trigger: _builtins.bool,
                  route_table_id: _builtins.str,
                  state: _builtins.str,
@@ -29959,6 +30008,7 @@ class GetDrgAttachmentsDrgAttachmentResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param _builtins.str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+        :param _builtins.str drg_nat_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
         :param _builtins.str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
         :param _builtins.str export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -29972,13 +30022,16 @@ class GetDrgAttachmentsDrgAttachmentResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "does_preserve_original_routes_with_nat", does_preserve_original_routes_with_nat)
         pulumi.set(__self__, "drg_id", drg_id)
+        pulumi.set(__self__, "drg_nat_policy_id", drg_nat_policy_id)
         pulumi.set(__self__, "drg_route_table_id", drg_route_table_id)
         pulumi.set(__self__, "export_drg_route_distribution_id", export_drg_route_distribution_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_cross_tenancy", is_cross_tenancy)
         pulumi.set(__self__, "network_details", network_details)
+        pulumi.set(__self__, "remove_drg_nat_policy_trigger", remove_drg_nat_policy_trigger)
         pulumi.set(__self__, "remove_export_drg_route_distribution_trigger", remove_export_drg_route_distribution_trigger)
         pulumi.set(__self__, "route_table_id", route_table_id)
         pulumi.set(__self__, "state", state)
@@ -30010,12 +30063,25 @@ class GetDrgAttachmentsDrgAttachmentResult(dict):
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter(name="doesPreserveOriginalRoutesWithNat")
+    def does_preserve_original_routes_with_nat(self) -> _builtins.bool:
+        return pulumi.get(self, "does_preserve_original_routes_with_nat")
+
+    @_builtins.property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> _builtins.str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         """
         return pulumi.get(self, "drg_id")
+
+    @_builtins.property
+    @pulumi.getter(name="drgNatPolicyId")
+    def drg_nat_policy_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+        """
+        return pulumi.get(self, "drg_nat_policy_id")
 
     @_builtins.property
     @pulumi.getter(name="drgRouteTableId")
@@ -30061,6 +30127,11 @@ class GetDrgAttachmentsDrgAttachmentResult(dict):
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> Sequence['outputs.GetDrgAttachmentsDrgAttachmentNetworkDetailResult']:
         return pulumi.get(self, "network_details")
+
+    @_builtins.property
+    @pulumi.getter(name="removeDrgNatPolicyTrigger")
+    def remove_drg_nat_policy_trigger(self) -> _builtins.bool:
+        return pulumi.get(self, "remove_drg_nat_policy_trigger")
 
     @_builtins.property
     @pulumi.getter(name="removeExportDrgRouteDistributionTrigger")
@@ -30197,6 +30268,239 @@ class GetDrgAttachmentsDrgAttachmentNetworkDetailResult(dict):
 
 @pulumi.output_type
 class GetDrgAttachmentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDrgNatPoliciesDrgNatPolicyResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The DrgNatPolicy's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+        :param _builtins.str state: The DrgNatPolicy's current state.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the DrgNatPolicy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The DrgNatPolicy's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The DrgNatPolicy's current state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the DrgNatPolicy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetDrgNatPoliciesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDrgNatPolicyDrgNatRulesDrgNatRuleResult(dict):
+    def __init__(__self__, *,
+                 drg_nat_policy_id: _builtins.str,
+                 drg_nat_rule_priority: _builtins.str,
+                 id: _builtins.str,
+                 original_destination: _builtins.str,
+                 original_source: _builtins.str,
+                 translated_destination: _builtins.str,
+                 translated_source: _builtins.str):
+        """
+        :param _builtins.str drg_nat_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+        :param _builtins.str drg_nat_rule_priority: The priority associated with each DrgNatRule.
+        :param _builtins.str id: The Oracle-assigned ID of the DrgNatRule.
+        :param _builtins.str original_destination: Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Destination NAT.
+        :param _builtins.str original_source: Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Source NAT.
+        :param _builtins.str translated_destination: Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Destination NAT.
+        :param _builtins.str translated_source: Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Source NAT.
+        """
+        pulumi.set(__self__, "drg_nat_policy_id", drg_nat_policy_id)
+        pulumi.set(__self__, "drg_nat_rule_priority", drg_nat_rule_priority)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "original_destination", original_destination)
+        pulumi.set(__self__, "original_source", original_source)
+        pulumi.set(__self__, "translated_destination", translated_destination)
+        pulumi.set(__self__, "translated_source", translated_source)
+
+    @_builtins.property
+    @pulumi.getter(name="drgNatPolicyId")
+    def drg_nat_policy_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+        """
+        return pulumi.get(self, "drg_nat_policy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="drgNatRulePriority")
+    def drg_nat_rule_priority(self) -> _builtins.str:
+        """
+        The priority associated with each DrgNatRule.
+        """
+        return pulumi.get(self, "drg_nat_rule_priority")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The Oracle-assigned ID of the DrgNatRule.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="originalDestination")
+    def original_destination(self) -> _builtins.str:
+        """
+        Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Destination NAT.
+        """
+        return pulumi.get(self, "original_destination")
+
+    @_builtins.property
+    @pulumi.getter(name="originalSource")
+    def original_source(self) -> _builtins.str:
+        """
+        Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Source NAT.
+        """
+        return pulumi.get(self, "original_source")
+
+    @_builtins.property
+    @pulumi.getter(name="translatedDestination")
+    def translated_destination(self) -> _builtins.str:
+        """
+        Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Destination NAT.
+        """
+        return pulumi.get(self, "translated_destination")
+
+    @_builtins.property
+    @pulumi.getter(name="translatedSource")
+    def translated_source(self) -> _builtins.str:
+        """
+        Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Source NAT.
+        """
+        return pulumi.get(self, "translated_source")
+
+
+@pulumi.output_type
+class GetDrgNatPolicyDrgNatRulesFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
@@ -32725,6 +33029,7 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  is_auto_tune_enabled: _builtins.bool,
+                 is_reservations_enabled: _builtins.bool,
                  kms_key_id: _builtins.str,
                  size_in_gbs: _builtins.str,
                  source_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult'],
@@ -32741,6 +33046,7 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param _builtins.bool is_reservations_enabled: Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param _builtins.str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param _builtins.str size_in_gbs: The size of the volume in GBs.
         :param _builtins.str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -32756,6 +33062,7 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
+        pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "source_details", source_details)
@@ -32841,6 +33148,14 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
         Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> _builtins.bool:
+        """
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -34408,6 +34723,7 @@ class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailResult(
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  is_auto_tune_enabled: _builtins.bool,
+                 is_reservations_enabled: _builtins.bool,
                  kms_key_id: _builtins.str,
                  size_in_gbs: _builtins.str,
                  source_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailResult'],
@@ -34424,6 +34740,7 @@ class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailResult(
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param _builtins.bool is_reservations_enabled: Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param _builtins.str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param _builtins.str size_in_gbs: The size of the volume in GBs.
         :param _builtins.str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -34439,6 +34756,7 @@ class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailResult(
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
+        pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "source_details", source_details)
@@ -34524,6 +34842,14 @@ class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailResult(
         Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> _builtins.bool:
+        """
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -35513,6 +35839,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstrain
 class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResult(dict):
     def __init__(__self__, *,
                  are_virtual_instructions_enabled: _builtins.bool,
+                 config_map: Mapping[str, _builtins.str],
                  is_access_control_service_enabled: _builtins.bool,
                  is_input_output_memory_management_unit_enabled: _builtins.bool,
                  is_measured_boot_enabled: _builtins.bool,
@@ -35525,6 +35852,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResu
                  type: _builtins.str):
         """
         :param _builtins.bool are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+        :param Mapping[str, _builtins.str] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param _builtins.bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param _builtins.bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param _builtins.bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
@@ -35537,6 +35865,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResu
         :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
         """
         pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        pulumi.set(__self__, "config_map", config_map)
         pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
@@ -35555,6 +35884,14 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResu
         Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
         """
         return pulumi.get(self, "are_virtual_instructions_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="configMap")
+    def config_map(self) -> Mapping[str, _builtins.str]:
+        """
+        Instance Platform Configuration Configuration Map for flexible setting input.
+        """
+        return pulumi.get(self, "config_map")
 
     @_builtins.property
     @pulumi.getter(name="isAccessControlServiceEnabled")
@@ -36898,6 +37235,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  is_auto_tune_enabled: _builtins.bool,
+                 is_reservations_enabled: _builtins.bool,
                  kms_key_id: _builtins.str,
                  size_in_gbs: _builtins.str,
                  source_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult'],
@@ -36914,6 +37252,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param _builtins.bool is_reservations_enabled: Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param _builtins.str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param _builtins.str size_in_gbs: The size of the volume in GBs.
         :param _builtins.str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -36929,6 +37268,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
+        pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "source_details", source_details)
@@ -37014,6 +37354,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
         Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> _builtins.bool:
+        """
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -38581,6 +38929,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVol
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  is_auto_tune_enabled: _builtins.bool,
+                 is_reservations_enabled: _builtins.bool,
                  kms_key_id: _builtins.str,
                  size_in_gbs: _builtins.str,
                  source_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailResult'],
@@ -38597,6 +38946,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVol
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param _builtins.bool is_reservations_enabled: Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param _builtins.str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param _builtins.str size_in_gbs: The size of the volume in GBs.
         :param _builtins.str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -38612,6 +38962,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVol
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
+        pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "source_details", source_details)
@@ -38697,6 +39048,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVol
         Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> _builtins.bool:
+        """
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -39686,6 +40045,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResult(dict):
     def __init__(__self__, *,
                  are_virtual_instructions_enabled: _builtins.bool,
+                 config_map: Mapping[str, _builtins.str],
                  is_access_control_service_enabled: _builtins.bool,
                  is_input_output_memory_management_unit_enabled: _builtins.bool,
                  is_measured_boot_enabled: _builtins.bool,
@@ -39698,6 +40058,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  type: _builtins.str):
         """
         :param _builtins.bool are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+        :param Mapping[str, _builtins.str] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param _builtins.bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param _builtins.bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param _builtins.bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
@@ -39710,6 +40071,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
         """
         pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        pulumi.set(__self__, "config_map", config_map)
         pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
@@ -39728,6 +40090,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
         """
         return pulumi.get(self, "are_virtual_instructions_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="configMap")
+    def config_map(self) -> Mapping[str, _builtins.str]:
+        """
+        Instance Platform Configuration Configuration Map for flexible setting input.
+        """
+        return pulumi.get(self, "config_map")
 
     @_builtins.property
     @pulumi.getter(name="isAccessControlServiceEnabled")

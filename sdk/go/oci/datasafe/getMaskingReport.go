@@ -81,6 +81,8 @@ type GetMaskingReportResult struct {
 	Recompile string `pulumi:"recompile"`
 	// The current state of the masking report.
 	State string `pulumi:"state"`
+	// The OCID of the subsetting report associated with this masking report
+	SubsettingReportId string `pulumi:"subsettingReportId"`
 	// The OCID of the target database masked.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -192,6 +194,11 @@ func (o GetMaskingReportResultOutput) Recompile() pulumi.StringOutput {
 // The current state of the masking report.
 func (o GetMaskingReportResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingReportResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID of the subsetting report associated with this masking report
+func (o GetMaskingReportResultOutput) SubsettingReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) string { return v.SubsettingReportId }).(pulumi.StringOutput)
 }
 
 // The OCID of the target database masked.

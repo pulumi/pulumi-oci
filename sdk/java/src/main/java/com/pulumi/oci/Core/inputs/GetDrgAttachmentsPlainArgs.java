@@ -78,6 +78,21 @@ public final class GetDrgAttachmentsPlainArgs extends com.pulumi.resources.Invok
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+     * 
+     */
+    @Import(name="drgNatPolicyId")
+    private @Nullable String drgNatPolicyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+     * 
+     */
+    public Optional<String> drgNatPolicyId() {
+        return Optional.ofNullable(this.drgNatPolicyId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
      * 
      */
@@ -151,6 +166,7 @@ public final class GetDrgAttachmentsPlainArgs extends com.pulumi.resources.Invok
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.drgId = $.drgId;
+        this.drgNatPolicyId = $.drgNatPolicyId;
         this.drgRouteTableId = $.drgRouteTableId;
         this.filters = $.filters;
         this.networkId = $.networkId;
@@ -217,6 +233,17 @@ public final class GetDrgAttachmentsPlainArgs extends com.pulumi.resources.Invok
          */
         public Builder drgId(@Nullable String drgId) {
             $.drgId = drgId;
+            return this;
+        }
+
+        /**
+         * @param drgNatPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drgNatPolicyId(@Nullable String drgNatPolicyId) {
+            $.drgNatPolicyId = drgNatPolicyId;
             return this;
         }
 

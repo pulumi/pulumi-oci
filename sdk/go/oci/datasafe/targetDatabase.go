@@ -133,10 +133,17 @@ type TargetDatabase struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// List of enabled features based on granted ORA_DSCS_* roles in target database
+	Features pulumi.StringArrayOutput `pulumi:"features"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the peer target database in Data Safe.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ManagePrivilegesTrigger pulumi.IntPtrOutput `pulumi:"managePrivilegesTrigger"`
 	// The details of the database to be registered as a peer target database.
 	PeerTargetDatabaseDetails TargetDatabasePeerTargetDatabaseDetailArrayOutput `pulumi:"peerTargetDatabaseDetails"`
 	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
@@ -205,10 +212,17 @@ type targetDatabaseState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// List of enabled features based on granted ORA_DSCS_* roles in target database
+	Features []string `pulumi:"features"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details about the current state of the peer target database in Data Safe.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ManagePrivilegesTrigger *int `pulumi:"managePrivilegesTrigger"`
 	// The details of the database to be registered as a peer target database.
 	PeerTargetDatabaseDetails []TargetDatabasePeerTargetDatabaseDetail `pulumi:"peerTargetDatabaseDetails"`
 	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
@@ -242,10 +256,17 @@ type TargetDatabaseState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName pulumi.StringPtrInput
+	// List of enabled features based on granted ORA_DSCS_* roles in target database
+	Features pulumi.StringArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// Details about the current state of the peer target database in Data Safe.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ManagePrivilegesTrigger pulumi.IntPtrInput
 	// The details of the database to be registered as a peer target database.
 	PeerTargetDatabaseDetails TargetDatabasePeerTargetDatabaseDetailArrayInput
 	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
@@ -283,6 +304,11 @@ type targetDatabaseArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ManagePrivilegesTrigger *int `pulumi:"managePrivilegesTrigger"`
 	// The details of the database to be registered as a peer target database.
 	PeerTargetDatabaseDetails []TargetDatabasePeerTargetDatabaseDetail `pulumi:"peerTargetDatabaseDetails"`
 	// (Updatable) The details required to establish a TLS enabled connection.
@@ -307,6 +333,11 @@ type TargetDatabaseArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ManagePrivilegesTrigger pulumi.IntPtrInput
 	// The details of the database to be registered as a peer target database.
 	PeerTargetDatabaseDetails TargetDatabasePeerTargetDatabaseDetailArrayInput
 	// (Updatable) The details required to establish a TLS enabled connection.
@@ -440,6 +471,11 @@ func (o TargetDatabaseOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *TargetDatabase) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// List of enabled features based on granted ORA_DSCS_* roles in target database
+func (o TargetDatabaseOutput) Features() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *TargetDatabase) pulumi.StringArrayOutput { return v.Features }).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 func (o TargetDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *TargetDatabase) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -448,6 +484,14 @@ func (o TargetDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
 // Details about the current state of the peer target database in Data Safe.
 func (o TargetDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *TargetDatabase) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o TargetDatabaseOutput) ManagePrivilegesTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TargetDatabase) pulumi.IntPtrOutput { return v.ManagePrivilegesTrigger }).(pulumi.IntPtrOutput)
 }
 
 // The details of the database to be registered as a peer target database.

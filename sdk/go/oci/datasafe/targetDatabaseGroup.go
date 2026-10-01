@@ -50,6 +50,8 @@ import (
 //						FreeformTags: pulumi.StringMap{
 //							"Department": pulumi.String("Finance"),
 //						},
+//						FreeformTagsIn:    pulumi.Any(targetDatabaseGroupMatchingCriteriaIncludeFreeformTagsIn),
+//						SystemTags:        pulumi.Any(targetDatabaseGroupMatchingCriteriaIncludeSystemTags),
 //						TargetDatabaseIds: pulumi.Any(targetDatabaseGroupMatchingCriteriaIncludeTargetDatabaseIds),
 //					},
 //					Exclude: &datasafe.TargetDatabaseGroupMatchingCriteriaExcludeArgs{

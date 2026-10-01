@@ -64,6 +64,13 @@ public final class SecurityAssessmentFindingState extends com.pulumi.resources.R
         return Optional.ofNullable(this.details);
     }
 
+    @Import(name="doclink")
+    private @Nullable Output<String> doclink;
+
+    public Optional<Output<String>> doclink() {
+        return Optional.ofNullable(this.doclink);
+    }
+
     /**
      * Determines if this risk level has changed on the target database since the last time &#39;severity&#39; was modified by user.
      * 
@@ -357,6 +364,7 @@ public final class SecurityAssessmentFindingState extends com.pulumi.resources.R
         this.assessmentId = $.assessmentId;
         this.category = $.category;
         this.details = $.details;
+        this.doclink = $.doclink;
         this.hasTargetDbRiskLevelChanged = $.hasTargetDbRiskLevelChanged;
         this.isRiskModified = $.isRiskModified;
         this.isTopFinding = $.isTopFinding;
@@ -467,6 +475,15 @@ public final class SecurityAssessmentFindingState extends com.pulumi.resources.R
          */
         public Builder details(String... details) {
             return details(List.of(details));
+        }
+
+        public Builder doclink(@Nullable Output<String> doclink) {
+            $.doclink = doclink;
+            return this;
+        }
+
+        public Builder doclink(String doclink) {
+            return doclink(Output.of(doclink));
         }
 
         /**

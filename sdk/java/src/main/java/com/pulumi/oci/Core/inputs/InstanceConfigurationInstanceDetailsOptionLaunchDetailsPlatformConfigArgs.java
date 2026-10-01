@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -31,6 +32,21 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatfo
      */
     public Optional<Output<Boolean>> areVirtualInstructionsEnabled() {
         return Optional.ofNullable(this.areVirtualInstructionsEnabled);
+    }
+
+    /**
+     * Instance Platform Configuration Configuration Map for flexible setting input.
+     * 
+     */
+    @Import(name="configMap")
+    private @Nullable Output<Map<String,String>> configMap;
+
+    /**
+     * @return Instance Platform Configuration Configuration Map for flexible setting input.
+     * 
+     */
+    public Optional<Output<Map<String,String>>> configMap() {
+        return Optional.ofNullable(this.configMap);
     }
 
     /**
@@ -187,6 +203,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatfo
 
     private InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs(InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs $) {
         this.areVirtualInstructionsEnabled = $.areVirtualInstructionsEnabled;
+        this.configMap = $.configMap;
         this.isAccessControlServiceEnabled = $.isAccessControlServiceEnabled;
         this.isInputOutputMemoryManagementUnitEnabled = $.isInputOutputMemoryManagementUnitEnabled;
         this.isMeasuredBootEnabled = $.isMeasuredBootEnabled;
@@ -236,6 +253,27 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatfo
          */
         public Builder areVirtualInstructionsEnabled(Boolean areVirtualInstructionsEnabled) {
             return areVirtualInstructionsEnabled(Output.of(areVirtualInstructionsEnabled));
+        }
+
+        /**
+         * @param configMap Instance Platform Configuration Configuration Map for flexible setting input.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configMap(@Nullable Output<Map<String,String>> configMap) {
+            $.configMap = configMap;
+            return this;
+        }
+
+        /**
+         * @param configMap Instance Platform Configuration Configuration Map for flexible setting input.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configMap(Map<String,String> configMap) {
+            return configMap(Output.of(configMap));
         }
 
         /**

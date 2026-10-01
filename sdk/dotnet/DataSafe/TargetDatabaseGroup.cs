@@ -51,6 +51,8 @@ namespace Pulumi.Oci.DataSafe
     ///                 {
     ///                     { "Department", "Finance" },
     ///                 },
+    ///                 FreeformTagsIn = targetDatabaseGroupMatchingCriteriaIncludeFreeformTagsIn,
+    ///                 SystemTags = targetDatabaseGroupMatchingCriteriaIncludeSystemTags,
     ///                 TargetDatabaseIds = targetDatabaseGroupMatchingCriteriaIncludeTargetDatabaseIds,
     ///             },
     ///             Exclude = new Oci.DataSafe.Inputs.TargetDatabaseGroupMatchingCriteriaExcludeArgs

@@ -125,6 +125,11 @@ export type DiscoveryMod = import("./discoveryMod").DiscoveryMod;
 export const DiscoveryMod: typeof import("./discoveryMod").DiscoveryMod = null as any;
 utilities.lazyLoad(exports, ["DiscoveryMod"], () => require("./discoveryMod"));
 
+export { EstimateTableSizesArgs, EstimateTableSizesState } from "./estimateTableSizes";
+export type EstimateTableSizes = import("./estimateTableSizes").EstimateTableSizes;
+export const EstimateTableSizes: typeof import("./estimateTableSizes").EstimateTableSizes = null as any;
+utilities.lazyLoad(exports, ["EstimateTableSizes"], () => require("./estimateTableSizes"));
+
 export { GenerateOnPremConnectorConfigurationArgs, GenerateOnPremConnectorConfigurationState } from "./generateOnPremConnectorConfiguration";
 export type GenerateOnPremConnectorConfiguration = import("./generateOnPremConnectorConfiguration").GenerateOnPremConnectorConfiguration;
 export const GenerateOnPremConnectorConfiguration: typeof import("./generateOnPremConnectorConfiguration").GenerateOnPremConnectorConfiguration = null as any;
@@ -500,6 +505,21 @@ export const getOnpremConnectors: typeof import("./getOnpremConnectors").getOnpr
 export const getOnpremConnectorsOutput: typeof import("./getOnpremConnectors").getOnpremConnectorsOutput = null as any;
 utilities.lazyLoad(exports, ["getOnpremConnectors","getOnpremConnectorsOutput"], () => require("./getOnpremConnectors"));
 
+export { GetRegistrationPoliciesArgs, GetRegistrationPoliciesResult, GetRegistrationPoliciesOutputArgs } from "./getRegistrationPolicies";
+export const getRegistrationPolicies: typeof import("./getRegistrationPolicies").getRegistrationPolicies = null as any;
+export const getRegistrationPoliciesOutput: typeof import("./getRegistrationPolicies").getRegistrationPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistrationPolicies","getRegistrationPoliciesOutput"], () => require("./getRegistrationPolicies"));
+
+export { GetRegistrationPolicyArgs, GetRegistrationPolicyResult, GetRegistrationPolicyOutputArgs } from "./getRegistrationPolicy";
+export const getRegistrationPolicy: typeof import("./getRegistrationPolicy").getRegistrationPolicy = null as any;
+export const getRegistrationPolicyOutput: typeof import("./getRegistrationPolicy").getRegistrationPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistrationPolicy","getRegistrationPolicyOutput"], () => require("./getRegistrationPolicy"));
+
+export { GetRegistrationPolicyTargetDatabasesArgs, GetRegistrationPolicyTargetDatabasesResult, GetRegistrationPolicyTargetDatabasesOutputArgs } from "./getRegistrationPolicyTargetDatabases";
+export const getRegistrationPolicyTargetDatabases: typeof import("./getRegistrationPolicyTargetDatabases").getRegistrationPolicyTargetDatabases = null as any;
+export const getRegistrationPolicyTargetDatabasesOutput: typeof import("./getRegistrationPolicyTargetDatabases").getRegistrationPolicyTargetDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistrationPolicyTargetDatabases","getRegistrationPolicyTargetDatabasesOutput"], () => require("./getRegistrationPolicyTargetDatabases"));
+
 export { GetReportArgs, GetReportResult, GetReportOutputArgs } from "./getReport";
 export const getReport: typeof import("./getReport").getReport = null as any;
 export const getReportOutput: typeof import("./getReport").getReportOutput = null as any;
@@ -830,6 +850,96 @@ export const getSqlFirewallViolations: typeof import("./getSqlFirewallViolations
 export const getSqlFirewallViolationsOutput: typeof import("./getSqlFirewallViolations").getSqlFirewallViolationsOutput = null as any;
 utilities.lazyLoad(exports, ["getSqlFirewallViolations","getSqlFirewallViolationsOutput"], () => require("./getSqlFirewallViolations"));
 
+export { GetSubsettingAnalyticsArgs, GetSubsettingAnalyticsResult, GetSubsettingAnalyticsOutputArgs } from "./getSubsettingAnalytics";
+export const getSubsettingAnalytics: typeof import("./getSubsettingAnalytics").getSubsettingAnalytics = null as any;
+export const getSubsettingAnalyticsOutput: typeof import("./getSubsettingAnalytics").getSubsettingAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingAnalytics","getSubsettingAnalyticsOutput"], () => require("./getSubsettingAnalytics"));
+
+export { GetSubsettingPoliciesArgs, GetSubsettingPoliciesResult, GetSubsettingPoliciesOutputArgs } from "./getSubsettingPolicies";
+export const getSubsettingPolicies: typeof import("./getSubsettingPolicies").getSubsettingPolicies = null as any;
+export const getSubsettingPoliciesOutput: typeof import("./getSubsettingPolicies").getSubsettingPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicies","getSubsettingPoliciesOutput"], () => require("./getSubsettingPolicies"));
+
+export { GetSubsettingPolicyArgs, GetSubsettingPolicyResult, GetSubsettingPolicyOutputArgs } from "./getSubsettingPolicy";
+export const getSubsettingPolicy: typeof import("./getSubsettingPolicy").getSubsettingPolicy = null as any;
+export const getSubsettingPolicyOutput: typeof import("./getSubsettingPolicy").getSubsettingPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicy","getSubsettingPolicyOutput"], () => require("./getSubsettingPolicy"));
+
+export { GetSubsettingPolicyHealthReportArgs, GetSubsettingPolicyHealthReportResult, GetSubsettingPolicyHealthReportOutputArgs } from "./getSubsettingPolicyHealthReport";
+export const getSubsettingPolicyHealthReport: typeof import("./getSubsettingPolicyHealthReport").getSubsettingPolicyHealthReport = null as any;
+export const getSubsettingPolicyHealthReportOutput: typeof import("./getSubsettingPolicyHealthReport").getSubsettingPolicyHealthReportOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicyHealthReport","getSubsettingPolicyHealthReportOutput"], () => require("./getSubsettingPolicyHealthReport"));
+
+export { GetSubsettingPolicyHealthReportLogsArgs, GetSubsettingPolicyHealthReportLogsResult, GetSubsettingPolicyHealthReportLogsOutputArgs } from "./getSubsettingPolicyHealthReportLogs";
+export const getSubsettingPolicyHealthReportLogs: typeof import("./getSubsettingPolicyHealthReportLogs").getSubsettingPolicyHealthReportLogs = null as any;
+export const getSubsettingPolicyHealthReportLogsOutput: typeof import("./getSubsettingPolicyHealthReportLogs").getSubsettingPolicyHealthReportLogsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicyHealthReportLogs","getSubsettingPolicyHealthReportLogsOutput"], () => require("./getSubsettingPolicyHealthReportLogs"));
+
+export { GetSubsettingPolicyHealthReportsArgs, GetSubsettingPolicyHealthReportsResult, GetSubsettingPolicyHealthReportsOutputArgs } from "./getSubsettingPolicyHealthReports";
+export const getSubsettingPolicyHealthReports: typeof import("./getSubsettingPolicyHealthReports").getSubsettingPolicyHealthReports = null as any;
+export const getSubsettingPolicyHealthReportsOutput: typeof import("./getSubsettingPolicyHealthReports").getSubsettingPolicyHealthReportsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicyHealthReports","getSubsettingPolicyHealthReportsOutput"], () => require("./getSubsettingPolicyHealthReports"));
+
+export { GetSubsettingPolicySubsettingRuleArgs, GetSubsettingPolicySubsettingRuleResult, GetSubsettingPolicySubsettingRuleOutputArgs } from "./getSubsettingPolicySubsettingRule";
+export const getSubsettingPolicySubsettingRule: typeof import("./getSubsettingPolicySubsettingRule").getSubsettingPolicySubsettingRule = null as any;
+export const getSubsettingPolicySubsettingRuleOutput: typeof import("./getSubsettingPolicySubsettingRule").getSubsettingPolicySubsettingRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicySubsettingRule","getSubsettingPolicySubsettingRuleOutput"], () => require("./getSubsettingPolicySubsettingRule"));
+
+export { GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs, GetSubsettingPolicySubsettingRuleProcessingChainObjectsResult, GetSubsettingPolicySubsettingRuleProcessingChainObjectsOutputArgs } from "./getSubsettingPolicySubsettingRuleProcessingChainObjects";
+export const getSubsettingPolicySubsettingRuleProcessingChainObjects: typeof import("./getSubsettingPolicySubsettingRuleProcessingChainObjects").getSubsettingPolicySubsettingRuleProcessingChainObjects = null as any;
+export const getSubsettingPolicySubsettingRuleProcessingChainObjectsOutput: typeof import("./getSubsettingPolicySubsettingRuleProcessingChainObjects").getSubsettingPolicySubsettingRuleProcessingChainObjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicySubsettingRuleProcessingChainObjects","getSubsettingPolicySubsettingRuleProcessingChainObjectsOutput"], () => require("./getSubsettingPolicySubsettingRuleProcessingChainObjects"));
+
+export { GetSubsettingPolicySubsettingRulesArgs, GetSubsettingPolicySubsettingRulesResult, GetSubsettingPolicySubsettingRulesOutputArgs } from "./getSubsettingPolicySubsettingRules";
+export const getSubsettingPolicySubsettingRules: typeof import("./getSubsettingPolicySubsettingRules").getSubsettingPolicySubsettingRules = null as any;
+export const getSubsettingPolicySubsettingRulesOutput: typeof import("./getSubsettingPolicySubsettingRules").getSubsettingPolicySubsettingRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicySubsettingRules","getSubsettingPolicySubsettingRulesOutput"], () => require("./getSubsettingPolicySubsettingRules"));
+
+export { GetSubsettingPolicySubsettingSchemaObjectsArgs, GetSubsettingPolicySubsettingSchemaObjectsResult, GetSubsettingPolicySubsettingSchemaObjectsOutputArgs } from "./getSubsettingPolicySubsettingSchemaObjects";
+export const getSubsettingPolicySubsettingSchemaObjects: typeof import("./getSubsettingPolicySubsettingSchemaObjects").getSubsettingPolicySubsettingSchemaObjects = null as any;
+export const getSubsettingPolicySubsettingSchemaObjectsOutput: typeof import("./getSubsettingPolicySubsettingSchemaObjects").getSubsettingPolicySubsettingSchemaObjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicySubsettingSchemaObjects","getSubsettingPolicySubsettingSchemaObjectsOutput"], () => require("./getSubsettingPolicySubsettingSchemaObjects"));
+
+export { GetSubsettingPolicySubsettingSchemaRelationArgs, GetSubsettingPolicySubsettingSchemaRelationResult, GetSubsettingPolicySubsettingSchemaRelationOutputArgs } from "./getSubsettingPolicySubsettingSchemaRelation";
+export const getSubsettingPolicySubsettingSchemaRelation: typeof import("./getSubsettingPolicySubsettingSchemaRelation").getSubsettingPolicySubsettingSchemaRelation = null as any;
+export const getSubsettingPolicySubsettingSchemaRelationOutput: typeof import("./getSubsettingPolicySubsettingSchemaRelation").getSubsettingPolicySubsettingSchemaRelationOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicySubsettingSchemaRelation","getSubsettingPolicySubsettingSchemaRelationOutput"], () => require("./getSubsettingPolicySubsettingSchemaRelation"));
+
+export { GetSubsettingPolicySubsettingSchemaRelationsArgs, GetSubsettingPolicySubsettingSchemaRelationsResult, GetSubsettingPolicySubsettingSchemaRelationsOutputArgs } from "./getSubsettingPolicySubsettingSchemaRelations";
+export const getSubsettingPolicySubsettingSchemaRelations: typeof import("./getSubsettingPolicySubsettingSchemaRelations").getSubsettingPolicySubsettingSchemaRelations = null as any;
+export const getSubsettingPolicySubsettingSchemaRelationsOutput: typeof import("./getSubsettingPolicySubsettingSchemaRelations").getSubsettingPolicySubsettingSchemaRelationsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicySubsettingSchemaRelations","getSubsettingPolicySubsettingSchemaRelationsOutput"], () => require("./getSubsettingPolicySubsettingSchemaRelations"));
+
+export { GetSubsettingPolicySubsettingSchemasArgs, GetSubsettingPolicySubsettingSchemasResult, GetSubsettingPolicySubsettingSchemasOutputArgs } from "./getSubsettingPolicySubsettingSchemas";
+export const getSubsettingPolicySubsettingSchemas: typeof import("./getSubsettingPolicySubsettingSchemas").getSubsettingPolicySubsettingSchemas = null as any;
+export const getSubsettingPolicySubsettingSchemasOutput: typeof import("./getSubsettingPolicySubsettingSchemas").getSubsettingPolicySubsettingSchemasOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicySubsettingSchemas","getSubsettingPolicySubsettingSchemasOutput"], () => require("./getSubsettingPolicySubsettingSchemas"));
+
+export { GetSubsettingPolicyTableEstimatesArgs, GetSubsettingPolicyTableEstimatesResult, GetSubsettingPolicyTableEstimatesOutputArgs } from "./getSubsettingPolicyTableEstimates";
+export const getSubsettingPolicyTableEstimates: typeof import("./getSubsettingPolicyTableEstimates").getSubsettingPolicyTableEstimates = null as any;
+export const getSubsettingPolicyTableEstimatesOutput: typeof import("./getSubsettingPolicyTableEstimates").getSubsettingPolicyTableEstimatesOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingPolicyTableEstimates","getSubsettingPolicyTableEstimatesOutput"], () => require("./getSubsettingPolicyTableEstimates"));
+
+export { GetSubsettingReportArgs, GetSubsettingReportResult, GetSubsettingReportOutputArgs } from "./getSubsettingReport";
+export const getSubsettingReport: typeof import("./getSubsettingReport").getSubsettingReport = null as any;
+export const getSubsettingReportOutput: typeof import("./getSubsettingReport").getSubsettingReportOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingReport","getSubsettingReportOutput"], () => require("./getSubsettingReport"));
+
+export { GetSubsettingReportSubsettedObjectsArgs, GetSubsettingReportSubsettedObjectsResult, GetSubsettingReportSubsettedObjectsOutputArgs } from "./getSubsettingReportSubsettedObjects";
+export const getSubsettingReportSubsettedObjects: typeof import("./getSubsettingReportSubsettedObjects").getSubsettingReportSubsettedObjects = null as any;
+export const getSubsettingReportSubsettedObjectsOutput: typeof import("./getSubsettingReportSubsettedObjects").getSubsettingReportSubsettedObjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingReportSubsettedObjects","getSubsettingReportSubsettedObjectsOutput"], () => require("./getSubsettingReportSubsettedObjects"));
+
+export { GetSubsettingReportSubsettingErrorsArgs, GetSubsettingReportSubsettingErrorsResult, GetSubsettingReportSubsettingErrorsOutputArgs } from "./getSubsettingReportSubsettingErrors";
+export const getSubsettingReportSubsettingErrors: typeof import("./getSubsettingReportSubsettingErrors").getSubsettingReportSubsettingErrors = null as any;
+export const getSubsettingReportSubsettingErrorsOutput: typeof import("./getSubsettingReportSubsettingErrors").getSubsettingReportSubsettingErrorsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingReportSubsettingErrors","getSubsettingReportSubsettingErrorsOutput"], () => require("./getSubsettingReportSubsettingErrors"));
+
+export { GetSubsettingReportsArgs, GetSubsettingReportsResult, GetSubsettingReportsOutputArgs } from "./getSubsettingReports";
+export const getSubsettingReports: typeof import("./getSubsettingReports").getSubsettingReports = null as any;
+export const getSubsettingReportsOutput: typeof import("./getSubsettingReports").getSubsettingReportsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubsettingReports","getSubsettingReportsOutput"], () => require("./getSubsettingReports"));
+
 export { GetTargetAlertPolicyAssociationArgs, GetTargetAlertPolicyAssociationResult, GetTargetAlertPolicyAssociationOutputArgs } from "./getTargetAlertPolicyAssociation";
 export const getTargetAlertPolicyAssociation: typeof import("./getTargetAlertPolicyAssociation").getTargetAlertPolicyAssociation = null as any;
 export const getTargetAlertPolicyAssociationOutput: typeof import("./getTargetAlertPolicyAssociation").getTargetAlertPolicyAssociationOutput = null as any;
@@ -1010,6 +1120,11 @@ export type OnPremConnector = import("./onPremConnector").OnPremConnector;
 export const OnPremConnector: typeof import("./onPremConnector").OnPremConnector = null as any;
 utilities.lazyLoad(exports, ["OnPremConnector"], () => require("./onPremConnector"));
 
+export { RegistrationPolicyArgs, RegistrationPolicyState } from "./registrationPolicy";
+export type RegistrationPolicy = import("./registrationPolicy").RegistrationPolicy;
+export const RegistrationPolicy: typeof import("./registrationPolicy").RegistrationPolicy = null as any;
+utilities.lazyLoad(exports, ["RegistrationPolicy"], () => require("./registrationPolicy"));
+
 export { ReportArgs, ReportState } from "./report";
 export type Report = import("./report").Report;
 export const Report: typeof import("./report").Report = null as any;
@@ -1140,6 +1255,41 @@ export type SqlFirewallPolicyManagement = import("./sqlFirewallPolicyManagement"
 export const SqlFirewallPolicyManagement: typeof import("./sqlFirewallPolicyManagement").SqlFirewallPolicyManagement = null as any;
 utilities.lazyLoad(exports, ["SqlFirewallPolicyManagement"], () => require("./sqlFirewallPolicyManagement"));
 
+export { SubsetDataArgs, SubsetDataState } from "./subsetData";
+export type SubsetData = import("./subsetData").SubsetData;
+export const SubsetData: typeof import("./subsetData").SubsetData = null as any;
+utilities.lazyLoad(exports, ["SubsetData"], () => require("./subsetData"));
+
+export { SubsettingPolicyArgs, SubsettingPolicyState } from "./subsettingPolicy";
+export type SubsettingPolicy = import("./subsettingPolicy").SubsettingPolicy;
+export const SubsettingPolicy: typeof import("./subsettingPolicy").SubsettingPolicy = null as any;
+utilities.lazyLoad(exports, ["SubsettingPolicy"], () => require("./subsettingPolicy"));
+
+export { SubsettingPolicyHealthReportManagementArgs, SubsettingPolicyHealthReportManagementState } from "./subsettingPolicyHealthReportManagement";
+export type SubsettingPolicyHealthReportManagement = import("./subsettingPolicyHealthReportManagement").SubsettingPolicyHealthReportManagement;
+export const SubsettingPolicyHealthReportManagement: typeof import("./subsettingPolicyHealthReportManagement").SubsettingPolicyHealthReportManagement = null as any;
+utilities.lazyLoad(exports, ["SubsettingPolicyHealthReportManagement"], () => require("./subsettingPolicyHealthReportManagement"));
+
+export { SubsettingPolicySubsettingRuleArgs, SubsettingPolicySubsettingRuleState } from "./subsettingPolicySubsettingRule";
+export type SubsettingPolicySubsettingRule = import("./subsettingPolicySubsettingRule").SubsettingPolicySubsettingRule;
+export const SubsettingPolicySubsettingRule: typeof import("./subsettingPolicySubsettingRule").SubsettingPolicySubsettingRule = null as any;
+utilities.lazyLoad(exports, ["SubsettingPolicySubsettingRule"], () => require("./subsettingPolicySubsettingRule"));
+
+export { SubsettingPolicySubsettingRuleProcessingChainObjectArgs, SubsettingPolicySubsettingRuleProcessingChainObjectState } from "./subsettingPolicySubsettingRuleProcessingChainObject";
+export type SubsettingPolicySubsettingRuleProcessingChainObject = import("./subsettingPolicySubsettingRuleProcessingChainObject").SubsettingPolicySubsettingRuleProcessingChainObject;
+export const SubsettingPolicySubsettingRuleProcessingChainObject: typeof import("./subsettingPolicySubsettingRuleProcessingChainObject").SubsettingPolicySubsettingRuleProcessingChainObject = null as any;
+utilities.lazyLoad(exports, ["SubsettingPolicySubsettingRuleProcessingChainObject"], () => require("./subsettingPolicySubsettingRuleProcessingChainObject"));
+
+export { SubsettingPolicySubsettingSchemaRelationArgs, SubsettingPolicySubsettingSchemaRelationState } from "./subsettingPolicySubsettingSchemaRelation";
+export type SubsettingPolicySubsettingSchemaRelation = import("./subsettingPolicySubsettingSchemaRelation").SubsettingPolicySubsettingSchemaRelation;
+export const SubsettingPolicySubsettingSchemaRelation: typeof import("./subsettingPolicySubsettingSchemaRelation").SubsettingPolicySubsettingSchemaRelation = null as any;
+utilities.lazyLoad(exports, ["SubsettingPolicySubsettingSchemaRelation"], () => require("./subsettingPolicySubsettingSchemaRelation"));
+
+export { SubsettingReportManagementArgs, SubsettingReportManagementState } from "./subsettingReportManagement";
+export type SubsettingReportManagement = import("./subsettingReportManagement").SubsettingReportManagement;
+export const SubsettingReportManagement: typeof import("./subsettingReportManagement").SubsettingReportManagement = null as any;
+utilities.lazyLoad(exports, ["SubsettingReportManagement"], () => require("./subsettingReportManagement"));
+
 export { TargetAlertPolicyAssociationArgs, TargetAlertPolicyAssociationState } from "./targetAlertPolicyAssociation";
 export type TargetAlertPolicyAssociation = import("./targetAlertPolicyAssociation").TargetAlertPolicyAssociation;
 export const TargetAlertPolicyAssociation: typeof import("./targetAlertPolicyAssociation").TargetAlertPolicyAssociation = null as any;
@@ -1248,6 +1398,8 @@ const _module = {
                 return new DiscoveryJobsResult(name, <any>undefined, { urn })
             case "oci:DataSafe/discoveryMod:DiscoveryMod":
                 return new DiscoveryMod(name, <any>undefined, { urn })
+            case "oci:DataSafe/estimateTableSizes:EstimateTableSizes":
+                return new EstimateTableSizes(name, <any>undefined, { urn })
             case "oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration":
                 return new GenerateOnPremConnectorConfiguration(name, <any>undefined, { urn })
             case "oci:DataSafe/libraryMasingFormat:LibraryMasingFormat":
@@ -1266,6 +1418,8 @@ const _module = {
                 return new MaskingReportManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/onPremConnector:OnPremConnector":
                 return new OnPremConnector(name, <any>undefined, { urn })
+            case "oci:DataSafe/registrationPolicy:RegistrationPolicy":
+                return new RegistrationPolicy(name, <any>undefined, { urn })
             case "oci:DataSafe/report:Report":
                 return new Report(name, <any>undefined, { urn })
             case "oci:DataSafe/reportDefinition:ReportDefinition":
@@ -1318,6 +1472,20 @@ const _module = {
                 return new SqlFirewallPolicy(name, <any>undefined, { urn })
             case "oci:DataSafe/sqlFirewallPolicyManagement:SqlFirewallPolicyManagement":
                 return new SqlFirewallPolicyManagement(name, <any>undefined, { urn })
+            case "oci:DataSafe/subsetData:SubsetData":
+                return new SubsetData(name, <any>undefined, { urn })
+            case "oci:DataSafe/subsettingPolicy:SubsettingPolicy":
+                return new SubsettingPolicy(name, <any>undefined, { urn })
+            case "oci:DataSafe/subsettingPolicyHealthReportManagement:SubsettingPolicyHealthReportManagement":
+                return new SubsettingPolicyHealthReportManagement(name, <any>undefined, { urn })
+            case "oci:DataSafe/subsettingPolicySubsettingRule:SubsettingPolicySubsettingRule":
+                return new SubsettingPolicySubsettingRule(name, <any>undefined, { urn })
+            case "oci:DataSafe/subsettingPolicySubsettingRuleProcessingChainObject:SubsettingPolicySubsettingRuleProcessingChainObject":
+                return new SubsettingPolicySubsettingRuleProcessingChainObject(name, <any>undefined, { urn })
+            case "oci:DataSafe/subsettingPolicySubsettingSchemaRelation:SubsettingPolicySubsettingSchemaRelation":
+                return new SubsettingPolicySubsettingSchemaRelation(name, <any>undefined, { urn })
+            case "oci:DataSafe/subsettingReportManagement:SubsettingReportManagement":
+                return new SubsettingReportManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation":
                 return new TargetAlertPolicyAssociation(name, <any>undefined, { urn })
             case "oci:DataSafe/targetDatabase:TargetDatabase":
@@ -1369,6 +1537,7 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/databaseSecurityConfig", 
 pulumi.runtime.registerResourceModule("oci", "DataSafe/databaseSecurityConfigManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/discoveryJobsResult", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/discoveryMod", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/estimateTableSizes", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/generateOnPremConnectorConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/libraryMasingFormat", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskData", _module)
@@ -1378,6 +1547,7 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPolicyHealthReportManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingReportManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/onPremConnector", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/registrationPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/report", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/reportDefinition", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sdmMaskingPolicyDifference", _module)
@@ -1404,6 +1574,13 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/setUserAssessmentBaseline
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sqlCollection", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sqlFirewallPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sqlFirewallPolicyManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/subsetData", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/subsettingPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/subsettingPolicyHealthReportManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/subsettingPolicySubsettingRule", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/subsettingPolicySubsettingRuleProcessingChainObject", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/subsettingPolicySubsettingSchemaRelation", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/subsettingReportManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/targetAlertPolicyAssociation", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/targetDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/targetDatabaseGroup", _module)

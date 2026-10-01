@@ -28,7 +28,7 @@ class GetDrgAttachmentsResult:
     """
     A collection of values returned by getDrgAttachments.
     """
-    def __init__(__self__, attachment_type=None, compartment_id=None, display_name=None, drg_attachments=None, drg_id=None, drg_route_table_id=None, filters=None, id=None, network_id=None, state=None, vcn_id=None):
+    def __init__(__self__, attachment_type=None, compartment_id=None, display_name=None, drg_attachments=None, drg_id=None, drg_nat_policy_id=None, drg_route_table_id=None, filters=None, id=None, network_id=None, state=None, vcn_id=None):
         if attachment_type and not isinstance(attachment_type, str):
             raise TypeError("Expected argument 'attachment_type' to be a str")
         pulumi.set(__self__, "attachment_type", attachment_type)
@@ -44,6 +44,9 @@ class GetDrgAttachmentsResult:
         if drg_id and not isinstance(drg_id, str):
             raise TypeError("Expected argument 'drg_id' to be a str")
         pulumi.set(__self__, "drg_id", drg_id)
+        if drg_nat_policy_id and not isinstance(drg_nat_policy_id, str):
+            raise TypeError("Expected argument 'drg_nat_policy_id' to be a str")
+        pulumi.set(__self__, "drg_nat_policy_id", drg_nat_policy_id)
         if drg_route_table_id and not isinstance(drg_route_table_id, str):
             raise TypeError("Expected argument 'drg_route_table_id' to be a str")
         pulumi.set(__self__, "drg_route_table_id", drg_route_table_id)
@@ -101,6 +104,14 @@ class GetDrgAttachmentsResult:
         return pulumi.get(self, "drg_id")
 
     @_builtins.property
+    @pulumi.getter(name="drgNatPolicyId")
+    def drg_nat_policy_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+        """
+        return pulumi.get(self, "drg_nat_policy_id")
+
+    @_builtins.property
     @pulumi.getter(name="drgRouteTableId")
     def drg_route_table_id(self) -> Optional[_builtins.str]:
         """
@@ -154,6 +165,7 @@ class AwaitableGetDrgAttachmentsResult(GetDrgAttachmentsResult):
             display_name=self.display_name,
             drg_attachments=self.drg_attachments,
             drg_id=self.drg_id,
+            drg_nat_policy_id=self.drg_nat_policy_id,
             drg_route_table_id=self.drg_route_table_id,
             filters=self.filters,
             id=self.id,
@@ -166,6 +178,7 @@ def get_drg_attachments(attachment_type: Optional[_builtins.str] = None,
                         compartment_id: Optional[_builtins.str] = None,
                         display_name: Optional[_builtins.str] = None,
                         drg_id: Optional[_builtins.str] = None,
+                        drg_nat_policy_id: Optional[_builtins.str] = None,
                         drg_route_table_id: Optional[_builtins.str] = None,
                         filters: Optional[Sequence[Union['GetDrgAttachmentsFilterArgs', 'GetDrgAttachmentsFilterArgsDict', 'outputs.GetDrgAttachmentsFilterResult']]] = None,
                         network_id: Optional[_builtins.str] = None,
@@ -192,6 +205,7 @@ def get_drg_attachments(attachment_type: Optional[_builtins.str] = None,
         attachment_type=drg_attachment_attachment_type,
         display_name=drg_attachment_display_name,
         drg_id=test_drg["id"],
+        drg_nat_policy_id=test_drg_nat_policy["id"],
         drg_route_table_id=test_drg_route_table["id"],
         network_id=test_network["id"],
         state=drg_attachment_state,
@@ -203,6 +217,7 @@ def get_drg_attachments(attachment_type: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+    :param _builtins.str drg_nat_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
     :param _builtins.str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
     :param _builtins.str network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
     :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -213,6 +228,7 @@ def get_drg_attachments(attachment_type: Optional[_builtins.str] = None,
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['drgId'] = drg_id
+    __args__['drgNatPolicyId'] = drg_nat_policy_id
     __args__['drgRouteTableId'] = drg_route_table_id
     __args__['filters'] = filters
     __args__['networkId'] = network_id
@@ -227,6 +243,7 @@ def get_drg_attachments(attachment_type: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         drg_attachments=pulumi.get(__ret__, 'drg_attachments'),
         drg_id=pulumi.get(__ret__, 'drg_id'),
+        drg_nat_policy_id=pulumi.get(__ret__, 'drg_nat_policy_id'),
         drg_route_table_id=pulumi.get(__ret__, 'drg_route_table_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
@@ -237,6 +254,7 @@ def get_drg_attachments_output(attachment_type: pulumi.Input[Optional[Optional[_
                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                drg_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               drg_nat_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                drg_route_table_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrgAttachmentsFilterArgs', 'GetDrgAttachmentsFilterArgsDict', 'outputs.GetDrgAttachmentsFilterResult']]]]] = None,
                                network_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -263,6 +281,7 @@ def get_drg_attachments_output(attachment_type: pulumi.Input[Optional[Optional[_
         attachment_type=drg_attachment_attachment_type,
         display_name=drg_attachment_display_name,
         drg_id=test_drg["id"],
+        drg_nat_policy_id=test_drg_nat_policy["id"],
         drg_route_table_id=test_drg_route_table["id"],
         network_id=test_network["id"],
         state=drg_attachment_state,
@@ -274,6 +293,7 @@ def get_drg_attachments_output(attachment_type: pulumi.Input[Optional[Optional[_
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+    :param _builtins.str drg_nat_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
     :param _builtins.str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
     :param _builtins.str network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
     :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -284,6 +304,7 @@ def get_drg_attachments_output(attachment_type: pulumi.Input[Optional[Optional[_
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['drgId'] = drg_id
+    __args__['drgNatPolicyId'] = drg_nat_policy_id
     __args__['drgRouteTableId'] = drg_route_table_id
     __args__['filters'] = filters
     __args__['networkId'] = network_id
@@ -297,6 +318,7 @@ def get_drg_attachments_output(attachment_type: pulumi.Input[Optional[Optional[_
         display_name=pulumi.get(__response__, 'display_name'),
         drg_attachments=pulumi.get(__response__, 'drg_attachments'),
         drg_id=pulumi.get(__response__, 'drg_id'),
+        drg_nat_policy_id=pulumi.get(__response__, 'drg_nat_policy_id'),
         drg_route_table_id=pulumi.get(__response__, 'drg_route_table_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),

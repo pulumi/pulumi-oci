@@ -1631,6 +1631,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Core/drgNatPolicy",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/drgNatPolicy:DrgNatPolicy": "DrgNatPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Core/drgNatPolicyDrgNatRule",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/drgNatPolicyDrgNatRule:DrgNatPolicyDrgNatRule": "DrgNatPolicyDrgNatRule"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Core/drgRouteDistribution",
   "fqn": "pulumi_oci.core",
   "classes": {
@@ -2351,6 +2367,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/estimateTableSizes",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/estimateTableSizes:EstimateTableSizes": "EstimateTableSizes"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/generateOnPremConnectorConfiguration",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -2419,6 +2443,14 @@ _utilities.register(
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/onPremConnector:OnPremConnector": "OnPremConnector"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/registrationPolicy",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/registrationPolicy:RegistrationPolicy": "RegistrationPolicy"
   }
  },
  {
@@ -2627,6 +2659,62 @@ _utilities.register(
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/sqlFirewallPolicyManagement:SqlFirewallPolicyManagement": "SqlFirewallPolicyManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/subsetData",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/subsetData:SubsetData": "SubsetData"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/subsettingPolicy",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/subsettingPolicy:SubsettingPolicy": "SubsettingPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/subsettingPolicyHealthReportManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/subsettingPolicyHealthReportManagement:SubsettingPolicyHealthReportManagement": "SubsettingPolicyHealthReportManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/subsettingPolicySubsettingRule",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/subsettingPolicySubsettingRule:SubsettingPolicySubsettingRule": "SubsettingPolicySubsettingRule"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/subsettingPolicySubsettingRuleProcessingChainObject",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/subsettingPolicySubsettingRuleProcessingChainObject:SubsettingPolicySubsettingRuleProcessingChainObject": "SubsettingPolicySubsettingRuleProcessingChainObject"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/subsettingPolicySubsettingSchemaRelation",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/subsettingPolicySubsettingSchemaRelation:SubsettingPolicySubsettingSchemaRelation": "SubsettingPolicySubsettingSchemaRelation"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/subsettingReportManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/subsettingReportManagement:SubsettingReportManagement": "SubsettingReportManagement"
   }
  },
  {

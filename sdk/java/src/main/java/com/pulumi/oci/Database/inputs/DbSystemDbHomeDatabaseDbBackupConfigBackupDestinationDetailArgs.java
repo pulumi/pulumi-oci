@@ -128,6 +128,13 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
         return Optional.ofNullable(this.type);
     }
 
+    @Import(name="vpcUser")
+    private @Nullable Output<String> vpcUser;
+
+    public Optional<Output<String>> vpcUser() {
+        return Optional.ofNullable(this.vpcUser);
+    }
+
     private DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs() {}
 
     private DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs(DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs $) {
@@ -139,6 +146,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
         this.isZeroDataLossEnabled = $.isZeroDataLossEnabled;
         this.remoteRegion = $.remoteRegion;
         this.type = $.type;
+        this.vpcUser = $.vpcUser;
     }
 
     public static Builder builder() {
@@ -313,6 +321,15 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
          */
         public Builder type(String type) {
             return type(Output.of(type));
+        }
+
+        public Builder vpcUser(@Nullable Output<String> vpcUser) {
+            $.vpcUser = vpcUser;
+            return this;
+        }
+
+        public Builder vpcUser(String vpcUser) {
+            return vpcUser(Output.of(vpcUser));
         }
 
         public DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs build() {

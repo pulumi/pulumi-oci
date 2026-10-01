@@ -24,7 +24,11 @@ class ContainerConfigurationArgs:
         """
         The set of arguments for constructing a ContainerConfiguration resource.
 
-        :param pulumi.Input[_builtins.bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[_builtins.bool] is_repository_created_on_first_push: (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "is_repository_created_on_first_push", is_repository_created_on_first_push)
@@ -32,6 +36,9 @@ class ContainerConfigurationArgs:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -42,7 +49,10 @@ class ContainerConfigurationArgs:
     @pulumi.getter(name="isRepositoryCreatedOnFirstPush")
     def is_repository_created_on_first_push(self) -> pulumi.Input[_builtins.bool]:
         """
-        Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_repository_created_on_first_push")
 
@@ -60,7 +70,11 @@ class _ContainerConfigurationState:
         """
         Input properties used for looking up and filtering ContainerConfiguration resources.
 
-        :param pulumi.Input[_builtins.bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[_builtins.bool] is_repository_created_on_first_push: (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] namespace: The tenancy namespace used in the container repository path.
         """
         if compartment_id is not None:
@@ -73,6 +87,9 @@ class _ContainerConfigurationState:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -83,7 +100,10 @@ class _ContainerConfigurationState:
     @pulumi.getter(name="isRepositoryCreatedOnFirstPush")
     def is_repository_created_on_first_push(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_repository_created_on_first_push")
 
@@ -125,7 +145,9 @@ class ContainerConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_container_configuration = oci.artifacts.ContainerConfiguration("test_container_configuration")
+        test_container_configuration = oci.artifacts.ContainerConfiguration("test_container_configuration",
+            compartment_id=compartment_id,
+            is_repository_created_on_first_push=container_configuration_is_repository_created_on_first_push == "true")
         ```
 
         ## Import
@@ -139,7 +161,11 @@ class ContainerConfiguration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[_builtins.bool] is_repository_created_on_first_push: (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -159,7 +185,9 @@ class ContainerConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_container_configuration = oci.artifacts.ContainerConfiguration("test_container_configuration")
+        test_container_configuration = oci.artifacts.ContainerConfiguration("test_container_configuration",
+            compartment_id=compartment_id,
+            is_repository_created_on_first_push=container_configuration_is_repository_created_on_first_push == "true")
         ```
 
         ## Import
@@ -224,7 +252,11 @@ class ContainerConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[_builtins.bool] is_repository_created_on_first_push: (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] namespace: The tenancy namespace used in the container repository path.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -239,13 +271,19 @@ class ContainerConfiguration(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter(name="isRepositoryCreatedOnFirstPush")
     def is_repository_created_on_first_push(self) -> pulumi.Output[_builtins.bool]:
         """
-        Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+        (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_repository_created_on_first_push")
 

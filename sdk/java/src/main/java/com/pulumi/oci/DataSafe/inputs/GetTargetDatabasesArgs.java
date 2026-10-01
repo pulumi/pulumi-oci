@@ -109,6 +109,21 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+     * 
+     */
+    @Import(name="enablementResourceOcid")
+    private @Nullable Output<String> enablementResourceOcid;
+
+    /**
+     * @return A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+     * 
+     */
+    public Optional<Output<String>> enablementResourceOcid() {
+        return Optional.ofNullable(this.enablementResourceOcid);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetTargetDatabasesFilterArgs>> filters;
 
@@ -170,6 +185,7 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.databaseType = $.databaseType;
         this.displayName = $.displayName;
+        this.enablementResourceOcid = $.enablementResourceOcid;
         this.filters = $.filters;
         this.infrastructureType = $.infrastructureType;
         this.state = $.state;
@@ -318,6 +334,27 @@ public final class GetTargetDatabasesArgs extends com.pulumi.resources.InvokeArg
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param enablementResourceOcid A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enablementResourceOcid(@Nullable Output<String> enablementResourceOcid) {
+            $.enablementResourceOcid = enablementResourceOcid;
+            return this;
+        }
+
+        /**
+         * @param enablementResourceOcid A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enablementResourceOcid(String enablementResourceOcid) {
+            return enablementResourceOcid(Output.of(enablementResourceOcid));
         }
 
         public Builder filters(@Nullable Output<List<GetTargetDatabasesFilterArgs>> filters) {

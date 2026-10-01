@@ -242,7 +242,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly memoryPerComputeUnitInGbs: pulumi.Output<number>;
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     declare public readonly memoryPerOracleComputeUnitInGbs: pulumi.Output<number>;
     /**
@@ -319,7 +319,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
-     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
      */
     declare public readonly sgaPercentage: pulumi.Output<number>;
     /**
@@ -694,7 +694,7 @@ export interface CloudAutonomousVmClusterState {
      */
     memoryPerComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
@@ -771,7 +771,7 @@ export interface CloudAutonomousVmClusterState {
      */
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
      */
     sgaPercentage?: pulumi.Input<number | undefined>;
     /**
@@ -902,7 +902,7 @@ export interface CloudAutonomousVmClusterArgs {
      */
     maintenanceWindowDetails?: pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindowDetails | undefined>;
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
@@ -931,7 +931,7 @@ export interface CloudAutonomousVmClusterArgs {
      */
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
      */
     sgaPercentage?: pulumi.Input<number | undefined>;
     /**

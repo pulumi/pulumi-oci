@@ -49,7 +49,7 @@ class FusionEnvironmentArgs:
         :param pulumi.Input[_builtins.str] dns_prefix: DNS prefix.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
-        :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) byok kms keyId
+        :param pulumi.Input[_builtins.str] kms_key_id: (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
         :param pulumi.Input['FusionEnvironmentMaintenancePolicyArgs'] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]] rules: (Updatable) Rules.
         """
@@ -70,6 +70,9 @@ class FusionEnvironmentArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_ipv6dual_stack_enabled is not None:
             pulumi.set(__self__, "is_ipv6dual_stack_enabled", is_ipv6dual_stack_enabled)
+        if kms_key_id is not None:
+            warnings.warn("""Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.""", DeprecationWarning)
+            pulumi.log.warn("""kms_key_id is deprecated: Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.""")
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if maintenance_policy is not None:
@@ -211,9 +214,10 @@ class FusionEnvironmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
+    @_utilities.deprecated("""Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.""")
     def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) byok kms keyId
+        (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -297,7 +301,7 @@ class _FusionEnvironmentState:
         :param pulumi.Input[_builtins.str] idcs_domain_url: The IDCS Domain URL
         :param pulumi.Input[_builtins.bool] is_break_glass_enabled: If it's true, then the Break Glass feature is enabled
         :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
-        :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) byok kms keyId
+        :param pulumi.Input[_builtins.str] kms_key_id: (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]] kms_key_infos: BYOK key info
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] lockbox_id: The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
@@ -343,6 +347,9 @@ class _FusionEnvironmentState:
             pulumi.set(__self__, "is_break_glass_enabled", is_break_glass_enabled)
         if is_ipv6dual_stack_enabled is not None:
             pulumi.set(__self__, "is_ipv6dual_stack_enabled", is_ipv6dual_stack_enabled)
+        if kms_key_id is not None:
+            warnings.warn("""Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.""", DeprecationWarning)
+            pulumi.log.warn("""kms_key_id is deprecated: Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.""")
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_infos is not None:
@@ -556,9 +563,10 @@ class _FusionEnvironmentState:
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
+    @_utilities.deprecated("""Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.""")
     def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) byok kms keyId
+        (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -833,7 +841,7 @@ class FusionEnvironment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         :param pulumi.Input[_builtins.str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
         :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
-        :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) byok kms keyId
+        :param pulumi.Input[_builtins.str] kms_key_id: (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
         :param pulumi.Input[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict', 'outputs.FusionEnvironmentMaintenancePolicy']] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict', 'outputs.FusionEnvironmentRule']]]] rules: (Updatable) Rules.
         """
@@ -1047,7 +1055,7 @@ class FusionEnvironment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] idcs_domain_url: The IDCS Domain URL
         :param pulumi.Input[_builtins.bool] is_break_glass_enabled: If it's true, then the Break Glass feature is enabled
         :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
-        :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) byok kms keyId
+        :param pulumi.Input[_builtins.str] kms_key_id: (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentKmsKeyInfoArgs', 'FusionEnvironmentKmsKeyInfoArgsDict', 'outputs.FusionEnvironmentKmsKeyInfo']]]] kms_key_infos: BYOK key info
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] lockbox_id: The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
@@ -1221,9 +1229,10 @@ class FusionEnvironment(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
+    @_utilities.deprecated("""Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.""")
     def kms_key_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) byok kms keyId
+        (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
         """
         return pulumi.get(self, "kms_key_id")
 

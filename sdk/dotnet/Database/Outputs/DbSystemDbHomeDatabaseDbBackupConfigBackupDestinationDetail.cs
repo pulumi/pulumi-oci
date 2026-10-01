@@ -42,6 +42,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// Type of the database backup destination.
         /// </summary>
         public readonly string? Type;
+        public readonly string? VpcUser;
 
         [OutputConstructor]
         private DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(
@@ -59,7 +60,9 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? remoteRegion,
 
-            string? type)
+            string? type,
+
+            string? vpcUser)
         {
             BackupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             DbrsPolicyId = dbrsPolicyId;
@@ -69,6 +72,7 @@ namespace Pulumi.Oci.Database.Outputs
             IsZeroDataLossEnabled = isZeroDataLossEnabled;
             RemoteRegion = remoteRegion;
             Type = type;
+            VpcUser = vpcUser;
         }
     }
 }

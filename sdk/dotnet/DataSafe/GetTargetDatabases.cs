@@ -35,6 +35,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = targetDatabaseCompartmentIdInSubtree,
         ///         DatabaseType = targetDatabaseDatabaseType,
         ///         DisplayName = targetDatabaseDisplayName,
+        ///         EnablementResourceOcid = targetDatabaseEnablementResourceOcid,
         ///         InfrastructureType = targetDatabaseInfrastructureType,
         ///         State = targetDatabaseState,
         ///         TargetDatabaseId = testTargetDatabase.Id,
@@ -70,6 +71,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = targetDatabaseCompartmentIdInSubtree,
         ///         DatabaseType = targetDatabaseDatabaseType,
         ///         DisplayName = targetDatabaseDisplayName,
+        ///         EnablementResourceOcid = targetDatabaseEnablementResourceOcid,
         ///         InfrastructureType = targetDatabaseInfrastructureType,
         ///         State = targetDatabaseState,
         ///         TargetDatabaseId = testTargetDatabase.Id,
@@ -105,6 +107,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = targetDatabaseCompartmentIdInSubtree,
         ///         DatabaseType = targetDatabaseDatabaseType,
         ///         DisplayName = targetDatabaseDisplayName,
+        ///         EnablementResourceOcid = targetDatabaseEnablementResourceOcid,
         ///         InfrastructureType = targetDatabaseInfrastructureType,
         ///         State = targetDatabaseState,
         ///         TargetDatabaseId = testTargetDatabase.Id,
@@ -155,6 +158,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
+
+        /// <summary>
+        /// A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+        /// </summary>
+        [Input("enablementResourceOcid")]
+        public string? EnablementResourceOcid { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetTargetDatabasesFilterArgs>? _filters;
@@ -226,6 +235,12 @@ namespace Pulumi.Oci.DataSafe
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+        /// </summary>
+        [Input("enablementResourceOcid")]
+        public Input<string>? EnablementResourceOcid { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetTargetDatabasesFilterInputArgs>? _filters;
         public InputList<Inputs.GetTargetDatabasesFilterInputArgs> Filters
@@ -277,6 +292,7 @@ namespace Pulumi.Oci.DataSafe
         /// The display name of the peer target database in Data Safe.
         /// </summary>
         public readonly string? DisplayName;
+        public readonly string? EnablementResourceOcid;
         public readonly ImmutableArray<Outputs.GetTargetDatabasesFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -310,6 +326,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? displayName,
 
+            string? enablementResourceOcid,
+
             ImmutableArray<Outputs.GetTargetDatabasesFilterResult> filters,
 
             string id,
@@ -328,6 +346,7 @@ namespace Pulumi.Oci.DataSafe
             CompartmentIdInSubtree = compartmentIdInSubtree;
             DatabaseType = databaseType;
             DisplayName = displayName;
+            EnablementResourceOcid = enablementResourceOcid;
             Filters = filters;
             Id = id;
             InfrastructureType = infrastructureType;

@@ -26,7 +26,7 @@ class GetMaskingReportResult:
     """
     A collection of values returned by getMaskingReport.
     """
-    def __init__(__self__, compartment_id=None, id=None, is_drop_temp_tables_enabled=None, is_redo_logging_enabled=None, is_refresh_stats_enabled=None, masking_policy_id=None, masking_report_id=None, masking_status=None, masking_work_request_id=None, parallel_degree=None, recompile=None, state=None, target_id=None, time_created=None, time_masking_finished=None, time_masking_started=None, total_masked_columns=None, total_masked_objects=None, total_masked_schemas=None, total_masked_sensitive_types=None, total_masked_values=None, total_post_masking_script_errors=None, total_pre_masking_script_errors=None):
+    def __init__(__self__, compartment_id=None, id=None, is_drop_temp_tables_enabled=None, is_redo_logging_enabled=None, is_refresh_stats_enabled=None, masking_policy_id=None, masking_report_id=None, masking_status=None, masking_work_request_id=None, parallel_degree=None, recompile=None, state=None, subsetting_report_id=None, target_id=None, time_created=None, time_masking_finished=None, time_masking_started=None, total_masked_columns=None, total_masked_objects=None, total_masked_schemas=None, total_masked_sensitive_types=None, total_masked_values=None, total_post_masking_script_errors=None, total_pre_masking_script_errors=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -63,6 +63,9 @@ class GetMaskingReportResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if subsetting_report_id and not isinstance(subsetting_report_id, str):
+            raise TypeError("Expected argument 'subsetting_report_id' to be a str")
+        pulumi.set(__self__, "subsetting_report_id", subsetting_report_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -191,6 +194,14 @@ class GetMaskingReportResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="subsettingReportId")
+    def subsetting_report_id(self) -> _builtins.str:
+        """
+        The OCID of the subsetting report associated with this masking report
+        """
+        return pulumi.get(self, "subsetting_report_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> _builtins.str:
         """
@@ -297,6 +308,7 @@ class AwaitableGetMaskingReportResult(GetMaskingReportResult):
             parallel_degree=self.parallel_degree,
             recompile=self.recompile,
             state=self.state,
+            subsetting_report_id=self.subsetting_report_id,
             target_id=self.target_id,
             time_created=self.time_created,
             time_masking_finished=self.time_masking_finished,
@@ -347,6 +359,7 @@ def get_masking_report(masking_report_id: Optional[_builtins.str] = None,
         parallel_degree=pulumi.get(__ret__, 'parallel_degree'),
         recompile=pulumi.get(__ret__, 'recompile'),
         state=pulumi.get(__ret__, 'state'),
+        subsetting_report_id=pulumi.get(__ret__, 'subsetting_report_id'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_masking_finished=pulumi.get(__ret__, 'time_masking_finished'),
@@ -394,6 +407,7 @@ def get_masking_report_output(masking_report_id: pulumi.Input[Optional[_builtins
         parallel_degree=pulumi.get(__response__, 'parallel_degree'),
         recompile=pulumi.get(__response__, 'recompile'),
         state=pulumi.get(__response__, 'state'),
+        subsetting_report_id=pulumi.get(__response__, 'subsetting_report_id'),
         target_id=pulumi.get(__response__, 'target_id'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_masking_finished=pulumi.get(__response__, 'time_masking_finished'),

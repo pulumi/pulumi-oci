@@ -37,6 +37,11 @@ public final class GetDrgAttachmentsResult {
      */
     private @Nullable String drgId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment&#39;s DRG NAT policy.
+     * 
+     */
+    private @Nullable String drgNatPolicyId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
      * 
      */
@@ -92,6 +97,13 @@ public final class GetDrgAttachmentsResult {
         return Optional.ofNullable(this.drgId);
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment&#39;s DRG NAT policy.
+     * 
+     */
+    public Optional<String> drgNatPolicyId() {
+        return Optional.ofNullable(this.drgNatPolicyId);
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
      * 
      */
@@ -140,6 +152,7 @@ public final class GetDrgAttachmentsResult {
         private @Nullable String displayName;
         private List<GetDrgAttachmentsDrgAttachment> drgAttachments;
         private @Nullable String drgId;
+        private @Nullable String drgNatPolicyId;
         private @Nullable String drgRouteTableId;
         private @Nullable List<GetDrgAttachmentsFilter> filters;
         private String id;
@@ -154,6 +167,7 @@ public final class GetDrgAttachmentsResult {
     	      this.displayName = defaults.displayName;
     	      this.drgAttachments = defaults.drgAttachments;
     	      this.drgId = defaults.drgId;
+    	      this.drgNatPolicyId = defaults.drgNatPolicyId;
     	      this.drgRouteTableId = defaults.drgRouteTableId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -197,6 +211,12 @@ public final class GetDrgAttachmentsResult {
         public Builder drgId(@Nullable String drgId) {
 
             this.drgId = drgId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder drgNatPolicyId(@Nullable String drgNatPolicyId) {
+
+            this.drgNatPolicyId = drgNatPolicyId;
             return this;
         }
         @CustomType.Setter
@@ -247,6 +267,7 @@ public final class GetDrgAttachmentsResult {
             _resultValue.displayName = displayName;
             _resultValue.drgAttachments = drgAttachments;
             _resultValue.drgId = drgId;
+            _resultValue.drgNatPolicyId = drgNatPolicyId;
             _resultValue.drgRouteTableId = drgRouteTableId;
             _resultValue.filters = filters;
             _resultValue.id = id;

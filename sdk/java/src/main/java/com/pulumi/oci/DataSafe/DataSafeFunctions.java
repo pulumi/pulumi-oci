@@ -154,6 +154,12 @@ import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorArgs;
 import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetRegistrationPoliciesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetRegistrationPoliciesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyArgs;
+import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyTargetDatabasesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyTargetDatabasesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetReportArgs;
 import com.pulumi.oci.DataSafe.inputs.GetReportContentArgs;
 import com.pulumi.oci.DataSafe.inputs.GetReportContentPlainArgs;
@@ -286,6 +292,42 @@ import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingAnalyticsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPoliciesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPoliciesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportLogsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportLogsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRulePlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleProcessingChainObjectsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRulesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRulesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaObjectsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaObjectsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemasArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemasPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyTableEstimatesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyTableEstimatesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettedObjectsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettedObjectsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettingErrorsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettingErrorsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs;
@@ -416,6 +458,9 @@ import com.pulumi.oci.DataSafe.outputs.GetMaskingReportsMaskedColumnResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportsResult;
 import com.pulumi.oci.DataSafe.outputs.GetOnpremConnectorResult;
 import com.pulumi.oci.DataSafe.outputs.GetOnpremConnectorsResult;
+import com.pulumi.oci.DataSafe.outputs.GetRegistrationPoliciesResult;
+import com.pulumi.oci.DataSafe.outputs.GetRegistrationPolicyResult;
+import com.pulumi.oci.DataSafe.outputs.GetRegistrationPolicyTargetDatabasesResult;
 import com.pulumi.oci.DataSafe.outputs.GetReportContentResult;
 import com.pulumi.oci.DataSafe.outputs.GetReportDefinitionResult;
 import com.pulumi.oci.DataSafe.outputs.GetReportDefinitionsResult;
@@ -482,6 +527,24 @@ import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallPolicyAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallPolicyResult;
 import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallViolationAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallViolationsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingAnalyticsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPoliciesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicyHealthReportLogsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicyHealthReportResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicyHealthReportsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicyResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicySubsettingRuleProcessingChainObjectsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicySubsettingRuleResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicySubsettingRulesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicySubsettingSchemaObjectsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicySubsettingSchemaRelationResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicySubsettingSchemaRelationsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicySubsettingSchemasResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingPolicyTableEstimatesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingReportResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingReportSubsettedObjectsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingReportSubsettingErrorsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSubsettingReportsResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationsResult;
@@ -18376,6 +18439,706 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getOnpremConnectors:getOnpremConnectors", TypeShape.of(GetOnpremConnectorsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Registration Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of registration policies according to the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicies = DataSafeFunctions.getRegistrationPolicies(GetRegistrationPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(registrationPolicyAccessLevel)
+     *             .compartmentIdInSubtree(registrationPolicyCompartmentIdInSubtree)
+     *             .connectionId(testConnection.id())
+     *             .connectionType(registrationPolicyConnectionType)
+     *             .displayName(registrationPolicyDisplayName)
+     *             .enablementLevel(registrationPolicyEnablementLevel)
+     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .resourceId(testResource.id())
+     *             .state(registrationPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(registrationPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(registrationPolicyTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRegistrationPoliciesResult> getRegistrationPolicies(GetRegistrationPoliciesArgs args) {
+        return getRegistrationPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Registration Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of registration policies according to the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicies = DataSafeFunctions.getRegistrationPolicies(GetRegistrationPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(registrationPolicyAccessLevel)
+     *             .compartmentIdInSubtree(registrationPolicyCompartmentIdInSubtree)
+     *             .connectionId(testConnection.id())
+     *             .connectionType(registrationPolicyConnectionType)
+     *             .displayName(registrationPolicyDisplayName)
+     *             .enablementLevel(registrationPolicyEnablementLevel)
+     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .resourceId(testResource.id())
+     *             .state(registrationPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(registrationPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(registrationPolicyTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRegistrationPoliciesResult> getRegistrationPoliciesPlain(GetRegistrationPoliciesPlainArgs args) {
+        return getRegistrationPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Registration Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of registration policies according to the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicies = DataSafeFunctions.getRegistrationPolicies(GetRegistrationPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(registrationPolicyAccessLevel)
+     *             .compartmentIdInSubtree(registrationPolicyCompartmentIdInSubtree)
+     *             .connectionId(testConnection.id())
+     *             .connectionType(registrationPolicyConnectionType)
+     *             .displayName(registrationPolicyDisplayName)
+     *             .enablementLevel(registrationPolicyEnablementLevel)
+     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .resourceId(testResource.id())
+     *             .state(registrationPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(registrationPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(registrationPolicyTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRegistrationPoliciesResult> getRegistrationPolicies(GetRegistrationPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getRegistrationPolicies:getRegistrationPolicies", TypeShape.of(GetRegistrationPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Registration Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of registration policies according to the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicies = DataSafeFunctions.getRegistrationPolicies(GetRegistrationPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(registrationPolicyAccessLevel)
+     *             .compartmentIdInSubtree(registrationPolicyCompartmentIdInSubtree)
+     *             .connectionId(testConnection.id())
+     *             .connectionType(registrationPolicyConnectionType)
+     *             .displayName(registrationPolicyDisplayName)
+     *             .enablementLevel(registrationPolicyEnablementLevel)
+     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .resourceId(testResource.id())
+     *             .state(registrationPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(registrationPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(registrationPolicyTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRegistrationPoliciesResult> getRegistrationPolicies(GetRegistrationPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getRegistrationPolicies:getRegistrationPolicies", TypeShape.of(GetRegistrationPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Registration Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of registration policies according to the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicies = DataSafeFunctions.getRegistrationPolicies(GetRegistrationPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(registrationPolicyAccessLevel)
+     *             .compartmentIdInSubtree(registrationPolicyCompartmentIdInSubtree)
+     *             .connectionId(testConnection.id())
+     *             .connectionType(registrationPolicyConnectionType)
+     *             .displayName(registrationPolicyDisplayName)
+     *             .enablementLevel(registrationPolicyEnablementLevel)
+     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .resourceId(testResource.id())
+     *             .state(registrationPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(registrationPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(registrationPolicyTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRegistrationPoliciesResult> getRegistrationPoliciesPlain(GetRegistrationPoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getRegistrationPolicies:getRegistrationPolicies", TypeShape.of(GetRegistrationPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Registration Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified Registration Policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicy = DataSafeFunctions.getRegistrationPolicy(GetRegistrationPolicyArgs.builder()
+     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRegistrationPolicyResult> getRegistrationPolicy(GetRegistrationPolicyArgs args) {
+        return getRegistrationPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Registration Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified Registration Policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicy = DataSafeFunctions.getRegistrationPolicy(GetRegistrationPolicyArgs.builder()
+     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRegistrationPolicyResult> getRegistrationPolicyPlain(GetRegistrationPolicyPlainArgs args) {
+        return getRegistrationPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Registration Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified Registration Policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicy = DataSafeFunctions.getRegistrationPolicy(GetRegistrationPolicyArgs.builder()
+     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRegistrationPolicyResult> getRegistrationPolicy(GetRegistrationPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getRegistrationPolicy:getRegistrationPolicy", TypeShape.of(GetRegistrationPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Registration Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified Registration Policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicy = DataSafeFunctions.getRegistrationPolicy(GetRegistrationPolicyArgs.builder()
+     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRegistrationPolicyResult> getRegistrationPolicy(GetRegistrationPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getRegistrationPolicy:getRegistrationPolicy", TypeShape.of(GetRegistrationPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Registration Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified Registration Policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicy = DataSafeFunctions.getRegistrationPolicy(GetRegistrationPolicyArgs.builder()
+     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRegistrationPolicyResult> getRegistrationPolicyPlain(GetRegistrationPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getRegistrationPolicy:getRegistrationPolicy", TypeShape.of(GetRegistrationPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Registration Policy Target Databases in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the OCIDs of target databases registered via the specified registration policy. Supports optional filtering by registration status (OPTIN/OPTOUT) and by target database OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyTargetDatabasesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicyTargetDatabases = DataSafeFunctions.getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .membershipStatus(registrationPolicyTargetDatabaseMembershipStatus)
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRegistrationPolicyTargetDatabasesResult> getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs args) {
+        return getRegistrationPolicyTargetDatabases(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Registration Policy Target Databases in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the OCIDs of target databases registered via the specified registration policy. Supports optional filtering by registration status (OPTIN/OPTOUT) and by target database OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyTargetDatabasesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicyTargetDatabases = DataSafeFunctions.getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .membershipStatus(registrationPolicyTargetDatabaseMembershipStatus)
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRegistrationPolicyTargetDatabasesResult> getRegistrationPolicyTargetDatabasesPlain(GetRegistrationPolicyTargetDatabasesPlainArgs args) {
+        return getRegistrationPolicyTargetDatabasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Registration Policy Target Databases in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the OCIDs of target databases registered via the specified registration policy. Supports optional filtering by registration status (OPTIN/OPTOUT) and by target database OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyTargetDatabasesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicyTargetDatabases = DataSafeFunctions.getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .membershipStatus(registrationPolicyTargetDatabaseMembershipStatus)
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRegistrationPolicyTargetDatabasesResult> getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getRegistrationPolicyTargetDatabases:getRegistrationPolicyTargetDatabases", TypeShape.of(GetRegistrationPolicyTargetDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Registration Policy Target Databases in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the OCIDs of target databases registered via the specified registration policy. Supports optional filtering by registration status (OPTIN/OPTOUT) and by target database OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyTargetDatabasesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicyTargetDatabases = DataSafeFunctions.getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .membershipStatus(registrationPolicyTargetDatabaseMembershipStatus)
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRegistrationPolicyTargetDatabasesResult> getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getRegistrationPolicyTargetDatabases:getRegistrationPolicyTargetDatabases", TypeShape.of(GetRegistrationPolicyTargetDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Registration Policy Target Databases in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the OCIDs of target databases registered via the specified registration policy. Supports optional filtering by registration status (OPTIN/OPTOUT) and by target database OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetRegistrationPolicyTargetDatabasesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistrationPolicyTargetDatabases = DataSafeFunctions.getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .membershipStatus(registrationPolicyTargetDatabaseMembershipStatus)
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRegistrationPolicyTargetDatabasesResult> getRegistrationPolicyTargetDatabasesPlain(GetRegistrationPolicyTargetDatabasesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getRegistrationPolicyTargetDatabases:getRegistrationPolicyTargetDatabases", TypeShape.of(GetRegistrationPolicyTargetDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Report resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a report by identifier
@@ -34121,6 +34884,4071 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlFirewallViolations:getSqlFirewallViolations", TypeShape.of(GetSqlFirewallViolationsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Subsetting Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets consolidated subsetting analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingAnalytics = DataSafeFunctions.getSubsettingAnalytics(GetSubsettingAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(subsettingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(subsettingAnalyticGroupBy)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(subsettingAnalyticTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(subsettingAnalyticTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingAnalyticsResult> getSubsettingAnalytics(GetSubsettingAnalyticsArgs args) {
+        return getSubsettingAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets consolidated subsetting analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingAnalytics = DataSafeFunctions.getSubsettingAnalytics(GetSubsettingAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(subsettingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(subsettingAnalyticGroupBy)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(subsettingAnalyticTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(subsettingAnalyticTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingAnalyticsResult> getSubsettingAnalyticsPlain(GetSubsettingAnalyticsPlainArgs args) {
+        return getSubsettingAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets consolidated subsetting analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingAnalytics = DataSafeFunctions.getSubsettingAnalytics(GetSubsettingAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(subsettingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(subsettingAnalyticGroupBy)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(subsettingAnalyticTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(subsettingAnalyticTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingAnalyticsResult> getSubsettingAnalytics(GetSubsettingAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingAnalytics:getSubsettingAnalytics", TypeShape.of(GetSubsettingAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets consolidated subsetting analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingAnalytics = DataSafeFunctions.getSubsettingAnalytics(GetSubsettingAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(subsettingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(subsettingAnalyticGroupBy)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(subsettingAnalyticTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(subsettingAnalyticTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingAnalyticsResult> getSubsettingAnalytics(GetSubsettingAnalyticsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingAnalytics:getSubsettingAnalytics", TypeShape.of(GetSubsettingAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets consolidated subsetting analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingAnalytics = DataSafeFunctions.getSubsettingAnalytics(GetSubsettingAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(subsettingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(subsettingAnalyticGroupBy)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(subsettingAnalyticTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(subsettingAnalyticTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingAnalyticsResult> getSubsettingAnalyticsPlain(GetSubsettingAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingAnalytics:getSubsettingAnalytics", TypeShape.of(GetSubsettingAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting policies based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicies = DataSafeFunctions.getSubsettingPolicies(GetSubsettingPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingPolicyAccessLevel)
+     *             .compartmentIdInSubtree(subsettingPolicyCompartmentIdInSubtree)
+     *             .displayName(subsettingPolicyDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(subsettingPolicyState)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(subsettingPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(subsettingPolicyTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPoliciesResult> getSubsettingPolicies(GetSubsettingPoliciesArgs args) {
+        return getSubsettingPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting policies based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicies = DataSafeFunctions.getSubsettingPolicies(GetSubsettingPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingPolicyAccessLevel)
+     *             .compartmentIdInSubtree(subsettingPolicyCompartmentIdInSubtree)
+     *             .displayName(subsettingPolicyDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(subsettingPolicyState)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(subsettingPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(subsettingPolicyTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPoliciesResult> getSubsettingPoliciesPlain(GetSubsettingPoliciesPlainArgs args) {
+        return getSubsettingPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting policies based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicies = DataSafeFunctions.getSubsettingPolicies(GetSubsettingPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingPolicyAccessLevel)
+     *             .compartmentIdInSubtree(subsettingPolicyCompartmentIdInSubtree)
+     *             .displayName(subsettingPolicyDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(subsettingPolicyState)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(subsettingPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(subsettingPolicyTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPoliciesResult> getSubsettingPolicies(GetSubsettingPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicies:getSubsettingPolicies", TypeShape.of(GetSubsettingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting policies based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicies = DataSafeFunctions.getSubsettingPolicies(GetSubsettingPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingPolicyAccessLevel)
+     *             .compartmentIdInSubtree(subsettingPolicyCompartmentIdInSubtree)
+     *             .displayName(subsettingPolicyDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(subsettingPolicyState)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(subsettingPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(subsettingPolicyTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPoliciesResult> getSubsettingPolicies(GetSubsettingPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicies:getSubsettingPolicies", TypeShape.of(GetSubsettingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting policies based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicies = DataSafeFunctions.getSubsettingPolicies(GetSubsettingPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingPolicyAccessLevel)
+     *             .compartmentIdInSubtree(subsettingPolicyCompartmentIdInSubtree)
+     *             .displayName(subsettingPolicyDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(subsettingPolicyState)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(subsettingPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(subsettingPolicyTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPoliciesResult> getSubsettingPoliciesPlain(GetSubsettingPoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicies:getSubsettingPolicies", TypeShape.of(GetSubsettingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicy = DataSafeFunctions.getSubsettingPolicy(GetSubsettingPolicyArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyResult> getSubsettingPolicy(GetSubsettingPolicyArgs args) {
+        return getSubsettingPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicy = DataSafeFunctions.getSubsettingPolicy(GetSubsettingPolicyArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicyResult> getSubsettingPolicyPlain(GetSubsettingPolicyPlainArgs args) {
+        return getSubsettingPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicy = DataSafeFunctions.getSubsettingPolicy(GetSubsettingPolicyArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyResult> getSubsettingPolicy(GetSubsettingPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicy:getSubsettingPolicy", TypeShape.of(GetSubsettingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicy = DataSafeFunctions.getSubsettingPolicy(GetSubsettingPolicyArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyResult> getSubsettingPolicy(GetSubsettingPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicy:getSubsettingPolicy", TypeShape.of(GetSubsettingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicy = DataSafeFunctions.getSubsettingPolicy(GetSubsettingPolicyArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicyResult> getSubsettingPolicyPlain(GetSubsettingPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicy:getSubsettingPolicy", TypeShape.of(GetSubsettingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Health Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting policy health report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReport = DataSafeFunctions.getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs.builder()
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyHealthReportResult> getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs args) {
+        return getSubsettingPolicyHealthReport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Health Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting policy health report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReport = DataSafeFunctions.getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs.builder()
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicyHealthReportResult> getSubsettingPolicyHealthReportPlain(GetSubsettingPolicyHealthReportPlainArgs args) {
+        return getSubsettingPolicyHealthReportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Health Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting policy health report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReport = DataSafeFunctions.getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs.builder()
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyHealthReportResult> getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicyHealthReport:getSubsettingPolicyHealthReport", TypeShape.of(GetSubsettingPolicyHealthReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Health Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting policy health report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReport = DataSafeFunctions.getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs.builder()
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyHealthReportResult> getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicyHealthReport:getSubsettingPolicyHealthReport", TypeShape.of(GetSubsettingPolicyHealthReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Health Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting policy health report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReport = DataSafeFunctions.getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs.builder()
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicyHealthReportResult> getSubsettingPolicyHealthReportPlain(GetSubsettingPolicyHealthReportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicyHealthReport:getSubsettingPolicyHealthReport", TypeShape.of(GetSubsettingPolicyHealthReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Health Report Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of errors and warnings from a subsetting policy health check.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportLogsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReportLogs = DataSafeFunctions.getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs.builder()
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .messageType(subsettingPolicyHealthReportLogMessageType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyHealthReportLogsResult> getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs args) {
+        return getSubsettingPolicyHealthReportLogs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Health Report Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of errors and warnings from a subsetting policy health check.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportLogsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReportLogs = DataSafeFunctions.getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs.builder()
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .messageType(subsettingPolicyHealthReportLogMessageType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicyHealthReportLogsResult> getSubsettingPolicyHealthReportLogsPlain(GetSubsettingPolicyHealthReportLogsPlainArgs args) {
+        return getSubsettingPolicyHealthReportLogsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Health Report Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of errors and warnings from a subsetting policy health check.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportLogsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReportLogs = DataSafeFunctions.getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs.builder()
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .messageType(subsettingPolicyHealthReportLogMessageType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyHealthReportLogsResult> getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicyHealthReportLogs:getSubsettingPolicyHealthReportLogs", TypeShape.of(GetSubsettingPolicyHealthReportLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Health Report Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of errors and warnings from a subsetting policy health check.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportLogsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReportLogs = DataSafeFunctions.getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs.builder()
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .messageType(subsettingPolicyHealthReportLogMessageType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyHealthReportLogsResult> getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicyHealthReportLogs:getSubsettingPolicyHealthReportLogs", TypeShape.of(GetSubsettingPolicyHealthReportLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Health Report Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of errors and warnings from a subsetting policy health check.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportLogsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReportLogs = DataSafeFunctions.getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs.builder()
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .messageType(subsettingPolicyHealthReportLogMessageType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicyHealthReportLogsResult> getSubsettingPolicyHealthReportLogsPlain(GetSubsettingPolicyHealthReportLogsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicyHealthReportLogs:getSubsettingPolicyHealthReportLogs", TypeShape.of(GetSubsettingPolicyHealthReportLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Health Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting policy health reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReports = DataSafeFunctions.getSubsettingPolicyHealthReports(GetSubsettingPolicyHealthReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingPolicyHealthReportAccessLevel)
+     *             .compartmentIdInSubtree(subsettingPolicyHealthReportCompartmentIdInSubtree)
+     *             .displayName(subsettingPolicyHealthReportDisplayName)
+     *             .state(subsettingPolicyHealthReportState)
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyHealthReportsResult> getSubsettingPolicyHealthReports(GetSubsettingPolicyHealthReportsArgs args) {
+        return getSubsettingPolicyHealthReports(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Health Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting policy health reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReports = DataSafeFunctions.getSubsettingPolicyHealthReports(GetSubsettingPolicyHealthReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingPolicyHealthReportAccessLevel)
+     *             .compartmentIdInSubtree(subsettingPolicyHealthReportCompartmentIdInSubtree)
+     *             .displayName(subsettingPolicyHealthReportDisplayName)
+     *             .state(subsettingPolicyHealthReportState)
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicyHealthReportsResult> getSubsettingPolicyHealthReportsPlain(GetSubsettingPolicyHealthReportsPlainArgs args) {
+        return getSubsettingPolicyHealthReportsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Health Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting policy health reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReports = DataSafeFunctions.getSubsettingPolicyHealthReports(GetSubsettingPolicyHealthReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingPolicyHealthReportAccessLevel)
+     *             .compartmentIdInSubtree(subsettingPolicyHealthReportCompartmentIdInSubtree)
+     *             .displayName(subsettingPolicyHealthReportDisplayName)
+     *             .state(subsettingPolicyHealthReportState)
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyHealthReportsResult> getSubsettingPolicyHealthReports(GetSubsettingPolicyHealthReportsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicyHealthReports:getSubsettingPolicyHealthReports", TypeShape.of(GetSubsettingPolicyHealthReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Health Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting policy health reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReports = DataSafeFunctions.getSubsettingPolicyHealthReports(GetSubsettingPolicyHealthReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingPolicyHealthReportAccessLevel)
+     *             .compartmentIdInSubtree(subsettingPolicyHealthReportCompartmentIdInSubtree)
+     *             .displayName(subsettingPolicyHealthReportDisplayName)
+     *             .state(subsettingPolicyHealthReportState)
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyHealthReportsResult> getSubsettingPolicyHealthReports(GetSubsettingPolicyHealthReportsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicyHealthReports:getSubsettingPolicyHealthReports", TypeShape.of(GetSubsettingPolicyHealthReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Health Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting policy health reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyHealthReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyHealthReports = DataSafeFunctions.getSubsettingPolicyHealthReports(GetSubsettingPolicyHealthReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingPolicyHealthReportAccessLevel)
+     *             .compartmentIdInSubtree(subsettingPolicyHealthReportCompartmentIdInSubtree)
+     *             .displayName(subsettingPolicyHealthReportDisplayName)
+     *             .state(subsettingPolicyHealthReportState)
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicyHealthReportsResult> getSubsettingPolicyHealthReportsPlain(GetSubsettingPolicyHealthReportsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicyHealthReports:getSubsettingPolicyHealthReports", TypeShape.of(GetSubsettingPolicyHealthReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Subsetting Rule resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting rule.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRule = DataSafeFunctions.getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingRuleKey(subsettingPolicySubsettingRuleSubsettingRuleKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingRuleResult> getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs args) {
+        return getSubsettingPolicySubsettingRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Subsetting Rule resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting rule.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRule = DataSafeFunctions.getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingRuleKey(subsettingPolicySubsettingRuleSubsettingRuleKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingRuleResult> getSubsettingPolicySubsettingRulePlain(GetSubsettingPolicySubsettingRulePlainArgs args) {
+        return getSubsettingPolicySubsettingRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Subsetting Rule resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting rule.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRule = DataSafeFunctions.getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingRuleKey(subsettingPolicySubsettingRuleSubsettingRuleKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingRuleResult> getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingRule:getSubsettingPolicySubsettingRule", TypeShape.of(GetSubsettingPolicySubsettingRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Subsetting Rule resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting rule.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRule = DataSafeFunctions.getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingRuleKey(subsettingPolicySubsettingRuleSubsettingRuleKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingRuleResult> getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingRule:getSubsettingPolicySubsettingRule", TypeShape.of(GetSubsettingPolicySubsettingRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Subsetting Rule resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting rule.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRule = DataSafeFunctions.getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingRuleKey(subsettingPolicySubsettingRuleSubsettingRuleKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingRuleResult> getSubsettingPolicySubsettingRulePlain(GetSubsettingPolicySubsettingRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicySubsettingRule:getSubsettingPolicySubsettingRule", TypeShape.of(GetSubsettingPolicySubsettingRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Rule Processing Chain Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of objects of processing chain based on the specified query parameters generated for a subsetting rule.
+     * A processing chain is the relationship path that determines how a subsetting rule is applied across related tables.
+     * It is built from the selected subsetting table, subsetting rule, the chosen relatedTablesPropagation direction,
+     * and the referential relationships in the schema.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRuleProcessingChainObjects = DataSafeFunctions.getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingRuleKey(subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey)
+     *             .isEnabledForProcessing(subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingRuleProcessingChainObjectsResult> getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs args) {
+        return getSubsettingPolicySubsettingRuleProcessingChainObjects(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Rule Processing Chain Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of objects of processing chain based on the specified query parameters generated for a subsetting rule.
+     * A processing chain is the relationship path that determines how a subsetting rule is applied across related tables.
+     * It is built from the selected subsetting table, subsetting rule, the chosen relatedTablesPropagation direction,
+     * and the referential relationships in the schema.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRuleProcessingChainObjects = DataSafeFunctions.getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingRuleKey(subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey)
+     *             .isEnabledForProcessing(subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingRuleProcessingChainObjectsResult> getSubsettingPolicySubsettingRuleProcessingChainObjectsPlain(GetSubsettingPolicySubsettingRuleProcessingChainObjectsPlainArgs args) {
+        return getSubsettingPolicySubsettingRuleProcessingChainObjectsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Rule Processing Chain Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of objects of processing chain based on the specified query parameters generated for a subsetting rule.
+     * A processing chain is the relationship path that determines how a subsetting rule is applied across related tables.
+     * It is built from the selected subsetting table, subsetting rule, the chosen relatedTablesPropagation direction,
+     * and the referential relationships in the schema.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRuleProcessingChainObjects = DataSafeFunctions.getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingRuleKey(subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey)
+     *             .isEnabledForProcessing(subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingRuleProcessingChainObjectsResult> getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingRuleProcessingChainObjects:getSubsettingPolicySubsettingRuleProcessingChainObjects", TypeShape.of(GetSubsettingPolicySubsettingRuleProcessingChainObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Rule Processing Chain Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of objects of processing chain based on the specified query parameters generated for a subsetting rule.
+     * A processing chain is the relationship path that determines how a subsetting rule is applied across related tables.
+     * It is built from the selected subsetting table, subsetting rule, the chosen relatedTablesPropagation direction,
+     * and the referential relationships in the schema.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRuleProcessingChainObjects = DataSafeFunctions.getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingRuleKey(subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey)
+     *             .isEnabledForProcessing(subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingRuleProcessingChainObjectsResult> getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingRuleProcessingChainObjects:getSubsettingPolicySubsettingRuleProcessingChainObjects", TypeShape.of(GetSubsettingPolicySubsettingRuleProcessingChainObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Rule Processing Chain Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of objects of processing chain based on the specified query parameters generated for a subsetting rule.
+     * A processing chain is the relationship path that determines how a subsetting rule is applied across related tables.
+     * It is built from the selected subsetting table, subsetting rule, the chosen relatedTablesPropagation direction,
+     * and the referential relationships in the schema.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRuleProcessingChainObjects = DataSafeFunctions.getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingRuleKey(subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey)
+     *             .isEnabledForProcessing(subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingRuleProcessingChainObjectsResult> getSubsettingPolicySubsettingRuleProcessingChainObjectsPlain(GetSubsettingPolicySubsettingRuleProcessingChainObjectsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicySubsettingRuleProcessingChainObjects:getSubsettingPolicySubsettingRuleProcessingChainObjects", TypeShape.of(GetSubsettingPolicySubsettingRuleProcessingChainObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Rules in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting rules present in the specified subsetting policy and based on the specified query parameters.
+     * A subsetting rule is the criteria that tells Data Safe which rows to retain from the selected starting table for a subsetting operation.
+     * It is the entry point for the subset. Data Safe uses this rule, along with the propagation setting,
+     * to determine the related rows that must also be retained across parent and child tables.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRulesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRules = DataSafeFunctions.getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingRuleObject)
+     *             .schemaNames(subsettingPolicySubsettingRuleSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingRulesResult> getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs args) {
+        return getSubsettingPolicySubsettingRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Rules in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting rules present in the specified subsetting policy and based on the specified query parameters.
+     * A subsetting rule is the criteria that tells Data Safe which rows to retain from the selected starting table for a subsetting operation.
+     * It is the entry point for the subset. Data Safe uses this rule, along with the propagation setting,
+     * to determine the related rows that must also be retained across parent and child tables.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRulesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRules = DataSafeFunctions.getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingRuleObject)
+     *             .schemaNames(subsettingPolicySubsettingRuleSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingRulesResult> getSubsettingPolicySubsettingRulesPlain(GetSubsettingPolicySubsettingRulesPlainArgs args) {
+        return getSubsettingPolicySubsettingRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Rules in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting rules present in the specified subsetting policy and based on the specified query parameters.
+     * A subsetting rule is the criteria that tells Data Safe which rows to retain from the selected starting table for a subsetting operation.
+     * It is the entry point for the subset. Data Safe uses this rule, along with the propagation setting,
+     * to determine the related rows that must also be retained across parent and child tables.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRulesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRules = DataSafeFunctions.getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingRuleObject)
+     *             .schemaNames(subsettingPolicySubsettingRuleSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingRulesResult> getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingRules:getSubsettingPolicySubsettingRules", TypeShape.of(GetSubsettingPolicySubsettingRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Rules in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting rules present in the specified subsetting policy and based on the specified query parameters.
+     * A subsetting rule is the criteria that tells Data Safe which rows to retain from the selected starting table for a subsetting operation.
+     * It is the entry point for the subset. Data Safe uses this rule, along with the propagation setting,
+     * to determine the related rows that must also be retained across parent and child tables.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRulesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRules = DataSafeFunctions.getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingRuleObject)
+     *             .schemaNames(subsettingPolicySubsettingRuleSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingRulesResult> getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingRules:getSubsettingPolicySubsettingRules", TypeShape.of(GetSubsettingPolicySubsettingRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Rules in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting rules present in the specified subsetting policy and based on the specified query parameters.
+     * A subsetting rule is the criteria that tells Data Safe which rows to retain from the selected starting table for a subsetting operation.
+     * It is the entry point for the subset. Data Safe uses this rule, along with the propagation setting,
+     * to determine the related rows that must also be retained across parent and child tables.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingRulesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingRules = DataSafeFunctions.getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingRuleObject)
+     *             .schemaNames(subsettingPolicySubsettingRuleSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingRulesResult> getSubsettingPolicySubsettingRulesPlain(GetSubsettingPolicySubsettingRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicySubsettingRules:getSubsettingPolicySubsettingRules", TypeShape.of(GetSubsettingPolicySubsettingRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schema Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of objects/tables present in the specified subsetting policy schemas based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaObjects = DataSafeFunctions.getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingSchemaObjectObject)
+     *             .schemaNames(subsettingPolicySubsettingSchemaObjectSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemaObjectsResult> getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs args) {
+        return getSubsettingPolicySubsettingSchemaObjects(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schema Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of objects/tables present in the specified subsetting policy schemas based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaObjects = DataSafeFunctions.getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingSchemaObjectObject)
+     *             .schemaNames(subsettingPolicySubsettingSchemaObjectSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingSchemaObjectsResult> getSubsettingPolicySubsettingSchemaObjectsPlain(GetSubsettingPolicySubsettingSchemaObjectsPlainArgs args) {
+        return getSubsettingPolicySubsettingSchemaObjectsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schema Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of objects/tables present in the specified subsetting policy schemas based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaObjects = DataSafeFunctions.getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingSchemaObjectObject)
+     *             .schemaNames(subsettingPolicySubsettingSchemaObjectSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemaObjectsResult> getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingSchemaObjects:getSubsettingPolicySubsettingSchemaObjects", TypeShape.of(GetSubsettingPolicySubsettingSchemaObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schema Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of objects/tables present in the specified subsetting policy schemas based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaObjects = DataSafeFunctions.getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingSchemaObjectObject)
+     *             .schemaNames(subsettingPolicySubsettingSchemaObjectSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemaObjectsResult> getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingSchemaObjects:getSubsettingPolicySubsettingSchemaObjects", TypeShape.of(GetSubsettingPolicySubsettingSchemaObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schema Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of objects/tables present in the specified subsetting policy schemas based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaObjects = DataSafeFunctions.getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingSchemaObjectObject)
+     *             .schemaNames(subsettingPolicySubsettingSchemaObjectSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingSchemaObjectsResult> getSubsettingPolicySubsettingSchemaObjectsPlain(GetSubsettingPolicySubsettingSchemaObjectsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicySubsettingSchemaObjects:getSubsettingPolicySubsettingSchemaObjects", TypeShape.of(GetSubsettingPolicySubsettingSchemaObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Subsetting Schema Relation resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified referential relation in the subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaRelation = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingSchemaRelationKey(subsettingPolicySubsettingSchemaRelationSubsettingSchemaRelationKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemaRelationResult> getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs args) {
+        return getSubsettingPolicySubsettingSchemaRelation(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Subsetting Schema Relation resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified referential relation in the subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaRelation = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingSchemaRelationKey(subsettingPolicySubsettingSchemaRelationSubsettingSchemaRelationKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingSchemaRelationResult> getSubsettingPolicySubsettingSchemaRelationPlain(GetSubsettingPolicySubsettingSchemaRelationPlainArgs args) {
+        return getSubsettingPolicySubsettingSchemaRelationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Subsetting Schema Relation resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified referential relation in the subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaRelation = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingSchemaRelationKey(subsettingPolicySubsettingSchemaRelationSubsettingSchemaRelationKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemaRelationResult> getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingSchemaRelation:getSubsettingPolicySubsettingSchemaRelation", TypeShape.of(GetSubsettingPolicySubsettingSchemaRelationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Subsetting Schema Relation resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified referential relation in the subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaRelation = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingSchemaRelationKey(subsettingPolicySubsettingSchemaRelationSubsettingSchemaRelationKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemaRelationResult> getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingSchemaRelation:getSubsettingPolicySubsettingSchemaRelation", TypeShape.of(GetSubsettingPolicySubsettingSchemaRelationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Policy Subsetting Schema Relation resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified referential relation in the subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaRelation = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingSchemaRelationKey(subsettingPolicySubsettingSchemaRelationSubsettingSchemaRelationKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingSchemaRelationResult> getSubsettingPolicySubsettingSchemaRelationPlain(GetSubsettingPolicySubsettingSchemaRelationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicySubsettingSchemaRelation:getSubsettingPolicySubsettingSchemaRelation", TypeShape.of(GetSubsettingPolicySubsettingSchemaRelationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schema Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified subsetting policy schemas based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaRelations = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingSchemaRelationObject)
+     *             .relationType(subsettingPolicySubsettingSchemaRelationRelationType)
+     *             .schemaNames(subsettingPolicySubsettingSchemaRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemaRelationsResult> getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs args) {
+        return getSubsettingPolicySubsettingSchemaRelations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schema Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified subsetting policy schemas based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaRelations = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingSchemaRelationObject)
+     *             .relationType(subsettingPolicySubsettingSchemaRelationRelationType)
+     *             .schemaNames(subsettingPolicySubsettingSchemaRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingSchemaRelationsResult> getSubsettingPolicySubsettingSchemaRelationsPlain(GetSubsettingPolicySubsettingSchemaRelationsPlainArgs args) {
+        return getSubsettingPolicySubsettingSchemaRelationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schema Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified subsetting policy schemas based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaRelations = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingSchemaRelationObject)
+     *             .relationType(subsettingPolicySubsettingSchemaRelationRelationType)
+     *             .schemaNames(subsettingPolicySubsettingSchemaRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemaRelationsResult> getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingSchemaRelations:getSubsettingPolicySubsettingSchemaRelations", TypeShape.of(GetSubsettingPolicySubsettingSchemaRelationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schema Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified subsetting policy schemas based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaRelations = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingSchemaRelationObject)
+     *             .relationType(subsettingPolicySubsettingSchemaRelationRelationType)
+     *             .schemaNames(subsettingPolicySubsettingSchemaRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemaRelationsResult> getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingSchemaRelations:getSubsettingPolicySubsettingSchemaRelations", TypeShape.of(GetSubsettingPolicySubsettingSchemaRelationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schema Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified subsetting policy schemas based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemaRelationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemaRelations = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicySubsettingSchemaRelationObject)
+     *             .relationType(subsettingPolicySubsettingSchemaRelationRelationType)
+     *             .schemaNames(subsettingPolicySubsettingSchemaRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingSchemaRelationsResult> getSubsettingPolicySubsettingSchemaRelationsPlain(GetSubsettingPolicySubsettingSchemaRelationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicySubsettingSchemaRelations:getSubsettingPolicySubsettingSchemaRelations", TypeShape.of(GetSubsettingPolicySubsettingSchemaRelationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schemas in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting schemas present in the specified subsetting policy and based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemasArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemas = DataSafeFunctions.getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .isDerivedSchema(subsettingPolicySubsettingSchemaIsDerivedSchema)
+     *             .schemaNames(subsettingPolicySubsettingSchemaSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemasResult> getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs args) {
+        return getSubsettingPolicySubsettingSchemas(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schemas in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting schemas present in the specified subsetting policy and based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemasArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemas = DataSafeFunctions.getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .isDerivedSchema(subsettingPolicySubsettingSchemaIsDerivedSchema)
+     *             .schemaNames(subsettingPolicySubsettingSchemaSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingSchemasResult> getSubsettingPolicySubsettingSchemasPlain(GetSubsettingPolicySubsettingSchemasPlainArgs args) {
+        return getSubsettingPolicySubsettingSchemasPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schemas in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting schemas present in the specified subsetting policy and based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemasArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemas = DataSafeFunctions.getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .isDerivedSchema(subsettingPolicySubsettingSchemaIsDerivedSchema)
+     *             .schemaNames(subsettingPolicySubsettingSchemaSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemasResult> getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingSchemas:getSubsettingPolicySubsettingSchemas", TypeShape.of(GetSubsettingPolicySubsettingSchemasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schemas in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting schemas present in the specified subsetting policy and based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemasArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemas = DataSafeFunctions.getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .isDerivedSchema(subsettingPolicySubsettingSchemaIsDerivedSchema)
+     *             .schemaNames(subsettingPolicySubsettingSchemaSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicySubsettingSchemasResult> getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicySubsettingSchemas:getSubsettingPolicySubsettingSchemas", TypeShape.of(GetSubsettingPolicySubsettingSchemasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Subsetting Schemas in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting schemas present in the specified subsetting policy and based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicySubsettingSchemasArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicySubsettingSchemas = DataSafeFunctions.getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .isDerivedSchema(subsettingPolicySubsettingSchemaIsDerivedSchema)
+     *             .schemaNames(subsettingPolicySubsettingSchemaSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicySubsettingSchemasResult> getSubsettingPolicySubsettingSchemasPlain(GetSubsettingPolicySubsettingSchemasPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicySubsettingSchemas:getSubsettingPolicySubsettingSchemas", TypeShape.of(GetSubsettingPolicySubsettingSchemasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Table Estimates in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets table size estimates for the specified subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyTableEstimatesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyTableEstimates = DataSafeFunctions.getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicyTableEstimateObject)
+     *             .schemaNames(subsettingPolicyTableEstimateSchemaName)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyTableEstimatesResult> getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs args) {
+        return getSubsettingPolicyTableEstimates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Table Estimates in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets table size estimates for the specified subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyTableEstimatesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyTableEstimates = DataSafeFunctions.getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicyTableEstimateObject)
+     *             .schemaNames(subsettingPolicyTableEstimateSchemaName)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicyTableEstimatesResult> getSubsettingPolicyTableEstimatesPlain(GetSubsettingPolicyTableEstimatesPlainArgs args) {
+        return getSubsettingPolicyTableEstimatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Table Estimates in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets table size estimates for the specified subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyTableEstimatesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyTableEstimates = DataSafeFunctions.getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicyTableEstimateObject)
+     *             .schemaNames(subsettingPolicyTableEstimateSchemaName)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyTableEstimatesResult> getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicyTableEstimates:getSubsettingPolicyTableEstimates", TypeShape.of(GetSubsettingPolicyTableEstimatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Table Estimates in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets table size estimates for the specified subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyTableEstimatesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyTableEstimates = DataSafeFunctions.getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicyTableEstimateObject)
+     *             .schemaNames(subsettingPolicyTableEstimateSchemaName)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingPolicyTableEstimatesResult> getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingPolicyTableEstimates:getSubsettingPolicyTableEstimates", TypeShape.of(GetSubsettingPolicyTableEstimatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Policy Table Estimates in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets table size estimates for the specified subsetting policy.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingPolicyTableEstimatesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingPolicyTableEstimates = DataSafeFunctions.getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs.builder()
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .objects(subsettingPolicyTableEstimateObject)
+     *             .schemaNames(subsettingPolicyTableEstimateSchemaName)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingPolicyTableEstimatesResult> getSubsettingPolicyTableEstimatesPlain(GetSubsettingPolicyTableEstimatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingPolicyTableEstimates:getSubsettingPolicyTableEstimates", TypeShape.of(GetSubsettingPolicyTableEstimatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReport = DataSafeFunctions.getSubsettingReport(GetSubsettingReportArgs.builder()
+     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportResult> getSubsettingReport(GetSubsettingReportArgs args) {
+        return getSubsettingReport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subsetting Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReport = DataSafeFunctions.getSubsettingReport(GetSubsettingReportArgs.builder()
+     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingReportResult> getSubsettingReportPlain(GetSubsettingReportPlainArgs args) {
+        return getSubsettingReportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subsetting Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReport = DataSafeFunctions.getSubsettingReport(GetSubsettingReportArgs.builder()
+     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportResult> getSubsettingReport(GetSubsettingReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingReport:getSubsettingReport", TypeShape.of(GetSubsettingReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReport = DataSafeFunctions.getSubsettingReport(GetSubsettingReportArgs.builder()
+     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportResult> getSubsettingReport(GetSubsettingReportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingReport:getSubsettingReport", TypeShape.of(GetSubsettingReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subsetting Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified subsetting report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReport = DataSafeFunctions.getSubsettingReport(GetSubsettingReportArgs.builder()
+     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingReportResult> getSubsettingReportPlain(GetSubsettingReportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingReport:getSubsettingReport", TypeShape.of(GetSubsettingReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Report Subsetted Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetted tables present in the specified subsetting report and based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettedObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReportSubsettedObjects = DataSafeFunctions.getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs.builder()
+     *             .subsettingReportId(testSubsettingReport.id())
+     *             .objects(subsettingReportSubsettedObjectObject)
+     *             .schemaNames(subsettingReportSubsettedObjectSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportSubsettedObjectsResult> getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs args) {
+        return getSubsettingReportSubsettedObjects(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Report Subsetted Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetted tables present in the specified subsetting report and based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettedObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReportSubsettedObjects = DataSafeFunctions.getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs.builder()
+     *             .subsettingReportId(testSubsettingReport.id())
+     *             .objects(subsettingReportSubsettedObjectObject)
+     *             .schemaNames(subsettingReportSubsettedObjectSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingReportSubsettedObjectsResult> getSubsettingReportSubsettedObjectsPlain(GetSubsettingReportSubsettedObjectsPlainArgs args) {
+        return getSubsettingReportSubsettedObjectsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Report Subsetted Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetted tables present in the specified subsetting report and based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettedObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReportSubsettedObjects = DataSafeFunctions.getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs.builder()
+     *             .subsettingReportId(testSubsettingReport.id())
+     *             .objects(subsettingReportSubsettedObjectObject)
+     *             .schemaNames(subsettingReportSubsettedObjectSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportSubsettedObjectsResult> getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingReportSubsettedObjects:getSubsettingReportSubsettedObjects", TypeShape.of(GetSubsettingReportSubsettedObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Report Subsetted Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetted tables present in the specified subsetting report and based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettedObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReportSubsettedObjects = DataSafeFunctions.getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs.builder()
+     *             .subsettingReportId(testSubsettingReport.id())
+     *             .objects(subsettingReportSubsettedObjectObject)
+     *             .schemaNames(subsettingReportSubsettedObjectSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportSubsettedObjectsResult> getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingReportSubsettedObjects:getSubsettingReportSubsettedObjects", TypeShape.of(GetSubsettingReportSubsettedObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Report Subsetted Objects in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetted tables present in the specified subsetting report and based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettedObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReportSubsettedObjects = DataSafeFunctions.getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs.builder()
+     *             .subsettingReportId(testSubsettingReport.id())
+     *             .objects(subsettingReportSubsettedObjectObject)
+     *             .schemaNames(subsettingReportSubsettedObjectSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingReportSubsettedObjectsResult> getSubsettingReportSubsettedObjectsPlain(GetSubsettingReportSubsettedObjectsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingReportSubsettedObjects:getSubsettingReportSubsettedObjects", TypeShape.of(GetSubsettingReportSubsettedObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Report Subsetting Errors in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting errors in a subsetting run based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettingErrorsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReportSubsettingErrors = DataSafeFunctions.getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs.builder()
+     *             .subsettingReportId(testSubsettingReport.id())
+     *             .stepName(subsettingReportSubsettingErrorStepName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportSubsettingErrorsResult> getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs args) {
+        return getSubsettingReportSubsettingErrors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Report Subsetting Errors in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting errors in a subsetting run based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettingErrorsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReportSubsettingErrors = DataSafeFunctions.getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs.builder()
+     *             .subsettingReportId(testSubsettingReport.id())
+     *             .stepName(subsettingReportSubsettingErrorStepName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingReportSubsettingErrorsResult> getSubsettingReportSubsettingErrorsPlain(GetSubsettingReportSubsettingErrorsPlainArgs args) {
+        return getSubsettingReportSubsettingErrorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Report Subsetting Errors in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting errors in a subsetting run based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettingErrorsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReportSubsettingErrors = DataSafeFunctions.getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs.builder()
+     *             .subsettingReportId(testSubsettingReport.id())
+     *             .stepName(subsettingReportSubsettingErrorStepName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportSubsettingErrorsResult> getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingReportSubsettingErrors:getSubsettingReportSubsettingErrors", TypeShape.of(GetSubsettingReportSubsettingErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Report Subsetting Errors in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting errors in a subsetting run based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettingErrorsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReportSubsettingErrors = DataSafeFunctions.getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs.builder()
+     *             .subsettingReportId(testSubsettingReport.id())
+     *             .stepName(subsettingReportSubsettingErrorStepName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportSubsettingErrorsResult> getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingReportSubsettingErrors:getSubsettingReportSubsettingErrors", TypeShape.of(GetSubsettingReportSubsettingErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Report Subsetting Errors in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting errors in a subsetting run based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportSubsettingErrorsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReportSubsettingErrors = DataSafeFunctions.getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs.builder()
+     *             .subsettingReportId(testSubsettingReport.id())
+     *             .stepName(subsettingReportSubsettingErrorStepName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingReportSubsettingErrorsResult> getSubsettingReportSubsettingErrorsPlain(GetSubsettingReportSubsettingErrorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingReportSubsettingErrors:getSubsettingReportSubsettingErrors", TypeShape.of(GetSubsettingReportSubsettingErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReports = DataSafeFunctions.getSubsettingReports(GetSubsettingReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingReportAccessLevel)
+     *             .compartmentIdInSubtree(subsettingReportCompartmentIdInSubtree)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportsResult> getSubsettingReports(GetSubsettingReportsArgs args) {
+        return getSubsettingReports(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReports = DataSafeFunctions.getSubsettingReports(GetSubsettingReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingReportAccessLevel)
+     *             .compartmentIdInSubtree(subsettingReportCompartmentIdInSubtree)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingReportsResult> getSubsettingReportsPlain(GetSubsettingReportsPlainArgs args) {
+        return getSubsettingReportsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subsetting Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReports = DataSafeFunctions.getSubsettingReports(GetSubsettingReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingReportAccessLevel)
+     *             .compartmentIdInSubtree(subsettingReportCompartmentIdInSubtree)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportsResult> getSubsettingReports(GetSubsettingReportsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingReports:getSubsettingReports", TypeShape.of(GetSubsettingReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReports = DataSafeFunctions.getSubsettingReports(GetSubsettingReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingReportAccessLevel)
+     *             .compartmentIdInSubtree(subsettingReportCompartmentIdInSubtree)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSubsettingReportsResult> getSubsettingReports(GetSubsettingReportsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSubsettingReports:getSubsettingReports", TypeShape.of(GetSubsettingReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subsetting Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of subsetting reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSubsettingReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubsettingReports = DataSafeFunctions.getSubsettingReports(GetSubsettingReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(subsettingReportAccessLevel)
+     *             .compartmentIdInSubtree(subsettingReportCompartmentIdInSubtree)
+     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSubsettingReportsResult> getSubsettingReportsPlain(GetSubsettingReportsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSubsettingReports:getSubsettingReports", TypeShape.of(GetSubsettingReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets the details of target-alert policy association by its ID.
@@ -36386,6 +41214,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
      *             .databaseType(targetDatabaseDatabaseType)
      *             .displayName(targetDatabaseDisplayName)
+     *             .enablementResourceOcid(targetDatabaseEnablementResourceOcid)
      *             .infrastructureType(targetDatabaseInfrastructureType)
      *             .state(targetDatabaseState)
      *             .targetDatabaseId(testTargetDatabase.id())
@@ -36436,6 +41265,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
      *             .databaseType(targetDatabaseDatabaseType)
      *             .displayName(targetDatabaseDisplayName)
+     *             .enablementResourceOcid(targetDatabaseEnablementResourceOcid)
      *             .infrastructureType(targetDatabaseInfrastructureType)
      *             .state(targetDatabaseState)
      *             .targetDatabaseId(testTargetDatabase.id())
@@ -36486,6 +41316,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
      *             .databaseType(targetDatabaseDatabaseType)
      *             .displayName(targetDatabaseDisplayName)
+     *             .enablementResourceOcid(targetDatabaseEnablementResourceOcid)
      *             .infrastructureType(targetDatabaseInfrastructureType)
      *             .state(targetDatabaseState)
      *             .targetDatabaseId(testTargetDatabase.id())
@@ -36536,6 +41367,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
      *             .databaseType(targetDatabaseDatabaseType)
      *             .displayName(targetDatabaseDisplayName)
+     *             .enablementResourceOcid(targetDatabaseEnablementResourceOcid)
      *             .infrastructureType(targetDatabaseInfrastructureType)
      *             .state(targetDatabaseState)
      *             .targetDatabaseId(testTargetDatabase.id())
@@ -36586,6 +41418,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
      *             .databaseType(targetDatabaseDatabaseType)
      *             .displayName(targetDatabaseDisplayName)
+     *             .enablementResourceOcid(targetDatabaseEnablementResourceOcid)
      *             .infrastructureType(targetDatabaseInfrastructureType)
      *             .state(targetDatabaseState)
      *             .targetDatabaseId(testTargetDatabase.id())

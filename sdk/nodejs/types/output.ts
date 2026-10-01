@@ -51897,10 +51897,15 @@ export namespace Core {
          * A filter to return only resources that match the given display name exactly.
          */
         displayName: string;
+        doesPreserveOriginalRoutesWithNat: boolean;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
          */
         drgId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+         */
+        drgNatPolicyId: string;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
          */
@@ -51922,6 +51927,7 @@ export namespace Core {
          */
         isCrossTenancy: boolean;
         networkDetails: outputs.Core.GetDrgAttachmentsDrgAttachmentNetworkDetail[];
+        removeDrgNatPolicyTrigger: boolean;
         removeExportDrgRouteDistributionTrigger: boolean;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
@@ -51977,6 +51983,84 @@ export namespace Core {
     }
 
     export interface GetDrgAttachmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDrgNatPoliciesDrgNatPolicy {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The DrgNatPolicy's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         */
+        id: string;
+        /**
+         * The DrgNatPolicy's current state.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the DrgNatPolicy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+    }
+
+    export interface GetDrgNatPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDrgNatPolicyDrgNatRulesDrgNatRule {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+         */
+        drgNatPolicyId: string;
+        /**
+         * The priority associated with each DrgNatRule.
+         */
+        drgNatRulePriority: string;
+        /**
+         * The Oracle-assigned ID of the DrgNatRule.
+         */
+        id: string;
+        /**
+         * Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Destination NAT.
+         */
+        originalDestination: string;
+        /**
+         * Represents the range of IP addresses to match against when routing traffic. Original CIDR range for Source NAT.
+         */
+        originalSource: string;
+        /**
+         * Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Destination NAT.
+         */
+        translatedDestination: string;
+        /**
+         * Represents the range of IP addresses to match against when routing traffic. Translated CIDR range for Source NAT.
+         */
+        translatedSource: string;
+    }
+
+    export interface GetDrgNatPolicyDrgNatRulesFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -52895,6 +52979,10 @@ export namespace Core {
          */
         isAutoTuneEnabled: boolean;
         /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+         */
+        isReservationsEnabled: boolean;
+        /**
          * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
         kmsKeyId: string;
@@ -53522,6 +53610,10 @@ export namespace Core {
          */
         isAutoTuneEnabled: boolean;
         /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+         */
+        isReservationsEnabled: boolean;
+        /**
          * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
         kmsKeyId: string;
@@ -53901,6 +53993,10 @@ export namespace Core {
          * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
          */
         areVirtualInstructionsEnabled: boolean;
+        /**
+         * Instance Platform Configuration Configuration Map for flexible setting input.
+         */
+        configMap: {[key: string]: string};
         /**
          * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          */
@@ -54440,6 +54536,10 @@ export namespace Core {
          * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
          */
         isAutoTuneEnabled: boolean;
+        /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+         */
+        isReservationsEnabled: boolean;
         /**
          * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
@@ -55068,6 +55168,10 @@ export namespace Core {
          */
         isAutoTuneEnabled: boolean;
         /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+         */
+        isReservationsEnabled: boolean;
+        /**
          * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
         kmsKeyId: string;
@@ -55447,6 +55551,10 @@ export namespace Core {
          * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
          */
         areVirtualInstructionsEnabled: boolean;
+        /**
+         * Instance Platform Configuration Configuration Map for flexible setting input.
+         */
+        configMap: {[key: string]: string};
         /**
          * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          */
@@ -61792,6 +61900,10 @@ export namespace Core {
          */
         isAutoTuneEnabled: boolean;
         /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+         */
+        isReservationsEnabled: boolean;
+        /**
          * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
         kmsKeyId: string;
@@ -62490,6 +62602,10 @@ export namespace Core {
          */
         isAutoTuneEnabled: boolean;
         /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+         */
+        isReservationsEnabled: boolean;
+        /**
          * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
         kmsKeyId: string;
@@ -62885,6 +63001,10 @@ export namespace Core {
          * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
          */
         areVirtualInstructionsEnabled: boolean;
+        /**
+         * Instance Platform Configuration Configuration Map for flexible setting input.
+         */
+        configMap: {[key: string]: string};
         /**
          * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          */
@@ -76692,6 +76812,17 @@ export namespace DataSafe {
         tableNames: string[];
     }
 
+    export interface EstimateTableSizesTargetCredentials {
+        /**
+         * The password for the target database user.
+         */
+        password: string;
+        /**
+         * The user name for the target database.
+         */
+        userName: string;
+    }
+
     export interface GetAlertAnalyticItem {
         /**
          * Total count of aggregated values.
@@ -81363,6 +81494,10 @@ export namespace DataSafe {
          */
         state: string;
         /**
+         * The OCID of the subsetting report associated with this masking report
+         */
+        subsettingReportId: string;
+        /**
          * A filter to return only items related to a specific target OCID.
          */
         targetId: string;
@@ -81463,6 +81598,145 @@ export namespace DataSafe {
          * The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         timeCreated: string;
+    }
+
+    export interface GetRegistrationPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRegistrationPoliciesRegistrationPolicyCollection {
+        items: outputs.DataSafe.GetRegistrationPoliciesRegistrationPolicyCollectionItem[];
+    }
+
+    export interface GetRegistrationPoliciesRegistrationPolicyCollectionItem {
+        /**
+         * Indicates whether features will be overridden.
+         */
+        canOverrideFeatures: boolean;
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
+        compartmentId: string;
+        /**
+         * Types of connection supported by Data Safe.
+         */
+        connectionOptions: outputs.DataSafe.GetRegistrationPoliciesRegistrationPolicyCollectionItemConnectionOption[];
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A description of the registration policy.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the specified display name.
+         */
+        displayName: string;
+        /**
+         * Filter registration policies by resource type.
+         */
+        enablementLevel: string;
+        /**
+         * The Data Safe features granted to the databases registering under the registration policy.
+         */
+        features: string[];
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The OCID of the registration policy.
+         */
+        id: string;
+        /**
+         * Details about the lifecycle state of the registration policy
+         */
+        lifecycleStateDetails: string;
+        opcDryRun: boolean;
+        /**
+         * Filter to return the registration policy matching the specified resource OCID.
+         */
+        resourceId: string;
+        /**
+         * Filter registration policies by their lifecycle state.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time when the registration policy was created.
+         */
+        timeCreated: string;
+        /**
+         * The date and time when the registration policy was last updated.
+         */
+        timeUpdated: string;
+        xClusterId: string;
+    }
+
+    export interface GetRegistrationPoliciesRegistrationPolicyCollectionItemConnectionOption {
+        /**
+         * Filter to return the registration policies matching the specified connectionType i.e ONPREM_CONNECTOR or PRIVATE_ENDPOINT.
+         */
+        connectionType: string;
+        /**
+         * List of OCIDs required to establish the connection.
+         * * For `PRIVATE_ENDPOINT`, provide the OCID(s) of Data Safe private endpoint(s).
+         * * For `ONPREM_CONNECTOR`, provide the OCID(s) of on-premises connector(s).
+         */
+        identifiers: string[];
+    }
+
+    export interface GetRegistrationPolicyConnectionOption {
+        /**
+         * The connection type used to connect to the database. Allowed values:
+         * * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+         * * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+         */
+        connectionType: string;
+        /**
+         * List of OCIDs required to establish the connection.
+         * * For `PRIVATE_ENDPOINT`, provide the OCID(s) of Data Safe private endpoint(s).
+         * * For `ONPREM_CONNECTOR`, provide the OCID(s) of on-premises connector(s).
+         */
+        identifiers: string[];
+    }
+
+    export interface GetRegistrationPolicyTargetDatabasesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRegistrationPolicyTargetDatabasesRegistrationPolicyTargetDatabaseSummaryCollection {
+        /**
+         * Array of RegistrationPolicyTargetDatabaseSummary items.
+         */
+        items: outputs.DataSafe.GetRegistrationPolicyTargetDatabasesRegistrationPolicyTargetDatabaseSummaryCollectionItem[];
+    }
+
+    export interface GetRegistrationPolicyTargetDatabasesRegistrationPolicyTargetDatabaseSummaryCollectionItem {
+        /**
+         * The ID of the discovered database resource (for example, a Database or Pluggable Database) that is part of discovery.
+         */
+        discoveredResourceId: string;
+        /**
+         * The type of the discovered database resource.
+         */
+        discoveredResourceType: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * A filter to return the target database only if it is registered via the registration policy.
+         */
+        targetDatabaseId: string;
     }
 
     export interface GetReportDefinitionColumnFilter {
@@ -87781,6 +88055,858 @@ export namespace DataSafe {
         violationCause: string;
     }
 
+    export interface GetSubsettingAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingAnalyticsSubsettingAnalyticsCollection {
+        /**
+         * An array of subsetting analytics summary objects
+         */
+        items: outputs.DataSafe.GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem[];
+    }
+
+    export interface GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem {
+        /**
+         * The scope of analytics data
+         */
+        dimensions: outputs.DataSafe.GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension[];
+        /**
+         * The name of the aggregation metric
+         */
+        metricName: string;
+        /**
+         * The total count for the aggregation metric
+         */
+        subsettingAnalyticCount: string;
+        /**
+         * The date and time the target database was last subsetted using a subsetting policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+         */
+        timeLastSubsetted: string;
+    }
+
+    export interface GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension {
+        /**
+         * The OCID of the subsetting policy
+         */
+        policyId: string;
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
+        targetId: string;
+    }
+
+    export interface GetSubsettingPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPoliciesSubsettingPolicyCollection {
+        items: outputs.DataSafe.GetSubsettingPoliciesSubsettingPolicyCollectionItem[];
+    }
+
+    export interface GetSubsettingPoliciesSubsettingPolicyCollectionItem {
+        checkType: string;
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * The description of the subsetting policy
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the specified display name.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        generateHealthReportTrigger: number;
+        /**
+         * The OCID of the subsetting policy
+         */
+        id: string;
+        /**
+         * Indicates if redo logging is enabled during a subsetting operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, subsetting disables redo logging and flashback logging to purge any original   data from logs. However, in certain circumstances when you only want to test subsetting, rollback changes, and retry subsetting, you could enable logging and use a flashback database to retrieve the original data after it has been subsetted.
+         */
+        isRedoLoggingEnabled: boolean;
+        /**
+         * Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The subsetting process gathers statistics on database tables after subsetting completes
+         */
+        isRefreshStatsEnabled: boolean;
+        /**
+         * A filter to return only the resources that match the specified masking policy OCID.
+         */
+        maskingPolicyId: string;
+        /**
+         * Specifies options to enable parallel execution when running data subsetting. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve subsetting performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism
+         */
+        parallelDegree: string;
+        /**
+         * A post-subsetting script, which can contain SQL and PL/SQL statements. It's executed after the core subsetting script generated using the subsetting policy. It's usually used to perform additional transformation or cleanup work after subsetting.
+         */
+        postSubsettingScript: string;
+        /**
+         * A pre-subsetting script, which can contain SQL and PL/SQL statements. It's executed before  the core subsetting script generated using the subsetting policy. It's usually used to perform any preparation or prerequisite work before subsetting data
+         */
+        preSubsettingScript: string;
+        /**
+         * Specifies how to recompile invalid objects post data subsetting. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after subsetting completes
+         */
+        recompile: string;
+        /**
+         * The source of subsetting schemas
+         */
+        schemaSources: outputs.DataSafe.GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource[];
+        /**
+         * A filter to return only the resources that match the specified lifecycle states.
+         */
+        state: string;
+        tablespace: string;
+        targetCredentials: outputs.DataSafe.GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential[];
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
+        targetId: string;
+        /**
+         * The date and time the subsetting policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+         */
+        timeCreated: string;
+        /**
+         * The date and time the subsetting policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+         */
+        timeUpdated: string;
+        /**
+         * Strategy to be applied for tables which are not impacted by any of the subsetting rules
+         */
+        unrelatedTablesAction: string;
+    }
+
+    export interface GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource {
+        /**
+         * The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+         */
+        derivedSchemas: string[];
+        /**
+         * The source of subsetting schemas
+         */
+        schemaSource: string;
+        /**
+         * The schemas to be subsetted
+         */
+        schemasForSubsettings: string[];
+        /**
+         * A filter to return only the resources that match the specified sensitive data model OCID.
+         */
+        sensitiveDataModelId: string;
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
+        targetId: string;
+    }
+
+    export interface GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential {
+        password: string;
+        userName: string;
+    }
+
+    export interface GetSubsettingPolicyHealthReportLogsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollection {
+        /**
+         * An array of subsetting policy health report objects.
+         */
+        items: outputs.DataSafe.GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem[];
+    }
+
+    export interface GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem {
+        /**
+         * A human-readable description for the log entry.
+         */
+        description: string;
+        /**
+         * An enum type entry for each health check in the subsetting policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the subsetting tables. PRIVILEGE_CHECK checks if the subsetting user has sufficient privilege to run subsetting. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the subsetting table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the subsetting tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled ACTIVE_JOB_CHECK checks if there is any active subsetting job running on the target database. TABLE_EXIST_CHECK checks if the subsetting tables are available in the target database. TIME_TRAVEL_CHECK checks if the subsetting tables have Time Travel enabled. SYSTEM_OBJECTS_CHECK checks if the subsetting tables have dependent objects present in SYS schema. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state. AUDIT_POLICY_CHECK checks if the subsetting tables have Audit policies enabled. VALID_RULES_CHECK if the subsetting rules on the tables are valid.
+         */
+        healthCheckType: string;
+        /**
+         * A human-readable log entry.
+         */
+        message: string;
+        /**
+         * A filter to return only the resources that match the specified log message type.
+         */
+        messageType: string;
+        /**
+         * A human-readable log entry to remedy any error or warnings in the subsetting policy.
+         */
+        remediation: string;
+        /**
+         * The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timestamp: string;
+    }
+
+    export interface GetSubsettingPolicyHealthReportsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollection {
+        items: outputs.DataSafe.GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem[];
+    }
+
+    export interface GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem {
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return only resources that match the specified display name.
+         */
+        displayName: string;
+        /**
+         * The count of errors in the subsetting health report.
+         */
+        errorCount: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The OCID of the health report.
+         */
+        id: string;
+        /**
+         * A filter to return only the resources that match the specified lifecycle states.
+         */
+        state: string;
+        /**
+         * A filter to return only the resources that match the specified subsetting policy OCID.
+         */
+        subsettingPolicyId: string;
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
+        targetId: string;
+        /**
+         * The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeCreated: string;
+        /**
+         * The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+         */
+        timeUpdated: string;
+        /**
+         * The count of warnings in the subsetting health report.
+         */
+        warningCount: string;
+    }
+
+    export interface GetSubsettingPolicySchemaSource {
+        /**
+         * The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+         */
+        derivedSchemas: string[];
+        /**
+         * The source of subsetting schemas
+         */
+        schemaSource: string;
+        /**
+         * The schemas to be subsetted
+         */
+        schemasForSubsettings: string[];
+        /**
+         * The OCID of the sensitive data model that's used as the source of subsetting schemas
+         */
+        sensitiveDataModelId: string;
+        /**
+         * The OCID of the target database that's used as the source of subsetting schemas
+         */
+        targetId: string;
+    }
+
+    export interface GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollection {
+        /**
+         * An array of subsetting processing chain summary objects.
+         */
+        items: outputs.DataSafe.GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem[];
+    }
+
+    export interface GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem {
+        /**
+         * The approximate count of rows in the subsetting table before subsetting
+         */
+        approximateRowCountBeforeSubsetting: string;
+        /**
+         * Unique identifiers identifying the child columns in the relation.
+         */
+        childColumns: string[];
+        /**
+         * The name of the child subsetting table
+         */
+        childObjectName: string;
+        /**
+         * The database schema that contains the child subsetting table
+         */
+        childSchemaName: string;
+        /**
+         * The estimated count of rows in the subsetting table after subsetting
+         */
+        estimatedRowCountAfterSubsetting: string;
+        /**
+         * A filter to return the processing chain objects which are enabled for processing.
+         */
+        isEnabledForProcessing: boolean;
+        /**
+         * The unique key that identifies a subsetting relation processed. The key is numeric and unique within a processing order
+         */
+        key: string;
+        /**
+         * Unique identifiers identifying the parents columns in the relation.
+         */
+        parentColumns: string[];
+        /**
+         * The name of the parent subsetting table
+         */
+        parentObjectName: string;
+        /**
+         * The database schema that contains the parent subsetting table
+         */
+        parentSchemaName: string;
+        /**
+         * The impact on the related table due to the processing of subsetting rule
+         */
+        propagationImpact: string;
+        /**
+         * The unique key that identifies a subsetting relation.
+         */
+        subsettingSchemaRelationKey: string;
+    }
+
+    export interface GetSubsettingPolicySubsettingRuleScope {
+        /**
+         * The name of the specific object (e.g., table) to be subsetted
+         */
+        object: string;
+        /**
+         * The name of the schema containing the specific object to be subsetted
+         */
+        schemaName: string;
+        /**
+         * Scope of a subsetting rule
+         */
+        scopeType: string;
+    }
+
+    export interface GetSubsettingPolicySubsettingRuleSubsetRuleEntry {
+        /**
+         * The SQL WHERE clause condition used to filter rows for the subset
+         */
+        condition: string;
+        /**
+         * A list of partition names which are to be part of the subset data
+         */
+        partitionsLists: string[];
+        /**
+         * The percentage of rows to retain in the subset (between 0 and 100)
+         */
+        percent: number;
+        /**
+         * type of subset rule
+         */
+        ruleType: string;
+        /**
+         * A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+         */
+        subPartitionsLists: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingRulesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingRulesSubsettingRuleCollection {
+        items: outputs.DataSafe.GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem[];
+    }
+
+    export interface GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem {
+        /**
+         * The description of the subset rule
+         */
+        description: string;
+        /**
+         * The display name of the subset rule
+         */
+        displayName: string;
+        /**
+         * The unique key that identifies a subsetting rule. The key is numeric and unique within a subsetting policy
+         */
+        key: string;
+        /**
+         * Strategy to be applied while processing peer tables
+         */
+        peerTablesAction: string;
+        /**
+         * Strategy to be applied while propagating subsetting rule to related tables
+         */
+        relatedTablesPropagation: string;
+        /**
+         * Specifies how this rule combines with other rules. UNION evaluates this rule independently and adds matching rows to the result set. SERIAL applies this rule sequentially to filter rows selected by a compatible preceding rule.
+         */
+        ruleCombinationMode: string;
+        /**
+         * The scope of the subset rule
+         */
+        scope: outputs.DataSafe.GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScope;
+        /**
+         * The details of the subset rule
+         */
+        subsetRuleEntry: outputs.DataSafe.GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry;
+        /**
+         * The OCID of the subsetting policy.
+         */
+        subsettingPolicyId: string;
+    }
+
+    export interface GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScope {
+        /**
+         * A filter to return only items related to a specific object name.
+         */
+        object: string;
+        /**
+         * A filter to return only items related to specific schema name.
+         */
+        schemaName: string;
+        /**
+         * Scope of a subsetting rule
+         */
+        scopeType: string;
+    }
+
+    export interface GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry {
+        /**
+         * The SQL WHERE clause condition used to filter rows for the subset
+         */
+        condition: string;
+        /**
+         * A list of partition names which are to be part of the subset data
+         */
+        partitionsLists: string[];
+        /**
+         * The percentage of rows to retain in the subset (between 0 and 100)
+         */
+        percent: number;
+        /**
+         * type of subset rule
+         */
+        ruleType: string;
+        /**
+         * A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+         */
+        subPartitionsLists: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemaObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollection {
+        /**
+         * An array of subsetting table summary objects
+         */
+        items: outputs.DataSafe.GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem[];
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem {
+        /**
+         * The initial number of rows in this object/table
+         */
+        initialRowCount: string;
+        /**
+         * Indicates if the table stats are stale. This can be used to judge the accuracy of initialRowCount
+         */
+        isStatsStale: boolean;
+        /**
+         * The unique key that identifies a subsetting table. The key is numeric and unique within a subsetting policy
+         */
+        key: string;
+        /**
+         * A filter to return only items related to a specific object name.
+         */
+        object: string;
+        /**
+         * The type of the database object that contains the subsetting table
+         */
+        objectType: string;
+        /**
+         * A filter to return only items related to specific schema name.
+         */
+        schemaName: string;
+        /**
+         * The date and time the subsetting table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeCreated: string;
+        /**
+         * The date and time the subsetting table was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemaRelationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollection {
+        items: outputs.DataSafe.GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem[];
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem {
+        /**
+         * Unique identifiers identifying the child columns in the relation.
+         */
+        childColumns: string[];
+        /**
+         * The key that identifies the child subsetting table in this relation.
+         */
+        childObjectKey: string;
+        /**
+         * The name of the child subsetting table
+         */
+        childObjectName: string;
+        /**
+         * The database schema that contains the child subsetting table
+         */
+        childSchemaName: string;
+        /**
+         * The unique key that identifies a relation between subsetting tables. The key is numeric and unique within a subsetting policy.
+         */
+        key: string;
+        /**
+         * Unique identifiers identifying the parents columns in the relation.
+         */
+        parentColumns: string[];
+        /**
+         * The key that identifies the parent subsetting table in this relation.
+         */
+        parentObjectKey: string;
+        /**
+         * The name of the parent subsetting table
+         */
+        parentObjectName: string;
+        /**
+         * The database schema that contains the parent subsetting table
+         */
+        parentSchemaName: string;
+        /**
+         * A filter to return columns based on their relationship with their parent columns. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+         */
+        relationType: string;
+        /**
+         * The OCID of the subsetting policy.
+         */
+        subsettingPolicyId: string;
+        /**
+         * The date and time the subsetting relation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeCreated: string;
+        /**
+         * The date and time the subsetting relation was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemasFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollection {
+        /**
+         * An array of subsetting schema summary objects.
+         */
+        items: outputs.DataSafe.GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem[];
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem {
+        /**
+         * Indicates if the schema is a derived schema and not directly came as input from the user. A schema is derived if it is related to a input schema
+         */
+        isDerived: boolean;
+        /**
+         * A filter to return only items related to specific schema name.
+         */
+        schemaName: string;
+    }
+
+    export interface GetSubsettingPolicyTableEstimatesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicyTableEstimatesTableEstimateCollection {
+        /**
+         * An array of table estimate objects.
+         */
+        items: outputs.DataSafe.GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem[];
+    }
+
+    export interface GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem {
+        /**
+         * The estimated number of rows in the table after subsetting.
+         */
+        estimatedRowCount: string;
+        /**
+         * The estimated size of the table in KBs after subsetting.
+         */
+        estimatedSizeInKbs: string;
+        /**
+         * The initial number of rows in the table.
+         */
+        initialRowCount: string;
+        /**
+         * The initial size of the table in KBs.
+         */
+        initialSizeInKbs: string;
+        /**
+         * The type of the database object.
+         */
+        objectType: string;
+        /**
+         * A filter to return only items related to specific schema name.
+         */
+        schemaName: string;
+        /**
+         * The name of the table.
+         */
+        tableName: string;
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
+        targetId: string;
+    }
+
+    export interface GetSubsettingPolicyTargetCredential {
+        password: string;
+        userName: string;
+    }
+
+    export interface GetSubsettingReportSubsettedObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingReportSubsettedObjectsSubsettedObjectCollection {
+        /**
+         * An array of subsetted summary objects
+         */
+        items: outputs.DataSafe.GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem[];
+    }
+
+    export interface GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem {
+        /**
+         * A filter to return only items related to a specific object name.
+         */
+        object: string;
+        /**
+         * The type of the object (table or editioning view) subsetted
+         */
+        objectType: string;
+        /**
+         * The count of rows in the subsetted table after subsetting
+         */
+        rowCountAfterSubsetting: string;
+        /**
+         * The count of rows in the subsetted table before subsetting
+         */
+        rowCountBeforeSubsetting: string;
+        /**
+         * A filter to return only items related to specific schema name.
+         */
+        schemaName: string;
+        /**
+         * The size of the subsetted table after subsetting in KBs
+         */
+        sizeAfterSubsettingInKbs: string;
+        /**
+         * The size of the subsetted table before subsetting in KBs
+         */
+        sizeBeforeSubsettingInKbs: string;
+    }
+
+    export interface GetSubsettingReportSubsettingErrorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingReportSubsettingErrorsSubsettingErrorCollection {
+        /**
+         * An array of subsetting error objects.
+         */
+        items: outputs.DataSafe.GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem[];
+    }
+
+    export interface GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem {
+        /**
+         * The text of the subsetting error.
+         */
+        error: string;
+        /**
+         * The statement resulting into the error.
+         */
+        failedStatement: string;
+        /**
+         * A filter to return only subsetting errors that match the specified step name.
+         */
+        stepName: string;
+        /**
+         * The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeCreated: string;
+    }
+
+    export interface GetSubsettingReportsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingReportsSubsettingReportCollection {
+        items: outputs.DataSafe.GetSubsettingReportsSubsettingReportCollectionItem[];
+    }
+
+    export interface GetSubsettingReportsSubsettingReportCollectionItem {
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
+        compartmentId: string;
+        /**
+         * The size of the target database after subsetting in KBs
+         */
+        databaseSizeAfterSubsettingInKbs: string;
+        /**
+         * The size of the target database before subsetting in KBs
+         */
+        databaseSizeBeforeSubsettingInKbs: string;
+        /**
+         * The OCID of the subsetting report
+         */
+        id: string;
+        /**
+         * Indicates if redo logging was enabled during the subsetting operation
+         */
+        isRedoLoggingEnabled: boolean;
+        /**
+         * Indicates if statistics gathering was enabled during the subsetting operation
+         */
+        isRefreshStatsEnabled: boolean;
+        /**
+         * The OCID of the masking policy associated with this subsetting report
+         */
+        maskingPolicyId: string;
+        /**
+         * The OCID of the masking report associated with this subsetting report
+         */
+        maskingReportId: string;
+        /**
+         * The OCID of the masking work request triggered after this subsetting job
+         */
+        maskingWorkRequestId: string;
+        /**
+         * Indicates if parallel execution was enabled during the subsetting operation
+         */
+        parallelDegree: string;
+        /**
+         * Indicates how invalid objects were recompiled post the subsetting operation
+         */
+        recompile: string;
+        /**
+         * The current state of the subsetting report
+         */
+        state: string;
+        /**
+         * A filter to return only the resources that match the specified subsetting policy OCID.
+         */
+        subsettingPolicyId: string;
+        /**
+         * The status of the subsetting job
+         */
+        subsettingStatus: string;
+        /**
+         * The OCID of the subsetting work request that resulted in this subsetting report
+         */
+        subsettingWorkRequestId: string;
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
+        targetId: string;
+        /**
+         * The date and time the subsetting report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+         */
+        timeCreated: string;
+        /**
+         * The date and time data subsetting finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+         */
+        timeSubsettingFinished: string;
+        /**
+         * The date and time data subsetting started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+         */
+        timeSubsettingStarted: string;
+        /**
+         * The total number of errors in post-subsetting script
+         */
+        totalPostSubsettingScriptErrors: string;
+        /**
+         * The total number of errors in pre-subsetting script
+         */
+        totalPreSubsettingScriptErrors: string;
+        /**
+         * The total number of subsetted objects
+         */
+        totalSubsettedObjects: string;
+        /**
+         * The count of rows reduced in the subsetting job
+         */
+        totalSubsettedRows: string;
+        /**
+         * The total number of subsetted schemas
+         */
+        totalSubsettedSchemas: string;
+    }
+
     export interface GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter {
         name: string;
         regex?: boolean;
@@ -87971,7 +89097,7 @@ export namespace DataSafe {
          */
         excludes: outputs.DataSafe.GetTargetDatabaseGroupMatchingCriteriaExclude[];
         /**
-         * Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+         * Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
          */
         includes: outputs.DataSafe.GetTargetDatabaseGroupMatchingCriteriaInclude[];
     }
@@ -87996,6 +89122,14 @@ export namespace DataSafe {
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
          */
         freeformTags: {[key: string]: string};
+        /**
+         * Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+         */
+        freeformTagsIn: {[key: string]: string[]};
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string[]};
         /**
          * The list of target database OCIDs to be included in the target database group.
          */
@@ -88088,7 +89222,7 @@ export namespace DataSafe {
          */
         excludes: outputs.DataSafe.GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude[];
         /**
-         * Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+         * Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
          */
         includes: outputs.DataSafe.GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude[];
     }
@@ -88113,6 +89247,14 @@ export namespace DataSafe {
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
          */
         freeformTags: {[key: string]: string};
+        /**
+         * Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+         */
+        freeformTagsIn: {[key: string]: string[]};
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string[]};
         /**
          * The list of target database OCIDs to be included in the target database group.
          */
@@ -88651,6 +89793,10 @@ export namespace DataSafe {
          */
         displayName: string;
         /**
+         * List of enabled features based on granted ORA_DSCS_* roles in target database
+         */
+        features: string[];
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
          */
         freeformTags: {[key: string]: string};
@@ -88662,6 +89808,7 @@ export namespace DataSafe {
          * Details about the current state of the peer target database in Data Safe.
          */
         lifecycleDetails: string;
+        managePrivilegesTrigger: number;
         peerTargetDatabaseDetails: outputs.DataSafe.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail[];
         /**
          * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
@@ -89867,6 +91014,21 @@ export namespace DataSafe {
         targetId: string;
     }
 
+    export interface RegistrationPolicyConnectionOption {
+        /**
+         * (Updatable) The connection type used to connect to the database. Allowed values:
+         * * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+         * * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+         */
+        connectionType: string;
+        /**
+         * (Updatable) List of OCIDs required to establish the connection.
+         * * For `PRIVATE_ENDPOINT`, provide the OCID(s) of Data Safe private endpoint(s).
+         * * For `ONPREM_CONNECTOR`, provide the OCID(s) of on-premises connector(s).
+         */
+        identifiers: string[];
+    }
+
     export interface ReportDefinitionColumnFilter {
         /**
          * (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
@@ -90059,6 +91221,7 @@ export namespace DataSafe {
          * Relevant section from OBP.
          */
         obp: string;
+        orp: string;
         /**
          * Relevant section from STIG.
          */
@@ -90470,6 +91633,156 @@ export namespace DataSafe {
         value: {[key: string]: string};
     }
 
+    export interface SubsetDataTargetCredentials {
+        /**
+         * The password for the target database user.
+         */
+        password: string;
+        /**
+         * The user name for the target database.
+         */
+        userName: string;
+    }
+
+    export interface SubsettingPolicyHealthReportManagementTargetCredentials {
+        /**
+         * The password for the target database user.
+         */
+        password: string;
+        /**
+         * The user name for the target database.
+         */
+        userName: string;
+    }
+
+    export interface SubsettingPolicySchemaSource {
+        /**
+         * The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+         */
+        derivedSchemas: string[];
+        /**
+         * (Updatable) The source of subsetting schemas
+         */
+        schemaSource: string;
+        /**
+         * (Updatable) The schemas to be subsetted
+         */
+        schemasForSubsettings: string[];
+        /**
+         * (Updatable) The OCID of the sensitive data model that's used as the source of subsetting schemas
+         */
+        sensitiveDataModelId: string;
+        /**
+         * (Updatable) The OCID of the target database that's used as the source of subsetting schemas
+         */
+        targetId: string;
+    }
+
+    export interface SubsettingPolicySubsettingRuleProcessingChainObjectItem {
+        /**
+         * The approximate count of rows in the subsetting table before subsetting
+         */
+        approximateRowCountBeforeSubsetting: string;
+        /**
+         * Unique identifiers identifying the child columns in the relation.
+         */
+        childColumns: string[];
+        /**
+         * The name of the child subsetting table
+         */
+        childObjectName: string;
+        /**
+         * The database schema that contains the child subsetting table
+         */
+        childSchemaName: string;
+        /**
+         * The estimated count of rows in the subsetting table after subsetting
+         */
+        estimatedRowCountAfterSubsetting: string;
+        /**
+         * (Updatable) Indicates if this object/edge is enabled for processing
+         */
+        isEnabledForProcessing: boolean;
+        /**
+         * The unique key that identifies a subsetting relation processed. The key is numeric and unique within a processing order
+         */
+        key: string;
+        /**
+         * Unique identifiers identifying the parents columns in the relation.
+         */
+        parentColumns: string[];
+        /**
+         * The name of the parent subsetting table
+         */
+        parentObjectName: string;
+        /**
+         * The database schema that contains the parent subsetting table
+         */
+        parentSchemaName: string;
+        /**
+         * The impact on the related table due to the processing of subsetting rule
+         */
+        propagationImpact: string;
+        /**
+         * The unique key that identifies a subsetting relation.
+         */
+        subsettingSchemaRelationKey: string;
+    }
+
+    export interface SubsettingPolicySubsettingRuleScope {
+        /**
+         * (Updatable) The name of the specific object (e.g., table) to be subsetted
+         */
+        object: string;
+        /**
+         * (Updatable) The name of the schema containing the specific object to be subsetted
+         */
+        schemaName: string;
+        /**
+         * (Updatable) Scope of a subsetting rule
+         */
+        scopeType: string;
+    }
+
+    export interface SubsettingPolicySubsettingRuleSubsetRuleEntry {
+        /**
+         * (Updatable) The SQL WHERE clause condition used to filter rows for the subset
+         */
+        condition: string;
+        /**
+         * (Updatable) A list of partition names which are to be part of the subset data
+         */
+        partitionsLists: string[];
+        /**
+         * (Updatable) The percentage of rows to retain in the subset (between 0 and 100)
+         */
+        percent: number;
+        /**
+         * (Updatable) type of subset rule
+         */
+        ruleType: string;
+        /**
+         * (Updatable) A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+         */
+        subPartitionsLists: string[];
+    }
+
+    export interface SubsettingPolicyTargetCredentials {
+        password: string;
+        userName: string;
+    }
+
+    export interface SubsettingReportManagementTargetCredentials {
+        /**
+         * The password for the target database user.
+         */
+        password: string;
+        /**
+         * The user name for the target database.
+         */
+        userName: string;
+    }
+
     export interface TargetDatabaseConnectionOption {
         /**
          * (Updatable) The connection type used to connect to the database. Allowed values:
@@ -90547,7 +91860,7 @@ export namespace DataSafe {
          */
         exclude: outputs.DataSafe.TargetDatabaseGroupMatchingCriteriaExclude;
         /**
-         * (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+         * (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
          */
         include: outputs.DataSafe.TargetDatabaseGroupMatchingCriteriaInclude;
     }
@@ -90572,6 +91885,14 @@ export namespace DataSafe {
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
          */
         freeformTags: {[key: string]: string};
+        /**
+         * (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+         */
+        freeformTagsIn: {[key: string]: string[]};
+        /**
+         * (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+         */
+        systemTags: {[key: string]: string[]};
         /**
          * (Updatable) The list of target database OCIDs to be included in the target database group.
          *
@@ -90859,9 +92180,6 @@ export namespace DataSafe {
         storePassword: string;
         /**
          * (Updatable) Base64 encoded string of trust store file content.
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         trustStoreContent: string;
     }
@@ -105474,6 +106792,7 @@ export namespace Database {
         skipRus: boolean[];
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+         * <<<<<<< ours
          */
         weeksOfMonths: number[];
     }
@@ -107596,6 +108915,7 @@ export namespace Database {
          * Type of the database backup destination.
          */
         type: string;
+        vpcUser: string;
     }
 
     export interface DbSystemDbSystemOptions {
@@ -121744,6 +123064,7 @@ export namespace Database {
         isZeroDataLossEnabled: boolean;
         remoteRegion: string;
         type: string;
+        vpcUser: string;
     }
 
     export interface GetDbSystemsDbSystemDbSystemOption {
@@ -177764,6 +179085,8 @@ export namespace Functions {
         isIpv6dualStackEnabled: boolean;
         /**
          * BYOK key id
+         *
+         * @deprecated Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
          */
         kmsKeyId: string;
         /**

@@ -233,14 +233,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
     @Import(name="memoryPerOracleComputeUnitInGbs")
     private @Nullable Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * @return (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
     public Optional<Output<Integer>> memoryPerOracleComputeUnitInGbs() {
@@ -278,14 +278,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
      * 
      */
     @Import(name="sgaPercentage")
     private @Nullable Output<Double> sgaPercentage;
 
     /**
-     * @return Percentage of ECPU memory allocated for SGA(System Global Area).
+     * @return (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
      * 
      */
     public Optional<Output<Double>> sgaPercentage() {
@@ -702,7 +702,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         * @param memoryPerOracleComputeUnitInGbs (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
          * 
          * @return builder
          * 
@@ -713,7 +713,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         * @param memoryPerOracleComputeUnitInGbs (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
          * 
          * @return builder
          * 
@@ -765,7 +765,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param sgaPercentage Percentage of ECPU memory allocated for SGA(System Global Area).
+         * @param sgaPercentage (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
          * 
          * @return builder
          * 
@@ -776,7 +776,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param sgaPercentage Percentage of ECPU memory allocated for SGA(System Global Area).
+         * @param sgaPercentage (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
          * 
          * @return builder
          * 

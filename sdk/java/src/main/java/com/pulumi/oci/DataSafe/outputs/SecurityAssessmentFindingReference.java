@@ -26,6 +26,7 @@ public final class SecurityAssessmentFindingReference {
      * 
      */
     private @Nullable String obp;
+    private @Nullable String orp;
     /**
      * @return Relevant section from STIG.
      * 
@@ -54,6 +55,9 @@ public final class SecurityAssessmentFindingReference {
     public Optional<String> obp() {
         return Optional.ofNullable(this.obp);
     }
+    public Optional<String> orp() {
+        return Optional.ofNullable(this.orp);
+    }
     /**
      * @return Relevant section from STIG.
      * 
@@ -74,6 +78,7 @@ public final class SecurityAssessmentFindingReference {
         private @Nullable String cis;
         private @Nullable String gdpr;
         private @Nullable String obp;
+        private @Nullable String orp;
         private @Nullable String stig;
         public Builder() {}
         public Builder(SecurityAssessmentFindingReference defaults) {
@@ -81,6 +86,7 @@ public final class SecurityAssessmentFindingReference {
     	      this.cis = defaults.cis;
     	      this.gdpr = defaults.gdpr;
     	      this.obp = defaults.obp;
+    	      this.orp = defaults.orp;
     	      this.stig = defaults.stig;
         }
 
@@ -103,6 +109,12 @@ public final class SecurityAssessmentFindingReference {
             return this;
         }
         @CustomType.Setter
+        public Builder orp(@Nullable String orp) {
+
+            this.orp = orp;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stig(@Nullable String stig) {
 
             this.stig = stig;
@@ -113,6 +125,7 @@ public final class SecurityAssessmentFindingReference {
             _resultValue.cis = cis;
             _resultValue.gdpr = gdpr;
             _resultValue.obp = obp;
+            _resultValue.orp = orp;
             _resultValue.stig = stig;
             return _resultValue;
         }

@@ -15752,6 +15752,30 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetDrgNatPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDrgNatPoliciesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDrgNatPolicyDrgNatRulesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDrgNatPolicyDrgNatRulesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetDrgRouteDistributionStatementsFilter {
         name: string;
         regex?: boolean;
@@ -16826,6 +16850,10 @@ export namespace Core {
          */
         isAutoTuneEnabled?: pulumi.Input<boolean | undefined>;
         /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+         */
+        isReservationsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
          * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
         kmsKeyId?: pulumi.Input<string | undefined>;
@@ -17524,6 +17552,10 @@ export namespace Core {
          */
         isAutoTuneEnabled?: pulumi.Input<boolean | undefined>;
         /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+         */
+        isReservationsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
          * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
         kmsKeyId?: pulumi.Input<string | undefined>;
@@ -17919,6 +17951,10 @@ export namespace Core {
          * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
          */
         areVirtualInstructionsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Instance Platform Configuration Configuration Map for flexible setting input.
+         */
+        configMap?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
         /**
          * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          */
@@ -24032,6 +24068,17 @@ export namespace DataSafe {
         tableNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     }
 
+    export interface EstimateTableSizesTargetCredentials {
+        /**
+         * The password for the target database user.
+         */
+        password: pulumi.Input<string>;
+        /**
+         * The user name for the target database.
+         */
+        userName: pulumi.Input<string>;
+    }
+
     export interface GetAlertPoliciesFilter {
         name: string;
         regex?: boolean;
@@ -24519,6 +24566,30 @@ export namespace DataSafe {
     }
 
     export interface GetOnpremConnectorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRegistrationPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRegistrationPoliciesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRegistrationPolicyTargetDatabasesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRegistrationPolicyTargetDatabasesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -25034,6 +25105,162 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSubsettingAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPoliciesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingPolicyHealthReportLogsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicyHealthReportLogsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingPolicyHealthReportsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicyHealthReportsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingPolicySubsettingRulesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingRulesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemaObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemaObjectsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemaRelationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemaRelationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemasFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicySubsettingSchemasFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingPolicyTableEstimatesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingPolicyTableEstimatesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingReportSubsettedObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingReportSubsettedObjectsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingReportSubsettingErrorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingReportSubsettingErrorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSubsettingReportsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubsettingReportsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter {
         name: string;
         regex?: boolean;
@@ -25503,6 +25730,21 @@ export namespace DataSafe {
         targetId?: pulumi.Input<string | undefined>;
     }
 
+    export interface RegistrationPolicyConnectionOption {
+        /**
+         * (Updatable) The connection type used to connect to the database. Allowed values:
+         * * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+         * * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+         */
+        connectionType: pulumi.Input<string>;
+        /**
+         * (Updatable) List of OCIDs required to establish the connection.
+         * * For `PRIVATE_ENDPOINT`, provide the OCID(s) of Data Safe private endpoint(s).
+         * * For `ONPREM_CONNECTOR`, provide the OCID(s) of on-premises connector(s).
+         */
+        identifiers: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface ReportDefinitionColumnFilter {
         /**
          * (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
@@ -25695,6 +25937,7 @@ export namespace DataSafe {
          * Relevant section from OBP.
          */
         obp?: pulumi.Input<string | undefined>;
+        orp?: pulumi.Input<string | undefined>;
         /**
          * Relevant section from STIG.
          */
@@ -26106,6 +26349,156 @@ export namespace DataSafe {
         value: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
+    export interface SubsetDataTargetCredentials {
+        /**
+         * The password for the target database user.
+         */
+        password: pulumi.Input<string>;
+        /**
+         * The user name for the target database.
+         */
+        userName: pulumi.Input<string>;
+    }
+
+    export interface SubsettingPolicyHealthReportManagementTargetCredentials {
+        /**
+         * The password for the target database user.
+         */
+        password: pulumi.Input<string>;
+        /**
+         * The user name for the target database.
+         */
+        userName: pulumi.Input<string>;
+    }
+
+    export interface SubsettingPolicySchemaSource {
+        /**
+         * The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+         */
+        derivedSchemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * (Updatable) The source of subsetting schemas
+         */
+        schemaSource: pulumi.Input<string>;
+        /**
+         * (Updatable) The schemas to be subsetted
+         */
+        schemasForSubsettings?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * (Updatable) The OCID of the sensitive data model that's used as the source of subsetting schemas
+         */
+        sensitiveDataModelId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The OCID of the target database that's used as the source of subsetting schemas
+         */
+        targetId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface SubsettingPolicySubsettingRuleProcessingChainObjectItem {
+        /**
+         * The approximate count of rows in the subsetting table before subsetting
+         */
+        approximateRowCountBeforeSubsetting?: pulumi.Input<string | undefined>;
+        /**
+         * Unique identifiers identifying the child columns in the relation.
+         */
+        childColumns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The name of the child subsetting table
+         */
+        childObjectName?: pulumi.Input<string | undefined>;
+        /**
+         * The database schema that contains the child subsetting table
+         */
+        childSchemaName?: pulumi.Input<string | undefined>;
+        /**
+         * The estimated count of rows in the subsetting table after subsetting
+         */
+        estimatedRowCountAfterSubsetting?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Indicates if this object/edge is enabled for processing
+         */
+        isEnabledForProcessing?: pulumi.Input<boolean | undefined>;
+        /**
+         * The unique key that identifies a subsetting relation processed. The key is numeric and unique within a processing order
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Unique identifiers identifying the parents columns in the relation.
+         */
+        parentColumns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The name of the parent subsetting table
+         */
+        parentObjectName?: pulumi.Input<string | undefined>;
+        /**
+         * The database schema that contains the parent subsetting table
+         */
+        parentSchemaName?: pulumi.Input<string | undefined>;
+        /**
+         * The impact on the related table due to the processing of subsetting rule
+         */
+        propagationImpact?: pulumi.Input<string | undefined>;
+        /**
+         * The unique key that identifies a subsetting relation.
+         */
+        subsettingSchemaRelationKey?: pulumi.Input<string | undefined>;
+    }
+
+    export interface SubsettingPolicySubsettingRuleScope {
+        /**
+         * (Updatable) The name of the specific object (e.g., table) to be subsetted
+         */
+        object?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The name of the schema containing the specific object to be subsetted
+         */
+        schemaName: pulumi.Input<string>;
+        /**
+         * (Updatable) Scope of a subsetting rule
+         */
+        scopeType: pulumi.Input<string>;
+    }
+
+    export interface SubsettingPolicySubsettingRuleSubsetRuleEntry {
+        /**
+         * (Updatable) The SQL WHERE clause condition used to filter rows for the subset
+         */
+        condition?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) A list of partition names which are to be part of the subset data
+         */
+        partitionsLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * (Updatable) The percentage of rows to retain in the subset (between 0 and 100)
+         */
+        percent?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) type of subset rule
+         */
+        ruleType: pulumi.Input<string>;
+        /**
+         * (Updatable) A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+         */
+        subPartitionsLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface SubsettingPolicyTargetCredentials {
+        password: pulumi.Input<string>;
+        userName: pulumi.Input<string>;
+    }
+
+    export interface SubsettingReportManagementTargetCredentials {
+        /**
+         * The password for the target database user.
+         */
+        password: pulumi.Input<string>;
+        /**
+         * The user name for the target database.
+         */
+        userName: pulumi.Input<string>;
+    }
+
     export interface TargetDatabaseConnectionOption {
         /**
          * (Updatable) The connection type used to connect to the database. Allowed values:
@@ -26183,7 +26576,7 @@ export namespace DataSafe {
          */
         exclude?: pulumi.Input<inputs.DataSafe.TargetDatabaseGroupMatchingCriteriaExclude | undefined>;
         /**
-         * (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+         * (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
          */
         include: pulumi.Input<inputs.DataSafe.TargetDatabaseGroupMatchingCriteriaInclude>;
     }
@@ -26208,6 +26601,14 @@ export namespace DataSafe {
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+        /**
+         * (Updatable) Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+         */
+        freeformTagsIn?: pulumi.Input<{[key: string]: pulumi.Input<pulumi.Input<string>[]>} | undefined>;
+        /**
+         * (Updatable) Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+         */
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<pulumi.Input<string>[]>} | undefined>;
         /**
          * (Updatable) The list of target database OCIDs to be included in the target database group.
          *
@@ -26495,9 +26896,6 @@ export namespace DataSafe {
         storePassword?: pulumi.Input<string | undefined>;
         /**
          * (Updatable) Base64 encoded string of trust store file content.
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         trustStoreContent?: pulumi.Input<string | undefined>;
     }
@@ -32495,6 +32893,7 @@ export namespace Database {
         skipRus?: pulumi.Input<pulumi.Input<boolean>[] | undefined>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+         * <<<<<<< ours
          */
         weeksOfMonths?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     }
@@ -34617,6 +35016,7 @@ export namespace Database {
          * Type of the database backup destination.
          */
         type?: pulumi.Input<string | undefined>;
+        vpcUser?: pulumi.Input<string | undefined>;
     }
 
     export interface DbSystemDbSystemOptions {

@@ -8417,6 +8417,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
         :param _builtins.str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[_builtins.bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[_builtins.int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+               <<<<<<< ours
         """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -8529,6 +8530,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
     def weeks_of_months(self) -> Optional[Sequence[_builtins.int]]:
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        <<<<<<< ours
         """
         return pulumi.get(self, "weeks_of_months")
 
@@ -16601,6 +16603,8 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
             suggest = "is_zero_data_loss_enabled"
         elif key == "remoteRegion":
             suggest = "remote_region"
+        elif key == "vpcUser":
+            suggest = "vpc_user"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail. Access the value via the '{suggest}' property getter instead.")
@@ -16621,7 +16625,8 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
                  is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  is_zero_data_loss_enabled: Optional[_builtins.bool] = None,
                  remote_region: Optional[_builtins.str] = None,
-                 type: Optional[_builtins.str] = None):
+                 type: Optional[_builtins.str] = None,
+                 vpc_user: Optional[_builtins.str] = None):
         """
         :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
@@ -16647,6 +16652,8 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
 
     @_builtins.property
     @pulumi.getter(name="backupRetentionPolicyOnTerminate")
@@ -16708,6 +16715,11 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
         Type of the database backup destination.
         """
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "vpc_user")
 
 
 @pulumi.output_type
@@ -61152,7 +61164,8 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailRes
                  is_retention_lock_enabled: _builtins.bool,
                  is_zero_data_loss_enabled: _builtins.bool,
                  remote_region: _builtins.str,
-                 type: _builtins.str):
+                 type: _builtins.str,
+                 vpc_user: _builtins.str):
         """
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         """
@@ -61164,6 +61177,7 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailRes
         pulumi.set(__self__, "is_zero_data_loss_enabled", is_zero_data_loss_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "vpc_user", vpc_user)
 
     @_builtins.property
     @pulumi.getter(name="backupRetentionPolicyOnTerminate")
@@ -61207,6 +61221,11 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailRes
     @pulumi.getter
     def type(self) -> _builtins.str:
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> _builtins.str:
+        return pulumi.get(self, "vpc_user")
 
 
 @pulumi.output_type

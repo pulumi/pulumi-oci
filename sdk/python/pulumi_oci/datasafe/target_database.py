@@ -29,6 +29,7 @@ class TargetDatabaseArgs:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 manage_privileges_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  peer_target_database_details: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]] = None,
                  tls_config: pulumi.Input[Optional['TargetDatabaseTlsConfigArgs']] = None):
         """
@@ -42,6 +43,10 @@ class TargetDatabaseArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] manage_privileges_trigger: (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]] peer_target_database_details: The details of the database to be registered as a peer target database.
         :param pulumi.Input['TargetDatabaseTlsConfigArgs'] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
@@ -59,6 +64,8 @@ class TargetDatabaseArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if manage_privileges_trigger is not None:
+            pulumi.set(__self__, "manage_privileges_trigger", manage_privileges_trigger)
         if peer_target_database_details is not None:
             pulumi.set(__self__, "peer_target_database_details", peer_target_database_details)
         if tls_config is not None:
@@ -161,6 +168,21 @@ class TargetDatabaseArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="managePrivilegesTrigger")
+    def manage_privileges_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "manage_privileges_trigger")
+
+    @manage_privileges_trigger.setter
+    def manage_privileges_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "manage_privileges_trigger", value)
+
+    @_builtins.property
     @pulumi.getter(name="peerTargetDatabaseDetails")
     def peer_target_database_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]:
         """
@@ -196,8 +218,10 @@ class _TargetDatabaseState:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 manage_privileges_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  peer_target_database_details: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]] = None,
                  peer_target_databases: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -216,8 +240,13 @@ class _TargetDatabaseState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] features: List of enabled features based on granted ORA_DSCS_* roles in target database
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the peer target database in Data Safe.
+        :param pulumi.Input[_builtins.int] manage_privileges_trigger: (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]] peer_target_database_details: The details of the database to be registered as a peer target database.
         :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]] peer_target_databases: The OCIDs of associated resources like Database, Data Safe private endpoint etc.
         :param pulumi.Input[_builtins.str] state: The current state of the target database in Data Safe.
@@ -242,10 +271,14 @@ class _TargetDatabaseState:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if features is not None:
+            pulumi.set(__self__, "features", features)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if manage_privileges_trigger is not None:
+            pulumi.set(__self__, "manage_privileges_trigger", manage_privileges_trigger)
         if peer_target_database_details is not None:
             pulumi.set(__self__, "peer_target_database_details", peer_target_database_details)
         if peer_target_databases is not None:
@@ -358,6 +391,18 @@ class _TargetDatabaseState:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
+    @pulumi.getter
+    def features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of enabled features based on granted ORA_DSCS_* roles in target database
+        """
+        return pulumi.get(self, "features")
+
+    @features.setter
+    def features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "features", value)
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -380,6 +425,21 @@ class _TargetDatabaseState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managePrivilegesTrigger")
+    def manage_privileges_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "manage_privileges_trigger")
+
+    @manage_privileges_trigger.setter
+    def manage_privileges_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "manage_privileges_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="peerTargetDatabaseDetails")
@@ -480,6 +540,7 @@ class TargetDatabase(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 manage_privileges_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  peer_target_database_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDetail']]]]] = None,
                  tls_config: pulumi.Input[Optional[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict', 'outputs.TargetDatabaseTlsConfig']]] = None,
                  __props__=None):
@@ -580,6 +641,10 @@ class TargetDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] manage_privileges_trigger: (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDetail']]]] peer_target_database_details: The details of the database to be registered as a peer target database.
         :param pulumi.Input[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict', 'outputs.TargetDatabaseTlsConfig']] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
@@ -699,6 +764,7 @@ class TargetDatabase(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 manage_privileges_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  peer_target_database_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDetail']]]]] = None,
                  tls_config: pulumi.Input[Optional[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict', 'outputs.TargetDatabaseTlsConfig']]] = None,
                  __props__=None):
@@ -722,9 +788,11 @@ class TargetDatabase(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["manage_privileges_trigger"] = manage_privileges_trigger
             __props__.__dict__["peer_target_database_details"] = peer_target_database_details
             __props__.__dict__["tls_config"] = tls_config
             __props__.__dict__["associated_resource_ids"] = None
+            __props__.__dict__["features"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["peer_target_databases"] = None
             __props__.__dict__["state"] = None
@@ -749,8 +817,10 @@ class TargetDatabase(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            manage_privileges_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             peer_target_database_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDetail']]]]] = None,
             peer_target_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseArgs', 'TargetDatabasePeerTargetDatabaseArgsDict', 'outputs.TargetDatabasePeerTargetDatabase']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -773,8 +843,13 @@ class TargetDatabase(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] features: List of enabled features based on granted ORA_DSCS_* roles in target database
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the peer target database in Data Safe.
+        :param pulumi.Input[_builtins.int] manage_privileges_trigger: (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDetail']]]] peer_target_database_details: The details of the database to be registered as a peer target database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseArgs', 'TargetDatabasePeerTargetDatabaseArgsDict', 'outputs.TargetDatabasePeerTargetDatabase']]]] peer_target_databases: The OCIDs of associated resources like Database, Data Safe private endpoint etc.
         :param pulumi.Input[_builtins.str] state: The current state of the target database in Data Safe.
@@ -795,8 +870,10 @@ class TargetDatabase(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["features"] = features
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["manage_privileges_trigger"] = manage_privileges_trigger
         __props__.__dict__["peer_target_database_details"] = peer_target_database_details
         __props__.__dict__["peer_target_databases"] = peer_target_databases
         __props__.__dict__["state"] = state
@@ -871,6 +948,14 @@ class TargetDatabase(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter
+    def features(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        List of enabled features based on granted ORA_DSCS_* roles in target database
+        """
+        return pulumi.get(self, "features")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
@@ -885,6 +970,17 @@ class TargetDatabase(pulumi.CustomResource):
         Details about the current state of the peer target database in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="managePrivilegesTrigger")
+    def manage_privileges_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "manage_privileges_trigger")
 
     @_builtins.property
     @pulumi.getter(name="peerTargetDatabaseDetails")

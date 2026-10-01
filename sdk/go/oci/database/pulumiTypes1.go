@@ -34736,6 +34736,7 @@ type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail str
 	IsZeroDataLossEnabled  bool   `pulumi:"isZeroDataLossEnabled"`
 	RemoteRegion           string `pulumi:"remoteRegion"`
 	Type                   string `pulumi:"type"`
+	VpcUser                string `pulumi:"vpcUser"`
 }
 
 // GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
@@ -34759,6 +34760,7 @@ type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs
 	IsZeroDataLossEnabled  pulumi.BoolInput   `pulumi:"isZeroDataLossEnabled"`
 	RemoteRegion           pulumi.StringInput `pulumi:"remoteRegion"`
 	Type                   pulumi.StringInput `pulumi:"type"`
+	VpcUser                pulumi.StringInput `pulumi:"vpcUser"`
 }
 
 func (GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
@@ -34855,6 +34857,12 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailO
 
 func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) VpcUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string {
+		return v.VpcUser
+	}).(pulumi.StringOutput)
 }
 
 type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput struct{ *pulumi.OutputState }

@@ -13,6 +13,2411 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection struct {
+	// The aggregated data point items.
+	Items []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs{...}
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs struct {
+	// The aggregated data point items.
+	Items GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput)
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray{ GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs{...} }
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionInput
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput {
+	return o
+}
+
+// The aggregated data point items.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput) Items() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection) []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection {
+		return vs[0].([]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem struct {
+	// The dimensions available for SQL Firewall allow SQL analytics.
+	Dimensions []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension `pulumi:"dimensions"`
+	// The total count of the aggregated metric.
+	SqlFirewallAllowedSqlAnalyticCount string `pulumi:"sqlFirewallAllowedSqlAnalyticCount"`
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs{...}
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs struct {
+	// The dimensions available for SQL Firewall allow SQL analytics.
+	Dimensions GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// The total count of the aggregated metric.
+	SqlFirewallAllowedSqlAnalyticCount pulumi.StringInput `pulumi:"sqlFirewallAllowedSqlAnalyticCount"`
+}
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput)
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray{ GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs{...} }
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemInput
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput {
+	return o
+}
+
+// The dimensions available for SQL Firewall allow SQL analytics.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput) Dimensions() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem) []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+// The total count of the aggregated metric.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput) SqlFirewallAllowedSqlAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem) string {
+		return v.SqlFirewallAllowedSqlAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem {
+		return vs[0].([]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension struct {
+	// The database user name.
+	DbUserName string `pulumi:"dbUserName"`
+	// The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
+	SqlFirewallPolicyId string `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel string `pulumi:"sqlLevel"`
+	// The current state of the SQL Firewall allowed SQL.
+	State string `pulumi:"state"`
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs{...}
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs struct {
+	// The database user name.
+	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
+	// The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
+	SqlFirewallPolicyId pulumi.StringInput `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel pulumi.StringInput `pulumi:"sqlLevel"`
+	// The current state of the SQL Firewall allowed SQL.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput)
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray{ GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs{...} }
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionInput
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+// The database user name.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) DbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension) string {
+		return v.DbUserName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) SqlFirewallPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension) string {
+		return v.SqlFirewallPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) SqlLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension) string {
+		return v.SqlLevel
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the SQL Firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension {
+		return vs[0].([]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput)
+}
+
+type GetSqlFirewallAllowedSqlsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlFirewallAllowedSqlsFilterInput is an input type that accepts GetSqlFirewallAllowedSqlsFilterArgs and GetSqlFirewallAllowedSqlsFilterOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsFilterInput` via:
+//
+//	GetSqlFirewallAllowedSqlsFilterArgs{...}
+type GetSqlFirewallAllowedSqlsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsFilterOutput() GetSqlFirewallAllowedSqlsFilterOutput
+	ToGetSqlFirewallAllowedSqlsFilterOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsFilterOutput
+}
+
+type GetSqlFirewallAllowedSqlsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlFirewallAllowedSqlsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsFilterArgs) ToGetSqlFirewallAllowedSqlsFilterOutput() GetSqlFirewallAllowedSqlsFilterOutput {
+	return i.ToGetSqlFirewallAllowedSqlsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsFilterArgs) ToGetSqlFirewallAllowedSqlsFilterOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsFilterOutput)
+}
+
+// GetSqlFirewallAllowedSqlsFilterArrayInput is an input type that accepts GetSqlFirewallAllowedSqlsFilterArray and GetSqlFirewallAllowedSqlsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsFilterArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlsFilterArray{ GetSqlFirewallAllowedSqlsFilterArgs{...} }
+type GetSqlFirewallAllowedSqlsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsFilterArrayOutput() GetSqlFirewallAllowedSqlsFilterArrayOutput
+	ToGetSqlFirewallAllowedSqlsFilterArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsFilterArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlsFilterArray []GetSqlFirewallAllowedSqlsFilterInput
+
+func (GetSqlFirewallAllowedSqlsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsFilterArray) ToGetSqlFirewallAllowedSqlsFilterArrayOutput() GetSqlFirewallAllowedSqlsFilterArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsFilterArray) ToGetSqlFirewallAllowedSqlsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsFilterArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterOutput) ToGetSqlFirewallAllowedSqlsFilterOutput() GetSqlFirewallAllowedSqlsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterOutput) ToGetSqlFirewallAllowedSqlsFilterOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterArrayOutput) ToGetSqlFirewallAllowedSqlsFilterArrayOutput() GetSqlFirewallAllowedSqlsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterArrayOutput) ToGetSqlFirewallAllowedSqlsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlsFilter {
+		return vs[0].([]GetSqlFirewallAllowedSqlsFilter)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlsFilterOutput)
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection struct {
+	Items []GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionInput is an input type that accepts GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs and GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionInput` via:
+//
+//	GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs{...}
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs struct {
+	Items GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput {
+	return i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput)
+}
+
+// GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayInput is an input type that accepts GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray and GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray{ GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs{...} }
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray []GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionInput
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput) Items() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection) []GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection {
+		return vs[0].([]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput)
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The name of the user that SQL was executed as.
+	CurrentUser string `pulumi:"currentUser"`
+	// The database user name.
+	DbUserName string `pulumi:"dbUserName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the SQL Firewall allowed SQL.
+	Description string `pulumi:"description"`
+	// The display name of the SQL Firewall allowed SQL.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the SQL Firewall allowed SQL.
+	Id string `pulumi:"id"`
+	// The objects accessed by the SQL.
+	SqlAccessedObjects []string `pulumi:"sqlAccessedObjects"`
+	// The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
+	SqlFirewallPolicyId string `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel string `pulumi:"sqlLevel"`
+	// The SQL text of the SQL Firewall allowed SQL.
+	SqlText string `pulumi:"sqlText"`
+	// The current state of the SQL Firewall allowed SQL.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the the SQL Firewall allowed SQL was collected from the target database, in the format defined by RFC3339.
+	TimeCollected string `pulumi:"timeCollected"`
+	// The last date and time the SQL Firewall allowed SQL was updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Version of the associated SQL Firewall policy. This identifies whether the allowed SQLs were added in the same batch or not.
+	Version float64 `pulumi:"version"`
+}
+
+// GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemInput is an input type that accepts GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs and GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemInput` via:
+//
+//	GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs{...}
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The name of the user that SQL was executed as.
+	CurrentUser pulumi.StringInput `pulumi:"currentUser"`
+	// The database user name.
+	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the SQL Firewall allowed SQL.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The display name of the SQL Firewall allowed SQL.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the SQL Firewall allowed SQL.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The objects accessed by the SQL.
+	SqlAccessedObjects pulumi.StringArrayInput `pulumi:"sqlAccessedObjects"`
+	// The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
+	SqlFirewallPolicyId pulumi.StringInput `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel pulumi.StringInput `pulumi:"sqlLevel"`
+	// The SQL text of the SQL Firewall allowed SQL.
+	SqlText pulumi.StringInput `pulumi:"sqlText"`
+	// The current state of the SQL Firewall allowed SQL.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the the SQL Firewall allowed SQL was collected from the target database, in the format defined by RFC3339.
+	TimeCollected pulumi.StringInput `pulumi:"timeCollected"`
+	// The last date and time the SQL Firewall allowed SQL was updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Version of the associated SQL Firewall policy. This identifies whether the allowed SQLs were added in the same batch or not.
+	Version pulumi.Float64Input `pulumi:"version"`
+}
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput {
+	return i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput)
+}
+
+// GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayInput is an input type that accepts GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray and GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray{ GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs{...} }
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray []GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemInput
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name of the user that SQL was executed as.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) CurrentUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.CurrentUser }).(pulumi.StringOutput)
+}
+
+// The database user name.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) DbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The description of the SQL Firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The display name of the SQL Firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the SQL Firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The objects accessed by the SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) SqlAccessedObjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) []string {
+		return v.SqlAccessedObjects
+	}).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) SqlFirewallPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string {
+		return v.SqlFirewallPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) SqlLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.SqlLevel }).(pulumi.StringOutput)
+}
+
+// The SQL text of the SQL Firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) SqlText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.SqlText }).(pulumi.StringOutput)
+}
+
+// The current state of the SQL Firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time the the SQL Firewall allowed SQL was collected from the target database, in the format defined by RFC3339.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) TimeCollected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.TimeCollected }).(pulumi.StringOutput)
+}
+
+// The last date and time the SQL Firewall allowed SQL was updated, in the format defined by RFC3339.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Version of the associated SQL Firewall policy. This identifies whether the allowed SQLs were added in the same batch or not.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) Version() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) float64 { return v.Version }).(pulumi.Float64Output)
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem {
+		return vs[0].([]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput)
+}
+
+type GetSqlFirewallPoliciesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlFirewallPoliciesFilterInput is an input type that accepts GetSqlFirewallPoliciesFilterArgs and GetSqlFirewallPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesFilterInput` via:
+//
+//	GetSqlFirewallPoliciesFilterArgs{...}
+type GetSqlFirewallPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesFilterOutput() GetSqlFirewallPoliciesFilterOutput
+	ToGetSqlFirewallPoliciesFilterOutputWithContext(context.Context) GetSqlFirewallPoliciesFilterOutput
+}
+
+type GetSqlFirewallPoliciesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlFirewallPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesFilterArgs) ToGetSqlFirewallPoliciesFilterOutput() GetSqlFirewallPoliciesFilterOutput {
+	return i.ToGetSqlFirewallPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesFilterArgs) ToGetSqlFirewallPoliciesFilterOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesFilterOutput)
+}
+
+// GetSqlFirewallPoliciesFilterArrayInput is an input type that accepts GetSqlFirewallPoliciesFilterArray and GetSqlFirewallPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesFilterArrayInput` via:
+//
+//	GetSqlFirewallPoliciesFilterArray{ GetSqlFirewallPoliciesFilterArgs{...} }
+type GetSqlFirewallPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesFilterArrayOutput() GetSqlFirewallPoliciesFilterArrayOutput
+	ToGetSqlFirewallPoliciesFilterArrayOutputWithContext(context.Context) GetSqlFirewallPoliciesFilterArrayOutput
+}
+
+type GetSqlFirewallPoliciesFilterArray []GetSqlFirewallPoliciesFilterInput
+
+func (GetSqlFirewallPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesFilterArray) ToGetSqlFirewallPoliciesFilterArrayOutput() GetSqlFirewallPoliciesFilterArrayOutput {
+	return i.ToGetSqlFirewallPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesFilterArray) ToGetSqlFirewallPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesFilterArrayOutput)
+}
+
+type GetSqlFirewallPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesFilterOutput) ToGetSqlFirewallPoliciesFilterOutput() GetSqlFirewallPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesFilterOutput) ToGetSqlFirewallPoliciesFilterOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlFirewallPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlFirewallPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesFilterArrayOutput) ToGetSqlFirewallPoliciesFilterArrayOutput() GetSqlFirewallPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesFilterArrayOutput) ToGetSqlFirewallPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPoliciesFilter {
+		return vs[0].([]GetSqlFirewallPoliciesFilter)[vs[1].(int)]
+	}).(GetSqlFirewallPoliciesFilterOutput)
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollection struct {
+	Items []GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallPoliciesSqlFirewallPolicyCollectionInput is an input type that accepts GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs and GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesSqlFirewallPolicyCollectionInput` via:
+//
+//	GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs{...}
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutputWithContext(context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs struct {
+	Items GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput {
+	return i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput)
+}
+
+// GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayInput is an input type that accepts GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray and GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayInput` via:
+//
+//	GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray{ GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs{...} }
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutputWithContext(context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray []GetSqlFirewallPoliciesSqlFirewallPolicyCollectionInput
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesSqlFirewallPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput {
+	return i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput)
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput) Items() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollection) []GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesSqlFirewallPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPoliciesSqlFirewallPolicyCollection {
+		return vs[0].([]GetSqlFirewallPoliciesSqlFirewallPolicyCollection)[vs[1].(int)]
+	}).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput)
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem struct {
+	// The list of allowed ip addresses for the SQL Firewall policy.
+	AllowedClientIps []string `pulumi:"allowedClientIps"`
+	// The list of allowed operating system user names for the SQL Firewall policy.
+	AllowedClientOsUsernames []string `pulumi:"allowedClientOsUsernames"`
+	// The list of allowed client programs for the SQL Firewall policy.
+	AllowedClientPrograms []string `pulumi:"allowedClientPrograms"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to return only items that match the specified user name.
+	DbUserName string `pulumi:"dbUserName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the SQL Firewall policy.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Specifies the SQL Firewall policy enforcement option.
+	EnforcementScope string `pulumi:"enforcementScope"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the SQL Firewall policy.
+	Id string `pulumi:"id"`
+	// Details about the current state of the SQL Firewall policy in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// An optional filter to return only resources that match the specified OCID of the SQL Firewall policy resource.
+	SqlFirewallPolicyId string `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel string `pulumi:"sqlLevel"`
+	// The current state of the SQL Firewall policy.
+	State string `pulumi:"state"`
+	// Specifies whether the SQL Firewall policy is enabled or disabled.
+	Status string `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time that the SQL Firewall policy was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// An optional filter to return only resources that match the specified violation action.
+	ViolationAction string `pulumi:"violationAction"`
+	// Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
+	ViolationAudit string `pulumi:"violationAudit"`
+}
+
+// GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemInput is an input type that accepts GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs and GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemInput` via:
+//
+//	GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs{...}
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutputWithContext(context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs struct {
+	// The list of allowed ip addresses for the SQL Firewall policy.
+	AllowedClientIps pulumi.StringArrayInput `pulumi:"allowedClientIps"`
+	// The list of allowed operating system user names for the SQL Firewall policy.
+	AllowedClientOsUsernames pulumi.StringArrayInput `pulumi:"allowedClientOsUsernames"`
+	// The list of allowed client programs for the SQL Firewall policy.
+	AllowedClientPrograms pulumi.StringArrayInput `pulumi:"allowedClientPrograms"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to return only items that match the specified user name.
+	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the SQL Firewall policy.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Specifies the SQL Firewall policy enforcement option.
+	EnforcementScope pulumi.StringInput `pulumi:"enforcementScope"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the SQL Firewall policy.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the SQL Firewall policy in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	// An optional filter to return only resources that match the specified OCID of the SQL Firewall policy resource.
+	SqlFirewallPolicyId pulumi.StringInput `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel pulumi.StringInput `pulumi:"sqlLevel"`
+	// The current state of the SQL Firewall policy.
+	State pulumi.StringInput `pulumi:"state"`
+	// Specifies whether the SQL Firewall policy is enabled or disabled.
+	Status pulumi.StringInput `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time that the SQL Firewall policy was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// An optional filter to return only resources that match the specified violation action.
+	ViolationAction pulumi.StringInput `pulumi:"violationAction"`
+	// Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
+	ViolationAudit pulumi.StringInput `pulumi:"violationAudit"`
+}
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput {
+	return i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput)
+}
+
+// GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayInput is an input type that accepts GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray and GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray{ GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs{...} }
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray []GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemInput
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput {
+	return o
+}
+
+// The list of allowed ip addresses for the SQL Firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) AllowedClientIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) []string { return v.AllowedClientIps }).(pulumi.StringArrayOutput)
+}
+
+// The list of allowed operating system user names for the SQL Firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) AllowedClientOsUsernames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) []string {
+		return v.AllowedClientOsUsernames
+	}).(pulumi.StringArrayOutput)
+}
+
+// The list of allowed client programs for the SQL Firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) AllowedClientPrograms() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) []string { return v.AllowedClientPrograms }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A filter to return only items that match the specified user name.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) DbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The description of the SQL Firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Specifies the SQL Firewall policy enforcement option.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) EnforcementScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.EnforcementScope }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the SQL Firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the SQL Firewall policy in Data Safe.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the security policy resource.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the SQL Firewall policy resource.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) SqlFirewallPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.SqlFirewallPolicyId }).(pulumi.StringOutput)
+}
+
+// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) SqlLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.SqlLevel }).(pulumi.StringOutput)
+}
+
+// The current state of the SQL Firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Specifies whether the SQL Firewall policy is enabled or disabled.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The time that the SQL Firewall policy was created, in the format defined by RFC3339.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified violation action.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) ViolationAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.ViolationAction }).(pulumi.StringOutput)
+}
+
+// Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) ViolationAudit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.ViolationAudit }).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem {
+		return vs[0].([]GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlFirewallPolicyAnalyticsFilterInput is an input type that accepts GetSqlFirewallPolicyAnalyticsFilterArgs and GetSqlFirewallPolicyAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsFilterInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsFilterArgs{...}
+type GetSqlFirewallPolicyAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsFilterOutput() GetSqlFirewallPolicyAnalyticsFilterOutput
+	ToGetSqlFirewallPolicyAnalyticsFilterOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsFilterOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlFirewallPolicyAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsFilterArgs) ToGetSqlFirewallPolicyAnalyticsFilterOutput() GetSqlFirewallPolicyAnalyticsFilterOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsFilterArgs) ToGetSqlFirewallPolicyAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsFilterOutput)
+}
+
+// GetSqlFirewallPolicyAnalyticsFilterArrayInput is an input type that accepts GetSqlFirewallPolicyAnalyticsFilterArray and GetSqlFirewallPolicyAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsFilterArrayInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsFilterArray{ GetSqlFirewallPolicyAnalyticsFilterArgs{...} }
+type GetSqlFirewallPolicyAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsFilterArrayOutput() GetSqlFirewallPolicyAnalyticsFilterArrayOutput
+	ToGetSqlFirewallPolicyAnalyticsFilterArrayOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsFilterArrayOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsFilterArray []GetSqlFirewallPolicyAnalyticsFilterInput
+
+func (GetSqlFirewallPolicyAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsFilterArray) ToGetSqlFirewallPolicyAnalyticsFilterArrayOutput() GetSqlFirewallPolicyAnalyticsFilterArrayOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsFilterArray) ToGetSqlFirewallPolicyAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsFilterArrayOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterOutput) ToGetSqlFirewallPolicyAnalyticsFilterOutput() GetSqlFirewallPolicyAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterOutput) ToGetSqlFirewallPolicyAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterArrayOutput) ToGetSqlFirewallPolicyAnalyticsFilterArrayOutput() GetSqlFirewallPolicyAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterArrayOutput) ToGetSqlFirewallPolicyAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPolicyAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPolicyAnalyticsFilter {
+		return vs[0].([]GetSqlFirewallPolicyAnalyticsFilter)[vs[1].(int)]
+	}).(GetSqlFirewallPolicyAnalyticsFilterOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection struct {
+	// The aggregated data point items.
+	Items []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs{...}
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs struct {
+	// The aggregated data point items.
+	Items GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput)
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray{ GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs{...} }
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionInput
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput {
+	return o
+}
+
+// The aggregated data point items.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput) Items() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection) []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection {
+		return vs[0].([]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection)[vs[1].(int)]
+	}).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem struct {
+	// The dimensions available for SQL Firewall policy analytics.
+	Dimensions []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension `pulumi:"dimensions"`
+	// The total count of the aggregated metric.
+	SqlFirewallPolicyAnalyticCount string `pulumi:"sqlFirewallPolicyAnalyticCount"`
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs{...}
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs struct {
+	// The dimensions available for SQL Firewall policy analytics.
+	Dimensions GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// The total count of the aggregated metric.
+	SqlFirewallPolicyAnalyticCount pulumi.StringInput `pulumi:"sqlFirewallPolicyAnalyticCount"`
+}
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput)
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray{ GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs{...} }
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemInput
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput {
+	return o
+}
+
+// The dimensions available for SQL Firewall policy analytics.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput) Dimensions() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem) []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+// The total count of the aggregated metric.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput) SqlFirewallPolicyAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem) string {
+		return v.SqlFirewallPolicyAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem {
+		return vs[0].([]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension struct {
+	// Specifies the SQL Firewall policy enforcement option.
+	EnforcementScope string `pulumi:"enforcementScope"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// The current state of the SQL Firewall policy.
+	State string `pulumi:"state"`
+	// Specifies the mode in which the SQL Firewall policy is enabled.
+	ViolationAction string `pulumi:"violationAction"`
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs{...}
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs struct {
+	// Specifies the SQL Firewall policy enforcement option.
+	EnforcementScope pulumi.StringInput `pulumi:"enforcementScope"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	// The current state of the SQL Firewall policy.
+	State pulumi.StringInput `pulumi:"state"`
+	// Specifies the mode in which the SQL Firewall policy is enabled.
+	ViolationAction pulumi.StringInput `pulumi:"violationAction"`
+}
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput)
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray{ GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs{...} }
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionInput
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+// Specifies the SQL Firewall policy enforcement option.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) EnforcementScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension) string {
+		return v.EnforcementScope
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the security policy resource.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension) string {
+		return v.SecurityPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the SQL Firewall policy.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the mode in which the SQL Firewall policy is enabled.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) ViolationAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension) string {
+		return v.ViolationAction
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension {
+		return vs[0].([]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlFirewallViolationAnalyticsFilterInput is an input type that accepts GetSqlFirewallViolationAnalyticsFilterArgs and GetSqlFirewallViolationAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsFilterInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsFilterArgs{...}
+type GetSqlFirewallViolationAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsFilterOutput() GetSqlFirewallViolationAnalyticsFilterOutput
+	ToGetSqlFirewallViolationAnalyticsFilterOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsFilterOutput
+}
+
+type GetSqlFirewallViolationAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlFirewallViolationAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsFilterArgs) ToGetSqlFirewallViolationAnalyticsFilterOutput() GetSqlFirewallViolationAnalyticsFilterOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsFilterArgs) ToGetSqlFirewallViolationAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsFilterOutput)
+}
+
+// GetSqlFirewallViolationAnalyticsFilterArrayInput is an input type that accepts GetSqlFirewallViolationAnalyticsFilterArray and GetSqlFirewallViolationAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsFilterArrayInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsFilterArray{ GetSqlFirewallViolationAnalyticsFilterArgs{...} }
+type GetSqlFirewallViolationAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsFilterArrayOutput() GetSqlFirewallViolationAnalyticsFilterArrayOutput
+	ToGetSqlFirewallViolationAnalyticsFilterArrayOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsFilterArrayOutput
+}
+
+type GetSqlFirewallViolationAnalyticsFilterArray []GetSqlFirewallViolationAnalyticsFilterInput
+
+func (GetSqlFirewallViolationAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsFilterArray) ToGetSqlFirewallViolationAnalyticsFilterArrayOutput() GetSqlFirewallViolationAnalyticsFilterArrayOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsFilterArray) ToGetSqlFirewallViolationAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsFilterArrayOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterOutput) ToGetSqlFirewallViolationAnalyticsFilterOutput() GetSqlFirewallViolationAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterOutput) ToGetSqlFirewallViolationAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterArrayOutput) ToGetSqlFirewallViolationAnalyticsFilterArrayOutput() GetSqlFirewallViolationAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterArrayOutput) ToGetSqlFirewallViolationAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationAnalyticsFilter {
+		return vs[0].([]GetSqlFirewallViolationAnalyticsFilter)[vs[1].(int)]
+	}).(GetSqlFirewallViolationAnalyticsFilterOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection struct {
+	// The aggregated data point items.
+	Items []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs{...}
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs struct {
+	// The aggregated data point items.
+	Items GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput)
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray{ GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs{...} }
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionInput
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput {
+	return o
+}
+
+// The aggregated data point items.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput) Items() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection) []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection {
+		return vs[0].([]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection)[vs[1].(int)]
+	}).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem struct {
+	// The details of the aggregation dimensions used for summarizing SQL violations.
+	Dimensions []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension `pulumi:"dimensions"`
+	// The display name of aggregation field.
+	DisplayName string `pulumi:"displayName"`
+	// The name of the aggregation.
+	MetricName string `pulumi:"metricName"`
+	// Total count of aggregated value.
+	SqlFirewallViolationAnalyticCount string `pulumi:"sqlFirewallViolationAnalyticCount"`
+	// An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnded string `pulumi:"timeEnded"`
+	// An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs{...}
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs struct {
+	// The details of the aggregation dimensions used for summarizing SQL violations.
+	Dimensions GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// The display name of aggregation field.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The name of the aggregation.
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// Total count of aggregated value.
+	SqlFirewallViolationAnalyticCount pulumi.StringInput `pulumi:"sqlFirewallViolationAnalyticCount"`
+	// An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput)
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray{ GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs{...} }
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemInput
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput {
+	return o
+}
+
+// The details of the aggregation dimensions used for summarizing SQL violations.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) Dimensions() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+// The display name of aggregation field.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The name of the aggregation.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) string {
+		return v.MetricName
+	}).(pulumi.StringOutput)
+}
+
+// Total count of aggregated value.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) SqlFirewallViolationAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) string {
+		return v.SqlFirewallViolationAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) string {
+		return v.TimeEnded
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem {
+		return vs[0].([]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension struct {
+	// The IP address of the host from which the session was spawned.
+	ClientIps []string `pulumi:"clientIps"`
+	// The name of the operating system user for the database session.
+	ClientOsUserNames []string `pulumi:"clientOsUserNames"`
+	// The application from which the SQL violation was generated. Examples SQL Plus or SQL Developer.
+	ClientPrograms []string `pulumi:"clientPrograms"`
+	// The name of the database user.
+	DbUserNames []string `pulumi:"dbUserNames"`
+	// The time of the SQL violation occurrence in the target database.
+	OperationTimes []string `pulumi:"operationTimes"`
+	// The name of the action executed by the user on the target database, for example, ALTER, CREATE, DROP.
+	Operations []string `pulumi:"operations"`
+	// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevels []string `pulumi:"sqlLevels"`
+	// The OCID of the target database.
+	TargetIds []string `pulumi:"targetIds"`
+	// The name of the target database.
+	TargetNames []string `pulumi:"targetNames"`
+	// The action taken for this SQL violation.
+	ViolationActions []string `pulumi:"violationActions"`
+	// Indicates whether SQL or context violation.
+	ViolationCauses []string `pulumi:"violationCauses"`
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs{...}
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs struct {
+	// The IP address of the host from which the session was spawned.
+	ClientIps pulumi.StringArrayInput `pulumi:"clientIps"`
+	// The name of the operating system user for the database session.
+	ClientOsUserNames pulumi.StringArrayInput `pulumi:"clientOsUserNames"`
+	// The application from which the SQL violation was generated. Examples SQL Plus or SQL Developer.
+	ClientPrograms pulumi.StringArrayInput `pulumi:"clientPrograms"`
+	// The name of the database user.
+	DbUserNames pulumi.StringArrayInput `pulumi:"dbUserNames"`
+	// The time of the SQL violation occurrence in the target database.
+	OperationTimes pulumi.StringArrayInput `pulumi:"operationTimes"`
+	// The name of the action executed by the user on the target database, for example, ALTER, CREATE, DROP.
+	Operations pulumi.StringArrayInput `pulumi:"operations"`
+	// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevels pulumi.StringArrayInput `pulumi:"sqlLevels"`
+	// The OCID of the target database.
+	TargetIds pulumi.StringArrayInput `pulumi:"targetIds"`
+	// The name of the target database.
+	TargetNames pulumi.StringArrayInput `pulumi:"targetNames"`
+	// The action taken for this SQL violation.
+	ViolationActions pulumi.StringArrayInput `pulumi:"violationActions"`
+	// Indicates whether SQL or context violation.
+	ViolationCauses pulumi.StringArrayInput `pulumi:"violationCauses"`
+}
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput)
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray{ GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs{...} }
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionInput
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+// The IP address of the host from which the session was spawned.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ClientIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.ClientIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// The name of the operating system user for the database session.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ClientOsUserNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.ClientOsUserNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// The application from which the SQL violation was generated. Examples SQL Plus or SQL Developer.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ClientPrograms() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.ClientPrograms
+	}).(pulumi.StringArrayOutput)
+}
+
+// The name of the database user.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) DbUserNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.DbUserNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// The time of the SQL violation occurrence in the target database.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) OperationTimes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.OperationTimes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The name of the action executed by the user on the target database, for example, ALTER, CREATE, DROP.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) Operations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.Operations
+	}).(pulumi.StringArrayOutput)
+}
+
+// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) SqlLevels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.SqlLevels
+	}).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the target database.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) TargetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.TargetIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The name of the target database.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) TargetNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.TargetNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// The action taken for this SQL violation.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ViolationActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.ViolationActions
+	}).(pulumi.StringArrayOutput)
+}
+
+// Indicates whether SQL or context violation.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ViolationCauses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.ViolationCauses
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension {
+		return vs[0].([]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput)
+}
+
+type GetSqlFirewallViolationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlFirewallViolationsFilterInput is an input type that accepts GetSqlFirewallViolationsFilterArgs and GetSqlFirewallViolationsFilterOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsFilterInput` via:
+//
+//	GetSqlFirewallViolationsFilterArgs{...}
+type GetSqlFirewallViolationsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsFilterOutput() GetSqlFirewallViolationsFilterOutput
+	ToGetSqlFirewallViolationsFilterOutputWithContext(context.Context) GetSqlFirewallViolationsFilterOutput
+}
+
+type GetSqlFirewallViolationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlFirewallViolationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsFilterArgs) ToGetSqlFirewallViolationsFilterOutput() GetSqlFirewallViolationsFilterOutput {
+	return i.ToGetSqlFirewallViolationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsFilterArgs) ToGetSqlFirewallViolationsFilterOutputWithContext(ctx context.Context) GetSqlFirewallViolationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsFilterOutput)
+}
+
+// GetSqlFirewallViolationsFilterArrayInput is an input type that accepts GetSqlFirewallViolationsFilterArray and GetSqlFirewallViolationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsFilterArrayInput` via:
+//
+//	GetSqlFirewallViolationsFilterArray{ GetSqlFirewallViolationsFilterArgs{...} }
+type GetSqlFirewallViolationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsFilterArrayOutput() GetSqlFirewallViolationsFilterArrayOutput
+	ToGetSqlFirewallViolationsFilterArrayOutputWithContext(context.Context) GetSqlFirewallViolationsFilterArrayOutput
+}
+
+type GetSqlFirewallViolationsFilterArray []GetSqlFirewallViolationsFilterInput
+
+func (GetSqlFirewallViolationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsFilterArray) ToGetSqlFirewallViolationsFilterArrayOutput() GetSqlFirewallViolationsFilterArrayOutput {
+	return i.ToGetSqlFirewallViolationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsFilterArray) ToGetSqlFirewallViolationsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsFilterArrayOutput)
+}
+
+type GetSqlFirewallViolationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsFilterOutput) ToGetSqlFirewallViolationsFilterOutput() GetSqlFirewallViolationsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsFilterOutput) ToGetSqlFirewallViolationsFilterOutputWithContext(ctx context.Context) GetSqlFirewallViolationsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlFirewallViolationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlFirewallViolationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallViolationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsFilterArrayOutput) ToGetSqlFirewallViolationsFilterArrayOutput() GetSqlFirewallViolationsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsFilterArrayOutput) ToGetSqlFirewallViolationsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationsFilter {
+		return vs[0].([]GetSqlFirewallViolationsFilter)[vs[1].(int)]
+	}).(GetSqlFirewallViolationsFilterOutput)
+}
+
 type GetSqlFirewallViolationsSqlFirewallViolationsCollection struct {
 	// Array of SQL violation summary.
 	Items []GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem `pulumi:"items"`
@@ -353,6 +2758,6114 @@ func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem {
 		return vs[0].([]GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem)[vs[1].(int)]
 	}).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput)
+}
+
+type GetSubsettingAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingAnalyticsFilterInput is an input type that accepts GetSubsettingAnalyticsFilterArgs and GetSubsettingAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingAnalyticsFilterInput` via:
+//
+//	GetSubsettingAnalyticsFilterArgs{...}
+type GetSubsettingAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingAnalyticsFilterOutput() GetSubsettingAnalyticsFilterOutput
+	ToGetSubsettingAnalyticsFilterOutputWithContext(context.Context) GetSubsettingAnalyticsFilterOutput
+}
+
+type GetSubsettingAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingAnalyticsFilterArgs) ToGetSubsettingAnalyticsFilterOutput() GetSubsettingAnalyticsFilterOutput {
+	return i.ToGetSubsettingAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingAnalyticsFilterArgs) ToGetSubsettingAnalyticsFilterOutputWithContext(ctx context.Context) GetSubsettingAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingAnalyticsFilterOutput)
+}
+
+// GetSubsettingAnalyticsFilterArrayInput is an input type that accepts GetSubsettingAnalyticsFilterArray and GetSubsettingAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingAnalyticsFilterArrayInput` via:
+//
+//	GetSubsettingAnalyticsFilterArray{ GetSubsettingAnalyticsFilterArgs{...} }
+type GetSubsettingAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingAnalyticsFilterArrayOutput() GetSubsettingAnalyticsFilterArrayOutput
+	ToGetSubsettingAnalyticsFilterArrayOutputWithContext(context.Context) GetSubsettingAnalyticsFilterArrayOutput
+}
+
+type GetSubsettingAnalyticsFilterArray []GetSubsettingAnalyticsFilterInput
+
+func (GetSubsettingAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingAnalyticsFilterArray) ToGetSubsettingAnalyticsFilterArrayOutput() GetSubsettingAnalyticsFilterArrayOutput {
+	return i.ToGetSubsettingAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingAnalyticsFilterArray) ToGetSubsettingAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingAnalyticsFilterArrayOutput)
+}
+
+type GetSubsettingAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingAnalyticsFilterOutput) ToGetSubsettingAnalyticsFilterOutput() GetSubsettingAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsFilterOutput) ToGetSubsettingAnalyticsFilterOutputWithContext(ctx context.Context) GetSubsettingAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingAnalyticsFilterArrayOutput) ToGetSubsettingAnalyticsFilterArrayOutput() GetSubsettingAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsFilterArrayOutput) ToGetSubsettingAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingAnalyticsFilter {
+		return vs[0].([]GetSubsettingAnalyticsFilter)[vs[1].(int)]
+	}).(GetSubsettingAnalyticsFilterOutput)
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollection struct {
+	// An array of subsetting analytics summary objects
+	Items []GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingAnalyticsSubsettingAnalyticsCollectionInput is an input type that accepts GetSubsettingAnalyticsSubsettingAnalyticsCollectionArgs and GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingAnalyticsSubsettingAnalyticsCollectionInput` via:
+//
+//	GetSubsettingAnalyticsSubsettingAnalyticsCollectionArgs{...}
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionOutputWithContext(context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionArgs struct {
+	// An array of subsetting analytics summary objects
+	Items GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionArgs) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput {
+	return i.ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionArgs) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput)
+}
+
+// GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayInput is an input type that accepts GetSubsettingAnalyticsSubsettingAnalyticsCollectionArray and GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayInput` via:
+//
+//	GetSubsettingAnalyticsSubsettingAnalyticsCollectionArray{ GetSubsettingAnalyticsSubsettingAnalyticsCollectionArgs{...} }
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutputWithContext(context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionArray []GetSubsettingAnalyticsSubsettingAnalyticsCollectionInput
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingAnalyticsSubsettingAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionArray) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput {
+	return i.ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionArray) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput)
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput {
+	return o
+}
+
+// An array of subsetting analytics summary objects
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput) Items() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingAnalyticsSubsettingAnalyticsCollection) []GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem {
+		return v.Items
+	}).(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingAnalyticsSubsettingAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingAnalyticsSubsettingAnalyticsCollection {
+		return vs[0].([]GetSubsettingAnalyticsSubsettingAnalyticsCollection)[vs[1].(int)]
+	}).(GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput)
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem struct {
+	// The scope of analytics data
+	Dimensions []GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension `pulumi:"dimensions"`
+	// The name of the aggregation metric
+	MetricName string `pulumi:"metricName"`
+	// The total count for the aggregation metric
+	SubsettingAnalyticCount string `pulumi:"subsettingAnalyticCount"`
+	// The date and time the target database was last subsetted using a subsetting policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeLastSubsetted string `pulumi:"timeLastSubsetted"`
+}
+
+// GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemInput is an input type that accepts GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArgs and GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemInput` via:
+//
+//	GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArgs{...}
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutputWithContext(context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArgs struct {
+	// The scope of analytics data
+	Dimensions GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// The name of the aggregation metric
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// The total count for the aggregation metric
+	SubsettingAnalyticCount pulumi.StringInput `pulumi:"subsettingAnalyticCount"`
+	// The date and time the target database was last subsetted using a subsetting policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeLastSubsetted pulumi.StringInput `pulumi:"timeLastSubsetted"`
+}
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArgs) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput {
+	return i.ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArgs) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput)
+}
+
+// GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayInput is an input type that accepts GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArray and GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayInput` via:
+//
+//	GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArray{ GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArgs{...} }
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArray []GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemInput
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArray) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput {
+	return i.ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArray) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput {
+	return o
+}
+
+// The scope of analytics data
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput) Dimensions() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem) []GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+// The name of the aggregation metric
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem) string { return v.MetricName }).(pulumi.StringOutput)
+}
+
+// The total count for the aggregation metric
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput) SubsettingAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem) string {
+		return v.SubsettingAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the target database was last subsetted using a subsetting policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput) TimeLastSubsetted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem) string { return v.TimeLastSubsetted }).(pulumi.StringOutput)
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem {
+		return vs[0].([]GetSubsettingAnalyticsSubsettingAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput)
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension struct {
+	// The OCID of the subsetting policy
+	PolicyId string `pulumi:"policyId"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+}
+
+// GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionInput is an input type that accepts GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArgs and GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionInput` via:
+//
+//	GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArgs{...}
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutputWithContext(context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArgs struct {
+	// The OCID of the subsetting policy
+	PolicyId pulumi.StringInput `pulumi:"policyId"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArgs) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput {
+	return i.ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArgs) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput)
+}
+
+// GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArray and GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayInput` via:
+//
+//	GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArray{ GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArgs{...} }
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput
+	ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArray []GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionInput
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArray) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput {
+	return i.ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArray) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+// The OCID of the subsetting policy
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput) PolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension) string { return v.PolicyId }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+type GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput() GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput) ToGetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension {
+		return vs[0].([]GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput)
+}
+
+type GetSubsettingPoliciesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingPoliciesFilterInput is an input type that accepts GetSubsettingPoliciesFilterArgs and GetSubsettingPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingPoliciesFilterInput` via:
+//
+//	GetSubsettingPoliciesFilterArgs{...}
+type GetSubsettingPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPoliciesFilterOutput() GetSubsettingPoliciesFilterOutput
+	ToGetSubsettingPoliciesFilterOutputWithContext(context.Context) GetSubsettingPoliciesFilterOutput
+}
+
+type GetSubsettingPoliciesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPoliciesFilterArgs) ToGetSubsettingPoliciesFilterOutput() GetSubsettingPoliciesFilterOutput {
+	return i.ToGetSubsettingPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPoliciesFilterArgs) ToGetSubsettingPoliciesFilterOutputWithContext(ctx context.Context) GetSubsettingPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPoliciesFilterOutput)
+}
+
+// GetSubsettingPoliciesFilterArrayInput is an input type that accepts GetSubsettingPoliciesFilterArray and GetSubsettingPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPoliciesFilterArrayInput` via:
+//
+//	GetSubsettingPoliciesFilterArray{ GetSubsettingPoliciesFilterArgs{...} }
+type GetSubsettingPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPoliciesFilterArrayOutput() GetSubsettingPoliciesFilterArrayOutput
+	ToGetSubsettingPoliciesFilterArrayOutputWithContext(context.Context) GetSubsettingPoliciesFilterArrayOutput
+}
+
+type GetSubsettingPoliciesFilterArray []GetSubsettingPoliciesFilterInput
+
+func (GetSubsettingPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPoliciesFilterArray) ToGetSubsettingPoliciesFilterArrayOutput() GetSubsettingPoliciesFilterArrayOutput {
+	return i.ToGetSubsettingPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPoliciesFilterArray) ToGetSubsettingPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPoliciesFilterArrayOutput)
+}
+
+type GetSubsettingPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPoliciesFilterOutput) ToGetSubsettingPoliciesFilterOutput() GetSubsettingPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesFilterOutput) ToGetSubsettingPoliciesFilterOutputWithContext(ctx context.Context) GetSubsettingPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPoliciesFilterArrayOutput) ToGetSubsettingPoliciesFilterArrayOutput() GetSubsettingPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesFilterArrayOutput) ToGetSubsettingPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPoliciesFilter {
+		return vs[0].([]GetSubsettingPoliciesFilter)[vs[1].(int)]
+	}).(GetSubsettingPoliciesFilterOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollection struct {
+	Items []GetSubsettingPoliciesSubsettingPolicyCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingPoliciesSubsettingPolicyCollectionInput is an input type that accepts GetSubsettingPoliciesSubsettingPolicyCollectionArgs and GetSubsettingPoliciesSubsettingPolicyCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingPoliciesSubsettingPolicyCollectionInput` via:
+//
+//	GetSubsettingPoliciesSubsettingPolicyCollectionArgs{...}
+type GetSubsettingPoliciesSubsettingPolicyCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionOutput() GetSubsettingPoliciesSubsettingPolicyCollectionOutput
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionOutputWithContext(context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionOutput
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionArgs struct {
+	Items GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionArgs) ToGetSubsettingPoliciesSubsettingPolicyCollectionOutput() GetSubsettingPoliciesSubsettingPolicyCollectionOutput {
+	return i.ToGetSubsettingPoliciesSubsettingPolicyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionArgs) ToGetSubsettingPoliciesSubsettingPolicyCollectionOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPoliciesSubsettingPolicyCollectionOutput)
+}
+
+// GetSubsettingPoliciesSubsettingPolicyCollectionArrayInput is an input type that accepts GetSubsettingPoliciesSubsettingPolicyCollectionArray and GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPoliciesSubsettingPolicyCollectionArrayInput` via:
+//
+//	GetSubsettingPoliciesSubsettingPolicyCollectionArray{ GetSubsettingPoliciesSubsettingPolicyCollectionArgs{...} }
+type GetSubsettingPoliciesSubsettingPolicyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionArrayOutputWithContext(context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionArray []GetSubsettingPoliciesSubsettingPolicyCollectionInput
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPoliciesSubsettingPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionArray) ToGetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput {
+	return i.ToGetSubsettingPoliciesSubsettingPolicyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionArray) ToGetSubsettingPoliciesSubsettingPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionOutput() GetSubsettingPoliciesSubsettingPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionOutput) Items() GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollection) []GetSubsettingPoliciesSubsettingPolicyCollectionItem {
+		return v.Items
+	}).(GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPoliciesSubsettingPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingPoliciesSubsettingPolicyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPoliciesSubsettingPolicyCollection {
+		return vs[0].([]GetSubsettingPoliciesSubsettingPolicyCollection)[vs[1].(int)]
+	}).(GetSubsettingPoliciesSubsettingPolicyCollectionOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItem struct {
+	CheckType string `pulumi:"checkType"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the subsetting policy
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags                map[string]string `pulumi:"freeformTags"`
+	GenerateHealthReportTrigger int               `pulumi:"generateHealthReportTrigger"`
+	// The OCID of the subsetting policy
+	Id string `pulumi:"id"`
+	// Indicates if redo logging is enabled during a subsetting operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, subsetting disables redo logging and flashback logging to purge any original   data from logs. However, in certain circumstances when you only want to test subsetting, rollback changes, and retry subsetting, you could enable logging and use a flashback database to retrieve the original data after it has been subsetted.
+	IsRedoLoggingEnabled bool `pulumi:"isRedoLoggingEnabled"`
+	// Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The subsetting process gathers statistics on database tables after subsetting completes
+	IsRefreshStatsEnabled bool `pulumi:"isRefreshStatsEnabled"`
+	// A filter to return only the resources that match the specified masking policy OCID.
+	MaskingPolicyId string `pulumi:"maskingPolicyId"`
+	// Specifies options to enable parallel execution when running data subsetting. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve subsetting performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism
+	ParallelDegree string `pulumi:"parallelDegree"`
+	// A post-subsetting script, which can contain SQL and PL/SQL statements. It's executed after the core subsetting script generated using the subsetting policy. It's usually used to perform additional transformation or cleanup work after subsetting.
+	PostSubsettingScript string `pulumi:"postSubsettingScript"`
+	// A pre-subsetting script, which can contain SQL and PL/SQL statements. It's executed before  the core subsetting script generated using the subsetting policy. It's usually used to perform any preparation or prerequisite work before subsetting data
+	PreSubsettingScript string `pulumi:"preSubsettingScript"`
+	// Specifies how to recompile invalid objects post data subsetting. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after subsetting completes
+	Recompile string `pulumi:"recompile"`
+	// The source of subsetting schemas
+	SchemaSources []GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource `pulumi:"schemaSources"`
+	// A filter to return only the resources that match the specified lifecycle states.
+	State             string                                                                `pulumi:"state"`
+	Tablespace        string                                                                `pulumi:"tablespace"`
+	TargetCredentials []GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential `pulumi:"targetCredentials"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the subsetting policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the subsetting policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Strategy to be applied for tables which are not impacted by any of the subsetting rules
+	UnrelatedTablesAction string `pulumi:"unrelatedTablesAction"`
+}
+
+// GetSubsettingPoliciesSubsettingPolicyCollectionItemInput is an input type that accepts GetSubsettingPoliciesSubsettingPolicyCollectionItemArgs and GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingPoliciesSubsettingPolicyCollectionItemInput` via:
+//
+//	GetSubsettingPoliciesSubsettingPolicyCollectionItemArgs{...}
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemOutputWithContext(context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemArgs struct {
+	CheckType pulumi.StringInput `pulumi:"checkType"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the subsetting policy
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags                pulumi.StringMapInput `pulumi:"freeformTags"`
+	GenerateHealthReportTrigger pulumi.IntInput       `pulumi:"generateHealthReportTrigger"`
+	// The OCID of the subsetting policy
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if redo logging is enabled during a subsetting operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, subsetting disables redo logging and flashback logging to purge any original   data from logs. However, in certain circumstances when you only want to test subsetting, rollback changes, and retry subsetting, you could enable logging and use a flashback database to retrieve the original data after it has been subsetted.
+	IsRedoLoggingEnabled pulumi.BoolInput `pulumi:"isRedoLoggingEnabled"`
+	// Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The subsetting process gathers statistics on database tables after subsetting completes
+	IsRefreshStatsEnabled pulumi.BoolInput `pulumi:"isRefreshStatsEnabled"`
+	// A filter to return only the resources that match the specified masking policy OCID.
+	MaskingPolicyId pulumi.StringInput `pulumi:"maskingPolicyId"`
+	// Specifies options to enable parallel execution when running data subsetting. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve subsetting performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism
+	ParallelDegree pulumi.StringInput `pulumi:"parallelDegree"`
+	// A post-subsetting script, which can contain SQL and PL/SQL statements. It's executed after the core subsetting script generated using the subsetting policy. It's usually used to perform additional transformation or cleanup work after subsetting.
+	PostSubsettingScript pulumi.StringInput `pulumi:"postSubsettingScript"`
+	// A pre-subsetting script, which can contain SQL and PL/SQL statements. It's executed before  the core subsetting script generated using the subsetting policy. It's usually used to perform any preparation or prerequisite work before subsetting data
+	PreSubsettingScript pulumi.StringInput `pulumi:"preSubsettingScript"`
+	// Specifies how to recompile invalid objects post data subsetting. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after subsetting completes
+	Recompile pulumi.StringInput `pulumi:"recompile"`
+	// The source of subsetting schemas
+	SchemaSources GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayInput `pulumi:"schemaSources"`
+	// A filter to return only the resources that match the specified lifecycle states.
+	State             pulumi.StringInput                                                            `pulumi:"state"`
+	Tablespace        pulumi.StringInput                                                            `pulumi:"tablespace"`
+	TargetCredentials GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayInput `pulumi:"targetCredentials"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the subsetting policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the subsetting policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Strategy to be applied for tables which are not impacted by any of the subsetting rules
+	UnrelatedTablesAction pulumi.StringInput `pulumi:"unrelatedTablesAction"`
+}
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemArgs) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput {
+	return i.ToGetSubsettingPoliciesSubsettingPolicyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemArgs) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput)
+}
+
+// GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayInput is an input type that accepts GetSubsettingPoliciesSubsettingPolicyCollectionItemArray and GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayInput` via:
+//
+//	GetSubsettingPoliciesSubsettingPolicyCollectionItemArray{ GetSubsettingPoliciesSubsettingPolicyCollectionItemArgs{...} }
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutputWithContext(context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemArray []GetSubsettingPoliciesSubsettingPolicyCollectionItemInput
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPoliciesSubsettingPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemArray) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput {
+	return i.ToGetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemArray) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) CheckType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.CheckType }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The description of the subsetting policy
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) GenerateHealthReportTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) int { return v.GenerateHealthReportTrigger }).(pulumi.IntOutput)
+}
+
+// The OCID of the subsetting policy
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates if redo logging is enabled during a subsetting operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, subsetting disables redo logging and flashback logging to purge any original   data from logs. However, in certain circumstances when you only want to test subsetting, rollback changes, and retry subsetting, you could enable logging and use a flashback database to retrieve the original data after it has been subsetted.
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) IsRedoLoggingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) bool { return v.IsRedoLoggingEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The subsetting process gathers statistics on database tables after subsetting completes
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) IsRefreshStatsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) bool { return v.IsRefreshStatsEnabled }).(pulumi.BoolOutput)
+}
+
+// A filter to return only the resources that match the specified masking policy OCID.
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) MaskingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.MaskingPolicyId }).(pulumi.StringOutput)
+}
+
+// Specifies options to enable parallel execution when running data subsetting. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve subsetting performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) ParallelDegree() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.ParallelDegree }).(pulumi.StringOutput)
+}
+
+// A post-subsetting script, which can contain SQL and PL/SQL statements. It's executed after the core subsetting script generated using the subsetting policy. It's usually used to perform additional transformation or cleanup work after subsetting.
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) PostSubsettingScript() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.PostSubsettingScript }).(pulumi.StringOutput)
+}
+
+// A pre-subsetting script, which can contain SQL and PL/SQL statements. It's executed before  the core subsetting script generated using the subsetting policy. It's usually used to perform any preparation or prerequisite work before subsetting data
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) PreSubsettingScript() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.PreSubsettingScript }).(pulumi.StringOutput)
+}
+
+// Specifies how to recompile invalid objects post data subsetting. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after subsetting completes
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) Recompile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.Recompile }).(pulumi.StringOutput)
+}
+
+// The source of subsetting schemas
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) SchemaSources() GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) []GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource {
+		return v.SchemaSources
+	}).(GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput)
+}
+
+// A filter to return only the resources that match the specified lifecycle states.
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) Tablespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.Tablespace }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) TargetCredentials() GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) []GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential {
+		return v.TargetCredentials
+	}).(GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the subsetting policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the subsetting policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Strategy to be applied for tables which are not impacted by any of the subsetting rules
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput) UnrelatedTablesAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItem) string { return v.UnrelatedTablesAction }).(pulumi.StringOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPoliciesSubsettingPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPoliciesSubsettingPolicyCollectionItem {
+		return vs[0].([]GetSubsettingPoliciesSubsettingPolicyCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource struct {
+	// The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+	DerivedSchemas []string `pulumi:"derivedSchemas"`
+	// The source of subsetting schemas
+	SchemaSource string `pulumi:"schemaSource"`
+	// The schemas to be subsetted
+	SchemasForSubsettings []string `pulumi:"schemasForSubsettings"`
+	// A filter to return only the resources that match the specified sensitive data model OCID.
+	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+}
+
+// GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceInput is an input type that accepts GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArgs and GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput values.
+// You can construct a concrete instance of `GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceInput` via:
+//
+//	GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArgs{...}
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutputWithContext(context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArgs struct {
+	// The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+	DerivedSchemas pulumi.StringArrayInput `pulumi:"derivedSchemas"`
+	// The source of subsetting schemas
+	SchemaSource pulumi.StringInput `pulumi:"schemaSource"`
+	// The schemas to be subsetted
+	SchemasForSubsettings pulumi.StringArrayInput `pulumi:"schemasForSubsettings"`
+	// A filter to return only the resources that match the specified sensitive data model OCID.
+	SensitiveDataModelId pulumi.StringInput `pulumi:"sensitiveDataModelId"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource)(nil)).Elem()
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArgs) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput {
+	return i.ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArgs) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput)
+}
+
+// GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayInput is an input type that accepts GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArray and GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayInput` via:
+//
+//	GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArray{ GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArgs{...} }
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutputWithContext(context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArray []GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceInput
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource)(nil)).Elem()
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArray) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput {
+	return i.ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArray) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource)(nil)).Elem()
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput {
+	return o
+}
+
+// The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput) DerivedSchemas() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource) []string {
+		return v.DerivedSchemas
+	}).(pulumi.StringArrayOutput)
+}
+
+// The source of subsetting schemas
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput) SchemaSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource) string { return v.SchemaSource }).(pulumi.StringOutput)
+}
+
+// The schemas to be subsetted
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput) SchemasForSubsettings() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource) []string {
+		return v.SchemasForSubsettings
+	}).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only the resources that match the specified sensitive data model OCID.
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput) SensitiveDataModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource) string {
+		return v.SensitiveDataModelId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource)(nil)).Elem()
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput) Index(i pulumi.IntInput) GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource {
+		return vs[0].([]GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSource)[vs[1].(int)]
+	}).(GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential struct {
+	Password string `pulumi:"password"`
+	UserName string `pulumi:"userName"`
+}
+
+// GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialInput is an input type that accepts GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArgs and GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput values.
+// You can construct a concrete instance of `GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialInput` via:
+//
+//	GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArgs{...}
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutputWithContext(context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	UserName pulumi.StringInput `pulumi:"userName"`
+}
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential)(nil)).Elem()
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArgs) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput {
+	return i.ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArgs) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput)
+}
+
+// GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayInput is an input type that accepts GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArray and GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayInput` via:
+//
+//	GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArray{ GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArgs{...} }
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput
+	ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutputWithContext(context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArray []GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialInput
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential)(nil)).Elem()
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArray) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput {
+	return i.ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArray) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential)(nil)).Elem()
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+type GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential)(nil)).Elem()
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput() GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput) ToGetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutputWithContext(ctx context.Context) GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput) Index(i pulumi.IntInput) GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential {
+		return vs[0].([]GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredential)[vs[1].(int)]
+	}).(GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput)
+}
+
+type GetSubsettingPolicyHealthReportLogsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingPolicyHealthReportLogsFilterInput is an input type that accepts GetSubsettingPolicyHealthReportLogsFilterArgs and GetSubsettingPolicyHealthReportLogsFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportLogsFilterInput` via:
+//
+//	GetSubsettingPolicyHealthReportLogsFilterArgs{...}
+type GetSubsettingPolicyHealthReportLogsFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportLogsFilterOutput() GetSubsettingPolicyHealthReportLogsFilterOutput
+	ToGetSubsettingPolicyHealthReportLogsFilterOutputWithContext(context.Context) GetSubsettingPolicyHealthReportLogsFilterOutput
+}
+
+type GetSubsettingPolicyHealthReportLogsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingPolicyHealthReportLogsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportLogsFilterArgs) ToGetSubsettingPolicyHealthReportLogsFilterOutput() GetSubsettingPolicyHealthReportLogsFilterOutput {
+	return i.ToGetSubsettingPolicyHealthReportLogsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportLogsFilterArgs) ToGetSubsettingPolicyHealthReportLogsFilterOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportLogsFilterOutput)
+}
+
+// GetSubsettingPolicyHealthReportLogsFilterArrayInput is an input type that accepts GetSubsettingPolicyHealthReportLogsFilterArray and GetSubsettingPolicyHealthReportLogsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportLogsFilterArrayInput` via:
+//
+//	GetSubsettingPolicyHealthReportLogsFilterArray{ GetSubsettingPolicyHealthReportLogsFilterArgs{...} }
+type GetSubsettingPolicyHealthReportLogsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportLogsFilterArrayOutput() GetSubsettingPolicyHealthReportLogsFilterArrayOutput
+	ToGetSubsettingPolicyHealthReportLogsFilterArrayOutputWithContext(context.Context) GetSubsettingPolicyHealthReportLogsFilterArrayOutput
+}
+
+type GetSubsettingPolicyHealthReportLogsFilterArray []GetSubsettingPolicyHealthReportLogsFilterInput
+
+func (GetSubsettingPolicyHealthReportLogsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportLogsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportLogsFilterArray) ToGetSubsettingPolicyHealthReportLogsFilterArrayOutput() GetSubsettingPolicyHealthReportLogsFilterArrayOutput {
+	return i.ToGetSubsettingPolicyHealthReportLogsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportLogsFilterArray) ToGetSubsettingPolicyHealthReportLogsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportLogsFilterArrayOutput)
+}
+
+type GetSubsettingPolicyHealthReportLogsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportLogsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportLogsFilterOutput) ToGetSubsettingPolicyHealthReportLogsFilterOutput() GetSubsettingPolicyHealthReportLogsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportLogsFilterOutput) ToGetSubsettingPolicyHealthReportLogsFilterOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportLogsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportLogsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPolicyHealthReportLogsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportLogsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingPolicyHealthReportLogsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportLogsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingPolicyHealthReportLogsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportLogsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportLogsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportLogsFilterArrayOutput) ToGetSubsettingPolicyHealthReportLogsFilterArrayOutput() GetSubsettingPolicyHealthReportLogsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportLogsFilterArrayOutput) ToGetSubsettingPolicyHealthReportLogsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportLogsFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicyHealthReportLogsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicyHealthReportLogsFilter {
+		return vs[0].([]GetSubsettingPolicyHealthReportLogsFilter)[vs[1].(int)]
+	}).(GetSubsettingPolicyHealthReportLogsFilterOutput)
+}
+
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollection struct {
+	// An array of subsetting policy health report objects.
+	Items []GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionInput is an input type that accepts GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArgs and GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionInput` via:
+//
+//	GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArgs{...}
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput
+	ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutputWithContext(context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput
+}
+
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArgs struct {
+	// An array of subsetting policy health report objects.
+	Items GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArgs) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput {
+	return i.ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArgs) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput)
+}
+
+// GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayInput is an input type that accepts GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArray and GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayInput` via:
+//
+//	GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArray{ GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArgs{...} }
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput
+	ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutputWithContext(context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput
+}
+
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArray []GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionInput
+
+func (GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArray) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput {
+	return i.ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArray) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput)
+}
+
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput {
+	return o
+}
+
+// An array of subsetting policy health report objects.
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput) Items() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollection) []GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem {
+		return v.Items
+	}).(GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollection {
+		return vs[0].([]GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollection)[vs[1].(int)]
+	}).(GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput)
+}
+
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem struct {
+	// A human-readable description for the log entry.
+	Description string `pulumi:"description"`
+	// An enum type entry for each health check in the subsetting policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the subsetting tables. PRIVILEGE_CHECK checks if the subsetting user has sufficient privilege to run subsetting. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the subsetting table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the subsetting tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled ACTIVE_JOB_CHECK checks if there is any active subsetting job running on the target database. TABLE_EXIST_CHECK checks if the subsetting tables are available in the target database. TIME_TRAVEL_CHECK checks if the subsetting tables have Time Travel enabled. SYSTEM_OBJECTS_CHECK checks if the subsetting tables have dependent objects present in SYS schema. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state. AUDIT_POLICY_CHECK checks if the subsetting tables have Audit policies enabled. VALID_RULES_CHECK if the subsetting rules on the tables are valid.
+	HealthCheckType string `pulumi:"healthCheckType"`
+	// A human-readable log entry.
+	Message string `pulumi:"message"`
+	// A filter to return only the resources that match the specified log message type.
+	MessageType string `pulumi:"messageType"`
+	// A human-readable log entry to remedy any error or warnings in the subsetting policy.
+	Remediation string `pulumi:"remediation"`
+	// The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	Timestamp string `pulumi:"timestamp"`
+}
+
+// GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemInput is an input type that accepts GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArgs and GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemInput` via:
+//
+//	GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArgs{...}
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput
+	ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutputWithContext(context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput
+}
+
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArgs struct {
+	// A human-readable description for the log entry.
+	Description pulumi.StringInput `pulumi:"description"`
+	// An enum type entry for each health check in the subsetting policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the subsetting tables. PRIVILEGE_CHECK checks if the subsetting user has sufficient privilege to run subsetting. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the subsetting table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the subsetting tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled ACTIVE_JOB_CHECK checks if there is any active subsetting job running on the target database. TABLE_EXIST_CHECK checks if the subsetting tables are available in the target database. TIME_TRAVEL_CHECK checks if the subsetting tables have Time Travel enabled. SYSTEM_OBJECTS_CHECK checks if the subsetting tables have dependent objects present in SYS schema. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state. AUDIT_POLICY_CHECK checks if the subsetting tables have Audit policies enabled. VALID_RULES_CHECK if the subsetting rules on the tables are valid.
+	HealthCheckType pulumi.StringInput `pulumi:"healthCheckType"`
+	// A human-readable log entry.
+	Message pulumi.StringInput `pulumi:"message"`
+	// A filter to return only the resources that match the specified log message type.
+	MessageType pulumi.StringInput `pulumi:"messageType"`
+	// A human-readable log entry to remedy any error or warnings in the subsetting policy.
+	Remediation pulumi.StringInput `pulumi:"remediation"`
+	// The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+}
+
+func (GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArgs) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput {
+	return i.ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArgs) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput)
+}
+
+// GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayInput is an input type that accepts GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArray and GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayInput` via:
+//
+//	GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArray{ GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArgs{...} }
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput
+	ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutputWithContext(context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput
+}
+
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArray []GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemInput
+
+func (GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArray) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput {
+	return i.ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArray) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput {
+	return o
+}
+
+// A human-readable description for the log entry.
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// An enum type entry for each health check in the subsetting policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the subsetting tables. PRIVILEGE_CHECK checks if the subsetting user has sufficient privilege to run subsetting. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the subsetting table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the subsetting tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled ACTIVE_JOB_CHECK checks if there is any active subsetting job running on the target database. TABLE_EXIST_CHECK checks if the subsetting tables are available in the target database. TIME_TRAVEL_CHECK checks if the subsetting tables have Time Travel enabled. SYSTEM_OBJECTS_CHECK checks if the subsetting tables have dependent objects present in SYS schema. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state. AUDIT_POLICY_CHECK checks if the subsetting tables have Audit policies enabled. VALID_RULES_CHECK if the subsetting rules on the tables are valid.
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput) HealthCheckType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem) string {
+		return v.HealthCheckType
+	}).(pulumi.StringOutput)
+}
+
+// A human-readable log entry.
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the specified log message type.
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput) MessageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem) string {
+		return v.MessageType
+	}).(pulumi.StringOutput)
+}
+
+// A human-readable log entry to remedy any error or warnings in the subsetting policy.
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput) Remediation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem) string {
+		return v.Remediation
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem) string {
+		return v.Timestamp
+	}).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput() GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput) ToGetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem {
+		return vs[0].([]GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput)
+}
+
+type GetSubsettingPolicyHealthReportsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingPolicyHealthReportsFilterInput is an input type that accepts GetSubsettingPolicyHealthReportsFilterArgs and GetSubsettingPolicyHealthReportsFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportsFilterInput` via:
+//
+//	GetSubsettingPolicyHealthReportsFilterArgs{...}
+type GetSubsettingPolicyHealthReportsFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportsFilterOutput() GetSubsettingPolicyHealthReportsFilterOutput
+	ToGetSubsettingPolicyHealthReportsFilterOutputWithContext(context.Context) GetSubsettingPolicyHealthReportsFilterOutput
+}
+
+type GetSubsettingPolicyHealthReportsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingPolicyHealthReportsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportsFilterArgs) ToGetSubsettingPolicyHealthReportsFilterOutput() GetSubsettingPolicyHealthReportsFilterOutput {
+	return i.ToGetSubsettingPolicyHealthReportsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportsFilterArgs) ToGetSubsettingPolicyHealthReportsFilterOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportsFilterOutput)
+}
+
+// GetSubsettingPolicyHealthReportsFilterArrayInput is an input type that accepts GetSubsettingPolicyHealthReportsFilterArray and GetSubsettingPolicyHealthReportsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportsFilterArrayInput` via:
+//
+//	GetSubsettingPolicyHealthReportsFilterArray{ GetSubsettingPolicyHealthReportsFilterArgs{...} }
+type GetSubsettingPolicyHealthReportsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportsFilterArrayOutput() GetSubsettingPolicyHealthReportsFilterArrayOutput
+	ToGetSubsettingPolicyHealthReportsFilterArrayOutputWithContext(context.Context) GetSubsettingPolicyHealthReportsFilterArrayOutput
+}
+
+type GetSubsettingPolicyHealthReportsFilterArray []GetSubsettingPolicyHealthReportsFilterInput
+
+func (GetSubsettingPolicyHealthReportsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportsFilterArray) ToGetSubsettingPolicyHealthReportsFilterArrayOutput() GetSubsettingPolicyHealthReportsFilterArrayOutput {
+	return i.ToGetSubsettingPolicyHealthReportsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportsFilterArray) ToGetSubsettingPolicyHealthReportsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportsFilterArrayOutput)
+}
+
+type GetSubsettingPolicyHealthReportsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportsFilterOutput) ToGetSubsettingPolicyHealthReportsFilterOutput() GetSubsettingPolicyHealthReportsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportsFilterOutput) ToGetSubsettingPolicyHealthReportsFilterOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPolicyHealthReportsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingPolicyHealthReportsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingPolicyHealthReportsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportsFilterArrayOutput) ToGetSubsettingPolicyHealthReportsFilterArrayOutput() GetSubsettingPolicyHealthReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportsFilterArrayOutput) ToGetSubsettingPolicyHealthReportsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportsFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicyHealthReportsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicyHealthReportsFilter {
+		return vs[0].([]GetSubsettingPolicyHealthReportsFilter)[vs[1].(int)]
+	}).(GetSubsettingPolicyHealthReportsFilterOutput)
+}
+
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollection struct {
+	Items []GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionInput is an input type that accepts GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArgs and GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionInput` via:
+//
+//	GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArgs{...}
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput
+	ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutputWithContext(context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput
+}
+
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArgs struct {
+	Items GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArgs) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput {
+	return i.ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArgs) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput)
+}
+
+// GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayInput is an input type that accepts GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArray and GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayInput` via:
+//
+//	GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArray{ GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArgs{...} }
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput
+	ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutputWithContext(context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput
+}
+
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArray []GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionInput
+
+func (GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArray) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput {
+	return i.ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArray) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput)
+}
+
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput) Items() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollection) []GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem {
+		return v.Items
+	}).(GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollection {
+		return vs[0].([]GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollection)[vs[1].(int)]
+	}).(GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput)
+}
+
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// The count of errors in the subsetting health report.
+	ErrorCount string `pulumi:"errorCount"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the health report.
+	Id string `pulumi:"id"`
+	// A filter to return only the resources that match the specified lifecycle states.
+	State string `pulumi:"state"`
+	// A filter to return only the resources that match the specified subsetting policy OCID.
+	SubsettingPolicyId string `pulumi:"subsettingPolicyId"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The count of warnings in the subsetting health report.
+	WarningCount string `pulumi:"warningCount"`
+}
+
+// GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemInput is an input type that accepts GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArgs and GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemInput` via:
+//
+//	GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArgs{...}
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput
+	ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutputWithContext(context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput
+}
+
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The count of errors in the subsetting health report.
+	ErrorCount pulumi.StringInput `pulumi:"errorCount"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the health report.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only the resources that match the specified lifecycle states.
+	State pulumi.StringInput `pulumi:"state"`
+	// A filter to return only the resources that match the specified subsetting policy OCID.
+	SubsettingPolicyId pulumi.StringInput `pulumi:"subsettingPolicyId"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The count of warnings in the subsetting health report.
+	WarningCount pulumi.StringInput `pulumi:"warningCount"`
+}
+
+func (GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArgs) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput {
+	return i.ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArgs) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput)
+}
+
+// GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayInput is an input type that accepts GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArray and GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayInput` via:
+//
+//	GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArray{ GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArgs{...} }
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput
+	ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutputWithContext(context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput
+}
+
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArray []GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemInput
+
+func (GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArray) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput {
+	return i.ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArray) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The count of errors in the subsetting health report.
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) ErrorCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) string {
+		return v.ErrorCount
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the health report.
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the specified lifecycle states.
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the specified subsetting policy OCID.
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) SubsettingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) string {
+		return v.SubsettingPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) string {
+		return v.TargetId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The count of warnings in the subsetting health report.
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput) WarningCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem) string {
+		return v.WarningCount
+	}).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput() GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput) ToGetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem {
+		return vs[0].([]GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput)
+}
+
+type GetSubsettingPolicySchemaSource struct {
+	// The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+	DerivedSchemas []string `pulumi:"derivedSchemas"`
+	// The source of subsetting schemas
+	SchemaSource string `pulumi:"schemaSource"`
+	// The schemas to be subsetted
+	SchemasForSubsettings []string `pulumi:"schemasForSubsettings"`
+	// The OCID of the sensitive data model that's used as the source of subsetting schemas
+	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
+	// The OCID of the target database that's used as the source of subsetting schemas
+	TargetId string `pulumi:"targetId"`
+}
+
+// GetSubsettingPolicySchemaSourceInput is an input type that accepts GetSubsettingPolicySchemaSourceArgs and GetSubsettingPolicySchemaSourceOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySchemaSourceInput` via:
+//
+//	GetSubsettingPolicySchemaSourceArgs{...}
+type GetSubsettingPolicySchemaSourceInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySchemaSourceOutput() GetSubsettingPolicySchemaSourceOutput
+	ToGetSubsettingPolicySchemaSourceOutputWithContext(context.Context) GetSubsettingPolicySchemaSourceOutput
+}
+
+type GetSubsettingPolicySchemaSourceArgs struct {
+	// The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+	DerivedSchemas pulumi.StringArrayInput `pulumi:"derivedSchemas"`
+	// The source of subsetting schemas
+	SchemaSource pulumi.StringInput `pulumi:"schemaSource"`
+	// The schemas to be subsetted
+	SchemasForSubsettings pulumi.StringArrayInput `pulumi:"schemasForSubsettings"`
+	// The OCID of the sensitive data model that's used as the source of subsetting schemas
+	SensitiveDataModelId pulumi.StringInput `pulumi:"sensitiveDataModelId"`
+	// The OCID of the target database that's used as the source of subsetting schemas
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (GetSubsettingPolicySchemaSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySchemaSource)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySchemaSourceArgs) ToGetSubsettingPolicySchemaSourceOutput() GetSubsettingPolicySchemaSourceOutput {
+	return i.ToGetSubsettingPolicySchemaSourceOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySchemaSourceArgs) ToGetSubsettingPolicySchemaSourceOutputWithContext(ctx context.Context) GetSubsettingPolicySchemaSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySchemaSourceOutput)
+}
+
+// GetSubsettingPolicySchemaSourceArrayInput is an input type that accepts GetSubsettingPolicySchemaSourceArray and GetSubsettingPolicySchemaSourceArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySchemaSourceArrayInput` via:
+//
+//	GetSubsettingPolicySchemaSourceArray{ GetSubsettingPolicySchemaSourceArgs{...} }
+type GetSubsettingPolicySchemaSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySchemaSourceArrayOutput() GetSubsettingPolicySchemaSourceArrayOutput
+	ToGetSubsettingPolicySchemaSourceArrayOutputWithContext(context.Context) GetSubsettingPolicySchemaSourceArrayOutput
+}
+
+type GetSubsettingPolicySchemaSourceArray []GetSubsettingPolicySchemaSourceInput
+
+func (GetSubsettingPolicySchemaSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySchemaSource)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySchemaSourceArray) ToGetSubsettingPolicySchemaSourceArrayOutput() GetSubsettingPolicySchemaSourceArrayOutput {
+	return i.ToGetSubsettingPolicySchemaSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySchemaSourceArray) ToGetSubsettingPolicySchemaSourceArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySchemaSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySchemaSourceArrayOutput)
+}
+
+type GetSubsettingPolicySchemaSourceOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySchemaSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySchemaSource)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySchemaSourceOutput) ToGetSubsettingPolicySchemaSourceOutput() GetSubsettingPolicySchemaSourceOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySchemaSourceOutput) ToGetSubsettingPolicySchemaSourceOutputWithContext(ctx context.Context) GetSubsettingPolicySchemaSourceOutput {
+	return o
+}
+
+// The schemas which are related to the input list of schemas in 'schemasForSubsetting'. These schemas can also be impacted from the subsetting process due to their relations with the schemas in 'schemasForSubsetting'
+func (o GetSubsettingPolicySchemaSourceOutput) DerivedSchemas() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySchemaSource) []string { return v.DerivedSchemas }).(pulumi.StringArrayOutput)
+}
+
+// The source of subsetting schemas
+func (o GetSubsettingPolicySchemaSourceOutput) SchemaSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySchemaSource) string { return v.SchemaSource }).(pulumi.StringOutput)
+}
+
+// The schemas to be subsetted
+func (o GetSubsettingPolicySchemaSourceOutput) SchemasForSubsettings() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySchemaSource) []string { return v.SchemasForSubsettings }).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the sensitive data model that's used as the source of subsetting schemas
+func (o GetSubsettingPolicySchemaSourceOutput) SensitiveDataModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySchemaSource) string { return v.SensitiveDataModelId }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database that's used as the source of subsetting schemas
+func (o GetSubsettingPolicySchemaSourceOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySchemaSource) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicySchemaSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySchemaSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySchemaSource)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySchemaSourceArrayOutput) ToGetSubsettingPolicySchemaSourceArrayOutput() GetSubsettingPolicySchemaSourceArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySchemaSourceArrayOutput) ToGetSubsettingPolicySchemaSourceArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySchemaSourceArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySchemaSourceArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySchemaSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySchemaSource {
+		return vs[0].([]GetSubsettingPolicySchemaSource)[vs[1].(int)]
+	}).(GetSubsettingPolicySchemaSourceOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterInput is an input type that accepts GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArgs and GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterInput` via:
+//
+//	GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArgs{...}
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutputWithContext(context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArgs) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput {
+	return i.ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArgs) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput)
+}
+
+// GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayInput is an input type that accepts GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArray and GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArray{ GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArgs{...} }
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArray []GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterInput
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArray) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArray) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter {
+		return vs[0].([]GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilter)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollection struct {
+	// An array of subsetting processing chain summary objects.
+	Items []GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionInput is an input type that accepts GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArgs and GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionInput` via:
+//
+//	GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArgs{...}
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutputWithContext(context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArgs struct {
+	// An array of subsetting processing chain summary objects.
+	Items GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArgs) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput {
+	return i.ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArgs) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput)
+}
+
+// GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayInput is an input type that accepts GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArray and GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArray{ GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArgs{...} }
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArray []GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionInput
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArray) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArray) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput {
+	return o
+}
+
+// An array of subsetting processing chain summary objects.
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput) Items() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollection) []GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem {
+		return v.Items
+	}).(GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollection {
+		return vs[0].([]GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollection)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem struct {
+	// The approximate count of rows in the subsetting table before subsetting
+	ApproximateRowCountBeforeSubsetting string `pulumi:"approximateRowCountBeforeSubsetting"`
+	// Unique identifiers identifying the child columns in the relation.
+	ChildColumns []string `pulumi:"childColumns"`
+	// The name of the child subsetting table
+	ChildObjectName string `pulumi:"childObjectName"`
+	// The database schema that contains the child subsetting table
+	ChildSchemaName string `pulumi:"childSchemaName"`
+	// The estimated count of rows in the subsetting table after subsetting
+	EstimatedRowCountAfterSubsetting string `pulumi:"estimatedRowCountAfterSubsetting"`
+	// A filter to return the processing chain objects which are enabled for processing.
+	IsEnabledForProcessing bool `pulumi:"isEnabledForProcessing"`
+	// The unique key that identifies a subsetting relation processed. The key is numeric and unique within a processing order
+	Key string `pulumi:"key"`
+	// Unique identifiers identifying the parents columns in the relation.
+	ParentColumns []string `pulumi:"parentColumns"`
+	// The name of the parent subsetting table
+	ParentObjectName string `pulumi:"parentObjectName"`
+	// The database schema that contains the parent subsetting table
+	ParentSchemaName string `pulumi:"parentSchemaName"`
+	// The impact on the related table due to the processing of subsetting rule
+	PropagationImpact string `pulumi:"propagationImpact"`
+	// The unique key that identifies a subsetting relation.
+	SubsettingSchemaRelationKey string `pulumi:"subsettingSchemaRelationKey"`
+}
+
+// GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemInput is an input type that accepts GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArgs and GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemInput` via:
+//
+//	GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArgs{...}
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutputWithContext(context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArgs struct {
+	// The approximate count of rows in the subsetting table before subsetting
+	ApproximateRowCountBeforeSubsetting pulumi.StringInput `pulumi:"approximateRowCountBeforeSubsetting"`
+	// Unique identifiers identifying the child columns in the relation.
+	ChildColumns pulumi.StringArrayInput `pulumi:"childColumns"`
+	// The name of the child subsetting table
+	ChildObjectName pulumi.StringInput `pulumi:"childObjectName"`
+	// The database schema that contains the child subsetting table
+	ChildSchemaName pulumi.StringInput `pulumi:"childSchemaName"`
+	// The estimated count of rows in the subsetting table after subsetting
+	EstimatedRowCountAfterSubsetting pulumi.StringInput `pulumi:"estimatedRowCountAfterSubsetting"`
+	// A filter to return the processing chain objects which are enabled for processing.
+	IsEnabledForProcessing pulumi.BoolInput `pulumi:"isEnabledForProcessing"`
+	// The unique key that identifies a subsetting relation processed. The key is numeric and unique within a processing order
+	Key pulumi.StringInput `pulumi:"key"`
+	// Unique identifiers identifying the parents columns in the relation.
+	ParentColumns pulumi.StringArrayInput `pulumi:"parentColumns"`
+	// The name of the parent subsetting table
+	ParentObjectName pulumi.StringInput `pulumi:"parentObjectName"`
+	// The database schema that contains the parent subsetting table
+	ParentSchemaName pulumi.StringInput `pulumi:"parentSchemaName"`
+	// The impact on the related table due to the processing of subsetting rule
+	PropagationImpact pulumi.StringInput `pulumi:"propagationImpact"`
+	// The unique key that identifies a subsetting relation.
+	SubsettingSchemaRelationKey pulumi.StringInput `pulumi:"subsettingSchemaRelationKey"`
+}
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArgs) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput {
+	return i.ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArgs) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput)
+}
+
+// GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayInput is an input type that accepts GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArray and GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArray{ GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArgs{...} }
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput
+	ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArray []GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemInput
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArray) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArray) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput {
+	return o
+}
+
+// The approximate count of rows in the subsetting table before subsetting
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) ApproximateRowCountBeforeSubsetting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) string {
+		return v.ApproximateRowCountBeforeSubsetting
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifiers identifying the child columns in the relation.
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) ChildColumns() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) []string {
+		return v.ChildColumns
+	}).(pulumi.StringArrayOutput)
+}
+
+// The name of the child subsetting table
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) ChildObjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) string {
+		return v.ChildObjectName
+	}).(pulumi.StringOutput)
+}
+
+// The database schema that contains the child subsetting table
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) ChildSchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) string {
+		return v.ChildSchemaName
+	}).(pulumi.StringOutput)
+}
+
+// The estimated count of rows in the subsetting table after subsetting
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) EstimatedRowCountAfterSubsetting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) string {
+		return v.EstimatedRowCountAfterSubsetting
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return the processing chain objects which are enabled for processing.
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) IsEnabledForProcessing() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) bool {
+		return v.IsEnabledForProcessing
+	}).(pulumi.BoolOutput)
+}
+
+// The unique key that identifies a subsetting relation processed. The key is numeric and unique within a processing order
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifiers identifying the parents columns in the relation.
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) ParentColumns() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) []string {
+		return v.ParentColumns
+	}).(pulumi.StringArrayOutput)
+}
+
+// The name of the parent subsetting table
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) ParentObjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) string {
+		return v.ParentObjectName
+	}).(pulumi.StringOutput)
+}
+
+// The database schema that contains the parent subsetting table
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) ParentSchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) string {
+		return v.ParentSchemaName
+	}).(pulumi.StringOutput)
+}
+
+// The impact on the related table due to the processing of subsetting rule
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) PropagationImpact() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) string {
+		return v.PropagationImpact
+	}).(pulumi.StringOutput)
+}
+
+// The unique key that identifies a subsetting relation.
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput) SubsettingSchemaRelationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem) string {
+		return v.SubsettingSchemaRelationKey
+	}).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput() GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput) ToGetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem {
+		return vs[0].([]GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleScope struct {
+	// The name of the specific object (e.g., table) to be subsetted
+	Object string `pulumi:"object"`
+	// The name of the schema containing the specific object to be subsetted
+	SchemaName string `pulumi:"schemaName"`
+	// Scope of a subsetting rule
+	ScopeType string `pulumi:"scopeType"`
+}
+
+// GetSubsettingPolicySubsettingRuleScopeInput is an input type that accepts GetSubsettingPolicySubsettingRuleScopeArgs and GetSubsettingPolicySubsettingRuleScopeOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRuleScopeInput` via:
+//
+//	GetSubsettingPolicySubsettingRuleScopeArgs{...}
+type GetSubsettingPolicySubsettingRuleScopeInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRuleScopeOutput() GetSubsettingPolicySubsettingRuleScopeOutput
+	ToGetSubsettingPolicySubsettingRuleScopeOutputWithContext(context.Context) GetSubsettingPolicySubsettingRuleScopeOutput
+}
+
+type GetSubsettingPolicySubsettingRuleScopeArgs struct {
+	// The name of the specific object (e.g., table) to be subsetted
+	Object pulumi.StringInput `pulumi:"object"`
+	// The name of the schema containing the specific object to be subsetted
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// Scope of a subsetting rule
+	ScopeType pulumi.StringInput `pulumi:"scopeType"`
+}
+
+func (GetSubsettingPolicySubsettingRuleScopeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRuleScope)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRuleScopeArgs) ToGetSubsettingPolicySubsettingRuleScopeOutput() GetSubsettingPolicySubsettingRuleScopeOutput {
+	return i.ToGetSubsettingPolicySubsettingRuleScopeOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRuleScopeArgs) ToGetSubsettingPolicySubsettingRuleScopeOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleScopeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRuleScopeOutput)
+}
+
+// GetSubsettingPolicySubsettingRuleScopeArrayInput is an input type that accepts GetSubsettingPolicySubsettingRuleScopeArray and GetSubsettingPolicySubsettingRuleScopeArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRuleScopeArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingRuleScopeArray{ GetSubsettingPolicySubsettingRuleScopeArgs{...} }
+type GetSubsettingPolicySubsettingRuleScopeArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRuleScopeArrayOutput() GetSubsettingPolicySubsettingRuleScopeArrayOutput
+	ToGetSubsettingPolicySubsettingRuleScopeArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingRuleScopeArrayOutput
+}
+
+type GetSubsettingPolicySubsettingRuleScopeArray []GetSubsettingPolicySubsettingRuleScopeInput
+
+func (GetSubsettingPolicySubsettingRuleScopeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRuleScope)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRuleScopeArray) ToGetSubsettingPolicySubsettingRuleScopeArrayOutput() GetSubsettingPolicySubsettingRuleScopeArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingRuleScopeArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRuleScopeArray) ToGetSubsettingPolicySubsettingRuleScopeArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleScopeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRuleScopeArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleScopeOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRuleScopeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRuleScope)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRuleScopeOutput) ToGetSubsettingPolicySubsettingRuleScopeOutput() GetSubsettingPolicySubsettingRuleScopeOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleScopeOutput) ToGetSubsettingPolicySubsettingRuleScopeOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleScopeOutput {
+	return o
+}
+
+// The name of the specific object (e.g., table) to be subsetted
+func (o GetSubsettingPolicySubsettingRuleScopeOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleScope) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The name of the schema containing the specific object to be subsetted
+func (o GetSubsettingPolicySubsettingRuleScopeOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleScope) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+// Scope of a subsetting rule
+func (o GetSubsettingPolicySubsettingRuleScopeOutput) ScopeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleScope) string { return v.ScopeType }).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleScopeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRuleScopeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRuleScope)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRuleScopeArrayOutput) ToGetSubsettingPolicySubsettingRuleScopeArrayOutput() GetSubsettingPolicySubsettingRuleScopeArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleScopeArrayOutput) ToGetSubsettingPolicySubsettingRuleScopeArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleScopeArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleScopeArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingRuleScopeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingRuleScope {
+		return vs[0].([]GetSubsettingPolicySubsettingRuleScope)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingRuleScopeOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleSubsetRuleEntry struct {
+	// The SQL WHERE clause condition used to filter rows for the subset
+	Condition string `pulumi:"condition"`
+	// A list of partition names which are to be part of the subset data
+	PartitionsLists []string `pulumi:"partitionsLists"`
+	// The percentage of rows to retain in the subset (between 0 and 100)
+	Percent int `pulumi:"percent"`
+	// type of subset rule
+	RuleType string `pulumi:"ruleType"`
+	// A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+	SubPartitionsLists []string `pulumi:"subPartitionsLists"`
+}
+
+// GetSubsettingPolicySubsettingRuleSubsetRuleEntryInput is an input type that accepts GetSubsettingPolicySubsettingRuleSubsetRuleEntryArgs and GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRuleSubsetRuleEntryInput` via:
+//
+//	GetSubsettingPolicySubsettingRuleSubsetRuleEntryArgs{...}
+type GetSubsettingPolicySubsettingRuleSubsetRuleEntryInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput() GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput
+	ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryOutputWithContext(context.Context) GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput
+}
+
+type GetSubsettingPolicySubsettingRuleSubsetRuleEntryArgs struct {
+	// The SQL WHERE clause condition used to filter rows for the subset
+	Condition pulumi.StringInput `pulumi:"condition"`
+	// A list of partition names which are to be part of the subset data
+	PartitionsLists pulumi.StringArrayInput `pulumi:"partitionsLists"`
+	// The percentage of rows to retain in the subset (between 0 and 100)
+	Percent pulumi.IntInput `pulumi:"percent"`
+	// type of subset rule
+	RuleType pulumi.StringInput `pulumi:"ruleType"`
+	// A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+	SubPartitionsLists pulumi.StringArrayInput `pulumi:"subPartitionsLists"`
+}
+
+func (GetSubsettingPolicySubsettingRuleSubsetRuleEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRuleSubsetRuleEntry)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRuleSubsetRuleEntryArgs) ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput() GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput {
+	return i.ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRuleSubsetRuleEntryArgs) ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput)
+}
+
+// GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayInput is an input type that accepts GetSubsettingPolicySubsettingRuleSubsetRuleEntryArray and GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingRuleSubsetRuleEntryArray{ GetSubsettingPolicySubsettingRuleSubsetRuleEntryArgs{...} }
+type GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput() GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput
+	ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput
+}
+
+type GetSubsettingPolicySubsettingRuleSubsetRuleEntryArray []GetSubsettingPolicySubsettingRuleSubsetRuleEntryInput
+
+func (GetSubsettingPolicySubsettingRuleSubsetRuleEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRuleSubsetRuleEntry)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRuleSubsetRuleEntryArray) ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput() GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRuleSubsetRuleEntryArray) ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRuleSubsetRuleEntry)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput) ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput() GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput) ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput {
+	return o
+}
+
+// The SQL WHERE clause condition used to filter rows for the subset
+func (o GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput) Condition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleSubsetRuleEntry) string { return v.Condition }).(pulumi.StringOutput)
+}
+
+// A list of partition names which are to be part of the subset data
+func (o GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput) PartitionsLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleSubsetRuleEntry) []string { return v.PartitionsLists }).(pulumi.StringArrayOutput)
+}
+
+// The percentage of rows to retain in the subset (between 0 and 100)
+func (o GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput) Percent() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleSubsetRuleEntry) int { return v.Percent }).(pulumi.IntOutput)
+}
+
+// type of subset rule
+func (o GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput) RuleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleSubsetRuleEntry) string { return v.RuleType }).(pulumi.StringOutput)
+}
+
+// A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+func (o GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput) SubPartitionsLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRuleSubsetRuleEntry) []string { return v.SubPartitionsLists }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRuleSubsetRuleEntry)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput) ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput() GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput) ToGetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingRuleSubsetRuleEntry {
+		return vs[0].([]GetSubsettingPolicySubsettingRuleSubsetRuleEntry)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingPolicySubsettingRulesFilterInput is an input type that accepts GetSubsettingPolicySubsettingRulesFilterArgs and GetSubsettingPolicySubsettingRulesFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRulesFilterInput` via:
+//
+//	GetSubsettingPolicySubsettingRulesFilterArgs{...}
+type GetSubsettingPolicySubsettingRulesFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRulesFilterOutput() GetSubsettingPolicySubsettingRulesFilterOutput
+	ToGetSubsettingPolicySubsettingRulesFilterOutputWithContext(context.Context) GetSubsettingPolicySubsettingRulesFilterOutput
+}
+
+type GetSubsettingPolicySubsettingRulesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingPolicySubsettingRulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRulesFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRulesFilterArgs) ToGetSubsettingPolicySubsettingRulesFilterOutput() GetSubsettingPolicySubsettingRulesFilterOutput {
+	return i.ToGetSubsettingPolicySubsettingRulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRulesFilterArgs) ToGetSubsettingPolicySubsettingRulesFilterOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRulesFilterOutput)
+}
+
+// GetSubsettingPolicySubsettingRulesFilterArrayInput is an input type that accepts GetSubsettingPolicySubsettingRulesFilterArray and GetSubsettingPolicySubsettingRulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRulesFilterArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingRulesFilterArray{ GetSubsettingPolicySubsettingRulesFilterArgs{...} }
+type GetSubsettingPolicySubsettingRulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRulesFilterArrayOutput() GetSubsettingPolicySubsettingRulesFilterArrayOutput
+	ToGetSubsettingPolicySubsettingRulesFilterArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingRulesFilterArrayOutput
+}
+
+type GetSubsettingPolicySubsettingRulesFilterArray []GetSubsettingPolicySubsettingRulesFilterInput
+
+func (GetSubsettingPolicySubsettingRulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRulesFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRulesFilterArray) ToGetSubsettingPolicySubsettingRulesFilterArrayOutput() GetSubsettingPolicySubsettingRulesFilterArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingRulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRulesFilterArray) ToGetSubsettingPolicySubsettingRulesFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRulesFilterArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRulesFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRulesFilterOutput) ToGetSubsettingPolicySubsettingRulesFilterOutput() GetSubsettingPolicySubsettingRulesFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesFilterOutput) ToGetSubsettingPolicySubsettingRulesFilterOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPolicySubsettingRulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingPolicySubsettingRulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRulesFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRulesFilterArrayOutput) ToGetSubsettingPolicySubsettingRulesFilterArrayOutput() GetSubsettingPolicySubsettingRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesFilterArrayOutput) ToGetSubsettingPolicySubsettingRulesFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingRulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingRulesFilter {
+		return vs[0].([]GetSubsettingPolicySubsettingRulesFilter)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingRulesFilterOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollection struct {
+	Items []GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionInput is an input type that accepts GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArgs and GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionInput` via:
+//
+//	GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArgs{...}
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutputWithContext(context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArgs struct {
+	Items GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArgs) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput {
+	return i.ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArgs) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput)
+}
+
+// GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayInput is an input type that accepts GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArray and GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArray{ GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArgs{...} }
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArray []GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionInput
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRulesSubsettingRuleCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArray) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArray) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput) Items() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollection) []GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem {
+		return v.Items
+	}).(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRulesSubsettingRuleCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingRulesSubsettingRuleCollection {
+		return vs[0].([]GetSubsettingPolicySubsettingRulesSubsettingRuleCollection)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem struct {
+	// The description of the subset rule
+	Description string `pulumi:"description"`
+	// The display name of the subset rule
+	DisplayName string `pulumi:"displayName"`
+	// The unique key that identifies a subsetting rule. The key is numeric and unique within a subsetting policy
+	Key string `pulumi:"key"`
+	// Strategy to be applied while processing peer tables
+	PeerTablesAction string `pulumi:"peerTablesAction"`
+	// Strategy to be applied while propagating subsetting rule to related tables
+	RelatedTablesPropagation string `pulumi:"relatedTablesPropagation"`
+	// Specifies how this rule combines with other rules. UNION evaluates this rule independently and adds matching rows to the result set. SERIAL applies this rule sequentially to filter rows selected by a compatible preceding rule.
+	RuleCombinationMode string `pulumi:"ruleCombinationMode"`
+	// The scope of the subset rule
+	Scope GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScope `pulumi:"scope"`
+	// The details of the subset rule
+	SubsetRuleEntry GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry `pulumi:"subsetRuleEntry"`
+	// The OCID of the subsetting policy.
+	SubsettingPolicyId string `pulumi:"subsettingPolicyId"`
+}
+
+// GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemInput is an input type that accepts GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArgs and GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemInput` via:
+//
+//	GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArgs{...}
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutputWithContext(context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArgs struct {
+	// The description of the subset rule
+	Description pulumi.StringInput `pulumi:"description"`
+	// The display name of the subset rule
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The unique key that identifies a subsetting rule. The key is numeric and unique within a subsetting policy
+	Key pulumi.StringInput `pulumi:"key"`
+	// Strategy to be applied while processing peer tables
+	PeerTablesAction pulumi.StringInput `pulumi:"peerTablesAction"`
+	// Strategy to be applied while propagating subsetting rule to related tables
+	RelatedTablesPropagation pulumi.StringInput `pulumi:"relatedTablesPropagation"`
+	// Specifies how this rule combines with other rules. UNION evaluates this rule independently and adds matching rows to the result set. SERIAL applies this rule sequentially to filter rows selected by a compatible preceding rule.
+	RuleCombinationMode pulumi.StringInput `pulumi:"ruleCombinationMode"`
+	// The scope of the subset rule
+	Scope GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeInput `pulumi:"scope"`
+	// The details of the subset rule
+	SubsetRuleEntry GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryInput `pulumi:"subsetRuleEntry"`
+	// The OCID of the subsetting policy.
+	SubsettingPolicyId pulumi.StringInput `pulumi:"subsettingPolicyId"`
+}
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArgs) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput {
+	return i.ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArgs) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput)
+}
+
+// GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayInput is an input type that accepts GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArray and GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArray{ GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArgs{...} }
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArray []GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemInput
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArray) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArray) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput {
+	return o
+}
+
+// The description of the subset rule
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The display name of the subset rule
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The unique key that identifies a subsetting rule. The key is numeric and unique within a subsetting policy
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Strategy to be applied while processing peer tables
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) PeerTablesAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem) string {
+		return v.PeerTablesAction
+	}).(pulumi.StringOutput)
+}
+
+// Strategy to be applied while propagating subsetting rule to related tables
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) RelatedTablesPropagation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem) string {
+		return v.RelatedTablesPropagation
+	}).(pulumi.StringOutput)
+}
+
+// Specifies how this rule combines with other rules. UNION evaluates this rule independently and adds matching rows to the result set. SERIAL applies this rule sequentially to filter rows selected by a compatible preceding rule.
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) RuleCombinationMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem) string {
+		return v.RuleCombinationMode
+	}).(pulumi.StringOutput)
+}
+
+// The scope of the subset rule
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) Scope() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScope {
+		return v.Scope
+	}).(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput)
+}
+
+// The details of the subset rule
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) SubsetRuleEntry() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry {
+		return v.SubsetRuleEntry
+	}).(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput)
+}
+
+// The OCID of the subsetting policy.
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput) SubsettingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem) string {
+		return v.SubsettingPolicyId
+	}).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem {
+		return vs[0].([]GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScope struct {
+	// A filter to return only items related to a specific object name.
+	Object string `pulumi:"object"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// Scope of a subsetting rule
+	ScopeType string `pulumi:"scopeType"`
+}
+
+// GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeInput is an input type that accepts GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeArgs and GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeInput` via:
+//
+//	GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeArgs{...}
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutputWithContext(context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeArgs struct {
+	// A filter to return only items related to a specific object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// Scope of a subsetting rule
+	ScopeType pulumi.StringInput `pulumi:"scopeType"`
+}
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScope)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeArgs) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput {
+	return i.ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeArgs) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScope)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput {
+	return o
+}
+
+// A filter to return only items related to a specific object name.
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScope) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScope) string {
+		return v.SchemaName
+	}).(pulumi.StringOutput)
+}
+
+// Scope of a subsetting rule
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput) ScopeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScope) string { return v.ScopeType }).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry struct {
+	// The SQL WHERE clause condition used to filter rows for the subset
+	Condition string `pulumi:"condition"`
+	// A list of partition names which are to be part of the subset data
+	PartitionsLists []string `pulumi:"partitionsLists"`
+	// The percentage of rows to retain in the subset (between 0 and 100)
+	Percent int `pulumi:"percent"`
+	// type of subset rule
+	RuleType string `pulumi:"ruleType"`
+	// A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+	SubPartitionsLists []string `pulumi:"subPartitionsLists"`
+}
+
+// GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryInput is an input type that accepts GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryArgs and GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryInput` via:
+//
+//	GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryArgs{...}
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput
+	ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutputWithContext(context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryArgs struct {
+	// The SQL WHERE clause condition used to filter rows for the subset
+	Condition pulumi.StringInput `pulumi:"condition"`
+	// A list of partition names which are to be part of the subset data
+	PartitionsLists pulumi.StringArrayInput `pulumi:"partitionsLists"`
+	// The percentage of rows to retain in the subset (between 0 and 100)
+	Percent pulumi.IntInput `pulumi:"percent"`
+	// type of subset rule
+	RuleType pulumi.StringInput `pulumi:"ruleType"`
+	// A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+	SubPartitionsLists pulumi.StringArrayInput `pulumi:"subPartitionsLists"`
+}
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryArgs) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput {
+	return i.ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryArgs) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput)
+}
+
+type GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput() GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput) ToGetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput {
+	return o
+}
+
+// The SQL WHERE clause condition used to filter rows for the subset
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput) Condition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry) string {
+		return v.Condition
+	}).(pulumi.StringOutput)
+}
+
+// A list of partition names which are to be part of the subset data
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput) PartitionsLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry) []string {
+		return v.PartitionsLists
+	}).(pulumi.StringArrayOutput)
+}
+
+// The percentage of rows to retain in the subset (between 0 and 100)
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput) Percent() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry) int {
+		return v.Percent
+	}).(pulumi.IntOutput)
+}
+
+// type of subset rule
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput) RuleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry) string {
+		return v.RuleType
+	}).(pulumi.StringOutput)
+}
+
+// A list of sub-partition names which are to be part of the subset data. The sub-partition names should have the partition name also, separated by a dot
+func (o GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput) SubPartitionsLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntry) []string {
+		return v.SubPartitionsLists
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingPolicySubsettingSchemaObjectsFilterInput is an input type that accepts GetSubsettingPolicySubsettingSchemaObjectsFilterArgs and GetSubsettingPolicySubsettingSchemaObjectsFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaObjectsFilterInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaObjectsFilterArgs{...}
+type GetSubsettingPolicySubsettingSchemaObjectsFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaObjectsFilterOutput() GetSubsettingPolicySubsettingSchemaObjectsFilterOutput
+	ToGetSubsettingPolicySubsettingSchemaObjectsFilterOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaObjectsFilterOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingPolicySubsettingSchemaObjectsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsFilterArgs) ToGetSubsettingPolicySubsettingSchemaObjectsFilterOutput() GetSubsettingPolicySubsettingSchemaObjectsFilterOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaObjectsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsFilterArgs) ToGetSubsettingPolicySubsettingSchemaObjectsFilterOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaObjectsFilterOutput)
+}
+
+// GetSubsettingPolicySubsettingSchemaObjectsFilterArrayInput is an input type that accepts GetSubsettingPolicySubsettingSchemaObjectsFilterArray and GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaObjectsFilterArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaObjectsFilterArray{ GetSubsettingPolicySubsettingSchemaObjectsFilterArgs{...} }
+type GetSubsettingPolicySubsettingSchemaObjectsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput() GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput
+	ToGetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsFilterArray []GetSubsettingPolicySubsettingSchemaObjectsFilterInput
+
+func (GetSubsettingPolicySubsettingSchemaObjectsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaObjectsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsFilterArray) ToGetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput() GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsFilterArray) ToGetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaObjectsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsFilterOutput) ToGetSubsettingPolicySubsettingSchemaObjectsFilterOutput() GetSubsettingPolicySubsettingSchemaObjectsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsFilterOutput) ToGetSubsettingPolicySubsettingSchemaObjectsFilterOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaObjectsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput) ToGetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput() GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput) ToGetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingSchemaObjectsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingSchemaObjectsFilter {
+		return vs[0].([]GetSubsettingPolicySubsettingSchemaObjectsFilter)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingSchemaObjectsFilterOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollection struct {
+	// An array of subsetting table summary objects
+	Items []GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionInput is an input type that accepts GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArgs and GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArgs{...}
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput
+	ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArgs struct {
+	// An array of subsetting table summary objects
+	Items GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArgs) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArgs) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput)
+}
+
+// GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayInput is an input type that accepts GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArray and GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArray{ GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArgs{...} }
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput
+	ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArray []GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionInput
+
+func (GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArray) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArray) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput {
+	return o
+}
+
+// An array of subsetting table summary objects
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput) Items() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollection) []GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem {
+		return v.Items
+	}).(GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollection {
+		return vs[0].([]GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollection)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem struct {
+	// The initial number of rows in this object/table
+	InitialRowCount string `pulumi:"initialRowCount"`
+	// Indicates if the table stats are stale. This can be used to judge the accuracy of initialRowCount
+	IsStatsStale bool `pulumi:"isStatsStale"`
+	// The unique key that identifies a subsetting table. The key is numeric and unique within a subsetting policy
+	Key string `pulumi:"key"`
+	// A filter to return only items related to a specific object name.
+	Object string `pulumi:"object"`
+	// The type of the database object that contains the subsetting table
+	ObjectType string `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// The date and time the subsetting table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the subsetting table was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemInput is an input type that accepts GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArgs and GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArgs{...}
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput
+	ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArgs struct {
+	// The initial number of rows in this object/table
+	InitialRowCount pulumi.StringInput `pulumi:"initialRowCount"`
+	// Indicates if the table stats are stale. This can be used to judge the accuracy of initialRowCount
+	IsStatsStale pulumi.BoolInput `pulumi:"isStatsStale"`
+	// The unique key that identifies a subsetting table. The key is numeric and unique within a subsetting policy
+	Key pulumi.StringInput `pulumi:"key"`
+	// A filter to return only items related to a specific object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The type of the database object that contains the subsetting table
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// The date and time the subsetting table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the subsetting table was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArgs) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArgs) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput)
+}
+
+// GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayInput is an input type that accepts GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArray and GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArray{ GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArgs{...} }
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput
+	ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArray []GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemInput
+
+func (GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArray) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArray) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput {
+	return o
+}
+
+// The initial number of rows in this object/table
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput) InitialRowCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem) string {
+		return v.InitialRowCount
+	}).(pulumi.StringOutput)
+}
+
+// Indicates if the table stats are stale. This can be used to judge the accuracy of initialRowCount
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput) IsStatsStale() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem) bool {
+		return v.IsStatsStale
+	}).(pulumi.BoolOutput)
+}
+
+// The unique key that identifies a subsetting table. The key is numeric and unique within a subsetting policy
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific object name.
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+// The type of the database object that contains the subsetting table
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem) string {
+		return v.SchemaName
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the subsetting table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the subsetting table was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput() GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput) ToGetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem {
+		return vs[0].([]GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingPolicySubsettingSchemaRelationsFilterInput is an input type that accepts GetSubsettingPolicySubsettingSchemaRelationsFilterArgs and GetSubsettingPolicySubsettingSchemaRelationsFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaRelationsFilterInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaRelationsFilterArgs{...}
+type GetSubsettingPolicySubsettingSchemaRelationsFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaRelationsFilterOutput() GetSubsettingPolicySubsettingSchemaRelationsFilterOutput
+	ToGetSubsettingPolicySubsettingSchemaRelationsFilterOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaRelationsFilterOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingPolicySubsettingSchemaRelationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsFilterArgs) ToGetSubsettingPolicySubsettingSchemaRelationsFilterOutput() GetSubsettingPolicySubsettingSchemaRelationsFilterOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaRelationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsFilterArgs) ToGetSubsettingPolicySubsettingSchemaRelationsFilterOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaRelationsFilterOutput)
+}
+
+// GetSubsettingPolicySubsettingSchemaRelationsFilterArrayInput is an input type that accepts GetSubsettingPolicySubsettingSchemaRelationsFilterArray and GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaRelationsFilterArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaRelationsFilterArray{ GetSubsettingPolicySubsettingSchemaRelationsFilterArgs{...} }
+type GetSubsettingPolicySubsettingSchemaRelationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput() GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput
+	ToGetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsFilterArray []GetSubsettingPolicySubsettingSchemaRelationsFilterInput
+
+func (GetSubsettingPolicySubsettingSchemaRelationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaRelationsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsFilterArray) ToGetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput() GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsFilterArray) ToGetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaRelationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsFilterOutput) ToGetSubsettingPolicySubsettingSchemaRelationsFilterOutput() GetSubsettingPolicySubsettingSchemaRelationsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsFilterOutput) ToGetSubsettingPolicySubsettingSchemaRelationsFilterOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaRelationsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput) ToGetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput() GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput) ToGetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingSchemaRelationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingSchemaRelationsFilter {
+		return vs[0].([]GetSubsettingPolicySubsettingSchemaRelationsFilter)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingSchemaRelationsFilterOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollection struct {
+	Items []GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionInput is an input type that accepts GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArgs and GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArgs{...}
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput
+	ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArgs struct {
+	Items GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArgs) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArgs) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput)
+}
+
+// GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayInput is an input type that accepts GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArray and GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArray{ GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArgs{...} }
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput
+	ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArray []GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionInput
+
+func (GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArray) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArray) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput) Items() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollection) []GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem {
+		return v.Items
+	}).(GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollection {
+		return vs[0].([]GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollection)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem struct {
+	// Unique identifiers identifying the child columns in the relation.
+	ChildColumns []string `pulumi:"childColumns"`
+	// The key that identifies the child subsetting table in this relation.
+	ChildObjectKey string `pulumi:"childObjectKey"`
+	// The name of the child subsetting table
+	ChildObjectName string `pulumi:"childObjectName"`
+	// The database schema that contains the child subsetting table
+	ChildSchemaName string `pulumi:"childSchemaName"`
+	// The unique key that identifies a relation between subsetting tables. The key is numeric and unique within a subsetting policy.
+	Key string `pulumi:"key"`
+	// Unique identifiers identifying the parents columns in the relation.
+	ParentColumns []string `pulumi:"parentColumns"`
+	// The key that identifies the parent subsetting table in this relation.
+	ParentObjectKey string `pulumi:"parentObjectKey"`
+	// The name of the parent subsetting table
+	ParentObjectName string `pulumi:"parentObjectName"`
+	// The database schema that contains the parent subsetting table
+	ParentSchemaName string `pulumi:"parentSchemaName"`
+	// A filter to return columns based on their relationship with their parent columns. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+	RelationType string `pulumi:"relationType"`
+	// The OCID of the subsetting policy.
+	SubsettingPolicyId string `pulumi:"subsettingPolicyId"`
+	// The date and time the subsetting relation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the subsetting relation was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemInput is an input type that accepts GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArgs and GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArgs{...}
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput
+	ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArgs struct {
+	// Unique identifiers identifying the child columns in the relation.
+	ChildColumns pulumi.StringArrayInput `pulumi:"childColumns"`
+	// The key that identifies the child subsetting table in this relation.
+	ChildObjectKey pulumi.StringInput `pulumi:"childObjectKey"`
+	// The name of the child subsetting table
+	ChildObjectName pulumi.StringInput `pulumi:"childObjectName"`
+	// The database schema that contains the child subsetting table
+	ChildSchemaName pulumi.StringInput `pulumi:"childSchemaName"`
+	// The unique key that identifies a relation between subsetting tables. The key is numeric and unique within a subsetting policy.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Unique identifiers identifying the parents columns in the relation.
+	ParentColumns pulumi.StringArrayInput `pulumi:"parentColumns"`
+	// The key that identifies the parent subsetting table in this relation.
+	ParentObjectKey pulumi.StringInput `pulumi:"parentObjectKey"`
+	// The name of the parent subsetting table
+	ParentObjectName pulumi.StringInput `pulumi:"parentObjectName"`
+	// The database schema that contains the parent subsetting table
+	ParentSchemaName pulumi.StringInput `pulumi:"parentSchemaName"`
+	// A filter to return columns based on their relationship with their parent columns. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+	RelationType pulumi.StringInput `pulumi:"relationType"`
+	// The OCID of the subsetting policy.
+	SubsettingPolicyId pulumi.StringInput `pulumi:"subsettingPolicyId"`
+	// The date and time the subsetting relation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the subsetting relation was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArgs) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArgs) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput)
+}
+
+// GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayInput is an input type that accepts GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArray and GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArray{ GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArgs{...} }
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput
+	ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArray []GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemInput
+
+func (GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArray) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArray) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput {
+	return o
+}
+
+// Unique identifiers identifying the child columns in the relation.
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) ChildColumns() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) []string {
+		return v.ChildColumns
+	}).(pulumi.StringArrayOutput)
+}
+
+// The key that identifies the child subsetting table in this relation.
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) ChildObjectKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) string {
+		return v.ChildObjectKey
+	}).(pulumi.StringOutput)
+}
+
+// The name of the child subsetting table
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) ChildObjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) string {
+		return v.ChildObjectName
+	}).(pulumi.StringOutput)
+}
+
+// The database schema that contains the child subsetting table
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) ChildSchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) string {
+		return v.ChildSchemaName
+	}).(pulumi.StringOutput)
+}
+
+// The unique key that identifies a relation between subsetting tables. The key is numeric and unique within a subsetting policy.
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifiers identifying the parents columns in the relation.
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) ParentColumns() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) []string {
+		return v.ParentColumns
+	}).(pulumi.StringArrayOutput)
+}
+
+// The key that identifies the parent subsetting table in this relation.
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) ParentObjectKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) string {
+		return v.ParentObjectKey
+	}).(pulumi.StringOutput)
+}
+
+// The name of the parent subsetting table
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) ParentObjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) string {
+		return v.ParentObjectName
+	}).(pulumi.StringOutput)
+}
+
+// The database schema that contains the parent subsetting table
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) ParentSchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) string {
+		return v.ParentSchemaName
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return columns based on their relationship with their parent columns. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) RelationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) string {
+		return v.RelationType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the subsetting policy.
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) SubsettingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) string {
+		return v.SubsettingPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the subsetting relation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the subsetting relation was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput() GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput) ToGetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem {
+		return vs[0].([]GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemasFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingPolicySubsettingSchemasFilterInput is an input type that accepts GetSubsettingPolicySubsettingSchemasFilterArgs and GetSubsettingPolicySubsettingSchemasFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemasFilterInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemasFilterArgs{...}
+type GetSubsettingPolicySubsettingSchemasFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemasFilterOutput() GetSubsettingPolicySubsettingSchemasFilterOutput
+	ToGetSubsettingPolicySubsettingSchemasFilterOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemasFilterOutput
+}
+
+type GetSubsettingPolicySubsettingSchemasFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingPolicySubsettingSchemasFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemasFilterArgs) ToGetSubsettingPolicySubsettingSchemasFilterOutput() GetSubsettingPolicySubsettingSchemasFilterOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemasFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemasFilterArgs) ToGetSubsettingPolicySubsettingSchemasFilterOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemasFilterOutput)
+}
+
+// GetSubsettingPolicySubsettingSchemasFilterArrayInput is an input type that accepts GetSubsettingPolicySubsettingSchemasFilterArray and GetSubsettingPolicySubsettingSchemasFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemasFilterArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemasFilterArray{ GetSubsettingPolicySubsettingSchemasFilterArgs{...} }
+type GetSubsettingPolicySubsettingSchemasFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemasFilterArrayOutput() GetSubsettingPolicySubsettingSchemasFilterArrayOutput
+	ToGetSubsettingPolicySubsettingSchemasFilterArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemasFilterArrayOutput
+}
+
+type GetSubsettingPolicySubsettingSchemasFilterArray []GetSubsettingPolicySubsettingSchemasFilterInput
+
+func (GetSubsettingPolicySubsettingSchemasFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemasFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemasFilterArray) ToGetSubsettingPolicySubsettingSchemasFilterArrayOutput() GetSubsettingPolicySubsettingSchemasFilterArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemasFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemasFilterArray) ToGetSubsettingPolicySubsettingSchemasFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemasFilterArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemasFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemasFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemasFilterOutput) ToGetSubsettingPolicySubsettingSchemasFilterOutput() GetSubsettingPolicySubsettingSchemasFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemasFilterOutput) ToGetSubsettingPolicySubsettingSchemasFilterOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemasFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemasFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPolicySubsettingSchemasFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemasFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingPolicySubsettingSchemasFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemasFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemasFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemasFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemasFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemasFilterArrayOutput) ToGetSubsettingPolicySubsettingSchemasFilterArrayOutput() GetSubsettingPolicySubsettingSchemasFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemasFilterArrayOutput) ToGetSubsettingPolicySubsettingSchemasFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemasFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingSchemasFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingSchemasFilter {
+		return vs[0].([]GetSubsettingPolicySubsettingSchemasFilter)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingSchemasFilterOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollection struct {
+	// An array of subsetting schema summary objects.
+	Items []GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionInput is an input type that accepts GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArgs and GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArgs{...}
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput
+	ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput
+}
+
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArgs struct {
+	// An array of subsetting schema summary objects.
+	Items GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArgs) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArgs) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput)
+}
+
+// GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayInput is an input type that accepts GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArray and GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArray{ GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArgs{...} }
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput
+	ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput
+}
+
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArray []GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionInput
+
+func (GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArray) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArray) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput {
+	return o
+}
+
+// An array of subsetting schema summary objects.
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput) Items() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollection) []GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem {
+		return v.Items
+	}).(GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollection {
+		return vs[0].([]GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollection)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem struct {
+	// Indicates if the schema is a derived schema and not directly came as input from the user. A schema is derived if it is related to a input schema
+	IsDerived bool `pulumi:"isDerived"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+}
+
+// GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemInput is an input type that accepts GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArgs and GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArgs{...}
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput
+	ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput
+}
+
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArgs struct {
+	// Indicates if the schema is a derived schema and not directly came as input from the user. A schema is derived if it is related to a input schema
+	IsDerived pulumi.BoolInput `pulumi:"isDerived"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+}
+
+func (GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArgs) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArgs) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput)
+}
+
+// GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayInput is an input type that accepts GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArray and GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayInput` via:
+//
+//	GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArray{ GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArgs{...} }
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput
+	ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutputWithContext(context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput
+}
+
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArray []GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemInput
+
+func (GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArray) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput {
+	return i.ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArray) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput {
+	return o
+}
+
+// Indicates if the schema is a derived schema and not directly came as input from the user. A schema is derived if it is related to a input schema
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput) IsDerived() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem) bool { return v.IsDerived }).(pulumi.BoolOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput() GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput) ToGetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem {
+		return vs[0].([]GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput)
+}
+
+type GetSubsettingPolicyTableEstimatesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingPolicyTableEstimatesFilterInput is an input type that accepts GetSubsettingPolicyTableEstimatesFilterArgs and GetSubsettingPolicyTableEstimatesFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyTableEstimatesFilterInput` via:
+//
+//	GetSubsettingPolicyTableEstimatesFilterArgs{...}
+type GetSubsettingPolicyTableEstimatesFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyTableEstimatesFilterOutput() GetSubsettingPolicyTableEstimatesFilterOutput
+	ToGetSubsettingPolicyTableEstimatesFilterOutputWithContext(context.Context) GetSubsettingPolicyTableEstimatesFilterOutput
+}
+
+type GetSubsettingPolicyTableEstimatesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingPolicyTableEstimatesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyTableEstimatesFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyTableEstimatesFilterArgs) ToGetSubsettingPolicyTableEstimatesFilterOutput() GetSubsettingPolicyTableEstimatesFilterOutput {
+	return i.ToGetSubsettingPolicyTableEstimatesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyTableEstimatesFilterArgs) ToGetSubsettingPolicyTableEstimatesFilterOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyTableEstimatesFilterOutput)
+}
+
+// GetSubsettingPolicyTableEstimatesFilterArrayInput is an input type that accepts GetSubsettingPolicyTableEstimatesFilterArray and GetSubsettingPolicyTableEstimatesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyTableEstimatesFilterArrayInput` via:
+//
+//	GetSubsettingPolicyTableEstimatesFilterArray{ GetSubsettingPolicyTableEstimatesFilterArgs{...} }
+type GetSubsettingPolicyTableEstimatesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyTableEstimatesFilterArrayOutput() GetSubsettingPolicyTableEstimatesFilterArrayOutput
+	ToGetSubsettingPolicyTableEstimatesFilterArrayOutputWithContext(context.Context) GetSubsettingPolicyTableEstimatesFilterArrayOutput
+}
+
+type GetSubsettingPolicyTableEstimatesFilterArray []GetSubsettingPolicyTableEstimatesFilterInput
+
+func (GetSubsettingPolicyTableEstimatesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyTableEstimatesFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyTableEstimatesFilterArray) ToGetSubsettingPolicyTableEstimatesFilterArrayOutput() GetSubsettingPolicyTableEstimatesFilterArrayOutput {
+	return i.ToGetSubsettingPolicyTableEstimatesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyTableEstimatesFilterArray) ToGetSubsettingPolicyTableEstimatesFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyTableEstimatesFilterArrayOutput)
+}
+
+type GetSubsettingPolicyTableEstimatesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyTableEstimatesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyTableEstimatesFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyTableEstimatesFilterOutput) ToGetSubsettingPolicyTableEstimatesFilterOutput() GetSubsettingPolicyTableEstimatesFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTableEstimatesFilterOutput) ToGetSubsettingPolicyTableEstimatesFilterOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesFilterOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTableEstimatesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPolicyTableEstimatesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingPolicyTableEstimatesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingPolicyTableEstimatesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyTableEstimatesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyTableEstimatesFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyTableEstimatesFilterArrayOutput) ToGetSubsettingPolicyTableEstimatesFilterArrayOutput() GetSubsettingPolicyTableEstimatesFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTableEstimatesFilterArrayOutput) ToGetSubsettingPolicyTableEstimatesFilterArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTableEstimatesFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicyTableEstimatesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicyTableEstimatesFilter {
+		return vs[0].([]GetSubsettingPolicyTableEstimatesFilter)[vs[1].(int)]
+	}).(GetSubsettingPolicyTableEstimatesFilterOutput)
+}
+
+type GetSubsettingPolicyTableEstimatesTableEstimateCollection struct {
+	// An array of table estimate objects.
+	Items []GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingPolicyTableEstimatesTableEstimateCollectionInput is an input type that accepts GetSubsettingPolicyTableEstimatesTableEstimateCollectionArgs and GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyTableEstimatesTableEstimateCollectionInput` via:
+//
+//	GetSubsettingPolicyTableEstimatesTableEstimateCollectionArgs{...}
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput
+	ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionOutputWithContext(context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput
+}
+
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionArgs struct {
+	// An array of table estimate objects.
+	Items GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingPolicyTableEstimatesTableEstimateCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyTableEstimatesTableEstimateCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyTableEstimatesTableEstimateCollectionArgs) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput {
+	return i.ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyTableEstimatesTableEstimateCollectionArgs) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput)
+}
+
+// GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayInput is an input type that accepts GetSubsettingPolicyTableEstimatesTableEstimateCollectionArray and GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayInput` via:
+//
+//	GetSubsettingPolicyTableEstimatesTableEstimateCollectionArray{ GetSubsettingPolicyTableEstimatesTableEstimateCollectionArgs{...} }
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput
+	ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutputWithContext(context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput
+}
+
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionArray []GetSubsettingPolicyTableEstimatesTableEstimateCollectionInput
+
+func (GetSubsettingPolicyTableEstimatesTableEstimateCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyTableEstimatesTableEstimateCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyTableEstimatesTableEstimateCollectionArray) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput {
+	return i.ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyTableEstimatesTableEstimateCollectionArray) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput)
+}
+
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyTableEstimatesTableEstimateCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput {
+	return o
+}
+
+// An array of table estimate objects.
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput) Items() GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesTableEstimateCollection) []GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem {
+		return v.Items
+	}).(GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyTableEstimatesTableEstimateCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicyTableEstimatesTableEstimateCollection {
+		return vs[0].([]GetSubsettingPolicyTableEstimatesTableEstimateCollection)[vs[1].(int)]
+	}).(GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput)
+}
+
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem struct {
+	// The estimated number of rows in the table after subsetting.
+	EstimatedRowCount string `pulumi:"estimatedRowCount"`
+	// The estimated size of the table in KBs after subsetting.
+	EstimatedSizeInKbs string `pulumi:"estimatedSizeInKbs"`
+	// The initial number of rows in the table.
+	InitialRowCount string `pulumi:"initialRowCount"`
+	// The initial size of the table in KBs.
+	InitialSizeInKbs string `pulumi:"initialSizeInKbs"`
+	// The type of the database object.
+	ObjectType string `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// The name of the table.
+	TableName string `pulumi:"tableName"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+}
+
+// GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemInput is an input type that accepts GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArgs and GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemInput` via:
+//
+//	GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArgs{...}
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput
+	ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutputWithContext(context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput
+}
+
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArgs struct {
+	// The estimated number of rows in the table after subsetting.
+	EstimatedRowCount pulumi.StringInput `pulumi:"estimatedRowCount"`
+	// The estimated size of the table in KBs after subsetting.
+	EstimatedSizeInKbs pulumi.StringInput `pulumi:"estimatedSizeInKbs"`
+	// The initial number of rows in the table.
+	InitialRowCount pulumi.StringInput `pulumi:"initialRowCount"`
+	// The initial size of the table in KBs.
+	InitialSizeInKbs pulumi.StringInput `pulumi:"initialSizeInKbs"`
+	// The type of the database object.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// The name of the table.
+	TableName pulumi.StringInput `pulumi:"tableName"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArgs) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput {
+	return i.ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArgs) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput)
+}
+
+// GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayInput is an input type that accepts GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArray and GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayInput` via:
+//
+//	GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArray{ GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArgs{...} }
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput
+	ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutputWithContext(context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput
+}
+
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArray []GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemInput
+
+func (GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArray) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput {
+	return i.ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArray) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput)
+}
+
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput {
+	return o
+}
+
+// The estimated number of rows in the table after subsetting.
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput) EstimatedRowCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem) string {
+		return v.EstimatedRowCount
+	}).(pulumi.StringOutput)
+}
+
+// The estimated size of the table in KBs after subsetting.
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput) EstimatedSizeInKbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem) string {
+		return v.EstimatedSizeInKbs
+	}).(pulumi.StringOutput)
+}
+
+// The initial number of rows in the table.
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput) InitialRowCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem) string { return v.InitialRowCount }).(pulumi.StringOutput)
+}
+
+// The initial size of the table in KBs.
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput) InitialSizeInKbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem) string { return v.InitialSizeInKbs }).(pulumi.StringOutput)
+}
+
+// The type of the database object.
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+// The name of the table.
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput) TableName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem) string { return v.TableName }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput() GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput) ToGetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem {
+		return vs[0].([]GetSubsettingPolicyTableEstimatesTableEstimateCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput)
+}
+
+type GetSubsettingPolicyTargetCredential struct {
+	Password string `pulumi:"password"`
+	UserName string `pulumi:"userName"`
+}
+
+// GetSubsettingPolicyTargetCredentialInput is an input type that accepts GetSubsettingPolicyTargetCredentialArgs and GetSubsettingPolicyTargetCredentialOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyTargetCredentialInput` via:
+//
+//	GetSubsettingPolicyTargetCredentialArgs{...}
+type GetSubsettingPolicyTargetCredentialInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyTargetCredentialOutput() GetSubsettingPolicyTargetCredentialOutput
+	ToGetSubsettingPolicyTargetCredentialOutputWithContext(context.Context) GetSubsettingPolicyTargetCredentialOutput
+}
+
+type GetSubsettingPolicyTargetCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	UserName pulumi.StringInput `pulumi:"userName"`
+}
+
+func (GetSubsettingPolicyTargetCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyTargetCredential)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyTargetCredentialArgs) ToGetSubsettingPolicyTargetCredentialOutput() GetSubsettingPolicyTargetCredentialOutput {
+	return i.ToGetSubsettingPolicyTargetCredentialOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyTargetCredentialArgs) ToGetSubsettingPolicyTargetCredentialOutputWithContext(ctx context.Context) GetSubsettingPolicyTargetCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyTargetCredentialOutput)
+}
+
+// GetSubsettingPolicyTargetCredentialArrayInput is an input type that accepts GetSubsettingPolicyTargetCredentialArray and GetSubsettingPolicyTargetCredentialArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingPolicyTargetCredentialArrayInput` via:
+//
+//	GetSubsettingPolicyTargetCredentialArray{ GetSubsettingPolicyTargetCredentialArgs{...} }
+type GetSubsettingPolicyTargetCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingPolicyTargetCredentialArrayOutput() GetSubsettingPolicyTargetCredentialArrayOutput
+	ToGetSubsettingPolicyTargetCredentialArrayOutputWithContext(context.Context) GetSubsettingPolicyTargetCredentialArrayOutput
+}
+
+type GetSubsettingPolicyTargetCredentialArray []GetSubsettingPolicyTargetCredentialInput
+
+func (GetSubsettingPolicyTargetCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyTargetCredential)(nil)).Elem()
+}
+
+func (i GetSubsettingPolicyTargetCredentialArray) ToGetSubsettingPolicyTargetCredentialArrayOutput() GetSubsettingPolicyTargetCredentialArrayOutput {
+	return i.ToGetSubsettingPolicyTargetCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingPolicyTargetCredentialArray) ToGetSubsettingPolicyTargetCredentialArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyTargetCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingPolicyTargetCredentialArrayOutput)
+}
+
+type GetSubsettingPolicyTargetCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyTargetCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingPolicyTargetCredential)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyTargetCredentialOutput) ToGetSubsettingPolicyTargetCredentialOutput() GetSubsettingPolicyTargetCredentialOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTargetCredentialOutput) ToGetSubsettingPolicyTargetCredentialOutputWithContext(ctx context.Context) GetSubsettingPolicyTargetCredentialOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTargetCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTargetCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingPolicyTargetCredentialOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingPolicyTargetCredential) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+type GetSubsettingPolicyTargetCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingPolicyTargetCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingPolicyTargetCredential)(nil)).Elem()
+}
+
+func (o GetSubsettingPolicyTargetCredentialArrayOutput) ToGetSubsettingPolicyTargetCredentialArrayOutput() GetSubsettingPolicyTargetCredentialArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTargetCredentialArrayOutput) ToGetSubsettingPolicyTargetCredentialArrayOutputWithContext(ctx context.Context) GetSubsettingPolicyTargetCredentialArrayOutput {
+	return o
+}
+
+func (o GetSubsettingPolicyTargetCredentialArrayOutput) Index(i pulumi.IntInput) GetSubsettingPolicyTargetCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingPolicyTargetCredential {
+		return vs[0].([]GetSubsettingPolicyTargetCredential)[vs[1].(int)]
+	}).(GetSubsettingPolicyTargetCredentialOutput)
+}
+
+type GetSubsettingReportSubsettedObjectsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingReportSubsettedObjectsFilterInput is an input type that accepts GetSubsettingReportSubsettedObjectsFilterArgs and GetSubsettingReportSubsettedObjectsFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettedObjectsFilterInput` via:
+//
+//	GetSubsettingReportSubsettedObjectsFilterArgs{...}
+type GetSubsettingReportSubsettedObjectsFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettedObjectsFilterOutput() GetSubsettingReportSubsettedObjectsFilterOutput
+	ToGetSubsettingReportSubsettedObjectsFilterOutputWithContext(context.Context) GetSubsettingReportSubsettedObjectsFilterOutput
+}
+
+type GetSubsettingReportSubsettedObjectsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingReportSubsettedObjectsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettedObjectsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettedObjectsFilterArgs) ToGetSubsettingReportSubsettedObjectsFilterOutput() GetSubsettingReportSubsettedObjectsFilterOutput {
+	return i.ToGetSubsettingReportSubsettedObjectsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettedObjectsFilterArgs) ToGetSubsettingReportSubsettedObjectsFilterOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettedObjectsFilterOutput)
+}
+
+// GetSubsettingReportSubsettedObjectsFilterArrayInput is an input type that accepts GetSubsettingReportSubsettedObjectsFilterArray and GetSubsettingReportSubsettedObjectsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettedObjectsFilterArrayInput` via:
+//
+//	GetSubsettingReportSubsettedObjectsFilterArray{ GetSubsettingReportSubsettedObjectsFilterArgs{...} }
+type GetSubsettingReportSubsettedObjectsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettedObjectsFilterArrayOutput() GetSubsettingReportSubsettedObjectsFilterArrayOutput
+	ToGetSubsettingReportSubsettedObjectsFilterArrayOutputWithContext(context.Context) GetSubsettingReportSubsettedObjectsFilterArrayOutput
+}
+
+type GetSubsettingReportSubsettedObjectsFilterArray []GetSubsettingReportSubsettedObjectsFilterInput
+
+func (GetSubsettingReportSubsettedObjectsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettedObjectsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettedObjectsFilterArray) ToGetSubsettingReportSubsettedObjectsFilterArrayOutput() GetSubsettingReportSubsettedObjectsFilterArrayOutput {
+	return i.ToGetSubsettingReportSubsettedObjectsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettedObjectsFilterArray) ToGetSubsettingReportSubsettedObjectsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettedObjectsFilterArrayOutput)
+}
+
+type GetSubsettingReportSubsettedObjectsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettedObjectsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettedObjectsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettedObjectsFilterOutput) ToGetSubsettingReportSubsettedObjectsFilterOutput() GetSubsettingReportSubsettedObjectsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettedObjectsFilterOutput) ToGetSubsettingReportSubsettedObjectsFilterOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettedObjectsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettedObjectsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingReportSubsettedObjectsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettedObjectsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingReportSubsettedObjectsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettedObjectsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingReportSubsettedObjectsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettedObjectsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettedObjectsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettedObjectsFilterArrayOutput) ToGetSubsettingReportSubsettedObjectsFilterArrayOutput() GetSubsettingReportSubsettedObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettedObjectsFilterArrayOutput) ToGetSubsettingReportSubsettedObjectsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettedObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingReportSubsettedObjectsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingReportSubsettedObjectsFilter {
+		return vs[0].([]GetSubsettingReportSubsettedObjectsFilter)[vs[1].(int)]
+	}).(GetSubsettingReportSubsettedObjectsFilterOutput)
+}
+
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollection struct {
+	// An array of subsetted summary objects
+	Items []GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionInput is an input type that accepts GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArgs and GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionInput` via:
+//
+//	GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArgs{...}
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput
+	ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutputWithContext(context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput
+}
+
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArgs struct {
+	// An array of subsetted summary objects
+	Items GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettedObjectsSubsettedObjectCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArgs) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput {
+	return i.ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArgs) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput)
+}
+
+// GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayInput is an input type that accepts GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArray and GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayInput` via:
+//
+//	GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArray{ GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArgs{...} }
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput
+	ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutputWithContext(context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput
+}
+
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArray []GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionInput
+
+func (GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettedObjectsSubsettedObjectCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArray) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput {
+	return i.ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArray) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput)
+}
+
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettedObjectsSubsettedObjectCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput {
+	return o
+}
+
+// An array of subsetted summary objects
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput) Items() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettedObjectsSubsettedObjectCollection) []GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem {
+		return v.Items
+	}).(GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput)
+}
+
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettedObjectsSubsettedObjectCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingReportSubsettedObjectsSubsettedObjectCollection {
+		return vs[0].([]GetSubsettingReportSubsettedObjectsSubsettedObjectCollection)[vs[1].(int)]
+	}).(GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput)
+}
+
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem struct {
+	// A filter to return only items related to a specific object name.
+	Object string `pulumi:"object"`
+	// The type of the object (table or editioning view) subsetted
+	ObjectType string `pulumi:"objectType"`
+	// The count of rows in the subsetted table after subsetting
+	RowCountAfterSubsetting string `pulumi:"rowCountAfterSubsetting"`
+	// The count of rows in the subsetted table before subsetting
+	RowCountBeforeSubsetting string `pulumi:"rowCountBeforeSubsetting"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// The size of the subsetted table after subsetting in KBs
+	SizeAfterSubsettingInKbs string `pulumi:"sizeAfterSubsettingInKbs"`
+	// The size of the subsetted table before subsetting in KBs
+	SizeBeforeSubsettingInKbs string `pulumi:"sizeBeforeSubsettingInKbs"`
+}
+
+// GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemInput is an input type that accepts GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArgs and GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemInput` via:
+//
+//	GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArgs{...}
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput
+	ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutputWithContext(context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput
+}
+
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArgs struct {
+	// A filter to return only items related to a specific object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The type of the object (table or editioning view) subsetted
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// The count of rows in the subsetted table after subsetting
+	RowCountAfterSubsetting pulumi.StringInput `pulumi:"rowCountAfterSubsetting"`
+	// The count of rows in the subsetted table before subsetting
+	RowCountBeforeSubsetting pulumi.StringInput `pulumi:"rowCountBeforeSubsetting"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// The size of the subsetted table after subsetting in KBs
+	SizeAfterSubsettingInKbs pulumi.StringInput `pulumi:"sizeAfterSubsettingInKbs"`
+	// The size of the subsetted table before subsetting in KBs
+	SizeBeforeSubsettingInKbs pulumi.StringInput `pulumi:"sizeBeforeSubsettingInKbs"`
+}
+
+func (GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArgs) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput {
+	return i.ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArgs) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput)
+}
+
+// GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayInput is an input type that accepts GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArray and GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayInput` via:
+//
+//	GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArray{ GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArgs{...} }
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput
+	ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutputWithContext(context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput
+}
+
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArray []GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemInput
+
+func (GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArray) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput {
+	return i.ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArray) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput)
+}
+
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput {
+	return o
+}
+
+// A filter to return only items related to a specific object name.
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The type of the object (table or editioning view) subsetted
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+// The count of rows in the subsetted table after subsetting
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput) RowCountAfterSubsetting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem) string {
+		return v.RowCountAfterSubsetting
+	}).(pulumi.StringOutput)
+}
+
+// The count of rows in the subsetted table before subsetting
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput) RowCountBeforeSubsetting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem) string {
+		return v.RowCountBeforeSubsetting
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+// The size of the subsetted table after subsetting in KBs
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput) SizeAfterSubsettingInKbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem) string {
+		return v.SizeAfterSubsettingInKbs
+	}).(pulumi.StringOutput)
+}
+
+// The size of the subsetted table before subsetting in KBs
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput) SizeBeforeSubsettingInKbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem) string {
+		return v.SizeBeforeSubsettingInKbs
+	}).(pulumi.StringOutput)
+}
+
+type GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput() GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput) ToGetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem {
+		return vs[0].([]GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput)
+}
+
+type GetSubsettingReportSubsettingErrorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingReportSubsettingErrorsFilterInput is an input type that accepts GetSubsettingReportSubsettingErrorsFilterArgs and GetSubsettingReportSubsettingErrorsFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettingErrorsFilterInput` via:
+//
+//	GetSubsettingReportSubsettingErrorsFilterArgs{...}
+type GetSubsettingReportSubsettingErrorsFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettingErrorsFilterOutput() GetSubsettingReportSubsettingErrorsFilterOutput
+	ToGetSubsettingReportSubsettingErrorsFilterOutputWithContext(context.Context) GetSubsettingReportSubsettingErrorsFilterOutput
+}
+
+type GetSubsettingReportSubsettingErrorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingReportSubsettingErrorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettingErrorsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettingErrorsFilterArgs) ToGetSubsettingReportSubsettingErrorsFilterOutput() GetSubsettingReportSubsettingErrorsFilterOutput {
+	return i.ToGetSubsettingReportSubsettingErrorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettingErrorsFilterArgs) ToGetSubsettingReportSubsettingErrorsFilterOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettingErrorsFilterOutput)
+}
+
+// GetSubsettingReportSubsettingErrorsFilterArrayInput is an input type that accepts GetSubsettingReportSubsettingErrorsFilterArray and GetSubsettingReportSubsettingErrorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettingErrorsFilterArrayInput` via:
+//
+//	GetSubsettingReportSubsettingErrorsFilterArray{ GetSubsettingReportSubsettingErrorsFilterArgs{...} }
+type GetSubsettingReportSubsettingErrorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettingErrorsFilterArrayOutput() GetSubsettingReportSubsettingErrorsFilterArrayOutput
+	ToGetSubsettingReportSubsettingErrorsFilterArrayOutputWithContext(context.Context) GetSubsettingReportSubsettingErrorsFilterArrayOutput
+}
+
+type GetSubsettingReportSubsettingErrorsFilterArray []GetSubsettingReportSubsettingErrorsFilterInput
+
+func (GetSubsettingReportSubsettingErrorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettingErrorsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettingErrorsFilterArray) ToGetSubsettingReportSubsettingErrorsFilterArrayOutput() GetSubsettingReportSubsettingErrorsFilterArrayOutput {
+	return i.ToGetSubsettingReportSubsettingErrorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettingErrorsFilterArray) ToGetSubsettingReportSubsettingErrorsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettingErrorsFilterArrayOutput)
+}
+
+type GetSubsettingReportSubsettingErrorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettingErrorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettingErrorsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettingErrorsFilterOutput) ToGetSubsettingReportSubsettingErrorsFilterOutput() GetSubsettingReportSubsettingErrorsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettingErrorsFilterOutput) ToGetSubsettingReportSubsettingErrorsFilterOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettingErrorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettingErrorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingReportSubsettingErrorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettingErrorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingReportSubsettingErrorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettingErrorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingReportSubsettingErrorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettingErrorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettingErrorsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettingErrorsFilterArrayOutput) ToGetSubsettingReportSubsettingErrorsFilterArrayOutput() GetSubsettingReportSubsettingErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettingErrorsFilterArrayOutput) ToGetSubsettingReportSubsettingErrorsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettingErrorsFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingReportSubsettingErrorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingReportSubsettingErrorsFilter {
+		return vs[0].([]GetSubsettingReportSubsettingErrorsFilter)[vs[1].(int)]
+	}).(GetSubsettingReportSubsettingErrorsFilterOutput)
+}
+
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollection struct {
+	// An array of subsetting error objects.
+	Items []GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionInput is an input type that accepts GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArgs and GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionInput` via:
+//
+//	GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArgs{...}
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput
+	ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutputWithContext(context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput
+}
+
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArgs struct {
+	// An array of subsetting error objects.
+	Items GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettingErrorsSubsettingErrorCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArgs) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput {
+	return i.ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArgs) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput)
+}
+
+// GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayInput is an input type that accepts GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArray and GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayInput` via:
+//
+//	GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArray{ GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArgs{...} }
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput
+	ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutputWithContext(context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput
+}
+
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArray []GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionInput
+
+func (GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettingErrorsSubsettingErrorCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArray) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput {
+	return i.ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArray) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput)
+}
+
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettingErrorsSubsettingErrorCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput {
+	return o
+}
+
+// An array of subsetting error objects.
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput) Items() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettingErrorsSubsettingErrorCollection) []GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem {
+		return v.Items
+	}).(GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput)
+}
+
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettingErrorsSubsettingErrorCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingReportSubsettingErrorsSubsettingErrorCollection {
+		return vs[0].([]GetSubsettingReportSubsettingErrorsSubsettingErrorCollection)[vs[1].(int)]
+	}).(GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput)
+}
+
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem struct {
+	// The text of the subsetting error.
+	Error string `pulumi:"error"`
+	// The statement resulting into the error.
+	FailedStatement string `pulumi:"failedStatement"`
+	// A filter to return only subsetting errors that match the specified step name.
+	StepName string `pulumi:"stepName"`
+	// The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemInput is an input type that accepts GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArgs and GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemInput` via:
+//
+//	GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArgs{...}
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput
+	ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutputWithContext(context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput
+}
+
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArgs struct {
+	// The text of the subsetting error.
+	Error pulumi.StringInput `pulumi:"error"`
+	// The statement resulting into the error.
+	FailedStatement pulumi.StringInput `pulumi:"failedStatement"`
+	// A filter to return only subsetting errors that match the specified step name.
+	StepName pulumi.StringInput `pulumi:"stepName"`
+	// The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArgs) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput {
+	return i.ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArgs) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput)
+}
+
+// GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayInput is an input type that accepts GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArray and GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayInput` via:
+//
+//	GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArray{ GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArgs{...} }
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput
+	ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutputWithContext(context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput
+}
+
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArray []GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemInput
+
+func (GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArray) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput {
+	return i.ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArray) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput)
+}
+
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput {
+	return o
+}
+
+// The text of the subsetting error.
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput) Error() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem) string { return v.Error }).(pulumi.StringOutput)
+}
+
+// The statement resulting into the error.
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput) FailedStatement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem) string {
+		return v.FailedStatement
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only subsetting errors that match the specified step name.
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput) StepName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem) string { return v.StepName }).(pulumi.StringOutput)
+}
+
+// The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput() GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput) ToGetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem {
+		return vs[0].([]GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput)
+}
+
+type GetSubsettingReportsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubsettingReportsFilterInput is an input type that accepts GetSubsettingReportsFilterArgs and GetSubsettingReportsFilterOutput values.
+// You can construct a concrete instance of `GetSubsettingReportsFilterInput` via:
+//
+//	GetSubsettingReportsFilterArgs{...}
+type GetSubsettingReportsFilterInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportsFilterOutput() GetSubsettingReportsFilterOutput
+	ToGetSubsettingReportsFilterOutputWithContext(context.Context) GetSubsettingReportsFilterOutput
+}
+
+type GetSubsettingReportsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubsettingReportsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingReportsFilterArgs) ToGetSubsettingReportsFilterOutput() GetSubsettingReportsFilterOutput {
+	return i.ToGetSubsettingReportsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportsFilterArgs) ToGetSubsettingReportsFilterOutputWithContext(ctx context.Context) GetSubsettingReportsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportsFilterOutput)
+}
+
+// GetSubsettingReportsFilterArrayInput is an input type that accepts GetSubsettingReportsFilterArray and GetSubsettingReportsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingReportsFilterArrayInput` via:
+//
+//	GetSubsettingReportsFilterArray{ GetSubsettingReportsFilterArgs{...} }
+type GetSubsettingReportsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportsFilterArrayOutput() GetSubsettingReportsFilterArrayOutput
+	ToGetSubsettingReportsFilterArrayOutputWithContext(context.Context) GetSubsettingReportsFilterArrayOutput
+}
+
+type GetSubsettingReportsFilterArray []GetSubsettingReportsFilterInput
+
+func (GetSubsettingReportsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportsFilter)(nil)).Elem()
+}
+
+func (i GetSubsettingReportsFilterArray) ToGetSubsettingReportsFilterArrayOutput() GetSubsettingReportsFilterArrayOutput {
+	return i.ToGetSubsettingReportsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportsFilterArray) ToGetSubsettingReportsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingReportsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportsFilterArrayOutput)
+}
+
+type GetSubsettingReportsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingReportsFilterOutput) ToGetSubsettingReportsFilterOutput() GetSubsettingReportsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingReportsFilterOutput) ToGetSubsettingReportsFilterOutputWithContext(ctx context.Context) GetSubsettingReportsFilterOutput {
+	return o
+}
+
+func (o GetSubsettingReportsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubsettingReportsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubsettingReportsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubsettingReportsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubsettingReportsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubsettingReportsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportsFilter)(nil)).Elem()
+}
+
+func (o GetSubsettingReportsFilterArrayOutput) ToGetSubsettingReportsFilterArrayOutput() GetSubsettingReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportsFilterArrayOutput) ToGetSubsettingReportsFilterArrayOutputWithContext(ctx context.Context) GetSubsettingReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportsFilterArrayOutput) Index(i pulumi.IntInput) GetSubsettingReportsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingReportsFilter {
+		return vs[0].([]GetSubsettingReportsFilter)[vs[1].(int)]
+	}).(GetSubsettingReportsFilterOutput)
+}
+
+type GetSubsettingReportsSubsettingReportCollection struct {
+	Items []GetSubsettingReportsSubsettingReportCollectionItem `pulumi:"items"`
+}
+
+// GetSubsettingReportsSubsettingReportCollectionInput is an input type that accepts GetSubsettingReportsSubsettingReportCollectionArgs and GetSubsettingReportsSubsettingReportCollectionOutput values.
+// You can construct a concrete instance of `GetSubsettingReportsSubsettingReportCollectionInput` via:
+//
+//	GetSubsettingReportsSubsettingReportCollectionArgs{...}
+type GetSubsettingReportsSubsettingReportCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportsSubsettingReportCollectionOutput() GetSubsettingReportsSubsettingReportCollectionOutput
+	ToGetSubsettingReportsSubsettingReportCollectionOutputWithContext(context.Context) GetSubsettingReportsSubsettingReportCollectionOutput
+}
+
+type GetSubsettingReportsSubsettingReportCollectionArgs struct {
+	Items GetSubsettingReportsSubsettingReportCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubsettingReportsSubsettingReportCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportsSubsettingReportCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingReportsSubsettingReportCollectionArgs) ToGetSubsettingReportsSubsettingReportCollectionOutput() GetSubsettingReportsSubsettingReportCollectionOutput {
+	return i.ToGetSubsettingReportsSubsettingReportCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportsSubsettingReportCollectionArgs) ToGetSubsettingReportsSubsettingReportCollectionOutputWithContext(ctx context.Context) GetSubsettingReportsSubsettingReportCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportsSubsettingReportCollectionOutput)
+}
+
+// GetSubsettingReportsSubsettingReportCollectionArrayInput is an input type that accepts GetSubsettingReportsSubsettingReportCollectionArray and GetSubsettingReportsSubsettingReportCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingReportsSubsettingReportCollectionArrayInput` via:
+//
+//	GetSubsettingReportsSubsettingReportCollectionArray{ GetSubsettingReportsSubsettingReportCollectionArgs{...} }
+type GetSubsettingReportsSubsettingReportCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportsSubsettingReportCollectionArrayOutput() GetSubsettingReportsSubsettingReportCollectionArrayOutput
+	ToGetSubsettingReportsSubsettingReportCollectionArrayOutputWithContext(context.Context) GetSubsettingReportsSubsettingReportCollectionArrayOutput
+}
+
+type GetSubsettingReportsSubsettingReportCollectionArray []GetSubsettingReportsSubsettingReportCollectionInput
+
+func (GetSubsettingReportsSubsettingReportCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportsSubsettingReportCollection)(nil)).Elem()
+}
+
+func (i GetSubsettingReportsSubsettingReportCollectionArray) ToGetSubsettingReportsSubsettingReportCollectionArrayOutput() GetSubsettingReportsSubsettingReportCollectionArrayOutput {
+	return i.ToGetSubsettingReportsSubsettingReportCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportsSubsettingReportCollectionArray) ToGetSubsettingReportsSubsettingReportCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingReportsSubsettingReportCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportsSubsettingReportCollectionArrayOutput)
+}
+
+type GetSubsettingReportsSubsettingReportCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportsSubsettingReportCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportsSubsettingReportCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingReportsSubsettingReportCollectionOutput) ToGetSubsettingReportsSubsettingReportCollectionOutput() GetSubsettingReportsSubsettingReportCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingReportsSubsettingReportCollectionOutput) ToGetSubsettingReportsSubsettingReportCollectionOutputWithContext(ctx context.Context) GetSubsettingReportsSubsettingReportCollectionOutput {
+	return o
+}
+
+func (o GetSubsettingReportsSubsettingReportCollectionOutput) Items() GetSubsettingReportsSubsettingReportCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollection) []GetSubsettingReportsSubsettingReportCollectionItem {
+		return v.Items
+	}).(GetSubsettingReportsSubsettingReportCollectionItemArrayOutput)
+}
+
+type GetSubsettingReportsSubsettingReportCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportsSubsettingReportCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportsSubsettingReportCollection)(nil)).Elem()
+}
+
+func (o GetSubsettingReportsSubsettingReportCollectionArrayOutput) ToGetSubsettingReportsSubsettingReportCollectionArrayOutput() GetSubsettingReportsSubsettingReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportsSubsettingReportCollectionArrayOutput) ToGetSubsettingReportsSubsettingReportCollectionArrayOutputWithContext(ctx context.Context) GetSubsettingReportsSubsettingReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportsSubsettingReportCollectionArrayOutput) Index(i pulumi.IntInput) GetSubsettingReportsSubsettingReportCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingReportsSubsettingReportCollection {
+		return vs[0].([]GetSubsettingReportsSubsettingReportCollection)[vs[1].(int)]
+	}).(GetSubsettingReportsSubsettingReportCollectionOutput)
+}
+
+type GetSubsettingReportsSubsettingReportCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The size of the target database after subsetting in KBs
+	DatabaseSizeAfterSubsettingInKbs string `pulumi:"databaseSizeAfterSubsettingInKbs"`
+	// The size of the target database before subsetting in KBs
+	DatabaseSizeBeforeSubsettingInKbs string `pulumi:"databaseSizeBeforeSubsettingInKbs"`
+	// The OCID of the subsetting report
+	Id string `pulumi:"id"`
+	// Indicates if redo logging was enabled during the subsetting operation
+	IsRedoLoggingEnabled bool `pulumi:"isRedoLoggingEnabled"`
+	// Indicates if statistics gathering was enabled during the subsetting operation
+	IsRefreshStatsEnabled bool `pulumi:"isRefreshStatsEnabled"`
+	// The OCID of the masking policy associated with this subsetting report
+	MaskingPolicyId string `pulumi:"maskingPolicyId"`
+	// The OCID of the masking report associated with this subsetting report
+	MaskingReportId string `pulumi:"maskingReportId"`
+	// The OCID of the masking work request triggered after this subsetting job
+	MaskingWorkRequestId string `pulumi:"maskingWorkRequestId"`
+	// Indicates if parallel execution was enabled during the subsetting operation
+	ParallelDegree string `pulumi:"parallelDegree"`
+	// Indicates how invalid objects were recompiled post the subsetting operation
+	Recompile string `pulumi:"recompile"`
+	// The current state of the subsetting report
+	State string `pulumi:"state"`
+	// A filter to return only the resources that match the specified subsetting policy OCID.
+	SubsettingPolicyId string `pulumi:"subsettingPolicyId"`
+	// The status of the subsetting job
+	SubsettingStatus string `pulumi:"subsettingStatus"`
+	// The OCID of the subsetting work request that resulted in this subsetting report
+	SubsettingWorkRequestId string `pulumi:"subsettingWorkRequestId"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the subsetting report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time data subsetting finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeSubsettingFinished string `pulumi:"timeSubsettingFinished"`
+	// The date and time data subsetting started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeSubsettingStarted string `pulumi:"timeSubsettingStarted"`
+	// The total number of errors in post-subsetting script
+	TotalPostSubsettingScriptErrors string `pulumi:"totalPostSubsettingScriptErrors"`
+	// The total number of errors in pre-subsetting script
+	TotalPreSubsettingScriptErrors string `pulumi:"totalPreSubsettingScriptErrors"`
+	// The total number of subsetted objects
+	TotalSubsettedObjects string `pulumi:"totalSubsettedObjects"`
+	// The count of rows reduced in the subsetting job
+	TotalSubsettedRows string `pulumi:"totalSubsettedRows"`
+	// The total number of subsetted schemas
+	TotalSubsettedSchemas string `pulumi:"totalSubsettedSchemas"`
+}
+
+// GetSubsettingReportsSubsettingReportCollectionItemInput is an input type that accepts GetSubsettingReportsSubsettingReportCollectionItemArgs and GetSubsettingReportsSubsettingReportCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubsettingReportsSubsettingReportCollectionItemInput` via:
+//
+//	GetSubsettingReportsSubsettingReportCollectionItemArgs{...}
+type GetSubsettingReportsSubsettingReportCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportsSubsettingReportCollectionItemOutput() GetSubsettingReportsSubsettingReportCollectionItemOutput
+	ToGetSubsettingReportsSubsettingReportCollectionItemOutputWithContext(context.Context) GetSubsettingReportsSubsettingReportCollectionItemOutput
+}
+
+type GetSubsettingReportsSubsettingReportCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The size of the target database after subsetting in KBs
+	DatabaseSizeAfterSubsettingInKbs pulumi.StringInput `pulumi:"databaseSizeAfterSubsettingInKbs"`
+	// The size of the target database before subsetting in KBs
+	DatabaseSizeBeforeSubsettingInKbs pulumi.StringInput `pulumi:"databaseSizeBeforeSubsettingInKbs"`
+	// The OCID of the subsetting report
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if redo logging was enabled during the subsetting operation
+	IsRedoLoggingEnabled pulumi.BoolInput `pulumi:"isRedoLoggingEnabled"`
+	// Indicates if statistics gathering was enabled during the subsetting operation
+	IsRefreshStatsEnabled pulumi.BoolInput `pulumi:"isRefreshStatsEnabled"`
+	// The OCID of the masking policy associated with this subsetting report
+	MaskingPolicyId pulumi.StringInput `pulumi:"maskingPolicyId"`
+	// The OCID of the masking report associated with this subsetting report
+	MaskingReportId pulumi.StringInput `pulumi:"maskingReportId"`
+	// The OCID of the masking work request triggered after this subsetting job
+	MaskingWorkRequestId pulumi.StringInput `pulumi:"maskingWorkRequestId"`
+	// Indicates if parallel execution was enabled during the subsetting operation
+	ParallelDegree pulumi.StringInput `pulumi:"parallelDegree"`
+	// Indicates how invalid objects were recompiled post the subsetting operation
+	Recompile pulumi.StringInput `pulumi:"recompile"`
+	// The current state of the subsetting report
+	State pulumi.StringInput `pulumi:"state"`
+	// A filter to return only the resources that match the specified subsetting policy OCID.
+	SubsettingPolicyId pulumi.StringInput `pulumi:"subsettingPolicyId"`
+	// The status of the subsetting job
+	SubsettingStatus pulumi.StringInput `pulumi:"subsettingStatus"`
+	// The OCID of the subsetting work request that resulted in this subsetting report
+	SubsettingWorkRequestId pulumi.StringInput `pulumi:"subsettingWorkRequestId"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the subsetting report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time data subsetting finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeSubsettingFinished pulumi.StringInput `pulumi:"timeSubsettingFinished"`
+	// The date and time data subsetting started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeSubsettingStarted pulumi.StringInput `pulumi:"timeSubsettingStarted"`
+	// The total number of errors in post-subsetting script
+	TotalPostSubsettingScriptErrors pulumi.StringInput `pulumi:"totalPostSubsettingScriptErrors"`
+	// The total number of errors in pre-subsetting script
+	TotalPreSubsettingScriptErrors pulumi.StringInput `pulumi:"totalPreSubsettingScriptErrors"`
+	// The total number of subsetted objects
+	TotalSubsettedObjects pulumi.StringInput `pulumi:"totalSubsettedObjects"`
+	// The count of rows reduced in the subsetting job
+	TotalSubsettedRows pulumi.StringInput `pulumi:"totalSubsettedRows"`
+	// The total number of subsetted schemas
+	TotalSubsettedSchemas pulumi.StringInput `pulumi:"totalSubsettedSchemas"`
+}
+
+func (GetSubsettingReportsSubsettingReportCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportsSubsettingReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingReportsSubsettingReportCollectionItemArgs) ToGetSubsettingReportsSubsettingReportCollectionItemOutput() GetSubsettingReportsSubsettingReportCollectionItemOutput {
+	return i.ToGetSubsettingReportsSubsettingReportCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportsSubsettingReportCollectionItemArgs) ToGetSubsettingReportsSubsettingReportCollectionItemOutputWithContext(ctx context.Context) GetSubsettingReportsSubsettingReportCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportsSubsettingReportCollectionItemOutput)
+}
+
+// GetSubsettingReportsSubsettingReportCollectionItemArrayInput is an input type that accepts GetSubsettingReportsSubsettingReportCollectionItemArray and GetSubsettingReportsSubsettingReportCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubsettingReportsSubsettingReportCollectionItemArrayInput` via:
+//
+//	GetSubsettingReportsSubsettingReportCollectionItemArray{ GetSubsettingReportsSubsettingReportCollectionItemArgs{...} }
+type GetSubsettingReportsSubsettingReportCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubsettingReportsSubsettingReportCollectionItemArrayOutput() GetSubsettingReportsSubsettingReportCollectionItemArrayOutput
+	ToGetSubsettingReportsSubsettingReportCollectionItemArrayOutputWithContext(context.Context) GetSubsettingReportsSubsettingReportCollectionItemArrayOutput
+}
+
+type GetSubsettingReportsSubsettingReportCollectionItemArray []GetSubsettingReportsSubsettingReportCollectionItemInput
+
+func (GetSubsettingReportsSubsettingReportCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportsSubsettingReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubsettingReportsSubsettingReportCollectionItemArray) ToGetSubsettingReportsSubsettingReportCollectionItemArrayOutput() GetSubsettingReportsSubsettingReportCollectionItemArrayOutput {
+	return i.ToGetSubsettingReportsSubsettingReportCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubsettingReportsSubsettingReportCollectionItemArray) ToGetSubsettingReportsSubsettingReportCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingReportsSubsettingReportCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubsettingReportsSubsettingReportCollectionItemArrayOutput)
+}
+
+type GetSubsettingReportsSubsettingReportCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportsSubsettingReportCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubsettingReportsSubsettingReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) ToGetSubsettingReportsSubsettingReportCollectionItemOutput() GetSubsettingReportsSubsettingReportCollectionItemOutput {
+	return o
+}
+
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) ToGetSubsettingReportsSubsettingReportCollectionItemOutputWithContext(ctx context.Context) GetSubsettingReportsSubsettingReportCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The size of the target database after subsetting in KBs
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) DatabaseSizeAfterSubsettingInKbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string {
+		return v.DatabaseSizeAfterSubsettingInKbs
+	}).(pulumi.StringOutput)
+}
+
+// The size of the target database before subsetting in KBs
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) DatabaseSizeBeforeSubsettingInKbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string {
+		return v.DatabaseSizeBeforeSubsettingInKbs
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the subsetting report
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates if redo logging was enabled during the subsetting operation
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) IsRedoLoggingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) bool { return v.IsRedoLoggingEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates if statistics gathering was enabled during the subsetting operation
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) IsRefreshStatsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) bool { return v.IsRefreshStatsEnabled }).(pulumi.BoolOutput)
+}
+
+// The OCID of the masking policy associated with this subsetting report
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) MaskingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.MaskingPolicyId }).(pulumi.StringOutput)
+}
+
+// The OCID of the masking report associated with this subsetting report
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) MaskingReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.MaskingReportId }).(pulumi.StringOutput)
+}
+
+// The OCID of the masking work request triggered after this subsetting job
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) MaskingWorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.MaskingWorkRequestId }).(pulumi.StringOutput)
+}
+
+// Indicates if parallel execution was enabled during the subsetting operation
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) ParallelDegree() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.ParallelDegree }).(pulumi.StringOutput)
+}
+
+// Indicates how invalid objects were recompiled post the subsetting operation
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) Recompile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.Recompile }).(pulumi.StringOutput)
+}
+
+// The current state of the subsetting report
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the specified subsetting policy OCID.
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) SubsettingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.SubsettingPolicyId }).(pulumi.StringOutput)
+}
+
+// The status of the subsetting job
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) SubsettingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.SubsettingStatus }).(pulumi.StringOutput)
+}
+
+// The OCID of the subsetting work request that resulted in this subsetting report
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) SubsettingWorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.SubsettingWorkRequestId }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the subsetting report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time data subsetting finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) TimeSubsettingFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.TimeSubsettingFinished }).(pulumi.StringOutput)
+}
+
+// The date and time data subsetting started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) TimeSubsettingStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.TimeSubsettingStarted }).(pulumi.StringOutput)
+}
+
+// The total number of errors in post-subsetting script
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) TotalPostSubsettingScriptErrors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string {
+		return v.TotalPostSubsettingScriptErrors
+	}).(pulumi.StringOutput)
+}
+
+// The total number of errors in pre-subsetting script
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) TotalPreSubsettingScriptErrors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string {
+		return v.TotalPreSubsettingScriptErrors
+	}).(pulumi.StringOutput)
+}
+
+// The total number of subsetted objects
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) TotalSubsettedObjects() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.TotalSubsettedObjects }).(pulumi.StringOutput)
+}
+
+// The count of rows reduced in the subsetting job
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) TotalSubsettedRows() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.TotalSubsettedRows }).(pulumi.StringOutput)
+}
+
+// The total number of subsetted schemas
+func (o GetSubsettingReportsSubsettingReportCollectionItemOutput) TotalSubsettedSchemas() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubsettingReportsSubsettingReportCollectionItem) string { return v.TotalSubsettedSchemas }).(pulumi.StringOutput)
+}
+
+type GetSubsettingReportsSubsettingReportCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubsettingReportsSubsettingReportCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubsettingReportsSubsettingReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubsettingReportsSubsettingReportCollectionItemArrayOutput) ToGetSubsettingReportsSubsettingReportCollectionItemArrayOutput() GetSubsettingReportsSubsettingReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportsSubsettingReportCollectionItemArrayOutput) ToGetSubsettingReportsSubsettingReportCollectionItemArrayOutputWithContext(ctx context.Context) GetSubsettingReportsSubsettingReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubsettingReportsSubsettingReportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubsettingReportsSubsettingReportCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubsettingReportsSubsettingReportCollectionItem {
+		return vs[0].([]GetSubsettingReportsSubsettingReportCollectionItem)[vs[1].(int)]
+	}).(GetSubsettingReportsSubsettingReportCollectionItemOutput)
 }
 
 type GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilter struct {
@@ -1575,7 +10088,7 @@ func (o GetTargetDatabaseDatabaseDetailArrayOutput) Index(i pulumi.IntInput) Get
 type GetTargetDatabaseGroupMatchingCriteria struct {
 	// Criteria to exclude certain target databases from the target database group.
 	Excludes []GetTargetDatabaseGroupMatchingCriteriaExclude `pulumi:"excludes"`
-	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
 	Includes []GetTargetDatabaseGroupMatchingCriteriaInclude `pulumi:"includes"`
 }
 
@@ -1593,7 +10106,7 @@ type GetTargetDatabaseGroupMatchingCriteriaInput interface {
 type GetTargetDatabaseGroupMatchingCriteriaArgs struct {
 	// Criteria to exclude certain target databases from the target database group.
 	Excludes GetTargetDatabaseGroupMatchingCriteriaExcludeArrayInput `pulumi:"excludes"`
-	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
 	Includes GetTargetDatabaseGroupMatchingCriteriaIncludeArrayInput `pulumi:"includes"`
 }
 
@@ -1655,7 +10168,7 @@ func (o GetTargetDatabaseGroupMatchingCriteriaOutput) Excludes() GetTargetDataba
 	}).(GetTargetDatabaseGroupMatchingCriteriaExcludeArrayOutput)
 }
 
-// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
 func (o GetTargetDatabaseGroupMatchingCriteriaOutput) Includes() GetTargetDatabaseGroupMatchingCriteriaIncludeArrayOutput {
 	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteria) []GetTargetDatabaseGroupMatchingCriteriaInclude {
 		return v.Includes
@@ -1786,6 +10299,10 @@ type GetTargetDatabaseGroupMatchingCriteriaInclude struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+	FreeformTagsIn map[string][]string `pulumi:"freeformTagsIn"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string][]string `pulumi:"systemTags"`
 	// The list of target database OCIDs to be included in the target database group.
 	TargetDatabaseIds []string `pulumi:"targetDatabaseIds"`
 }
@@ -1808,6 +10325,10 @@ type GetTargetDatabaseGroupMatchingCriteriaIncludeArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+	FreeformTagsIn pulumi.StringArrayMapInput `pulumi:"freeformTagsIn"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringArrayMapInput `pulumi:"systemTags"`
 	// The list of target database OCIDs to be included in the target database group.
 	TargetDatabaseIds pulumi.StringArrayInput `pulumi:"targetDatabaseIds"`
 }
@@ -1878,6 +10399,16 @@ func (o GetTargetDatabaseGroupMatchingCriteriaIncludeOutput) DefinedTags() pulum
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 func (o GetTargetDatabaseGroupMatchingCriteriaIncludeOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteriaInclude) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeOutput) FreeformTagsIn() pulumi.StringArrayMapOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteriaInclude) map[string][]string { return v.FreeformTagsIn }).(pulumi.StringArrayMapOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetTargetDatabaseGroupMatchingCriteriaIncludeOutput) SystemTags() pulumi.StringArrayMapOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupMatchingCriteriaInclude) map[string][]string { return v.SystemTags }).(pulumi.StringArrayMapOutput)
 }
 
 // The list of target database OCIDs to be included in the target database group.
@@ -2438,7 +10969,7 @@ func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemArrayOutput) Ind
 type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria struct {
 	// Criteria to exclude certain target databases from the target database group.
 	Excludes []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExclude `pulumi:"excludes"`
-	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
 	Includes []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude `pulumi:"includes"`
 }
 
@@ -2456,7 +10987,7 @@ type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInp
 type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaArgs struct {
 	// Criteria to exclude certain target databases from the target database group.
 	Excludes GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayInput `pulumi:"excludes"`
-	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+	// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
 	Includes GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayInput `pulumi:"includes"`
 }
 
@@ -2518,7 +11049,7 @@ func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria
 	}).(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaExcludeArrayOutput)
 }
 
-// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+// Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
 func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaOutput) Includes() GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeArrayOutput {
 	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria) []GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude {
 		return v.Includes
@@ -2651,6 +11182,10 @@ type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInc
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+	FreeformTagsIn map[string][]string `pulumi:"freeformTagsIn"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string][]string `pulumi:"systemTags"`
 	// The list of target database OCIDs to be included in the target database group.
 	TargetDatabaseIds []string `pulumi:"targetDatabaseIds"`
 }
@@ -2673,6 +11208,10 @@ type GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInc
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+	FreeformTagsIn pulumi.StringArrayMapInput `pulumi:"freeformTagsIn"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringArrayMapInput `pulumi:"systemTags"`
 	// The list of target database OCIDs to be included in the target database group.
 	TargetDatabaseIds pulumi.StringArrayInput `pulumi:"targetDatabaseIds"`
 }
@@ -2747,6 +11286,20 @@ func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteria
 	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude) map[string]string {
 		return v.FreeformTags
 	}).(pulumi.StringMapOutput)
+}
+
+// Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput) FreeformTagsIn() pulumi.StringArrayMapOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude) map[string][]string {
+		return v.FreeformTagsIn
+	}).(pulumi.StringArrayMapOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeOutput) SystemTags() pulumi.StringArrayMapOutput {
+	return o.ApplyT(func(v GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude) map[string][]string {
+		return v.SystemTags
+	}).(pulumi.StringArrayMapOutput)
 }
 
 // The list of target database OCIDs to be included in the target database group.
@@ -5950,12 +14503,15 @@ type GetTargetDatabasesTargetDatabase struct {
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
+	// List of enabled features based on granted ORA_DSCS_* roles in target database
+	Features []string `pulumi:"features"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Data Safe target database.
 	Id string `pulumi:"id"`
 	// Details about the current state of the peer target database in Data Safe.
 	LifecycleDetails          string                                                     `pulumi:"lifecycleDetails"`
+	ManagePrivilegesTrigger   int                                                        `pulumi:"managePrivilegesTrigger"`
 	PeerTargetDatabaseDetails []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail `pulumi:"peerTargetDatabaseDetails"`
 	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
 	PeerTargetDatabases []GetTargetDatabasesTargetDatabasePeerTargetDatabase `pulumi:"peerTargetDatabases"`
@@ -5999,12 +14555,15 @@ type GetTargetDatabasesTargetDatabaseArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// List of enabled features based on granted ORA_DSCS_* roles in target database
+	Features pulumi.StringArrayInput `pulumi:"features"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the Data Safe target database.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details about the current state of the peer target database in Data Safe.
 	LifecycleDetails          pulumi.StringInput                                                 `pulumi:"lifecycleDetails"`
+	ManagePrivilegesTrigger   pulumi.IntInput                                                    `pulumi:"managePrivilegesTrigger"`
 	PeerTargetDatabaseDetails GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayInput `pulumi:"peerTargetDatabaseDetails"`
 	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
 	PeerTargetDatabases GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayInput `pulumi:"peerTargetDatabases"`
@@ -6117,6 +14676,11 @@ func (o GetTargetDatabasesTargetDatabaseOutput) DisplayName() pulumi.StringOutpu
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// List of enabled features based on granted ORA_DSCS_* roles in target database
+func (o GetTargetDatabasesTargetDatabaseOutput) Features() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []string { return v.Features }).(pulumi.StringArrayOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 func (o GetTargetDatabasesTargetDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -6130,6 +14694,10 @@ func (o GetTargetDatabasesTargetDatabaseOutput) Id() pulumi.StringOutput {
 // Details about the current state of the peer target database in Data Safe.
 func (o GetTargetDatabasesTargetDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabasesTargetDatabaseOutput) ManagePrivilegesTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) int { return v.ManagePrivilegesTrigger }).(pulumi.IntOutput)
 }
 
 func (o GetTargetDatabasesTargetDatabaseOutput) PeerTargetDatabaseDetails() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput {
@@ -11896,10 +20464,140 @@ func (o GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput) Index(i pulumi
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsFilterInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsFilterArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesFilterInput)(nil)).Elem(), GetSqlFirewallPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesFilterArrayInput)(nil)).Elem(), GetSqlFirewallPoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionInput)(nil)).Elem(), GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayInput)(nil)).Elem(), GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemInput)(nil)).Elem(), GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsFilterInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsFilterArrayInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsFilterInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsFilterArrayInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsFilterInput)(nil)).Elem(), GetSqlFirewallViolationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsFilterArrayInput)(nil)).Elem(), GetSqlFirewallViolationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingAnalyticsFilterInput)(nil)).Elem(), GetSubsettingAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingAnalyticsFilterArrayInput)(nil)).Elem(), GetSubsettingAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollectionInput)(nil)).Elem(), GetSubsettingAnalyticsSubsettingAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayInput)(nil)).Elem(), GetSubsettingAnalyticsSubsettingAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemInput)(nil)).Elem(), GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionInput)(nil)).Elem(), GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPoliciesFilterInput)(nil)).Elem(), GetSubsettingPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPoliciesFilterArrayInput)(nil)).Elem(), GetSubsettingPoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionInput)(nil)).Elem(), GetSubsettingPoliciesSubsettingPolicyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionArrayInput)(nil)).Elem(), GetSubsettingPoliciesSubsettingPolicyCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItemInput)(nil)).Elem(), GetSubsettingPoliciesSubsettingPolicyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayInput)(nil)).Elem(), GetSubsettingPoliciesSubsettingPolicyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceInput)(nil)).Elem(), GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayInput)(nil)).Elem(), GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialInput)(nil)).Elem(), GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayInput)(nil)).Elem(), GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsFilterInput)(nil)).Elem(), GetSubsettingPolicyHealthReportLogsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsFilterArrayInput)(nil)).Elem(), GetSubsettingPolicyHealthReportLogsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionInput)(nil)).Elem(), GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayInput)(nil)).Elem(), GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemInput)(nil)).Elem(), GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayInput)(nil)).Elem(), GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportsFilterInput)(nil)).Elem(), GetSubsettingPolicyHealthReportsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportsFilterArrayInput)(nil)).Elem(), GetSubsettingPolicyHealthReportsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionInput)(nil)).Elem(), GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayInput)(nil)).Elem(), GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemInput)(nil)).Elem(), GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayInput)(nil)).Elem(), GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySchemaSourceInput)(nil)).Elem(), GetSubsettingPolicySchemaSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySchemaSourceArrayInput)(nil)).Elem(), GetSubsettingPolicySchemaSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterInput)(nil)).Elem(), GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionInput)(nil)).Elem(), GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemInput)(nil)).Elem(), GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRuleScopeInput)(nil)).Elem(), GetSubsettingPolicySubsettingRuleScopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRuleScopeArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingRuleScopeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRuleSubsetRuleEntryInput)(nil)).Elem(), GetSubsettingPolicySubsettingRuleSubsetRuleEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingRuleSubsetRuleEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRulesFilterInput)(nil)).Elem(), GetSubsettingPolicySubsettingRulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRulesFilterArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingRulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionInput)(nil)).Elem(), GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemInput)(nil)).Elem(), GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeInput)(nil)).Elem(), GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryInput)(nil)).Elem(), GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsFilterInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaObjectsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsFilterArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaObjectsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsFilterInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaRelationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsFilterArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaRelationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasFilterInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemasFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasFilterArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemasFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayInput)(nil)).Elem(), GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyTableEstimatesFilterInput)(nil)).Elem(), GetSubsettingPolicyTableEstimatesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyTableEstimatesFilterArrayInput)(nil)).Elem(), GetSubsettingPolicyTableEstimatesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyTableEstimatesTableEstimateCollectionInput)(nil)).Elem(), GetSubsettingPolicyTableEstimatesTableEstimateCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayInput)(nil)).Elem(), GetSubsettingPolicyTableEstimatesTableEstimateCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemInput)(nil)).Elem(), GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayInput)(nil)).Elem(), GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyTargetCredentialInput)(nil)).Elem(), GetSubsettingPolicyTargetCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingPolicyTargetCredentialArrayInput)(nil)).Elem(), GetSubsettingPolicyTargetCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettedObjectsFilterInput)(nil)).Elem(), GetSubsettingReportSubsettedObjectsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettedObjectsFilterArrayInput)(nil)).Elem(), GetSubsettingReportSubsettedObjectsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionInput)(nil)).Elem(), GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayInput)(nil)).Elem(), GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemInput)(nil)).Elem(), GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayInput)(nil)).Elem(), GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettingErrorsFilterInput)(nil)).Elem(), GetSubsettingReportSubsettingErrorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettingErrorsFilterArrayInput)(nil)).Elem(), GetSubsettingReportSubsettingErrorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionInput)(nil)).Elem(), GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayInput)(nil)).Elem(), GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemInput)(nil)).Elem(), GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayInput)(nil)).Elem(), GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportsFilterInput)(nil)).Elem(), GetSubsettingReportsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportsFilterArrayInput)(nil)).Elem(), GetSubsettingReportsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportsSubsettingReportCollectionInput)(nil)).Elem(), GetSubsettingReportsSubsettingReportCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportsSubsettingReportCollectionArrayInput)(nil)).Elem(), GetSubsettingReportsSubsettingReportCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportsSubsettingReportCollectionItemInput)(nil)).Elem(), GetSubsettingReportsSubsettingReportCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubsettingReportsSubsettingReportCollectionItemArrayInput)(nil)).Elem(), GetSubsettingReportsSubsettingReportCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterInput)(nil)).Elem(), GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayInput)(nil)).Elem(), GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionInput)(nil)).Elem(), GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionArgs{})
@@ -12068,10 +20766,140 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArray{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput{})
 	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingAnalyticsSubsettingAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingAnalyticsSubsettingAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingAnalyticsSubsettingAnalyticsCollectionItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPoliciesSubsettingPolicyCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPoliciesSubsettingPolicyCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPoliciesSubsettingPolicyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPoliciesSubsettingPolicyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPoliciesSubsettingPolicyCollectionItemSchemaSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPoliciesSubsettingPolicyCollectionItemTargetCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportLogsFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportLogsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportLogsSubsettingPolicyHealthReportLogCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportsFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyHealthReportsSubsettingPolicyHealthReportCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySchemaSourceOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySchemaSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRuleProcessingChainObjectsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRuleProcessingChainObjectsSubsettingRuleProcessingChainObjectsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRuleScopeOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRuleScopeArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRuleSubsetRuleEntryOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRuleSubsetRuleEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRulesFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemScopeOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingRulesSubsettingRuleCollectionItemSubsetRuleEntryOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaObjectsFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaObjectsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaObjectsSubsettingSchemaObjectCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaRelationsFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaRelationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemaRelationsSubsettingSchemaRelationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemasFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemasFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicySubsettingSchemasSubsettingSchemaCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyTableEstimatesFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyTableEstimatesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyTableEstimatesTableEstimateCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyTableEstimatesTableEstimateCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyTableEstimatesTableEstimateCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyTargetCredentialOutput{})
+	pulumi.RegisterOutputType(GetSubsettingPolicyTargetCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettedObjectsFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettedObjectsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettedObjectsSubsettedObjectCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettingErrorsFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettingErrorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportSubsettingErrorsSubsettingErrorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportsFilterOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportsSubsettingReportCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportsSubsettingReportCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportsSubsettingReportCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubsettingReportsSubsettingReportCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterOutput{})
 	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionOutput{})

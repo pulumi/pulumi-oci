@@ -79,6 +79,13 @@ public final class DrgAttachmentManagementArgs extends com.pulumi.resources.Reso
         return Optional.ofNullable(this.displayName);
     }
 
+    @Import(name="doesPreserveOriginalRoutesWithNat")
+    private @Nullable Output<Boolean> doesPreserveOriginalRoutesWithNat;
+
+    public Optional<Output<Boolean>> doesPreserveOriginalRoutesWithNat() {
+        return Optional.ofNullable(this.doesPreserveOriginalRoutesWithNat);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
@@ -92,6 +99,21 @@ public final class DrgAttachmentManagementArgs extends com.pulumi.resources.Reso
      */
     public Output<String> drgId() {
         return this.drgId;
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment&#39;s DRG NAT policy.
+     * 
+     */
+    @Import(name="drgNatPolicyId")
+    private @Nullable Output<String> drgNatPolicyId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment&#39;s DRG NAT policy.
+     * 
+     */
+    public Optional<Output<String>> drgNatPolicyId() {
+        return Optional.ofNullable(this.drgNatPolicyId);
     }
 
     /**
@@ -170,6 +192,21 @@ public final class DrgAttachmentManagementArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+     * 
+     */
+    @Import(name="removeDrgNatPolicyTrigger")
+    private @Nullable Output<Boolean> removeDrgNatPolicyTrigger;
+
+    /**
+     * @return (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+     * 
+     */
+    public Optional<Output<Boolean>> removeDrgNatPolicyTrigger() {
+        return Optional.ofNullable(this.removeDrgNatPolicyTrigger);
+    }
+
+    /**
      * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      * 
      */
@@ -229,12 +266,15 @@ public final class DrgAttachmentManagementArgs extends com.pulumi.resources.Reso
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.doesPreserveOriginalRoutesWithNat = $.doesPreserveOriginalRoutesWithNat;
         this.drgId = $.drgId;
+        this.drgNatPolicyId = $.drgNatPolicyId;
         this.drgRouteTableId = $.drgRouteTableId;
         this.exportDrgRouteDistributionId = $.exportDrgRouteDistributionId;
         this.freeformTags = $.freeformTags;
         this.networkDetails = $.networkDetails;
         this.networkId = $.networkId;
+        this.removeDrgNatPolicyTrigger = $.removeDrgNatPolicyTrigger;
         this.removeExportDrgRouteDistributionTrigger = $.removeExportDrgRouteDistributionTrigger;
         this.routeTableId = $.routeTableId;
         this.vcnId = $.vcnId;
@@ -342,6 +382,15 @@ public final class DrgAttachmentManagementArgs extends com.pulumi.resources.Reso
             return displayName(Output.of(displayName));
         }
 
+        public Builder doesPreserveOriginalRoutesWithNat(@Nullable Output<Boolean> doesPreserveOriginalRoutesWithNat) {
+            $.doesPreserveOriginalRoutesWithNat = doesPreserveOriginalRoutesWithNat;
+            return this;
+        }
+
+        public Builder doesPreserveOriginalRoutesWithNat(Boolean doesPreserveOriginalRoutesWithNat) {
+            return doesPreserveOriginalRoutesWithNat(Output.of(doesPreserveOriginalRoutesWithNat));
+        }
+
         /**
          * @param drgId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
          * 
@@ -361,6 +410,27 @@ public final class DrgAttachmentManagementArgs extends com.pulumi.resources.Reso
          */
         public Builder drgId(String drgId) {
             return drgId(Output.of(drgId));
+        }
+
+        /**
+         * @param drgNatPolicyId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment&#39;s DRG NAT policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drgNatPolicyId(@Nullable Output<String> drgNatPolicyId) {
+            $.drgNatPolicyId = drgNatPolicyId;
+            return this;
+        }
+
+        /**
+         * @param drgNatPolicyId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment&#39;s DRG NAT policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drgNatPolicyId(String drgNatPolicyId) {
+            return drgNatPolicyId(Output.of(drgNatPolicyId));
         }
 
         /**
@@ -466,6 +536,27 @@ public final class DrgAttachmentManagementArgs extends com.pulumi.resources.Reso
          */
         public Builder networkId(String networkId) {
             return networkId(Output.of(networkId));
+        }
+
+        /**
+         * @param removeDrgNatPolicyTrigger (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder removeDrgNatPolicyTrigger(@Nullable Output<Boolean> removeDrgNatPolicyTrigger) {
+            $.removeDrgNatPolicyTrigger = removeDrgNatPolicyTrigger;
+            return this;
+        }
+
+        /**
+         * @param removeDrgNatPolicyTrigger (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder removeDrgNatPolicyTrigger(Boolean removeDrgNatPolicyTrigger) {
+            return removeDrgNatPolicyTrigger(Output.of(removeDrgNatPolicyTrigger));
         }
 
         /**

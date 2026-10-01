@@ -87,6 +87,10 @@ export interface GetMaskingReportResult {
      */
     readonly state: string;
     /**
+     * The OCID of the subsetting report associated with this masking report
+     */
+    readonly subsettingReportId: string;
+    /**
      * The OCID of the target database masked.
      */
     readonly targetId: string;

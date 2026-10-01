@@ -33,14 +33,14 @@ public final class TargetDatabaseGroupMatchingCriteriaArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+     * (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
      * 
      */
     @Import(name="include", required=true)
     private Output<TargetDatabaseGroupMatchingCriteriaIncludeArgs> include;
 
     /**
-     * @return (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+     * @return (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
      * 
      */
     public Output<TargetDatabaseGroupMatchingCriteriaIncludeArgs> include() {
@@ -94,7 +94,7 @@ public final class TargetDatabaseGroupMatchingCriteriaArgs extends com.pulumi.re
         }
 
         /**
-         * @param include (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+         * @param include (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
          * 
          * @return builder
          * 
@@ -105,7 +105,7 @@ public final class TargetDatabaseGroupMatchingCriteriaArgs extends com.pulumi.re
         }
 
         /**
-         * @param include (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+         * @param include (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
          * 
          * @return builder
          * 

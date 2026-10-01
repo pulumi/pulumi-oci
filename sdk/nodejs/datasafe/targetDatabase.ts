@@ -154,6 +154,10 @@ export class TargetDatabase extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
+     * List of enabled features based on granted ORA_DSCS_* roles in target database
+     */
+    declare public /*out*/ readonly features: pulumi.Output<string[]>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
@@ -161,6 +165,13 @@ export class TargetDatabase extends pulumi.CustomResource {
      * Details about the current state of the peer target database in Data Safe.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly managePrivilegesTrigger: pulumi.Output<number | undefined>;
     /**
      * The details of the database to be registered as a peer target database.
      */
@@ -211,8 +222,10 @@ export class TargetDatabase extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["features"] = state?.features;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["managePrivilegesTrigger"] = state?.managePrivilegesTrigger;
             resourceInputs["peerTargetDatabaseDetails"] = state?.peerTargetDatabaseDetails;
             resourceInputs["peerTargetDatabases"] = state?.peerTargetDatabases;
             resourceInputs["state"] = state?.state;
@@ -236,9 +249,11 @@ export class TargetDatabase extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["managePrivilegesTrigger"] = args?.managePrivilegesTrigger;
             resourceInputs["peerTargetDatabaseDetails"] = args?.peerTargetDatabaseDetails;
             resourceInputs["tlsConfig"] = args?.tlsConfig;
             resourceInputs["associatedResourceIds"] = undefined /*out*/;
+            resourceInputs["features"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["peerTargetDatabases"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -288,6 +303,10 @@ export interface TargetDatabaseState {
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
+     * List of enabled features based on granted ORA_DSCS_* roles in target database
+     */
+    features?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
@@ -295,6 +314,13 @@ export interface TargetDatabaseState {
      * Details about the current state of the peer target database in Data Safe.
      */
     lifecycleDetails?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    managePrivilegesTrigger?: pulumi.Input<number | undefined>;
     /**
      * The details of the database to be registered as a peer target database.
      */
@@ -361,6 +387,13 @@ export interface TargetDatabaseArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    managePrivilegesTrigger?: pulumi.Input<number | undefined>;
     /**
      * The details of the database to be registered as a peer target database.
      */

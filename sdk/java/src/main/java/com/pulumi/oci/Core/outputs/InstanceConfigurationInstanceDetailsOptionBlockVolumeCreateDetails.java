@@ -68,6 +68,11 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
      */
     private @Nullable Boolean isAutoTuneEnabled;
     /**
+     * @return Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     * 
+     */
+    private @Nullable Boolean isReservationsEnabled;
+    /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
@@ -163,6 +168,13 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         return Optional.ofNullable(this.isAutoTuneEnabled);
     }
     /**
+     * @return Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     * 
+     */
+    public Optional<Boolean> isReservationsEnabled() {
+        return Optional.ofNullable(this.isReservationsEnabled);
+    }
+    /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
@@ -215,6 +227,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         private @Nullable String displayName;
         private @Nullable Map<String,String> freeformTags;
         private @Nullable Boolean isAutoTuneEnabled;
+        private @Nullable Boolean isReservationsEnabled;
         private @Nullable String kmsKeyId;
         private @Nullable String sizeInGbs;
         private @Nullable InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetails sourceDetails;
@@ -233,6 +246,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isAutoTuneEnabled = defaults.isAutoTuneEnabled;
+    	      this.isReservationsEnabled = defaults.isReservationsEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sizeInGbs = defaults.sizeInGbs;
     	      this.sourceDetails = defaults.sourceDetails;
@@ -304,6 +318,12 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
             return this;
         }
         @CustomType.Setter
+        public Builder isReservationsEnabled(@Nullable Boolean isReservationsEnabled) {
+
+            this.isReservationsEnabled = isReservationsEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
 
             this.kmsKeyId = kmsKeyId;
@@ -345,6 +365,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.isAutoTuneEnabled = isAutoTuneEnabled;
+            _resultValue.isReservationsEnabled = isReservationsEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.sizeInGbs = sizeInGbs;
             _resultValue.sourceDetails = sourceDetails;

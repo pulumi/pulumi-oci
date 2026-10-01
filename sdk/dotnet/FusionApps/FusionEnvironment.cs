@@ -190,7 +190,7 @@ namespace Pulumi.Oci.FusionApps
         public Output<bool> IsIpv6dualStackEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) byok kms keyId
+        /// (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
         /// </summary>
         [Output("kmsKeyId")]
         public Output<string> KmsKeyId { get; private set; } = null!;
@@ -416,7 +416,7 @@ namespace Pulumi.Oci.FusionApps
         public Input<bool>? IsIpv6dualStackEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) byok kms keyId
+        /// (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
@@ -568,7 +568,7 @@ namespace Pulumi.Oci.FusionApps
         public Input<bool>? IsIpv6dualStackEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) byok kms keyId
+        /// (Deprecated) The BYOK KMS key OCID. Starting November 23, 2026, `kmsKeyId` will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }

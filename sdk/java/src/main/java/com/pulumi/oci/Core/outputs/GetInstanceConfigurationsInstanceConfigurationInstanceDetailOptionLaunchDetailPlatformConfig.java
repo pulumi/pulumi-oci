@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -17,6 +18,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
      * 
      */
     private Boolean areVirtualInstructionsEnabled;
+    /**
+     * @return Instance Platform Configuration Configuration Map for flexible setting input.
+     * 
+     */
+    private Map<String,String> configMap;
     /**
      * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
      * 
@@ -75,6 +81,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
      */
     public Boolean areVirtualInstructionsEnabled() {
         return this.areVirtualInstructionsEnabled;
+    }
+    /**
+     * @return Instance Platform Configuration Configuration Map for flexible setting input.
+     * 
+     */
+    public Map<String,String> configMap() {
+        return this.configMap;
     }
     /**
      * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
@@ -157,6 +170,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
     @CustomType.Builder
     public static final class Builder {
         private Boolean areVirtualInstructionsEnabled;
+        private Map<String,String> configMap;
         private Boolean isAccessControlServiceEnabled;
         private Boolean isInputOutputMemoryManagementUnitEnabled;
         private Boolean isMeasuredBootEnabled;
@@ -171,6 +185,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         public Builder(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areVirtualInstructionsEnabled = defaults.areVirtualInstructionsEnabled;
+    	      this.configMap = defaults.configMap;
     	      this.isAccessControlServiceEnabled = defaults.isAccessControlServiceEnabled;
     	      this.isInputOutputMemoryManagementUnitEnabled = defaults.isInputOutputMemoryManagementUnitEnabled;
     	      this.isMeasuredBootEnabled = defaults.isMeasuredBootEnabled;
@@ -189,6 +204,14 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "areVirtualInstructionsEnabled");
             }
             this.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configMap(Map<String,String> configMap) {
+            if (configMap == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "configMap");
+            }
+            this.configMap = configMap;
             return this;
         }
         @CustomType.Setter
@@ -274,6 +297,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig build() {
             final var _resultValue = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig();
             _resultValue.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
+            _resultValue.configMap = configMap;
             _resultValue.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
             _resultValue.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
             _resultValue.isMeasuredBootEnabled = isMeasuredBootEnabled;

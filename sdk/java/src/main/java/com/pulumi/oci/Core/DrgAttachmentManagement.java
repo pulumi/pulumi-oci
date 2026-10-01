@@ -63,6 +63,7 @@ import javax.annotation.Nullable;
  *             .drgId(testDrg.id())
  *             .displayName("MyTestDrgAttachmentForRpc")
  *             .drgRouteTableId(testDrgRouteTable.id())
+ *             .drgNatPolicyId(testDrgNatPolicy.id())
  *             .build());
  * 
  *     }
@@ -129,6 +130,12 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
     public Output<String> displayName() {
         return this.displayName;
     }
+    @Export(name="doesPreserveOriginalRoutesWithNat", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> doesPreserveOriginalRoutesWithNat;
+
+    public Output<Boolean> doesPreserveOriginalRoutesWithNat() {
+        return this.doesPreserveOriginalRoutesWithNat;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
@@ -142,6 +149,20 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
      */
     public Output<String> drgId() {
         return this.drgId;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment&#39;s DRG NAT policy.
+     * 
+     */
+    @Export(name="drgNatPolicyId", refs={String.class}, tree="[0]")
+    private Output<String> drgNatPolicyId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment&#39;s DRG NAT policy.
+     * 
+     */
+    public Output<String> drgNatPolicyId() {
+        return this.drgNatPolicyId;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
@@ -226,6 +247,20 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
      */
     public Output<Optional<String>> networkId() {
         return Codegen.optional(this.networkId);
+    }
+    /**
+     * (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+     * 
+     */
+    @Export(name="removeDrgNatPolicyTrigger", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> removeDrgNatPolicyTrigger;
+
+    /**
+     * @return (Updatable) An optional property when set/updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+     * 
+     */
+    public Output<Optional<Boolean>> removeDrgNatPolicyTrigger() {
+        return Codegen.optional(this.removeDrgNatPolicyTrigger);
     }
     /**
      * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.

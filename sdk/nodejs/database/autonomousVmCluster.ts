@@ -208,7 +208,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly memoryPerComputeUnitInGbs: pulumi.Output<number>;
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     declare public readonly memoryPerOracleComputeUnitInGbs: pulumi.Output<number>;
     /**
@@ -259,7 +259,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public readonly scanListenerPortTls: pulumi.Output<number>;
     /**
-     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
      */
     declare public readonly sgaPercentage: pulumi.Output<number>;
     /**
@@ -557,7 +557,7 @@ export interface AutonomousVmClusterState {
      */
     memoryPerComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
@@ -608,7 +608,7 @@ export interface AutonomousVmClusterState {
      */
     scanListenerPortTls?: pulumi.Input<number | undefined>;
     /**
-     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
      */
     sgaPercentage?: pulumi.Input<number | undefined>;
     /**
@@ -710,7 +710,7 @@ export interface AutonomousVmClusterArgs {
      */
     maintenanceWindowDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindowDetail>[] | undefined>;
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
@@ -722,7 +722,7 @@ export interface AutonomousVmClusterArgs {
      */
     scanListenerPortTls?: pulumi.Input<number | undefined>;
     /**
-     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
      */
     sgaPercentage?: pulumi.Input<number | undefined>;
     /**

@@ -16,22 +16,36 @@ public final class ContainerConfigurationState extends com.pulumi.resources.Reso
 
     public static final ContainerConfigurationState Empty = new ContainerConfigurationState();
 
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
 
     /**
-     * Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="isRepositoryCreatedOnFirstPush")
     private @Nullable Output<Boolean> isRepositoryCreatedOnFirstPush;
 
     /**
-     * @return Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * @return (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> isRepositoryCreatedOnFirstPush() {
@@ -79,17 +93,32 @@ public final class ContainerConfigurationState extends com.pulumi.resources.Reso
             $ = new ContainerConfigurationState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
+        /**
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
         }
 
         /**
-         * @param isRepositoryCreatedOnFirstPush Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+         * @param isRepositoryCreatedOnFirstPush (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -100,7 +129,10 @@ public final class ContainerConfigurationState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param isRepositoryCreatedOnFirstPush Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+         * @param isRepositoryCreatedOnFirstPush (Updatable) Whether to create a new container repository when a container image is pushed to a new repository path. Repositories created in this way belong to the root compartment.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

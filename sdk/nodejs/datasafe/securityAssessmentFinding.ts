@@ -78,6 +78,7 @@ export class SecurityAssessmentFinding extends pulumi.CustomResource {
      * The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      */
     declare public /*out*/ readonly details: pulumi.Output<string[]>;
+    declare public /*out*/ readonly doclink: pulumi.Output<string>;
     /**
      * Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
      */
@@ -172,6 +173,7 @@ export class SecurityAssessmentFinding extends pulumi.CustomResource {
             resourceInputs["assessmentId"] = state?.assessmentId;
             resourceInputs["category"] = state?.category;
             resourceInputs["details"] = state?.details;
+            resourceInputs["doclink"] = state?.doclink;
             resourceInputs["hasTargetDbRiskLevelChanged"] = state?.hasTargetDbRiskLevelChanged;
             resourceInputs["isRiskModified"] = state?.isRiskModified;
             resourceInputs["isTopFinding"] = state?.isTopFinding;
@@ -201,6 +203,7 @@ export class SecurityAssessmentFinding extends pulumi.CustomResource {
             resourceInputs["assessmentId"] = undefined /*out*/;
             resourceInputs["category"] = undefined /*out*/;
             resourceInputs["details"] = undefined /*out*/;
+            resourceInputs["doclink"] = undefined /*out*/;
             resourceInputs["hasTargetDbRiskLevelChanged"] = undefined /*out*/;
             resourceInputs["isRiskModified"] = undefined /*out*/;
             resourceInputs["isTopFinding"] = undefined /*out*/;
@@ -240,6 +243,7 @@ export interface SecurityAssessmentFindingState {
      * The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      */
     details?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    doclink?: pulumi.Input<string | undefined>;
     /**
      * Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
      */

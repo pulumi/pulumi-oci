@@ -56,11 +56,20 @@ namespace Pulumi.Oci.Core
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
+        [Output("doesPreserveOriginalRoutesWithNat")]
+        public Output<bool> DoesPreserveOriginalRoutesWithNat { get; private set; } = null!;
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         /// </summary>
         [Output("drgId")]
         public Output<string> DrgId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+        /// </summary>
+        [Output("drgNatPolicyId")]
+        public Output<string> DrgNatPolicyId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
@@ -94,6 +103,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("networkDetails")]
         public Output<Outputs.DrgAttachmentNetworkDetails> NetworkDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property that, when set or updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+        /// </summary>
+        [Output("removeDrgNatPolicyTrigger")]
+        public Output<bool?> RemoveDrgNatPolicyTrigger { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting ExportDrgRouteDistributionId to null.
@@ -197,11 +212,20 @@ namespace Pulumi.Oci.Core
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        [Input("doesPreserveOriginalRoutesWithNat")]
+        public Input<bool>? DoesPreserveOriginalRoutesWithNat { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         /// </summary>
         [Input("drgId", required: true)]
         public Input<string> DrgId { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+        /// </summary>
+        [Input("drgNatPolicyId")]
+        public Input<string>? DrgNatPolicyId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
@@ -235,6 +259,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("networkDetails")]
         public Input<Inputs.DrgAttachmentNetworkDetailsArgs>? NetworkDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property that, when set or updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+        /// </summary>
+        [Input("removeDrgNatPolicyTrigger")]
+        public Input<bool>? RemoveDrgNatPolicyTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting ExportDrgRouteDistributionId to null.
@@ -294,11 +324,20 @@ namespace Pulumi.Oci.Core
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        [Input("doesPreserveOriginalRoutesWithNat")]
+        public Input<bool>? DoesPreserveOriginalRoutesWithNat { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         /// </summary>
         [Input("drgId")]
         public Input<string>? DrgId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+        /// </summary>
+        [Input("drgNatPolicyId")]
+        public Input<string>? DrgNatPolicyId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
@@ -338,6 +377,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("networkDetails")]
         public Input<Inputs.DrgAttachmentNetworkDetailsGetArgs>? NetworkDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property that, when set or updated, dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to it.
+        /// </summary>
+        [Input("removeDrgNatPolicyTrigger")]
+        public Input<bool>? RemoveDrgNatPolicyTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting ExportDrgRouteDistributionId to null.

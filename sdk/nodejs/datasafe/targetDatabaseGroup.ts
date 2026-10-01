@@ -35,6 +35,8 @@ import * as utilities from "../utilities";
  *             freeformTags: {
  *                 Department: "Finance",
  *             },
+ *             freeformTagsIn: targetDatabaseGroupMatchingCriteriaIncludeFreeformTagsIn,
+ *             systemTags: targetDatabaseGroupMatchingCriteriaIncludeSystemTags,
  *             targetDatabaseIds: targetDatabaseGroupMatchingCriteriaIncludeTargetDatabaseIds,
  *         },
  *         exclude: {

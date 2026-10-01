@@ -379,6 +379,8 @@ class TargetDatabaseGroup(pulumi.CustomResource):
                     "freeform_tags": {
                         "Department": "Finance",
                     },
+                    "freeform_tags_in": target_database_group_matching_criteria_include_freeform_tags_in,
+                    "system_tags": target_database_group_matching_criteria_include_system_tags,
                     "target_database_ids": target_database_group_matching_criteria_include_target_database_ids,
                 },
                 "exclude": {
@@ -447,6 +449,8 @@ class TargetDatabaseGroup(pulumi.CustomResource):
                     "freeform_tags": {
                         "Department": "Finance",
                     },
+                    "freeform_tags_in": target_database_group_matching_criteria_include_freeform_tags_in,
+                    "system_tags": target_database_group_matching_criteria_include_system_tags,
                     "target_database_ids": target_database_group_matching_criteria_include_target_database_ids,
                 },
                 "exclude": {

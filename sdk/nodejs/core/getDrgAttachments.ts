@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *     attachmentType: drgAttachmentAttachmentType,
  *     displayName: drgAttachmentDisplayName,
  *     drgId: testDrg.id,
+ *     drgNatPolicyId: testDrgNatPolicy.id,
  *     drgRouteTableId: testDrgRouteTable.id,
  *     networkId: testNetwork.id,
  *     state: drgAttachmentState,
@@ -41,6 +42,7 @@ export function getDrgAttachments(args: GetDrgAttachmentsArgs, opts?: pulumi.Inv
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "drgId": args.drgId,
+        "drgNatPolicyId": args.drgNatPolicyId,
         "drgRouteTableId": args.drgRouteTableId,
         "filters": args.filters,
         "networkId": args.networkId,
@@ -69,6 +71,10 @@ export interface GetDrgAttachmentsArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
     drgId?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+     */
+    drgNatPolicyId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
      */
@@ -110,6 +116,10 @@ export interface GetDrgAttachmentsResult {
      */
     readonly drgId?: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment's DRG NAT policy.
+     */
+    readonly drgNatPolicyId?: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
      */
     readonly drgRouteTableId?: string;
@@ -149,6 +159,7 @@ export interface GetDrgAttachmentsResult {
  *     attachmentType: drgAttachmentAttachmentType,
  *     displayName: drgAttachmentDisplayName,
  *     drgId: testDrg.id,
+ *     drgNatPolicyId: testDrgNatPolicy.id,
  *     drgRouteTableId: testDrgRouteTable.id,
  *     networkId: testNetwork.id,
  *     state: drgAttachmentState,
@@ -163,6 +174,7 @@ export function getDrgAttachmentsOutput(args: GetDrgAttachmentsOutputArgs, opts?
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "drgId": args.drgId,
+        "drgNatPolicyId": args.drgNatPolicyId,
         "drgRouteTableId": args.drgRouteTableId,
         "filters": args.filters,
         "networkId": args.networkId,
@@ -191,6 +203,10 @@ export interface GetDrgAttachmentsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
     drgId?: pulumi.Input<string | undefined>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+     */
+    drgNatPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
      */

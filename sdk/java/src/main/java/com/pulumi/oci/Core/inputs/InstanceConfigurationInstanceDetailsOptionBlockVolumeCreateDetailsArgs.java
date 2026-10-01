@@ -172,6 +172,21 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
     }
 
     /**
+     * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     * 
+     */
+    @Import(name="isReservationsEnabled")
+    private @Nullable Output<Boolean> isReservationsEnabled;
+
+    /**
+     * @return Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     * 
+     */
+    public Optional<Output<Boolean>> isReservationsEnabled() {
+        return Optional.ofNullable(this.isReservationsEnabled);
+    }
+
+    /**
      * The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
@@ -255,6 +270,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isAutoTuneEnabled = $.isAutoTuneEnabled;
+        this.isReservationsEnabled = $.isReservationsEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.sizeInGbs = $.sizeInGbs;
         this.sourceDetails = $.sourceDetails;
@@ -498,6 +514,27 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
          */
         public Builder isAutoTuneEnabled(Boolean isAutoTuneEnabled) {
             return isAutoTuneEnabled(Output.of(isAutoTuneEnabled));
+        }
+
+        /**
+         * @param isReservationsEnabled Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isReservationsEnabled(@Nullable Output<Boolean> isReservationsEnabled) {
+            $.isReservationsEnabled = isReservationsEnabled;
+            return this;
+        }
+
+        /**
+         * @param isReservationsEnabled Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isReservationsEnabled(Boolean isReservationsEnabled) {
+            return isReservationsEnabled(Output.of(isReservationsEnabled));
         }
 
         /**

@@ -36,6 +36,7 @@ import (
 //				CompartmentIdInSubtree: pulumi.BoolRef(targetDatabaseCompartmentIdInSubtree),
 //				DatabaseType:           pulumi.StringRef(targetDatabaseDatabaseType),
 //				DisplayName:            pulumi.StringRef(targetDatabaseDisplayName),
+//				EnablementResourceOcid: pulumi.StringRef(targetDatabaseEnablementResourceOcid),
 //				InfrastructureType:     pulumi.StringRef(targetDatabaseInfrastructureType),
 //				State:                  pulumi.StringRef(targetDatabaseState),
 //				TargetDatabaseId:       pulumi.StringRef(testTargetDatabase.Id),
@@ -71,8 +72,10 @@ type GetTargetDatabasesArgs struct {
 	// A filter to return only target databases that match the specified database type.
 	DatabaseType *string `pulumi:"databaseType"`
 	// A filter to return only resources that match the specified display name.
-	DisplayName *string                    `pulumi:"displayName"`
-	Filters     []GetTargetDatabasesFilter `pulumi:"filters"`
+	DisplayName *string `pulumi:"displayName"`
+	// A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+	EnablementResourceOcid *string                    `pulumi:"enablementResourceOcid"`
+	Filters                []GetTargetDatabasesFilter `pulumi:"filters"`
 	// A filter to return only target databases that match the specified infrastructure type.
 	InfrastructureType *string `pulumi:"infrastructureType"`
 	// A filter to return only target databases that match the specified lifecycle state.
@@ -91,8 +94,9 @@ type GetTargetDatabasesResult struct {
 	// The database type.
 	DatabaseType *string `pulumi:"databaseType"`
 	// The display name of the peer target database in Data Safe.
-	DisplayName *string                    `pulumi:"displayName"`
-	Filters     []GetTargetDatabasesFilter `pulumi:"filters"`
+	DisplayName            *string                    `pulumi:"displayName"`
+	EnablementResourceOcid *string                    `pulumi:"enablementResourceOcid"`
+	Filters                []GetTargetDatabasesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The infrastructure type the database is running on.
@@ -122,8 +126,10 @@ type GetTargetDatabasesOutputArgs struct {
 	// A filter to return only target databases that match the specified database type.
 	DatabaseType pulumi.StringPtrInput `pulumi:"databaseType"`
 	// A filter to return only resources that match the specified display name.
-	DisplayName pulumi.StringPtrInput              `pulumi:"displayName"`
-	Filters     GetTargetDatabasesFilterArrayInput `pulumi:"filters"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+	EnablementResourceOcid pulumi.StringPtrInput              `pulumi:"enablementResourceOcid"`
+	Filters                GetTargetDatabasesFilterArrayInput `pulumi:"filters"`
 	// A filter to return only target databases that match the specified infrastructure type.
 	InfrastructureType pulumi.StringPtrInput `pulumi:"infrastructureType"`
 	// A filter to return only target databases that match the specified lifecycle state.
@@ -176,6 +182,10 @@ func (o GetTargetDatabasesResultOutput) DatabaseType() pulumi.StringPtrOutput {
 // The display name of the peer target database in Data Safe.
 func (o GetTargetDatabasesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetTargetDatabasesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+func (o GetTargetDatabasesResultOutput) EnablementResourceOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabasesResult) *string { return v.EnablementResourceOcid }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTargetDatabasesResultOutput) Filters() GetTargetDatabasesFilterArrayOutput {

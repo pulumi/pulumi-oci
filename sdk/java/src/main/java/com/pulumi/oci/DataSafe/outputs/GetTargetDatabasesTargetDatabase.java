@@ -11,6 +11,7 @@ import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabaseDatabaseD
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabase;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabaseTlsConfig;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -59,6 +60,11 @@ public final class GetTargetDatabasesTargetDatabase {
      */
     private String displayName;
     /**
+     * @return List of enabled features based on granted ORA_DSCS_* roles in target database
+     * 
+     */
+    private List<String> features;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -73,6 +79,7 @@ public final class GetTargetDatabasesTargetDatabase {
      * 
      */
     private String lifecycleDetails;
+    private Integer managePrivilegesTrigger;
     private List<GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail> peerTargetDatabaseDetails;
     /**
      * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
@@ -163,6 +170,13 @@ public final class GetTargetDatabasesTargetDatabase {
         return this.displayName;
     }
     /**
+     * @return List of enabled features based on granted ORA_DSCS_* roles in target database
+     * 
+     */
+    public List<String> features() {
+        return this.features;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -182,6 +196,9 @@ public final class GetTargetDatabasesTargetDatabase {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public Integer managePrivilegesTrigger() {
+        return this.managePrivilegesTrigger;
     }
     public List<GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail> peerTargetDatabaseDetails() {
         return this.peerTargetDatabaseDetails;
@@ -246,9 +263,11 @@ public final class GetTargetDatabasesTargetDatabase {
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
+        private List<String> features;
         private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
+        private Integer managePrivilegesTrigger;
         private List<GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail> peerTargetDatabaseDetails;
         private List<GetTargetDatabasesTargetDatabasePeerTargetDatabase> peerTargetDatabases;
         private String state;
@@ -267,9 +286,11 @@ public final class GetTargetDatabasesTargetDatabase {
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.features = defaults.features;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.managePrivilegesTrigger = defaults.managePrivilegesTrigger;
     	      this.peerTargetDatabaseDetails = defaults.peerTargetDatabaseDetails;
     	      this.peerTargetDatabases = defaults.peerTargetDatabases;
     	      this.state = defaults.state;
@@ -356,6 +377,17 @@ public final class GetTargetDatabasesTargetDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder features(List<String> features) {
+            if (features == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "features");
+            }
+            this.features = features;
+            return this;
+        }
+        public Builder features(String... features) {
+            return features(List.of(features));
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "freeformTags");
@@ -377,6 +409,14 @@ public final class GetTargetDatabasesTargetDatabase {
               throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder managePrivilegesTrigger(Integer managePrivilegesTrigger) {
+            if (managePrivilegesTrigger == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "managePrivilegesTrigger");
+            }
+            this.managePrivilegesTrigger = managePrivilegesTrigger;
             return this;
         }
         @CustomType.Setter
@@ -454,9 +494,11 @@ public final class GetTargetDatabasesTargetDatabase {
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.features = features;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.managePrivilegesTrigger = managePrivilegesTrigger;
             _resultValue.peerTargetDatabaseDetails = peerTargetDatabaseDetails;
             _resultValue.peerTargetDatabases = peerTargetDatabases;
             _resultValue.state = state;

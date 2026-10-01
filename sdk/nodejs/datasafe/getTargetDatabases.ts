@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree === "true",
  *     databaseType: targetDatabaseDatabaseType,
  *     displayName: targetDatabaseDisplayName,
+ *     enablementResourceOcid: targetDatabaseEnablementResourceOcid,
  *     infrastructureType: targetDatabaseInfrastructureType,
  *     state: targetDatabaseState,
  *     targetDatabaseId: testTargetDatabase.id,
@@ -39,6 +40,7 @@ export function getTargetDatabases(args: GetTargetDatabasesArgs, opts?: pulumi.I
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "databaseType": args.databaseType,
         "displayName": args.displayName,
+        "enablementResourceOcid": args.enablementResourceOcid,
         "filters": args.filters,
         "infrastructureType": args.infrastructureType,
         "state": args.state,
@@ -74,6 +76,10 @@ export interface GetTargetDatabasesArgs {
      * A filter to return only resources that match the specified display name.
      */
     displayName?: string;
+    /**
+     * A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+     */
+    enablementResourceOcid?: string;
     filters?: inputs.DataSafe.GetTargetDatabasesFilter[];
     /**
      * A filter to return only target databases that match the specified infrastructure type.
@@ -108,6 +114,7 @@ export interface GetTargetDatabasesResult {
      * The display name of the peer target database in Data Safe.
      */
     readonly displayName?: string;
+    readonly enablementResourceOcid?: string;
     readonly filters?: outputs.DataSafe.GetTargetDatabasesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -145,6 +152,7 @@ export interface GetTargetDatabasesResult {
  *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree === "true",
  *     databaseType: targetDatabaseDatabaseType,
  *     displayName: targetDatabaseDisplayName,
+ *     enablementResourceOcid: targetDatabaseEnablementResourceOcid,
  *     infrastructureType: targetDatabaseInfrastructureType,
  *     state: targetDatabaseState,
  *     targetDatabaseId: testTargetDatabase.id,
@@ -160,6 +168,7 @@ export function getTargetDatabasesOutput(args: GetTargetDatabasesOutputArgs, opt
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "databaseType": args.databaseType,
         "displayName": args.displayName,
+        "enablementResourceOcid": args.enablementResourceOcid,
         "filters": args.filters,
         "infrastructureType": args.infrastructureType,
         "state": args.state,
@@ -195,6 +204,10 @@ export interface GetTargetDatabasesOutputArgs {
      * A filter to return only resources that match the specified display name.
      */
     displayName?: pulumi.Input<string | undefined>;
+    /**
+     * A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).
+     */
+    enablementResourceOcid?: pulumi.Input<string | undefined>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasesFilterArgs>[] | undefined>;
     /**
      * A filter to return only target databases that match the specified infrastructure type.

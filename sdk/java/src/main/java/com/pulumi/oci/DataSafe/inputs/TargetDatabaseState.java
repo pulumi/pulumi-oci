@@ -11,6 +11,7 @@ import com.pulumi.oci.DataSafe.inputs.TargetDatabaseDatabaseDetailsArgs;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabasePeerTargetDatabaseArgs;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabasePeerTargetDatabaseDetailArgs;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabaseTlsConfigArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -144,6 +145,21 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * List of enabled features based on granted ORA_DSCS_* roles in target database
+     * 
+     */
+    @Import(name="features")
+    private @Nullable Output<List<String>> features;
+
+    /**
+     * @return List of enabled features based on granted ORA_DSCS_* roles in target database
+     * 
+     */
+    public Optional<Output<List<String>>> features() {
+        return Optional.ofNullable(this.features);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -171,6 +187,27 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="managePrivilegesTrigger")
+    private @Nullable Output<Integer> managePrivilegesTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> managePrivilegesTrigger() {
+        return Optional.ofNullable(this.managePrivilegesTrigger);
     }
 
     /**
@@ -289,8 +326,10 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.features = $.features;
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.managePrivilegesTrigger = $.managePrivilegesTrigger;
         this.peerTargetDatabaseDetails = $.peerTargetDatabaseDetails;
         this.peerTargetDatabases = $.peerTargetDatabases;
         this.state = $.state;
@@ -497,6 +536,37 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param features List of enabled features based on granted ORA_DSCS_* roles in target database
+         * 
+         * @return builder
+         * 
+         */
+        public Builder features(@Nullable Output<List<String>> features) {
+            $.features = features;
+            return this;
+        }
+
+        /**
+         * @param features List of enabled features based on granted ORA_DSCS_* roles in target database
+         * 
+         * @return builder
+         * 
+         */
+        public Builder features(List<String> features) {
+            return features(Output.of(features));
+        }
+
+        /**
+         * @param features List of enabled features based on granted ORA_DSCS_* roles in target database
+         * 
+         * @return builder
+         * 
+         */
+        public Builder features(String... features) {
+            return features(List.of(features));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -536,6 +606,33 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param managePrivilegesTrigger (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managePrivilegesTrigger(@Nullable Output<Integer> managePrivilegesTrigger) {
+            $.managePrivilegesTrigger = managePrivilegesTrigger;
+            return this;
+        }
+
+        /**
+         * @param managePrivilegesTrigger (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managePrivilegesTrigger(Integer managePrivilegesTrigger) {
+            return managePrivilegesTrigger(Output.of(managePrivilegesTrigger));
         }
 
         /**

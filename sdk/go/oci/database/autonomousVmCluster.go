@@ -153,7 +153,7 @@ type AutonomousVmCluster struct {
 	MaxAcdsLowestScaledValue pulumi.IntOutput `pulumi:"maxAcdsLowestScaledValue"`
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerComputeUnitInGbs pulumi.Float64Output `pulumi:"memoryPerComputeUnitInGbs"`
-	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
@@ -180,7 +180,7 @@ type AutonomousVmCluster struct {
 	ScanListenerPortNonTls pulumi.IntOutput `pulumi:"scanListenerPortNonTls"`
 	// (Updatable) The SCAN Listener TLS port number. Default value is 2484.
 	ScanListenerPortTls pulumi.IntOutput `pulumi:"scanListenerPortTls"`
-	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 	SgaPercentage pulumi.Float64Output `pulumi:"sgaPercentage"`
 	// The current state of the Autonomous VM cluster.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -304,7 +304,7 @@ type autonomousVmClusterState struct {
 	MaxAcdsLowestScaledValue *int `pulumi:"maxAcdsLowestScaledValue"`
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerComputeUnitInGbs *float64 `pulumi:"memoryPerComputeUnitInGbs"`
-	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
@@ -331,7 +331,7 @@ type autonomousVmClusterState struct {
 	ScanListenerPortNonTls *int `pulumi:"scanListenerPortNonTls"`
 	// (Updatable) The SCAN Listener TLS port number. Default value is 2484.
 	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
-	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 	SgaPercentage *float64 `pulumi:"sgaPercentage"`
 	// The current state of the Autonomous VM cluster.
 	State *string `pulumi:"state"`
@@ -414,7 +414,7 @@ type AutonomousVmClusterState struct {
 	MaxAcdsLowestScaledValue pulumi.IntPtrInput
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerComputeUnitInGbs pulumi.Float64PtrInput
-	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntPtrInput
@@ -441,7 +441,7 @@ type AutonomousVmClusterState struct {
 	ScanListenerPortNonTls pulumi.IntPtrInput
 	// (Updatable) The SCAN Listener TLS port number. Default value is 2484.
 	ScanListenerPortTls pulumi.IntPtrInput
-	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 	SgaPercentage pulumi.Float64PtrInput
 	// The current state of the Autonomous VM cluster.
 	State pulumi.StringPtrInput
@@ -498,13 +498,13 @@ type autonomousVmClusterArgs struct {
 	LicenseModel *string `pulumi:"licenseModel"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails []AutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
-	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
 	ScanListenerPortNonTls *int `pulumi:"scanListenerPortNonTls"`
 	// (Updatable) The SCAN Listener TLS port number. Default value is 2484.
 	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
-	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 	SgaPercentage *float64 `pulumi:"sgaPercentage"`
 	// (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
@@ -547,13 +547,13 @@ type AutonomousVmClusterArgs struct {
 	LicenseModel pulumi.StringPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails AutonomousVmClusterMaintenanceWindowDetailArrayInput
-	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
 	ScanListenerPortNonTls pulumi.IntPtrInput
 	// (Updatable) The SCAN Listener TLS port number. Default value is 2484.
 	ScanListenerPortTls pulumi.IntPtrInput
-	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 	SgaPercentage pulumi.Float64PtrInput
 	// (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
@@ -808,7 +808,7 @@ func (o AutonomousVmClusterOutput) MemoryPerComputeUnitInGbs() pulumi.Float64Out
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.MemoryPerComputeUnitInGbs }).(pulumi.Float64Output)
 }
 
-// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+// (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 func (o AutonomousVmClusterOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }
@@ -874,7 +874,7 @@ func (o AutonomousVmClusterOutput) ScanListenerPortTls() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.ScanListenerPortTls }).(pulumi.IntOutput)
 }
 
-// Percentage of ECPU memory allocated for SGA(System Global Area).
+// (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
 func (o AutonomousVmClusterOutput) SgaPercentage() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.SgaPercentage }).(pulumi.Float64Output)
 }

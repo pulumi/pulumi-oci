@@ -16,9 +16,11 @@ import com.pulumi.oci.DataSafe.outputs.TargetDatabasePeerTargetDatabase;
 import com.pulumi.oci.DataSafe.outputs.TargetDatabasePeerTargetDatabaseDetail;
 import com.pulumi.oci.DataSafe.outputs.TargetDatabaseTlsConfig;
 import com.pulumi.oci.Utilities;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -249,6 +251,20 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * List of enabled features based on granted ORA_DSCS_* roles in target database
+     * 
+     */
+    @Export(name="features", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> features;
+
+    /**
+     * @return List of enabled features based on granted ORA_DSCS_* roles in target database
+     * 
+     */
+    public Output<List<String>> features() {
+        return this.features;
+    }
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -275,6 +291,26 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="managePrivilegesTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> managePrivilegesTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Manage Privileges. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> managePrivilegesTrigger() {
+        return Codegen.optional(this.managePrivilegesTrigger);
     }
     /**
      * The details of the database to be registered as a peer target database.

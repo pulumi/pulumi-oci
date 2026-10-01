@@ -79,6 +79,21 @@ public final class GetDrgAttachmentsArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+     * 
+     */
+    @Import(name="drgNatPolicyId")
+    private @Nullable Output<String> drgNatPolicyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+     * 
+     */
+    public Optional<Output<String>> drgNatPolicyId() {
+        return Optional.ofNullable(this.drgNatPolicyId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
      * 
      */
@@ -152,6 +167,7 @@ public final class GetDrgAttachmentsArgs extends com.pulumi.resources.InvokeArgs
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.drgId = $.drgId;
+        this.drgNatPolicyId = $.drgNatPolicyId;
         this.drgRouteTableId = $.drgRouteTableId;
         this.filters = $.filters;
         this.networkId = $.networkId;
@@ -259,6 +275,27 @@ public final class GetDrgAttachmentsArgs extends com.pulumi.resources.InvokeArgs
          */
         public Builder drgId(String drgId) {
             return drgId(Output.of(drgId));
+        }
+
+        /**
+         * @param drgNatPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drgNatPolicyId(@Nullable Output<String> drgNatPolicyId) {
+            $.drgNatPolicyId = drgNatPolicyId;
+            return this;
+        }
+
+        /**
+         * @param drgNatPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drgNatPolicyId(String drgNatPolicyId) {
+            return drgNatPolicyId(Output.of(drgNatPolicyId));
         }
 
         /**

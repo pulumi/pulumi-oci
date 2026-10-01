@@ -68,6 +68,11 @@ public final class GetMaskingReportResult {
      */
     private String state;
     /**
+     * @return The OCID of the subsetting report associated with this masking report
+     * 
+     */
+    private String subsettingReportId;
+    /**
      * @return The OCID of the target database masked.
      * 
      */
@@ -205,6 +210,13 @@ public final class GetMaskingReportResult {
         return this.state;
     }
     /**
+     * @return The OCID of the subsetting report associated with this masking report
+     * 
+     */
+    public String subsettingReportId() {
+        return this.subsettingReportId;
+    }
+    /**
      * @return The OCID of the target database masked.
      * 
      */
@@ -303,6 +315,7 @@ public final class GetMaskingReportResult {
         private String parallelDegree;
         private String recompile;
         private String state;
+        private String subsettingReportId;
         private String targetId;
         private String timeCreated;
         private String timeMaskingFinished;
@@ -329,6 +342,7 @@ public final class GetMaskingReportResult {
     	      this.parallelDegree = defaults.parallelDegree;
     	      this.recompile = defaults.recompile;
     	      this.state = defaults.state;
+    	      this.subsettingReportId = defaults.subsettingReportId;
     	      this.targetId = defaults.targetId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeMaskingFinished = defaults.timeMaskingFinished;
@@ -439,6 +453,14 @@ public final class GetMaskingReportResult {
             return this;
         }
         @CustomType.Setter
+        public Builder subsettingReportId(String subsettingReportId) {
+            if (subsettingReportId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportResult", "subsettingReportId");
+            }
+            this.subsettingReportId = subsettingReportId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             if (targetId == null) {
               throw new MissingRequiredPropertyException("GetMaskingReportResult", "targetId");
@@ -540,6 +562,7 @@ public final class GetMaskingReportResult {
             _resultValue.parallelDegree = parallelDegree;
             _resultValue.recompile = recompile;
             _resultValue.state = state;
+            _resultValue.subsettingReportId = subsettingReportId;
             _resultValue.targetId = targetId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeMaskingFinished = timeMaskingFinished;

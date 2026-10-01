@@ -71,7 +71,7 @@ class CloudAutonomousVmClusterArgs:
                
                This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
         :param pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
@@ -79,7 +79,7 @@ class CloudAutonomousVmClusterArgs:
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
-        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
+        :param pulumi.Input[_builtins.float] sga_percentage: (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[_builtins.str] tde_key_store_type: TDE keystore type
         :param pulumi.Input[_builtins.str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
@@ -342,7 +342,7 @@ class CloudAutonomousVmClusterArgs:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -427,7 +427,7 @@ class CloudAutonomousVmClusterArgs:
     @pulumi.getter(name="sgaPercentage")
     def sga_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
-        Percentage of ECPU memory allocated for SGA(System Global Area).
+        (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         """
         return pulumi.get(self, "sga_percentage")
 
@@ -609,7 +609,7 @@ class _CloudAutonomousVmClusterState:
         :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
         :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
-        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs']]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -629,7 +629,7 @@ class _CloudAutonomousVmClusterState:
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
-        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
+        :param pulumi.Input[_builtins.float] sga_percentage: (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         :param pulumi.Input[_builtins.str] shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param pulumi.Input[_builtins.str] state: The current state of the cloud Autonomous VM cluster.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
@@ -1199,7 +1199,7 @@ class _CloudAutonomousVmClusterState:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -1428,7 +1428,7 @@ class _CloudAutonomousVmClusterState:
     @pulumi.getter(name="sgaPercentage")
     def sga_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
-        Percentage of ECPU memory allocated for SGA(System Global Area).
+        (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         """
         return pulumi.get(self, "sga_percentage")
 
@@ -1732,7 +1732,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                
                This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
         :param pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict', 'outputs.CloudAutonomousVmClusterMaintenanceWindowDetails']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
@@ -1740,7 +1740,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
-        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
+        :param pulumi.Input[_builtins.float] sga_percentage: (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[_builtins.str] tde_key_store_type: TDE keystore type
@@ -2076,7 +2076,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowArgs', 'CloudAutonomousVmClusterMaintenanceWindowArgsDict', 'outputs.CloudAutonomousVmClusterMaintenanceWindow']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
         :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
-        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs', 'CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgsDict', 'outputs.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig']]]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -2096,7 +2096,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
-        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
+        :param pulumi.Input[_builtins.float] sga_percentage: (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         :param pulumi.Input[_builtins.str] shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param pulumi.Input[_builtins.str] state: The current state of the cloud Autonomous VM cluster.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
@@ -2467,7 +2467,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Output[_builtins.int]:
         """
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        (Updatable) The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -2620,7 +2620,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="sgaPercentage")
     def sga_percentage(self) -> pulumi.Output[_builtins.float]:
         """
-        Percentage of ECPU memory allocated for SGA(System Global Area).
+        (Updatable) Percentage of ECPU memory allocated for SGA(System Global Area).
         """
         return pulumi.get(self, "sga_percentage")
 

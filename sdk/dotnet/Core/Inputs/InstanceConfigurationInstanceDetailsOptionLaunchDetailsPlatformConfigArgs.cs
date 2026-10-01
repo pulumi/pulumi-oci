@@ -18,6 +18,18 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("areVirtualInstructionsEnabled")]
         public Input<bool>? AreVirtualInstructionsEnabled { get; set; }
 
+        [Input("configMap")]
+        private InputMap<string>? _configMap;
+
+        /// <summary>
+        /// Instance Platform Configuration Configuration Map for flexible setting input.
+        /// </summary>
+        public InputMap<string> ConfigMap
+        {
+            get => _configMap ?? (_configMap = new InputMap<string>());
+            set => _configMap = value;
+        }
+
         /// <summary>
         /// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         /// </summary>

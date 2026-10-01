@@ -29,6 +29,16 @@ public final class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatch
      */
     private Map<String,String> freeformTags;
     /**
+     * @return Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it&#39;s tag value equals any of the values in the array.
+     * 
+     */
+    private Map<String,List<String>> freeformTagsIn;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,List<String>> systemTags;
+    /**
      * @return The list of target database OCIDs to be included in the target database group.
      * 
      */
@@ -57,6 +67,20 @@ public final class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatch
         return this.freeformTags;
     }
     /**
+     * @return Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it&#39;s tag value equals any of the values in the array.
+     * 
+     */
+    public Map<String,List<String>> freeformTagsIn() {
+        return this.freeformTagsIn;
+    }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,List<String>> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The list of target database OCIDs to be included in the target database group.
      * 
      */
@@ -76,6 +100,8 @@ public final class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatch
         private List<GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaIncludeCompartment> compartments;
         private Map<String,String> definedTags;
         private Map<String,String> freeformTags;
+        private Map<String,List<String>> freeformTagsIn;
+        private Map<String,List<String>> systemTags;
         private List<String> targetDatabaseIds;
         public Builder() {}
         public Builder(GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude defaults) {
@@ -83,6 +109,8 @@ public final class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatch
     	      this.compartments = defaults.compartments;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.freeformTagsIn = defaults.freeformTagsIn;
+    	      this.systemTags = defaults.systemTags;
     	      this.targetDatabaseIds = defaults.targetDatabaseIds;
         }
 
@@ -114,6 +142,22 @@ public final class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatch
             return this;
         }
         @CustomType.Setter
+        public Builder freeformTagsIn(Map<String,List<String>> freeformTagsIn) {
+            if (freeformTagsIn == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude", "freeformTagsIn");
+            }
+            this.freeformTagsIn = freeformTagsIn;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,List<String>> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetDatabaseIds(List<String> targetDatabaseIds) {
             if (targetDatabaseIds == null) {
               throw new MissingRequiredPropertyException("GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatchingCriteriaInclude", "targetDatabaseIds");
@@ -129,6 +173,8 @@ public final class GetTargetDatabaseGroupsTargetDatabaseGroupCollectionItemMatch
             _resultValue.compartments = compartments;
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.freeformTagsIn = freeformTagsIn;
+            _resultValue.systemTags = systemTags;
             _resultValue.targetDatabaseIds = targetDatabaseIds;
             return _resultValue;
         }

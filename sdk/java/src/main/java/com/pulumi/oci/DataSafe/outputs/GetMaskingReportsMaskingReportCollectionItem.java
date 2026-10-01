@@ -67,6 +67,11 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
      */
     private String state;
     /**
+     * @return The OCID of the subsetting report associated with this masking report
+     * 
+     */
+    private String subsettingReportId;
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
@@ -201,6 +206,13 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
         return this.state;
     }
     /**
+     * @return The OCID of the subsetting report associated with this masking report
+     * 
+     */
+    public String subsettingReportId() {
+        return this.subsettingReportId;
+    }
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
@@ -298,6 +310,7 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
         private String parallelDegree;
         private String recompile;
         private String state;
+        private String subsettingReportId;
         private String targetId;
         private String timeCreated;
         private String timeMaskingFinished;
@@ -323,6 +336,7 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
     	      this.parallelDegree = defaults.parallelDegree;
     	      this.recompile = defaults.recompile;
     	      this.state = defaults.state;
+    	      this.subsettingReportId = defaults.subsettingReportId;
     	      this.targetId = defaults.targetId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeMaskingFinished = defaults.timeMaskingFinished;
@@ -422,6 +436,14 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
               throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "state");
             }
             this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder subsettingReportId(String subsettingReportId) {
+            if (subsettingReportId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "subsettingReportId");
+            }
+            this.subsettingReportId = subsettingReportId;
             return this;
         }
         @CustomType.Setter
@@ -525,6 +547,7 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
             _resultValue.parallelDegree = parallelDegree;
             _resultValue.recompile = recompile;
             _resultValue.state = state;
+            _resultValue.subsettingReportId = subsettingReportId;
             _resultValue.targetId = targetId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeMaskingFinished = timeMaskingFinished;

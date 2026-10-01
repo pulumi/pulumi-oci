@@ -26,6 +26,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+        /// </summary>
+        public readonly ImmutableDictionary<string, ImmutableArray<string>> FreeformTagsIn;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, ImmutableArray<string>> SystemTags;
+        /// <summary>
         /// The list of target database OCIDs to be included in the target database group.
         /// </summary>
         public readonly ImmutableArray<string> TargetDatabaseIds;
@@ -38,11 +46,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableDictionary<string, string> freeformTags,
 
+            ImmutableDictionary<string, ImmutableArray<string>> freeformTagsIn,
+
+            ImmutableDictionary<string, ImmutableArray<string>> systemTags,
+
             ImmutableArray<string> targetDatabaseIds)
         {
             Compartments = compartments;
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
+            FreeformTagsIn = freeformTagsIn;
+            SystemTags = systemTags;
             TargetDatabaseIds = targetDatabaseIds;
         }
     }

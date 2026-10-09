@@ -23,6 +23,7 @@ public final class InstanceLaunchOptionsArgs extends com.pulumi.resources.Resour
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     @Import(name="bootVolumeType")
@@ -35,6 +36,7 @@ public final class InstanceLaunchOptionsArgs extends com.pulumi.resources.Resour
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public Optional<Output<String>> bootVolumeType() {
@@ -73,6 +75,21 @@ public final class InstanceLaunchOptionsArgs extends com.pulumi.resources.Resour
      */
     public Optional<Output<Boolean>> isConsistentVolumeNamingEnabled() {
         return Optional.ofNullable(this.isConsistentVolumeNamingEnabled);
+    }
+
+    /**
+     * Specifies whether in-transit encryption is enabled for the data volume&#39;s attachment.
+     * 
+     */
+    @Import(name="isEncryptionInTransitEnabled")
+    private @Nullable Output<Boolean> isEncryptionInTransitEnabled;
+
+    /**
+     * @return Specifies whether in-transit encryption is enabled for the data volume&#39;s attachment.
+     * 
+     */
+    public Optional<Output<Boolean>> isEncryptionInTransitEnabled() {
+        return Optional.ofNullable(this.isEncryptionInTransitEnabled);
     }
 
     /**
@@ -120,6 +137,7 @@ public final class InstanceLaunchOptionsArgs extends com.pulumi.resources.Resour
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     @Import(name="remoteDataVolumeType")
@@ -132,6 +150,7 @@ public final class InstanceLaunchOptionsArgs extends com.pulumi.resources.Resour
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public Optional<Output<String>> remoteDataVolumeType() {
@@ -144,6 +163,7 @@ public final class InstanceLaunchOptionsArgs extends com.pulumi.resources.Resour
         this.bootVolumeType = $.bootVolumeType;
         this.firmware = $.firmware;
         this.isConsistentVolumeNamingEnabled = $.isConsistentVolumeNamingEnabled;
+        this.isEncryptionInTransitEnabled = $.isEncryptionInTransitEnabled;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.networkType = $.networkType;
         this.remoteDataVolumeType = $.remoteDataVolumeType;
@@ -174,6 +194,7 @@ public final class InstanceLaunchOptionsArgs extends com.pulumi.resources.Resour
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 
@@ -190,6 +211,7 @@ public final class InstanceLaunchOptionsArgs extends com.pulumi.resources.Resour
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 
@@ -242,6 +264,27 @@ public final class InstanceLaunchOptionsArgs extends com.pulumi.resources.Resour
          */
         public Builder isConsistentVolumeNamingEnabled(Boolean isConsistentVolumeNamingEnabled) {
             return isConsistentVolumeNamingEnabled(Output.of(isConsistentVolumeNamingEnabled));
+        }
+
+        /**
+         * @param isEncryptionInTransitEnabled Specifies whether in-transit encryption is enabled for the data volume&#39;s attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isEncryptionInTransitEnabled(@Nullable Output<Boolean> isEncryptionInTransitEnabled) {
+            $.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
+            return this;
+        }
+
+        /**
+         * @param isEncryptionInTransitEnabled Specifies whether in-transit encryption is enabled for the data volume&#39;s attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isEncryptionInTransitEnabled(Boolean isEncryptionInTransitEnabled) {
+            return isEncryptionInTransitEnabled(Output.of(isEncryptionInTransitEnabled));
         }
 
         /**
@@ -301,6 +344,7 @@ public final class InstanceLaunchOptionsArgs extends com.pulumi.resources.Resour
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 
@@ -317,6 +361,7 @@ public final class InstanceLaunchOptionsArgs extends com.pulumi.resources.Resour
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 

@@ -101,7 +101,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool IsCrossNumaNode;
         /// <summary>
-        /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        /// Deprecated. Use `isEncryptionInTransitEnabled` instead.
         /// </summary>
         public readonly bool IsPvEncryptionInTransitEnabled;
         /// <summary>

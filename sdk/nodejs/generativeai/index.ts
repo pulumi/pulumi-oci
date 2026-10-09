@@ -130,6 +130,16 @@ export const getAgentTools: typeof import("./getAgentTools").getAgentTools = nul
 export const getAgentToolsOutput: typeof import("./getAgentTools").getAgentToolsOutput = null as any;
 utilities.lazyLoad(exports, ["getAgentTools","getAgentToolsOutput"], () => require("./getAgentTools"));
 
+export { GetApikeyArgs, GetApikeyResult, GetApikeyOutputArgs } from "./getApikey";
+export const getApikey: typeof import("./getApikey").getApikey = null as any;
+export const getApikeyOutput: typeof import("./getApikey").getApikeyOutput = null as any;
+utilities.lazyLoad(exports, ["getApikey","getApikeyOutput"], () => require("./getApikey"));
+
+export { GetApikeysArgs, GetApikeysResult, GetApikeysOutputArgs } from "./getApikeys";
+export const getApikeys: typeof import("./getApikeys").getApikeys = null as any;
+export const getApikeysOutput: typeof import("./getApikeys").getApikeysOutput = null as any;
+utilities.lazyLoad(exports, ["getApikeys","getApikeysOutput"], () => require("./getApikeys"));
+
 export { GetDedicatedAiClusterArgs, GetDedicatedAiClusterResult, GetDedicatedAiClusterOutputArgs } from "./getDedicatedAiCluster";
 export const getDedicatedAiCluster: typeof import("./getDedicatedAiCluster").getDedicatedAiCluster = null as any;
 export const getDedicatedAiClusterOutput: typeof import("./getDedicatedAiCluster").getDedicatedAiClusterOutput = null as any;

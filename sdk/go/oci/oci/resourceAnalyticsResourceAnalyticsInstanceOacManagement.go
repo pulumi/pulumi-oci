@@ -65,7 +65,7 @@ type ResourceAnalyticsResourceAnalyticsInstanceOacManagement struct {
 	EnableOac pulumi.BoolOutput `pulumi:"enableOac"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
 	ResourceAnalyticsInstanceId pulumi.StringOutput `pulumi:"resourceAnalyticsInstanceId"`
-	// The current state of the ResourceAnalyticsInstance.
+	// The current state of the Resource Analytics Instance OAC management operation.
 	State pulumi.StringOutput `pulumi:"state"`
 }
 
@@ -113,7 +113,7 @@ type resourceAnalyticsResourceAnalyticsInstanceOacManagementState struct {
 	EnableOac *bool `pulumi:"enableOac"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
 	ResourceAnalyticsInstanceId *string `pulumi:"resourceAnalyticsInstanceId"`
-	// The current state of the ResourceAnalyticsInstance.
+	// The current state of the Resource Analytics Instance OAC management operation.
 	State *string `pulumi:"state"`
 }
 
@@ -126,7 +126,7 @@ type ResourceAnalyticsResourceAnalyticsInstanceOacManagementState struct {
 	EnableOac pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
 	ResourceAnalyticsInstanceId pulumi.StringPtrInput
-	// The current state of the ResourceAnalyticsInstance.
+	// The current state of the Resource Analytics Instance OAC management operation.
 	State pulumi.StringPtrInput
 }
 
@@ -270,7 +270,7 @@ func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementOutput) ResourceA
 	}).(pulumi.StringOutput)
 }
 
-// The current state of the ResourceAnalyticsInstance.
+// The current state of the Resource Analytics Instance OAC management operation.
 func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

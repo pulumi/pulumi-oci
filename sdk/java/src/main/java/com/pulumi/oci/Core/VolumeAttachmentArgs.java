@@ -18,14 +18,14 @@ public final class VolumeAttachmentArgs extends com.pulumi.resources.ResourceArg
     public static final VolumeAttachmentArgs Empty = new VolumeAttachmentArgs();
 
     /**
-     * The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+     * The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, &#34;nvme&#34; and &#34;serviceDetermined&#34; .
      * 
      */
     @Import(name="attachmentType", required=true)
     private Output<String> attachmentType;
 
     /**
-     * @return The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+     * @return The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, &#34;nvme&#34; and &#34;serviceDetermined&#34; .
      * 
      */
     public Output<String> attachmentType() {
@@ -247,7 +247,7 @@ public final class VolumeAttachmentArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param attachmentType The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+         * @param attachmentType The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, &#34;nvme&#34; and &#34;serviceDetermined&#34; .
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class VolumeAttachmentArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param attachmentType The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+         * @param attachmentType The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, &#34;nvme&#34; and &#34;serviceDetermined&#34; .
          * 
          * @return builder
          * 

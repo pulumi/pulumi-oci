@@ -62,6 +62,165 @@ import * as utilities from "../utilities";
  * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
  * operation.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInstance = new oci.core.Instance("test_instance", {
+ *     availabilityDomain: instanceAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     agentConfig: {
+ *         areAllPluginsDisabled: instanceAgentConfigAreAllPluginsDisabled === "true",
+ *         isManagementDisabled: instanceAgentConfigIsManagementDisabled === "true",
+ *         isMonitoringDisabled: instanceAgentConfigIsMonitoringDisabled === "true",
+ *         pluginsConfigs: [{
+ *             desiredState: instanceAgentConfigPluginsConfigDesiredState,
+ *             name: instanceAgentConfigPluginsConfigName,
+ *         }],
+ *     },
+ *     availabilityConfig: {
+ *         isLiveMigrationPreferred: instanceAvailabilityConfigIsLiveMigrationPreferred === "true",
+ *         recoveryAction: instanceAvailabilityConfigRecoveryAction,
+ *     },
+ *     clusterPlacementGroupId: testGroup.id,
+ *     computeClusterId: testComputeCluster.id,
+ *     computeHostGroupId: testComputeHostGroup.id,
+ *     createVnicDetails: {
+ *         assignIpv6ip: instanceCreateVnicDetailsAssignIpv6ip === "true",
+ *         assignPrivateDnsRecord: instanceCreateVnicDetailsAssignPrivateDnsRecord === "true",
+ *         assignPublicIp: instanceCreateVnicDetailsAssignPublicIp,
+ *         definedTags: {
+ *             "Operations.CostCenter": "42",
+ *         },
+ *         displayName: instanceCreateVnicDetailsDisplayName,
+ *         freeformTags: {
+ *             Department: "Finance",
+ *         },
+ *         hostnameLabel: instanceCreateVnicDetailsHostnameLabel,
+ *         ipv6addressIpv6subnetCidrPairDetails: [{
+ *             ipv6address: instanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+ *             ipv6id: testIpv6.id,
+ *             ipv6subnetCidr: instanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
+ *         }],
+ *         nsgIds: instanceCreateVnicDetailsNsgIds,
+ *         privateIp: instanceCreateVnicDetailsPrivateIp,
+ *         privateIpId: testPrivateIp.id,
+ *         securityAttributes: instanceCreateVnicDetailsSecurityAttributes,
+ *         skipSourceDestCheck: instanceCreateVnicDetailsSkipSourceDestCheck === "true",
+ *         subnetCidr: instanceCreateVnicDetailsSubnetCidr,
+ *         subnetId: testSubnet.id,
+ *         vlanId: testVlan.id,
+ *     },
+ *     dedicatedVmHostId: testDedicatedVmHost.id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: instanceDisplayName,
+ *     extendedMetadata: {
+ *         some_string: "stringA",
+ *         nested_object: "{\"some_string\": \"stringB\", \"object\": {\"some_string\": \"stringC\"}}",
+ *     },
+ *     faultDomain: instanceFaultDomain,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     hostnameLabel: instanceHostnameLabel,
+ *     instanceConfigurationId: testInstanceConfiguration.id,
+ *     instanceOptions: {
+ *         areLegacyImdsEndpointsDisabled: instanceInstanceOptionsAreLegacyImdsEndpointsDisabled === "true",
+ *     },
+ *     ipxeScript: instanceIpxeScript,
+ *     isAiEnterpriseEnabled: instanceIsAiEnterpriseEnabled === "true",
+ *     isPvEncryptionInTransitEnabled: instanceIsPvEncryptionInTransitEnabled === "true",
+ *     launchOptions: {
+ *         bootVolumeType: instanceLaunchOptionsBootVolumeType,
+ *         firmware: instanceLaunchOptionsFirmware,
+ *         isConsistentVolumeNamingEnabled: instanceLaunchOptionsIsConsistentVolumeNamingEnabled === "true",
+ *         isEncryptionInTransitEnabled: instanceLaunchOptionsIsEncryptionInTransitEnabled === "true",
+ *         isPvEncryptionInTransitEnabled: instanceLaunchOptionsIsPvEncryptionInTransitEnabled === "true",
+ *         networkType: instanceLaunchOptionsNetworkType,
+ *         remoteDataVolumeType: instanceLaunchOptionsRemoteDataVolumeType,
+ *     },
+ *     launchVolumeAttachments: [{
+ *         type: instanceLaunchVolumeAttachmentsType,
+ *         device: instanceLaunchVolumeAttachmentsDevice,
+ *         displayName: instanceLaunchVolumeAttachmentsDisplayName,
+ *         encryptionInTransitType: instanceLaunchVolumeAttachmentsEncryptionInTransitType,
+ *         isAgentAutoIscsiLoginEnabled: instanceLaunchVolumeAttachmentsIsAgentAutoIscsiLoginEnabled === "true",
+ *         isPvEncryptionInTransitEnabled: instanceLaunchVolumeAttachmentsIsPvEncryptionInTransitEnabled === "true",
+ *         isReadOnly: instanceLaunchVolumeAttachmentsIsReadOnly === "true",
+ *         isShareable: instanceLaunchVolumeAttachmentsIsShareable === "true",
+ *         launchCreateVolumeDetails: {
+ *             sizeInGbs: instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsSizeInGbs,
+ *             volumeCreationType: instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsVolumeCreationType,
+ *             compartmentId: compartmentId,
+ *             displayName: instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsDisplayName,
+ *             kmsKeyId: testKey.id,
+ *             vpusPerGb: instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsVpusPerGb,
+ *         },
+ *         useChap: instanceLaunchVolumeAttachmentsUseChap === "true",
+ *         volumeId: testVolume.id,
+ *     }],
+ *     licensingConfigs: {
+ *         type: instanceLicensingConfigsType,
+ *         licenseType: instanceLicensingConfigsLicenseType,
+ *     },
+ *     metadata: instanceMetadata,
+ *     placementConstraintDetails: {
+ *         type: instancePlacementConstraintDetailsType,
+ *         computeBareMetalHostId: testComputeBareMetalHost.id,
+ *         computeHostGroupId: testGroup.id,
+ *     },
+ *     platformConfig: {
+ *         type: instancePlatformConfigType,
+ *         areVirtualInstructionsEnabled: instancePlatformConfigAreVirtualInstructionsEnabled === "true",
+ *         configMap: instancePlatformConfigConfigMap,
+ *         isAccessControlServiceEnabled: instancePlatformConfigIsAccessControlServiceEnabled === "true",
+ *         isInputOutputMemoryManagementUnitEnabled: instancePlatformConfigIsInputOutputMemoryManagementUnitEnabled === "true",
+ *         isMeasuredBootEnabled: instancePlatformConfigIsMeasuredBootEnabled === "true",
+ *         isMemoryEncryptionEnabled: instancePlatformConfigIsMemoryEncryptionEnabled === "true",
+ *         isSecureBootEnabled: instancePlatformConfigIsSecureBootEnabled === "true",
+ *         isSymmetricMultiThreadingEnabled: instancePlatformConfigIsSymmetricMultiThreadingEnabled === "true",
+ *         isTrustedPlatformModuleEnabled: instancePlatformConfigIsTrustedPlatformModuleEnabled === "true",
+ *         numaNodesPerSocket: instancePlatformConfigNumaNodesPerSocket,
+ *         percentageOfCoresEnabled: Number(instancePlatformConfigPercentageOfCoresEnabled),
+ *     },
+ *     preemptibleInstanceConfig: {
+ *         preemptionAction: {
+ *             type: instancePreemptibleInstanceConfigPreemptionActionType,
+ *             preserveBootVolume: instancePreemptibleInstanceConfigPreemptionActionPreserveBootVolume === "true",
+ *         },
+ *     },
+ *     securityAttributes: instanceSecurityAttributes,
+ *     shape: instanceShape,
+ *     shapeConfig: {
+ *         baselineOcpuUtilization: instanceShapeConfigBaselineOcpuUtilization,
+ *         localVolumeSizeInGbs: Number(instanceShapeConfigLocalVolumeSizeInGbs),
+ *         memoryInGbs: instanceShapeConfigMemoryInGbs,
+ *         nvmes: Number(instanceShapeConfigNvmes),
+ *         ocpus: instanceShapeConfigOcpus,
+ *         resourceManagement: instanceShapeConfigResourceManagement,
+ *         vcpus: Number(instanceShapeConfigVcpus),
+ *     },
+ *     sourceDetails: {
+ *         sourceId: testImage.id,
+ *         sourceType: "image",
+ *         bootVolumeSizeInGbs: instanceSourceDetailsBootVolumeSizeInGbs,
+ *         bootVolumeVpusPerGb: instanceSourceDetailsBootVolumeVpusPerGb,
+ *         instanceSourceImageFilterDetails: {
+ *             compartmentId: compartmentId,
+ *             definedTagsFilter: instanceSourceDetailsInstanceSourceImageFilterDetailsDefinedTagsFilter,
+ *             operatingSystem: instanceSourceDetailsInstanceSourceImageFilterDetailsOperatingSystem,
+ *             operatingSystemVersion: instanceSourceDetailsInstanceSourceImageFilterDetailsOperatingSystemVersion,
+ *         },
+ *         kmsKeyId: testKey.id,
+ *     },
+ *     preserveBootVolume: false,
+ * });
+ * ```
+ *
  * ## Import
  *
  * Instances can be imported using the `id`, e.g.

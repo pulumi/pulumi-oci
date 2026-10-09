@@ -20,14 +20,14 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
     public static final VolumeAttachmentState Empty = new VolumeAttachmentState();
 
     /**
-     * The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+     * The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, &#34;nvme&#34; and &#34;serviceDetermined&#34; .
      * 
      */
     @Import(name="attachmentType")
     private @Nullable Output<String> attachmentType;
 
     /**
-     * @return The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+     * @return The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, &#34;nvme&#34; and &#34;serviceDetermined&#34; .
      * 
      */
     public Optional<Output<String>> attachmentType() {
@@ -220,6 +220,21 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<Boolean>> isAgentAutoIscsiLoginEnabled() {
         return Optional.ofNullable(this.isAgentAutoIscsiLoginEnabled);
+    }
+
+    /**
+     * Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+     * 
+     */
+    @Import(name="isEncryptionInTransitEnabled")
+    private @Nullable Output<Boolean> isEncryptionInTransitEnabled;
+
+    /**
+     * @return Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+     * 
+     */
+    public Optional<Output<Boolean>> isEncryptionInTransitEnabled() {
+        return Optional.ofNullable(this.isEncryptionInTransitEnabled);
     }
 
     /**
@@ -424,6 +439,7 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
         this.ipv6 = $.ipv6;
         this.iqn = $.iqn;
         this.isAgentAutoIscsiLoginEnabled = $.isAgentAutoIscsiLoginEnabled;
+        this.isEncryptionInTransitEnabled = $.isEncryptionInTransitEnabled;
         this.isMultipath = $.isMultipath;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.isReadOnly = $.isReadOnly;
@@ -457,7 +473,7 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param attachmentType The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+         * @param attachmentType The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, &#34;nvme&#34; and &#34;serviceDetermined&#34; .
          * 
          * @return builder
          * 
@@ -468,7 +484,7 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param attachmentType The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+         * @param attachmentType The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, &#34;nvme&#34; and &#34;serviceDetermined&#34; .
          * 
          * @return builder
          * 
@@ -735,6 +751,27 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
          */
         public Builder isAgentAutoIscsiLoginEnabled(Boolean isAgentAutoIscsiLoginEnabled) {
             return isAgentAutoIscsiLoginEnabled(Output.of(isAgentAutoIscsiLoginEnabled));
+        }
+
+        /**
+         * @param isEncryptionInTransitEnabled Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isEncryptionInTransitEnabled(@Nullable Output<Boolean> isEncryptionInTransitEnabled) {
+            $.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
+            return this;
+        }
+
+        /**
+         * @param isEncryptionInTransitEnabled Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isEncryptionInTransitEnabled(Boolean isEncryptionInTransitEnabled) {
+            return isEncryptionInTransitEnabled(Output.of(isEncryptionInTransitEnabled));
         }
 
         /**

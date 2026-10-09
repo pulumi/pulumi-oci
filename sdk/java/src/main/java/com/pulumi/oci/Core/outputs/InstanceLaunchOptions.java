@@ -19,6 +19,7 @@ public final class InstanceLaunchOptions {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     private @Nullable String bootVolumeType;
@@ -34,6 +35,11 @@ public final class InstanceLaunchOptions {
      * 
      */
     private @Nullable Boolean isConsistentVolumeNamingEnabled;
+    /**
+     * @return Specifies whether in-transit encryption is enabled for the data volume&#39;s attachment.
+     * 
+     */
+    private @Nullable Boolean isEncryptionInTransitEnabled;
     /**
      * @return (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
      * 
@@ -55,6 +61,7 @@ public final class InstanceLaunchOptions {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     private @Nullable String remoteDataVolumeType;
@@ -67,6 +74,7 @@ public final class InstanceLaunchOptions {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public Optional<String> bootVolumeType() {
@@ -87,6 +95,13 @@ public final class InstanceLaunchOptions {
      */
     public Optional<Boolean> isConsistentVolumeNamingEnabled() {
         return Optional.ofNullable(this.isConsistentVolumeNamingEnabled);
+    }
+    /**
+     * @return Specifies whether in-transit encryption is enabled for the data volume&#39;s attachment.
+     * 
+     */
+    public Optional<Boolean> isEncryptionInTransitEnabled() {
+        return Optional.ofNullable(this.isEncryptionInTransitEnabled);
     }
     /**
      * @return (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
@@ -113,6 +128,7 @@ public final class InstanceLaunchOptions {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public Optional<String> remoteDataVolumeType() {
@@ -131,6 +147,7 @@ public final class InstanceLaunchOptions {
         private @Nullable String bootVolumeType;
         private @Nullable String firmware;
         private @Nullable Boolean isConsistentVolumeNamingEnabled;
+        private @Nullable Boolean isEncryptionInTransitEnabled;
         private @Nullable Boolean isPvEncryptionInTransitEnabled;
         private @Nullable String networkType;
         private @Nullable String remoteDataVolumeType;
@@ -140,6 +157,7 @@ public final class InstanceLaunchOptions {
     	      this.bootVolumeType = defaults.bootVolumeType;
     	      this.firmware = defaults.firmware;
     	      this.isConsistentVolumeNamingEnabled = defaults.isConsistentVolumeNamingEnabled;
+    	      this.isEncryptionInTransitEnabled = defaults.isEncryptionInTransitEnabled;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.networkType = defaults.networkType;
     	      this.remoteDataVolumeType = defaults.remoteDataVolumeType;
@@ -161,6 +179,12 @@ public final class InstanceLaunchOptions {
         public Builder isConsistentVolumeNamingEnabled(@Nullable Boolean isConsistentVolumeNamingEnabled) {
 
             this.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isEncryptionInTransitEnabled(@Nullable Boolean isEncryptionInTransitEnabled) {
+
+            this.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
@@ -186,6 +210,7 @@ public final class InstanceLaunchOptions {
             _resultValue.bootVolumeType = bootVolumeType;
             _resultValue.firmware = firmware;
             _resultValue.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
+            _resultValue.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.networkType = networkType;
             _resultValue.remoteDataVolumeType = remoteDataVolumeType;

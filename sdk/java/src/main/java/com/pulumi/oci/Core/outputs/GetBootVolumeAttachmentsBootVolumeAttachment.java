@@ -32,7 +32,7 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
      */
     private String displayName;
     /**
-     * @return Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     private String encryptionInTransitType;
@@ -47,7 +47,12 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
      */
     private String instanceId;
     /**
-     * @return Whether in-transit encryption for the boot volume&#39;s paravirtualized attachment is enabled or not.
+     * @return Specifies whether in-transit encryption is enabled for the boot volume&#39;s attachment.
+     * 
+     */
+    private Boolean isEncryptionInTransitEnabled;
+    /**
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     private Boolean isPvEncryptionInTransitEnabled;
@@ -97,7 +102,7 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
         return this.displayName;
     }
     /**
-     * @return Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     public String encryptionInTransitType() {
@@ -118,7 +123,14 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
         return this.instanceId;
     }
     /**
-     * @return Whether in-transit encryption for the boot volume&#39;s paravirtualized attachment is enabled or not.
+     * @return Specifies whether in-transit encryption is enabled for the boot volume&#39;s attachment.
+     * 
+     */
+    public Boolean isEncryptionInTransitEnabled() {
+        return this.isEncryptionInTransitEnabled;
+    }
+    /**
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     public Boolean isPvEncryptionInTransitEnabled() {
@@ -162,6 +174,7 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
         private String encryptionInTransitType;
         private String id;
         private String instanceId;
+        private Boolean isEncryptionInTransitEnabled;
         private Boolean isPvEncryptionInTransitEnabled;
         private String state;
         private String timeCreated;
@@ -176,6 +189,7 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
     	      this.encryptionInTransitType = defaults.encryptionInTransitType;
     	      this.id = defaults.id;
     	      this.instanceId = defaults.instanceId;
+    	      this.isEncryptionInTransitEnabled = defaults.isEncryptionInTransitEnabled;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -239,6 +253,14 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
             return this;
         }
         @CustomType.Setter
+        public Builder isEncryptionInTransitEnabled(Boolean isEncryptionInTransitEnabled) {
+            if (isEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "isEncryptionInTransitEnabled");
+            }
+            this.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             if (isPvEncryptionInTransitEnabled == null) {
               throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "isPvEncryptionInTransitEnabled");
@@ -279,6 +301,7 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
             _resultValue.encryptionInTransitType = encryptionInTransitType;
             _resultValue.id = id;
             _resultValue.instanceId = instanceId;
+            _resultValue.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

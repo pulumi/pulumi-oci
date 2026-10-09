@@ -39,7 +39,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDe
      */
     private @Nullable Boolean isShareable;
     /**
-     * @return The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+     * @return The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, and &#34;nvme&#34;.
      * 
      */
     private String type;
@@ -86,7 +86,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDe
         return Optional.ofNullable(this.isShareable);
     }
     /**
-     * @return The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+     * @return The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, and &#34;nvme&#34;.
      * 
      */
     public String type() {

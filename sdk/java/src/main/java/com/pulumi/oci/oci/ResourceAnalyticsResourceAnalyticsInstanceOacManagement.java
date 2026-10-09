@@ -128,14 +128,14 @@ public class ResourceAnalyticsResourceAnalyticsInstanceOacManagement extends com
         return this.resourceAnalyticsInstanceId;
     }
     /**
-     * The current state of the ResourceAnalyticsInstance.
+     * The current state of the Resource Analytics Instance OAC management operation.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the ResourceAnalyticsInstance.
+     * @return The current state of the Resource Analytics Instance OAC management operation.
      * 
      */
     public Output<String> state() {

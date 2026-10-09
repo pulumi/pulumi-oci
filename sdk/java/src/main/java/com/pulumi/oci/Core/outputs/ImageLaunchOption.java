@@ -19,6 +19,7 @@ public final class ImageLaunchOption {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     private @Nullable String bootVolumeType;
@@ -35,7 +36,7 @@ public final class ImageLaunchOption {
      */
     private @Nullable Boolean isConsistentVolumeNamingEnabled;
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     private @Nullable Boolean isPvEncryptionInTransitEnabled;
@@ -55,6 +56,7 @@ public final class ImageLaunchOption {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     private @Nullable String remoteDataVolumeType;
@@ -67,6 +69,7 @@ public final class ImageLaunchOption {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public Optional<String> bootVolumeType() {
@@ -89,7 +92,7 @@ public final class ImageLaunchOption {
         return Optional.ofNullable(this.isConsistentVolumeNamingEnabled);
     }
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     public Optional<Boolean> isPvEncryptionInTransitEnabled() {
@@ -113,6 +116,7 @@ public final class ImageLaunchOption {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public Optional<String> remoteDataVolumeType() {

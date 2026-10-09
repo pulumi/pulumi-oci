@@ -65,7 +65,7 @@ import (
 type VolumeAttachment struct {
 	pulumi.CustomResourceState
 
-	// The type of volume. The only supported values are "iscsi" and "paravirtualized".
+	// The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "serviceDetermined" .
 	AttachmentType pulumi.StringOutput `pulumi:"attachmentType"`
 	// The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
@@ -93,6 +93,8 @@ type VolumeAttachment struct {
 	Iqn pulumi.StringOutput `pulumi:"iqn"`
 	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
 	IsAgentAutoIscsiLoginEnabled pulumi.BoolOutput `pulumi:"isAgentAutoIscsiLoginEnabled"`
+	// Whether in-transit encryption for the data volume's attachment is enabled or not.
+	IsEncryptionInTransitEnabled pulumi.BoolOutput `pulumi:"isEncryptionInTransitEnabled"`
 	// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
 	IsMultipath pulumi.BoolOutput `pulumi:"isMultipath"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
@@ -161,7 +163,7 @@ func GetVolumeAttachment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VolumeAttachment resources.
 type volumeAttachmentState struct {
-	// The type of volume. The only supported values are "iscsi" and "paravirtualized".
+	// The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "serviceDetermined" .
 	AttachmentType *string `pulumi:"attachmentType"`
 	// The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
@@ -189,6 +191,8 @@ type volumeAttachmentState struct {
 	Iqn *string `pulumi:"iqn"`
 	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
 	IsAgentAutoIscsiLoginEnabled *bool `pulumi:"isAgentAutoIscsiLoginEnabled"`
+	// Whether in-transit encryption for the data volume's attachment is enabled or not.
+	IsEncryptionInTransitEnabled *bool `pulumi:"isEncryptionInTransitEnabled"`
 	// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
 	IsMultipath *bool `pulumi:"isMultipath"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
@@ -219,7 +223,7 @@ type volumeAttachmentState struct {
 }
 
 type VolumeAttachmentState struct {
-	// The type of volume. The only supported values are "iscsi" and "paravirtualized".
+	// The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "serviceDetermined" .
 	AttachmentType pulumi.StringPtrInput
 	// The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
@@ -247,6 +251,8 @@ type VolumeAttachmentState struct {
 	Iqn pulumi.StringPtrInput
 	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
 	IsAgentAutoIscsiLoginEnabled pulumi.BoolPtrInput
+	// Whether in-transit encryption for the data volume's attachment is enabled or not.
+	IsEncryptionInTransitEnabled pulumi.BoolPtrInput
 	// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
 	IsMultipath pulumi.BoolPtrInput
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
@@ -281,7 +287,7 @@ func (VolumeAttachmentState) ElementType() reflect.Type {
 }
 
 type volumeAttachmentArgs struct {
-	// The type of volume. The only supported values are "iscsi" and "paravirtualized".
+	// The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "serviceDetermined" .
 	AttachmentType string `pulumi:"attachmentType"`
 	// The OCID of the compartment.
 	//
@@ -314,7 +320,7 @@ type volumeAttachmentArgs struct {
 
 // The set of arguments for constructing a VolumeAttachment resource.
 type VolumeAttachmentArgs struct {
-	// The type of volume. The only supported values are "iscsi" and "paravirtualized".
+	// The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "serviceDetermined" .
 	AttachmentType pulumi.StringInput
 	// The OCID of the compartment.
 	//
@@ -432,7 +438,7 @@ func (o VolumeAttachmentOutput) ToVolumeAttachmentOutputWithContext(ctx context.
 	return o
 }
 
-// The type of volume. The only supported values are "iscsi" and "paravirtualized".
+// The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "serviceDetermined" .
 func (o VolumeAttachmentOutput) AttachmentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.AttachmentType }).(pulumi.StringOutput)
 }
@@ -497,6 +503,11 @@ func (o VolumeAttachmentOutput) Iqn() pulumi.StringOutput {
 // Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
 func (o VolumeAttachmentOutput) IsAgentAutoIscsiLoginEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolOutput { return v.IsAgentAutoIscsiLoginEnabled }).(pulumi.BoolOutput)
+}
+
+// Whether in-transit encryption for the data volume's attachment is enabled or not.
+func (o VolumeAttachmentOutput) IsEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolOutput { return v.IsEncryptionInTransitEnabled }).(pulumi.BoolOutput)
 }
 
 // Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.

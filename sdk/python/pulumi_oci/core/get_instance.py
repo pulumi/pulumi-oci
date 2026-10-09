@@ -373,7 +373,7 @@ class GetInstanceResult:
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 

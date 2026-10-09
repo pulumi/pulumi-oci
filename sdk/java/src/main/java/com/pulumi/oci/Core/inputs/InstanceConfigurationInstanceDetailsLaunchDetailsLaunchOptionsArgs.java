@@ -23,6 +23,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     @Import(name="bootVolumeType")
@@ -35,6 +36,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public Optional<Output<String>> bootVolumeType() {
@@ -76,14 +78,29 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
     }
 
     /**
-     * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+     * Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+     * 
+     */
+    @Import(name="isEncryptionInTransitEnabled")
+    private @Nullable Output<Boolean> isEncryptionInTransitEnabled;
+
+    /**
+     * @return Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+     * 
+     */
+    public Optional<Output<Boolean>> isEncryptionInTransitEnabled() {
+        return Optional.ofNullable(this.isEncryptionInTransitEnabled);
+    }
+
+    /**
+     * Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     @Import(name="isPvEncryptionInTransitEnabled")
     private @Nullable Output<Boolean> isPvEncryptionInTransitEnabled;
 
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     public Optional<Output<Boolean>> isPvEncryptionInTransitEnabled() {
@@ -118,6 +135,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     @Import(name="remoteDataVolumeType")
@@ -130,6 +148,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public Optional<Output<String>> remoteDataVolumeType() {
@@ -142,6 +161,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
         this.bootVolumeType = $.bootVolumeType;
         this.firmware = $.firmware;
         this.isConsistentVolumeNamingEnabled = $.isConsistentVolumeNamingEnabled;
+        this.isEncryptionInTransitEnabled = $.isEncryptionInTransitEnabled;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.networkType = $.networkType;
         this.remoteDataVolumeType = $.remoteDataVolumeType;
@@ -172,6 +192,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 
@@ -188,6 +209,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 
@@ -243,7 +265,28 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * @param isEncryptionInTransitEnabled Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isEncryptionInTransitEnabled(@Nullable Output<Boolean> isEncryptionInTransitEnabled) {
+            $.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
+            return this;
+        }
+
+        /**
+         * @param isEncryptionInTransitEnabled Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isEncryptionInTransitEnabled(Boolean isEncryptionInTransitEnabled) {
+            return isEncryptionInTransitEnabled(Output.of(isEncryptionInTransitEnabled));
+        }
+
+        /**
+         * @param isPvEncryptionInTransitEnabled Deprecated. Use `isEncryptionInTransitEnabled` instead.
          * 
          * @return builder
          * 
@@ -254,7 +297,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * @param isPvEncryptionInTransitEnabled Deprecated. Use `isEncryptionInTransitEnabled` instead.
          * 
          * @return builder
          * 
@@ -297,6 +340,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 
@@ -313,6 +357,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOption
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 

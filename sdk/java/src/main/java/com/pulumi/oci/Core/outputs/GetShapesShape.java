@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetShapesShapeBsNvmeAttachmentsConfig;
 import com.pulumi.oci.Core.outputs.GetShapesShapeMaxVnicAttachmentOption;
 import com.pulumi.oci.Core.outputs.GetShapesShapeMemoryOption;
 import com.pulumi.oci.Core.outputs.GetShapesShapeNetworkingBandwidthOption;
@@ -30,6 +31,11 @@ public final class GetShapesShape {
      * 
      */
     private String billingType;
+    /**
+     * @return Shape-specific details for shapes that support remote NVMe volume attachments.
+     * 
+     */
+    private List<GetShapesShapeBsNvmeAttachmentsConfig> bsNvmeAttachmentsConfigs;
     /**
      * @return A short description of the graphics processing unit (GPU) available for this shape.
      * 
@@ -190,6 +196,13 @@ public final class GetShapesShape {
      */
     public String billingType() {
         return this.billingType;
+    }
+    /**
+     * @return Shape-specific details for shapes that support remote NVMe volume attachments.
+     * 
+     */
+    public List<GetShapesShapeBsNvmeAttachmentsConfig> bsNvmeAttachmentsConfigs() {
+        return this.bsNvmeAttachmentsConfigs;
     }
     /**
      * @return A short description of the graphics processing unit (GPU) available for this shape.
@@ -406,6 +419,7 @@ public final class GetShapesShape {
     public static final class Builder {
         private List<String> baselineOcpuUtilizations;
         private String billingType;
+        private List<GetShapesShapeBsNvmeAttachmentsConfig> bsNvmeAttachmentsConfigs;
         private String gpuDescription;
         private Integer gpus;
         private Boolean isBilledForStoppedInstance;
@@ -440,6 +454,7 @@ public final class GetShapesShape {
     	      Objects.requireNonNull(defaults);
     	      this.baselineOcpuUtilizations = defaults.baselineOcpuUtilizations;
     	      this.billingType = defaults.billingType;
+    	      this.bsNvmeAttachmentsConfigs = defaults.bsNvmeAttachmentsConfigs;
     	      this.gpuDescription = defaults.gpuDescription;
     	      this.gpus = defaults.gpus;
     	      this.isBilledForStoppedInstance = defaults.isBilledForStoppedInstance;
@@ -489,6 +504,17 @@ public final class GetShapesShape {
             }
             this.billingType = billingType;
             return this;
+        }
+        @CustomType.Setter
+        public Builder bsNvmeAttachmentsConfigs(List<GetShapesShapeBsNvmeAttachmentsConfig> bsNvmeAttachmentsConfigs) {
+            if (bsNvmeAttachmentsConfigs == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "bsNvmeAttachmentsConfigs");
+            }
+            this.bsNvmeAttachmentsConfigs = bsNvmeAttachmentsConfigs;
+            return this;
+        }
+        public Builder bsNvmeAttachmentsConfigs(GetShapesShapeBsNvmeAttachmentsConfig... bsNvmeAttachmentsConfigs) {
+            return bsNvmeAttachmentsConfigs(List.of(bsNvmeAttachmentsConfigs));
         }
         @CustomType.Setter
         public Builder gpuDescription(String gpuDescription) {
@@ -753,6 +779,7 @@ public final class GetShapesShape {
             final var _resultValue = new GetShapesShape();
             _resultValue.baselineOcpuUtilizations = baselineOcpuUtilizations;
             _resultValue.billingType = billingType;
+            _resultValue.bsNvmeAttachmentsConfigs = bsNvmeAttachmentsConfigs;
             _resultValue.gpuDescription = gpuDescription;
             _resultValue.gpus = gpus;
             _resultValue.isBilledForStoppedInstance = isBilledForStoppedInstance;

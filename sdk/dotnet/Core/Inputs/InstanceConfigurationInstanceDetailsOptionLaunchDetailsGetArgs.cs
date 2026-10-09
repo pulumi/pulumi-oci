@@ -133,7 +133,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? IsAiEnterpriseEnabled { get; set; }
 
         /// <summary>
-        /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        /// Deprecated. Use `isEncryptionInTransitEnabled` instead.
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]
         public Input<bool>? IsPvEncryptionInTransitEnabled { get; set; }

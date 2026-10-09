@@ -225,6 +225,18 @@ import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogInternalAdminProductArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogInternalAdminProductPlainArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogInternalAdminProductsArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogInternalAdminProductsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogInternalProductArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogInternalProductPlainArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogInternalProductsArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogInternalProductsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogProductArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogProductPlainArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogProductsArgs;
+import com.pulumi.oci.oci.inputs.GetProductCatalogProductsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessArgs;
 import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessPlainArgs;
 import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
@@ -373,6 +385,12 @@ import com.pulumi.oci.oci.outputs.GetMulticloudOmHubMultiCloudsMetadataResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudOmHubMulticloudResourcesResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudResourceAnchorResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudResourceAnchorsResult;
+import com.pulumi.oci.oci.outputs.GetProductCatalogInternalAdminProductResult;
+import com.pulumi.oci.oci.outputs.GetProductCatalogInternalAdminProductsResult;
+import com.pulumi.oci.oci.outputs.GetProductCatalogInternalProductResult;
+import com.pulumi.oci.oci.outputs.GetProductCatalogInternalProductsResult;
+import com.pulumi.oci.oci.outputs.GetProductCatalogProductResult;
+import com.pulumi.oci.oci.outputs.GetProductCatalogProductsResult;
 import com.pulumi.oci.oci.outputs.GetPsaPrivateServiceAccessResult;
 import com.pulumi.oci.oci.outputs.GetPsaPrivateServiceAccessesResult;
 import com.pulumi.oci.oci.outputs.GetPsaPsaServicesResult;
@@ -26244,6 +26262,687 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetMulticloudResourceAnchorsResult> getMulticloudResourceAnchorsPlain(GetMulticloudResourceAnchorsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudResourceAnchors:getMulticloudResourceAnchors", TypeShape.of(GetMulticloudResourceAnchorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Admin Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get the product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogInternalAdminProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalAdminProduct = OciFunctions.getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs.builder()
+     *             .productId(testProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProductCatalogInternalAdminProductResult> getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs args) {
+        return getProductCatalogInternalAdminProduct(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Internal Admin Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get the product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogInternalAdminProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalAdminProduct = OciFunctions.getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs.builder()
+     *             .productId(testProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetProductCatalogInternalAdminProductResult> getProductCatalogInternalAdminProductPlain(GetProductCatalogInternalAdminProductPlainArgs args) {
+        return getProductCatalogInternalAdminProductPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Internal Admin Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get the product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogInternalAdminProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalAdminProduct = OciFunctions.getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs.builder()
+     *             .productId(testProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProductCatalogInternalAdminProductResult> getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogInternalAdminProduct:getProductCatalogInternalAdminProduct", TypeShape.of(GetProductCatalogInternalAdminProductResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Admin Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get the product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogInternalAdminProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalAdminProduct = OciFunctions.getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs.builder()
+     *             .productId(testProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProductCatalogInternalAdminProductResult> getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogInternalAdminProduct:getProductCatalogInternalAdminProduct", TypeShape.of(GetProductCatalogInternalAdminProductResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Admin Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get the product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogInternalAdminProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalAdminProduct = OciFunctions.getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs.builder()
+     *             .productId(testProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetProductCatalogInternalAdminProductResult> getProductCatalogInternalAdminProductPlain(GetProductCatalogInternalAdminProductPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getProductCatalogInternalAdminProduct:getProductCatalogInternalAdminProduct", TypeShape.of(GetProductCatalogInternalAdminProductResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetProductCatalogInternalAdminProductsResult> getProductCatalogInternalAdminProducts(GetProductCatalogInternalAdminProductsArgs args) {
+        return getProductCatalogInternalAdminProducts(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetProductCatalogInternalAdminProductsResult> getProductCatalogInternalAdminProductsPlain(GetProductCatalogInternalAdminProductsPlainArgs args) {
+        return getProductCatalogInternalAdminProductsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetProductCatalogInternalAdminProductsResult> getProductCatalogInternalAdminProducts(GetProductCatalogInternalAdminProductsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogInternalAdminProducts:getProductCatalogInternalAdminProducts", TypeShape.of(GetProductCatalogInternalAdminProductsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetProductCatalogInternalAdminProductsResult> getProductCatalogInternalAdminProducts(GetProductCatalogInternalAdminProductsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogInternalAdminProducts:getProductCatalogInternalAdminProducts", TypeShape.of(GetProductCatalogInternalAdminProductsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetProductCatalogInternalAdminProductsResult> getProductCatalogInternalAdminProductsPlain(GetProductCatalogInternalAdminProductsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getProductCatalogInternalAdminProducts:getProductCatalogInternalAdminProducts", TypeShape.of(GetProductCatalogInternalAdminProductsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get the product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogInternalProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalProduct = OciFunctions.getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs.builder()
+     *             .productId(testProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProductCatalogInternalProductResult> getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs args) {
+        return getProductCatalogInternalProduct(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Internal Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get the product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogInternalProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalProduct = OciFunctions.getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs.builder()
+     *             .productId(testProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetProductCatalogInternalProductResult> getProductCatalogInternalProductPlain(GetProductCatalogInternalProductPlainArgs args) {
+        return getProductCatalogInternalProductPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Internal Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get the product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogInternalProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalProduct = OciFunctions.getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs.builder()
+     *             .productId(testProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProductCatalogInternalProductResult> getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogInternalProduct:getProductCatalogInternalProduct", TypeShape.of(GetProductCatalogInternalProductResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get the product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogInternalProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalProduct = OciFunctions.getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs.builder()
+     *             .productId(testProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProductCatalogInternalProductResult> getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogInternalProduct:getProductCatalogInternalProduct", TypeShape.of(GetProductCatalogInternalProductResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get the product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogInternalProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalProduct = OciFunctions.getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs.builder()
+     *             .productId(testProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetProductCatalogInternalProductResult> getProductCatalogInternalProductPlain(GetProductCatalogInternalProductPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getProductCatalogInternalProduct:getProductCatalogInternalProduct", TypeShape.of(GetProductCatalogInternalProductResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetProductCatalogInternalProductsResult> getProductCatalogInternalProducts(GetProductCatalogInternalProductsArgs args) {
+        return getProductCatalogInternalProducts(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetProductCatalogInternalProductsResult> getProductCatalogInternalProductsPlain(GetProductCatalogInternalProductsPlainArgs args) {
+        return getProductCatalogInternalProductsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetProductCatalogInternalProductsResult> getProductCatalogInternalProducts(GetProductCatalogInternalProductsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogInternalProducts:getProductCatalogInternalProducts", TypeShape.of(GetProductCatalogInternalProductsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetProductCatalogInternalProductsResult> getProductCatalogInternalProducts(GetProductCatalogInternalProductsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogInternalProducts:getProductCatalogInternalProducts", TypeShape.of(GetProductCatalogInternalProductsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetProductCatalogInternalProductsResult> getProductCatalogInternalProductsPlain(GetProductCatalogInternalProductsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getProductCatalogInternalProducts:getProductCatalogInternalProducts", TypeShape.of(GetProductCatalogInternalProductsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProduct = OciFunctions.getProductCatalogProduct(GetProductCatalogProductArgs.builder()
+     *             .productId(testProductOciOciProductCatalogProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProductCatalogProductResult> getProductCatalogProduct(GetProductCatalogProductArgs args) {
+        return getProductCatalogProduct(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProduct = OciFunctions.getProductCatalogProduct(GetProductCatalogProductArgs.builder()
+     *             .productId(testProductOciOciProductCatalogProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetProductCatalogProductResult> getProductCatalogProductPlain(GetProductCatalogProductPlainArgs args) {
+        return getProductCatalogProductPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProduct = OciFunctions.getProductCatalogProduct(GetProductCatalogProductArgs.builder()
+     *             .productId(testProductOciOciProductCatalogProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProductCatalogProductResult> getProductCatalogProduct(GetProductCatalogProductArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogProduct:getProductCatalogProduct", TypeShape.of(GetProductCatalogProductResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProduct = OciFunctions.getProductCatalogProduct(GetProductCatalogProductArgs.builder()
+     *             .productId(testProductOciOciProductCatalogProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProductCatalogProductResult> getProductCatalogProduct(GetProductCatalogProductArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogProduct:getProductCatalogProduct", TypeShape.of(GetProductCatalogProductResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Product resource in Oracle Cloud Infrastructure Oci Product Catalog service.
+     * 
+     * Get product by ID
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetProductCatalogProductArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProduct = OciFunctions.getProductCatalogProduct(GetProductCatalogProductArgs.builder()
+     *             .productId(testProductOciOciProductCatalogProduct.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetProductCatalogProductResult> getProductCatalogProductPlain(GetProductCatalogProductPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getProductCatalogProduct:getProductCatalogProduct", TypeShape.of(GetProductCatalogProductResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetProductCatalogProductsResult> getProductCatalogProducts() {
+        return getProductCatalogProducts(GetProductCatalogProductsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetProductCatalogProductsResult> getProductCatalogProductsPlain() {
+        return getProductCatalogProductsPlain(GetProductCatalogProductsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetProductCatalogProductsResult> getProductCatalogProducts(GetProductCatalogProductsArgs args) {
+        return getProductCatalogProducts(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetProductCatalogProductsResult> getProductCatalogProductsPlain(GetProductCatalogProductsPlainArgs args) {
+        return getProductCatalogProductsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetProductCatalogProductsResult> getProductCatalogProducts(GetProductCatalogProductsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogProducts:getProductCatalogProducts", TypeShape.of(GetProductCatalogProductsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetProductCatalogProductsResult> getProductCatalogProducts(GetProductCatalogProductsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getProductCatalogProducts:getProductCatalogProducts", TypeShape.of(GetProductCatalogProductsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetProductCatalogProductsResult> getProductCatalogProductsPlain(GetProductCatalogProductsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getProductCatalogProducts:getProductCatalogProducts", TypeShape.of(GetProductCatalogProductsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Private Service Access in Oracle Cloud Infrastructure Psa service.

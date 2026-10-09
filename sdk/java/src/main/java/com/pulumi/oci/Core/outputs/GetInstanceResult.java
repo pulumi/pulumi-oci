@@ -143,7 +143,7 @@ public final class GetInstanceResult {
      */
     private Boolean isCrossNumaNode;
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     private Boolean isPvEncryptionInTransitEnabled;
@@ -428,7 +428,7 @@ public final class GetInstanceResult {
         return this.isCrossNumaNode;
     }
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     public Boolean isPvEncryptionInTransitEnabled() {

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+        /// Deprecated. Use `isEncryptionInTransitEnabled` instead.
         /// </summary>
         public readonly string EncryptionInTransitType;
         /// <summary>
@@ -70,11 +70,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool IsAgentAutoIscsiLoginEnabled;
         /// <summary>
+        /// Whether in-transit encryption for the data volume's attachment is enabled or not.
+        /// </summary>
+        public readonly bool IsEncryptionInTransitEnabled;
+        /// <summary>
         /// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
         /// </summary>
         public readonly bool IsMultipath;
         /// <summary>
-        /// Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+        /// Deprecated. Use `isEncryptionInTransitEnabled` instead.
         /// </summary>
         public readonly bool IsPvEncryptionInTransitEnabled;
         /// <summary>
@@ -145,6 +149,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool isAgentAutoIscsiLoginEnabled,
 
+            bool isEncryptionInTransitEnabled,
+
             bool isMultipath,
 
             bool isPvEncryptionInTransitEnabled,
@@ -183,6 +189,7 @@ namespace Pulumi.Oci.Core.Outputs
             Ipv6 = ipv6;
             Iqn = iqn;
             IsAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            IsEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
             IsMultipath = isMultipath;
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             IsReadOnly = isReadOnly;

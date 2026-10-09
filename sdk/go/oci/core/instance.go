@@ -67,6 +67,186 @@ import (
 // use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
 // operation.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := core.NewInstance(ctx, "test_instance", &core.InstanceArgs{
+//				AvailabilityDomain: pulumi.Any(instanceAvailabilityDomain),
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				AgentConfig: &core.InstanceAgentConfigArgs{
+//					AreAllPluginsDisabled: pulumi.Any(instanceAgentConfigAreAllPluginsDisabled),
+//					IsManagementDisabled:  pulumi.Any(instanceAgentConfigIsManagementDisabled),
+//					IsMonitoringDisabled:  pulumi.Any(instanceAgentConfigIsMonitoringDisabled),
+//					PluginsConfigs: core.InstanceAgentConfigPluginsConfigArray{
+//						&core.InstanceAgentConfigPluginsConfigArgs{
+//							DesiredState: pulumi.Any(instanceAgentConfigPluginsConfigDesiredState),
+//							Name:         pulumi.Any(instanceAgentConfigPluginsConfigName),
+//						},
+//					},
+//				},
+//				AvailabilityConfig: &core.InstanceAvailabilityConfigArgs{
+//					IsLiveMigrationPreferred: pulumi.Any(instanceAvailabilityConfigIsLiveMigrationPreferred),
+//					RecoveryAction:           pulumi.Any(instanceAvailabilityConfigRecoveryAction),
+//				},
+//				ClusterPlacementGroupId: pulumi.Any(testGroup.Id),
+//				ComputeClusterId:        pulumi.Any(testComputeCluster.Id),
+//				ComputeHostGroupId:      testComputeHostGroup.Id,
+//				CreateVnicDetails: &core.InstanceCreateVnicDetailsArgs{
+//					AssignIpv6ip:           pulumi.Any(instanceCreateVnicDetailsAssignIpv6ip),
+//					AssignPrivateDnsRecord: pulumi.Any(instanceCreateVnicDetailsAssignPrivateDnsRecord),
+//					AssignPublicIp:         pulumi.Any(instanceCreateVnicDetailsAssignPublicIp),
+//					DefinedTags: pulumi.StringMap{
+//						"Operations.CostCenter": pulumi.String("42"),
+//					},
+//					DisplayName: pulumi.Any(instanceCreateVnicDetailsDisplayName),
+//					FreeformTags: pulumi.StringMap{
+//						"Department": pulumi.String("Finance"),
+//					},
+//					HostnameLabel: pulumi.Any(instanceCreateVnicDetailsHostnameLabel),
+//					Ipv6addressIpv6subnetCidrPairDetails: core.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
+//						&core.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
+//							Ipv6address:    pulumi.Any(instanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
+//							Ipv6id:         pulumi.Any(testIpv6.Id),
+//							Ipv6subnetCidr: pulumi.Any(instanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
+//						},
+//					},
+//					NsgIds:              pulumi.Any(instanceCreateVnicDetailsNsgIds),
+//					PrivateIp:           pulumi.Any(instanceCreateVnicDetailsPrivateIp),
+//					PrivateIpId:         pulumi.Any(testPrivateIp.Id),
+//					SecurityAttributes:  pulumi.Any(instanceCreateVnicDetailsSecurityAttributes),
+//					SkipSourceDestCheck: pulumi.Any(instanceCreateVnicDetailsSkipSourceDestCheck),
+//					SubnetCidr:          pulumi.Any(instanceCreateVnicDetailsSubnetCidr),
+//					SubnetId:            pulumi.Any(testSubnet.Id),
+//					VlanId:              pulumi.Any(testVlan.Id),
+//				},
+//				DedicatedVmHostId: pulumi.Any(testDedicatedVmHost.Id),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName: pulumi.Any(instanceDisplayName),
+//				ExtendedMetadata: pulumi.StringMap{
+//					"some_string":   pulumi.String("stringA"),
+//					"nested_object": pulumi.String("{\"some_string\": \"stringB\", \"object\": {\"some_string\": \"stringC\"}}"),
+//				},
+//				FaultDomain: pulumi.Any(instanceFaultDomain),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				HostnameLabel:           pulumi.Any(instanceHostnameLabel),
+//				InstanceConfigurationId: pulumi.Any(testInstanceConfiguration.Id),
+//				InstanceOptions: &core.InstanceInstanceOptionsArgs{
+//					AreLegacyImdsEndpointsDisabled: pulumi.Any(instanceInstanceOptionsAreLegacyImdsEndpointsDisabled),
+//				},
+//				IpxeScript:                     pulumi.Any(instanceIpxeScript),
+//				IsAiEnterpriseEnabled:          pulumi.Any(instanceIsAiEnterpriseEnabled),
+//				IsPvEncryptionInTransitEnabled: pulumi.Any(instanceIsPvEncryptionInTransitEnabled),
+//				LaunchOptions: &core.InstanceLaunchOptionsArgs{
+//					BootVolumeType:                  pulumi.Any(instanceLaunchOptionsBootVolumeType),
+//					Firmware:                        pulumi.Any(instanceLaunchOptionsFirmware),
+//					IsConsistentVolumeNamingEnabled: pulumi.Any(instanceLaunchOptionsIsConsistentVolumeNamingEnabled),
+//					IsEncryptionInTransitEnabled:    pulumi.Any(instanceLaunchOptionsIsEncryptionInTransitEnabled),
+//					IsPvEncryptionInTransitEnabled:  pulumi.Any(instanceLaunchOptionsIsPvEncryptionInTransitEnabled),
+//					NetworkType:                     pulumi.Any(instanceLaunchOptionsNetworkType),
+//					RemoteDataVolumeType:            pulumi.Any(instanceLaunchOptionsRemoteDataVolumeType),
+//				},
+//				LaunchVolumeAttachments: core.InstanceLaunchVolumeAttachmentArray{
+//					&core.InstanceLaunchVolumeAttachmentArgs{
+//						Type:                           pulumi.Any(instanceLaunchVolumeAttachmentsType),
+//						Device:                         pulumi.Any(instanceLaunchVolumeAttachmentsDevice),
+//						DisplayName:                    pulumi.Any(instanceLaunchVolumeAttachmentsDisplayName),
+//						EncryptionInTransitType:        pulumi.Any(instanceLaunchVolumeAttachmentsEncryptionInTransitType),
+//						IsAgentAutoIscsiLoginEnabled:   pulumi.Any(instanceLaunchVolumeAttachmentsIsAgentAutoIscsiLoginEnabled),
+//						IsPvEncryptionInTransitEnabled: pulumi.Any(instanceLaunchVolumeAttachmentsIsPvEncryptionInTransitEnabled),
+//						IsReadOnly:                     pulumi.Any(instanceLaunchVolumeAttachmentsIsReadOnly),
+//						IsShareable:                    pulumi.Any(instanceLaunchVolumeAttachmentsIsShareable),
+//						LaunchCreateVolumeDetails: &core.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs{
+//							SizeInGbs:          pulumi.Any(instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsSizeInGbs),
+//							VolumeCreationType: pulumi.Any(instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsVolumeCreationType),
+//							CompartmentId:      pulumi.Any(compartmentId),
+//							DisplayName:        pulumi.Any(instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsDisplayName),
+//							KmsKeyId:           pulumi.Any(testKey.Id),
+//							VpusPerGb:          pulumi.Any(instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsVpusPerGb),
+//						},
+//						UseChap:  pulumi.Any(instanceLaunchVolumeAttachmentsUseChap),
+//						VolumeId: pulumi.Any(testVolume.Id),
+//					},
+//				},
+//				LicensingConfigs: &core.InstanceLicensingConfigsArgs{
+//					Type:        pulumi.Any(instanceLicensingConfigsType),
+//					LicenseType: pulumi.Any(instanceLicensingConfigsLicenseType),
+//				},
+//				Metadata: pulumi.Any(instanceMetadata),
+//				PlacementConstraintDetails: &core.InstancePlacementConstraintDetailsArgs{
+//					Type:                   pulumi.Any(instancePlacementConstraintDetailsType),
+//					ComputeBareMetalHostId: pulumi.Any(testComputeBareMetalHost.Id),
+//					ComputeHostGroupId:     pulumi.Any(testGroup.Id),
+//				},
+//				PlatformConfig: &core.InstancePlatformConfigArgs{
+//					Type:                                     pulumi.Any(instancePlatformConfigType),
+//					AreVirtualInstructionsEnabled:            pulumi.Any(instancePlatformConfigAreVirtualInstructionsEnabled),
+//					ConfigMap:                                pulumi.Any(instancePlatformConfigConfigMap),
+//					IsAccessControlServiceEnabled:            pulumi.Any(instancePlatformConfigIsAccessControlServiceEnabled),
+//					IsInputOutputMemoryManagementUnitEnabled: pulumi.Any(instancePlatformConfigIsInputOutputMemoryManagementUnitEnabled),
+//					IsMeasuredBootEnabled:                    pulumi.Any(instancePlatformConfigIsMeasuredBootEnabled),
+//					IsMemoryEncryptionEnabled:                pulumi.Any(instancePlatformConfigIsMemoryEncryptionEnabled),
+//					IsSecureBootEnabled:                      pulumi.Any(instancePlatformConfigIsSecureBootEnabled),
+//					IsSymmetricMultiThreadingEnabled:         pulumi.Any(instancePlatformConfigIsSymmetricMultiThreadingEnabled),
+//					IsTrustedPlatformModuleEnabled:           pulumi.Any(instancePlatformConfigIsTrustedPlatformModuleEnabled),
+//					NumaNodesPerSocket:                       pulumi.Any(instancePlatformConfigNumaNodesPerSocket),
+//					PercentageOfCoresEnabled:                 pulumi.Any(instancePlatformConfigPercentageOfCoresEnabled),
+//				},
+//				PreemptibleInstanceConfig: &core.InstancePreemptibleInstanceConfigArgs{
+//					PreemptionAction: &core.InstancePreemptibleInstanceConfigPreemptionActionArgs{
+//						Type:               pulumi.Any(instancePreemptibleInstanceConfigPreemptionActionType),
+//						PreserveBootVolume: pulumi.Any(instancePreemptibleInstanceConfigPreemptionActionPreserveBootVolume),
+//					},
+//				},
+//				SecurityAttributes: pulumi.Any(instanceSecurityAttributes),
+//				Shape:              pulumi.Any(instanceShape),
+//				ShapeConfig: &core.InstanceShapeConfigArgs{
+//					BaselineOcpuUtilization: pulumi.Any(instanceShapeConfigBaselineOcpuUtilization),
+//					LocalVolumeSizeInGbs:    pulumi.Any(instanceShapeConfigLocalVolumeSizeInGbs),
+//					MemoryInGbs:             pulumi.Any(instanceShapeConfigMemoryInGbs),
+//					Nvmes:                   pulumi.Any(instanceShapeConfigNvmes),
+//					Ocpus:                   pulumi.Any(instanceShapeConfigOcpus),
+//					ResourceManagement:      pulumi.Any(instanceShapeConfigResourceManagement),
+//					Vcpus:                   pulumi.Any(instanceShapeConfigVcpus),
+//				},
+//				SourceDetails: &core.InstanceSourceDetailsArgs{
+//					SourceId:            pulumi.Any(testImage.Id),
+//					SourceType:          pulumi.String("image"),
+//					BootVolumeSizeInGbs: pulumi.Any(instanceSourceDetailsBootVolumeSizeInGbs),
+//					BootVolumeVpusPerGb: pulumi.Any(instanceSourceDetailsBootVolumeVpusPerGb),
+//					InstanceSourceImageFilterDetails: &core.InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs{
+//						CompartmentId:          pulumi.Any(compartmentId),
+//						DefinedTagsFilter:      pulumi.Any(instanceSourceDetailsInstanceSourceImageFilterDetailsDefinedTagsFilter),
+//						OperatingSystem:        pulumi.Any(instanceSourceDetailsInstanceSourceImageFilterDetailsOperatingSystem),
+//						OperatingSystemVersion: pulumi.Any(instanceSourceDetailsInstanceSourceImageFilterDetailsOperatingSystemVersion),
+//					},
+//					KmsKeyId: pulumi.Any(testKey.Id),
+//				},
+//				PreserveBootVolume: pulumi.Bool(false),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Instances can be imported using the `id`, e.g.

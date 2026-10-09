@@ -23,6 +23,7 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     @Import(name="bootVolumeType")
@@ -35,6 +36,7 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public Optional<Output<String>> bootVolumeType() {
@@ -76,14 +78,14 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+     * Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     @Import(name="isPvEncryptionInTransitEnabled")
     private @Nullable Output<Boolean> isPvEncryptionInTransitEnabled;
 
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     public Optional<Output<Boolean>> isPvEncryptionInTransitEnabled() {
@@ -120,6 +122,7 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     @Import(name="remoteDataVolumeType")
@@ -132,6 +135,7 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public Optional<Output<String>> remoteDataVolumeType() {
@@ -174,6 +178,7 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 
@@ -190,6 +195,7 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 
@@ -245,7 +251,7 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+         * @param isPvEncryptionInTransitEnabled Deprecated. Use `isEncryptionInTransitEnabled` instead.
          * 
          * @return builder
          * 
@@ -256,7 +262,7 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+         * @param isPvEncryptionInTransitEnabled Deprecated. Use `isEncryptionInTransitEnabled` instead.
          * 
          * @return builder
          * 
@@ -301,6 +307,7 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 
@@ -317,6 +324,7 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          * 
          * @return builder
          * 

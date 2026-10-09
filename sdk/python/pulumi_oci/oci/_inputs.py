@@ -181,6 +181,18 @@ __all__ = [
     'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict',
     'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs',
     'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict',
+    'ProductCatalogInternalAdminProductLimitArgs',
+    'ProductCatalogInternalAdminProductLimitArgsDict',
+    'ProductCatalogInternalAdminProductMeterArgs',
+    'ProductCatalogInternalAdminProductMeterArgsDict',
+    'ProductCatalogInternalAdminProductSkusArgs',
+    'ProductCatalogInternalAdminProductSkusArgsDict',
+    'ProductCatalogInternalProductLimitArgs',
+    'ProductCatalogInternalProductLimitArgsDict',
+    'ProductCatalogInternalProductMeterArgs',
+    'ProductCatalogInternalProductMeterArgsDict',
+    'ProductCatalogInternalProductSkusArgs',
+    'ProductCatalogInternalProductSkusArgsDict',
     'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs',
     'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict',
     'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs',
@@ -321,6 +333,10 @@ __all__ = [
     'GetMulticloudOmHubMulticloudResourcesFilterArgsDict',
     'GetMulticloudResourceAnchorsFilterArgs',
     'GetMulticloudResourceAnchorsFilterArgsDict',
+    'GetProductCatalogProductsLimitArgs',
+    'GetProductCatalogProductsLimitArgsDict',
+    'GetProductCatalogProductsMeterArgs',
+    'GetProductCatalogProductsMeterArgsDict',
     'GetPsaPrivateServiceAccessesFilterArgs',
     'GetPsaPrivateServiceAccessesFilterArgsDict',
     'GetPsaPsaServicesFilterArgs',
@@ -7690,6 +7706,260 @@ class ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs:
         pulumi.set(self, "url", value)
 
 
+class ProductCatalogInternalAdminProductLimitArgsDict(TypedDict):
+    public_limit_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) public name of the limit
+    """
+    public_service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) public name of the limit service
+    """
+
+@pulumi.input_type
+class ProductCatalogInternalAdminProductLimitArgs:
+    def __init__(__self__, *,
+                 public_limit_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_service_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] public_limit_name: (Updatable) public name of the limit
+        :param pulumi.Input[_builtins.str] public_service_name: (Updatable) public name of the limit service
+        """
+        if public_limit_name is not None:
+            pulumi.set(__self__, "public_limit_name", public_limit_name)
+        if public_service_name is not None:
+            pulumi.set(__self__, "public_service_name", public_service_name)
+
+    @_builtins.property
+    @pulumi.getter(name="publicLimitName")
+    def public_limit_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) public name of the limit
+        """
+        return pulumi.get(self, "public_limit_name")
+
+    @public_limit_name.setter
+    def public_limit_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "public_limit_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="publicServiceName")
+    def public_service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) public name of the limit service
+        """
+        return pulumi.get(self, "public_service_name")
+
+    @public_service_name.setter
+    def public_service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "public_service_name", value)
+
+
+class ProductCatalogInternalAdminProductMeterArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Name of the meter
+    """
+
+@pulumi.input_type
+class ProductCatalogInternalAdminProductMeterArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: (Updatable) Name of the meter
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Name of the meter
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class ProductCatalogInternalAdminProductSkusArgsDict(TypedDict):
+    bpart_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    sku bpartNumber
+    """
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) description to the product
+    """
+
+@pulumi.input_type
+class ProductCatalogInternalAdminProductSkusArgs:
+    def __init__(__self__, *,
+                 bpart_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] bpart_number: sku bpartNumber
+        :param pulumi.Input[_builtins.str] description: (Updatable) description to the product
+        """
+        if bpart_number is not None:
+            pulumi.set(__self__, "bpart_number", bpart_number)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="bpartNumber")
+    def bpart_number(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        sku bpartNumber
+        """
+        return pulumi.get(self, "bpart_number")
+
+    @bpart_number.setter
+    def bpart_number(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "bpart_number", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) description to the product
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+
+class ProductCatalogInternalProductLimitArgsDict(TypedDict):
+    public_limit_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) public name of the limit
+    """
+    public_service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) public name of the limit service
+    """
+
+@pulumi.input_type
+class ProductCatalogInternalProductLimitArgs:
+    def __init__(__self__, *,
+                 public_limit_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_service_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] public_limit_name: (Updatable) public name of the limit
+        :param pulumi.Input[_builtins.str] public_service_name: (Updatable) public name of the limit service
+        """
+        if public_limit_name is not None:
+            pulumi.set(__self__, "public_limit_name", public_limit_name)
+        if public_service_name is not None:
+            pulumi.set(__self__, "public_service_name", public_service_name)
+
+    @_builtins.property
+    @pulumi.getter(name="publicLimitName")
+    def public_limit_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) public name of the limit
+        """
+        return pulumi.get(self, "public_limit_name")
+
+    @public_limit_name.setter
+    def public_limit_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "public_limit_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="publicServiceName")
+    def public_service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) public name of the limit service
+        """
+        return pulumi.get(self, "public_service_name")
+
+    @public_service_name.setter
+    def public_service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "public_service_name", value)
+
+
+class ProductCatalogInternalProductMeterArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Name of the meter
+    """
+
+@pulumi.input_type
+class ProductCatalogInternalProductMeterArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: (Updatable) Name of the meter
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Name of the meter
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class ProductCatalogInternalProductSkusArgsDict(TypedDict):
+    bpart_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    sku bpartNumber
+    """
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) description to the product
+    """
+
+@pulumi.input_type
+class ProductCatalogInternalProductSkusArgs:
+    def __init__(__self__, *,
+                 bpart_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] bpart_number: sku bpartNumber
+        :param pulumi.Input[_builtins.str] description: (Updatable) description to the product
+        """
+        if bpart_number is not None:
+            pulumi.set(__self__, "bpart_number", bpart_number)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="bpartNumber")
+    def bpart_number(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        sku bpartNumber
+        """
+        return pulumi.get(self, "bpart_number")
+
+    @bpart_number.setter
+    def bpart_number(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "bpart_number", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) description to the product
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+
 class ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict(TypedDict):
     password_type: pulumi.Input[_builtins.str]
     """
@@ -11577,6 +11847,59 @@ class GetMulticloudResourceAnchorsFilterArgs:
     @regex.setter
     def regex(self, value: Optional[_builtins.bool]):
         pulumi.set(self, "regex", value)
+
+
+class GetProductCatalogProductsLimitArgsDict(TypedDict):
+    public_limit_name: NotRequired[_builtins.str]
+    public_service_name: NotRequired[_builtins.str]
+
+@pulumi.input_type
+class GetProductCatalogProductsLimitArgs:
+    def __init__(__self__, *,
+                 public_limit_name: Optional[_builtins.str] = None,
+                 public_service_name: Optional[_builtins.str] = None):
+        if public_limit_name is not None:
+            pulumi.set(__self__, "public_limit_name", public_limit_name)
+        if public_service_name is not None:
+            pulumi.set(__self__, "public_service_name", public_service_name)
+
+    @_builtins.property
+    @pulumi.getter(name="publicLimitName")
+    def public_limit_name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "public_limit_name")
+
+    @public_limit_name.setter
+    def public_limit_name(self, value: Optional[_builtins.str]):
+        pulumi.set(self, "public_limit_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="publicServiceName")
+    def public_service_name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "public_service_name")
+
+    @public_service_name.setter
+    def public_service_name(self, value: Optional[_builtins.str]):
+        pulumi.set(self, "public_service_name", value)
+
+
+class GetProductCatalogProductsMeterArgsDict(TypedDict):
+    name: NotRequired[_builtins.str]
+
+@pulumi.input_type
+class GetProductCatalogProductsMeterArgs:
+    def __init__(__self__, *,
+                 name: Optional[_builtins.str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[_builtins.str]):
+        pulumi.set(self, "name", value)
 
 
 class GetPsaPrivateServiceAccessesFilterArgsDict(TypedDict):

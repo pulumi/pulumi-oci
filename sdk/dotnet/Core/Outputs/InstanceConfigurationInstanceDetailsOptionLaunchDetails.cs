@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool? IsAiEnterpriseEnabled;
         /// <summary>
-        /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        /// Deprecated. Use `isEncryptionInTransitEnabled` instead.
         /// </summary>
         public readonly bool? IsPvEncryptionInTransitEnabled;
         /// <summary>

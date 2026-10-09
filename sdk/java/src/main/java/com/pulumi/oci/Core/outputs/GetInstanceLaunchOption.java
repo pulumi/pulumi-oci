@@ -18,6 +18,7 @@ public final class GetInstanceLaunchOption {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     private String bootVolumeType;
@@ -34,7 +35,12 @@ public final class GetInstanceLaunchOption {
      */
     private Boolean isConsistentVolumeNamingEnabled;
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+     * @return Specifies whether in-transit encryption is enabled for the data volume&#39;s attachment.
+     * 
+     */
+    private Boolean isEncryptionInTransitEnabled;
+    /**
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     private Boolean isPvEncryptionInTransitEnabled;
@@ -54,6 +60,7 @@ public final class GetInstanceLaunchOption {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     private String remoteDataVolumeType;
@@ -66,6 +73,7 @@ public final class GetInstanceLaunchOption {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public String bootVolumeType() {
@@ -88,7 +96,14 @@ public final class GetInstanceLaunchOption {
         return this.isConsistentVolumeNamingEnabled;
     }
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+     * @return Specifies whether in-transit encryption is enabled for the data volume&#39;s attachment.
+     * 
+     */
+    public Boolean isEncryptionInTransitEnabled() {
+        return this.isEncryptionInTransitEnabled;
+    }
+    /**
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     public Boolean isPvEncryptionInTransitEnabled() {
@@ -112,6 +127,7 @@ public final class GetInstanceLaunchOption {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
      * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+     * * `NVME` - NVMe attached remote block storage device.
      * 
      */
     public String remoteDataVolumeType() {
@@ -130,6 +146,7 @@ public final class GetInstanceLaunchOption {
         private String bootVolumeType;
         private String firmware;
         private Boolean isConsistentVolumeNamingEnabled;
+        private Boolean isEncryptionInTransitEnabled;
         private Boolean isPvEncryptionInTransitEnabled;
         private String networkType;
         private String remoteDataVolumeType;
@@ -139,6 +156,7 @@ public final class GetInstanceLaunchOption {
     	      this.bootVolumeType = defaults.bootVolumeType;
     	      this.firmware = defaults.firmware;
     	      this.isConsistentVolumeNamingEnabled = defaults.isConsistentVolumeNamingEnabled;
+    	      this.isEncryptionInTransitEnabled = defaults.isEncryptionInTransitEnabled;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.networkType = defaults.networkType;
     	      this.remoteDataVolumeType = defaults.remoteDataVolumeType;
@@ -166,6 +184,14 @@ public final class GetInstanceLaunchOption {
               throw new MissingRequiredPropertyException("GetInstanceLaunchOption", "isConsistentVolumeNamingEnabled");
             }
             this.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isEncryptionInTransitEnabled(Boolean isEncryptionInTransitEnabled) {
+            if (isEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceLaunchOption", "isEncryptionInTransitEnabled");
+            }
+            this.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
@@ -197,6 +223,7 @@ public final class GetInstanceLaunchOption {
             _resultValue.bootVolumeType = bootVolumeType;
             _resultValue.firmware = firmware;
             _resultValue.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
+            _resultValue.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.networkType = networkType;
             _resultValue.remoteDataVolumeType = remoteDataVolumeType;

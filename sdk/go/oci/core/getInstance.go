@@ -111,7 +111,7 @@ type LookupInstanceResult struct {
 	IsAiEnterpriseEnabled bool `pulumi:"isAiEnterpriseEnabled"`
 	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
 	IsCrossNumaNode bool `pulumi:"isCrossNumaNode"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -319,7 +319,7 @@ func (o LookupInstanceResultOutput) IsCrossNumaNode() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupInstanceResult) bool { return v.IsCrossNumaNode }).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o LookupInstanceResultOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupInstanceResult) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
 }

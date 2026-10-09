@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string BillingType;
         /// <summary>
+        /// Shape-specific details for shapes that support remote NVMe volume attachments.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetShapesShapeBsNvmeAttachmentsConfigResult> BsNvmeAttachmentsConfigs;
+        /// <summary>
         /// A short description of the graphics processing unit (GPU) available for this shape.
         /// </summary>
         public readonly string GpuDescription;
@@ -144,6 +148,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string billingType,
 
+            ImmutableArray<Outputs.GetShapesShapeBsNvmeAttachmentsConfigResult> bsNvmeAttachmentsConfigs,
+
             string gpuDescription,
 
             int gpus,
@@ -204,6 +210,7 @@ namespace Pulumi.Oci.Core.Outputs
         {
             BaselineOcpuUtilizations = baselineOcpuUtilizations;
             BillingType = billingType;
+            BsNvmeAttachmentsConfigs = bsNvmeAttachmentsConfigs;
             GpuDescription = gpuDescription;
             Gpus = gpus;
             IsBilledForStoppedInstance = isBilledForStoppedInstance;

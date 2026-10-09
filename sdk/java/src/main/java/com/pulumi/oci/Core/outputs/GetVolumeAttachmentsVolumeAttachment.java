@@ -54,7 +54,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
      */
     private String displayName;
     /**
-     * @return Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     private String encryptionInTransitType;
@@ -89,12 +89,17 @@ public final class GetVolumeAttachmentsVolumeAttachment {
      */
     private Boolean isAgentAutoIscsiLoginEnabled;
     /**
+     * @return Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+     * 
+     */
+    private Boolean isEncryptionInTransitEnabled;
+    /**
      * @return Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      * 
      */
     private Boolean isMultipath;
     /**
-     * @return Whether in-transit encryption for the data volume&#39;s paravirtualized attachment is enabled or not.
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     private Boolean isPvEncryptionInTransitEnabled;
@@ -200,7 +205,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         return this.displayName;
     }
     /**
-     * @return Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     public String encryptionInTransitType() {
@@ -249,6 +254,13 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         return this.isAgentAutoIscsiLoginEnabled;
     }
     /**
+     * @return Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+     * 
+     */
+    public Boolean isEncryptionInTransitEnabled() {
+        return this.isEncryptionInTransitEnabled;
+    }
+    /**
      * @return Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      * 
      */
@@ -256,7 +268,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         return this.isMultipath;
     }
     /**
-     * @return Whether in-transit encryption for the data volume&#39;s paravirtualized attachment is enabled or not.
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     public Boolean isPvEncryptionInTransitEnabled() {
@@ -352,6 +364,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         private String ipv6;
         private String iqn;
         private Boolean isAgentAutoIscsiLoginEnabled;
+        private Boolean isEncryptionInTransitEnabled;
         private Boolean isMultipath;
         private Boolean isPvEncryptionInTransitEnabled;
         private Boolean isReadOnly;
@@ -381,6 +394,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
     	      this.ipv6 = defaults.ipv6;
     	      this.iqn = defaults.iqn;
     	      this.isAgentAutoIscsiLoginEnabled = defaults.isAgentAutoIscsiLoginEnabled;
+    	      this.isEncryptionInTransitEnabled = defaults.isEncryptionInTransitEnabled;
     	      this.isMultipath = defaults.isMultipath;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.isReadOnly = defaults.isReadOnly;
@@ -508,6 +522,14 @@ public final class GetVolumeAttachmentsVolumeAttachment {
             return this;
         }
         @CustomType.Setter
+        public Builder isEncryptionInTransitEnabled(Boolean isEncryptionInTransitEnabled) {
+            if (isEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "isEncryptionInTransitEnabled");
+            }
+            this.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isMultipath(Boolean isMultipath) {
             if (isMultipath == null) {
               throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "isMultipath");
@@ -622,6 +644,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
             _resultValue.ipv6 = ipv6;
             _resultValue.iqn = iqn;
             _resultValue.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            _resultValue.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
             _resultValue.isMultipath = isMultipath;
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.isReadOnly = isReadOnly;

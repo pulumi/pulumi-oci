@@ -214,6 +214,11 @@ __all__ = [
     'GetAgentToolsToolCollectionItemToolConfigRerankingLlmCustomizationResult',
     'GetAgentToolsToolCollectionItemToolConfigRerankingLlmCustomizationLlmSelectionResult',
     'GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionResult',
+    'GetApikeyKeyResult',
+    'GetApikeysApiKeyCollectionResult',
+    'GetApikeysApiKeyCollectionItemResult',
+    'GetApikeysApiKeyCollectionItemKeyResult',
+    'GetApikeysFilterResult',
     'GetDedicatedAiClusterCapacityResult',
     'GetDedicatedAiClustersDedicatedAiClusterCollectionResult',
     'GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult',
@@ -11312,6 +11317,418 @@ class GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionResult(d
         The prefix of file object(s) or folder prefix.
         """
         return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetApikeyKeyResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 key_mask: _builtins.str,
+                 key_name: _builtins.str,
+                 state: _builtins.str,
+                 time_activated: _builtins.str,
+                 time_created: _builtins.str,
+                 time_deactivated: _builtins.str,
+                 time_expiry: _builtins.str,
+                 time_last_used: _builtins.str,
+                 time_revoked: _builtins.str):
+        """
+        :param _builtins.str key: The key.
+        :param _builtins.str key_mask: The masked key.
+        :param _builtins.str key_name: The key name.
+        :param _builtins.str state: The current state of the API key.
+        :param _builtins.str time_activated: The date and time that the key is activated in the format of an RFC3339 datetime string.
+        :param _builtins.str time_created: The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+        :param _builtins.str time_deactivated: The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+        :param _builtins.str time_expiry: The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+        :param _builtins.str time_last_used: The date and time that the key is last used in the format of an RFC3339 datetime string.
+        :param _builtins.str time_revoked: The date and time that the key is revoked in the format of an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "key_mask", key_mask)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_activated", time_activated)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_deactivated", time_deactivated)
+        pulumi.set(__self__, "time_expiry", time_expiry)
+        pulumi.set(__self__, "time_last_used", time_last_used)
+        pulumi.set(__self__, "time_revoked", time_revoked)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The key.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="keyMask")
+    def key_mask(self) -> _builtins.str:
+        """
+        The masked key.
+        """
+        return pulumi.get(self, "key_mask")
+
+    @_builtins.property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> _builtins.str:
+        """
+        The key name.
+        """
+        return pulumi.get(self, "key_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the API key.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> _builtins.str:
+        """
+        The date and time that the key is activated in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_activated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDeactivated")
+    def time_deactivated(self) -> _builtins.str:
+        """
+        The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_deactivated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeExpiry")
+    def time_expiry(self) -> _builtins.str:
+        """
+        The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_expiry")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastUsed")
+    def time_last_used(self) -> _builtins.str:
+        """
+        The date and time that the key is last used in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_last_used")
+
+    @_builtins.property
+    @pulumi.getter(name="timeRevoked")
+    def time_revoked(self) -> _builtins.str:
+        """
+        The date and time that the key is revoked in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_revoked")
+
+
+@pulumi.output_type
+class GetApikeysApiKeyCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetApikeysApiKeyCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetApikeysApiKeyCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetApikeysApiKeyCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 keys: Sequence['outputs.GetApikeysApiKeyCollectionItemKeyResult'],
+                 lifecycle_details: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: An optional description of the Api key.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the APIKey.
+        :param Sequence['GetApikeysApiKeyCollectionItemKeyArgs'] keys: The list of keys.
+        :param _builtins.str lifecycle_details: A message describing the current state with detail that can provide actionable information.
+        :param _builtins.str state: A filter to return only resources that their lifecycle state matches the given lifecycle state.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+        :param _builtins.str time_updated: The date and time the ApiKey was updated, in the format defined by RFC 3339.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "keys", keys)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        An optional description of the Api key.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the APIKey.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def keys(self) -> Sequence['outputs.GetApikeysApiKeyCollectionItemKeyResult']:
+        """
+        The list of keys.
+        """
+        return pulumi.get(self, "keys")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state with detail that can provide actionable information.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that their lifecycle state matches the given lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the ApiKey was updated, in the format defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetApikeysApiKeyCollectionItemKeyResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 key_mask: _builtins.str,
+                 key_name: _builtins.str,
+                 state: _builtins.str,
+                 time_activated: _builtins.str,
+                 time_created: _builtins.str,
+                 time_deactivated: _builtins.str,
+                 time_expiry: _builtins.str,
+                 time_last_used: _builtins.str,
+                 time_revoked: _builtins.str):
+        """
+        :param _builtins.str key: The key.
+        :param _builtins.str key_mask: The masked key.
+        :param _builtins.str key_name: The key name.
+        :param _builtins.str state: A filter to return only resources that their lifecycle state matches the given lifecycle state.
+        :param _builtins.str time_activated: The date and time that the key is activated in the format of an RFC3339 datetime string.
+        :param _builtins.str time_created: The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+        :param _builtins.str time_deactivated: The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+        :param _builtins.str time_expiry: The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+        :param _builtins.str time_last_used: The date and time that the key is last used in the format of an RFC3339 datetime string.
+        :param _builtins.str time_revoked: The date and time that the key is revoked in the format of an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "key_mask", key_mask)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_activated", time_activated)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_deactivated", time_deactivated)
+        pulumi.set(__self__, "time_expiry", time_expiry)
+        pulumi.set(__self__, "time_last_used", time_last_used)
+        pulumi.set(__self__, "time_revoked", time_revoked)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The key.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="keyMask")
+    def key_mask(self) -> _builtins.str:
+        """
+        The masked key.
+        """
+        return pulumi.get(self, "key_mask")
+
+    @_builtins.property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> _builtins.str:
+        """
+        The key name.
+        """
+        return pulumi.get(self, "key_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that their lifecycle state matches the given lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> _builtins.str:
+        """
+        The date and time that the key is activated in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_activated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDeactivated")
+    def time_deactivated(self) -> _builtins.str:
+        """
+        The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_deactivated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeExpiry")
+    def time_expiry(self) -> _builtins.str:
+        """
+        The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_expiry")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastUsed")
+    def time_last_used(self) -> _builtins.str:
+        """
+        The date and time that the key is last used in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_last_used")
+
+    @_builtins.property
+    @pulumi.getter(name="timeRevoked")
+    def time_revoked(self) -> _builtins.str:
+        """
+        The date and time that the key is revoked in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_revoked")
+
+
+@pulumi.output_type
+class GetApikeysFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type

@@ -8471,6 +8471,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "oci/productCatalogInternalAdminProduct",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/productCatalogInternalAdminProduct:ProductCatalogInternalAdminProduct": "ProductCatalogInternalAdminProduct"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/productCatalogInternalProduct",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/productCatalogInternalProduct:ProductCatalogInternalProduct": "ProductCatalogInternalProduct"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "oci/psaPrivateServiceAccess",
   "fqn": "pulumi_oci.oci",
   "classes": {

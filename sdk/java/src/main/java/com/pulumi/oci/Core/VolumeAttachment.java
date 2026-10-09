@@ -80,14 +80,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Core/volumeAttachment:VolumeAttachment")
 public class VolumeAttachment extends com.pulumi.resources.CustomResource {
     /**
-     * The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+     * The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, &#34;nvme&#34; and &#34;serviceDetermined&#34; .
      * 
      */
     @Export(name="attachmentType", refs={String.class}, tree="[0]")
     private Output<String> attachmentType;
 
     /**
-     * @return The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+     * @return The type of volume. The only supported values are &#34;iscsi&#34;, &#34;paravirtualized&#34;, &#34;nvme&#34; and &#34;serviceDetermined&#34; .
      * 
      */
     public Output<String> attachmentType() {
@@ -264,6 +264,20 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isAgentAutoIscsiLoginEnabled() {
         return this.isAgentAutoIscsiLoginEnabled;
+    }
+    /**
+     * Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+     * 
+     */
+    @Export(name="isEncryptionInTransitEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isEncryptionInTransitEnabled;
+
+    /**
+     * @return Whether in-transit encryption for the data volume&#39;s attachment is enabled or not.
+     * 
+     */
+    public Output<Boolean> isEncryptionInTransitEnabled() {
+        return this.isEncryptionInTransitEnabled;
     }
     /**
      * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.

@@ -284,14 +284,14 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
     }
 
     /**
-     * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+     * Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     @Import(name="isPvEncryptionInTransitEnabled")
     private @Nullable Output<Boolean> isPvEncryptionInTransitEnabled;
 
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     public Optional<Output<Boolean>> isPvEncryptionInTransitEnabled() {
@@ -893,7 +893,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * @param isPvEncryptionInTransitEnabled Deprecated. Use `isEncryptionInTransitEnabled` instead.
          * 
          * @return builder
          * 
@@ -904,7 +904,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * @param isPvEncryptionInTransitEnabled Deprecated. Use `isEncryptionInTransitEnabled` instead.
          * 
          * @return builder
          * 

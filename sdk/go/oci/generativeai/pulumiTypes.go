@@ -28674,6 +28674,758 @@ func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayO
 	}).(GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput)
 }
 
+type GetApikeyKey struct {
+	// The key.
+	Key string `pulumi:"key"`
+	// The masked key.
+	KeyMask string `pulumi:"keyMask"`
+	// The key name.
+	KeyName string `pulumi:"keyName"`
+	// The current state of the API key.
+	State string `pulumi:"state"`
+	// The date and time that the key is activated in the format of an RFC3339 datetime string.
+	TimeActivated string `pulumi:"timeActivated"`
+	// The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+	TimeDeactivated string `pulumi:"timeDeactivated"`
+	// The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+	TimeExpiry string `pulumi:"timeExpiry"`
+	// The date and time that the key is last used in the format of an RFC3339 datetime string.
+	TimeLastUsed string `pulumi:"timeLastUsed"`
+	// The date and time that the key is revoked in the format of an RFC3339 datetime string.
+	TimeRevoked string `pulumi:"timeRevoked"`
+}
+
+// GetApikeyKeyInput is an input type that accepts GetApikeyKeyArgs and GetApikeyKeyOutput values.
+// You can construct a concrete instance of `GetApikeyKeyInput` via:
+//
+//	GetApikeyKeyArgs{...}
+type GetApikeyKeyInput interface {
+	pulumi.Input
+
+	ToGetApikeyKeyOutput() GetApikeyKeyOutput
+	ToGetApikeyKeyOutputWithContext(context.Context) GetApikeyKeyOutput
+}
+
+type GetApikeyKeyArgs struct {
+	// The key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The masked key.
+	KeyMask pulumi.StringInput `pulumi:"keyMask"`
+	// The key name.
+	KeyName pulumi.StringInput `pulumi:"keyName"`
+	// The current state of the API key.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time that the key is activated in the format of an RFC3339 datetime string.
+	TimeActivated pulumi.StringInput `pulumi:"timeActivated"`
+	// The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+	TimeDeactivated pulumi.StringInput `pulumi:"timeDeactivated"`
+	// The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+	TimeExpiry pulumi.StringInput `pulumi:"timeExpiry"`
+	// The date and time that the key is last used in the format of an RFC3339 datetime string.
+	TimeLastUsed pulumi.StringInput `pulumi:"timeLastUsed"`
+	// The date and time that the key is revoked in the format of an RFC3339 datetime string.
+	TimeRevoked pulumi.StringInput `pulumi:"timeRevoked"`
+}
+
+func (GetApikeyKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApikeyKey)(nil)).Elem()
+}
+
+func (i GetApikeyKeyArgs) ToGetApikeyKeyOutput() GetApikeyKeyOutput {
+	return i.ToGetApikeyKeyOutputWithContext(context.Background())
+}
+
+func (i GetApikeyKeyArgs) ToGetApikeyKeyOutputWithContext(ctx context.Context) GetApikeyKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApikeyKeyOutput)
+}
+
+// GetApikeyKeyArrayInput is an input type that accepts GetApikeyKeyArray and GetApikeyKeyArrayOutput values.
+// You can construct a concrete instance of `GetApikeyKeyArrayInput` via:
+//
+//	GetApikeyKeyArray{ GetApikeyKeyArgs{...} }
+type GetApikeyKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetApikeyKeyArrayOutput() GetApikeyKeyArrayOutput
+	ToGetApikeyKeyArrayOutputWithContext(context.Context) GetApikeyKeyArrayOutput
+}
+
+type GetApikeyKeyArray []GetApikeyKeyInput
+
+func (GetApikeyKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApikeyKey)(nil)).Elem()
+}
+
+func (i GetApikeyKeyArray) ToGetApikeyKeyArrayOutput() GetApikeyKeyArrayOutput {
+	return i.ToGetApikeyKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetApikeyKeyArray) ToGetApikeyKeyArrayOutputWithContext(ctx context.Context) GetApikeyKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApikeyKeyArrayOutput)
+}
+
+type GetApikeyKeyOutput struct{ *pulumi.OutputState }
+
+func (GetApikeyKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApikeyKey)(nil)).Elem()
+}
+
+func (o GetApikeyKeyOutput) ToGetApikeyKeyOutput() GetApikeyKeyOutput {
+	return o
+}
+
+func (o GetApikeyKeyOutput) ToGetApikeyKeyOutputWithContext(ctx context.Context) GetApikeyKeyOutput {
+	return o
+}
+
+// The key.
+func (o GetApikeyKeyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeyKey) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The masked key.
+func (o GetApikeyKeyOutput) KeyMask() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeyKey) string { return v.KeyMask }).(pulumi.StringOutput)
+}
+
+// The key name.
+func (o GetApikeyKeyOutput) KeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeyKey) string { return v.KeyName }).(pulumi.StringOutput)
+}
+
+// The current state of the API key.
+func (o GetApikeyKeyOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeyKey) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time that the key is activated in the format of an RFC3339 datetime string.
+func (o GetApikeyKeyOutput) TimeActivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeyKey) string { return v.TimeActivated }).(pulumi.StringOutput)
+}
+
+// The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+func (o GetApikeyKeyOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeyKey) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+func (o GetApikeyKeyOutput) TimeDeactivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeyKey) string { return v.TimeDeactivated }).(pulumi.StringOutput)
+}
+
+// The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+func (o GetApikeyKeyOutput) TimeExpiry() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeyKey) string { return v.TimeExpiry }).(pulumi.StringOutput)
+}
+
+// The date and time that the key is last used in the format of an RFC3339 datetime string.
+func (o GetApikeyKeyOutput) TimeLastUsed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeyKey) string { return v.TimeLastUsed }).(pulumi.StringOutput)
+}
+
+// The date and time that the key is revoked in the format of an RFC3339 datetime string.
+func (o GetApikeyKeyOutput) TimeRevoked() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeyKey) string { return v.TimeRevoked }).(pulumi.StringOutput)
+}
+
+type GetApikeyKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApikeyKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApikeyKey)(nil)).Elem()
+}
+
+func (o GetApikeyKeyArrayOutput) ToGetApikeyKeyArrayOutput() GetApikeyKeyArrayOutput {
+	return o
+}
+
+func (o GetApikeyKeyArrayOutput) ToGetApikeyKeyArrayOutputWithContext(ctx context.Context) GetApikeyKeyArrayOutput {
+	return o
+}
+
+func (o GetApikeyKeyArrayOutput) Index(i pulumi.IntInput) GetApikeyKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApikeyKey {
+		return vs[0].([]GetApikeyKey)[vs[1].(int)]
+	}).(GetApikeyKeyOutput)
+}
+
+type GetApikeysApiKeyCollection struct {
+	Items []GetApikeysApiKeyCollectionItem `pulumi:"items"`
+}
+
+// GetApikeysApiKeyCollectionInput is an input type that accepts GetApikeysApiKeyCollectionArgs and GetApikeysApiKeyCollectionOutput values.
+// You can construct a concrete instance of `GetApikeysApiKeyCollectionInput` via:
+//
+//	GetApikeysApiKeyCollectionArgs{...}
+type GetApikeysApiKeyCollectionInput interface {
+	pulumi.Input
+
+	ToGetApikeysApiKeyCollectionOutput() GetApikeysApiKeyCollectionOutput
+	ToGetApikeysApiKeyCollectionOutputWithContext(context.Context) GetApikeysApiKeyCollectionOutput
+}
+
+type GetApikeysApiKeyCollectionArgs struct {
+	Items GetApikeysApiKeyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetApikeysApiKeyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApikeysApiKeyCollection)(nil)).Elem()
+}
+
+func (i GetApikeysApiKeyCollectionArgs) ToGetApikeysApiKeyCollectionOutput() GetApikeysApiKeyCollectionOutput {
+	return i.ToGetApikeysApiKeyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetApikeysApiKeyCollectionArgs) ToGetApikeysApiKeyCollectionOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApikeysApiKeyCollectionOutput)
+}
+
+// GetApikeysApiKeyCollectionArrayInput is an input type that accepts GetApikeysApiKeyCollectionArray and GetApikeysApiKeyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetApikeysApiKeyCollectionArrayInput` via:
+//
+//	GetApikeysApiKeyCollectionArray{ GetApikeysApiKeyCollectionArgs{...} }
+type GetApikeysApiKeyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetApikeysApiKeyCollectionArrayOutput() GetApikeysApiKeyCollectionArrayOutput
+	ToGetApikeysApiKeyCollectionArrayOutputWithContext(context.Context) GetApikeysApiKeyCollectionArrayOutput
+}
+
+type GetApikeysApiKeyCollectionArray []GetApikeysApiKeyCollectionInput
+
+func (GetApikeysApiKeyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApikeysApiKeyCollection)(nil)).Elem()
+}
+
+func (i GetApikeysApiKeyCollectionArray) ToGetApikeysApiKeyCollectionArrayOutput() GetApikeysApiKeyCollectionArrayOutput {
+	return i.ToGetApikeysApiKeyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetApikeysApiKeyCollectionArray) ToGetApikeysApiKeyCollectionArrayOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApikeysApiKeyCollectionArrayOutput)
+}
+
+type GetApikeysApiKeyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetApikeysApiKeyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApikeysApiKeyCollection)(nil)).Elem()
+}
+
+func (o GetApikeysApiKeyCollectionOutput) ToGetApikeysApiKeyCollectionOutput() GetApikeysApiKeyCollectionOutput {
+	return o
+}
+
+func (o GetApikeysApiKeyCollectionOutput) ToGetApikeysApiKeyCollectionOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionOutput {
+	return o
+}
+
+func (o GetApikeysApiKeyCollectionOutput) Items() GetApikeysApiKeyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollection) []GetApikeysApiKeyCollectionItem { return v.Items }).(GetApikeysApiKeyCollectionItemArrayOutput)
+}
+
+type GetApikeysApiKeyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApikeysApiKeyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApikeysApiKeyCollection)(nil)).Elem()
+}
+
+func (o GetApikeysApiKeyCollectionArrayOutput) ToGetApikeysApiKeyCollectionArrayOutput() GetApikeysApiKeyCollectionArrayOutput {
+	return o
+}
+
+func (o GetApikeysApiKeyCollectionArrayOutput) ToGetApikeysApiKeyCollectionArrayOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionArrayOutput {
+	return o
+}
+
+func (o GetApikeysApiKeyCollectionArrayOutput) Index(i pulumi.IntInput) GetApikeysApiKeyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApikeysApiKeyCollection {
+		return vs[0].([]GetApikeysApiKeyCollection)[vs[1].(int)]
+	}).(GetApikeysApiKeyCollectionOutput)
+}
+
+type GetApikeysApiKeyCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// An optional description of the Api key.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the APIKey.
+	Id string `pulumi:"id"`
+	// The list of keys.
+	Keys []GetApikeysApiKeyCollectionItemKey `pulumi:"keys"`
+	// A message describing the current state with detail that can provide actionable information.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the ApiKey was updated, in the format defined by RFC 3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetApikeysApiKeyCollectionItemInput is an input type that accepts GetApikeysApiKeyCollectionItemArgs and GetApikeysApiKeyCollectionItemOutput values.
+// You can construct a concrete instance of `GetApikeysApiKeyCollectionItemInput` via:
+//
+//	GetApikeysApiKeyCollectionItemArgs{...}
+type GetApikeysApiKeyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetApikeysApiKeyCollectionItemOutput() GetApikeysApiKeyCollectionItemOutput
+	ToGetApikeysApiKeyCollectionItemOutputWithContext(context.Context) GetApikeysApiKeyCollectionItemOutput
+}
+
+type GetApikeysApiKeyCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// An optional description of the Api key.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the APIKey.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The list of keys.
+	Keys GetApikeysApiKeyCollectionItemKeyArrayInput `pulumi:"keys"`
+	// A message describing the current state with detail that can provide actionable information.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the ApiKey was updated, in the format defined by RFC 3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetApikeysApiKeyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApikeysApiKeyCollectionItem)(nil)).Elem()
+}
+
+func (i GetApikeysApiKeyCollectionItemArgs) ToGetApikeysApiKeyCollectionItemOutput() GetApikeysApiKeyCollectionItemOutput {
+	return i.ToGetApikeysApiKeyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetApikeysApiKeyCollectionItemArgs) ToGetApikeysApiKeyCollectionItemOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApikeysApiKeyCollectionItemOutput)
+}
+
+// GetApikeysApiKeyCollectionItemArrayInput is an input type that accepts GetApikeysApiKeyCollectionItemArray and GetApikeysApiKeyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetApikeysApiKeyCollectionItemArrayInput` via:
+//
+//	GetApikeysApiKeyCollectionItemArray{ GetApikeysApiKeyCollectionItemArgs{...} }
+type GetApikeysApiKeyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetApikeysApiKeyCollectionItemArrayOutput() GetApikeysApiKeyCollectionItemArrayOutput
+	ToGetApikeysApiKeyCollectionItemArrayOutputWithContext(context.Context) GetApikeysApiKeyCollectionItemArrayOutput
+}
+
+type GetApikeysApiKeyCollectionItemArray []GetApikeysApiKeyCollectionItemInput
+
+func (GetApikeysApiKeyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApikeysApiKeyCollectionItem)(nil)).Elem()
+}
+
+func (i GetApikeysApiKeyCollectionItemArray) ToGetApikeysApiKeyCollectionItemArrayOutput() GetApikeysApiKeyCollectionItemArrayOutput {
+	return i.ToGetApikeysApiKeyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetApikeysApiKeyCollectionItemArray) ToGetApikeysApiKeyCollectionItemArrayOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApikeysApiKeyCollectionItemArrayOutput)
+}
+
+type GetApikeysApiKeyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetApikeysApiKeyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApikeysApiKeyCollectionItem)(nil)).Elem()
+}
+
+func (o GetApikeysApiKeyCollectionItemOutput) ToGetApikeysApiKeyCollectionItemOutput() GetApikeysApiKeyCollectionItemOutput {
+	return o
+}
+
+func (o GetApikeysApiKeyCollectionItemOutput) ToGetApikeysApiKeyCollectionItemOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetApikeysApiKeyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetApikeysApiKeyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// An optional description of the Api key.
+func (o GetApikeysApiKeyCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetApikeysApiKeyCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetApikeysApiKeyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the APIKey.
+func (o GetApikeysApiKeyCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The list of keys.
+func (o GetApikeysApiKeyCollectionItemOutput) Keys() GetApikeysApiKeyCollectionItemKeyArrayOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) []GetApikeysApiKeyCollectionItemKey { return v.Keys }).(GetApikeysApiKeyCollectionItemKeyArrayOutput)
+}
+
+// A message describing the current state with detail that can provide actionable information.
+func (o GetApikeysApiKeyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that their lifecycle state matches the given lifecycle state.
+func (o GetApikeysApiKeyCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetApikeysApiKeyCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+func (o GetApikeysApiKeyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the ApiKey was updated, in the format defined by RFC 3339.
+func (o GetApikeysApiKeyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetApikeysApiKeyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApikeysApiKeyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApikeysApiKeyCollectionItem)(nil)).Elem()
+}
+
+func (o GetApikeysApiKeyCollectionItemArrayOutput) ToGetApikeysApiKeyCollectionItemArrayOutput() GetApikeysApiKeyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetApikeysApiKeyCollectionItemArrayOutput) ToGetApikeysApiKeyCollectionItemArrayOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetApikeysApiKeyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetApikeysApiKeyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApikeysApiKeyCollectionItem {
+		return vs[0].([]GetApikeysApiKeyCollectionItem)[vs[1].(int)]
+	}).(GetApikeysApiKeyCollectionItemOutput)
+}
+
+type GetApikeysApiKeyCollectionItemKey struct {
+	// The key.
+	Key string `pulumi:"key"`
+	// The masked key.
+	KeyMask string `pulumi:"keyMask"`
+	// The key name.
+	KeyName string `pulumi:"keyName"`
+	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
+	State string `pulumi:"state"`
+	// The date and time that the key is activated in the format of an RFC3339 datetime string.
+	TimeActivated string `pulumi:"timeActivated"`
+	// The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+	TimeDeactivated string `pulumi:"timeDeactivated"`
+	// The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+	TimeExpiry string `pulumi:"timeExpiry"`
+	// The date and time that the key is last used in the format of an RFC3339 datetime string.
+	TimeLastUsed string `pulumi:"timeLastUsed"`
+	// The date and time that the key is revoked in the format of an RFC3339 datetime string.
+	TimeRevoked string `pulumi:"timeRevoked"`
+}
+
+// GetApikeysApiKeyCollectionItemKeyInput is an input type that accepts GetApikeysApiKeyCollectionItemKeyArgs and GetApikeysApiKeyCollectionItemKeyOutput values.
+// You can construct a concrete instance of `GetApikeysApiKeyCollectionItemKeyInput` via:
+//
+//	GetApikeysApiKeyCollectionItemKeyArgs{...}
+type GetApikeysApiKeyCollectionItemKeyInput interface {
+	pulumi.Input
+
+	ToGetApikeysApiKeyCollectionItemKeyOutput() GetApikeysApiKeyCollectionItemKeyOutput
+	ToGetApikeysApiKeyCollectionItemKeyOutputWithContext(context.Context) GetApikeysApiKeyCollectionItemKeyOutput
+}
+
+type GetApikeysApiKeyCollectionItemKeyArgs struct {
+	// The key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The masked key.
+	KeyMask pulumi.StringInput `pulumi:"keyMask"`
+	// The key name.
+	KeyName pulumi.StringInput `pulumi:"keyName"`
+	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time that the key is activated in the format of an RFC3339 datetime string.
+	TimeActivated pulumi.StringInput `pulumi:"timeActivated"`
+	// The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+	TimeDeactivated pulumi.StringInput `pulumi:"timeDeactivated"`
+	// The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+	TimeExpiry pulumi.StringInput `pulumi:"timeExpiry"`
+	// The date and time that the key is last used in the format of an RFC3339 datetime string.
+	TimeLastUsed pulumi.StringInput `pulumi:"timeLastUsed"`
+	// The date and time that the key is revoked in the format of an RFC3339 datetime string.
+	TimeRevoked pulumi.StringInput `pulumi:"timeRevoked"`
+}
+
+func (GetApikeysApiKeyCollectionItemKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApikeysApiKeyCollectionItemKey)(nil)).Elem()
+}
+
+func (i GetApikeysApiKeyCollectionItemKeyArgs) ToGetApikeysApiKeyCollectionItemKeyOutput() GetApikeysApiKeyCollectionItemKeyOutput {
+	return i.ToGetApikeysApiKeyCollectionItemKeyOutputWithContext(context.Background())
+}
+
+func (i GetApikeysApiKeyCollectionItemKeyArgs) ToGetApikeysApiKeyCollectionItemKeyOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionItemKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApikeysApiKeyCollectionItemKeyOutput)
+}
+
+// GetApikeysApiKeyCollectionItemKeyArrayInput is an input type that accepts GetApikeysApiKeyCollectionItemKeyArray and GetApikeysApiKeyCollectionItemKeyArrayOutput values.
+// You can construct a concrete instance of `GetApikeysApiKeyCollectionItemKeyArrayInput` via:
+//
+//	GetApikeysApiKeyCollectionItemKeyArray{ GetApikeysApiKeyCollectionItemKeyArgs{...} }
+type GetApikeysApiKeyCollectionItemKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetApikeysApiKeyCollectionItemKeyArrayOutput() GetApikeysApiKeyCollectionItemKeyArrayOutput
+	ToGetApikeysApiKeyCollectionItemKeyArrayOutputWithContext(context.Context) GetApikeysApiKeyCollectionItemKeyArrayOutput
+}
+
+type GetApikeysApiKeyCollectionItemKeyArray []GetApikeysApiKeyCollectionItemKeyInput
+
+func (GetApikeysApiKeyCollectionItemKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApikeysApiKeyCollectionItemKey)(nil)).Elem()
+}
+
+func (i GetApikeysApiKeyCollectionItemKeyArray) ToGetApikeysApiKeyCollectionItemKeyArrayOutput() GetApikeysApiKeyCollectionItemKeyArrayOutput {
+	return i.ToGetApikeysApiKeyCollectionItemKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetApikeysApiKeyCollectionItemKeyArray) ToGetApikeysApiKeyCollectionItemKeyArrayOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionItemKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApikeysApiKeyCollectionItemKeyArrayOutput)
+}
+
+type GetApikeysApiKeyCollectionItemKeyOutput struct{ *pulumi.OutputState }
+
+func (GetApikeysApiKeyCollectionItemKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApikeysApiKeyCollectionItemKey)(nil)).Elem()
+}
+
+func (o GetApikeysApiKeyCollectionItemKeyOutput) ToGetApikeysApiKeyCollectionItemKeyOutput() GetApikeysApiKeyCollectionItemKeyOutput {
+	return o
+}
+
+func (o GetApikeysApiKeyCollectionItemKeyOutput) ToGetApikeysApiKeyCollectionItemKeyOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionItemKeyOutput {
+	return o
+}
+
+// The key.
+func (o GetApikeysApiKeyCollectionItemKeyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItemKey) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The masked key.
+func (o GetApikeysApiKeyCollectionItemKeyOutput) KeyMask() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItemKey) string { return v.KeyMask }).(pulumi.StringOutput)
+}
+
+// The key name.
+func (o GetApikeysApiKeyCollectionItemKeyOutput) KeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItemKey) string { return v.KeyName }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that their lifecycle state matches the given lifecycle state.
+func (o GetApikeysApiKeyCollectionItemKeyOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItemKey) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time that the key is activated in the format of an RFC3339 datetime string.
+func (o GetApikeysApiKeyCollectionItemKeyOutput) TimeActivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItemKey) string { return v.TimeActivated }).(pulumi.StringOutput)
+}
+
+// The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+func (o GetApikeysApiKeyCollectionItemKeyOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItemKey) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+func (o GetApikeysApiKeyCollectionItemKeyOutput) TimeDeactivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItemKey) string { return v.TimeDeactivated }).(pulumi.StringOutput)
+}
+
+// The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+func (o GetApikeysApiKeyCollectionItemKeyOutput) TimeExpiry() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItemKey) string { return v.TimeExpiry }).(pulumi.StringOutput)
+}
+
+// The date and time that the key is last used in the format of an RFC3339 datetime string.
+func (o GetApikeysApiKeyCollectionItemKeyOutput) TimeLastUsed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItemKey) string { return v.TimeLastUsed }).(pulumi.StringOutput)
+}
+
+// The date and time that the key is revoked in the format of an RFC3339 datetime string.
+func (o GetApikeysApiKeyCollectionItemKeyOutput) TimeRevoked() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysApiKeyCollectionItemKey) string { return v.TimeRevoked }).(pulumi.StringOutput)
+}
+
+type GetApikeysApiKeyCollectionItemKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApikeysApiKeyCollectionItemKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApikeysApiKeyCollectionItemKey)(nil)).Elem()
+}
+
+func (o GetApikeysApiKeyCollectionItemKeyArrayOutput) ToGetApikeysApiKeyCollectionItemKeyArrayOutput() GetApikeysApiKeyCollectionItemKeyArrayOutput {
+	return o
+}
+
+func (o GetApikeysApiKeyCollectionItemKeyArrayOutput) ToGetApikeysApiKeyCollectionItemKeyArrayOutputWithContext(ctx context.Context) GetApikeysApiKeyCollectionItemKeyArrayOutput {
+	return o
+}
+
+func (o GetApikeysApiKeyCollectionItemKeyArrayOutput) Index(i pulumi.IntInput) GetApikeysApiKeyCollectionItemKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApikeysApiKeyCollectionItemKey {
+		return vs[0].([]GetApikeysApiKeyCollectionItemKey)[vs[1].(int)]
+	}).(GetApikeysApiKeyCollectionItemKeyOutput)
+}
+
+type GetApikeysFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetApikeysFilterInput is an input type that accepts GetApikeysFilterArgs and GetApikeysFilterOutput values.
+// You can construct a concrete instance of `GetApikeysFilterInput` via:
+//
+//	GetApikeysFilterArgs{...}
+type GetApikeysFilterInput interface {
+	pulumi.Input
+
+	ToGetApikeysFilterOutput() GetApikeysFilterOutput
+	ToGetApikeysFilterOutputWithContext(context.Context) GetApikeysFilterOutput
+}
+
+type GetApikeysFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetApikeysFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApikeysFilter)(nil)).Elem()
+}
+
+func (i GetApikeysFilterArgs) ToGetApikeysFilterOutput() GetApikeysFilterOutput {
+	return i.ToGetApikeysFilterOutputWithContext(context.Background())
+}
+
+func (i GetApikeysFilterArgs) ToGetApikeysFilterOutputWithContext(ctx context.Context) GetApikeysFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApikeysFilterOutput)
+}
+
+// GetApikeysFilterArrayInput is an input type that accepts GetApikeysFilterArray and GetApikeysFilterArrayOutput values.
+// You can construct a concrete instance of `GetApikeysFilterArrayInput` via:
+//
+//	GetApikeysFilterArray{ GetApikeysFilterArgs{...} }
+type GetApikeysFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetApikeysFilterArrayOutput() GetApikeysFilterArrayOutput
+	ToGetApikeysFilterArrayOutputWithContext(context.Context) GetApikeysFilterArrayOutput
+}
+
+type GetApikeysFilterArray []GetApikeysFilterInput
+
+func (GetApikeysFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApikeysFilter)(nil)).Elem()
+}
+
+func (i GetApikeysFilterArray) ToGetApikeysFilterArrayOutput() GetApikeysFilterArrayOutput {
+	return i.ToGetApikeysFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetApikeysFilterArray) ToGetApikeysFilterArrayOutputWithContext(ctx context.Context) GetApikeysFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApikeysFilterArrayOutput)
+}
+
+type GetApikeysFilterOutput struct{ *pulumi.OutputState }
+
+func (GetApikeysFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApikeysFilter)(nil)).Elem()
+}
+
+func (o GetApikeysFilterOutput) ToGetApikeysFilterOutput() GetApikeysFilterOutput {
+	return o
+}
+
+func (o GetApikeysFilterOutput) ToGetApikeysFilterOutputWithContext(ctx context.Context) GetApikeysFilterOutput {
+	return o
+}
+
+func (o GetApikeysFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApikeysFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetApikeysFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetApikeysFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetApikeysFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApikeysFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetApikeysFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApikeysFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApikeysFilter)(nil)).Elem()
+}
+
+func (o GetApikeysFilterArrayOutput) ToGetApikeysFilterArrayOutput() GetApikeysFilterArrayOutput {
+	return o
+}
+
+func (o GetApikeysFilterArrayOutput) ToGetApikeysFilterArrayOutputWithContext(ctx context.Context) GetApikeysFilterArrayOutput {
+	return o
+}
+
+func (o GetApikeysFilterArrayOutput) Index(i pulumi.IntInput) GetApikeysFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApikeysFilter {
+		return vs[0].([]GetApikeysFilter)[vs[1].(int)]
+	}).(GetApikeysFilterOutput)
+}
+
 type GetDedicatedAiClusterCapacity struct {
 	CapacityType          string `pulumi:"capacityType"`
 	TotalEndpointCapacity int    `pulumi:"totalEndpointCapacity"`
@@ -44844,6 +45596,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigRerankingLlmCustomizationLlmSelectionArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigRerankingLlmCustomizationLlmSelectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeyKeyInput)(nil)).Elem(), GetApikeyKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeyKeyArrayInput)(nil)).Elem(), GetApikeyKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeysApiKeyCollectionInput)(nil)).Elem(), GetApikeysApiKeyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeysApiKeyCollectionArrayInput)(nil)).Elem(), GetApikeysApiKeyCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeysApiKeyCollectionItemInput)(nil)).Elem(), GetApikeysApiKeyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeysApiKeyCollectionItemArrayInput)(nil)).Elem(), GetApikeysApiKeyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeysApiKeyCollectionItemKeyInput)(nil)).Elem(), GetApikeysApiKeyCollectionItemKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeysApiKeyCollectionItemKeyArrayInput)(nil)).Elem(), GetApikeysApiKeyCollectionItemKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeysFilterInput)(nil)).Elem(), GetApikeysFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeysFilterArrayInput)(nil)).Elem(), GetApikeysFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterCapacityInput)(nil)).Elem(), GetDedicatedAiClusterCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterCapacityArrayInput)(nil)).Elem(), GetDedicatedAiClusterCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClustersDedicatedAiClusterCollectionInput)(nil)).Elem(), GetDedicatedAiClustersDedicatedAiClusterCollectionArgs{})
@@ -45492,6 +46254,16 @@ func init() {
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigRerankingLlmCustomizationLlmSelectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput{})
+	pulumi.RegisterOutputType(GetApikeyKeyOutput{})
+	pulumi.RegisterOutputType(GetApikeyKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetApikeysApiKeyCollectionOutput{})
+	pulumi.RegisterOutputType(GetApikeysApiKeyCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetApikeysApiKeyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetApikeysApiKeyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetApikeysApiKeyCollectionItemKeyOutput{})
+	pulumi.RegisterOutputType(GetApikeysApiKeyCollectionItemKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetApikeysFilterOutput{})
+	pulumi.RegisterOutputType(GetApikeysFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClusterCapacityOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClusterCapacityArrayOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClustersDedicatedAiClusterCollectionOutput{})

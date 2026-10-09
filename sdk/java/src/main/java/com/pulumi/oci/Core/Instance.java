@@ -85,6 +85,196 @@ import javax.annotation.Nullable;
  * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
  * operation.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Instance;
+ * import com.pulumi.oci.Core.InstanceArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceAgentConfigArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceAgentConfigPluginsConfigArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceAvailabilityConfigArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceCreateVnicDetailsArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceInstanceOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceLaunchOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceLaunchVolumeAttachmentArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceLicensingConfigsArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePlacementConstraintDetailsArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePlatformConfigArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePreemptibleInstanceConfigArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePreemptibleInstanceConfigPreemptionActionArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceShapeConfigArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceSourceDetailsArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testInstance = new Instance("testInstance", InstanceArgs.builder()
+ *             .availabilityDomain(instanceAvailabilityDomain)
+ *             .compartmentId(compartmentId)
+ *             .agentConfig(InstanceAgentConfigArgs.builder()
+ *                 .areAllPluginsDisabled(instanceAgentConfigAreAllPluginsDisabled)
+ *                 .isManagementDisabled(instanceAgentConfigIsManagementDisabled)
+ *                 .isMonitoringDisabled(instanceAgentConfigIsMonitoringDisabled)
+ *                 .pluginsConfigs(InstanceAgentConfigPluginsConfigArgs.builder()
+ *                     .desiredState(instanceAgentConfigPluginsConfigDesiredState)
+ *                     .name(instanceAgentConfigPluginsConfigName)
+ *                     .build())
+ *                 .build())
+ *             .availabilityConfig(InstanceAvailabilityConfigArgs.builder()
+ *                 .isLiveMigrationPreferred(instanceAvailabilityConfigIsLiveMigrationPreferred)
+ *                 .recoveryAction(instanceAvailabilityConfigRecoveryAction)
+ *                 .build())
+ *             .clusterPlacementGroupId(testGroup.id())
+ *             .computeClusterId(testComputeCluster.id())
+ *             .computeHostGroupId(testComputeHostGroup.id())
+ *             .createVnicDetails(InstanceCreateVnicDetailsArgs.builder()
+ *                 .assignIpv6ip(instanceCreateVnicDetailsAssignIpv6ip)
+ *                 .assignPrivateDnsRecord(instanceCreateVnicDetailsAssignPrivateDnsRecord)
+ *                 .assignPublicIp(instanceCreateVnicDetailsAssignPublicIp)
+ *                 .definedTags(Map.of("Operations.CostCenter", "42"))
+ *                 .displayName(instanceCreateVnicDetailsDisplayName)
+ *                 .freeformTags(Map.of("Department", "Finance"))
+ *                 .hostnameLabel(instanceCreateVnicDetailsHostnameLabel)
+ *                 .ipv6addressIpv6subnetCidrPairDetails(InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs.builder()
+ *                     .ipv6address(instanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address)
+ *                     .ipv6id(testIpv6.id())
+ *                     .ipv6subnetCidr(instanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr)
+ *                     .build())
+ *                 .nsgIds(instanceCreateVnicDetailsNsgIds)
+ *                 .privateIp(instanceCreateVnicDetailsPrivateIp)
+ *                 .privateIpId(testPrivateIp.id())
+ *                 .securityAttributes(instanceCreateVnicDetailsSecurityAttributes)
+ *                 .skipSourceDestCheck(instanceCreateVnicDetailsSkipSourceDestCheck)
+ *                 .subnetCidr(instanceCreateVnicDetailsSubnetCidr)
+ *                 .subnetId(testSubnet.id())
+ *                 .vlanId(testVlan.id())
+ *                 .build())
+ *             .dedicatedVmHostId(testDedicatedVmHost.id())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .displayName(instanceDisplayName)
+ *             .extendedMetadata(Map.ofEntries(
+ *                 Map.entry("some_string", "stringA"),
+ *                 Map.entry("nested_object", "{\"some_string\": \"stringB\", \"object\": {\"some_string\": \"stringC\"}}")
+ *             ))
+ *             .faultDomain(instanceFaultDomain)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .hostnameLabel(instanceHostnameLabel)
+ *             .instanceConfigurationId(testInstanceConfiguration.id())
+ *             .instanceOptions(InstanceInstanceOptionsArgs.builder()
+ *                 .areLegacyImdsEndpointsDisabled(instanceInstanceOptionsAreLegacyImdsEndpointsDisabled)
+ *                 .build())
+ *             .ipxeScript(instanceIpxeScript)
+ *             .isAiEnterpriseEnabled(instanceIsAiEnterpriseEnabled)
+ *             .isPvEncryptionInTransitEnabled(instanceIsPvEncryptionInTransitEnabled)
+ *             .launchOptions(InstanceLaunchOptionsArgs.builder()
+ *                 .bootVolumeType(instanceLaunchOptionsBootVolumeType)
+ *                 .firmware(instanceLaunchOptionsFirmware)
+ *                 .isConsistentVolumeNamingEnabled(instanceLaunchOptionsIsConsistentVolumeNamingEnabled)
+ *                 .isEncryptionInTransitEnabled(instanceLaunchOptionsIsEncryptionInTransitEnabled)
+ *                 .isPvEncryptionInTransitEnabled(instanceLaunchOptionsIsPvEncryptionInTransitEnabled)
+ *                 .networkType(instanceLaunchOptionsNetworkType)
+ *                 .remoteDataVolumeType(instanceLaunchOptionsRemoteDataVolumeType)
+ *                 .build())
+ *             .launchVolumeAttachments(InstanceLaunchVolumeAttachmentArgs.builder()
+ *                 .type(instanceLaunchVolumeAttachmentsType)
+ *                 .device(instanceLaunchVolumeAttachmentsDevice)
+ *                 .displayName(instanceLaunchVolumeAttachmentsDisplayName)
+ *                 .encryptionInTransitType(instanceLaunchVolumeAttachmentsEncryptionInTransitType)
+ *                 .isAgentAutoIscsiLoginEnabled(instanceLaunchVolumeAttachmentsIsAgentAutoIscsiLoginEnabled)
+ *                 .isPvEncryptionInTransitEnabled(instanceLaunchVolumeAttachmentsIsPvEncryptionInTransitEnabled)
+ *                 .isReadOnly(instanceLaunchVolumeAttachmentsIsReadOnly)
+ *                 .isShareable(instanceLaunchVolumeAttachmentsIsShareable)
+ *                 .launchCreateVolumeDetails(InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs.builder()
+ *                     .sizeInGbs(instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsSizeInGbs)
+ *                     .volumeCreationType(instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsVolumeCreationType)
+ *                     .compartmentId(compartmentId)
+ *                     .displayName(instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsDisplayName)
+ *                     .kmsKeyId(testKey.id())
+ *                     .vpusPerGb(instanceLaunchVolumeAttachmentsLaunchCreateVolumeDetailsVpusPerGb)
+ *                     .build())
+ *                 .useChap(instanceLaunchVolumeAttachmentsUseChap)
+ *                 .volumeId(testVolume.id())
+ *                 .build())
+ *             .licensingConfigs(InstanceLicensingConfigsArgs.builder()
+ *                 .type(instanceLicensingConfigsType)
+ *                 .licenseType(instanceLicensingConfigsLicenseType)
+ *                 .build())
+ *             .metadata(instanceMetadata)
+ *             .placementConstraintDetails(InstancePlacementConstraintDetailsArgs.builder()
+ *                 .type(instancePlacementConstraintDetailsType)
+ *                 .computeBareMetalHostId(testComputeBareMetalHost.id())
+ *                 .computeHostGroupId(testGroup.id())
+ *                 .build())
+ *             .platformConfig(InstancePlatformConfigArgs.builder()
+ *                 .type(instancePlatformConfigType)
+ *                 .areVirtualInstructionsEnabled(instancePlatformConfigAreVirtualInstructionsEnabled)
+ *                 .configMap(instancePlatformConfigConfigMap)
+ *                 .isAccessControlServiceEnabled(instancePlatformConfigIsAccessControlServiceEnabled)
+ *                 .isInputOutputMemoryManagementUnitEnabled(instancePlatformConfigIsInputOutputMemoryManagementUnitEnabled)
+ *                 .isMeasuredBootEnabled(instancePlatformConfigIsMeasuredBootEnabled)
+ *                 .isMemoryEncryptionEnabled(instancePlatformConfigIsMemoryEncryptionEnabled)
+ *                 .isSecureBootEnabled(instancePlatformConfigIsSecureBootEnabled)
+ *                 .isSymmetricMultiThreadingEnabled(instancePlatformConfigIsSymmetricMultiThreadingEnabled)
+ *                 .isTrustedPlatformModuleEnabled(instancePlatformConfigIsTrustedPlatformModuleEnabled)
+ *                 .numaNodesPerSocket(instancePlatformConfigNumaNodesPerSocket)
+ *                 .percentageOfCoresEnabled(instancePlatformConfigPercentageOfCoresEnabled)
+ *                 .build())
+ *             .preemptibleInstanceConfig(InstancePreemptibleInstanceConfigArgs.builder()
+ *                 .preemptionAction(InstancePreemptibleInstanceConfigPreemptionActionArgs.builder()
+ *                     .type(instancePreemptibleInstanceConfigPreemptionActionType)
+ *                     .preserveBootVolume(instancePreemptibleInstanceConfigPreemptionActionPreserveBootVolume)
+ *                     .build())
+ *                 .build())
+ *             .securityAttributes(instanceSecurityAttributes)
+ *             .shape(instanceShape)
+ *             .shapeConfig(InstanceShapeConfigArgs.builder()
+ *                 .baselineOcpuUtilization(instanceShapeConfigBaselineOcpuUtilization)
+ *                 .localVolumeSizeInGbs(instanceShapeConfigLocalVolumeSizeInGbs)
+ *                 .memoryInGbs(instanceShapeConfigMemoryInGbs)
+ *                 .nvmes(instanceShapeConfigNvmes)
+ *                 .ocpus(instanceShapeConfigOcpus)
+ *                 .resourceManagement(instanceShapeConfigResourceManagement)
+ *                 .vcpus(instanceShapeConfigVcpus)
+ *                 .build())
+ *             .sourceDetails(InstanceSourceDetailsArgs.builder()
+ *                 .sourceId(testImage.id())
+ *                 .sourceType("image")
+ *                 .bootVolumeSizeInGbs(instanceSourceDetailsBootVolumeSizeInGbs)
+ *                 .bootVolumeVpusPerGb(instanceSourceDetailsBootVolumeVpusPerGb)
+ *                 .instanceSourceImageFilterDetails(InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs.builder()
+ *                     .compartmentId(compartmentId)
+ *                     .definedTagsFilter(instanceSourceDetailsInstanceSourceImageFilterDetailsDefinedTagsFilter)
+ *                     .operatingSystem(instanceSourceDetailsInstanceSourceImageFilterDetailsOperatingSystem)
+ *                     .operatingSystemVersion(instanceSourceDetailsInstanceSourceImageFilterDetailsOperatingSystemVersion)
+ *                     .build())
+ *                 .kmsKeyId(testKey.id())
+ *                 .build())
+ *             .preserveBootVolume(false)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Instances can be imported using the `id`, e.g.

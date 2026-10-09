@@ -143,6 +143,12 @@ from .get_multicloud_om_hub_multi_clouds_metadata import *
 from .get_multicloud_om_hub_multicloud_resources import *
 from .get_multicloud_resource_anchor import *
 from .get_multicloud_resource_anchors import *
+from .get_product_catalog_internal_admin_product import *
+from .get_product_catalog_internal_admin_products import *
+from .get_product_catalog_internal_product import *
+from .get_product_catalog_internal_products import *
+from .get_product_catalog_product import *
+from .get_product_catalog_products import *
 from .get_psa_private_service_access import *
 from .get_psa_private_service_accesses import *
 from .get_psa_psa_services import *
@@ -181,6 +187,8 @@ from .managed_kafka_kafka_cluster import *
 from .managed_kafka_kafka_cluster_addon import *
 from .managed_kafka_kafka_cluster_config import *
 from .managed_kafka_kafka_cluster_superusers_management import *
+from .product_catalog_internal_admin_product import *
+from .product_catalog_internal_product import *
 from .psa_private_service_access import *
 from .resource_analytics_monitored_region import *
 from .resource_analytics_resource_analytics_instance import *

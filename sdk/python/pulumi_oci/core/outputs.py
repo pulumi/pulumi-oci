@@ -751,6 +751,7 @@ __all__ = [
     'GetServicesServiceResult',
     'GetShapeFilterResult',
     'GetShapeShapeResult',
+    'GetShapeShapeBsNvmeAttachmentsConfigResult',
     'GetShapeShapeMaxVnicAttachmentOptionResult',
     'GetShapeShapeMemoryOptionResult',
     'GetShapeShapeNetworkingBandwidthOptionResult',
@@ -769,6 +770,7 @@ __all__ = [
     'GetShapeShapeRecommendedAlternativeResult',
     'GetShapesFilterResult',
     'GetShapesShapeResult',
+    'GetShapesShapeBsNvmeAttachmentsConfigResult',
     'GetShapesShapeMaxVnicAttachmentOptionResult',
     'GetShapesShapeMemoryOptionResult',
     'GetShapesShapeNetworkingBandwidthOptionResult',
@@ -5969,11 +5971,12 @@ class ImageLaunchOption(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str network_type: Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
@@ -5985,6 +5988,7 @@ class ImageLaunchOption(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -6009,6 +6013,7 @@ class ImageLaunchOption(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -6034,7 +6039,7 @@ class ImageLaunchOption(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[_builtins.bool]:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -6060,6 +6065,7 @@ class ImageLaunchOption(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -6657,7 +6663,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails(dict):
                  is_shareable: Optional[_builtins.bool] = None,
                  use_chap: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str type: The type of volume. The only supported values are "iscsi" and "paravirtualized"
+        :param _builtins.str type: The type of volume. The only supported values are "iscsi", "paravirtualized", and "nvme".
         :param _builtins.str device: The device name.
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param _builtins.bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
@@ -6683,7 +6689,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        The type of volume. The only supported values are "iscsi" and "paravirtualized"
+        The type of volume. The only supported values are "iscsi", "paravirtualized", and "nvme".
         """
         return pulumi.get(self, "type")
 
@@ -8189,6 +8195,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
             suggest = "boot_volume_type"
         elif key == "isConsistentVolumeNamingEnabled":
             suggest = "is_consistent_volume_naming_enabled"
+        elif key == "isEncryptionInTransitEnabled":
+            suggest = "is_encryption_in_transit_enabled"
         elif key == "isPvEncryptionInTransitEnabled":
             suggest = "is_pv_encryption_in_transit_enabled"
         elif key == "networkType":
@@ -8211,6 +8219,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
                  boot_volume_type: Optional[_builtins.str] = None,
                  firmware: Optional[_builtins.str] = None,
                  is_consistent_volume_naming_enabled: Optional[_builtins.bool] = None,
+                 is_encryption_in_transit_enabled: Optional[_builtins.bool] = None,
                  is_pv_encryption_in_transit_enabled: Optional[_builtins.bool] = None,
                  network_type: Optional[_builtins.str] = None,
                  remote_data_volume_type: Optional[_builtins.str] = None):
@@ -8221,11 +8230,13 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's attachment is enabled or not.
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str network_type: Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
@@ -8236,6 +8247,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -8243,6 +8255,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
             pulumi.set(__self__, "firmware", firmware)
         if is_consistent_volume_naming_enabled is not None:
             pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+        if is_encryption_in_transit_enabled is not None:
+            pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         if is_pv_encryption_in_transit_enabled is not None:
             pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if network_type is not None:
@@ -8260,6 +8274,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -8282,10 +8297,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[_builtins.bool]:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -8310,6 +8333,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -9184,7 +9208,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetails(dict):
                  is_shareable: Optional[_builtins.bool] = None,
                  use_chap: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        :param _builtins.str type: The type of volume. The only supported values are "iscsi", "paravirtualized", and "nvme".
         :param _builtins.str device: The device name.
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param _builtins.bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
@@ -9210,7 +9234,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetails(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        The type of volume. The only supported values are "iscsi", "paravirtualized", and "nvme".
         """
         return pulumi.get(self, "type")
 
@@ -9759,7 +9783,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs' instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param _builtins.str ipxe_script: This is an advanced option.
         :param _builtins.bool is_ai_enterprise_enabled: Whether to enable AI enterprise on the instance.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
@@ -9979,7 +10003,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[_builtins.bool]:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -10632,6 +10656,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
             suggest = "boot_volume_type"
         elif key == "isConsistentVolumeNamingEnabled":
             suggest = "is_consistent_volume_naming_enabled"
+        elif key == "isEncryptionInTransitEnabled":
+            suggest = "is_encryption_in_transit_enabled"
         elif key == "isPvEncryptionInTransitEnabled":
             suggest = "is_pv_encryption_in_transit_enabled"
         elif key == "networkType":
@@ -10654,6 +10680,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
                  boot_volume_type: Optional[_builtins.str] = None,
                  firmware: Optional[_builtins.str] = None,
                  is_consistent_volume_naming_enabled: Optional[_builtins.bool] = None,
+                 is_encryption_in_transit_enabled: Optional[_builtins.bool] = None,
                  is_pv_encryption_in_transit_enabled: Optional[_builtins.bool] = None,
                  network_type: Optional[_builtins.str] = None,
                  remote_data_volume_type: Optional[_builtins.str] = None):
@@ -10664,11 +10691,13 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's attachment is enabled or not.
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str network_type: Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
@@ -10679,6 +10708,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -10686,6 +10716,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
             pulumi.set(__self__, "firmware", firmware)
         if is_consistent_volume_naming_enabled is not None:
             pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+        if is_encryption_in_transit_enabled is not None:
+            pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         if is_pv_encryption_in_transit_enabled is not None:
             pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if network_type is not None:
@@ -10703,6 +10735,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -10725,10 +10758,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[_builtins.bool]:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -10753,6 +10794,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -12570,6 +12612,8 @@ class InstanceLaunchOptions(dict):
             suggest = "boot_volume_type"
         elif key == "isConsistentVolumeNamingEnabled":
             suggest = "is_consistent_volume_naming_enabled"
+        elif key == "isEncryptionInTransitEnabled":
+            suggest = "is_encryption_in_transit_enabled"
         elif key == "isPvEncryptionInTransitEnabled":
             suggest = "is_pv_encryption_in_transit_enabled"
         elif key == "networkType":
@@ -12592,6 +12636,7 @@ class InstanceLaunchOptions(dict):
                  boot_volume_type: Optional[_builtins.str] = None,
                  firmware: Optional[_builtins.str] = None,
                  is_consistent_volume_naming_enabled: Optional[_builtins.bool] = None,
+                 is_encryption_in_transit_enabled: Optional[_builtins.bool] = None,
                  is_pv_encryption_in_transit_enabled: Optional[_builtins.bool] = None,
                  network_type: Optional[_builtins.str] = None,
                  remote_data_volume_type: Optional[_builtins.str] = None):
@@ -12602,10 +12647,12 @@ class InstanceLaunchOptions(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
+        :param _builtins.bool is_encryption_in_transit_enabled: Specifies whether in-transit encryption is enabled for the data volume's attachment.
         :param _builtins.bool is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         :param _builtins.str network_type: (Updatable) Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -12618,6 +12665,7 @@ class InstanceLaunchOptions(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -12625,6 +12673,8 @@ class InstanceLaunchOptions(dict):
             pulumi.set(__self__, "firmware", firmware)
         if is_consistent_volume_naming_enabled is not None:
             pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+        if is_encryption_in_transit_enabled is not None:
+            pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         if is_pv_encryption_in_transit_enabled is not None:
             pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if network_type is not None:
@@ -12642,6 +12692,7 @@ class InstanceLaunchOptions(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -12662,6 +12713,14 @@ class InstanceLaunchOptions(dict):
         Whether to enable consistent volume naming feature. Defaults to false.
         """
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Specifies whether in-transit encryption is enabled for the data volume's attachment.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
 
     @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
@@ -12693,6 +12752,7 @@ class InstanceLaunchOptions(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -12745,7 +12805,7 @@ class InstanceLaunchVolumeAttachment(dict):
                  use_chap: Optional[_builtins.bool] = None,
                  volume_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str type: The type of volume attachment. Currently, the only supported values are "iscsi" and "paravirtualized".
+        :param _builtins.str type: The type of volume attachment. Currently, the only supported values are "iscsi", "paravirtualized", and "nvme".
         :param _builtins.str device: The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param _builtins.str encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
@@ -12783,7 +12843,7 @@ class InstanceLaunchVolumeAttachment(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        The type of volume attachment. Currently, the only supported values are "iscsi" and "paravirtualized".
+        The type of volume attachment. Currently, the only supported values are "iscsi", "paravirtualized", and "nvme".
         """
         return pulumi.get(self, "type")
 
@@ -18662,6 +18722,7 @@ class GetBootVolumeAttachmentsBootVolumeAttachmentResult(dict):
                  encryption_in_transit_type: _builtins.str,
                  id: _builtins.str,
                  instance_id: _builtins.str,
+                 is_encryption_in_transit_enabled: _builtins.bool,
                  is_pv_encryption_in_transit_enabled: _builtins.bool,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -18671,10 +18732,11 @@ class GetBootVolumeAttachmentsBootVolumeAttachmentResult(dict):
         :param _builtins.str boot_volume_id: The OCID of the boot volume.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param _builtins.str encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+        :param _builtins.str encryption_in_transit_type: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str id: The OCID of the boot volume attachment.
         :param _builtins.str instance_id: The OCID of the instance.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
+        :param _builtins.bool is_encryption_in_transit_enabled: Specifies whether in-transit encryption is enabled for the boot volume's attachment.
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str state: The current state of the boot volume attachment.
         :param _builtins.str time_created: The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -18686,6 +18748,7 @@ class GetBootVolumeAttachmentsBootVolumeAttachmentResult(dict):
         pulumi.set(__self__, "encryption_in_transit_type", encryption_in_transit_type)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -18727,7 +18790,7 @@ class GetBootVolumeAttachmentsBootVolumeAttachmentResult(dict):
     @pulumi.getter(name="encryptionInTransitType")
     def encryption_in_transit_type(self) -> _builtins.str:
         """
-        Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "encryption_in_transit_type")
 
@@ -18748,10 +18811,18 @@ class GetBootVolumeAttachmentsBootVolumeAttachmentResult(dict):
         return pulumi.get(self, "instance_id")
 
     @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> _builtins.bool:
+        """
+        Specifies whether in-transit encryption is enabled for the boot volume's attachment.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -31849,11 +31920,12 @@ class GetImageLaunchOptionResult(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str network_type: Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
@@ -31865,6 +31937,7 @@ class GetImageLaunchOptionResult(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -31883,6 +31956,7 @@ class GetImageLaunchOptionResult(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -31908,7 +31982,7 @@ class GetImageLaunchOptionResult(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -31934,6 +32008,7 @@ class GetImageLaunchOptionResult(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -32493,11 +32568,12 @@ class GetImagesImageLaunchOptionResult(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str network_type: Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
@@ -32509,6 +32585,7 @@ class GetImagesImageLaunchOptionResult(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -32527,6 +32604,7 @@ class GetImagesImageLaunchOptionResult(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -32552,7 +32630,7 @@ class GetImagesImageLaunchOptionResult(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -32578,6 +32656,7 @@ class GetImagesImageLaunchOptionResult(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -32945,7 +33024,7 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailResult(dict):
         """
         :param _builtins.str device: The device name.
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.bool is_read_only: Whether the attachment should be created in read-only mode.
         :param _builtins.bool is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
@@ -32979,7 +33058,7 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailResult(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -33333,7 +33412,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param _builtins.str ipxe_script: This is an advanced option.
         :param _builtins.bool is_ai_enterprise_enabled: Whether to enable AI enterprise on the instance.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
@@ -33524,7 +33603,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -33978,6 +34057,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
                  boot_volume_type: _builtins.str,
                  firmware: _builtins.str,
                  is_consistent_volume_naming_enabled: _builtins.bool,
+                 is_encryption_in_transit_enabled: _builtins.bool,
                  is_pv_encryption_in_transit_enabled: _builtins.bool,
                  network_type: _builtins.str,
                  remote_data_volume_type: _builtins.str):
@@ -33988,11 +34068,13 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's attachment is enabled or not.
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str network_type: Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
@@ -34004,10 +34086,12 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
         pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+        pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "remote_data_volume_type", remote_data_volume_type)
@@ -34022,6 +34106,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -34044,10 +34129,18 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> _builtins.bool:
+        """
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -34073,6 +34166,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -34639,7 +34733,7 @@ class GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailResult(
         """
         :param _builtins.str device: The device name.
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.bool is_read_only: Whether the attachment should be created in read-only mode.
         :param _builtins.bool is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
@@ -34673,7 +34767,7 @@ class GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailResult(
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -35027,7 +35121,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param _builtins.str ipxe_script: This is an advanced option.
         :param _builtins.bool is_ai_enterprise_enabled: Whether to enable AI enterprise on the instance.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
@@ -35218,7 +35312,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -35672,6 +35766,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
                  boot_volume_type: _builtins.str,
                  firmware: _builtins.str,
                  is_consistent_volume_naming_enabled: _builtins.bool,
+                 is_encryption_in_transit_enabled: _builtins.bool,
                  is_pv_encryption_in_transit_enabled: _builtins.bool,
                  network_type: _builtins.str,
                  remote_data_volume_type: _builtins.str):
@@ -35682,11 +35777,13 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's attachment is enabled or not.
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str network_type: Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
@@ -35698,10 +35795,12 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
         pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+        pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "remote_data_volume_type", remote_data_volume_type)
@@ -35716,6 +35815,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -35738,10 +35838,18 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> _builtins.bool:
+        """
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -35767,6 +35875,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -37151,7 +37260,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAtt
         """
         :param _builtins.str device: The device name.
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.bool is_read_only: Whether the attachment should be created in read-only mode.
         :param _builtins.bool is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
@@ -37185,7 +37294,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAtt
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -37539,7 +37648,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param _builtins.str ipxe_script: This is an advanced option.
         :param _builtins.bool is_ai_enterprise_enabled: Whether to enable AI enterprise on the instance.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
@@ -37730,7 +37839,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -38184,6 +38293,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
                  boot_volume_type: _builtins.str,
                  firmware: _builtins.str,
                  is_consistent_volume_naming_enabled: _builtins.bool,
+                 is_encryption_in_transit_enabled: _builtins.bool,
                  is_pv_encryption_in_transit_enabled: _builtins.bool,
                  network_type: _builtins.str,
                  remote_data_volume_type: _builtins.str):
@@ -38194,11 +38304,13 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's attachment is enabled or not.
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str network_type: Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
@@ -38210,10 +38322,12 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
         pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+        pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "remote_data_volume_type", remote_data_volume_type)
@@ -38228,6 +38342,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -38250,10 +38365,18 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> _builtins.bool:
+        """
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -38279,6 +38402,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -38845,7 +38969,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVol
         """
         :param _builtins.str device: The device name.
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.bool is_read_only: Whether the attachment should be created in read-only mode.
         :param _builtins.bool is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
@@ -38879,7 +39003,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVol
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -39233,7 +39357,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param _builtins.str ipxe_script: This is an advanced option.
         :param _builtins.bool is_ai_enterprise_enabled: Whether to enable AI enterprise on the instance.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
@@ -39424,7 +39548,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -39878,6 +40002,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  boot_volume_type: _builtins.str,
                  firmware: _builtins.str,
                  is_consistent_volume_naming_enabled: _builtins.bool,
+                 is_encryption_in_transit_enabled: _builtins.bool,
                  is_pv_encryption_in_transit_enabled: _builtins.bool,
                  network_type: _builtins.str,
                  remote_data_volume_type: _builtins.str):
@@ -39888,11 +40013,13 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param _builtins.bool is_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's attachment is enabled or not.
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str network_type: Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
@@ -39904,10 +40031,12 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
         pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+        pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "remote_data_volume_type", remote_data_volume_type)
@@ -39922,6 +40051,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -39944,10 +40074,18 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> _builtins.bool:
+        """
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -39973,6 +40111,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -41356,6 +41495,7 @@ class GetInstanceLaunchOptionResult(dict):
                  boot_volume_type: _builtins.str,
                  firmware: _builtins.str,
                  is_consistent_volume_naming_enabled: _builtins.bool,
+                 is_encryption_in_transit_enabled: _builtins.bool,
                  is_pv_encryption_in_transit_enabled: _builtins.bool,
                  network_type: _builtins.str,
                  remote_data_volume_type: _builtins.str):
@@ -41366,11 +41506,13 @@ class GetInstanceLaunchOptionResult(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        :param _builtins.bool is_encryption_in_transit_enabled: Specifies whether in-transit encryption is enabled for the data volume's attachment.
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str network_type: Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
@@ -41382,10 +41524,12 @@ class GetInstanceLaunchOptionResult(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
         pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+        pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "remote_data_volume_type", remote_data_volume_type)
@@ -41400,6 +41544,7 @@ class GetInstanceLaunchOptionResult(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -41422,10 +41567,18 @@ class GetInstanceLaunchOptionResult(dict):
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> _builtins.bool:
+        """
+        Specifies whether in-transit encryption is enabled for the data volume's attachment.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -41451,6 +41604,7 @@ class GetInstanceLaunchOptionResult(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -41471,7 +41625,7 @@ class GetInstanceLaunchVolumeAttachmentResult(dict):
                  volume_id: _builtins.str):
         """
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str type: (Required) The type of action to run when the instance is interrupted for eviction.
         """
         pulumi.set(__self__, "device", device)
@@ -41513,7 +41667,7 @@ class GetInstanceLaunchVolumeAttachmentResult(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -43955,7 +44109,7 @@ class GetInstancesInstanceResult(dict):
         :param _builtins.str ipxe_script: When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
         :param _builtins.bool is_ai_enterprise_enabled: Whether AI enterprise is enabled on the instance.
         :param _builtins.bool is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
@@ -44218,7 +44372,7 @@ class GetInstancesInstanceResult(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -44698,6 +44852,7 @@ class GetInstancesInstanceLaunchOptionResult(dict):
                  boot_volume_type: _builtins.str,
                  firmware: _builtins.str,
                  is_consistent_volume_naming_enabled: _builtins.bool,
+                 is_encryption_in_transit_enabled: _builtins.bool,
                  is_pv_encryption_in_transit_enabled: _builtins.bool,
                  network_type: _builtins.str,
                  remote_data_volume_type: _builtins.str):
@@ -44708,11 +44863,13 @@ class GetInstancesInstanceLaunchOptionResult(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         :param _builtins.str firmware: Firmware used to boot VM. Select the option that matches your operating system.
                * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
                * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param _builtins.bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        :param _builtins.bool is_encryption_in_transit_enabled: Specifies whether in-transit encryption is enabled for the data volume's attachment.
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str network_type: Emulation type for the physical network interface card (NIC).
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
@@ -44724,10 +44881,12 @@ class GetInstancesInstanceLaunchOptionResult(dict):
                * `IDE` - Emulated IDE disk.
                * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
                * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+               * `NVME` - NVMe attached remote block storage device.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
         pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+        pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "remote_data_volume_type", remote_data_volume_type)
@@ -44742,6 +44901,7 @@ class GetInstancesInstanceLaunchOptionResult(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -44764,10 +44924,18 @@ class GetInstancesInstanceLaunchOptionResult(dict):
         return pulumi.get(self, "is_consistent_volume_naming_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> _builtins.bool:
+        """
+        Specifies whether in-transit encryption is enabled for the data volume's attachment.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -44793,6 +44961,7 @@ class GetInstancesInstanceLaunchOptionResult(dict):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -44813,7 +44982,7 @@ class GetInstancesInstanceLaunchVolumeAttachmentResult(dict):
                  volume_id: _builtins.str):
         """
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str type: (Required) The type of action to run when the instance is interrupted for eviction.
         """
         pulumi.set(__self__, "device", device)
@@ -44855,7 +45024,7 @@ class GetInstancesInstanceLaunchVolumeAttachmentResult(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -50933,6 +51102,7 @@ class GetShapeShapeResult(dict):
     def __init__(__self__, *,
                  baseline_ocpu_utilizations: Sequence[_builtins.str],
                  billing_type: _builtins.str,
+                 bs_nvme_attachments_configs: Sequence['outputs.GetShapeShapeBsNvmeAttachmentsConfigResult'],
                  gpu_description: _builtins.str,
                  gpus: _builtins.int,
                  is_billed_for_stopped_instance: _builtins.bool,
@@ -50964,6 +51134,7 @@ class GetShapeShapeResult(dict):
                  resize_compatible_shapes: Sequence[_builtins.str]):
         pulumi.set(__self__, "baseline_ocpu_utilizations", baseline_ocpu_utilizations)
         pulumi.set(__self__, "billing_type", billing_type)
+        pulumi.set(__self__, "bs_nvme_attachments_configs", bs_nvme_attachments_configs)
         pulumi.set(__self__, "gpu_description", gpu_description)
         pulumi.set(__self__, "gpus", gpus)
         pulumi.set(__self__, "is_billed_for_stopped_instance", is_billed_for_stopped_instance)
@@ -51003,6 +51174,11 @@ class GetShapeShapeResult(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> _builtins.str:
         return pulumi.get(self, "billing_type")
+
+    @_builtins.property
+    @pulumi.getter(name="bsNvmeAttachmentsConfigs")
+    def bs_nvme_attachments_configs(self) -> Sequence['outputs.GetShapeShapeBsNvmeAttachmentsConfigResult']:
+        return pulumi.get(self, "bs_nvme_attachments_configs")
 
     @_builtins.property
     @pulumi.getter(name="gpuDescription")
@@ -51148,6 +51324,39 @@ class GetShapeShapeResult(dict):
     @pulumi.getter(name="resizeCompatibleShapes")
     def resize_compatible_shapes(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "resize_compatible_shapes")
+
+
+@pulumi.output_type
+class GetShapeShapeBsNvmeAttachmentsConfigResult(dict):
+    def __init__(__self__, *,
+                 max_remote_nvme_volume_attachments_per_core: _builtins.int,
+                 max_total_remote_nvme_volume_attachments: _builtins.int,
+                 min_cores: _builtins.int,
+                 vf_enable_count: _builtins.int):
+        pulumi.set(__self__, "max_remote_nvme_volume_attachments_per_core", max_remote_nvme_volume_attachments_per_core)
+        pulumi.set(__self__, "max_total_remote_nvme_volume_attachments", max_total_remote_nvme_volume_attachments)
+        pulumi.set(__self__, "min_cores", min_cores)
+        pulumi.set(__self__, "vf_enable_count", vf_enable_count)
+
+    @_builtins.property
+    @pulumi.getter(name="maxRemoteNvmeVolumeAttachmentsPerCore")
+    def max_remote_nvme_volume_attachments_per_core(self) -> _builtins.int:
+        return pulumi.get(self, "max_remote_nvme_volume_attachments_per_core")
+
+    @_builtins.property
+    @pulumi.getter(name="maxTotalRemoteNvmeVolumeAttachments")
+    def max_total_remote_nvme_volume_attachments(self) -> _builtins.int:
+        return pulumi.get(self, "max_total_remote_nvme_volume_attachments")
+
+    @_builtins.property
+    @pulumi.getter(name="minCores")
+    def min_cores(self) -> _builtins.int:
+        return pulumi.get(self, "min_cores")
+
+    @_builtins.property
+    @pulumi.getter(name="vfEnableCount")
+    def vf_enable_count(self) -> _builtins.int:
+        return pulumi.get(self, "vf_enable_count")
 
 
 @pulumi.output_type
@@ -51604,6 +51813,7 @@ class GetShapesShapeResult(dict):
     def __init__(__self__, *,
                  baseline_ocpu_utilizations: Sequence[_builtins.str],
                  billing_type: _builtins.str,
+                 bs_nvme_attachments_configs: Sequence['outputs.GetShapesShapeBsNvmeAttachmentsConfigResult'],
                  gpu_description: _builtins.str,
                  gpus: _builtins.int,
                  is_billed_for_stopped_instance: _builtins.bool,
@@ -51636,6 +51846,7 @@ class GetShapesShapeResult(dict):
         """
         :param Sequence[_builtins.str] baseline_ocpu_utilizations: For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
         :param _builtins.str billing_type: How instances that use this shape are charged.
+        :param Sequence['GetShapesShapeBsNvmeAttachmentsConfigArgs'] bs_nvme_attachments_configs: Shape-specific details for shapes that support remote NVMe volume attachments.
         :param _builtins.str gpu_description: A short description of the graphics processing unit (GPU) available for this shape.
         :param _builtins.int gpus: The number of GPUs available for this shape.
         :param _builtins.bool is_billed_for_stopped_instance: Whether billing continues when the instances that use this shape are in the stopped state.
@@ -51668,6 +51879,7 @@ class GetShapesShapeResult(dict):
         """
         pulumi.set(__self__, "baseline_ocpu_utilizations", baseline_ocpu_utilizations)
         pulumi.set(__self__, "billing_type", billing_type)
+        pulumi.set(__self__, "bs_nvme_attachments_configs", bs_nvme_attachments_configs)
         pulumi.set(__self__, "gpu_description", gpu_description)
         pulumi.set(__self__, "gpus", gpus)
         pulumi.set(__self__, "is_billed_for_stopped_instance", is_billed_for_stopped_instance)
@@ -51713,6 +51925,14 @@ class GetShapesShapeResult(dict):
         How instances that use this shape are charged.
         """
         return pulumi.get(self, "billing_type")
+
+    @_builtins.property
+    @pulumi.getter(name="bsNvmeAttachmentsConfigs")
+    def bs_nvme_attachments_configs(self) -> Sequence['outputs.GetShapesShapeBsNvmeAttachmentsConfigResult']:
+        """
+        Shape-specific details for shapes that support remote NVMe volume attachments.
+        """
+        return pulumi.get(self, "bs_nvme_attachments_configs")
 
     @_builtins.property
     @pulumi.getter(name="gpuDescription")
@@ -51945,6 +52165,57 @@ class GetShapesShapeResult(dict):
         The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
         """
         return pulumi.get(self, "resize_compatible_shapes")
+
+
+@pulumi.output_type
+class GetShapesShapeBsNvmeAttachmentsConfigResult(dict):
+    def __init__(__self__, *,
+                 max_remote_nvme_volume_attachments_per_core: _builtins.int,
+                 max_total_remote_nvme_volume_attachments: _builtins.int,
+                 min_cores: _builtins.int,
+                 vf_enable_count: _builtins.int):
+        """
+        :param _builtins.int max_remote_nvme_volume_attachments_per_core: The maximum number of remote NVMe volume attachments supported per core.
+        :param _builtins.int max_total_remote_nvme_volume_attachments: The maximum total number of remote NVMe volume attachments supported for the shape.
+        :param _builtins.int min_cores: The minimum number of cores required to support remote NVMe volume attachments.
+        :param _builtins.int vf_enable_count: The number of virtual functions to enable on a hypervisor so that each sellable core has one virtual function available. This value is `0` for VM and bare metal instances.
+        """
+        pulumi.set(__self__, "max_remote_nvme_volume_attachments_per_core", max_remote_nvme_volume_attachments_per_core)
+        pulumi.set(__self__, "max_total_remote_nvme_volume_attachments", max_total_remote_nvme_volume_attachments)
+        pulumi.set(__self__, "min_cores", min_cores)
+        pulumi.set(__self__, "vf_enable_count", vf_enable_count)
+
+    @_builtins.property
+    @pulumi.getter(name="maxRemoteNvmeVolumeAttachmentsPerCore")
+    def max_remote_nvme_volume_attachments_per_core(self) -> _builtins.int:
+        """
+        The maximum number of remote NVMe volume attachments supported per core.
+        """
+        return pulumi.get(self, "max_remote_nvme_volume_attachments_per_core")
+
+    @_builtins.property
+    @pulumi.getter(name="maxTotalRemoteNvmeVolumeAttachments")
+    def max_total_remote_nvme_volume_attachments(self) -> _builtins.int:
+        """
+        The maximum total number of remote NVMe volume attachments supported for the shape.
+        """
+        return pulumi.get(self, "max_total_remote_nvme_volume_attachments")
+
+    @_builtins.property
+    @pulumi.getter(name="minCores")
+    def min_cores(self) -> _builtins.int:
+        """
+        The minimum number of cores required to support remote NVMe volume attachments.
+        """
+        return pulumi.get(self, "min_cores")
+
+    @_builtins.property
+    @pulumi.getter(name="vfEnableCount")
+    def vf_enable_count(self) -> _builtins.int:
+        """
+        The number of virtual functions to enable on a hypervisor so that each sellable core has one virtual function available. This value is `0` for VM and bare metal instances.
+        """
+        return pulumi.get(self, "vf_enable_count")
 
 
 @pulumi.output_type
@@ -54894,6 +55165,7 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
                  ipv6: _builtins.str,
                  iqn: _builtins.str,
                  is_agent_auto_iscsi_login_enabled: _builtins.bool,
+                 is_encryption_in_transit_enabled: _builtins.bool,
                  is_multipath: _builtins.bool,
                  is_pv_encryption_in_transit_enabled: _builtins.bool,
                  is_read_only: _builtins.bool,
@@ -54914,15 +55186,16 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str device: The device name.
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param _builtins.str encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+        :param _builtins.str encryption_in_transit_type: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.str id: The OCID of the volume attachment.
         :param _builtins.str instance_id: The OCID of the instance.
         :param _builtins.str ipv4: The volume's iSCSI IP address.  Example: `169.254.2.2`
         :param _builtins.str ipv6: The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
         :param _builtins.str iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         :param _builtins.bool is_agent_auto_iscsi_login_enabled: Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        :param _builtins.bool is_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's attachment is enabled or not.
         :param _builtins.bool is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
-        :param _builtins.bool is_pv_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+        :param _builtins.bool is_pv_encryption_in_transit_enabled: Deprecated. Use `isEncryptionInTransitEnabled` instead.
         :param _builtins.bool is_read_only: Whether the attachment was created in read-only mode.
         :param _builtins.bool is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param _builtins.bool is_volume_created_during_launch: Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
@@ -54947,6 +55220,7 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
         pulumi.set(__self__, "ipv6", ipv6)
         pulumi.set(__self__, "iqn", iqn)
         pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
+        pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_multipath", is_multipath)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_read_only", is_read_only)
@@ -55021,7 +55295,7 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
     @pulumi.getter(name="encryptionInTransitType")
     def encryption_in_transit_type(self) -> _builtins.str:
         """
-        Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "encryption_in_transit_type")
 
@@ -55074,6 +55348,14 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
         return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> _builtins.bool:
+        """
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isMultipath")
     def is_multipath(self) -> _builtins.bool:
         """
@@ -55085,7 +55367,7 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> _builtins.bool:
         """
-        Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 

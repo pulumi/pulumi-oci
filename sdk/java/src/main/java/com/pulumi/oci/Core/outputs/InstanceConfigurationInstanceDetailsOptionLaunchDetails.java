@@ -110,7 +110,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      */
     private @Nullable Boolean isAiEnterpriseEnabled;
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     private @Nullable Boolean isPvEncryptionInTransitEnabled;
@@ -298,7 +298,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
         return Optional.ofNullable(this.isAiEnterpriseEnabled);
     }
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+     * @return Deprecated. Use `isEncryptionInTransitEnabled` instead.
      * 
      */
     public Optional<Boolean> isPvEncryptionInTransitEnabled() {

@@ -78,14 +78,14 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementState 
     }
 
     /**
-     * The current state of the ResourceAnalyticsInstance.
+     * The current state of the Resource Analytics Instance OAC management operation.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the ResourceAnalyticsInstance.
+     * @return The current state of the Resource Analytics Instance OAC management operation.
      * 
      */
     public Optional<Output<String>> state() {
@@ -205,7 +205,7 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementState 
         }
 
         /**
-         * @param state The current state of the ResourceAnalyticsInstance.
+         * @param state The current state of the Resource Analytics Instance OAC management operation.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementState 
         }
 
         /**
-         * @param state The current state of the ResourceAnalyticsInstance.
+         * @param state The current state of the Resource Analytics Instance OAC management operation.
          * 
          * @return builder
          * 

@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Oci
         public Output<string> ResourceAnalyticsInstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the ResourceAnalyticsInstance.
+        /// The current state of the Resource Analytics Instance OAC management operation.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? ResourceAnalyticsInstanceId { get; set; }
 
         /// <summary>
-        /// The current state of the ResourceAnalyticsInstance.
+        /// The current state of the Resource Analytics Instance OAC management operation.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

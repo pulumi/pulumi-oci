@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<Inputs.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs>? LaunchCreateVolumeDetails { get; set; }
 
         /// <summary>
-        /// The type of volume attachment. Currently, the only supported values are "iscsi" and "paravirtualized".
+        /// The type of volume attachment. Currently, the only supported values are "iscsi", "paravirtualized", and "nvme".
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

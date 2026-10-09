@@ -13,6 +13,2694 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion struct {
+	// Data population status for a monitored region in the tenancy.
+	DataPopulations []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation `pulumi:"dataPopulations"`
+	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+	RegionId string `pulumi:"regionId"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs{...}
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs struct {
+	// Data population status for a monitored region in the tenancy.
+	DataPopulations GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayInput `pulumi:"dataPopulations"`
+	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+	RegionId pulumi.StringInput `pulumi:"regionId"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray{ GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionInput
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput {
+	return o
+}
+
+// Data population status for a monitored region in the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput) DataPopulations() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion) []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation {
+		return v.DataPopulations
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput)
+}
+
+// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput) RegionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion) string {
+		return v.RegionId
+	}).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation struct {
+	// The number of data population tasks currently in progress.
+	InProgressCount int `pulumi:"inProgressCount"`
+	// The overall status of the data population from the monitored region of the tenancy.
+	Status string `pulumi:"status"`
+	// The number of data population tasks that have succeeded.
+	SucceededCount int `pulumi:"succeededCount"`
+	// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted string `pulumi:"timeStarted"`
+	// The total number of data population tasks.
+	TotalCount int `pulumi:"totalCount"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs{...}
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs struct {
+	// The number of data population tasks currently in progress.
+	InProgressCount pulumi.IntInput `pulumi:"inProgressCount"`
+	// The overall status of the data population from the monitored region of the tenancy.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The number of data population tasks that have succeeded.
+	SucceededCount pulumi.IntInput `pulumi:"succeededCount"`
+	// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The total number of data population tasks.
+	TotalCount pulumi.IntInput `pulumi:"totalCount"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray{ GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationInput
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput {
+	return o
+}
+
+// The number of data population tasks currently in progress.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) InProgressCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) int {
+		return v.InProgressCount
+	}).(pulumi.IntOutput)
+}
+
+// The overall status of the data population from the monitored region of the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The number of data population tasks that have succeeded.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) SucceededCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) int {
+		return v.SucceededCount
+	}).(pulumi.IntOutput)
+}
+
+// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) string {
+		return v.TimeEnded
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+// The total number of data population tasks.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) TotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) int {
+		return v.TotalCount
+	}).(pulumi.IntOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput)
+}
+
+type GetResourceSearchResult struct {
+	AdditionalDetails  map[string]string `pulumi:"additionalDetails"`
+	AvailabilityDomain string            `pulumi:"availabilityDomain"`
+	CompartmentId      string            `pulumi:"compartmentId"`
+	DefinedTags        map[string]string `pulumi:"definedTags"`
+	DisplayName        string            `pulumi:"displayName"`
+	FreeformTags       map[string]string `pulumi:"freeformTags"`
+	Identifier         string            `pulumi:"identifier"`
+	ResourceType       string            `pulumi:"resourceType"`
+	State              string            `pulumi:"state"`
+	SystemTags         map[string]string `pulumi:"systemTags"`
+	TimeCreated        string            `pulumi:"timeCreated"`
+}
+
+// GetResourceSearchResultInput is an input type that accepts GetResourceSearchResultArgs and GetResourceSearchResultOutput values.
+// You can construct a concrete instance of `GetResourceSearchResultInput` via:
+//
+//	GetResourceSearchResultArgs{...}
+type GetResourceSearchResultInput interface {
+	pulumi.Input
+
+	ToGetResourceSearchResultOutput() GetResourceSearchResultOutput
+	ToGetResourceSearchResultOutputWithContext(context.Context) GetResourceSearchResultOutput
+}
+
+type GetResourceSearchResultArgs struct {
+	AdditionalDetails  pulumi.StringMapInput `pulumi:"additionalDetails"`
+	AvailabilityDomain pulumi.StringInput    `pulumi:"availabilityDomain"`
+	CompartmentId      pulumi.StringInput    `pulumi:"compartmentId"`
+	DefinedTags        pulumi.StringMapInput `pulumi:"definedTags"`
+	DisplayName        pulumi.StringInput    `pulumi:"displayName"`
+	FreeformTags       pulumi.StringMapInput `pulumi:"freeformTags"`
+	Identifier         pulumi.StringInput    `pulumi:"identifier"`
+	ResourceType       pulumi.StringInput    `pulumi:"resourceType"`
+	State              pulumi.StringInput    `pulumi:"state"`
+	SystemTags         pulumi.StringMapInput `pulumi:"systemTags"`
+	TimeCreated        pulumi.StringInput    `pulumi:"timeCreated"`
+}
+
+func (GetResourceSearchResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceSearchResult)(nil)).Elem()
+}
+
+func (i GetResourceSearchResultArgs) ToGetResourceSearchResultOutput() GetResourceSearchResultOutput {
+	return i.ToGetResourceSearchResultOutputWithContext(context.Background())
+}
+
+func (i GetResourceSearchResultArgs) ToGetResourceSearchResultOutputWithContext(ctx context.Context) GetResourceSearchResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceSearchResultOutput)
+}
+
+// GetResourceSearchResultArrayInput is an input type that accepts GetResourceSearchResultArray and GetResourceSearchResultArrayOutput values.
+// You can construct a concrete instance of `GetResourceSearchResultArrayInput` via:
+//
+//	GetResourceSearchResultArray{ GetResourceSearchResultArgs{...} }
+type GetResourceSearchResultArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceSearchResultArrayOutput() GetResourceSearchResultArrayOutput
+	ToGetResourceSearchResultArrayOutputWithContext(context.Context) GetResourceSearchResultArrayOutput
+}
+
+type GetResourceSearchResultArray []GetResourceSearchResultInput
+
+func (GetResourceSearchResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceSearchResult)(nil)).Elem()
+}
+
+func (i GetResourceSearchResultArray) ToGetResourceSearchResultArrayOutput() GetResourceSearchResultArrayOutput {
+	return i.ToGetResourceSearchResultArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceSearchResultArray) ToGetResourceSearchResultArrayOutputWithContext(ctx context.Context) GetResourceSearchResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceSearchResultArrayOutput)
+}
+
+type GetResourceSearchResultOutput struct{ *pulumi.OutputState }
+
+func (GetResourceSearchResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceSearchResult)(nil)).Elem()
+}
+
+func (o GetResourceSearchResultOutput) ToGetResourceSearchResultOutput() GetResourceSearchResultOutput {
+	return o
+}
+
+func (o GetResourceSearchResultOutput) ToGetResourceSearchResultOutputWithContext(ctx context.Context) GetResourceSearchResultOutput {
+	return o
+}
+
+func (o GetResourceSearchResultOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) map[string]string { return v.AdditionalDetails }).(pulumi.StringMapOutput)
+}
+
+func (o GetResourceSearchResultOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetResourceSearchResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetResourceSearchResultOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetResourceSearchResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetResourceSearchResultArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceSearchResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceSearchResult)(nil)).Elem()
+}
+
+func (o GetResourceSearchResultArrayOutput) ToGetResourceSearchResultArrayOutput() GetResourceSearchResultArrayOutput {
+	return o
+}
+
+func (o GetResourceSearchResultArrayOutput) ToGetResourceSearchResultArrayOutputWithContext(ctx context.Context) GetResourceSearchResultArrayOutput {
+	return o
+}
+
+func (o GetResourceSearchResultArrayOutput) Index(i pulumi.IntInput) GetResourceSearchResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceSearchResult {
+		return vs[0].([]GetResourceSearchResult)[vs[1].(int)]
+	}).(GetResourceSearchResultOutput)
+}
+
+type GetSelfPartnerSubscriptionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSelfPartnerSubscriptionsFilterInput is an input type that accepts GetSelfPartnerSubscriptionsFilterArgs and GetSelfPartnerSubscriptionsFilterOutput values.
+// You can construct a concrete instance of `GetSelfPartnerSubscriptionsFilterInput` via:
+//
+//	GetSelfPartnerSubscriptionsFilterArgs{...}
+type GetSelfPartnerSubscriptionsFilterInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnerSubscriptionsFilterOutput() GetSelfPartnerSubscriptionsFilterOutput
+	ToGetSelfPartnerSubscriptionsFilterOutputWithContext(context.Context) GetSelfPartnerSubscriptionsFilterOutput
+}
+
+type GetSelfPartnerSubscriptionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSelfPartnerSubscriptionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnerSubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetSelfPartnerSubscriptionsFilterArgs) ToGetSelfPartnerSubscriptionsFilterOutput() GetSelfPartnerSubscriptionsFilterOutput {
+	return i.ToGetSelfPartnerSubscriptionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnerSubscriptionsFilterArgs) ToGetSelfPartnerSubscriptionsFilterOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnerSubscriptionsFilterOutput)
+}
+
+// GetSelfPartnerSubscriptionsFilterArrayInput is an input type that accepts GetSelfPartnerSubscriptionsFilterArray and GetSelfPartnerSubscriptionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSelfPartnerSubscriptionsFilterArrayInput` via:
+//
+//	GetSelfPartnerSubscriptionsFilterArray{ GetSelfPartnerSubscriptionsFilterArgs{...} }
+type GetSelfPartnerSubscriptionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnerSubscriptionsFilterArrayOutput() GetSelfPartnerSubscriptionsFilterArrayOutput
+	ToGetSelfPartnerSubscriptionsFilterArrayOutputWithContext(context.Context) GetSelfPartnerSubscriptionsFilterArrayOutput
+}
+
+type GetSelfPartnerSubscriptionsFilterArray []GetSelfPartnerSubscriptionsFilterInput
+
+func (GetSelfPartnerSubscriptionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnerSubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetSelfPartnerSubscriptionsFilterArray) ToGetSelfPartnerSubscriptionsFilterArrayOutput() GetSelfPartnerSubscriptionsFilterArrayOutput {
+	return i.ToGetSelfPartnerSubscriptionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnerSubscriptionsFilterArray) ToGetSelfPartnerSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnerSubscriptionsFilterArrayOutput)
+}
+
+type GetSelfPartnerSubscriptionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnerSubscriptionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnerSubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetSelfPartnerSubscriptionsFilterOutput) ToGetSelfPartnerSubscriptionsFilterOutput() GetSelfPartnerSubscriptionsFilterOutput {
+	return o
+}
+
+func (o GetSelfPartnerSubscriptionsFilterOutput) ToGetSelfPartnerSubscriptionsFilterOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsFilterOutput {
+	return o
+}
+
+func (o GetSelfPartnerSubscriptionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSelfPartnerSubscriptionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSelfPartnerSubscriptionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSelfPartnerSubscriptionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnerSubscriptionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnerSubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetSelfPartnerSubscriptionsFilterArrayOutput) ToGetSelfPartnerSubscriptionsFilterArrayOutput() GetSelfPartnerSubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnerSubscriptionsFilterArrayOutput) ToGetSelfPartnerSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnerSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetSelfPartnerSubscriptionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfPartnerSubscriptionsFilter {
+		return vs[0].([]GetSelfPartnerSubscriptionsFilter)[vs[1].(int)]
+	}).(GetSelfPartnerSubscriptionsFilterOutput)
+}
+
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollection struct {
+	// List of subscriptions for particular listing.
+	Items []GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem `pulumi:"items"`
+}
+
+// GetSelfPartnerSubscriptionsListingSubscriptionsCollectionInput is an input type that accepts GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs and GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput values.
+// You can construct a concrete instance of `GetSelfPartnerSubscriptionsListingSubscriptionsCollectionInput` via:
+//
+//	GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs{...}
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput
+	ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutputWithContext(context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput
+}
+
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs struct {
+	// List of subscriptions for particular listing.
+	Items GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnerSubscriptionsListingSubscriptionsCollection)(nil)).Elem()
+}
+
+func (i GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput {
+	return i.ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput)
+}
+
+// GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayInput is an input type that accepts GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArray and GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayInput` via:
+//
+//	GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArray{ GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs{...} }
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput
+	ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutputWithContext(context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput
+}
+
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArray []GetSelfPartnerSubscriptionsListingSubscriptionsCollectionInput
+
+func (GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnerSubscriptionsListingSubscriptionsCollection)(nil)).Elem()
+}
+
+func (i GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArray) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput {
+	return i.ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArray) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput)
+}
+
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnerSubscriptionsListingSubscriptionsCollection)(nil)).Elem()
+}
+
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput {
+	return o
+}
+
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput {
+	return o
+}
+
+// List of subscriptions for particular listing.
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput) Items() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsListingSubscriptionsCollection) []GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem {
+		return v.Items
+	}).(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput)
+}
+
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnerSubscriptionsListingSubscriptionsCollection)(nil)).Elem()
+}
+
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput) Index(i pulumi.IntInput) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfPartnerSubscriptionsListingSubscriptionsCollection {
+		return vs[0].([]GetSelfPartnerSubscriptionsListingSubscriptionsCollection)[vs[1].(int)]
+	}).(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput)
+}
+
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The unique identifier of marketplace listing in Oracle Cloud Infrastructure.
+	ProductId string `pulumi:"productId"`
+	// The current state of the Subscription.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemInput is an input type that accepts GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs and GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemInput` via:
+//
+//	GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs{...}
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput
+	ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutputWithContext(context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput
+}
+
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The unique identifier of marketplace listing in Oracle Cloud Infrastructure.
+	ProductId pulumi.StringInput `pulumi:"productId"`
+	// The current state of the Subscription.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput {
+	return i.ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput)
+}
+
+// GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayInput is an input type that accepts GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray and GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayInput` via:
+//
+//	GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray{ GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs{...} }
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput
+	ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutputWithContext(context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput
+}
+
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray []GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemInput
+
+func (GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput {
+	return i.ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput)
+}
+
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput {
+	return o
+}
+
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given name.
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The unique identifier of marketplace listing in Oracle Cloud Infrastructure.
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) ProductId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string { return v.ProductId }).(pulumi.StringOutput)
+}
+
+// The current state of the Subscription.
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput() GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput) ToGetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutputWithContext(ctx context.Context) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem {
+		return vs[0].([]GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItem)[vs[1].(int)]
+	}).(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput)
+}
+
+type GetSelfPartnersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSelfPartnersFilterInput is an input type that accepts GetSelfPartnersFilterArgs and GetSelfPartnersFilterOutput values.
+// You can construct a concrete instance of `GetSelfPartnersFilterInput` via:
+//
+//	GetSelfPartnersFilterArgs{...}
+type GetSelfPartnersFilterInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnersFilterOutput() GetSelfPartnersFilterOutput
+	ToGetSelfPartnersFilterOutputWithContext(context.Context) GetSelfPartnersFilterOutput
+}
+
+type GetSelfPartnersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSelfPartnersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnersFilter)(nil)).Elem()
+}
+
+func (i GetSelfPartnersFilterArgs) ToGetSelfPartnersFilterOutput() GetSelfPartnersFilterOutput {
+	return i.ToGetSelfPartnersFilterOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnersFilterArgs) ToGetSelfPartnersFilterOutputWithContext(ctx context.Context) GetSelfPartnersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnersFilterOutput)
+}
+
+// GetSelfPartnersFilterArrayInput is an input type that accepts GetSelfPartnersFilterArray and GetSelfPartnersFilterArrayOutput values.
+// You can construct a concrete instance of `GetSelfPartnersFilterArrayInput` via:
+//
+//	GetSelfPartnersFilterArray{ GetSelfPartnersFilterArgs{...} }
+type GetSelfPartnersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnersFilterArrayOutput() GetSelfPartnersFilterArrayOutput
+	ToGetSelfPartnersFilterArrayOutputWithContext(context.Context) GetSelfPartnersFilterArrayOutput
+}
+
+type GetSelfPartnersFilterArray []GetSelfPartnersFilterInput
+
+func (GetSelfPartnersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnersFilter)(nil)).Elem()
+}
+
+func (i GetSelfPartnersFilterArray) ToGetSelfPartnersFilterArrayOutput() GetSelfPartnersFilterArrayOutput {
+	return i.ToGetSelfPartnersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnersFilterArray) ToGetSelfPartnersFilterArrayOutputWithContext(ctx context.Context) GetSelfPartnersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnersFilterArrayOutput)
+}
+
+type GetSelfPartnersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnersFilter)(nil)).Elem()
+}
+
+func (o GetSelfPartnersFilterOutput) ToGetSelfPartnersFilterOutput() GetSelfPartnersFilterOutput {
+	return o
+}
+
+func (o GetSelfPartnersFilterOutput) ToGetSelfPartnersFilterOutputWithContext(ctx context.Context) GetSelfPartnersFilterOutput {
+	return o
+}
+
+func (o GetSelfPartnersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSelfPartnersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSelfPartnersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSelfPartnersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSelfPartnersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSelfPartnersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnersFilter)(nil)).Elem()
+}
+
+func (o GetSelfPartnersFilterArrayOutput) ToGetSelfPartnersFilterArrayOutput() GetSelfPartnersFilterArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnersFilterArrayOutput) ToGetSelfPartnersFilterArrayOutputWithContext(ctx context.Context) GetSelfPartnersFilterArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnersFilterArrayOutput) Index(i pulumi.IntInput) GetSelfPartnersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfPartnersFilter {
+		return vs[0].([]GetSelfPartnersFilter)[vs[1].(int)]
+	}).(GetSelfPartnersFilterOutput)
+}
+
+type GetSelfPartnersPartnerCollection struct {
+	// The list of marketplace publisher partners.
+	Items []GetSelfPartnersPartnerCollectionItem `pulumi:"items"`
+}
+
+// GetSelfPartnersPartnerCollectionInput is an input type that accepts GetSelfPartnersPartnerCollectionArgs and GetSelfPartnersPartnerCollectionOutput values.
+// You can construct a concrete instance of `GetSelfPartnersPartnerCollectionInput` via:
+//
+//	GetSelfPartnersPartnerCollectionArgs{...}
+type GetSelfPartnersPartnerCollectionInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnersPartnerCollectionOutput() GetSelfPartnersPartnerCollectionOutput
+	ToGetSelfPartnersPartnerCollectionOutputWithContext(context.Context) GetSelfPartnersPartnerCollectionOutput
+}
+
+type GetSelfPartnersPartnerCollectionArgs struct {
+	// The list of marketplace publisher partners.
+	Items GetSelfPartnersPartnerCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSelfPartnersPartnerCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnersPartnerCollection)(nil)).Elem()
+}
+
+func (i GetSelfPartnersPartnerCollectionArgs) ToGetSelfPartnersPartnerCollectionOutput() GetSelfPartnersPartnerCollectionOutput {
+	return i.ToGetSelfPartnersPartnerCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnersPartnerCollectionArgs) ToGetSelfPartnersPartnerCollectionOutputWithContext(ctx context.Context) GetSelfPartnersPartnerCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnersPartnerCollectionOutput)
+}
+
+// GetSelfPartnersPartnerCollectionArrayInput is an input type that accepts GetSelfPartnersPartnerCollectionArray and GetSelfPartnersPartnerCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSelfPartnersPartnerCollectionArrayInput` via:
+//
+//	GetSelfPartnersPartnerCollectionArray{ GetSelfPartnersPartnerCollectionArgs{...} }
+type GetSelfPartnersPartnerCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnersPartnerCollectionArrayOutput() GetSelfPartnersPartnerCollectionArrayOutput
+	ToGetSelfPartnersPartnerCollectionArrayOutputWithContext(context.Context) GetSelfPartnersPartnerCollectionArrayOutput
+}
+
+type GetSelfPartnersPartnerCollectionArray []GetSelfPartnersPartnerCollectionInput
+
+func (GetSelfPartnersPartnerCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnersPartnerCollection)(nil)).Elem()
+}
+
+func (i GetSelfPartnersPartnerCollectionArray) ToGetSelfPartnersPartnerCollectionArrayOutput() GetSelfPartnersPartnerCollectionArrayOutput {
+	return i.ToGetSelfPartnersPartnerCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnersPartnerCollectionArray) ToGetSelfPartnersPartnerCollectionArrayOutputWithContext(ctx context.Context) GetSelfPartnersPartnerCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnersPartnerCollectionArrayOutput)
+}
+
+type GetSelfPartnersPartnerCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnersPartnerCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnersPartnerCollection)(nil)).Elem()
+}
+
+func (o GetSelfPartnersPartnerCollectionOutput) ToGetSelfPartnersPartnerCollectionOutput() GetSelfPartnersPartnerCollectionOutput {
+	return o
+}
+
+func (o GetSelfPartnersPartnerCollectionOutput) ToGetSelfPartnersPartnerCollectionOutputWithContext(ctx context.Context) GetSelfPartnersPartnerCollectionOutput {
+	return o
+}
+
+// The list of marketplace publisher partners.
+func (o GetSelfPartnersPartnerCollectionOutput) Items() GetSelfPartnersPartnerCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSelfPartnersPartnerCollection) []GetSelfPartnersPartnerCollectionItem { return v.Items }).(GetSelfPartnersPartnerCollectionItemArrayOutput)
+}
+
+type GetSelfPartnersPartnerCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnersPartnerCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnersPartnerCollection)(nil)).Elem()
+}
+
+func (o GetSelfPartnersPartnerCollectionArrayOutput) ToGetSelfPartnersPartnerCollectionArrayOutput() GetSelfPartnersPartnerCollectionArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnersPartnerCollectionArrayOutput) ToGetSelfPartnersPartnerCollectionArrayOutputWithContext(ctx context.Context) GetSelfPartnersPartnerCollectionArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnersPartnerCollectionArrayOutput) Index(i pulumi.IntInput) GetSelfPartnersPartnerCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfPartnersPartnerCollection {
+		return vs[0].([]GetSelfPartnersPartnerCollection)[vs[1].(int)]
+	}).(GetSelfPartnersPartnerCollectionOutput)
+}
+
+type GetSelfPartnersPartnerCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The unique identifier of the marketplace publisher partner.
+	Id string `pulumi:"id"`
+	// The current lifecycle state of the marketplace publisher partner.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetSelfPartnersPartnerCollectionItemInput is an input type that accepts GetSelfPartnersPartnerCollectionItemArgs and GetSelfPartnersPartnerCollectionItemOutput values.
+// You can construct a concrete instance of `GetSelfPartnersPartnerCollectionItemInput` via:
+//
+//	GetSelfPartnersPartnerCollectionItemArgs{...}
+type GetSelfPartnersPartnerCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnersPartnerCollectionItemOutput() GetSelfPartnersPartnerCollectionItemOutput
+	ToGetSelfPartnersPartnerCollectionItemOutputWithContext(context.Context) GetSelfPartnersPartnerCollectionItemOutput
+}
+
+type GetSelfPartnersPartnerCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The unique identifier of the marketplace publisher partner.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The current lifecycle state of the marketplace publisher partner.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetSelfPartnersPartnerCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnersPartnerCollectionItem)(nil)).Elem()
+}
+
+func (i GetSelfPartnersPartnerCollectionItemArgs) ToGetSelfPartnersPartnerCollectionItemOutput() GetSelfPartnersPartnerCollectionItemOutput {
+	return i.ToGetSelfPartnersPartnerCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnersPartnerCollectionItemArgs) ToGetSelfPartnersPartnerCollectionItemOutputWithContext(ctx context.Context) GetSelfPartnersPartnerCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnersPartnerCollectionItemOutput)
+}
+
+// GetSelfPartnersPartnerCollectionItemArrayInput is an input type that accepts GetSelfPartnersPartnerCollectionItemArray and GetSelfPartnersPartnerCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSelfPartnersPartnerCollectionItemArrayInput` via:
+//
+//	GetSelfPartnersPartnerCollectionItemArray{ GetSelfPartnersPartnerCollectionItemArgs{...} }
+type GetSelfPartnersPartnerCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfPartnersPartnerCollectionItemArrayOutput() GetSelfPartnersPartnerCollectionItemArrayOutput
+	ToGetSelfPartnersPartnerCollectionItemArrayOutputWithContext(context.Context) GetSelfPartnersPartnerCollectionItemArrayOutput
+}
+
+type GetSelfPartnersPartnerCollectionItemArray []GetSelfPartnersPartnerCollectionItemInput
+
+func (GetSelfPartnersPartnerCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnersPartnerCollectionItem)(nil)).Elem()
+}
+
+func (i GetSelfPartnersPartnerCollectionItemArray) ToGetSelfPartnersPartnerCollectionItemArrayOutput() GetSelfPartnersPartnerCollectionItemArrayOutput {
+	return i.ToGetSelfPartnersPartnerCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfPartnersPartnerCollectionItemArray) ToGetSelfPartnersPartnerCollectionItemArrayOutputWithContext(ctx context.Context) GetSelfPartnersPartnerCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfPartnersPartnerCollectionItemArrayOutput)
+}
+
+type GetSelfPartnersPartnerCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnersPartnerCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfPartnersPartnerCollectionItem)(nil)).Elem()
+}
+
+func (o GetSelfPartnersPartnerCollectionItemOutput) ToGetSelfPartnersPartnerCollectionItemOutput() GetSelfPartnersPartnerCollectionItemOutput {
+	return o
+}
+
+func (o GetSelfPartnersPartnerCollectionItemOutput) ToGetSelfPartnersPartnerCollectionItemOutputWithContext(ctx context.Context) GetSelfPartnersPartnerCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetSelfPartnersPartnerCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnersPartnerCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSelfPartnersPartnerCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSelfPartnersPartnerCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given name.
+func (o GetSelfPartnersPartnerCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnersPartnerCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetSelfPartnersPartnerCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSelfPartnersPartnerCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The unique identifier of the marketplace publisher partner.
+func (o GetSelfPartnersPartnerCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnersPartnerCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the marketplace publisher partner.
+func (o GetSelfPartnersPartnerCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfPartnersPartnerCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSelfPartnersPartnerCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSelfPartnersPartnerCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+type GetSelfPartnersPartnerCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfPartnersPartnerCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfPartnersPartnerCollectionItem)(nil)).Elem()
+}
+
+func (o GetSelfPartnersPartnerCollectionItemArrayOutput) ToGetSelfPartnersPartnerCollectionItemArrayOutput() GetSelfPartnersPartnerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnersPartnerCollectionItemArrayOutput) ToGetSelfPartnersPartnerCollectionItemArrayOutputWithContext(ctx context.Context) GetSelfPartnersPartnerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSelfPartnersPartnerCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSelfPartnersPartnerCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfPartnersPartnerCollectionItem {
+		return vs[0].([]GetSelfPartnersPartnerCollectionItem)[vs[1].(int)]
+	}).(GetSelfPartnersPartnerCollectionItemOutput)
+}
+
+type GetSelfSelfPartnerSubscriptionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSelfSelfPartnerSubscriptionsFilterInput is an input type that accepts GetSelfSelfPartnerSubscriptionsFilterArgs and GetSelfSelfPartnerSubscriptionsFilterOutput values.
+// You can construct a concrete instance of `GetSelfSelfPartnerSubscriptionsFilterInput` via:
+//
+//	GetSelfSelfPartnerSubscriptionsFilterArgs{...}
+type GetSelfSelfPartnerSubscriptionsFilterInput interface {
+	pulumi.Input
+
+	ToGetSelfSelfPartnerSubscriptionsFilterOutput() GetSelfSelfPartnerSubscriptionsFilterOutput
+	ToGetSelfSelfPartnerSubscriptionsFilterOutputWithContext(context.Context) GetSelfSelfPartnerSubscriptionsFilterOutput
+}
+
+type GetSelfSelfPartnerSubscriptionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSelfSelfPartnerSubscriptionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetSelfSelfPartnerSubscriptionsFilterArgs) ToGetSelfSelfPartnerSubscriptionsFilterOutput() GetSelfSelfPartnerSubscriptionsFilterOutput {
+	return i.ToGetSelfSelfPartnerSubscriptionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSelfSelfPartnerSubscriptionsFilterArgs) ToGetSelfSelfPartnerSubscriptionsFilterOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSelfPartnerSubscriptionsFilterOutput)
+}
+
+// GetSelfSelfPartnerSubscriptionsFilterArrayInput is an input type that accepts GetSelfSelfPartnerSubscriptionsFilterArray and GetSelfSelfPartnerSubscriptionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSelfSelfPartnerSubscriptionsFilterArrayInput` via:
+//
+//	GetSelfSelfPartnerSubscriptionsFilterArray{ GetSelfSelfPartnerSubscriptionsFilterArgs{...} }
+type GetSelfSelfPartnerSubscriptionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSelfPartnerSubscriptionsFilterArrayOutput() GetSelfSelfPartnerSubscriptionsFilterArrayOutput
+	ToGetSelfSelfPartnerSubscriptionsFilterArrayOutputWithContext(context.Context) GetSelfSelfPartnerSubscriptionsFilterArrayOutput
+}
+
+type GetSelfSelfPartnerSubscriptionsFilterArray []GetSelfSelfPartnerSubscriptionsFilterInput
+
+func (GetSelfSelfPartnerSubscriptionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSelfPartnerSubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetSelfSelfPartnerSubscriptionsFilterArray) ToGetSelfSelfPartnerSubscriptionsFilterArrayOutput() GetSelfSelfPartnerSubscriptionsFilterArrayOutput {
+	return i.ToGetSelfSelfPartnerSubscriptionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSelfPartnerSubscriptionsFilterArray) ToGetSelfSelfPartnerSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSelfPartnerSubscriptionsFilterArrayOutput)
+}
+
+type GetSelfSelfPartnerSubscriptionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSelfPartnerSubscriptionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetSelfSelfPartnerSubscriptionsFilterOutput) ToGetSelfSelfPartnerSubscriptionsFilterOutput() GetSelfSelfPartnerSubscriptionsFilterOutput {
+	return o
+}
+
+func (o GetSelfSelfPartnerSubscriptionsFilterOutput) ToGetSelfSelfPartnerSubscriptionsFilterOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsFilterOutput {
+	return o
+}
+
+func (o GetSelfSelfPartnerSubscriptionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSelfSelfPartnerSubscriptionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSelfSelfPartnerSubscriptionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSelfSelfPartnerSubscriptionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSelfPartnerSubscriptionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSelfPartnerSubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetSelfSelfPartnerSubscriptionsFilterArrayOutput) ToGetSelfSelfPartnerSubscriptionsFilterArrayOutput() GetSelfSelfPartnerSubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSelfSelfPartnerSubscriptionsFilterArrayOutput) ToGetSelfSelfPartnerSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSelfSelfPartnerSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetSelfSelfPartnerSubscriptionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSelfPartnerSubscriptionsFilter {
+		return vs[0].([]GetSelfSelfPartnerSubscriptionsFilter)[vs[1].(int)]
+	}).(GetSelfSelfPartnerSubscriptionsFilterOutput)
+}
+
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollection struct {
+	// List of subscriptions for particular listing.
+	Items []GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem `pulumi:"items"`
+}
+
+// GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionInput is an input type that accepts GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs and GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput values.
+// You can construct a concrete instance of `GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionInput` via:
+//
+//	GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs{...}
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput
+	ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutputWithContext(context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput
+}
+
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs struct {
+	// List of subscriptions for particular listing.
+	Items GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollection)(nil)).Elem()
+}
+
+func (i GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput {
+	return i.ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput)
+}
+
+// GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayInput is an input type that accepts GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArray and GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayInput` via:
+//
+//	GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArray{ GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs{...} }
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput
+	ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutputWithContext(context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput
+}
+
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArray []GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionInput
+
+func (GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollection)(nil)).Elem()
+}
+
+func (i GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArray) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput {
+	return i.ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArray) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput)
+}
+
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollection)(nil)).Elem()
+}
+
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput {
+	return o
+}
+
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput {
+	return o
+}
+
+// List of subscriptions for particular listing.
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput) Items() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollection) []GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem {
+		return v.Items
+	}).(GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput)
+}
+
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollection)(nil)).Elem()
+}
+
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput) Index(i pulumi.IntInput) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollection {
+		return vs[0].([]GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollection)[vs[1].(int)]
+	}).(GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput)
+}
+
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The unique identifier of marketplace listing in Oracle Cloud Infrastructure.
+	ProductId string `pulumi:"productId"`
+	// The current state of the Subscription.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemInput is an input type that accepts GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs and GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemInput` via:
+//
+//	GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs{...}
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput
+	ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutputWithContext(context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput
+}
+
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The unique identifier of marketplace listing in Oracle Cloud Infrastructure.
+	ProductId pulumi.StringInput `pulumi:"productId"`
+	// The current state of the Subscription.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput {
+	return i.ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput)
+}
+
+// GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayInput is an input type that accepts GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray and GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayInput` via:
+//
+//	GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray{ GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs{...} }
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput
+	ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutputWithContext(context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput
+}
+
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray []GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemInput
+
+func (GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput {
+	return i.ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput)
+}
+
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput {
+	return o
+}
+
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given name.
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The unique identifier of marketplace listing in Oracle Cloud Infrastructure.
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) ProductId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string { return v.ProductId }).(pulumi.StringOutput)
+}
+
+// The current state of the Subscription.
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput() GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput) ToGetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutputWithContext(ctx context.Context) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem {
+		return vs[0].([]GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItem)[vs[1].(int)]
+	}).(GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput)
+}
+
+type GetSelfSubscriptionAdditionalDetail struct {
+	// Additional attribute for extendedMetadata.
+	Key string `pulumi:"key"`
+	// It contains the value of above key.
+	Value string `pulumi:"value"`
+}
+
+// GetSelfSubscriptionAdditionalDetailInput is an input type that accepts GetSelfSubscriptionAdditionalDetailArgs and GetSelfSubscriptionAdditionalDetailOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionAdditionalDetailInput` via:
+//
+//	GetSelfSubscriptionAdditionalDetailArgs{...}
+type GetSelfSubscriptionAdditionalDetailInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionAdditionalDetailOutput() GetSelfSubscriptionAdditionalDetailOutput
+	ToGetSelfSubscriptionAdditionalDetailOutputWithContext(context.Context) GetSelfSubscriptionAdditionalDetailOutput
+}
+
+type GetSelfSubscriptionAdditionalDetailArgs struct {
+	// Additional attribute for extendedMetadata.
+	Key pulumi.StringInput `pulumi:"key"`
+	// It contains the value of above key.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSelfSubscriptionAdditionalDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionAdditionalDetail)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionAdditionalDetailArgs) ToGetSelfSubscriptionAdditionalDetailOutput() GetSelfSubscriptionAdditionalDetailOutput {
+	return i.ToGetSelfSubscriptionAdditionalDetailOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionAdditionalDetailArgs) ToGetSelfSubscriptionAdditionalDetailOutputWithContext(ctx context.Context) GetSelfSubscriptionAdditionalDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionAdditionalDetailOutput)
+}
+
+// GetSelfSubscriptionAdditionalDetailArrayInput is an input type that accepts GetSelfSubscriptionAdditionalDetailArray and GetSelfSubscriptionAdditionalDetailArrayOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionAdditionalDetailArrayInput` via:
+//
+//	GetSelfSubscriptionAdditionalDetailArray{ GetSelfSubscriptionAdditionalDetailArgs{...} }
+type GetSelfSubscriptionAdditionalDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionAdditionalDetailArrayOutput() GetSelfSubscriptionAdditionalDetailArrayOutput
+	ToGetSelfSubscriptionAdditionalDetailArrayOutputWithContext(context.Context) GetSelfSubscriptionAdditionalDetailArrayOutput
+}
+
+type GetSelfSubscriptionAdditionalDetailArray []GetSelfSubscriptionAdditionalDetailInput
+
+func (GetSelfSubscriptionAdditionalDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionAdditionalDetail)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionAdditionalDetailArray) ToGetSelfSubscriptionAdditionalDetailArrayOutput() GetSelfSubscriptionAdditionalDetailArrayOutput {
+	return i.ToGetSelfSubscriptionAdditionalDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionAdditionalDetailArray) ToGetSelfSubscriptionAdditionalDetailArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionAdditionalDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionAdditionalDetailArrayOutput)
+}
+
+type GetSelfSubscriptionAdditionalDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionAdditionalDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionAdditionalDetail)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionAdditionalDetailOutput) ToGetSelfSubscriptionAdditionalDetailOutput() GetSelfSubscriptionAdditionalDetailOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionAdditionalDetailOutput) ToGetSelfSubscriptionAdditionalDetailOutputWithContext(ctx context.Context) GetSelfSubscriptionAdditionalDetailOutput {
+	return o
+}
+
+// Additional attribute for extendedMetadata.
+func (o GetSelfSubscriptionAdditionalDetailOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionAdditionalDetail) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// It contains the value of above key.
+func (o GetSelfSubscriptionAdditionalDetailOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionAdditionalDetail) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSelfSubscriptionAdditionalDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionAdditionalDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionAdditionalDetail)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionAdditionalDetailArrayOutput) ToGetSelfSubscriptionAdditionalDetailArrayOutput() GetSelfSubscriptionAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionAdditionalDetailArrayOutput) ToGetSelfSubscriptionAdditionalDetailArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionAdditionalDetailArrayOutput) Index(i pulumi.IntInput) GetSelfSubscriptionAdditionalDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSubscriptionAdditionalDetail {
+		return vs[0].([]GetSelfSubscriptionAdditionalDetail)[vs[1].(int)]
+	}).(GetSelfSubscriptionAdditionalDetailOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetail struct {
+	// Tha amount for the currency type.
+	Amount float64 `pulumi:"amount"`
+	// Billing details associated with the subscription plan and its usage dimensions.
+	BillingDetails []GetSelfSubscriptionSubscriptionDetailBillingDetail `pulumi:"billingDetails"`
+	// The currency supported, in the format specified by ISO-4217
+	Currency string `pulumi:"currency"`
+	// Whether subscription should be auto-renewed at the end of cycle.
+	IsAutoRenew bool `pulumi:"isAutoRenew"`
+	// The activation link given by the partner.
+	PartnerRegistrationUrl string `pulumi:"partnerRegistrationUrl"`
+	// A pricing plan details provided by the Publisher.
+	PricingPlans []GetSelfSubscriptionSubscriptionDetailPricingPlan `pulumi:"pricingPlans"`
+}
+
+// GetSelfSubscriptionSubscriptionDetailInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailArgs and GetSelfSubscriptionSubscriptionDetailOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailArgs{...}
+type GetSelfSubscriptionSubscriptionDetailInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailOutput() GetSelfSubscriptionSubscriptionDetailOutput
+	ToGetSelfSubscriptionSubscriptionDetailOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailArgs struct {
+	// Tha amount for the currency type.
+	Amount pulumi.Float64Input `pulumi:"amount"`
+	// Billing details associated with the subscription plan and its usage dimensions.
+	BillingDetails GetSelfSubscriptionSubscriptionDetailBillingDetailArrayInput `pulumi:"billingDetails"`
+	// The currency supported, in the format specified by ISO-4217
+	Currency pulumi.StringInput `pulumi:"currency"`
+	// Whether subscription should be auto-renewed at the end of cycle.
+	IsAutoRenew pulumi.BoolInput `pulumi:"isAutoRenew"`
+	// The activation link given by the partner.
+	PartnerRegistrationUrl pulumi.StringInput `pulumi:"partnerRegistrationUrl"`
+	// A pricing plan details provided by the Publisher.
+	PricingPlans GetSelfSubscriptionSubscriptionDetailPricingPlanArrayInput `pulumi:"pricingPlans"`
+}
+
+func (GetSelfSubscriptionSubscriptionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetail)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailArgs) ToGetSelfSubscriptionSubscriptionDetailOutput() GetSelfSubscriptionSubscriptionDetailOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailArgs) ToGetSelfSubscriptionSubscriptionDetailOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailOutput)
+}
+
+// GetSelfSubscriptionSubscriptionDetailArrayInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailArray and GetSelfSubscriptionSubscriptionDetailArrayOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailArrayInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailArray{ GetSelfSubscriptionSubscriptionDetailArgs{...} }
+type GetSelfSubscriptionSubscriptionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailArrayOutput() GetSelfSubscriptionSubscriptionDetailArrayOutput
+	ToGetSelfSubscriptionSubscriptionDetailArrayOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailArrayOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailArray []GetSelfSubscriptionSubscriptionDetailInput
+
+func (GetSelfSubscriptionSubscriptionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetail)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailArray) ToGetSelfSubscriptionSubscriptionDetailArrayOutput() GetSelfSubscriptionSubscriptionDetailArrayOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailArray) ToGetSelfSubscriptionSubscriptionDetailArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailArrayOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetail)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailOutput) ToGetSelfSubscriptionSubscriptionDetailOutput() GetSelfSubscriptionSubscriptionDetailOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailOutput) ToGetSelfSubscriptionSubscriptionDetailOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailOutput {
+	return o
+}
+
+// Tha amount for the currency type.
+func (o GetSelfSubscriptionSubscriptionDetailOutput) Amount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetail) float64 { return v.Amount }).(pulumi.Float64Output)
+}
+
+// Billing details associated with the subscription plan and its usage dimensions.
+func (o GetSelfSubscriptionSubscriptionDetailOutput) BillingDetails() GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetail) []GetSelfSubscriptionSubscriptionDetailBillingDetail {
+		return v.BillingDetails
+	}).(GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput)
+}
+
+// The currency supported, in the format specified by ISO-4217
+func (o GetSelfSubscriptionSubscriptionDetailOutput) Currency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetail) string { return v.Currency }).(pulumi.StringOutput)
+}
+
+// Whether subscription should be auto-renewed at the end of cycle.
+func (o GetSelfSubscriptionSubscriptionDetailOutput) IsAutoRenew() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetail) bool { return v.IsAutoRenew }).(pulumi.BoolOutput)
+}
+
+// The activation link given by the partner.
+func (o GetSelfSubscriptionSubscriptionDetailOutput) PartnerRegistrationUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetail) string { return v.PartnerRegistrationUrl }).(pulumi.StringOutput)
+}
+
+// A pricing plan details provided by the Publisher.
+func (o GetSelfSubscriptionSubscriptionDetailOutput) PricingPlans() GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetail) []GetSelfSubscriptionSubscriptionDetailPricingPlan {
+		return v.PricingPlans
+	}).(GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetail)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailArrayOutput) ToGetSelfSubscriptionSubscriptionDetailArrayOutput() GetSelfSubscriptionSubscriptionDetailArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailArrayOutput) ToGetSelfSubscriptionSubscriptionDetailArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailArrayOutput) Index(i pulumi.IntInput) GetSelfSubscriptionSubscriptionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSubscriptionSubscriptionDetail {
+		return vs[0].([]GetSelfSubscriptionSubscriptionDetail)[vs[1].(int)]
+	}).(GetSelfSubscriptionSubscriptionDetailOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetail struct {
+	// The billing model this billing detail applies to.
+	BillingModel string `pulumi:"billingModel"`
+	// Whether this sku is assign to gov product.
+	HasGovSku bool `pulumi:"hasGovSku"`
+	// The meters associated with sku.
+	Meters []GetSelfSubscriptionSubscriptionDetailBillingDetailMeter `pulumi:"meters"`
+	// The metric type in which usage is measured.
+	MetricType string `pulumi:"metricType"`
+	// Unique key used to map this SKU to the pricing plan.
+	PricingPlanKey string `pulumi:"pricingPlanKey"`
+	// Tha rate of this sku meter.
+	RateAllocation float64 `pulumi:"rateAllocation"`
+	// Sku for service.
+	Sku string `pulumi:"sku"`
+}
+
+// GetSelfSubscriptionSubscriptionDetailBillingDetailInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailBillingDetailArgs and GetSelfSubscriptionSubscriptionDetailBillingDetailOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailBillingDetailInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailBillingDetailArgs{...}
+type GetSelfSubscriptionSubscriptionDetailBillingDetailInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailOutput
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailArgs struct {
+	// The billing model this billing detail applies to.
+	BillingModel pulumi.StringInput `pulumi:"billingModel"`
+	// Whether this sku is assign to gov product.
+	HasGovSku pulumi.BoolInput `pulumi:"hasGovSku"`
+	// The meters associated with sku.
+	Meters GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayInput `pulumi:"meters"`
+	// The metric type in which usage is measured.
+	MetricType pulumi.StringInput `pulumi:"metricType"`
+	// Unique key used to map this SKU to the pricing plan.
+	PricingPlanKey pulumi.StringInput `pulumi:"pricingPlanKey"`
+	// Tha rate of this sku meter.
+	RateAllocation pulumi.Float64Input `pulumi:"rateAllocation"`
+	// Sku for service.
+	Sku pulumi.StringInput `pulumi:"sku"`
+}
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetail)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailArgs) ToGetSelfSubscriptionSubscriptionDetailBillingDetailOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailBillingDetailOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailArgs) ToGetSelfSubscriptionSubscriptionDetailBillingDetailOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailBillingDetailOutput)
+}
+
+// GetSelfSubscriptionSubscriptionDetailBillingDetailArrayInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailBillingDetailArray and GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailBillingDetailArrayInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailBillingDetailArray{ GetSelfSubscriptionSubscriptionDetailBillingDetailArgs{...} }
+type GetSelfSubscriptionSubscriptionDetailBillingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailArray []GetSelfSubscriptionSubscriptionDetailBillingDetailInput
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailBillingDetail)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailArray) ToGetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailArray) ToGetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetail)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailOutput {
+	return o
+}
+
+// The billing model this billing detail applies to.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailOutput) BillingModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetail) string { return v.BillingModel }).(pulumi.StringOutput)
+}
+
+// Whether this sku is assign to gov product.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailOutput) HasGovSku() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetail) bool { return v.HasGovSku }).(pulumi.BoolOutput)
+}
+
+// The meters associated with sku.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailOutput) Meters() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetail) []GetSelfSubscriptionSubscriptionDetailBillingDetailMeter {
+		return v.Meters
+	}).(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput)
+}
+
+// The metric type in which usage is measured.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetail) string { return v.MetricType }).(pulumi.StringOutput)
+}
+
+// Unique key used to map this SKU to the pricing plan.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailOutput) PricingPlanKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetail) string { return v.PricingPlanKey }).(pulumi.StringOutput)
+}
+
+// Tha rate of this sku meter.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailOutput) RateAllocation() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetail) float64 { return v.RateAllocation }).(pulumi.Float64Output)
+}
+
+// Sku for service.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailOutput) Sku() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetail) string { return v.Sku }).(pulumi.StringOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailBillingDetail)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput) Index(i pulumi.IntInput) GetSelfSubscriptionSubscriptionDetailBillingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSubscriptionSubscriptionDetailBillingDetail {
+		return vs[0].([]GetSelfSubscriptionSubscriptionDetailBillingDetail)[vs[1].(int)]
+	}).(GetSelfSubscriptionSubscriptionDetailBillingDetailOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeter struct {
+	// Additional data give by sku.
+	ExtendedMetadatas []GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadata `pulumi:"extendedMetadatas"`
+	// Name of meter.
+	Name string `pulumi:"name"`
+	// Tha rate of this sku meter.
+	RateAllocation float64 `pulumi:"rateAllocation"`
+}
+
+// GetSelfSubscriptionSubscriptionDetailBillingDetailMeterInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArgs and GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailBillingDetailMeterInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArgs{...}
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArgs struct {
+	// Additional data give by sku.
+	ExtendedMetadatas GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayInput `pulumi:"extendedMetadatas"`
+	// Name of meter.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Tha rate of this sku meter.
+	RateAllocation pulumi.Float64Input `pulumi:"rateAllocation"`
+}
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetailMeter)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArgs) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArgs) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput)
+}
+
+// GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArray and GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArray{ GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArgs{...} }
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArray []GetSelfSubscriptionSubscriptionDetailBillingDetailMeterInput
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailBillingDetailMeter)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArray) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArray) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetailMeter)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput {
+	return o
+}
+
+// Additional data give by sku.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput) ExtendedMetadatas() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetailMeter) []GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadata {
+		return v.ExtendedMetadatas
+	}).(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput)
+}
+
+// Name of meter.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetailMeter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Tha rate of this sku meter.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput) RateAllocation() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetailMeter) float64 { return v.RateAllocation }).(pulumi.Float64Output)
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailBillingDetailMeter)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput) Index(i pulumi.IntInput) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSubscriptionSubscriptionDetailBillingDetailMeter {
+		return vs[0].([]GetSelfSubscriptionSubscriptionDetailBillingDetailMeter)[vs[1].(int)]
+	}).(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadata struct {
+	// Additional attribute for extendedMetadata.
+	Key string `pulumi:"key"`
+	// It contains the value of above key.
+	Value string `pulumi:"value"`
+}
+
+// GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArgs and GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArgs{...}
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArgs struct {
+	// Additional attribute for extendedMetadata.
+	Key pulumi.StringInput `pulumi:"key"`
+	// It contains the value of above key.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadata)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArgs) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArgs) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput)
+}
+
+// GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArray and GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArray{ GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArgs{...} }
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput
+	ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArray []GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataInput
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadata)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArray) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArray) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadata)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput {
+	return o
+}
+
+// Additional attribute for extendedMetadata.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadata) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// It contains the value of above key.
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadata) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadata)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput() GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput) ToGetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput) Index(i pulumi.IntInput) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadata {
+		return vs[0].([]GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadata)[vs[1].(int)]
+	}).(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlan struct {
+	// Specifies the interval at which billing occurs for the subscription plan or usage dimension.
+	BillingFrequency string `pulumi:"billingFrequency"`
+	// Metered usage dimensions associated with the pricing plan.
+	Dimensions []GetSelfSubscriptionSubscriptionDetailPricingPlanDimension `pulumi:"dimensions"`
+	// A detailed explanation of the subscription plan.
+	PlanDescription string `pulumi:"planDescription"`
+	// Specifies the duration of the subscription plan.
+	PlanDuration string `pulumi:"planDuration"`
+	// The name of the subscription plan used to identify the plan.
+	PlanName string `pulumi:"planName"`
+	// The type of the subscription plan.
+	PlanType string `pulumi:"planType"`
+	// The pricing details of the subscription plan in various supported currencies.
+	Rates []GetSelfSubscriptionSubscriptionDetailPricingPlanRate `pulumi:"rates"`
+}
+
+// GetSelfSubscriptionSubscriptionDetailPricingPlanInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailPricingPlanArgs and GetSelfSubscriptionSubscriptionDetailPricingPlanOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailPricingPlanInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailPricingPlanArgs{...}
+type GetSelfSubscriptionSubscriptionDetailPricingPlanInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanOutput
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanArgs struct {
+	// Specifies the interval at which billing occurs for the subscription plan or usage dimension.
+	BillingFrequency pulumi.StringInput `pulumi:"billingFrequency"`
+	// Metered usage dimensions associated with the pricing plan.
+	Dimensions GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayInput `pulumi:"dimensions"`
+	// A detailed explanation of the subscription plan.
+	PlanDescription pulumi.StringInput `pulumi:"planDescription"`
+	// Specifies the duration of the subscription plan.
+	PlanDuration pulumi.StringInput `pulumi:"planDuration"`
+	// The name of the subscription plan used to identify the plan.
+	PlanName pulumi.StringInput `pulumi:"planName"`
+	// The type of the subscription plan.
+	PlanType pulumi.StringInput `pulumi:"planType"`
+	// The pricing details of the subscription plan in various supported currencies.
+	Rates GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayInput `pulumi:"rates"`
+}
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlan)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanArgs) ToGetSelfSubscriptionSubscriptionDetailPricingPlanOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailPricingPlanOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanArgs) ToGetSelfSubscriptionSubscriptionDetailPricingPlanOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailPricingPlanOutput)
+}
+
+// GetSelfSubscriptionSubscriptionDetailPricingPlanArrayInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailPricingPlanArray and GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailPricingPlanArrayInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailPricingPlanArray{ GetSelfSubscriptionSubscriptionDetailPricingPlanArgs{...} }
+type GetSelfSubscriptionSubscriptionDetailPricingPlanArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanArray []GetSelfSubscriptionSubscriptionDetailPricingPlanInput
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailPricingPlan)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanArray) ToGetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanArray) ToGetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlan)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanOutput {
+	return o
+}
+
+// Specifies the interval at which billing occurs for the subscription plan or usage dimension.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanOutput) BillingFrequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlan) string { return v.BillingFrequency }).(pulumi.StringOutput)
+}
+
+// Metered usage dimensions associated with the pricing plan.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanOutput) Dimensions() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlan) []GetSelfSubscriptionSubscriptionDetailPricingPlanDimension {
+		return v.Dimensions
+	}).(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput)
+}
+
+// A detailed explanation of the subscription plan.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanOutput) PlanDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlan) string { return v.PlanDescription }).(pulumi.StringOutput)
+}
+
+// Specifies the duration of the subscription plan.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanOutput) PlanDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlan) string { return v.PlanDuration }).(pulumi.StringOutput)
+}
+
+// The name of the subscription plan used to identify the plan.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanOutput) PlanName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlan) string { return v.PlanName }).(pulumi.StringOutput)
+}
+
+// The type of the subscription plan.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanOutput) PlanType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlan) string { return v.PlanType }).(pulumi.StringOutput)
+}
+
+// The pricing details of the subscription plan in various supported currencies.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanOutput) Rates() GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlan) []GetSelfSubscriptionSubscriptionDetailPricingPlanRate {
+		return v.Rates
+	}).(GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailPricingPlan)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput) Index(i pulumi.IntInput) GetSelfSubscriptionSubscriptionDetailPricingPlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSubscriptionSubscriptionDetailPricingPlan {
+		return vs[0].([]GetSelfSubscriptionSubscriptionDetailPricingPlan)[vs[1].(int)]
+	}).(GetSelfSubscriptionSubscriptionDetailPricingPlanOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimension struct {
+	// Specifies the interval at which the usage dimension is billed.
+	DimensionBillingFrequency string `pulumi:"dimensionBillingFrequency"`
+	// A detailed explanation of the usage dimension.
+	DimensionDescription string `pulumi:"dimensionDescription"`
+	// The stable key used internally to map this usage dimension to billing details.
+	DimensionKey string `pulumi:"dimensionKey"`
+	// The name of the usage dimension.
+	DimensionName string `pulumi:"dimensionName"`
+	// Quantity included in the base fee for hybrid plans.
+	IncludedQuantity float64 `pulumi:"includedQuantity"`
+	// The metric type in which usage is measured.
+	MetricType string `pulumi:"metricType"`
+	// The pricing details of the subscription plan in various supported currencies.
+	Rates []GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate `pulumi:"rates"`
+}
+
+// GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArgs and GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArgs{...}
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArgs struct {
+	// Specifies the interval at which the usage dimension is billed.
+	DimensionBillingFrequency pulumi.StringInput `pulumi:"dimensionBillingFrequency"`
+	// A detailed explanation of the usage dimension.
+	DimensionDescription pulumi.StringInput `pulumi:"dimensionDescription"`
+	// The stable key used internally to map this usage dimension to billing details.
+	DimensionKey pulumi.StringInput `pulumi:"dimensionKey"`
+	// The name of the usage dimension.
+	DimensionName pulumi.StringInput `pulumi:"dimensionName"`
+	// Quantity included in the base fee for hybrid plans.
+	IncludedQuantity pulumi.Float64Input `pulumi:"includedQuantity"`
+	// The metric type in which usage is measured.
+	MetricType pulumi.StringInput `pulumi:"metricType"`
+	// The pricing details of the subscription plan in various supported currencies.
+	Rates GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayInput `pulumi:"rates"`
+}
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanDimension)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArgs) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArgs) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput)
+}
+
+// GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArray and GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArray{ GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArgs{...} }
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArray []GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionInput
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailPricingPlanDimension)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArray) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArray) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanDimension)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput {
+	return o
+}
+
+// Specifies the interval at which the usage dimension is billed.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput) DimensionBillingFrequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlanDimension) string {
+		return v.DimensionBillingFrequency
+	}).(pulumi.StringOutput)
+}
+
+// A detailed explanation of the usage dimension.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput) DimensionDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlanDimension) string {
+		return v.DimensionDescription
+	}).(pulumi.StringOutput)
+}
+
+// The stable key used internally to map this usage dimension to billing details.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput) DimensionKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlanDimension) string { return v.DimensionKey }).(pulumi.StringOutput)
+}
+
+// The name of the usage dimension.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput) DimensionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlanDimension) string { return v.DimensionName }).(pulumi.StringOutput)
+}
+
+// Quantity included in the base fee for hybrid plans.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput) IncludedQuantity() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlanDimension) float64 { return v.IncludedQuantity }).(pulumi.Float64Output)
+}
+
+// The metric type in which usage is measured.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlanDimension) string { return v.MetricType }).(pulumi.StringOutput)
+}
+
+// The pricing details of the subscription plan in various supported currencies.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput) Rates() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlanDimension) []GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate {
+		return v.Rates
+	}).(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailPricingPlanDimension)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput) Index(i pulumi.IntInput) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSubscriptionSubscriptionDetailPricingPlanDimension {
+		return vs[0].([]GetSelfSubscriptionSubscriptionDetailPricingPlanDimension)[vs[1].(int)]
+	}).(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate struct {
+	// The currency supported, in the format specified by ISO-4217
+	Currency string `pulumi:"currency"`
+	// The amount charged for the plan in the specified currency.
+	Rate float64 `pulumi:"rate"`
+}
+
+// GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArgs and GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArgs{...}
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArgs struct {
+	// The currency supported, in the format specified by ISO-4217
+	Currency pulumi.StringInput `pulumi:"currency"`
+	// The amount charged for the plan in the specified currency.
+	Rate pulumi.Float64Input `pulumi:"rate"`
+}
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArgs) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArgs) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput)
+}
+
+// GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArray and GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArray{ GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArgs{...} }
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArray []GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateInput
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArray) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArray) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput {
+	return o
+}
+
+// The currency supported, in the format specified by ISO-4217
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput) Currency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate) string { return v.Currency }).(pulumi.StringOutput)
+}
+
+// The amount charged for the plan in the specified currency.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput) Rate() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate) float64 { return v.Rate }).(pulumi.Float64Output)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput) Index(i pulumi.IntInput) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate {
+		return vs[0].([]GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRate)[vs[1].(int)]
+	}).(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanRate struct {
+	// The currency supported, in the format specified by ISO-4217
+	Currency string `pulumi:"currency"`
+	// The amount charged for the plan in the specified currency.
+	Rate float64 `pulumi:"rate"`
+}
+
+// GetSelfSubscriptionSubscriptionDetailPricingPlanRateInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailPricingPlanRateArgs and GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailPricingPlanRateInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailPricingPlanRateArgs{...}
+type GetSelfSubscriptionSubscriptionDetailPricingPlanRateInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanRateArgs struct {
+	// The currency supported, in the format specified by ISO-4217
+	Currency pulumi.StringInput `pulumi:"currency"`
+	// The amount charged for the plan in the specified currency.
+	Rate pulumi.Float64Input `pulumi:"rate"`
+}
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanRateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanRate)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanRateArgs) ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanRateArgs) ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput)
+}
+
+// GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayInput is an input type that accepts GetSelfSubscriptionSubscriptionDetailPricingPlanRateArray and GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput values.
+// You can construct a concrete instance of `GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayInput` via:
+//
+//	GetSelfSubscriptionSubscriptionDetailPricingPlanRateArray{ GetSelfSubscriptionSubscriptionDetailPricingPlanRateArgs{...} }
+type GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayInput interface {
+	pulumi.Input
+
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput
+	ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutputWithContext(context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanRateArray []GetSelfSubscriptionSubscriptionDetailPricingPlanRateInput
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanRateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailPricingPlanRate)(nil)).Elem()
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanRateArray) ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput {
+	return i.ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutputWithContext(context.Background())
+}
+
+func (i GetSelfSubscriptionSubscriptionDetailPricingPlanRateArray) ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanRate)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput {
+	return o
+}
+
+// The currency supported, in the format specified by ISO-4217
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput) Currency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlanRate) string { return v.Currency }).(pulumi.StringOutput)
+}
+
+// The amount charged for the plan in the specified currency.
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput) Rate() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSelfSubscriptionSubscriptionDetailPricingPlanRate) float64 { return v.Rate }).(pulumi.Float64Output)
+}
+
+type GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSelfSubscriptionSubscriptionDetailPricingPlanRate)(nil)).Elem()
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput() GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput) ToGetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutputWithContext(ctx context.Context) GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput {
+	return o
+}
+
+func (o GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput) Index(i pulumi.IntInput) GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSelfSubscriptionSubscriptionDetailPricingPlanRate {
+		return vs[0].([]GetSelfSubscriptionSubscriptionDetailPricingPlanRate)[vs[1].(int)]
+	}).(GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput)
+}
+
 type GetSelfSubscriptionsFilter struct {
 	// Name of meter.
 	Name   string   `pulumi:"name"`
@@ -1691,6 +4379,48 @@ func (o GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingP
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceSearchResultInput)(nil)).Elem(), GetResourceSearchResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceSearchResultArrayInput)(nil)).Elem(), GetResourceSearchResultArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnerSubscriptionsFilterInput)(nil)).Elem(), GetSelfPartnerSubscriptionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnerSubscriptionsFilterArrayInput)(nil)).Elem(), GetSelfPartnerSubscriptionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnerSubscriptionsListingSubscriptionsCollectionInput)(nil)).Elem(), GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayInput)(nil)).Elem(), GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemInput)(nil)).Elem(), GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayInput)(nil)).Elem(), GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnersFilterInput)(nil)).Elem(), GetSelfPartnersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnersFilterArrayInput)(nil)).Elem(), GetSelfPartnersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnersPartnerCollectionInput)(nil)).Elem(), GetSelfPartnersPartnerCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnersPartnerCollectionArrayInput)(nil)).Elem(), GetSelfPartnersPartnerCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnersPartnerCollectionItemInput)(nil)).Elem(), GetSelfPartnersPartnerCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnersPartnerCollectionItemArrayInput)(nil)).Elem(), GetSelfPartnersPartnerCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsFilterInput)(nil)).Elem(), GetSelfSelfPartnerSubscriptionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsFilterArrayInput)(nil)).Elem(), GetSelfSelfPartnerSubscriptionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionInput)(nil)).Elem(), GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayInput)(nil)).Elem(), GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemInput)(nil)).Elem(), GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayInput)(nil)).Elem(), GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionAdditionalDetailInput)(nil)).Elem(), GetSelfSubscriptionAdditionalDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionAdditionalDetailArrayInput)(nil)).Elem(), GetSelfSubscriptionAdditionalDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailArrayInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetailInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailBillingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetailArrayInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailBillingDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetailMeterInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailPricingPlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanArrayInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailPricingPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanRateInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailPricingPlanRateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayInput)(nil)).Elem(), GetSelfSubscriptionSubscriptionDetailPricingPlanRateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionsFilterInput)(nil)).Elem(), GetSelfSubscriptionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionsFilterArrayInput)(nil)).Elem(), GetSelfSubscriptionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionsSubscriptionCollectionInput)(nil)).Elem(), GetSelfSubscriptionsSubscriptionCollectionArgs{})
@@ -1715,6 +4445,48 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionRateArrayInput)(nil)).Elem(), GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionRateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateInput)(nil)).Elem(), GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateArrayInput)(nil)).Elem(), GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateArray{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceSearchResultOutput{})
+	pulumi.RegisterOutputType(GetResourceSearchResultArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnerSubscriptionsFilterOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnerSubscriptionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnersFilterOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnersPartnerCollectionOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnersPartnerCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnersPartnerCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSelfPartnersPartnerCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSelfPartnerSubscriptionsFilterOutput{})
+	pulumi.RegisterOutputType(GetSelfSelfPartnerSubscriptionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSelfSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionAdditionalDetailOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionAdditionalDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailBillingDetailOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailBillingDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailPricingPlanOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailPricingPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailPricingPlanDimensionRateArrayOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailPricingPlanRateOutput{})
+	pulumi.RegisterOutputType(GetSelfSubscriptionSubscriptionDetailPricingPlanRateArrayOutput{})
 	pulumi.RegisterOutputType(GetSelfSubscriptionsFilterOutput{})
 	pulumi.RegisterOutputType(GetSelfSubscriptionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSelfSubscriptionsSubscriptionCollectionOutput{})

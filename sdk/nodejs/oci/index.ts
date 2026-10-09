@@ -690,6 +690,36 @@ export const getMulticloudResourceAnchors: typeof import("./getMulticloudResourc
 export const getMulticloudResourceAnchorsOutput: typeof import("./getMulticloudResourceAnchors").getMulticloudResourceAnchorsOutput = null as any;
 utilities.lazyLoad(exports, ["getMulticloudResourceAnchors","getMulticloudResourceAnchorsOutput"], () => require("./getMulticloudResourceAnchors"));
 
+export { GetProductCatalogInternalAdminProductArgs, GetProductCatalogInternalAdminProductResult, GetProductCatalogInternalAdminProductOutputArgs } from "./getProductCatalogInternalAdminProduct";
+export const getProductCatalogInternalAdminProduct: typeof import("./getProductCatalogInternalAdminProduct").getProductCatalogInternalAdminProduct = null as any;
+export const getProductCatalogInternalAdminProductOutput: typeof import("./getProductCatalogInternalAdminProduct").getProductCatalogInternalAdminProductOutput = null as any;
+utilities.lazyLoad(exports, ["getProductCatalogInternalAdminProduct","getProductCatalogInternalAdminProductOutput"], () => require("./getProductCatalogInternalAdminProduct"));
+
+export { GetProductCatalogInternalAdminProductsArgs, GetProductCatalogInternalAdminProductsResult, GetProductCatalogInternalAdminProductsOutputArgs } from "./getProductCatalogInternalAdminProducts";
+export const getProductCatalogInternalAdminProducts: typeof import("./getProductCatalogInternalAdminProducts").getProductCatalogInternalAdminProducts = null as any;
+export const getProductCatalogInternalAdminProductsOutput: typeof import("./getProductCatalogInternalAdminProducts").getProductCatalogInternalAdminProductsOutput = null as any;
+utilities.lazyLoad(exports, ["getProductCatalogInternalAdminProducts","getProductCatalogInternalAdminProductsOutput"], () => require("./getProductCatalogInternalAdminProducts"));
+
+export { GetProductCatalogInternalProductArgs, GetProductCatalogInternalProductResult, GetProductCatalogInternalProductOutputArgs } from "./getProductCatalogInternalProduct";
+export const getProductCatalogInternalProduct: typeof import("./getProductCatalogInternalProduct").getProductCatalogInternalProduct = null as any;
+export const getProductCatalogInternalProductOutput: typeof import("./getProductCatalogInternalProduct").getProductCatalogInternalProductOutput = null as any;
+utilities.lazyLoad(exports, ["getProductCatalogInternalProduct","getProductCatalogInternalProductOutput"], () => require("./getProductCatalogInternalProduct"));
+
+export { GetProductCatalogInternalProductsArgs, GetProductCatalogInternalProductsResult, GetProductCatalogInternalProductsOutputArgs } from "./getProductCatalogInternalProducts";
+export const getProductCatalogInternalProducts: typeof import("./getProductCatalogInternalProducts").getProductCatalogInternalProducts = null as any;
+export const getProductCatalogInternalProductsOutput: typeof import("./getProductCatalogInternalProducts").getProductCatalogInternalProductsOutput = null as any;
+utilities.lazyLoad(exports, ["getProductCatalogInternalProducts","getProductCatalogInternalProductsOutput"], () => require("./getProductCatalogInternalProducts"));
+
+export { GetProductCatalogProductArgs, GetProductCatalogProductResult, GetProductCatalogProductOutputArgs } from "./getProductCatalogProduct";
+export const getProductCatalogProduct: typeof import("./getProductCatalogProduct").getProductCatalogProduct = null as any;
+export const getProductCatalogProductOutput: typeof import("./getProductCatalogProduct").getProductCatalogProductOutput = null as any;
+utilities.lazyLoad(exports, ["getProductCatalogProduct","getProductCatalogProductOutput"], () => require("./getProductCatalogProduct"));
+
+export { GetProductCatalogProductsArgs, GetProductCatalogProductsResult, GetProductCatalogProductsOutputArgs } from "./getProductCatalogProducts";
+export const getProductCatalogProducts: typeof import("./getProductCatalogProducts").getProductCatalogProducts = null as any;
+export const getProductCatalogProductsOutput: typeof import("./getProductCatalogProducts").getProductCatalogProductsOutput = null as any;
+utilities.lazyLoad(exports, ["getProductCatalogProducts","getProductCatalogProductsOutput"], () => require("./getProductCatalogProducts"));
+
 export { GetPsaPrivateServiceAccessArgs, GetPsaPrivateServiceAccessResult, GetPsaPrivateServiceAccessOutputArgs } from "./getPsaPrivateServiceAccess";
 export const getPsaPrivateServiceAccess: typeof import("./getPsaPrivateServiceAccess").getPsaPrivateServiceAccess = null as any;
 export const getPsaPrivateServiceAccessOutput: typeof import("./getPsaPrivateServiceAccess").getPsaPrivateServiceAccessOutput = null as any;
@@ -880,6 +910,16 @@ export type ManagedKafkaKafkaClusterSuperusersManagement = import("./managedKafk
 export const ManagedKafkaKafkaClusterSuperusersManagement: typeof import("./managedKafkaKafkaClusterSuperusersManagement").ManagedKafkaKafkaClusterSuperusersManagement = null as any;
 utilities.lazyLoad(exports, ["ManagedKafkaKafkaClusterSuperusersManagement"], () => require("./managedKafkaKafkaClusterSuperusersManagement"));
 
+export { ProductCatalogInternalAdminProductArgs, ProductCatalogInternalAdminProductState } from "./productCatalogInternalAdminProduct";
+export type ProductCatalogInternalAdminProduct = import("./productCatalogInternalAdminProduct").ProductCatalogInternalAdminProduct;
+export const ProductCatalogInternalAdminProduct: typeof import("./productCatalogInternalAdminProduct").ProductCatalogInternalAdminProduct = null as any;
+utilities.lazyLoad(exports, ["ProductCatalogInternalAdminProduct"], () => require("./productCatalogInternalAdminProduct"));
+
+export { ProductCatalogInternalProductArgs, ProductCatalogInternalProductState } from "./productCatalogInternalProduct";
+export type ProductCatalogInternalProduct = import("./productCatalogInternalProduct").ProductCatalogInternalProduct;
+export const ProductCatalogInternalProduct: typeof import("./productCatalogInternalProduct").ProductCatalogInternalProduct = null as any;
+utilities.lazyLoad(exports, ["ProductCatalogInternalProduct"], () => require("./productCatalogInternalProduct"));
+
 export { PsaPrivateServiceAccessArgs, PsaPrivateServiceAccessState } from "./psaPrivateServiceAccess";
 export type PsaPrivateServiceAccess = import("./psaPrivateServiceAccess").PsaPrivateServiceAccess;
 export const PsaPrivateServiceAccess: typeof import("./psaPrivateServiceAccess").PsaPrivateServiceAccess = null as any;
@@ -1009,6 +1049,10 @@ const _module = {
                 return new ManagedKafkaKafkaClusterConfig(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement":
                 return new ManagedKafkaKafkaClusterSuperusersManagement(name, <any>undefined, { urn })
+            case "oci:oci/productCatalogInternalAdminProduct:ProductCatalogInternalAdminProduct":
+                return new ProductCatalogInternalAdminProduct(name, <any>undefined, { urn })
+            case "oci:oci/productCatalogInternalProduct:ProductCatalogInternalProduct":
+                return new ProductCatalogInternalProduct(name, <any>undefined, { urn })
             case "oci:oci/psaPrivateServiceAccess:PsaPrivateServiceAccess":
                 return new PsaPrivateServiceAccess(name, <any>undefined, { urn })
             case "oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion":
@@ -1073,6 +1117,8 @@ pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaCluster", _mo
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterAddon", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterSuperusersManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/productCatalogInternalAdminProduct", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/productCatalogInternalProduct", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/psaPrivateServiceAccess", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsMonitoredRegion", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsResourceAnalyticsInstance", _module)

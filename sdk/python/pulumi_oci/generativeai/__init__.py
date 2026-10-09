@@ -31,6 +31,8 @@ from .get_agent_provisioned_capacities import *
 from .get_agent_provisioned_capacity import *
 from .get_agent_tool import *
 from .get_agent_tools import *
+from .get_apikey import *
+from .get_apikeys import *
 from .get_dedicated_ai_cluster import *
 from .get_dedicated_ai_clusters import *
 from .get_endpoint import *

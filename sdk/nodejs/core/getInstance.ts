@@ -139,7 +139,7 @@ export interface GetInstanceResult {
      */
     readonly isCrossNumaNode: boolean;
     /**
-     * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+     * Deprecated. Use `isEncryptionInTransitEnabled` instead.
      */
     readonly isPvEncryptionInTransitEnabled: boolean;
     /**

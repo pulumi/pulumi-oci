@@ -80,7 +80,7 @@ export class ResourceAnalyticsResourceAnalyticsInstanceOacManagement extends pul
      */
     declare public readonly resourceAnalyticsInstanceId: pulumi.Output<string>;
     /**
-     * The current state of the ResourceAnalyticsInstance.
+     * The current state of the Resource Analytics Instance OAC management operation.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
 
@@ -142,7 +142,7 @@ export interface ResourceAnalyticsResourceAnalyticsInstanceOacManagementState {
      */
     resourceAnalyticsInstanceId?: pulumi.Input<string | undefined>;
     /**
-     * The current state of the ResourceAnalyticsInstance.
+     * The current state of the Resource Analytics Instance OAC management operation.
      */
     state?: pulumi.Input<string | undefined>;
 }

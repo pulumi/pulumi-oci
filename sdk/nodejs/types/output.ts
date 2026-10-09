@@ -47906,7 +47906,7 @@ export namespace Core {
          */
         displayName: string;
         /**
-         * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         encryptionInTransitType: string;
         /**
@@ -47918,7 +47918,11 @@ export namespace Core {
          */
         instanceId: string;
         /**
-         * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
+         * Specifies whether in-transit encryption is enabled for the boot volume's attachment.
+         */
+        isEncryptionInTransitEnabled: boolean;
+        /**
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -52516,6 +52520,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -52529,7 +52534,7 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -52547,6 +52552,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -52740,6 +52746,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -52753,7 +52760,7 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -52771,6 +52778,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -52916,7 +52924,7 @@ export namespace Core {
          */
         displayName: string;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -53104,7 +53112,7 @@ export namespace Core {
          */
         isAiEnterpriseEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -53297,6 +53305,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -53310,7 +53319,11 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Whether in-transit encryption for the data volume's attachment is enabled or not.
+         */
+        isEncryptionInTransitEnabled: boolean;
+        /**
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -53328,6 +53341,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -53547,7 +53561,7 @@ export namespace Core {
          */
         displayName: string;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -53735,7 +53749,7 @@ export namespace Core {
          */
         isAiEnterpriseEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -53928,6 +53942,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -53941,7 +53956,11 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Whether in-transit encryption for the data volume's attachment is enabled or not.
+         */
+        isEncryptionInTransitEnabled: boolean;
+        /**
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -53959,6 +53978,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -54474,7 +54494,7 @@ export namespace Core {
          */
         displayName: string;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -54662,7 +54682,7 @@ export namespace Core {
          */
         isAiEnterpriseEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -54855,6 +54875,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -54868,7 +54889,11 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Whether in-transit encryption for the data volume's attachment is enabled or not.
+         */
+        isEncryptionInTransitEnabled: boolean;
+        /**
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -54886,6 +54911,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -55105,7 +55131,7 @@ export namespace Core {
          */
         displayName: string;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -55293,7 +55319,7 @@ export namespace Core {
          */
         isAiEnterpriseEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -55486,6 +55512,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -55499,7 +55526,11 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Whether in-transit encryption for the data volume's attachment is enabled or not.
+         */
+        isEncryptionInTransitEnabled: boolean;
+        /**
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -55517,6 +55548,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -56010,6 +56042,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -56023,7 +56056,11 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+         * Specifies whether in-transit encryption is enabled for the data volume's attachment.
+         */
+        isEncryptionInTransitEnabled: boolean;
+        /**
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -56041,6 +56078,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -56054,7 +56092,7 @@ export namespace Core {
         encryptionInTransitType: string;
         isAgentAutoIscsiLoginEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         isReadOnly: boolean;
@@ -56995,7 +57033,7 @@ export namespace Core {
          */
         isCrossNumaNode: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -57178,6 +57216,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -57191,7 +57230,11 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+         * Specifies whether in-transit encryption is enabled for the data volume's attachment.
+         */
+        isEncryptionInTransitEnabled: boolean;
+        /**
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -57209,6 +57252,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -57222,7 +57266,7 @@ export namespace Core {
         encryptionInTransitType: string;
         isAgentAutoIscsiLoginEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         isReadOnly: boolean;
@@ -59339,6 +59383,7 @@ export namespace Core {
     export interface GetShapeShape {
         baselineOcpuUtilizations: string[];
         billingType: string;
+        bsNvmeAttachmentsConfigs: outputs.Core.GetShapeShapeBsNvmeAttachmentsConfig[];
         gpuDescription: string;
         gpus: number;
         isBilledForStoppedInstance: boolean;
@@ -59368,6 +59413,13 @@ export namespace Core {
         rdmaPorts: number;
         recommendedAlternatives: outputs.Core.GetShapeShapeRecommendedAlternative[];
         resizeCompatibleShapes: string[];
+    }
+
+    export interface GetShapeShapeBsNvmeAttachmentsConfig {
+        maxRemoteNvmeVolumeAttachmentsPerCore: number;
+        maxTotalRemoteNvmeVolumeAttachments: number;
+        minCores: number;
+        vfEnableCount: number;
     }
 
     export interface GetShapeShapeMaxVnicAttachmentOption {
@@ -59485,6 +59537,10 @@ export namespace Core {
          */
         billingType: string;
         /**
+         * Shape-specific details for shapes that support remote NVMe volume attachments.
+         */
+        bsNvmeAttachmentsConfigs: outputs.Core.GetShapesShapeBsNvmeAttachmentsConfig[];
+        /**
          * A short description of the graphics processing unit (GPU) available for this shape.
          */
         gpuDescription: string;
@@ -59600,6 +59656,25 @@ export namespace Core {
          * The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
          */
         resizeCompatibleShapes: string[];
+    }
+
+    export interface GetShapesShapeBsNvmeAttachmentsConfig {
+        /**
+         * The maximum number of remote NVMe volume attachments supported per core.
+         */
+        maxRemoteNvmeVolumeAttachmentsPerCore: number;
+        /**
+         * The maximum total number of remote NVMe volume attachments supported for the shape.
+         */
+        maxTotalRemoteNvmeVolumeAttachments: number;
+        /**
+         * The minimum number of cores required to support remote NVMe volume attachments.
+         */
+        minCores: number;
+        /**
+         * The number of virtual functions to enable on a hypervisor so that each sellable core has one virtual function available. This value is `0` for VM and bare metal instances.
+         */
+        vfEnableCount: number;
     }
 
     export interface GetShapesShapeMaxVnicAttachmentOption {
@@ -60606,7 +60681,7 @@ export namespace Core {
          */
         displayName: string;
         /**
-         * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         encryptionInTransitType: string;
         /**
@@ -60634,11 +60709,15 @@ export namespace Core {
          */
         isAgentAutoIscsiLoginEnabled: boolean;
         /**
+         * Whether in-transit encryption for the data volume's attachment is enabled or not.
+         */
+        isEncryptionInTransitEnabled: boolean;
+        /**
          * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
          */
         isMultipath: boolean;
         /**
-         * Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -61644,6 +61723,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -61657,7 +61737,7 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -61675,6 +61755,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -61849,7 +61930,7 @@ export namespace Core {
          */
         isShareable: boolean;
         /**
-         * The type of volume. The only supported values are "iscsi" and "paravirtualized"
+         * The type of volume. The only supported values are "iscsi", "paravirtualized", and "nvme".
          */
         type: string;
         /**
@@ -62277,6 +62358,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -62290,7 +62372,11 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Whether in-transit encryption for the data volume's attachment is enabled or not.
+         */
+        isEncryptionInTransitEnabled: boolean;
+        /**
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -62307,6 +62393,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -62551,7 +62638,7 @@ export namespace Core {
          */
         isShareable: boolean;
         /**
-         * The type of volume. The only supported values are "iscsi" and "paravirtualized".
+         * The type of volume. The only supported values are "iscsi", "paravirtualized", and "nvme".
          */
         type: string;
         /**
@@ -62729,7 +62816,7 @@ export namespace Core {
          */
         isAiEnterpriseEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -62937,6 +63024,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -62950,7 +63038,11 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled: boolean;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Whether in-transit encryption for the data volume's attachment is enabled or not.
+         */
+        isEncryptionInTransitEnabled: boolean;
+        /**
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled: boolean;
         /**
@@ -62967,6 +63059,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -63464,6 +63557,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType: string;
         /**
@@ -63476,6 +63570,10 @@ export namespace Core {
          * Whether to enable consistent volume naming feature. Defaults to false.
          */
         isConsistentVolumeNamingEnabled: boolean;
+        /**
+         * Specifies whether in-transit encryption is enabled for the data volume's attachment.
+         */
+        isEncryptionInTransitEnabled: boolean;
         /**
          * (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
          */
@@ -63495,6 +63593,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType: string;
     }
@@ -63533,7 +63632,7 @@ export namespace Core {
          */
         launchCreateVolumeDetails: outputs.Core.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails;
         /**
-         * The type of volume attachment. Currently, the only supported values are "iscsi" and "paravirtualized".
+         * The type of volume attachment. Currently, the only supported values are "iscsi", "paravirtualized", and "nvme".
          */
         type: string;
         /**
@@ -182421,6 +182520,153 @@ export namespace GenerativeAi {
          * The prefix of file object(s) or folder prefix.
          */
         prefix: string;
+    }
+
+    export interface GetApikeyKey {
+        /**
+         * The key.
+         */
+        key: string;
+        /**
+         * The masked key.
+         */
+        keyMask: string;
+        /**
+         * The key name.
+         */
+        keyName: string;
+        /**
+         * The current state of the API key.
+         */
+        state: string;
+        /**
+         * The date and time that the key is activated in the format of an RFC3339 datetime string.
+         */
+        timeActivated: string;
+        /**
+         * The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+         */
+        timeDeactivated: string;
+        /**
+         * The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+         */
+        timeExpiry: string;
+        /**
+         * The date and time that the key is last used in the format of an RFC3339 datetime string.
+         */
+        timeLastUsed: string;
+        /**
+         * The date and time that the key is revoked in the format of an RFC3339 datetime string.
+         */
+        timeRevoked: string;
+    }
+
+    export interface GetApikeysApiKeyCollection {
+        items: outputs.GenerativeAi.GetApikeysApiKeyCollectionItem[];
+    }
+
+    export interface GetApikeysApiKeyCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * An optional description of the Api key.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the APIKey.
+         */
+        id: string;
+        /**
+         * The list of keys.
+         */
+        keys: outputs.GenerativeAi.GetApikeysApiKeyCollectionItemKey[];
+        /**
+         * A message describing the current state with detail that can provide actionable information.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only resources that their lifecycle state matches the given lifecycle state.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The date and time the ApiKey was updated, in the format defined by RFC 3339.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetApikeysApiKeyCollectionItemKey {
+        /**
+         * The key.
+         */
+        key: string;
+        /**
+         * The masked key.
+         */
+        keyMask: string;
+        /**
+         * The key name.
+         */
+        keyName: string;
+        /**
+         * A filter to return only resources that their lifecycle state matches the given lifecycle state.
+         */
+        state: string;
+        /**
+         * The date and time that the key is activated in the format of an RFC3339 datetime string.
+         */
+        timeActivated: string;
+        /**
+         * The date and time that the ApiKey was created in the format of an RFC3339 datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The date and time that the key is deactivated in the format of an RFC3339 datetime string.
+         */
+        timeDeactivated: string;
+        /**
+         * The date and time when the key would be expired, if not provided it would be 90 days, in the format defined by RFC 3339.
+         */
+        timeExpiry: string;
+        /**
+         * The date and time that the key is last used in the format of an RFC3339 datetime string.
+         */
+        timeLastUsed: string;
+        /**
+         * The date and time that the key is revoked in the format of an RFC3339 datetime string.
+         */
+        timeRevoked: string;
+    }
+
+    export interface GetApikeysFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDedicatedAiClusterCapacity {
@@ -326446,6 +326692,135 @@ export namespace oci {
         timeUpdated: string;
     }
 
+    export interface GetProductCatalogInternalAdminProductLimit {
+        /**
+         * public name of the limit
+         */
+        publicLimitName: string;
+        /**
+         * public name of the limit service
+         */
+        publicServiceName: string;
+    }
+
+    export interface GetProductCatalogInternalAdminProductMeter {
+        /**
+         * Name of the product, defined by service teams. Unique within one service
+         */
+        name: string;
+    }
+
+    export interface GetProductCatalogInternalAdminProductSkus {
+        bpartNumber: string;
+        /**
+         * description to the product
+         */
+        description: string;
+    }
+
+    export interface GetProductCatalogInternalAdminProductsProduct {
+        definedTags: {[key: string]: string};
+        freeformTags: {[key: string]: string};
+        id: string;
+        lifecycleDetails: string;
+        lifecycleState: string;
+        name: string;
+        serviceName: string;
+        skuses: outputs.oci.GetProductCatalogInternalAdminProductsProductSkus[];
+        systemTags: {[key: string]: string};
+        timeCreated: string;
+        timeLaunched: string;
+        timeReady: string;
+    }
+
+    export interface GetProductCatalogInternalAdminProductsProductSkus {
+        bpartNumber: string;
+        description: string;
+    }
+
+    export interface GetProductCatalogInternalProductLimit {
+        publicLimitName: string;
+        publicServiceName: string;
+    }
+
+    export interface GetProductCatalogInternalProductMeter {
+        /**
+         * Name of the product, defined by service teams. Unique within one service
+         */
+        name: string;
+    }
+
+    export interface GetProductCatalogInternalProductSkus {
+        /**
+         * sku bpartNumber
+         */
+        bpartNumber: string;
+        /**
+         * description of the sku
+         */
+        description: string;
+    }
+
+    export interface GetProductCatalogInternalProductsProduct {
+        definedTags: {[key: string]: string};
+        freeformTags: {[key: string]: string};
+        id: string;
+        lifecycleDetails: string;
+        lifecycleState: string;
+        name: string;
+        serviceName: string;
+        skuses: outputs.oci.GetProductCatalogInternalProductsProductSkus[];
+        systemTags: {[key: string]: string};
+        timeCreated: string;
+        timeLaunched: string;
+        timeReady: string;
+    }
+
+    export interface GetProductCatalogInternalProductsProductSkus {
+        bpartNumber: string;
+        description: string;
+    }
+
+    export interface GetProductCatalogProductSkus {
+        /**
+         * sku bpartNumber
+         */
+        bpartNumber: string;
+        /**
+         * description of the sku
+         */
+        description: string;
+    }
+
+    export interface GetProductCatalogProductsLimit {
+        publicLimitName?: string;
+        publicServiceName?: string;
+    }
+
+    export interface GetProductCatalogProductsMeter {
+        name?: string;
+    }
+
+    export interface GetProductCatalogProductsProduct {
+        definedTags: {[key: string]: string};
+        freeformTags: {[key: string]: string};
+        id: string;
+        lifecycleDetails: string;
+        lifecycleState: string;
+        name: string;
+        serviceName: string;
+        skuses: outputs.oci.GetProductCatalogProductsProductSkus[];
+        systemTags: {[key: string]: string};
+        timeCreated: string;
+        timeLaunched: string;
+        timeReady: string;
+    }
+
+    export interface GetProductCatalogProductsProductSkus {
+        bpartNumber: string;
+        description: string;
+    }
+
     export interface GetPsaPrivateServiceAccessesFilter {
         name: string;
         regex?: boolean;
@@ -327724,6 +328099,64 @@ export namespace oci {
          * Bootstrap URL
          */
         url: string;
+    }
+
+    export interface ProductCatalogInternalAdminProductLimit {
+        /**
+         * (Updatable) public name of the limit
+         */
+        publicLimitName: string;
+        /**
+         * (Updatable) public name of the limit service
+         */
+        publicServiceName: string;
+    }
+
+    export interface ProductCatalogInternalAdminProductMeter {
+        /**
+         * (Updatable) Name of the meter
+         */
+        name: string;
+    }
+
+    export interface ProductCatalogInternalAdminProductSkus {
+        /**
+         * sku bpartNumber
+         */
+        bpartNumber: string;
+        /**
+         * (Updatable) description to the product
+         */
+        description: string;
+    }
+
+    export interface ProductCatalogInternalProductLimit {
+        /**
+         * (Updatable) public name of the limit
+         */
+        publicLimitName: string;
+        /**
+         * (Updatable) public name of the limit service
+         */
+        publicServiceName: string;
+    }
+
+    export interface ProductCatalogInternalProductMeter {
+        /**
+         * (Updatable) Name of the meter
+         */
+        name: string;
+    }
+
+    export interface ProductCatalogInternalProductSkus {
+        /**
+         * sku bpartNumber
+         */
+        bpartNumber: string;
+        /**
+         * (Updatable) description to the product
+         */
+        description: string;
     }
 
     export interface ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword {

@@ -115,6 +115,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ManagedKafkaKafkaClusterConfig{}
 	case "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement":
 		r = &ManagedKafkaKafkaClusterSuperusersManagement{}
+	case "oci:oci/productCatalogInternalAdminProduct:ProductCatalogInternalAdminProduct":
+		r = &ProductCatalogInternalAdminProduct{}
+	case "oci:oci/productCatalogInternalProduct:ProductCatalogInternalProduct":
+		r = &ProductCatalogInternalProduct{}
 	case "oci:oci/psaPrivateServiceAccess:PsaPrivateServiceAccess":
 		r = &PsaPrivateServiceAccess{}
 	case "oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion":
@@ -373,6 +377,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/managedKafkaKafkaClusterSuperusersManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/productCatalogInternalAdminProduct",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/productCatalogInternalProduct",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

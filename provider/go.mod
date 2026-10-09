@@ -14,7 +14,7 @@ require (
 	github.com/pulumi/pulumi/sdk/v3 v3.263.0
 )
 
-require github.com/oracle/oci-go-sdk/v65 v65.126.1 // indirect
+require github.com/oracle/oci-go-sdk/v65 v65.126.2 // indirect
 
 require (
 	cel.dev/expr v0.25.2 // indirect

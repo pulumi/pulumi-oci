@@ -16594,6 +16594,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType?: pulumi.Input<string | undefined>;
         /**
@@ -16607,7 +16608,7 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled?: pulumi.Input<boolean | undefined>;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean | undefined>;
         /**
@@ -16625,6 +16626,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType?: pulumi.Input<string | undefined>;
     }
@@ -16799,7 +16801,7 @@ export namespace Core {
          */
         isShareable?: pulumi.Input<boolean | undefined>;
         /**
-         * The type of volume. The only supported values are "iscsi" and "paravirtualized"
+         * The type of volume. The only supported values are "iscsi", "paravirtualized", and "nvme".
          */
         type: pulumi.Input<string>;
         /**
@@ -17227,6 +17229,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType?: pulumi.Input<string | undefined>;
         /**
@@ -17240,7 +17243,11 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled?: pulumi.Input<boolean | undefined>;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Whether in-transit encryption for the data volume's attachment is enabled or not.
+         */
+        isEncryptionInTransitEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean | undefined>;
         /**
@@ -17257,6 +17264,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType?: pulumi.Input<string | undefined>;
     }
@@ -17501,7 +17509,7 @@ export namespace Core {
          */
         isShareable?: pulumi.Input<boolean | undefined>;
         /**
-         * The type of volume. The only supported values are "iscsi" and "paravirtualized".
+         * The type of volume. The only supported values are "iscsi", "paravirtualized", and "nvme".
          */
         type: pulumi.Input<string>;
         /**
@@ -17679,7 +17687,7 @@ export namespace Core {
          */
         isAiEnterpriseEnabled?: pulumi.Input<boolean | undefined>;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean | undefined>;
         /**
@@ -17887,6 +17895,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType?: pulumi.Input<string | undefined>;
         /**
@@ -17900,7 +17909,11 @@ export namespace Core {
          */
         isConsistentVolumeNamingEnabled?: pulumi.Input<boolean | undefined>;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Whether in-transit encryption for the data volume's attachment is enabled or not.
+         */
+        isEncryptionInTransitEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Deprecated. Use `isEncryptionInTransitEnabled` instead.
          */
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean | undefined>;
         /**
@@ -17917,6 +17930,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType?: pulumi.Input<string | undefined>;
     }
@@ -18414,6 +18428,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         bootVolumeType?: pulumi.Input<string | undefined>;
         /**
@@ -18426,6 +18441,10 @@ export namespace Core {
          * Whether to enable consistent volume naming feature. Defaults to false.
          */
         isConsistentVolumeNamingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Specifies whether in-transit encryption is enabled for the data volume's attachment.
+         */
+        isEncryptionInTransitEnabled?: pulumi.Input<boolean | undefined>;
         /**
          * (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
          */
@@ -18445,6 +18464,7 @@ export namespace Core {
          * * `IDE` - Emulated IDE disk.
          * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+         * * `NVME` - NVMe attached remote block storage device.
          */
         remoteDataVolumeType?: pulumi.Input<string | undefined>;
     }
@@ -18483,7 +18503,7 @@ export namespace Core {
          */
         launchCreateVolumeDetails?: pulumi.Input<inputs.Core.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails | undefined>;
         /**
-         * The type of volume attachment. Currently, the only supported values are "iscsi" and "paravirtualized".
+         * The type of volume attachment. Currently, the only supported values are "iscsi", "paravirtualized", and "nvme".
          */
         type: pulumi.Input<string>;
         /**
@@ -53244,6 +53264,18 @@ export namespace GenerativeAi {
         /**
          * The name of the function to invoke.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetApikeysFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetApikeysFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -106788,6 +106820,24 @@ export namespace oci {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetProductCatalogProductsLimit {
+        publicLimitName?: string;
+        publicServiceName?: string;
+    }
+
+    export interface GetProductCatalogProductsLimitArgs {
+        publicLimitName?: pulumi.Input<string | undefined>;
+        publicServiceName?: pulumi.Input<string | undefined>;
+    }
+
+    export interface GetProductCatalogProductsMeter {
+        name?: string;
+    }
+
+    export interface GetProductCatalogProductsMeterArgs {
+        name?: pulumi.Input<string | undefined>;
+    }
+
     export interface GetPsaPrivateServiceAccessesFilter {
         name: string;
         regex?: boolean;
@@ -107138,6 +107188,64 @@ export namespace oci {
          * Bootstrap URL
          */
         url?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ProductCatalogInternalAdminProductLimit {
+        /**
+         * (Updatable) public name of the limit
+         */
+        publicLimitName?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) public name of the limit service
+         */
+        publicServiceName?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ProductCatalogInternalAdminProductMeter {
+        /**
+         * (Updatable) Name of the meter
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ProductCatalogInternalAdminProductSkus {
+        /**
+         * sku bpartNumber
+         */
+        bpartNumber?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) description to the product
+         */
+        description?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ProductCatalogInternalProductLimit {
+        /**
+         * (Updatable) public name of the limit
+         */
+        publicLimitName?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) public name of the limit service
+         */
+        publicServiceName?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ProductCatalogInternalProductMeter {
+        /**
+         * (Updatable) Name of the meter
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ProductCatalogInternalProductSkus {
+        /**
+         * sku bpartNumber
+         */
+        bpartNumber?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) description to the product
+         */
+        description?: pulumi.Input<string | undefined>;
     }
 
     export interface ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword {

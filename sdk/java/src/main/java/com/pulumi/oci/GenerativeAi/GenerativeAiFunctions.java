@@ -38,6 +38,10 @@ import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetApikeyArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetApikeyPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetApikeysArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetApikeysPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClustersArgs;
@@ -103,6 +107,8 @@ import com.pulumi.oci.GenerativeAi.outputs.GetAgentProvisionedCapacitiesResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentProvisionedCapacityResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetApikeyResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetApikeysResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClusterResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClustersResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetEndpointResult;
@@ -4060,6 +4066,441 @@ public final class GenerativeAiFunctions {
      */
     public static CompletableFuture<GetAgentToolsResult> getAgentToolsPlain(GetAgentToolsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentTools:getAgentTools", TypeShape.of(GetAgentToolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Apikey resource in Oracle Cloud Infrastructure Generative Ai service.
+     * 
+     * Gets information about an API key.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetApikeyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApikey = GenerativeAiFunctions.getApikey(GetApikeyArgs.builder()
+     *             .apiKeyId(testApiKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetApikeyResult> getApikey(GetApikeyArgs args) {
+        return getApikey(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Apikey resource in Oracle Cloud Infrastructure Generative Ai service.
+     * 
+     * Gets information about an API key.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetApikeyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApikey = GenerativeAiFunctions.getApikey(GetApikeyArgs.builder()
+     *             .apiKeyId(testApiKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetApikeyResult> getApikeyPlain(GetApikeyPlainArgs args) {
+        return getApikeyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Apikey resource in Oracle Cloud Infrastructure Generative Ai service.
+     * 
+     * Gets information about an API key.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetApikeyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApikey = GenerativeAiFunctions.getApikey(GetApikeyArgs.builder()
+     *             .apiKeyId(testApiKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetApikeyResult> getApikey(GetApikeyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getApikey:getApikey", TypeShape.of(GetApikeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Apikey resource in Oracle Cloud Infrastructure Generative Ai service.
+     * 
+     * Gets information about an API key.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetApikeyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApikey = GenerativeAiFunctions.getApikey(GetApikeyArgs.builder()
+     *             .apiKeyId(testApiKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetApikeyResult> getApikey(GetApikeyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getApikey:getApikey", TypeShape.of(GetApikeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Apikey resource in Oracle Cloud Infrastructure Generative Ai service.
+     * 
+     * Gets information about an API key.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetApikeyArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApikey = GenerativeAiFunctions.getApikey(GetApikeyArgs.builder()
+     *             .apiKeyId(testApiKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetApikeyResult> getApikeyPlain(GetApikeyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getApikey:getApikey", TypeShape.of(GetApikeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Apikeys in Oracle Cloud Infrastructure Generative Ai service.
+     * 
+     * Lists the ApiKeys of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetApikeysArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApikeys = GenerativeAiFunctions.getApikeys(GetApikeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(apikeyDisplayName)
+     *             .id(apikeyId)
+     *             .state(apikeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetApikeysResult> getApikeys(GetApikeysArgs args) {
+        return getApikeys(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Apikeys in Oracle Cloud Infrastructure Generative Ai service.
+     * 
+     * Lists the ApiKeys of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetApikeysArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApikeys = GenerativeAiFunctions.getApikeys(GetApikeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(apikeyDisplayName)
+     *             .id(apikeyId)
+     *             .state(apikeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetApikeysResult> getApikeysPlain(GetApikeysPlainArgs args) {
+        return getApikeysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Apikeys in Oracle Cloud Infrastructure Generative Ai service.
+     * 
+     * Lists the ApiKeys of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetApikeysArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApikeys = GenerativeAiFunctions.getApikeys(GetApikeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(apikeyDisplayName)
+     *             .id(apikeyId)
+     *             .state(apikeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetApikeysResult> getApikeys(GetApikeysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getApikeys:getApikeys", TypeShape.of(GetApikeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Apikeys in Oracle Cloud Infrastructure Generative Ai service.
+     * 
+     * Lists the ApiKeys of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetApikeysArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApikeys = GenerativeAiFunctions.getApikeys(GetApikeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(apikeyDisplayName)
+     *             .id(apikeyId)
+     *             .state(apikeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetApikeysResult> getApikeys(GetApikeysArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getApikeys:getApikeys", TypeShape.of(GetApikeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Apikeys in Oracle Cloud Infrastructure Generative Ai service.
+     * 
+     * Lists the ApiKeys of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetApikeysArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApikeys = GenerativeAiFunctions.getApikeys(GetApikeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(apikeyDisplayName)
+     *             .id(apikeyId)
+     *             .state(apikeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetApikeysResult> getApikeysPlain(GetApikeysPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getApikeys:getApikeys", TypeShape.of(GetApikeysResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.

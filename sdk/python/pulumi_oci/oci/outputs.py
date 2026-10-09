@@ -99,6 +99,12 @@ __all__ = [
     'ManagedKafkaKafkaClusterBrokerShape',
     'ManagedKafkaKafkaClusterConfigLatestConfig',
     'ManagedKafkaKafkaClusterKafkaBootstrapUrl',
+    'ProductCatalogInternalAdminProductLimit',
+    'ProductCatalogInternalAdminProductMeter',
+    'ProductCatalogInternalAdminProductSkus',
+    'ProductCatalogInternalProductLimit',
+    'ProductCatalogInternalProductMeter',
+    'ProductCatalogInternalProductSkus',
     'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword',
     'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails',
     'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails',
@@ -467,6 +473,21 @@ __all__ = [
     'GetMulticloudResourceAnchorsFilterResult',
     'GetMulticloudResourceAnchorsResourceAnchorCollectionResult',
     'GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult',
+    'GetProductCatalogInternalAdminProductLimitResult',
+    'GetProductCatalogInternalAdminProductMeterResult',
+    'GetProductCatalogInternalAdminProductSkusResult',
+    'GetProductCatalogInternalAdminProductsProductResult',
+    'GetProductCatalogInternalAdminProductsProductSkusResult',
+    'GetProductCatalogInternalProductLimitResult',
+    'GetProductCatalogInternalProductMeterResult',
+    'GetProductCatalogInternalProductSkusResult',
+    'GetProductCatalogInternalProductsProductResult',
+    'GetProductCatalogInternalProductsProductSkusResult',
+    'GetProductCatalogProductSkusResult',
+    'GetProductCatalogProductsLimitResult',
+    'GetProductCatalogProductsMeterResult',
+    'GetProductCatalogProductsProductResult',
+    'GetProductCatalogProductsProductSkusResult',
     'GetPsaPrivateServiceAccessesFilterResult',
     'GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionResult',
     'GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemResult',
@@ -6725,6 +6746,240 @@ class ManagedKafkaKafkaClusterKafkaBootstrapUrl(dict):
         Bootstrap URL
         """
         return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class ProductCatalogInternalAdminProductLimit(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "publicLimitName":
+            suggest = "public_limit_name"
+        elif key == "publicServiceName":
+            suggest = "public_service_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProductCatalogInternalAdminProductLimit. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProductCatalogInternalAdminProductLimit.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProductCatalogInternalAdminProductLimit.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 public_limit_name: Optional[_builtins.str] = None,
+                 public_service_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str public_limit_name: (Updatable) public name of the limit
+        :param _builtins.str public_service_name: (Updatable) public name of the limit service
+        """
+        if public_limit_name is not None:
+            pulumi.set(__self__, "public_limit_name", public_limit_name)
+        if public_service_name is not None:
+            pulumi.set(__self__, "public_service_name", public_service_name)
+
+    @_builtins.property
+    @pulumi.getter(name="publicLimitName")
+    def public_limit_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) public name of the limit
+        """
+        return pulumi.get(self, "public_limit_name")
+
+    @_builtins.property
+    @pulumi.getter(name="publicServiceName")
+    def public_service_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) public name of the limit service
+        """
+        return pulumi.get(self, "public_service_name")
+
+
+@pulumi.output_type
+class ProductCatalogInternalAdminProductMeter(dict):
+    def __init__(__self__, *,
+                 name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: (Updatable) Name of the meter
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Name of the meter
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class ProductCatalogInternalAdminProductSkus(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bpartNumber":
+            suggest = "bpart_number"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProductCatalogInternalAdminProductSkus. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProductCatalogInternalAdminProductSkus.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProductCatalogInternalAdminProductSkus.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bpart_number: Optional[_builtins.str] = None,
+                 description: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str bpart_number: sku bpartNumber
+        :param _builtins.str description: (Updatable) description to the product
+        """
+        if bpart_number is not None:
+            pulumi.set(__self__, "bpart_number", bpart_number)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="bpartNumber")
+    def bpart_number(self) -> Optional[_builtins.str]:
+        """
+        sku bpartNumber
+        """
+        return pulumi.get(self, "bpart_number")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) description to the product
+        """
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class ProductCatalogInternalProductLimit(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "publicLimitName":
+            suggest = "public_limit_name"
+        elif key == "publicServiceName":
+            suggest = "public_service_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProductCatalogInternalProductLimit. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProductCatalogInternalProductLimit.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProductCatalogInternalProductLimit.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 public_limit_name: Optional[_builtins.str] = None,
+                 public_service_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str public_limit_name: (Updatable) public name of the limit
+        :param _builtins.str public_service_name: (Updatable) public name of the limit service
+        """
+        if public_limit_name is not None:
+            pulumi.set(__self__, "public_limit_name", public_limit_name)
+        if public_service_name is not None:
+            pulumi.set(__self__, "public_service_name", public_service_name)
+
+    @_builtins.property
+    @pulumi.getter(name="publicLimitName")
+    def public_limit_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) public name of the limit
+        """
+        return pulumi.get(self, "public_limit_name")
+
+    @_builtins.property
+    @pulumi.getter(name="publicServiceName")
+    def public_service_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) public name of the limit service
+        """
+        return pulumi.get(self, "public_service_name")
+
+
+@pulumi.output_type
+class ProductCatalogInternalProductMeter(dict):
+    def __init__(__self__, *,
+                 name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: (Updatable) Name of the meter
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Name of the meter
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class ProductCatalogInternalProductSkus(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bpartNumber":
+            suggest = "bpart_number"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProductCatalogInternalProductSkus. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProductCatalogInternalProductSkus.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProductCatalogInternalProductSkus.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bpart_number: Optional[_builtins.str] = None,
+                 description: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str bpart_number: sku bpartNumber
+        :param _builtins.str description: (Updatable) description to the product
+        """
+        if bpart_number is not None:
+            pulumi.set(__self__, "bpart_number", bpart_number)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="bpartNumber")
+    def bpart_number(self) -> Optional[_builtins.str]:
+        """
+        sku bpartNumber
+        """
+        return pulumi.get(self, "bpart_number")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) description to the product
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -29502,6 +29757,531 @@ class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
         The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetProductCatalogInternalAdminProductLimitResult(dict):
+    def __init__(__self__, *,
+                 public_limit_name: _builtins.str,
+                 public_service_name: _builtins.str):
+        """
+        :param _builtins.str public_limit_name: public name of the limit
+        :param _builtins.str public_service_name: public name of the limit service
+        """
+        pulumi.set(__self__, "public_limit_name", public_limit_name)
+        pulumi.set(__self__, "public_service_name", public_service_name)
+
+    @_builtins.property
+    @pulumi.getter(name="publicLimitName")
+    def public_limit_name(self) -> _builtins.str:
+        """
+        public name of the limit
+        """
+        return pulumi.get(self, "public_limit_name")
+
+    @_builtins.property
+    @pulumi.getter(name="publicServiceName")
+    def public_service_name(self) -> _builtins.str:
+        """
+        public name of the limit service
+        """
+        return pulumi.get(self, "public_service_name")
+
+
+@pulumi.output_type
+class GetProductCatalogInternalAdminProductMeterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str):
+        """
+        :param _builtins.str name: Name of the product, defined by service teams. Unique within one service
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the product, defined by service teams. Unique within one service
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetProductCatalogInternalAdminProductSkusResult(dict):
+    def __init__(__self__, *,
+                 bpart_number: _builtins.str,
+                 description: _builtins.str):
+        """
+        :param _builtins.str description: description to the product
+        """
+        pulumi.set(__self__, "bpart_number", bpart_number)
+        pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="bpartNumber")
+    def bpart_number(self) -> _builtins.str:
+        return pulumi.get(self, "bpart_number")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        description to the product
+        """
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class GetProductCatalogInternalAdminProductsProductResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 lifecycle_state: _builtins.str,
+                 name: _builtins.str,
+                 service_name: _builtins.str,
+                 skuses: Sequence['outputs.GetProductCatalogInternalAdminProductsProductSkusResult'],
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_launched: _builtins.str,
+                 time_ready: _builtins.str):
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "skuses", skuses)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_launched", time_launched)
+        pulumi.set(__self__, "time_ready", time_ready)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> _builtins.str:
+        return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> _builtins.str:
+        return pulumi.get(self, "service_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def skuses(self) -> Sequence['outputs.GetProductCatalogInternalAdminProductsProductSkusResult']:
+        return pulumi.get(self, "skuses")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLaunched")
+    def time_launched(self) -> _builtins.str:
+        return pulumi.get(self, "time_launched")
+
+    @_builtins.property
+    @pulumi.getter(name="timeReady")
+    def time_ready(self) -> _builtins.str:
+        return pulumi.get(self, "time_ready")
+
+
+@pulumi.output_type
+class GetProductCatalogInternalAdminProductsProductSkusResult(dict):
+    def __init__(__self__, *,
+                 bpart_number: _builtins.str,
+                 description: _builtins.str):
+        pulumi.set(__self__, "bpart_number", bpart_number)
+        pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="bpartNumber")
+    def bpart_number(self) -> _builtins.str:
+        return pulumi.get(self, "bpart_number")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class GetProductCatalogInternalProductLimitResult(dict):
+    def __init__(__self__, *,
+                 public_limit_name: _builtins.str,
+                 public_service_name: _builtins.str):
+        pulumi.set(__self__, "public_limit_name", public_limit_name)
+        pulumi.set(__self__, "public_service_name", public_service_name)
+
+    @_builtins.property
+    @pulumi.getter(name="publicLimitName")
+    def public_limit_name(self) -> _builtins.str:
+        return pulumi.get(self, "public_limit_name")
+
+    @_builtins.property
+    @pulumi.getter(name="publicServiceName")
+    def public_service_name(self) -> _builtins.str:
+        return pulumi.get(self, "public_service_name")
+
+
+@pulumi.output_type
+class GetProductCatalogInternalProductMeterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str):
+        """
+        :param _builtins.str name: Name of the product, defined by service teams. Unique within one service
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the product, defined by service teams. Unique within one service
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetProductCatalogInternalProductSkusResult(dict):
+    def __init__(__self__, *,
+                 bpart_number: _builtins.str,
+                 description: _builtins.str):
+        """
+        :param _builtins.str bpart_number: sku bpartNumber
+        :param _builtins.str description: description of the sku
+        """
+        pulumi.set(__self__, "bpart_number", bpart_number)
+        pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="bpartNumber")
+    def bpart_number(self) -> _builtins.str:
+        """
+        sku bpartNumber
+        """
+        return pulumi.get(self, "bpart_number")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        description of the sku
+        """
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class GetProductCatalogInternalProductsProductResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 lifecycle_state: _builtins.str,
+                 name: _builtins.str,
+                 service_name: _builtins.str,
+                 skuses: Sequence['outputs.GetProductCatalogInternalProductsProductSkusResult'],
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_launched: _builtins.str,
+                 time_ready: _builtins.str):
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "skuses", skuses)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_launched", time_launched)
+        pulumi.set(__self__, "time_ready", time_ready)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> _builtins.str:
+        return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> _builtins.str:
+        return pulumi.get(self, "service_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def skuses(self) -> Sequence['outputs.GetProductCatalogInternalProductsProductSkusResult']:
+        return pulumi.get(self, "skuses")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLaunched")
+    def time_launched(self) -> _builtins.str:
+        return pulumi.get(self, "time_launched")
+
+    @_builtins.property
+    @pulumi.getter(name="timeReady")
+    def time_ready(self) -> _builtins.str:
+        return pulumi.get(self, "time_ready")
+
+
+@pulumi.output_type
+class GetProductCatalogInternalProductsProductSkusResult(dict):
+    def __init__(__self__, *,
+                 bpart_number: _builtins.str,
+                 description: _builtins.str):
+        pulumi.set(__self__, "bpart_number", bpart_number)
+        pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="bpartNumber")
+    def bpart_number(self) -> _builtins.str:
+        return pulumi.get(self, "bpart_number")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class GetProductCatalogProductSkusResult(dict):
+    def __init__(__self__, *,
+                 bpart_number: _builtins.str,
+                 description: _builtins.str):
+        """
+        :param _builtins.str bpart_number: sku bpartNumber
+        :param _builtins.str description: description of the sku
+        """
+        pulumi.set(__self__, "bpart_number", bpart_number)
+        pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="bpartNumber")
+    def bpart_number(self) -> _builtins.str:
+        """
+        sku bpartNumber
+        """
+        return pulumi.get(self, "bpart_number")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        description of the sku
+        """
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class GetProductCatalogProductsLimitResult(dict):
+    def __init__(__self__, *,
+                 public_limit_name: Optional[_builtins.str] = None,
+                 public_service_name: Optional[_builtins.str] = None):
+        if public_limit_name is not None:
+            pulumi.set(__self__, "public_limit_name", public_limit_name)
+        if public_service_name is not None:
+            pulumi.set(__self__, "public_service_name", public_service_name)
+
+    @_builtins.property
+    @pulumi.getter(name="publicLimitName")
+    def public_limit_name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "public_limit_name")
+
+    @_builtins.property
+    @pulumi.getter(name="publicServiceName")
+    def public_service_name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "public_service_name")
+
+
+@pulumi.output_type
+class GetProductCatalogProductsMeterResult(dict):
+    def __init__(__self__, *,
+                 name: Optional[_builtins.str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetProductCatalogProductsProductResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 lifecycle_state: _builtins.str,
+                 name: _builtins.str,
+                 service_name: _builtins.str,
+                 skuses: Sequence['outputs.GetProductCatalogProductsProductSkusResult'],
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_launched: _builtins.str,
+                 time_ready: _builtins.str):
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "skuses", skuses)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_launched", time_launched)
+        pulumi.set(__self__, "time_ready", time_ready)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> _builtins.str:
+        return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> _builtins.str:
+        return pulumi.get(self, "service_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def skuses(self) -> Sequence['outputs.GetProductCatalogProductsProductSkusResult']:
+        return pulumi.get(self, "skuses")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLaunched")
+    def time_launched(self) -> _builtins.str:
+        return pulumi.get(self, "time_launched")
+
+    @_builtins.property
+    @pulumi.getter(name="timeReady")
+    def time_ready(self) -> _builtins.str:
+        return pulumi.get(self, "time_ready")
+
+
+@pulumi.output_type
+class GetProductCatalogProductsProductSkusResult(dict):
+    def __init__(__self__, *,
+                 bpart_number: _builtins.str,
+                 description: _builtins.str):
+        pulumi.set(__self__, "bpart_number", bpart_number)
+        pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="bpartNumber")
+    def bpart_number(self) -> _builtins.str:
+        return pulumi.get(self, "bpart_number")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type

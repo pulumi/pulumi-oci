@@ -104,7 +104,7 @@ class _ResourceAnalyticsResourceAnalyticsInstanceOacManagementState:
         :param pulumi.Input[_builtins.str] attachment_type: The type of attachment the OAC instance is using. Example: `MANAGED`
         :param pulumi.Input[_builtins.bool] enable_oac: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
         :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
-        :param pulumi.Input[_builtins.str] state: The current state of the ResourceAnalyticsInstance.
+        :param pulumi.Input[_builtins.str] state: The current state of the Resource Analytics Instance OAC management operation.
         """
         if attachment_details is not None:
             pulumi.set(__self__, "attachment_details", attachment_details)
@@ -169,7 +169,7 @@ class _ResourceAnalyticsResourceAnalyticsInstanceOacManagementState:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The current state of the ResourceAnalyticsInstance.
+        The current state of the Resource Analytics Instance OAC management operation.
         """
         return pulumi.get(self, "state")
 
@@ -323,7 +323,7 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
         :param pulumi.Input[_builtins.str] attachment_type: The type of attachment the OAC instance is using. Example: `MANAGED`
         :param pulumi.Input[_builtins.bool] enable_oac: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
         :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
-        :param pulumi.Input[_builtins.str] state: The current state of the ResourceAnalyticsInstance.
+        :param pulumi.Input[_builtins.str] state: The current state of the Resource Analytics Instance OAC management operation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -372,7 +372,7 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The current state of the ResourceAnalyticsInstance.
+        The current state of the Resource Analytics Instance OAC management operation.
         """
         return pulumi.get(self, "state")
 

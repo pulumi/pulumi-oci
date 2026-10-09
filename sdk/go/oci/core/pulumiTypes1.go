@@ -268,7 +268,7 @@ type GetInstanceConfigurationInstanceDetailOptionLaunchDetail struct {
 	IpxeScript string `pulumi:"ipxeScript"`
 	// Whether to enable AI enterprise on the instance.
 	IsAiEnterpriseEnabled bool `pulumi:"isAiEnterpriseEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -348,7 +348,7 @@ type GetInstanceConfigurationInstanceDetailOptionLaunchDetailArgs struct {
 	IpxeScript pulumi.StringInput `pulumi:"ipxeScript"`
 	// Whether to enable AI enterprise on the instance.
 	IsAiEnterpriseEnabled pulumi.BoolInput `pulumi:"isAiEnterpriseEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -536,7 +536,7 @@ func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) IsAiEnte
 	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) bool { return v.IsAiEnterpriseEnabled }).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetail) bool {
 		return v.IsPvEncryptionInTransitEnabled
@@ -1485,6 +1485,7 @@ type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption struct
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	BootVolumeType string `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
 	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
@@ -1492,7 +1493,9 @@ type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption struct
 	Firmware string `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled bool `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Whether in-transit encryption for the data volume's attachment is enabled or not.
+	IsEncryptionInTransitEnabled bool `pulumi:"isEncryptionInTransitEnabled"`
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -1506,6 +1509,7 @@ type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption struct
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	RemoteDataVolumeType string `pulumi:"remoteDataVolumeType"`
 }
 
@@ -1527,6 +1531,7 @@ type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs st
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	BootVolumeType pulumi.StringInput `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
 	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
@@ -1534,7 +1539,9 @@ type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs st
 	Firmware pulumi.StringInput `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled pulumi.BoolInput `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Whether in-transit encryption for the data volume's attachment is enabled or not.
+	IsEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isEncryptionInTransitEnabled"`
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -1548,6 +1555,7 @@ type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs st
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	RemoteDataVolumeType pulumi.StringInput `pulumi:"remoteDataVolumeType"`
 }
 
@@ -1608,6 +1616,7 @@ func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutp
 // * `IDE` - Emulated IDE disk.
 // * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 // * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+// * `NVME` - NVMe attached remote block storage device.
 func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) BootVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
 		return v.BootVolumeType
@@ -1628,7 +1637,14 @@ func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutp
 	}).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+// Whether in-transit encryption for the data volume's attachment is enabled or not.
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) IsEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) bool {
+		return v.IsEncryptionInTransitEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) bool {
 		return v.IsPvEncryptionInTransitEnabled
@@ -1652,6 +1668,7 @@ func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutp
 // * `IDE` - Emulated IDE disk.
 // * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 // * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+// * `NVME` - NVMe attached remote block storage device.
 func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) RemoteDataVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
 		return v.RemoteDataVolumeType
@@ -4616,7 +4633,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAtta
 	Device string `pulumi:"device"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Whether the attachment should be created in read-only mode.
 	IsReadOnly bool `pulumi:"isReadOnly"`
@@ -4644,7 +4661,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAtta
 	Device pulumi.StringInput `pulumi:"device"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Whether the attachment should be created in read-only mode.
 	IsReadOnly pulumi.BoolInput `pulumi:"isReadOnly"`
@@ -4721,7 +4738,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeA
 	}).(pulumi.StringOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail) bool {
 		return v.IsPvEncryptionInTransitEnabled
@@ -5402,7 +5419,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail st
 	IpxeScript string `pulumi:"ipxeScript"`
 	// Whether to enable AI enterprise on the instance.
 	IsAiEnterpriseEnabled bool `pulumi:"isAiEnterpriseEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -5482,7 +5499,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailArg
 	IpxeScript pulumi.StringInput `pulumi:"ipxeScript"`
 	// Whether to enable AI enterprise on the instance.
 	IsAiEnterpriseEnabled pulumi.BoolInput `pulumi:"isAiEnterpriseEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -5686,7 +5703,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 	}).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail) bool {
 		return v.IsPvEncryptionInTransitEnabled
@@ -6641,6 +6658,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLau
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	BootVolumeType string `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
 	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
@@ -6648,7 +6666,9 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLau
 	Firmware string `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled bool `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Whether in-transit encryption for the data volume's attachment is enabled or not.
+	IsEncryptionInTransitEnabled bool `pulumi:"isEncryptionInTransitEnabled"`
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -6662,6 +6682,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLau
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	RemoteDataVolumeType string `pulumi:"remoteDataVolumeType"`
 }
 
@@ -6683,6 +6704,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLau
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	BootVolumeType pulumi.StringInput `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
 	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
@@ -6690,7 +6712,9 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLau
 	Firmware pulumi.StringInput `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled pulumi.BoolInput `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Whether in-transit encryption for the data volume's attachment is enabled or not.
+	IsEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isEncryptionInTransitEnabled"`
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -6704,6 +6728,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLau
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	RemoteDataVolumeType pulumi.StringInput `pulumi:"remoteDataVolumeType"`
 }
 
@@ -6764,6 +6789,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 // * `IDE` - Emulated IDE disk.
 // * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 // * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+// * `NVME` - NVMe attached remote block storage device.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) BootVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) string {
 		return v.BootVolumeType
@@ -6786,7 +6812,14 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 	}).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+// Whether in-transit encryption for the data volume's attachment is enabled or not.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) IsEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) bool {
+		return v.IsEncryptionInTransitEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) bool {
 		return v.IsPvEncryptionInTransitEnabled
@@ -6810,6 +6843,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 // * `IDE` - Emulated IDE disk.
 // * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 // * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+// * `NVME` - NVMe attached remote block storage device.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) RemoteDataVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) string {
 		return v.RemoteDataVolumeType
@@ -8203,7 +8237,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolu
 	Device string `pulumi:"device"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Whether the attachment should be created in read-only mode.
 	IsReadOnly bool `pulumi:"isReadOnly"`
@@ -8231,7 +8265,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolu
 	Device pulumi.StringInput `pulumi:"device"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Whether the attachment should be created in read-only mode.
 	IsReadOnly pulumi.BoolInput `pulumi:"isReadOnly"`
@@ -8308,7 +8342,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockV
 	}).(pulumi.StringOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) bool {
 		return v.IsPvEncryptionInTransitEnabled
@@ -8989,7 +9023,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	IpxeScript string `pulumi:"ipxeScript"`
 	// Whether to enable AI enterprise on the instance.
 	IsAiEnterpriseEnabled bool `pulumi:"isAiEnterpriseEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -9069,7 +9103,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	IpxeScript pulumi.StringInput `pulumi:"ipxeScript"`
 	// Whether to enable AI enterprise on the instance.
 	IsAiEnterpriseEnabled pulumi.BoolInput `pulumi:"isAiEnterpriseEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -9273,7 +9307,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 	}).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) bool {
 		return v.IsPvEncryptionInTransitEnabled
@@ -10228,6 +10262,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	BootVolumeType string `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
 	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
@@ -10235,7 +10270,9 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	Firmware string `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled bool `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Whether in-transit encryption for the data volume's attachment is enabled or not.
+	IsEncryptionInTransitEnabled bool `pulumi:"isEncryptionInTransitEnabled"`
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -10249,6 +10286,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	RemoteDataVolumeType string `pulumi:"remoteDataVolumeType"`
 }
 
@@ -10270,6 +10308,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	BootVolumeType pulumi.StringInput `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
 	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
@@ -10277,7 +10316,9 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	Firmware pulumi.StringInput `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled pulumi.BoolInput `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	// Whether in-transit encryption for the data volume's attachment is enabled or not.
+	IsEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isEncryptionInTransitEnabled"`
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -10291,6 +10332,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	RemoteDataVolumeType pulumi.StringInput `pulumi:"remoteDataVolumeType"`
 }
 
@@ -10351,6 +10393,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 // * `IDE` - Emulated IDE disk.
 // * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 // * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+// * `NVME` - NVMe attached remote block storage device.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) BootVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
 		return v.BootVolumeType
@@ -10373,7 +10416,14 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 	}).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+// Whether in-transit encryption for the data volume's attachment is enabled or not.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) IsEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) bool {
+		return v.IsEncryptionInTransitEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) bool {
 		return v.IsPvEncryptionInTransitEnabled
@@ -10397,6 +10447,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 // * `IDE` - Emulated IDE disk.
 // * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 // * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+// * `NVME` - NVMe attached remote block storage device.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) RemoteDataVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
 		return v.RemoteDataVolumeType
@@ -13456,6 +13507,7 @@ type GetInstanceLaunchOption struct {
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	BootVolumeType string `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
 	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
@@ -13463,7 +13515,9 @@ type GetInstanceLaunchOption struct {
 	Firmware string `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled bool `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	// Specifies whether in-transit encryption is enabled for the data volume's attachment.
+	IsEncryptionInTransitEnabled bool `pulumi:"isEncryptionInTransitEnabled"`
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -13477,6 +13531,7 @@ type GetInstanceLaunchOption struct {
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	RemoteDataVolumeType string `pulumi:"remoteDataVolumeType"`
 }
 
@@ -13498,6 +13553,7 @@ type GetInstanceLaunchOptionArgs struct {
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	BootVolumeType pulumi.StringInput `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
 	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
@@ -13505,7 +13561,9 @@ type GetInstanceLaunchOptionArgs struct {
 	Firmware pulumi.StringInput `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled pulumi.BoolInput `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	// Specifies whether in-transit encryption is enabled for the data volume's attachment.
+	IsEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isEncryptionInTransitEnabled"`
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -13519,6 +13577,7 @@ type GetInstanceLaunchOptionArgs struct {
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	RemoteDataVolumeType pulumi.StringInput `pulumi:"remoteDataVolumeType"`
 }
 
@@ -13579,6 +13638,7 @@ func (o GetInstanceLaunchOptionOutput) ToGetInstanceLaunchOptionOutputWithContex
 // * `IDE` - Emulated IDE disk.
 // * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 // * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+// * `NVME` - NVMe attached remote block storage device.
 func (o GetInstanceLaunchOptionOutput) BootVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceLaunchOption) string { return v.BootVolumeType }).(pulumi.StringOutput)
 }
@@ -13595,7 +13655,12 @@ func (o GetInstanceLaunchOptionOutput) IsConsistentVolumeNamingEnabled() pulumi.
 	return o.ApplyT(func(v GetInstanceLaunchOption) bool { return v.IsConsistentVolumeNamingEnabled }).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+// Specifies whether in-transit encryption is enabled for the data volume's attachment.
+func (o GetInstanceLaunchOptionOutput) IsEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceLaunchOption) bool { return v.IsEncryptionInTransitEnabled }).(pulumi.BoolOutput)
+}
+
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstanceLaunchOptionOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceLaunchOption) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
 }
@@ -13615,6 +13680,7 @@ func (o GetInstanceLaunchOptionOutput) NetworkType() pulumi.StringOutput {
 // * `IDE` - Emulated IDE disk.
 // * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 // * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+// * `NVME` - NVMe attached remote block storage device.
 func (o GetInstanceLaunchOptionOutput) RemoteDataVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceLaunchOption) string { return v.RemoteDataVolumeType }).(pulumi.StringOutput)
 }
@@ -13645,7 +13711,7 @@ type GetInstanceLaunchVolumeAttachment struct {
 	DisplayName                  string `pulumi:"displayName"`
 	EncryptionInTransitType      string `pulumi:"encryptionInTransitType"`
 	IsAgentAutoIscsiLoginEnabled bool   `pulumi:"isAgentAutoIscsiLoginEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool                                                        `pulumi:"isPvEncryptionInTransitEnabled"`
 	IsReadOnly                     bool                                                        `pulumi:"isReadOnly"`
 	IsShareable                    bool                                                        `pulumi:"isShareable"`
@@ -13673,7 +13739,7 @@ type GetInstanceLaunchVolumeAttachmentArgs struct {
 	DisplayName                  pulumi.StringInput `pulumi:"displayName"`
 	EncryptionInTransitType      pulumi.StringInput `pulumi:"encryptionInTransitType"`
 	IsAgentAutoIscsiLoginEnabled pulumi.BoolInput   `pulumi:"isAgentAutoIscsiLoginEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput                                                    `pulumi:"isPvEncryptionInTransitEnabled"`
 	IsReadOnly                     pulumi.BoolInput                                                    `pulumi:"isReadOnly"`
 	IsShareable                    pulumi.BoolInput                                                    `pulumi:"isShareable"`
@@ -13752,7 +13818,7 @@ func (o GetInstanceLaunchVolumeAttachmentOutput) IsAgentAutoIscsiLoginEnabled() 
 	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) bool { return v.IsAgentAutoIscsiLoginEnabled }).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstanceLaunchVolumeAttachmentOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
 }
@@ -19144,7 +19210,7 @@ type GetInstancesInstance struct {
 	IsAiEnterpriseEnabled bool `pulumi:"isAiEnterpriseEnabled"`
 	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
 	IsCrossNumaNode bool `pulumi:"isCrossNumaNode"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -19255,7 +19321,7 @@ type GetInstancesInstanceArgs struct {
 	IsAiEnterpriseEnabled pulumi.BoolInput `pulumi:"isAiEnterpriseEnabled"`
 	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
 	IsCrossNumaNode pulumi.BoolInput `pulumi:"isCrossNumaNode"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -19477,7 +19543,7 @@ func (o GetInstancesInstanceOutput) IsCrossNumaNode() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstancesInstance) bool { return v.IsCrossNumaNode }).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstancesInstanceOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstancesInstance) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
 }
@@ -20385,6 +20451,7 @@ type GetInstancesInstanceLaunchOption struct {
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	BootVolumeType string `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
 	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
@@ -20392,7 +20459,9 @@ type GetInstancesInstanceLaunchOption struct {
 	Firmware string `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled bool `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	// Specifies whether in-transit encryption is enabled for the data volume's attachment.
+	IsEncryptionInTransitEnabled bool `pulumi:"isEncryptionInTransitEnabled"`
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -20406,6 +20475,7 @@ type GetInstancesInstanceLaunchOption struct {
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	RemoteDataVolumeType string `pulumi:"remoteDataVolumeType"`
 }
 
@@ -20427,6 +20497,7 @@ type GetInstancesInstanceLaunchOptionArgs struct {
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	BootVolumeType pulumi.StringInput `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
 	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
@@ -20434,7 +20505,9 @@ type GetInstancesInstanceLaunchOptionArgs struct {
 	Firmware pulumi.StringInput `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled pulumi.BoolInput `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	// Specifies whether in-transit encryption is enabled for the data volume's attachment.
+	IsEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isEncryptionInTransitEnabled"`
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
@@ -20448,6 +20521,7 @@ type GetInstancesInstanceLaunchOptionArgs struct {
 	// * `IDE` - Emulated IDE disk.
 	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	// * `NVME` - NVMe attached remote block storage device.
 	RemoteDataVolumeType pulumi.StringInput `pulumi:"remoteDataVolumeType"`
 }
 
@@ -20508,6 +20582,7 @@ func (o GetInstancesInstanceLaunchOptionOutput) ToGetInstancesInstanceLaunchOpti
 // * `IDE` - Emulated IDE disk.
 // * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 // * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+// * `NVME` - NVMe attached remote block storage device.
 func (o GetInstancesInstanceLaunchOptionOutput) BootVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstanceLaunchOption) string { return v.BootVolumeType }).(pulumi.StringOutput)
 }
@@ -20524,7 +20599,12 @@ func (o GetInstancesInstanceLaunchOptionOutput) IsConsistentVolumeNamingEnabled(
 	return o.ApplyT(func(v GetInstancesInstanceLaunchOption) bool { return v.IsConsistentVolumeNamingEnabled }).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+// Specifies whether in-transit encryption is enabled for the data volume's attachment.
+func (o GetInstancesInstanceLaunchOptionOutput) IsEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstanceLaunchOption) bool { return v.IsEncryptionInTransitEnabled }).(pulumi.BoolOutput)
+}
+
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstancesInstanceLaunchOptionOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstancesInstanceLaunchOption) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
 }
@@ -20544,6 +20624,7 @@ func (o GetInstancesInstanceLaunchOptionOutput) NetworkType() pulumi.StringOutpu
 // * `IDE` - Emulated IDE disk.
 // * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
 // * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+// * `NVME` - NVMe attached remote block storage device.
 func (o GetInstancesInstanceLaunchOptionOutput) RemoteDataVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstanceLaunchOption) string { return v.RemoteDataVolumeType }).(pulumi.StringOutput)
 }
@@ -20574,7 +20655,7 @@ type GetInstancesInstanceLaunchVolumeAttachment struct {
 	DisplayName                  string `pulumi:"displayName"`
 	EncryptionInTransitType      string `pulumi:"encryptionInTransitType"`
 	IsAgentAutoIscsiLoginEnabled bool   `pulumi:"isAgentAutoIscsiLoginEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool                                                                 `pulumi:"isPvEncryptionInTransitEnabled"`
 	IsReadOnly                     bool                                                                 `pulumi:"isReadOnly"`
 	IsShareable                    bool                                                                 `pulumi:"isShareable"`
@@ -20602,7 +20683,7 @@ type GetInstancesInstanceLaunchVolumeAttachmentArgs struct {
 	DisplayName                  pulumi.StringInput `pulumi:"displayName"`
 	EncryptionInTransitType      pulumi.StringInput `pulumi:"encryptionInTransitType"`
 	IsAgentAutoIscsiLoginEnabled pulumi.BoolInput   `pulumi:"isAgentAutoIscsiLoginEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput                                                             `pulumi:"isPvEncryptionInTransitEnabled"`
 	IsReadOnly                     pulumi.BoolInput                                                             `pulumi:"isReadOnly"`
 	IsShareable                    pulumi.BoolInput                                                             `pulumi:"isShareable"`
@@ -20681,7 +20762,7 @@ func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) IsAgentAutoIscsiLoginE
 	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) bool { return v.IsAgentAutoIscsiLoginEnabled }).(pulumi.BoolOutput)
 }
 
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetInstancesInstanceLaunchVolumeAttachmentOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstancesInstanceLaunchVolumeAttachment) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
 }
@@ -33806,6 +33887,7 @@ func (o GetShapeFilterArrayOutput) Index(i pulumi.IntInput) GetShapeFilterOutput
 type GetShapeShape struct {
 	BaselineOcpuUtilizations      []string                                 `pulumi:"baselineOcpuUtilizations"`
 	BillingType                   string                                   `pulumi:"billingType"`
+	BsNvmeAttachmentsConfigs      []GetShapeShapeBsNvmeAttachmentsConfig   `pulumi:"bsNvmeAttachmentsConfigs"`
 	GpuDescription                string                                   `pulumi:"gpuDescription"`
 	Gpus                          int                                      `pulumi:"gpus"`
 	IsBilledForStoppedInstance    bool                                     `pulumi:"isBilledForStoppedInstance"`
@@ -33851,6 +33933,7 @@ type GetShapeShapeInput interface {
 type GetShapeShapeArgs struct {
 	BaselineOcpuUtilizations      pulumi.StringArrayInput                          `pulumi:"baselineOcpuUtilizations"`
 	BillingType                   pulumi.StringInput                               `pulumi:"billingType"`
+	BsNvmeAttachmentsConfigs      GetShapeShapeBsNvmeAttachmentsConfigArrayInput   `pulumi:"bsNvmeAttachmentsConfigs"`
 	GpuDescription                pulumi.StringInput                               `pulumi:"gpuDescription"`
 	Gpus                          pulumi.IntInput                                  `pulumi:"gpus"`
 	IsBilledForStoppedInstance    pulumi.BoolInput                                 `pulumi:"isBilledForStoppedInstance"`
@@ -33939,6 +34022,10 @@ func (o GetShapeShapeOutput) BaselineOcpuUtilizations() pulumi.StringArrayOutput
 
 func (o GetShapeShapeOutput) BillingType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetShapeShape) string { return v.BillingType }).(pulumi.StringOutput)
+}
+
+func (o GetShapeShapeOutput) BsNvmeAttachmentsConfigs() GetShapeShapeBsNvmeAttachmentsConfigArrayOutput {
+	return o.ApplyT(func(v GetShapeShape) []GetShapeShapeBsNvmeAttachmentsConfig { return v.BsNvmeAttachmentsConfigs }).(GetShapeShapeBsNvmeAttachmentsConfigArrayOutput)
 }
 
 func (o GetShapeShapeOutput) GpuDescription() pulumi.StringOutput {
@@ -34075,6 +34162,118 @@ func (o GetShapeShapeArrayOutput) Index(i pulumi.IntInput) GetShapeShapeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShape {
 		return vs[0].([]GetShapeShape)[vs[1].(int)]
 	}).(GetShapeShapeOutput)
+}
+
+type GetShapeShapeBsNvmeAttachmentsConfig struct {
+	MaxRemoteNvmeVolumeAttachmentsPerCore int `pulumi:"maxRemoteNvmeVolumeAttachmentsPerCore"`
+	MaxTotalRemoteNvmeVolumeAttachments   int `pulumi:"maxTotalRemoteNvmeVolumeAttachments"`
+	MinCores                              int `pulumi:"minCores"`
+	VfEnableCount                         int `pulumi:"vfEnableCount"`
+}
+
+// GetShapeShapeBsNvmeAttachmentsConfigInput is an input type that accepts GetShapeShapeBsNvmeAttachmentsConfigArgs and GetShapeShapeBsNvmeAttachmentsConfigOutput values.
+// You can construct a concrete instance of `GetShapeShapeBsNvmeAttachmentsConfigInput` via:
+//
+//	GetShapeShapeBsNvmeAttachmentsConfigArgs{...}
+type GetShapeShapeBsNvmeAttachmentsConfigInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeBsNvmeAttachmentsConfigOutput() GetShapeShapeBsNvmeAttachmentsConfigOutput
+	ToGetShapeShapeBsNvmeAttachmentsConfigOutputWithContext(context.Context) GetShapeShapeBsNvmeAttachmentsConfigOutput
+}
+
+type GetShapeShapeBsNvmeAttachmentsConfigArgs struct {
+	MaxRemoteNvmeVolumeAttachmentsPerCore pulumi.IntInput `pulumi:"maxRemoteNvmeVolumeAttachmentsPerCore"`
+	MaxTotalRemoteNvmeVolumeAttachments   pulumi.IntInput `pulumi:"maxTotalRemoteNvmeVolumeAttachments"`
+	MinCores                              pulumi.IntInput `pulumi:"minCores"`
+	VfEnableCount                         pulumi.IntInput `pulumi:"vfEnableCount"`
+}
+
+func (GetShapeShapeBsNvmeAttachmentsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeBsNvmeAttachmentsConfig)(nil)).Elem()
+}
+
+func (i GetShapeShapeBsNvmeAttachmentsConfigArgs) ToGetShapeShapeBsNvmeAttachmentsConfigOutput() GetShapeShapeBsNvmeAttachmentsConfigOutput {
+	return i.ToGetShapeShapeBsNvmeAttachmentsConfigOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeBsNvmeAttachmentsConfigArgs) ToGetShapeShapeBsNvmeAttachmentsConfigOutputWithContext(ctx context.Context) GetShapeShapeBsNvmeAttachmentsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeBsNvmeAttachmentsConfigOutput)
+}
+
+// GetShapeShapeBsNvmeAttachmentsConfigArrayInput is an input type that accepts GetShapeShapeBsNvmeAttachmentsConfigArray and GetShapeShapeBsNvmeAttachmentsConfigArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapeBsNvmeAttachmentsConfigArrayInput` via:
+//
+//	GetShapeShapeBsNvmeAttachmentsConfigArray{ GetShapeShapeBsNvmeAttachmentsConfigArgs{...} }
+type GetShapeShapeBsNvmeAttachmentsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeBsNvmeAttachmentsConfigArrayOutput() GetShapeShapeBsNvmeAttachmentsConfigArrayOutput
+	ToGetShapeShapeBsNvmeAttachmentsConfigArrayOutputWithContext(context.Context) GetShapeShapeBsNvmeAttachmentsConfigArrayOutput
+}
+
+type GetShapeShapeBsNvmeAttachmentsConfigArray []GetShapeShapeBsNvmeAttachmentsConfigInput
+
+func (GetShapeShapeBsNvmeAttachmentsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeBsNvmeAttachmentsConfig)(nil)).Elem()
+}
+
+func (i GetShapeShapeBsNvmeAttachmentsConfigArray) ToGetShapeShapeBsNvmeAttachmentsConfigArrayOutput() GetShapeShapeBsNvmeAttachmentsConfigArrayOutput {
+	return i.ToGetShapeShapeBsNvmeAttachmentsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeBsNvmeAttachmentsConfigArray) ToGetShapeShapeBsNvmeAttachmentsConfigArrayOutputWithContext(ctx context.Context) GetShapeShapeBsNvmeAttachmentsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeBsNvmeAttachmentsConfigArrayOutput)
+}
+
+type GetShapeShapeBsNvmeAttachmentsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeBsNvmeAttachmentsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeBsNvmeAttachmentsConfig)(nil)).Elem()
+}
+
+func (o GetShapeShapeBsNvmeAttachmentsConfigOutput) ToGetShapeShapeBsNvmeAttachmentsConfigOutput() GetShapeShapeBsNvmeAttachmentsConfigOutput {
+	return o
+}
+
+func (o GetShapeShapeBsNvmeAttachmentsConfigOutput) ToGetShapeShapeBsNvmeAttachmentsConfigOutputWithContext(ctx context.Context) GetShapeShapeBsNvmeAttachmentsConfigOutput {
+	return o
+}
+
+func (o GetShapeShapeBsNvmeAttachmentsConfigOutput) MaxRemoteNvmeVolumeAttachmentsPerCore() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShapeBsNvmeAttachmentsConfig) int { return v.MaxRemoteNvmeVolumeAttachmentsPerCore }).(pulumi.IntOutput)
+}
+
+func (o GetShapeShapeBsNvmeAttachmentsConfigOutput) MaxTotalRemoteNvmeVolumeAttachments() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShapeBsNvmeAttachmentsConfig) int { return v.MaxTotalRemoteNvmeVolumeAttachments }).(pulumi.IntOutput)
+}
+
+func (o GetShapeShapeBsNvmeAttachmentsConfigOutput) MinCores() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShapeBsNvmeAttachmentsConfig) int { return v.MinCores }).(pulumi.IntOutput)
+}
+
+func (o GetShapeShapeBsNvmeAttachmentsConfigOutput) VfEnableCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShapeBsNvmeAttachmentsConfig) int { return v.VfEnableCount }).(pulumi.IntOutput)
+}
+
+type GetShapeShapeBsNvmeAttachmentsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeBsNvmeAttachmentsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeBsNvmeAttachmentsConfig)(nil)).Elem()
+}
+
+func (o GetShapeShapeBsNvmeAttachmentsConfigArrayOutput) ToGetShapeShapeBsNvmeAttachmentsConfigArrayOutput() GetShapeShapeBsNvmeAttachmentsConfigArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeBsNvmeAttachmentsConfigArrayOutput) ToGetShapeShapeBsNvmeAttachmentsConfigArrayOutputWithContext(ctx context.Context) GetShapeShapeBsNvmeAttachmentsConfigArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeBsNvmeAttachmentsConfigArrayOutput) Index(i pulumi.IntInput) GetShapeShapeBsNvmeAttachmentsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapeBsNvmeAttachmentsConfig {
+		return vs[0].([]GetShapeShapeBsNvmeAttachmentsConfig)[vs[1].(int)]
+	}).(GetShapeShapeBsNvmeAttachmentsConfigOutput)
 }
 
 type GetShapeShapeMaxVnicAttachmentOption struct {
@@ -35915,6 +36114,8 @@ type GetShapesShape struct {
 	BaselineOcpuUtilizations []string `pulumi:"baselineOcpuUtilizations"`
 	// How instances that use this shape are charged.
 	BillingType string `pulumi:"billingType"`
+	// Shape-specific details for shapes that support remote NVMe volume attachments.
+	BsNvmeAttachmentsConfigs []GetShapesShapeBsNvmeAttachmentsConfig `pulumi:"bsNvmeAttachmentsConfigs"`
 	// A short description of the graphics processing unit (GPU) available for this shape.
 	GpuDescription string `pulumi:"gpuDescription"`
 	// The number of GPUs available for this shape.
@@ -35991,6 +36192,8 @@ type GetShapesShapeArgs struct {
 	BaselineOcpuUtilizations pulumi.StringArrayInput `pulumi:"baselineOcpuUtilizations"`
 	// How instances that use this shape are charged.
 	BillingType pulumi.StringInput `pulumi:"billingType"`
+	// Shape-specific details for shapes that support remote NVMe volume attachments.
+	BsNvmeAttachmentsConfigs GetShapesShapeBsNvmeAttachmentsConfigArrayInput `pulumi:"bsNvmeAttachmentsConfigs"`
 	// A short description of the graphics processing unit (GPU) available for this shape.
 	GpuDescription pulumi.StringInput `pulumi:"gpuDescription"`
 	// The number of GPUs available for this shape.
@@ -36110,6 +36313,11 @@ func (o GetShapesShapeOutput) BaselineOcpuUtilizations() pulumi.StringArrayOutpu
 // How instances that use this shape are charged.
 func (o GetShapesShapeOutput) BillingType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetShapesShape) string { return v.BillingType }).(pulumi.StringOutput)
+}
+
+// Shape-specific details for shapes that support remote NVMe volume attachments.
+func (o GetShapesShapeOutput) BsNvmeAttachmentsConfigs() GetShapesShapeBsNvmeAttachmentsConfigArrayOutput {
+	return o.ApplyT(func(v GetShapesShape) []GetShapesShapeBsNvmeAttachmentsConfig { return v.BsNvmeAttachmentsConfigs }).(GetShapesShapeBsNvmeAttachmentsConfigArrayOutput)
 }
 
 // A short description of the graphics processing unit (GPU) available for this shape.
@@ -36275,6 +36483,130 @@ func (o GetShapesShapeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShape {
 		return vs[0].([]GetShapesShape)[vs[1].(int)]
 	}).(GetShapesShapeOutput)
+}
+
+type GetShapesShapeBsNvmeAttachmentsConfig struct {
+	// The maximum number of remote NVMe volume attachments supported per core.
+	MaxRemoteNvmeVolumeAttachmentsPerCore int `pulumi:"maxRemoteNvmeVolumeAttachmentsPerCore"`
+	// The maximum total number of remote NVMe volume attachments supported for the shape.
+	MaxTotalRemoteNvmeVolumeAttachments int `pulumi:"maxTotalRemoteNvmeVolumeAttachments"`
+	// The minimum number of cores required to support remote NVMe volume attachments.
+	MinCores int `pulumi:"minCores"`
+	// The number of virtual functions to enable on a hypervisor so that each sellable core has one virtual function available. This value is `0` for VM and bare metal instances.
+	VfEnableCount int `pulumi:"vfEnableCount"`
+}
+
+// GetShapesShapeBsNvmeAttachmentsConfigInput is an input type that accepts GetShapesShapeBsNvmeAttachmentsConfigArgs and GetShapesShapeBsNvmeAttachmentsConfigOutput values.
+// You can construct a concrete instance of `GetShapesShapeBsNvmeAttachmentsConfigInput` via:
+//
+//	GetShapesShapeBsNvmeAttachmentsConfigArgs{...}
+type GetShapesShapeBsNvmeAttachmentsConfigInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeBsNvmeAttachmentsConfigOutput() GetShapesShapeBsNvmeAttachmentsConfigOutput
+	ToGetShapesShapeBsNvmeAttachmentsConfigOutputWithContext(context.Context) GetShapesShapeBsNvmeAttachmentsConfigOutput
+}
+
+type GetShapesShapeBsNvmeAttachmentsConfigArgs struct {
+	// The maximum number of remote NVMe volume attachments supported per core.
+	MaxRemoteNvmeVolumeAttachmentsPerCore pulumi.IntInput `pulumi:"maxRemoteNvmeVolumeAttachmentsPerCore"`
+	// The maximum total number of remote NVMe volume attachments supported for the shape.
+	MaxTotalRemoteNvmeVolumeAttachments pulumi.IntInput `pulumi:"maxTotalRemoteNvmeVolumeAttachments"`
+	// The minimum number of cores required to support remote NVMe volume attachments.
+	MinCores pulumi.IntInput `pulumi:"minCores"`
+	// The number of virtual functions to enable on a hypervisor so that each sellable core has one virtual function available. This value is `0` for VM and bare metal instances.
+	VfEnableCount pulumi.IntInput `pulumi:"vfEnableCount"`
+}
+
+func (GetShapesShapeBsNvmeAttachmentsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeBsNvmeAttachmentsConfig)(nil)).Elem()
+}
+
+func (i GetShapesShapeBsNvmeAttachmentsConfigArgs) ToGetShapesShapeBsNvmeAttachmentsConfigOutput() GetShapesShapeBsNvmeAttachmentsConfigOutput {
+	return i.ToGetShapesShapeBsNvmeAttachmentsConfigOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeBsNvmeAttachmentsConfigArgs) ToGetShapesShapeBsNvmeAttachmentsConfigOutputWithContext(ctx context.Context) GetShapesShapeBsNvmeAttachmentsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeBsNvmeAttachmentsConfigOutput)
+}
+
+// GetShapesShapeBsNvmeAttachmentsConfigArrayInput is an input type that accepts GetShapesShapeBsNvmeAttachmentsConfigArray and GetShapesShapeBsNvmeAttachmentsConfigArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapeBsNvmeAttachmentsConfigArrayInput` via:
+//
+//	GetShapesShapeBsNvmeAttachmentsConfigArray{ GetShapesShapeBsNvmeAttachmentsConfigArgs{...} }
+type GetShapesShapeBsNvmeAttachmentsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeBsNvmeAttachmentsConfigArrayOutput() GetShapesShapeBsNvmeAttachmentsConfigArrayOutput
+	ToGetShapesShapeBsNvmeAttachmentsConfigArrayOutputWithContext(context.Context) GetShapesShapeBsNvmeAttachmentsConfigArrayOutput
+}
+
+type GetShapesShapeBsNvmeAttachmentsConfigArray []GetShapesShapeBsNvmeAttachmentsConfigInput
+
+func (GetShapesShapeBsNvmeAttachmentsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeBsNvmeAttachmentsConfig)(nil)).Elem()
+}
+
+func (i GetShapesShapeBsNvmeAttachmentsConfigArray) ToGetShapesShapeBsNvmeAttachmentsConfigArrayOutput() GetShapesShapeBsNvmeAttachmentsConfigArrayOutput {
+	return i.ToGetShapesShapeBsNvmeAttachmentsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeBsNvmeAttachmentsConfigArray) ToGetShapesShapeBsNvmeAttachmentsConfigArrayOutputWithContext(ctx context.Context) GetShapesShapeBsNvmeAttachmentsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeBsNvmeAttachmentsConfigArrayOutput)
+}
+
+type GetShapesShapeBsNvmeAttachmentsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeBsNvmeAttachmentsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeBsNvmeAttachmentsConfig)(nil)).Elem()
+}
+
+func (o GetShapesShapeBsNvmeAttachmentsConfigOutput) ToGetShapesShapeBsNvmeAttachmentsConfigOutput() GetShapesShapeBsNvmeAttachmentsConfigOutput {
+	return o
+}
+
+func (o GetShapesShapeBsNvmeAttachmentsConfigOutput) ToGetShapesShapeBsNvmeAttachmentsConfigOutputWithContext(ctx context.Context) GetShapesShapeBsNvmeAttachmentsConfigOutput {
+	return o
+}
+
+// The maximum number of remote NVMe volume attachments supported per core.
+func (o GetShapesShapeBsNvmeAttachmentsConfigOutput) MaxRemoteNvmeVolumeAttachmentsPerCore() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeBsNvmeAttachmentsConfig) int { return v.MaxRemoteNvmeVolumeAttachmentsPerCore }).(pulumi.IntOutput)
+}
+
+// The maximum total number of remote NVMe volume attachments supported for the shape.
+func (o GetShapesShapeBsNvmeAttachmentsConfigOutput) MaxTotalRemoteNvmeVolumeAttachments() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeBsNvmeAttachmentsConfig) int { return v.MaxTotalRemoteNvmeVolumeAttachments }).(pulumi.IntOutput)
+}
+
+// The minimum number of cores required to support remote NVMe volume attachments.
+func (o GetShapesShapeBsNvmeAttachmentsConfigOutput) MinCores() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeBsNvmeAttachmentsConfig) int { return v.MinCores }).(pulumi.IntOutput)
+}
+
+// The number of virtual functions to enable on a hypervisor so that each sellable core has one virtual function available. This value is `0` for VM and bare metal instances.
+func (o GetShapesShapeBsNvmeAttachmentsConfigOutput) VfEnableCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeBsNvmeAttachmentsConfig) int { return v.VfEnableCount }).(pulumi.IntOutput)
+}
+
+type GetShapesShapeBsNvmeAttachmentsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeBsNvmeAttachmentsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeBsNvmeAttachmentsConfig)(nil)).Elem()
+}
+
+func (o GetShapesShapeBsNvmeAttachmentsConfigArrayOutput) ToGetShapesShapeBsNvmeAttachmentsConfigArrayOutput() GetShapesShapeBsNvmeAttachmentsConfigArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeBsNvmeAttachmentsConfigArrayOutput) ToGetShapesShapeBsNvmeAttachmentsConfigArrayOutputWithContext(ctx context.Context) GetShapesShapeBsNvmeAttachmentsConfigArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeBsNvmeAttachmentsConfigArrayOutput) Index(i pulumi.IntInput) GetShapesShapeBsNvmeAttachmentsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapeBsNvmeAttachmentsConfig {
+		return vs[0].([]GetShapesShapeBsNvmeAttachmentsConfig)[vs[1].(int)]
+	}).(GetShapesShapeBsNvmeAttachmentsConfigOutput)
 }
 
 type GetShapesShapeMaxVnicAttachmentOption struct {
@@ -42767,7 +43099,7 @@ type GetVolumeAttachmentsVolumeAttachment struct {
 	Device string `pulumi:"device"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	EncryptionInTransitType string `pulumi:"encryptionInTransitType"`
 	// The OCID of the volume attachment.
 	Id string `pulumi:"id"`
@@ -42781,9 +43113,11 @@ type GetVolumeAttachmentsVolumeAttachment struct {
 	Iqn string `pulumi:"iqn"`
 	// Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
 	IsAgentAutoIscsiLoginEnabled bool `pulumi:"isAgentAutoIscsiLoginEnabled"`
+	// Whether in-transit encryption for the data volume's attachment is enabled or not.
+	IsEncryptionInTransitEnabled bool `pulumi:"isEncryptionInTransitEnabled"`
 	// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
 	IsMultipath bool `pulumi:"isMultipath"`
-	// Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Whether the attachment was created in read-only mode.
 	IsReadOnly bool `pulumi:"isReadOnly"`
@@ -42834,7 +43168,7 @@ type GetVolumeAttachmentsVolumeAttachmentArgs struct {
 	Device pulumi.StringInput `pulumi:"device"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	EncryptionInTransitType pulumi.StringInput `pulumi:"encryptionInTransitType"`
 	// The OCID of the volume attachment.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -42848,9 +43182,11 @@ type GetVolumeAttachmentsVolumeAttachmentArgs struct {
 	Iqn pulumi.StringInput `pulumi:"iqn"`
 	// Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
 	IsAgentAutoIscsiLoginEnabled pulumi.BoolInput `pulumi:"isAgentAutoIscsiLoginEnabled"`
+	// Whether in-transit encryption for the data volume's attachment is enabled or not.
+	IsEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isEncryptionInTransitEnabled"`
 	// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
 	IsMultipath pulumi.BoolInput `pulumi:"isMultipath"`
-	// Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Whether the attachment was created in read-only mode.
 	IsReadOnly pulumi.BoolInput `pulumi:"isReadOnly"`
@@ -42961,7 +43297,7 @@ func (o GetVolumeAttachmentsVolumeAttachmentOutput) DisplayName() pulumi.StringO
 	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetVolumeAttachmentsVolumeAttachmentOutput) EncryptionInTransitType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.EncryptionInTransitType }).(pulumi.StringOutput)
 }
@@ -42996,12 +43332,17 @@ func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsAgentAutoIscsiLoginEnabled
 	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsAgentAutoIscsiLoginEnabled }).(pulumi.BoolOutput)
 }
 
+// Whether in-transit encryption for the data volume's attachment is enabled or not.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsEncryptionInTransitEnabled }).(pulumi.BoolOutput)
+}
+
 // Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
 func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsMultipath() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsMultipath }).(pulumi.BoolOutput)
 }
 
-// Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+// Deprecated. Use `isEncryptionInTransitEnabled` instead.
 func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
 }
@@ -48452,6 +48793,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeFilterArrayInput)(nil)).Elem(), GetShapeFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeInput)(nil)).Elem(), GetShapeShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeArrayInput)(nil)).Elem(), GetShapeShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeBsNvmeAttachmentsConfigInput)(nil)).Elem(), GetShapeShapeBsNvmeAttachmentsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeBsNvmeAttachmentsConfigArrayInput)(nil)).Elem(), GetShapeShapeBsNvmeAttachmentsConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeMaxVnicAttachmentOptionInput)(nil)).Elem(), GetShapeShapeMaxVnicAttachmentOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeMaxVnicAttachmentOptionArrayInput)(nil)).Elem(), GetShapeShapeMaxVnicAttachmentOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeMemoryOptionInput)(nil)).Elem(), GetShapeShapeMemoryOptionArgs{})
@@ -48488,6 +48831,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterArrayInput)(nil)).Elem(), GetShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeInput)(nil)).Elem(), GetShapesShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeArrayInput)(nil)).Elem(), GetShapesShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeBsNvmeAttachmentsConfigInput)(nil)).Elem(), GetShapesShapeBsNvmeAttachmentsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeBsNvmeAttachmentsConfigArrayInput)(nil)).Elem(), GetShapesShapeBsNvmeAttachmentsConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeMaxVnicAttachmentOptionInput)(nil)).Elem(), GetShapesShapeMaxVnicAttachmentOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeMaxVnicAttachmentOptionArrayInput)(nil)).Elem(), GetShapesShapeMaxVnicAttachmentOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeMemoryOptionInput)(nil)).Elem(), GetShapesShapeMemoryOptionArgs{})
@@ -49122,6 +49467,8 @@ func init() {
 	pulumi.RegisterOutputType(GetShapeFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetShapeShapeOutput{})
 	pulumi.RegisterOutputType(GetShapeShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeBsNvmeAttachmentsConfigOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeBsNvmeAttachmentsConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetShapeShapeMaxVnicAttachmentOptionOutput{})
 	pulumi.RegisterOutputType(GetShapeShapeMaxVnicAttachmentOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetShapeShapeMemoryOptionOutput{})
@@ -49158,6 +49505,8 @@ func init() {
 	pulumi.RegisterOutputType(GetShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeBsNvmeAttachmentsConfigOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeBsNvmeAttachmentsConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeMaxVnicAttachmentOptionOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeMaxVnicAttachmentOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeMemoryOptionOutput{})

@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
     public partial class VolumeAttachment : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        /// The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "ServiceDetermined" .
         /// </summary>
         [Output("attachmentType")]
         public Output<string> AttachmentType { get; private set; } = null!;
@@ -133,6 +133,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("isAgentAutoIscsiLoginEnabled")]
         public Output<bool> IsAgentAutoIscsiLoginEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// Whether in-transit encryption for the data volume's attachment is enabled or not.
+        /// </summary>
+        [Output("isEncryptionInTransitEnabled")]
+        public Output<bool> IsEncryptionInTransitEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
@@ -257,7 +263,7 @@ namespace Pulumi.Oci.Core
     public sealed class VolumeAttachmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        /// The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "ServiceDetermined" .
         /// </summary>
         [Input("attachmentType", required: true)]
         public Input<string> AttachmentType { get; set; } = null!;
@@ -341,7 +347,7 @@ namespace Pulumi.Oci.Core
     public sealed class VolumeAttachmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        /// The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "ServiceDetermined" .
         /// </summary>
         [Input("attachmentType")]
         public Input<string>? AttachmentType { get; set; }
@@ -417,6 +423,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("isAgentAutoIscsiLoginEnabled")]
         public Input<bool>? IsAgentAutoIscsiLoginEnabled { get; set; }
+
+        /// <summary>
+        /// Whether in-transit encryption for the data volume's attachment is enabled or not.
+        /// </summary>
+        [Input("isEncryptionInTransitEnabled")]
+        public Input<bool>? IsEncryptionInTransitEnabled { get; set; }
 
         /// <summary>
         /// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.

@@ -19,6 +19,7 @@ namespace Pulumi.Oci.Core.Inputs
         /// * `IDE` - Emulated IDE disk.
         /// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         /// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        /// * `NVME` - NVMe attached remote block storage device.
         /// </summary>
         [Input("bootVolumeType")]
         public Input<string>? BootVolumeType { get; set; }
@@ -38,7 +39,13 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? IsConsistentVolumeNamingEnabled { get; set; }
 
         /// <summary>
-        /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        /// Whether in-transit encryption for the data volume's attachment is enabled or not.
+        /// </summary>
+        [Input("isEncryptionInTransitEnabled")]
+        public Input<bool>? IsEncryptionInTransitEnabled { get; set; }
+
+        /// <summary>
+        /// Deprecated. Use `isEncryptionInTransitEnabled` instead.
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]
         public Input<bool>? IsPvEncryptionInTransitEnabled { get; set; }
@@ -59,6 +66,7 @@ namespace Pulumi.Oci.Core.Inputs
         /// * `IDE` - Emulated IDE disk.
         /// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
         /// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+        /// * `NVME` - NVMe attached remote block storage device.
         /// </summary>
         [Input("remoteDataVolumeType")]
         public Input<string>? RemoteDataVolumeType { get; set; }

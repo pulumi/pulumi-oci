@@ -36,7 +36,7 @@ class VolumeAttachmentArgs:
         """
         The set of arguments for constructing a VolumeAttachment resource.
 
-        :param pulumi.Input[_builtins.str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        :param pulumi.Input[_builtins.str] attachment_type: The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "service_determined" .
         :param pulumi.Input[_builtins.str] instance_id: The OCID of the instance.
         :param pulumi.Input[_builtins.str] volume_id: The OCID of the volume.
                
@@ -81,7 +81,7 @@ class VolumeAttachmentArgs:
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Input[_builtins.str]:
         """
-        The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "service_determined" .
         """
         return pulumi.get(self, "attachment_type")
 
@@ -242,6 +242,7 @@ class _VolumeAttachmentState:
                  ipv6: pulumi.Input[Optional[_builtins.str]] = None,
                  iqn: pulumi.Input[Optional[_builtins.str]] = None,
                  is_agent_auto_iscsi_login_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_multipath: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -257,7 +258,7 @@ class _VolumeAttachmentState:
         """
         Input properties used for looking up and filtering VolumeAttachment resources.
 
-        :param pulumi.Input[_builtins.str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        :param pulumi.Input[_builtins.str] attachment_type: The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "service_determined" .
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] chap_secret: The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
         :param pulumi.Input[_builtins.str] chap_username: The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
@@ -270,6 +271,7 @@ class _VolumeAttachmentState:
         :param pulumi.Input[_builtins.str] ipv6: The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
         :param pulumi.Input[_builtins.str] iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         :param pulumi.Input[_builtins.bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        :param pulumi.Input[_builtins.bool] is_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's attachment is enabled or not.
         :param pulumi.Input[_builtins.bool] is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
         :param pulumi.Input[_builtins.bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param pulumi.Input[_builtins.bool] is_read_only: Whether the attachment was created in read-only mode.
@@ -315,6 +317,8 @@ class _VolumeAttachmentState:
             pulumi.set(__self__, "iqn", iqn)
         if is_agent_auto_iscsi_login_enabled is not None:
             pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
+        if is_encryption_in_transit_enabled is not None:
+            pulumi.set(__self__, "is_encryption_in_transit_enabled", is_encryption_in_transit_enabled)
         if is_multipath is not None:
             pulumi.set(__self__, "is_multipath", is_multipath)
         if is_pv_encryption_in_transit_enabled is not None:
@@ -344,7 +348,7 @@ class _VolumeAttachmentState:
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "service_determined" .
         """
         return pulumi.get(self, "attachment_type")
 
@@ -496,6 +500,18 @@ class _VolumeAttachmentState:
     @is_agent_auto_iscsi_login_enabled.setter
     def is_agent_auto_iscsi_login_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_agent_auto_iscsi_login_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
+
+    @is_encryption_in_transit_enabled.setter
+    def is_encryption_in_transit_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_encryption_in_transit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isMultipath")
@@ -703,7 +719,7 @@ class VolumeAttachment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        :param pulumi.Input[_builtins.str] attachment_type: The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "service_determined" .
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[_builtins.str] device: The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -822,6 +838,7 @@ class VolumeAttachment(pulumi.CustomResource):
             __props__.__dict__["ipv4"] = None
             __props__.__dict__["ipv6"] = None
             __props__.__dict__["iqn"] = None
+            __props__.__dict__["is_encryption_in_transit_enabled"] = None
             __props__.__dict__["is_multipath"] = None
             __props__.__dict__["is_volume_created_during_launch"] = None
             __props__.__dict__["iscsi_login_state"] = None
@@ -852,6 +869,7 @@ class VolumeAttachment(pulumi.CustomResource):
             ipv6: pulumi.Input[Optional[_builtins.str]] = None,
             iqn: pulumi.Input[Optional[_builtins.str]] = None,
             is_agent_auto_iscsi_login_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_multipath: pulumi.Input[Optional[_builtins.bool]] = None,
             is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -871,7 +889,7 @@ class VolumeAttachment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        :param pulumi.Input[_builtins.str] attachment_type: The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "service_determined" .
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] chap_secret: The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
         :param pulumi.Input[_builtins.str] chap_username: The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
@@ -884,6 +902,7 @@ class VolumeAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ipv6: The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
         :param pulumi.Input[_builtins.str] iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         :param pulumi.Input[_builtins.bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        :param pulumi.Input[_builtins.bool] is_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's attachment is enabled or not.
         :param pulumi.Input[_builtins.bool] is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
         :param pulumi.Input[_builtins.bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param pulumi.Input[_builtins.bool] is_read_only: Whether the attachment was created in read-only mode.
@@ -917,6 +936,7 @@ class VolumeAttachment(pulumi.CustomResource):
         __props__.__dict__["ipv6"] = ipv6
         __props__.__dict__["iqn"] = iqn
         __props__.__dict__["is_agent_auto_iscsi_login_enabled"] = is_agent_auto_iscsi_login_enabled
+        __props__.__dict__["is_encryption_in_transit_enabled"] = is_encryption_in_transit_enabled
         __props__.__dict__["is_multipath"] = is_multipath
         __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
         __props__.__dict__["is_read_only"] = is_read_only
@@ -935,7 +955,7 @@ class VolumeAttachment(pulumi.CustomResource):
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Output[_builtins.str]:
         """
-        The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        The type of volume. The only supported values are "iscsi", "paravirtualized", "nvme" and "service_determined" .
         """
         return pulumi.get(self, "attachment_type")
 
@@ -1035,6 +1055,14 @@ class VolumeAttachment(pulumi.CustomResource):
         Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         """
         return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isEncryptionInTransitEnabled")
+    def is_encryption_in_transit_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+        """
+        return pulumi.get(self, "is_encryption_in_transit_enabled")
 
     @_builtins.property
     @pulumi.getter(name="isMultipath")

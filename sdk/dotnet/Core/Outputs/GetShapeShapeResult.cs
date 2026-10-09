@@ -15,6 +15,7 @@ namespace Pulumi.Oci.Core.Outputs
     {
         public readonly ImmutableArray<string> BaselineOcpuUtilizations;
         public readonly string BillingType;
+        public readonly ImmutableArray<Outputs.GetShapeShapeBsNvmeAttachmentsConfigResult> BsNvmeAttachmentsConfigs;
         public readonly string GpuDescription;
         public readonly int Gpus;
         public readonly bool IsBilledForStoppedInstance;
@@ -50,6 +51,8 @@ namespace Pulumi.Oci.Core.Outputs
             ImmutableArray<string> baselineOcpuUtilizations,
 
             string billingType,
+
+            ImmutableArray<Outputs.GetShapeShapeBsNvmeAttachmentsConfigResult> bsNvmeAttachmentsConfigs,
 
             string gpuDescription,
 
@@ -111,6 +114,7 @@ namespace Pulumi.Oci.Core.Outputs
         {
             BaselineOcpuUtilizations = baselineOcpuUtilizations;
             BillingType = billingType;
+            BsNvmeAttachmentsConfigs = bsNvmeAttachmentsConfigs;
             GpuDescription = gpuDescription;
             Gpus = gpus;
             IsBilledForStoppedInstance = isBilledForStoppedInstance;

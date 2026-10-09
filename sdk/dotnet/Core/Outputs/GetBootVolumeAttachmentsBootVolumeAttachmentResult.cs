@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+        /// Deprecated. Use `isEncryptionInTransitEnabled` instead.
         /// </summary>
         public readonly string EncryptionInTransitType;
         /// <summary>
@@ -42,7 +42,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
+        /// Specifies whether in-transit encryption is enabled for the boot volume's attachment.
+        /// </summary>
+        public readonly bool IsEncryptionInTransitEnabled;
+        /// <summary>
+        /// Deprecated. Use `isEncryptionInTransitEnabled` instead.
         /// </summary>
         public readonly bool IsPvEncryptionInTransitEnabled;
         /// <summary>
@@ -74,6 +78,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string instanceId,
 
+            bool isEncryptionInTransitEnabled,
+
             bool isPvEncryptionInTransitEnabled,
 
             string state,
@@ -89,6 +95,7 @@ namespace Pulumi.Oci.Core.Outputs
             EncryptionInTransitType = encryptionInTransitType;
             Id = id;
             InstanceId = instanceId;
+            IsEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             State = state;
             TimeCreated = timeCreated;

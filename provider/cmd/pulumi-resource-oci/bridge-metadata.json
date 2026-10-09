@@ -20619,6 +20619,36 @@
                     }
                 }
             },
+            "oci_oci_product_catalog_internal_admin_product": {
+                "current": "oci:oci/productCatalogInternalAdminProduct:ProductCatalogInternalAdminProduct",
+                "majorVersion": 5,
+                "fields": {
+                    "limits": {
+                        "maxItemsOne": false
+                    },
+                    "meters": {
+                        "maxItemsOne": false
+                    },
+                    "skus": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_oci_product_catalog_internal_product": {
+                "current": "oci:oci/productCatalogInternalProduct:ProductCatalogInternalProduct",
+                "majorVersion": 5,
+                "fields": {
+                    "limits": {
+                        "maxItemsOne": false
+                    },
+                    "meters": {
+                        "maxItemsOne": false
+                    },
+                    "skus": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "oci_ocvp_byol": {
                 "current": "oci:Ocvp/byol:Byol",
                 "majorVersion": 5
@@ -40534,6 +40564,9 @@
                                 "baseline_ocpu_utilizations": {
                                     "maxItemsOne": false
                                 },
+                                "bs_nvme_attachments_config": {
+                                    "maxItemsOne": false
+                                },
                                 "max_vnic_attachment_options": {
                                     "maxItemsOne": false
                                 },
@@ -40682,6 +40715,9 @@
                         "elem": {
                             "fields": {
                                 "baseline_ocpu_utilizations": {
+                                    "maxItemsOne": false
+                                },
+                                "bs_nvme_attachments_config": {
                                     "maxItemsOne": false
                                 },
                                 "max_vnic_attachment_options": {
@@ -73745,6 +73781,48 @@
                     }
                 }
             },
+            "oci_generative_ai_apikey": {
+                "current": "oci:GenerativeAi/getApikey:getApikey",
+                "majorVersion": 5,
+                "fields": {
+                    "keys": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_generative_ai_apikeys": {
+                "current": "oci:GenerativeAi/getApikeys:getApikeys",
+                "majorVersion": 5,
+                "fields": {
+                    "api_key_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "keys": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "oci_generative_ai_dedicated_ai_cluster": {
                 "current": "oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster",
                 "majorVersion": 5,
@@ -91948,6 +92026,99 @@
                         "elem": {
                             "fields": {
                                 "add_on_features": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_oci_product_catalog_internal_admin_product": {
+                "current": "oci:oci/getProductCatalogInternalAdminProduct:getProductCatalogInternalAdminProduct",
+                "majorVersion": 5,
+                "fields": {
+                    "limits": {
+                        "maxItemsOne": false
+                    },
+                    "meters": {
+                        "maxItemsOne": false
+                    },
+                    "skus": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_oci_product_catalog_internal_admin_products": {
+                "current": "oci:oci/getProductCatalogInternalAdminProducts:getProductCatalogInternalAdminProducts",
+                "majorVersion": 5,
+                "fields": {
+                    "products": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "skus": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_oci_product_catalog_internal_product": {
+                "current": "oci:oci/getProductCatalogInternalProduct:getProductCatalogInternalProduct",
+                "majorVersion": 5,
+                "fields": {
+                    "limits": {
+                        "maxItemsOne": false
+                    },
+                    "meters": {
+                        "maxItemsOne": false
+                    },
+                    "skus": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_oci_product_catalog_internal_products": {
+                "current": "oci:oci/getProductCatalogInternalProducts:getProductCatalogInternalProducts",
+                "majorVersion": 5,
+                "fields": {
+                    "products": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "skus": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_oci_product_catalog_product": {
+                "current": "oci:oci/getProductCatalogProduct:getProductCatalogProduct",
+                "majorVersion": 5,
+                "fields": {
+                    "skus": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_oci_product_catalog_products": {
+                "current": "oci:oci/getProductCatalogProducts:getProductCatalogProducts",
+                "majorVersion": 5,
+                "fields": {
+                    "limits": {
+                        "maxItemsOne": false
+                    },
+                    "meters": {
+                        "maxItemsOne": false
+                    },
+                    "products": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "skus": {
                                     "maxItemsOne": false
                                 }
                             }

@@ -32,7 +32,7 @@ import (
 //			_, err := identity.GetDomainsOciConsoleSignOnPolicyConsent(ctx, &identity.GetDomainsOciConsoleSignOnPolicyConsentArgs{
 //				IdcsEndpoint:                    testDomain.Url,
 //				OciConsoleSignOnPolicyConsentId: testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.Id,
-//				AttributeSets:                   pulumi.ToArray(ociConsoleSignOnPolicyConsentAttributeSets),
+//				AttributeSets:                   ociConsoleSignOnPolicyConsentAttributeSets,
 //				Attributes:                      pulumi.StringRef(ociConsoleSignOnPolicyConsentAttributes),
 //				Authorization:                   pulumi.StringRef(ociConsoleSignOnPolicyConsentAuthorization),
 //				ResourceTypeSchemaVersion:       pulumi.StringRef(ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion),

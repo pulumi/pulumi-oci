@@ -52,11 +52,11 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testLoadBalancerRoutingPolicy = new LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy", LoadBalancerRoutingPolicyArgs.builder()
  *             .conditionLanguageVersion(loadBalancerRoutingPolicyConditionLanguageVersion)
- *             .loadBalancerId(testLoadBalancer.id())
+ *             .loadBalancerId(testLoadBalancer.get("id"))
  *             .name(loadBalancerRoutingPolicyName)
  *             .rules(LoadBalancerRoutingPolicyRuleArgs.builder()
  *                 .actions(LoadBalancerRoutingPolicyRuleActionArgs.builder()
- *                     .backendSetName(testBackendSet.name())
+ *                     .backendSetName(testBackendSet.get("name"))
  *                     .name(loadBalancerRoutingPolicyRulesActionsName)
  *                     .build())
  *                 .condition(loadBalancerRoutingPolicyRulesCondition)

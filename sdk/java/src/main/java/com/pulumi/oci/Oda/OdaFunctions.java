@@ -66,7 +66,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaInstance = OdaFunctions.getOdaInstance(GetOdaInstanceArgs.builder()
-     *             .odaInstanceId(testOdaInstanceOciOdaOdaInstance.id())
+     *             .odaInstanceId(testOdaInstanceOciOdaOdaInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -108,7 +108,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaInstance = OdaFunctions.getOdaInstance(GetOdaInstanceArgs.builder()
-     *             .odaInstanceId(testOdaInstanceOciOdaOdaInstance.id())
+     *             .odaInstanceId(testOdaInstanceOciOdaOdaInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -150,7 +150,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaInstance = OdaFunctions.getOdaInstance(GetOdaInstanceArgs.builder()
-     *             .odaInstanceId(testOdaInstanceOciOdaOdaInstance.id())
+     *             .odaInstanceId(testOdaInstanceOciOdaOdaInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -192,7 +192,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaInstance = OdaFunctions.getOdaInstance(GetOdaInstanceArgs.builder()
-     *             .odaInstanceId(testOdaInstanceOciOdaOdaInstance.id())
+     *             .odaInstanceId(testOdaInstanceOciOdaOdaInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -234,7 +234,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaInstance = OdaFunctions.getOdaInstance(GetOdaInstanceArgs.builder()
-     *             .odaInstanceId(testOdaInstanceOciOdaOdaInstance.id())
+     *             .odaInstanceId(testOdaInstanceOciOdaOdaInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -521,7 +521,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpoint = OdaFunctions.getOdaPrivateEndpoint(GetOdaPrivateEndpointArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -563,7 +563,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpoint = OdaFunctions.getOdaPrivateEndpoint(GetOdaPrivateEndpointArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -605,7 +605,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpoint = OdaFunctions.getOdaPrivateEndpoint(GetOdaPrivateEndpointArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -647,7 +647,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpoint = OdaFunctions.getOdaPrivateEndpoint(GetOdaPrivateEndpointArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -689,7 +689,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpoint = OdaFunctions.getOdaPrivateEndpoint(GetOdaPrivateEndpointArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -731,7 +731,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointAttachment = OdaFunctions.getOdaPrivateEndpointAttachment(GetOdaPrivateEndpointAttachmentArgs.builder()
-     *             .odaPrivateEndpointAttachmentId(testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id())
+     *             .odaPrivateEndpointAttachmentId(testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -773,7 +773,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointAttachment = OdaFunctions.getOdaPrivateEndpointAttachment(GetOdaPrivateEndpointAttachmentArgs.builder()
-     *             .odaPrivateEndpointAttachmentId(testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id())
+     *             .odaPrivateEndpointAttachmentId(testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -815,7 +815,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointAttachment = OdaFunctions.getOdaPrivateEndpointAttachment(GetOdaPrivateEndpointAttachmentArgs.builder()
-     *             .odaPrivateEndpointAttachmentId(testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id())
+     *             .odaPrivateEndpointAttachmentId(testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -857,7 +857,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointAttachment = OdaFunctions.getOdaPrivateEndpointAttachment(GetOdaPrivateEndpointAttachmentArgs.builder()
-     *             .odaPrivateEndpointAttachmentId(testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id())
+     *             .odaPrivateEndpointAttachmentId(testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -899,7 +899,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointAttachment = OdaFunctions.getOdaPrivateEndpointAttachment(GetOdaPrivateEndpointAttachmentArgs.builder()
-     *             .odaPrivateEndpointAttachmentId(testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id())
+     *             .odaPrivateEndpointAttachmentId(testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -946,7 +946,7 @@ public final class OdaFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointAttachments = OdaFunctions.getOdaPrivateEndpointAttachments(GetOdaPrivateEndpointAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
      *             .state(odaPrivateEndpointAttachmentState)
      *             .build());
      * 
@@ -994,7 +994,7 @@ public final class OdaFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointAttachments = OdaFunctions.getOdaPrivateEndpointAttachments(GetOdaPrivateEndpointAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
      *             .state(odaPrivateEndpointAttachmentState)
      *             .build());
      * 
@@ -1042,7 +1042,7 @@ public final class OdaFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointAttachments = OdaFunctions.getOdaPrivateEndpointAttachments(GetOdaPrivateEndpointAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
      *             .state(odaPrivateEndpointAttachmentState)
      *             .build());
      * 
@@ -1090,7 +1090,7 @@ public final class OdaFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointAttachments = OdaFunctions.getOdaPrivateEndpointAttachments(GetOdaPrivateEndpointAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
      *             .state(odaPrivateEndpointAttachmentState)
      *             .build());
      * 
@@ -1138,7 +1138,7 @@ public final class OdaFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointAttachments = OdaFunctions.getOdaPrivateEndpointAttachments(GetOdaPrivateEndpointAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
      *             .state(odaPrivateEndpointAttachmentState)
      *             .build());
      * 
@@ -1186,7 +1186,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointScanProxies = OdaFunctions.getOdaPrivateEndpointScanProxies(GetOdaPrivateEndpointScanProxiesArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
      *             .state(odaPrivateEndpointScanProxyState)
      *             .build());
      * 
@@ -1234,7 +1234,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointScanProxies = OdaFunctions.getOdaPrivateEndpointScanProxies(GetOdaPrivateEndpointScanProxiesArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
      *             .state(odaPrivateEndpointScanProxyState)
      *             .build());
      * 
@@ -1282,7 +1282,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointScanProxies = OdaFunctions.getOdaPrivateEndpointScanProxies(GetOdaPrivateEndpointScanProxiesArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
      *             .state(odaPrivateEndpointScanProxyState)
      *             .build());
      * 
@@ -1330,7 +1330,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointScanProxies = OdaFunctions.getOdaPrivateEndpointScanProxies(GetOdaPrivateEndpointScanProxiesArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
      *             .state(odaPrivateEndpointScanProxyState)
      *             .build());
      * 
@@ -1378,7 +1378,7 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointScanProxies = OdaFunctions.getOdaPrivateEndpointScanProxies(GetOdaPrivateEndpointScanProxiesArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
      *             .state(odaPrivateEndpointScanProxyState)
      *             .build());
      * 
@@ -1421,8 +1421,8 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointScanProxy = OdaFunctions.getOdaPrivateEndpointScanProxy(GetOdaPrivateEndpointScanProxyArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
-     *             .odaPrivateEndpointScanProxyId(testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
+     *             .odaPrivateEndpointScanProxyId(testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.get("id"))
      *             .build());
      * 
      *     }
@@ -1464,8 +1464,8 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointScanProxy = OdaFunctions.getOdaPrivateEndpointScanProxy(GetOdaPrivateEndpointScanProxyArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
-     *             .odaPrivateEndpointScanProxyId(testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
+     *             .odaPrivateEndpointScanProxyId(testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.get("id"))
      *             .build());
      * 
      *     }
@@ -1507,8 +1507,8 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointScanProxy = OdaFunctions.getOdaPrivateEndpointScanProxy(GetOdaPrivateEndpointScanProxyArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
-     *             .odaPrivateEndpointScanProxyId(testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
+     *             .odaPrivateEndpointScanProxyId(testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.get("id"))
      *             .build());
      * 
      *     }
@@ -1550,8 +1550,8 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointScanProxy = OdaFunctions.getOdaPrivateEndpointScanProxy(GetOdaPrivateEndpointScanProxyArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
-     *             .odaPrivateEndpointScanProxyId(testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
+     *             .odaPrivateEndpointScanProxyId(testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.get("id"))
      *             .build());
      * 
      *     }
@@ -1593,8 +1593,8 @@ public final class OdaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOdaPrivateEndpointScanProxy = OdaFunctions.getOdaPrivateEndpointScanProxy(GetOdaPrivateEndpointScanProxyArgs.builder()
-     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
-     *             .odaPrivateEndpointScanProxyId(testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.id())
+     *             .odaPrivateEndpointId(testOdaPrivateEndpoint.get("id"))
+     *             .odaPrivateEndpointScanProxyId(testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.get("id"))
      *             .build());
      * 
      *     }

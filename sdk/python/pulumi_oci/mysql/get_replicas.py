@@ -174,7 +174,7 @@ def get_replicas(compartment_id: Optional[_builtins.str] = None,
         configuration_id=test_mysql_configuration["id"],
         db_system_id=test_mysql_db_system["id"],
         display_name=replica_display_name,
-        is_up_to_date=replica_is_up_to_date == "true",
+        is_up_to_date=replica_is_up_to_date,
         replica_id=test_replica["id"],
         state=replica_state)
     ```
@@ -235,7 +235,7 @@ def get_replicas_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = 
         configuration_id=test_mysql_configuration["id"],
         db_system_id=test_mysql_db_system["id"],
         display_name=replica_display_name,
-        is_up_to_date=replica_is_up_to_date == "true",
+        is_up_to_date=replica_is_up_to_date,
         replica_id=test_replica["id"],
         state=replica_state)
     ```

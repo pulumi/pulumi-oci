@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDeployPipeline = new DeployPipeline("testDeployPipeline", DeployPipelineArgs.builder()
- *             .projectId(testProject.id())
+ *             .projectId(testProject.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .deployPipelineParameters(DeployPipelineDeployPipelineParametersArgs.builder()
  *                 .items(DeployPipelineDeployPipelineParametersItemArgs.builder()

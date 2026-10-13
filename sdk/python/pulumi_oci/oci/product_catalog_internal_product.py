@@ -509,7 +509,7 @@ class ProductCatalogInternalProduct(pulumi.CustomResource):
             name=internal_product_name,
             service_name=test_service["name"],
             backfill_eligibility=internal_product_backfill_eligibility,
-            is_excluded=internal_product_is_excluded == "true",
+            is_excluded=internal_product_is_excluded,
             limits=[{
                 "public_limit_name": internal_product_limits_public_limit_name,
                 "public_service_name": test_service["name"],
@@ -569,7 +569,7 @@ class ProductCatalogInternalProduct(pulumi.CustomResource):
             name=internal_product_name,
             service_name=test_service["name"],
             backfill_eligibility=internal_product_backfill_eligibility,
-            is_excluded=internal_product_is_excluded == "true",
+            is_excluded=internal_product_is_excluded,
             limits=[{
                 "public_limit_name": internal_product_limits_public_limit_name,
                 "public_service_name": test_service["name"],

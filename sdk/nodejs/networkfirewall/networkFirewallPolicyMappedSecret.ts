@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     source: networkFirewallPolicyMappedSecretSource,
  *     type: networkFirewallPolicyMappedSecretType,
  *     vaultSecretId: testSecret.id,
- *     versionNumber: Number(networkFirewallPolicyMappedSecretVersionNumber),
+ *     versionNumber: networkFirewallPolicyMappedSecretVersionNumber,
  *     description: networkFirewallPolicyMappedSecretDescription,
  * });
  * ```

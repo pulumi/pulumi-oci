@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDiscoveryJob = new DiscoveryMod("testDiscoveryJob", DiscoveryModArgs.builder()
  *             .compartmentId(compartmentId)
- *             .sensitiveDataModelId(testSensitiveDataModel.id())
+ *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .discoveryType(discoveryJobDiscoveryType)
  *             .displayName(discoveryJobDisplayName)

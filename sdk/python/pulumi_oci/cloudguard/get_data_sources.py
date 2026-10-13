@@ -188,7 +188,7 @@ def get_data_sources(access_level: Optional[_builtins.str] = None,
 
     test_data_sources = oci.cloudguard.get_data_sources(compartment_id=compartment_id,
         access_level=data_source_access_level,
-        compartment_id_in_subtree=data_source_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=data_source_compartment_id_in_subtree,
         data_source_feed_provider=data_source_data_source_feed_provider,
         display_name=data_source_display_name,
         logging_query_type=data_source_logging_query_type,
@@ -265,7 +265,7 @@ def get_data_sources_output(access_level: pulumi.Input[Optional[Optional[_builti
 
     test_data_sources = oci.cloudguard.get_data_sources(compartment_id=compartment_id,
         access_level=data_source_access_level,
-        compartment_id_in_subtree=data_source_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=data_source_compartment_id_in_subtree,
         data_source_feed_provider=data_source_data_source_feed_provider,
         display_name=data_source_display_name,
         logging_query_type=data_source_logging_query_type,

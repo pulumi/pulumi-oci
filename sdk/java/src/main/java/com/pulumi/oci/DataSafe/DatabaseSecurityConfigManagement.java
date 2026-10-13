@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDatabaseSecurityConfigManagement = new DatabaseSecurityConfigManagement("testDatabaseSecurityConfigManagement", DatabaseSecurityConfigManagementArgs.builder()
  *             .compartmentId(compartmentId)
- *             .targetId(testTargetDatabase.id())
+ *             .targetId(testTargetDatabase.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(databaseSecurityConfigManagementDescription)
  *             .displayName(databaseSecurityConfigManagementDisplayName)

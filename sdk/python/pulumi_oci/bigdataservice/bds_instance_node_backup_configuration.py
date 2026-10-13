@@ -355,7 +355,7 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
             schedule=bds_instance_node_backup_configuration_schedule,
             backup_type=bds_instance_node_backup_configuration_backup_type,
             display_name=bds_instance_node_backup_configuration_display_name,
-            number_of_backups_to_retain=int(bds_instance_node_backup_configuration_number_of_backups_to_retain),
+            number_of_backups_to_retain=bds_instance_node_backup_configuration_number_of_backups_to_retain,
             timezone=bds_instance_node_backup_configuration_timezone)
         ```
 
@@ -411,7 +411,7 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
             schedule=bds_instance_node_backup_configuration_schedule,
             backup_type=bds_instance_node_backup_configuration_backup_type,
             display_name=bds_instance_node_backup_configuration_display_name,
-            number_of_backups_to_retain=int(bds_instance_node_backup_configuration_number_of_backups_to_retain),
+            number_of_backups_to_retain=bds_instance_node_backup_configuration_number_of_backups_to_retain,
             timezone=bds_instance_node_backup_configuration_timezone)
         ```
 

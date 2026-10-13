@@ -170,7 +170,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgent = GenerativeAiFunctions.getAgentAgent(GetAgentAgentArgs.builder()
-     *             .agentId(testAgentOciGenerativeAiAgentAgent.id())
+     *             .agentId(testAgentOciGenerativeAiAgentAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -214,7 +214,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgent = GenerativeAiFunctions.getAgentAgent(GetAgentAgentArgs.builder()
-     *             .agentId(testAgentOciGenerativeAiAgentAgent.id())
+     *             .agentId(testAgentOciGenerativeAiAgentAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -258,7 +258,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgent = GenerativeAiFunctions.getAgentAgent(GetAgentAgentArgs.builder()
-     *             .agentId(testAgentOciGenerativeAiAgentAgent.id())
+     *             .agentId(testAgentOciGenerativeAiAgentAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -302,7 +302,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgent = GenerativeAiFunctions.getAgentAgent(GetAgentAgentArgs.builder()
-     *             .agentId(testAgentOciGenerativeAiAgentAgent.id())
+     *             .agentId(testAgentOciGenerativeAiAgentAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -346,7 +346,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgent = GenerativeAiFunctions.getAgentAgent(GetAgentAgentArgs.builder()
-     *             .agentId(testAgentOciGenerativeAiAgentAgent.id())
+     *             .agentId(testAgentOciGenerativeAiAgentAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -388,7 +388,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoint = GenerativeAiFunctions.getAgentAgentEndpoint(GetAgentAgentEndpointArgs.builder()
-     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.id())
+     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -430,7 +430,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoint = GenerativeAiFunctions.getAgentAgentEndpoint(GetAgentAgentEndpointArgs.builder()
-     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.id())
+     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -472,7 +472,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoint = GenerativeAiFunctions.getAgentAgentEndpoint(GetAgentAgentEndpointArgs.builder()
-     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.id())
+     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -514,7 +514,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoint = GenerativeAiFunctions.getAgentAgentEndpoint(GetAgentAgentEndpointArgs.builder()
-     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.id())
+     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -556,7 +556,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoint = GenerativeAiFunctions.getAgentAgentEndpoint(GetAgentAgentEndpointArgs.builder()
-     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.id())
+     *             .agentEndpointId(testAgentEndpointOciGenerativeAiAgentAgentEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -598,7 +598,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(agentEndpointDisplayName)
      *             .state(agentEndpointState)
@@ -643,7 +643,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(agentEndpointDisplayName)
      *             .state(agentEndpointState)
@@ -688,7 +688,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(agentEndpointDisplayName)
      *             .state(agentEndpointState)
@@ -733,7 +733,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(agentEndpointDisplayName)
      *             .state(agentEndpointState)
@@ -778,7 +778,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(agentEndpointDisplayName)
      *             .state(agentEndpointState)
@@ -823,7 +823,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(agentEndpointDisplayName)
      *             .state(agentEndpointState)
@@ -868,7 +868,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentEndpoints = GenerativeAiFunctions.getAgentAgentEndpoints(GetAgentAgentEndpointsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(agentEndpointDisplayName)
      *             .state(agentEndpointState)
@@ -1237,7 +1237,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJob = GenerativeAiFunctions.getAgentDataIngestionJob(GetAgentDataIngestionJobArgs.builder()
-     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.id())
+     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1281,7 +1281,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJob = GenerativeAiFunctions.getAgentDataIngestionJob(GetAgentDataIngestionJobArgs.builder()
-     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.id())
+     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1325,7 +1325,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJob = GenerativeAiFunctions.getAgentDataIngestionJob(GetAgentDataIngestionJobArgs.builder()
-     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.id())
+     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1369,7 +1369,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJob = GenerativeAiFunctions.getAgentDataIngestionJob(GetAgentDataIngestionJobArgs.builder()
-     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.id())
+     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1413,7 +1413,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJob = GenerativeAiFunctions.getAgentDataIngestionJob(GetAgentDataIngestionJobArgs.builder()
-     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.id())
+     *             .dataIngestionJobId(testDataIngestionJobOciGenerativeAiAgentDataIngestionJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1457,7 +1457,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobLogContent = GenerativeAiFunctions.getAgentDataIngestionJobLogContent(GetAgentDataIngestionJobLogContentArgs.builder()
-     *             .dataIngestionJobId(testDataIngestionJob.id())
+     *             .dataIngestionJobId(testDataIngestionJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1501,7 +1501,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobLogContent = GenerativeAiFunctions.getAgentDataIngestionJobLogContent(GetAgentDataIngestionJobLogContentArgs.builder()
-     *             .dataIngestionJobId(testDataIngestionJob.id())
+     *             .dataIngestionJobId(testDataIngestionJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1545,7 +1545,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobLogContent = GenerativeAiFunctions.getAgentDataIngestionJobLogContent(GetAgentDataIngestionJobLogContentArgs.builder()
-     *             .dataIngestionJobId(testDataIngestionJob.id())
+     *             .dataIngestionJobId(testDataIngestionJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1589,7 +1589,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobLogContent = GenerativeAiFunctions.getAgentDataIngestionJobLogContent(GetAgentDataIngestionJobLogContentArgs.builder()
-     *             .dataIngestionJobId(testDataIngestionJob.id())
+     *             .dataIngestionJobId(testDataIngestionJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1633,7 +1633,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobLogContent = GenerativeAiFunctions.getAgentDataIngestionJobLogContent(GetAgentDataIngestionJobLogContentArgs.builder()
-     *             .dataIngestionJobId(testDataIngestionJob.id())
+     *             .dataIngestionJobId(testDataIngestionJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1678,7 +1678,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .displayName(dataIngestionJobDisplayName)
      *             .state(dataIngestionJobState)
      *             .build());
@@ -1725,7 +1725,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .displayName(dataIngestionJobDisplayName)
      *             .state(dataIngestionJobState)
      *             .build());
@@ -1772,7 +1772,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .displayName(dataIngestionJobDisplayName)
      *             .state(dataIngestionJobState)
      *             .build());
@@ -1819,7 +1819,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .displayName(dataIngestionJobDisplayName)
      *             .state(dataIngestionJobState)
      *             .build());
@@ -1866,7 +1866,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .displayName(dataIngestionJobDisplayName)
      *             .state(dataIngestionJobState)
      *             .build());
@@ -1913,7 +1913,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .displayName(dataIngestionJobDisplayName)
      *             .state(dataIngestionJobState)
      *             .build());
@@ -1960,7 +1960,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDataIngestionJobs = GenerativeAiFunctions.getAgentDataIngestionJobs(GetAgentDataIngestionJobsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .displayName(dataIngestionJobDisplayName)
      *             .state(dataIngestionJobState)
      *             .build());
@@ -2004,7 +2004,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSource = GenerativeAiFunctions.getAgentDataSource(GetAgentDataSourceArgs.builder()
-     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.id())
+     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.get("id"))
      *             .build());
      * 
      *     }
@@ -2046,7 +2046,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSource = GenerativeAiFunctions.getAgentDataSource(GetAgentDataSourceArgs.builder()
-     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.id())
+     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.get("id"))
      *             .build());
      * 
      *     }
@@ -2088,7 +2088,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSource = GenerativeAiFunctions.getAgentDataSource(GetAgentDataSourceArgs.builder()
-     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.id())
+     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.get("id"))
      *             .build());
      * 
      *     }
@@ -2130,7 +2130,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSource = GenerativeAiFunctions.getAgentDataSource(GetAgentDataSourceArgs.builder()
-     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.id())
+     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.get("id"))
      *             .build());
      * 
      *     }
@@ -2172,7 +2172,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSource = GenerativeAiFunctions.getAgentDataSource(GetAgentDataSourceArgs.builder()
-     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.id())
+     *             .dataSourceId(testDataSourceOciGenerativeAiAgentDataSource.get("id"))
      *             .build());
      * 
      *     }
@@ -2216,7 +2216,7 @@ public final class GenerativeAiFunctions {
      *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(dataSourceDisplayName)
-     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBase.get("id"))
      *             .state(dataSourceState)
      *             .build());
      * 
@@ -2261,7 +2261,7 @@ public final class GenerativeAiFunctions {
      *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(dataSourceDisplayName)
-     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBase.get("id"))
      *             .state(dataSourceState)
      *             .build());
      * 
@@ -2306,7 +2306,7 @@ public final class GenerativeAiFunctions {
      *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(dataSourceDisplayName)
-     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBase.get("id"))
      *             .state(dataSourceState)
      *             .build());
      * 
@@ -2351,7 +2351,7 @@ public final class GenerativeAiFunctions {
      *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(dataSourceDisplayName)
-     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBase.get("id"))
      *             .state(dataSourceState)
      *             .build());
      * 
@@ -2396,7 +2396,7 @@ public final class GenerativeAiFunctions {
      *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(dataSourceDisplayName)
-     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBase.get("id"))
      *             .state(dataSourceState)
      *             .build());
      * 
@@ -2441,7 +2441,7 @@ public final class GenerativeAiFunctions {
      *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(dataSourceDisplayName)
-     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBase.get("id"))
      *             .state(dataSourceState)
      *             .build());
      * 
@@ -2486,7 +2486,7 @@ public final class GenerativeAiFunctions {
      *         final var testDataSources = GenerativeAiFunctions.getAgentDataSources(GetAgentDataSourcesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(dataSourceDisplayName)
-     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBase.get("id"))
      *             .state(dataSourceState)
      *             .build());
      * 
@@ -2529,7 +2529,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBase = GenerativeAiFunctions.getAgentKnowledgeBase(GetAgentKnowledgeBaseArgs.builder()
-     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.get("id"))
      *             .build());
      * 
      *     }
@@ -2571,7 +2571,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBase = GenerativeAiFunctions.getAgentKnowledgeBase(GetAgentKnowledgeBaseArgs.builder()
-     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.get("id"))
      *             .build());
      * 
      *     }
@@ -2613,7 +2613,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBase = GenerativeAiFunctions.getAgentKnowledgeBase(GetAgentKnowledgeBaseArgs.builder()
-     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.get("id"))
      *             .build());
      * 
      *     }
@@ -2655,7 +2655,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBase = GenerativeAiFunctions.getAgentKnowledgeBase(GetAgentKnowledgeBaseArgs.builder()
-     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.get("id"))
      *             .build());
      * 
      *     }
@@ -2697,7 +2697,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBase = GenerativeAiFunctions.getAgentKnowledgeBase(GetAgentKnowledgeBaseArgs.builder()
-     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.id())
+     *             .knowledgeBaseId(testKnowledgeBaseOciGenerativeAiAgentKnowledgeBase.get("id"))
      *             .build());
      * 
      *     }
@@ -3049,7 +3049,7 @@ public final class GenerativeAiFunctions {
      *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionedCapacityDisplayName)
-     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacity.get("id"))
      *             .state(provisionedCapacityState)
      *             .build());
      * 
@@ -3094,7 +3094,7 @@ public final class GenerativeAiFunctions {
      *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionedCapacityDisplayName)
-     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacity.get("id"))
      *             .state(provisionedCapacityState)
      *             .build());
      * 
@@ -3139,7 +3139,7 @@ public final class GenerativeAiFunctions {
      *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionedCapacityDisplayName)
-     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacity.get("id"))
      *             .state(provisionedCapacityState)
      *             .build());
      * 
@@ -3184,7 +3184,7 @@ public final class GenerativeAiFunctions {
      *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionedCapacityDisplayName)
-     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacity.get("id"))
      *             .state(provisionedCapacityState)
      *             .build());
      * 
@@ -3229,7 +3229,7 @@ public final class GenerativeAiFunctions {
      *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionedCapacityDisplayName)
-     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacity.get("id"))
      *             .state(provisionedCapacityState)
      *             .build());
      * 
@@ -3274,7 +3274,7 @@ public final class GenerativeAiFunctions {
      *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionedCapacityDisplayName)
-     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacity.get("id"))
      *             .state(provisionedCapacityState)
      *             .build());
      * 
@@ -3319,7 +3319,7 @@ public final class GenerativeAiFunctions {
      *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionedCapacityDisplayName)
-     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacity.get("id"))
      *             .state(provisionedCapacityState)
      *             .build());
      * 
@@ -3362,7 +3362,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProvisionedCapacity = GenerativeAiFunctions.getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs.builder()
-     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -3404,7 +3404,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProvisionedCapacity = GenerativeAiFunctions.getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs.builder()
-     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -3446,7 +3446,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProvisionedCapacity = GenerativeAiFunctions.getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs.builder()
-     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -3488,7 +3488,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProvisionedCapacity = GenerativeAiFunctions.getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs.builder()
-     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -3530,7 +3530,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProvisionedCapacity = GenerativeAiFunctions.getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs.builder()
-     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id())
+     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -3572,7 +3572,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTool = GenerativeAiFunctions.getAgentTool(GetAgentToolArgs.builder()
-     *             .toolId(testToolOciGenerativeAiAgentTool.id())
+     *             .toolId(testToolOciGenerativeAiAgentTool.get("id"))
      *             .build());
      * 
      *     }
@@ -3614,7 +3614,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTool = GenerativeAiFunctions.getAgentTool(GetAgentToolArgs.builder()
-     *             .toolId(testToolOciGenerativeAiAgentTool.id())
+     *             .toolId(testToolOciGenerativeAiAgentTool.get("id"))
      *             .build());
      * 
      *     }
@@ -3656,7 +3656,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTool = GenerativeAiFunctions.getAgentTool(GetAgentToolArgs.builder()
-     *             .toolId(testToolOciGenerativeAiAgentTool.id())
+     *             .toolId(testToolOciGenerativeAiAgentTool.get("id"))
      *             .build());
      * 
      *     }
@@ -3698,7 +3698,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTool = GenerativeAiFunctions.getAgentTool(GetAgentToolArgs.builder()
-     *             .toolId(testToolOciGenerativeAiAgentTool.id())
+     *             .toolId(testToolOciGenerativeAiAgentTool.get("id"))
      *             .build());
      * 
      *     }
@@ -3740,7 +3740,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTool = GenerativeAiFunctions.getAgentTool(GetAgentToolArgs.builder()
-     *             .toolId(testToolOciGenerativeAiAgentTool.id())
+     *             .toolId(testToolOciGenerativeAiAgentTool.get("id"))
      *             .build());
      * 
      *     }
@@ -3782,7 +3782,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(toolDisplayName)
      *             .state(toolState)
@@ -3827,7 +3827,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(toolDisplayName)
      *             .state(toolState)
@@ -3872,7 +3872,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(toolDisplayName)
      *             .state(toolState)
@@ -3917,7 +3917,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(toolDisplayName)
      *             .state(toolState)
@@ -3962,7 +3962,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(toolDisplayName)
      *             .state(toolState)
@@ -4007,7 +4007,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(toolDisplayName)
      *             .state(toolState)
@@ -4052,7 +4052,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
-     *             .agentId(testAgent.id())
+     *             .agentId(testAgent.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(toolDisplayName)
      *             .state(toolState)
@@ -4097,7 +4097,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApikey = GenerativeAiFunctions.getApikey(GetApikeyArgs.builder()
-     *             .apiKeyId(testApiKey.id())
+     *             .apiKeyId(testApiKey.get("id"))
      *             .build());
      * 
      *     }
@@ -4139,7 +4139,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApikey = GenerativeAiFunctions.getApikey(GetApikeyArgs.builder()
-     *             .apiKeyId(testApiKey.id())
+     *             .apiKeyId(testApiKey.get("id"))
      *             .build());
      * 
      *     }
@@ -4181,7 +4181,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApikey = GenerativeAiFunctions.getApikey(GetApikeyArgs.builder()
-     *             .apiKeyId(testApiKey.id())
+     *             .apiKeyId(testApiKey.get("id"))
      *             .build());
      * 
      *     }
@@ -4223,7 +4223,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApikey = GenerativeAiFunctions.getApikey(GetApikeyArgs.builder()
-     *             .apiKeyId(testApiKey.id())
+     *             .apiKeyId(testApiKey.get("id"))
      *             .build());
      * 
      *     }
@@ -4265,7 +4265,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApikey = GenerativeAiFunctions.getApikey(GetApikeyArgs.builder()
-     *             .apiKeyId(testApiKey.id())
+     *             .apiKeyId(testApiKey.get("id"))
      *             .build());
      * 
      *     }
@@ -4532,7 +4532,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiCluster = GenerativeAiFunctions.getDedicatedAiCluster(GetDedicatedAiClusterArgs.builder()
-     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id())
+     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -4574,7 +4574,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiCluster = GenerativeAiFunctions.getDedicatedAiCluster(GetDedicatedAiClusterArgs.builder()
-     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id())
+     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -4616,7 +4616,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiCluster = GenerativeAiFunctions.getDedicatedAiCluster(GetDedicatedAiClusterArgs.builder()
-     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id())
+     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -4658,7 +4658,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiCluster = GenerativeAiFunctions.getDedicatedAiCluster(GetDedicatedAiClusterArgs.builder()
-     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id())
+     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -4700,7 +4700,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiCluster = GenerativeAiFunctions.getDedicatedAiCluster(GetDedicatedAiClusterArgs.builder()
-     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id())
+     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -4967,7 +4967,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = GenerativeAiFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(testEndpointOciGenerativeAiEndpoint.id())
+     *             .endpointId(testEndpointOciGenerativeAiEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -5009,7 +5009,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = GenerativeAiFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(testEndpointOciGenerativeAiEndpoint.id())
+     *             .endpointId(testEndpointOciGenerativeAiEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -5051,7 +5051,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = GenerativeAiFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(testEndpointOciGenerativeAiEndpoint.id())
+     *             .endpointId(testEndpointOciGenerativeAiEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -5093,7 +5093,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = GenerativeAiFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(testEndpointOciGenerativeAiEndpoint.id())
+     *             .endpointId(testEndpointOciGenerativeAiEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -5135,7 +5135,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = GenerativeAiFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(testEndpointOciGenerativeAiEndpoint.id())
+     *             .endpointId(testEndpointOciGenerativeAiEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -5179,7 +5179,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
-     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -5225,7 +5225,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
-     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -5271,7 +5271,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
-     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -5317,7 +5317,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
-     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -5363,7 +5363,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
-     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -5407,7 +5407,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenerativeAiPrivateEndpoint = GenerativeAiFunctions.getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs.builder()
-     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -5449,7 +5449,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenerativeAiPrivateEndpoint = GenerativeAiFunctions.getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs.builder()
-     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -5491,7 +5491,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenerativeAiPrivateEndpoint = GenerativeAiFunctions.getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs.builder()
-     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -5533,7 +5533,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenerativeAiPrivateEndpoint = GenerativeAiFunctions.getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs.builder()
-     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -5575,7 +5575,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenerativeAiPrivateEndpoint = GenerativeAiFunctions.getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs.builder()
-     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -5847,7 +5847,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplication = GenerativeAiFunctions.getHostedApplication(GetHostedApplicationArgs.builder()
-     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.id())
+     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -5889,7 +5889,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplication = GenerativeAiFunctions.getHostedApplication(GetHostedApplicationArgs.builder()
-     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.id())
+     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -5931,7 +5931,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplication = GenerativeAiFunctions.getHostedApplication(GetHostedApplicationArgs.builder()
-     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.id())
+     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -5973,7 +5973,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplication = GenerativeAiFunctions.getHostedApplication(GetHostedApplicationArgs.builder()
-     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.id())
+     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -6015,7 +6015,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplication = GenerativeAiFunctions.getHostedApplication(GetHostedApplicationArgs.builder()
-     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.id())
+     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -6057,7 +6057,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplicationIam = GenerativeAiFunctions.getHostedApplicationIam(GetHostedApplicationIamArgs.builder()
-     *             .hostedApplicationIamId(testHostedApplicationIamOciGenerativeAiHostedApplicationIam.id())
+     *             .hostedApplicationIamId(testHostedApplicationIamOciGenerativeAiHostedApplicationIam.get("id"))
      *             .build());
      * 
      *     }
@@ -6099,7 +6099,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplicationIam = GenerativeAiFunctions.getHostedApplicationIam(GetHostedApplicationIamArgs.builder()
-     *             .hostedApplicationIamId(testHostedApplicationIamOciGenerativeAiHostedApplicationIam.id())
+     *             .hostedApplicationIamId(testHostedApplicationIamOciGenerativeAiHostedApplicationIam.get("id"))
      *             .build());
      * 
      *     }
@@ -6141,7 +6141,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplicationIam = GenerativeAiFunctions.getHostedApplicationIam(GetHostedApplicationIamArgs.builder()
-     *             .hostedApplicationIamId(testHostedApplicationIamOciGenerativeAiHostedApplicationIam.id())
+     *             .hostedApplicationIamId(testHostedApplicationIamOciGenerativeAiHostedApplicationIam.get("id"))
      *             .build());
      * 
      *     }
@@ -6183,7 +6183,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplicationIam = GenerativeAiFunctions.getHostedApplicationIam(GetHostedApplicationIamArgs.builder()
-     *             .hostedApplicationIamId(testHostedApplicationIamOciGenerativeAiHostedApplicationIam.id())
+     *             .hostedApplicationIamId(testHostedApplicationIamOciGenerativeAiHostedApplicationIam.get("id"))
      *             .build());
      * 
      *     }
@@ -6225,7 +6225,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplicationIam = GenerativeAiFunctions.getHostedApplicationIam(GetHostedApplicationIamArgs.builder()
-     *             .hostedApplicationIamId(testHostedApplicationIamOciGenerativeAiHostedApplicationIam.id())
+     *             .hostedApplicationIamId(testHostedApplicationIamOciGenerativeAiHostedApplicationIam.get("id"))
      *             .build());
      * 
      *     }
@@ -6492,7 +6492,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplicationStorage = GenerativeAiFunctions.getHostedApplicationStorage(GetHostedApplicationStorageArgs.builder()
-     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.id())
+     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.get("id"))
      *             .build());
      * 
      *     }
@@ -6534,7 +6534,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplicationStorage = GenerativeAiFunctions.getHostedApplicationStorage(GetHostedApplicationStorageArgs.builder()
-     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.id())
+     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.get("id"))
      *             .build());
      * 
      *     }
@@ -6576,7 +6576,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplicationStorage = GenerativeAiFunctions.getHostedApplicationStorage(GetHostedApplicationStorageArgs.builder()
-     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.id())
+     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.get("id"))
      *             .build());
      * 
      *     }
@@ -6618,7 +6618,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplicationStorage = GenerativeAiFunctions.getHostedApplicationStorage(GetHostedApplicationStorageArgs.builder()
-     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.id())
+     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.get("id"))
      *             .build());
      * 
      *     }
@@ -6660,7 +6660,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedApplicationStorage = GenerativeAiFunctions.getHostedApplicationStorage(GetHostedApplicationStorageArgs.builder()
-     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.id())
+     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.get("id"))
      *             .build());
      * 
      *     }
@@ -7157,7 +7157,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedDeployment = GenerativeAiFunctions.getHostedDeployment(GetHostedDeploymentArgs.builder()
-     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.id())
+     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -7199,7 +7199,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedDeployment = GenerativeAiFunctions.getHostedDeployment(GetHostedDeploymentArgs.builder()
-     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.id())
+     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -7241,7 +7241,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedDeployment = GenerativeAiFunctions.getHostedDeployment(GetHostedDeploymentArgs.builder()
-     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.id())
+     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -7283,7 +7283,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedDeployment = GenerativeAiFunctions.getHostedDeployment(GetHostedDeploymentArgs.builder()
-     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.id())
+     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -7325,7 +7325,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostedDeployment = GenerativeAiFunctions.getHostedDeployment(GetHostedDeploymentArgs.builder()
-     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.id())
+     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -7368,7 +7368,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testHostedDeployments = GenerativeAiFunctions.getHostedDeployments(GetHostedDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .displayName(hostedDeploymentDisplayName)
      *             .id(hostedDeploymentId)
      *             .state(hostedDeploymentState)
@@ -7414,7 +7414,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testHostedDeployments = GenerativeAiFunctions.getHostedDeployments(GetHostedDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .displayName(hostedDeploymentDisplayName)
      *             .id(hostedDeploymentId)
      *             .state(hostedDeploymentState)
@@ -7460,7 +7460,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testHostedDeployments = GenerativeAiFunctions.getHostedDeployments(GetHostedDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .displayName(hostedDeploymentDisplayName)
      *             .id(hostedDeploymentId)
      *             .state(hostedDeploymentState)
@@ -7506,7 +7506,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testHostedDeployments = GenerativeAiFunctions.getHostedDeployments(GetHostedDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .displayName(hostedDeploymentDisplayName)
      *             .id(hostedDeploymentId)
      *             .state(hostedDeploymentState)
@@ -7552,7 +7552,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testHostedDeployments = GenerativeAiFunctions.getHostedDeployments(GetHostedDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .displayName(hostedDeploymentDisplayName)
      *             .id(hostedDeploymentId)
      *             .state(hostedDeploymentState)
@@ -7597,7 +7597,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImportedModel = GenerativeAiFunctions.getImportedModel(GetImportedModelArgs.builder()
-     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.id())
+     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.get("id"))
      *             .build());
      * 
      *     }
@@ -7639,7 +7639,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImportedModel = GenerativeAiFunctions.getImportedModel(GetImportedModelArgs.builder()
-     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.id())
+     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.get("id"))
      *             .build());
      * 
      *     }
@@ -7681,7 +7681,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImportedModel = GenerativeAiFunctions.getImportedModel(GetImportedModelArgs.builder()
-     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.id())
+     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.get("id"))
      *             .build());
      * 
      *     }
@@ -7723,7 +7723,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImportedModel = GenerativeAiFunctions.getImportedModel(GetImportedModelArgs.builder()
-     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.id())
+     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.get("id"))
      *             .build());
      * 
      *     }
@@ -7765,7 +7765,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImportedModel = GenerativeAiFunctions.getImportedModel(GetImportedModelArgs.builder()
-     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.id())
+     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.get("id"))
      *             .build());
      * 
      *     }
@@ -8042,7 +8042,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = GenerativeAiFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciGenerativeAiModel.id())
+     *             .modelId(testModelOciGenerativeAiModel.get("id"))
      *             .build());
      * 
      *     }
@@ -8084,7 +8084,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = GenerativeAiFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciGenerativeAiModel.id())
+     *             .modelId(testModelOciGenerativeAiModel.get("id"))
      *             .build());
      * 
      *     }
@@ -8126,7 +8126,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = GenerativeAiFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciGenerativeAiModel.id())
+     *             .modelId(testModelOciGenerativeAiModel.get("id"))
      *             .build());
      * 
      *     }
@@ -8168,7 +8168,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = GenerativeAiFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciGenerativeAiModel.id())
+     *             .modelId(testModelOciGenerativeAiModel.get("id"))
      *             .build());
      * 
      *     }
@@ -8210,7 +8210,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = GenerativeAiFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciGenerativeAiModel.id())
+     *             .modelId(testModelOciGenerativeAiModel.get("id"))
      *             .build());
      * 
      *     }
@@ -8260,7 +8260,7 @@ public final class GenerativeAiFunctions {
      *             .isDeprecated(modelDiscoveryIsDeprecated)
      *             .isOnDemandRetired(modelDiscoveryIsOnDemandRetired)
      *             .modelAccesses(modelDiscoveryModelAccess)
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .realms(modelDiscoveryRealm)
      *             .regions(modelDiscoveryRegion)
      *             .servingModes(modelDiscoveryServingMode)
@@ -8313,7 +8313,7 @@ public final class GenerativeAiFunctions {
      *             .isDeprecated(modelDiscoveryIsDeprecated)
      *             .isOnDemandRetired(modelDiscoveryIsOnDemandRetired)
      *             .modelAccesses(modelDiscoveryModelAccess)
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .realms(modelDiscoveryRealm)
      *             .regions(modelDiscoveryRegion)
      *             .servingModes(modelDiscoveryServingMode)
@@ -8366,7 +8366,7 @@ public final class GenerativeAiFunctions {
      *             .isDeprecated(modelDiscoveryIsDeprecated)
      *             .isOnDemandRetired(modelDiscoveryIsOnDemandRetired)
      *             .modelAccesses(modelDiscoveryModelAccess)
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .realms(modelDiscoveryRealm)
      *             .regions(modelDiscoveryRegion)
      *             .servingModes(modelDiscoveryServingMode)
@@ -8419,7 +8419,7 @@ public final class GenerativeAiFunctions {
      *             .isDeprecated(modelDiscoveryIsDeprecated)
      *             .isOnDemandRetired(modelDiscoveryIsOnDemandRetired)
      *             .modelAccesses(modelDiscoveryModelAccess)
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .realms(modelDiscoveryRealm)
      *             .regions(modelDiscoveryRegion)
      *             .servingModes(modelDiscoveryServingMode)
@@ -8472,7 +8472,7 @@ public final class GenerativeAiFunctions {
      *             .isDeprecated(modelDiscoveryIsDeprecated)
      *             .isOnDemandRetired(modelDiscoveryIsOnDemandRetired)
      *             .modelAccesses(modelDiscoveryModelAccess)
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .realms(modelDiscoveryRealm)
      *             .regions(modelDiscoveryRegion)
      *             .servingModes(modelDiscoveryServingMode)
@@ -8752,7 +8752,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = GenerativeAiFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciGenerativeAiProject.id())
+     *             .projectId(testProjectOciGenerativeAiProject.get("id"))
      *             .build());
      * 
      *     }
@@ -8794,7 +8794,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = GenerativeAiFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciGenerativeAiProject.id())
+     *             .projectId(testProjectOciGenerativeAiProject.get("id"))
      *             .build());
      * 
      *     }
@@ -8836,7 +8836,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = GenerativeAiFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciGenerativeAiProject.id())
+     *             .projectId(testProjectOciGenerativeAiProject.get("id"))
      *             .build());
      * 
      *     }
@@ -8878,7 +8878,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = GenerativeAiFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciGenerativeAiProject.id())
+     *             .projectId(testProjectOciGenerativeAiProject.get("id"))
      *             .build());
      * 
      *     }
@@ -8920,7 +8920,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = GenerativeAiFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciGenerativeAiProject.id())
+     *             .projectId(testProjectOciGenerativeAiProject.get("id"))
      *             .build());
      * 
      *     }
@@ -9187,7 +9187,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRoutingProfile = GenerativeAiFunctions.getRoutingProfile(GetRoutingProfileArgs.builder()
-     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.id())
+     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -9229,7 +9229,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRoutingProfile = GenerativeAiFunctions.getRoutingProfile(GetRoutingProfileArgs.builder()
-     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.id())
+     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -9271,7 +9271,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRoutingProfile = GenerativeAiFunctions.getRoutingProfile(GetRoutingProfileArgs.builder()
-     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.id())
+     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -9313,7 +9313,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRoutingProfile = GenerativeAiFunctions.getRoutingProfile(GetRoutingProfileArgs.builder()
-     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.id())
+     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -9355,7 +9355,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRoutingProfile = GenerativeAiFunctions.getRoutingProfile(GetRoutingProfileArgs.builder()
-     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.id())
+     *             .routingProfileId(testRoutingProfileOciGenerativeAiRoutingProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -9622,7 +9622,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSemanticStore = GenerativeAiFunctions.getSemanticStore(GetSemanticStoreArgs.builder()
-     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.id())
+     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.get("id"))
      *             .build());
      * 
      *     }
@@ -9664,7 +9664,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSemanticStore = GenerativeAiFunctions.getSemanticStore(GetSemanticStoreArgs.builder()
-     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.id())
+     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.get("id"))
      *             .build());
      * 
      *     }
@@ -9706,7 +9706,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSemanticStore = GenerativeAiFunctions.getSemanticStore(GetSemanticStoreArgs.builder()
-     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.id())
+     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.get("id"))
      *             .build());
      * 
      *     }
@@ -9748,7 +9748,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSemanticStore = GenerativeAiFunctions.getSemanticStore(GetSemanticStoreArgs.builder()
-     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.id())
+     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.get("id"))
      *             .build());
      * 
      *     }
@@ -9790,7 +9790,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSemanticStore = GenerativeAiFunctions.getSemanticStore(GetSemanticStoreArgs.builder()
-     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.id())
+     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.get("id"))
      *             .build());
      * 
      *     }
@@ -9833,7 +9833,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .dataSourceQueryingConnectionId(testConnection.get("id"))
      *             .displayName(semanticStoreDisplayName)
      *             .id(semanticStoreId)
      *             .states(semanticStoreState)
@@ -9879,7 +9879,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .dataSourceQueryingConnectionId(testConnection.get("id"))
      *             .displayName(semanticStoreDisplayName)
      *             .id(semanticStoreId)
      *             .states(semanticStoreState)
@@ -9925,7 +9925,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .dataSourceQueryingConnectionId(testConnection.get("id"))
      *             .displayName(semanticStoreDisplayName)
      *             .id(semanticStoreId)
      *             .states(semanticStoreState)
@@ -9971,7 +9971,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .dataSourceQueryingConnectionId(testConnection.get("id"))
      *             .displayName(semanticStoreDisplayName)
      *             .id(semanticStoreId)
      *             .states(semanticStoreState)
@@ -10017,7 +10017,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .dataSourceQueryingConnectionId(testConnection.get("id"))
      *             .displayName(semanticStoreDisplayName)
      *             .id(semanticStoreId)
      *             .states(semanticStoreState)
@@ -10063,7 +10063,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .dataSourceQueryingConnectionId(testConnection.get("id"))
      *             .displayName(semanticStoreDisplayName)
      *             .id(semanticStoreId)
      *             .states(semanticStoreState)
@@ -10109,7 +10109,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .dataSourceQueryingConnectionId(testConnection.get("id"))
      *             .displayName(semanticStoreDisplayName)
      *             .id(semanticStoreId)
      *             .states(semanticStoreState)

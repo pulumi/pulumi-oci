@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: autonomousContainerDatabaseBackupDisplayName,
  *     infrastructureType: autonomousContainerDatabaseBackupInfrastructureType,
- *     isRemote: autonomousContainerDatabaseBackupIsRemote === "true",
+ *     isRemote: autonomousContainerDatabaseBackupIsRemote,
  *     state: autonomousContainerDatabaseBackupState,
  * });
  * ```
@@ -126,7 +126,7 @@ export interface GetAutonomousContainerDatabaseBackupsResult {
  *     compartmentId: compartmentId,
  *     displayName: autonomousContainerDatabaseBackupDisplayName,
  *     infrastructureType: autonomousContainerDatabaseBackupInfrastructureType,
- *     isRemote: autonomousContainerDatabaseBackupIsRemote === "true",
+ *     isRemote: autonomousContainerDatabaseBackupIsRemote,
  *     state: autonomousContainerDatabaseBackupState,
  * });
  * ```

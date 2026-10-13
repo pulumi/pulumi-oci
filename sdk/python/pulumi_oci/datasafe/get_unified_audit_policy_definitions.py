@@ -202,9 +202,9 @@ def get_unified_audit_policy_definitions(access_level: Optional[_builtins.str] =
 
     test_unified_audit_policy_definitions = oci.datasafe.get_unified_audit_policy_definitions(compartment_id=compartment_id,
         access_level=unified_audit_policy_definition_access_level,
-        compartment_id_in_subtree=unified_audit_policy_definition_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=unified_audit_policy_definition_compartment_id_in_subtree,
         display_name=unified_audit_policy_definition_display_name,
-        is_seeded=unified_audit_policy_definition_is_seeded == "true",
+        is_seeded=unified_audit_policy_definition_is_seeded,
         state=unified_audit_policy_definition_state,
         unified_audit_policy_category=unified_audit_policy_definition_unified_audit_policy_category,
         unified_audit_policy_definition_id=test_unified_audit_policy_definition["id"],
@@ -286,9 +286,9 @@ def get_unified_audit_policy_definitions_output(access_level: pulumi.Input[Optio
 
     test_unified_audit_policy_definitions = oci.datasafe.get_unified_audit_policy_definitions(compartment_id=compartment_id,
         access_level=unified_audit_policy_definition_access_level,
-        compartment_id_in_subtree=unified_audit_policy_definition_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=unified_audit_policy_definition_compartment_id_in_subtree,
         display_name=unified_audit_policy_definition_display_name,
-        is_seeded=unified_audit_policy_definition_is_seeded == "true",
+        is_seeded=unified_audit_policy_definition_is_seeded,
         state=unified_audit_policy_definition_state,
         unified_audit_policy_category=unified_audit_policy_definition_unified_audit_policy_category,
         unified_audit_policy_definition_id=test_unified_audit_policy_definition["id"],

@@ -51,17 +51,17 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testProvision = new Provision("testProvision", ProvisionArgs.builder()
  *             .compartmentId(compartmentId)
- *             .configCatalogItemId(testCatalogItem.id())
- *             .fleetId(testFleet.id())
- *             .packageCatalogItemId(testCatalogItem.id())
- *             .tfVariableRegionId(testRegion.id())
- *             .tfVariableTenancyId(testTenancy.id())
+ *             .configCatalogItemId(testCatalogItem.get("id"))
+ *             .fleetId(testFleet.get("id"))
+ *             .packageCatalogItemId(testCatalogItem.get("id"))
+ *             .tfVariableRegionId(testRegion.get("id"))
+ *             .tfVariableTenancyId(testTenancy.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(provisionDisplayName)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .provisionDescription(provisionProvisionDescription)
- *             .tfVariableCompartmentId(testCompartment.id())
- *             .tfVariableCurrentUserId(testUser.id())
+ *             .tfVariableCompartmentId(testCompartment.get("id"))
+ *             .tfVariableCurrentUserId(testUser.get("id"))
  *             .build());
  * 
  *     }

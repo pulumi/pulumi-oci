@@ -53,8 +53,8 @@ import javax.annotation.Nullable;
  *         var testMonitoredResourcesAssociateMonitoredResource = new MonitoredResourcesAssociateMonitoredResource("testMonitoredResourcesAssociateMonitoredResource", MonitoredResourcesAssociateMonitoredResourceArgs.builder()
  *             .associationType(monitoredResourcesAssociateMonitoredResourceAssociationType)
  *             .compartmentId(compartmentId)
- *             .destinationResourceId(testDestinationResource.id())
- *             .sourceResourceId(testSourceResource.id())
+ *             .destinationResourceId(testDestinationResource.get("id"))
+ *             .sourceResourceId(testSourceResource.get("id"))
  *             .build());
  * 
  *     }

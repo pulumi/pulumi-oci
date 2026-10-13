@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyApplicationGroup = new NetworkFirewallPolicyApplicationGroup("testNetworkFirewallPolicyApplicationGroup", NetworkFirewallPolicyApplicationGroupArgs.builder()
  *             .name(networkFirewallPolicyApplicationGroupName)
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
  *             .apps(networkFirewallPolicyApplicationGroupApps)
  *             .description(networkFirewallPolicyApplicationGroupDescription)
  *             .build());

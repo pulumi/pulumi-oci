@@ -165,7 +165,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
         test_namespace_ingest_time_rules_management = oci.loganalytics.NamespaceIngestTimeRulesManagement("test_namespace_ingest_time_rules_management",
             ingest_time_rule_id=test_rule["id"],
             namespace=namespace_ingest_time_rules_management_namespace,
-            enable_ingest_time_rule=enable_ingest_time_rule == "true")
+            enable_ingest_time_rule=enable_ingest_time_rule)
         ```
 
 
@@ -200,7 +200,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
         test_namespace_ingest_time_rules_management = oci.loganalytics.NamespaceIngestTimeRulesManagement("test_namespace_ingest_time_rules_management",
             ingest_time_rule_id=test_rule["id"],
             namespace=namespace_ingest_time_rules_management_namespace,
-            enable_ingest_time_rule=enable_ingest_time_rule == "true")
+            enable_ingest_time_rule=enable_ingest_time_rule)
         ```
 
 

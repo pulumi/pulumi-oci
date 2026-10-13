@@ -134,7 +134,7 @@ def get_security_assessment_security_feature_analytics(access_level: Optional[_b
 
     test_security_assessment_security_feature_analytics = oci.datasafe.get_security_assessment_security_feature_analytics(compartment_id=compartment_id,
         access_level=security_assessment_security_feature_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_security_feature_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_assessment_security_feature_analytic_compartment_id_in_subtree,
         target_id=test_target["id"])
     ```
 
@@ -187,7 +187,7 @@ def get_security_assessment_security_feature_analytics_output(access_level: pulu
 
     test_security_assessment_security_feature_analytics = oci.datasafe.get_security_assessment_security_feature_analytics(compartment_id=compartment_id,
         access_level=security_assessment_security_feature_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_security_feature_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_assessment_security_feature_analytic_compartment_id_in_subtree,
         target_id=test_target["id"])
     ```
 

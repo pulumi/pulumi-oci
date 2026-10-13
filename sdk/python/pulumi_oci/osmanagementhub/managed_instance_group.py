@@ -629,7 +629,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             os_family=managed_instance_group_os_family,
             vendor_name=managed_instance_group_vendor_name,
             autonomous_settings={
-                "is_data_collection_authorized": managed_instance_group_autonomous_settings_is_data_collection_authorized == "true",
+                "is_data_collection_authorized": managed_instance_group_autonomous_settings_is_data_collection_authorized,
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -699,7 +699,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             os_family=managed_instance_group_os_family,
             vendor_name=managed_instance_group_vendor_name,
             autonomous_settings={
-                "is_data_collection_authorized": managed_instance_group_autonomous_settings_is_data_collection_authorized == "true",
+                "is_data_collection_authorized": managed_instance_group_autonomous_settings_is_data_collection_authorized,
             },
             defined_tags={
                 "Operations.CostCenter": "42",

@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *         var testNamespaceIngestTimeRule = new NamespaceIngestTimeRule("testNamespaceIngestTimeRule", NamespaceIngestTimeRuleArgs.builder()
  *             .actions(NamespaceIngestTimeRuleActionArgs.builder()
  *                 .compartmentId(compartmentId)
- *                 .metricName(testMetric.name())
+ *                 .metricName(testMetric.get("name"))
  *                 .namespace(namespaceIngestTimeRuleActionsNamespace)
  *                 .type(namespaceIngestTimeRuleActionsType)
  *                 .dimensions(namespaceIngestTimeRuleActionsDimensions)

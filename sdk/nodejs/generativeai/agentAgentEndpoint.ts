@@ -24,8 +24,8 @@ import * as utilities from "../utilities";
  *     agentId: testAgent.id,
  *     compartmentId: compartmentId,
  *     contentModerationConfig: {
- *         shouldEnableOnInput: agentEndpointContentModerationConfigShouldEnableOnInput === "true",
- *         shouldEnableOnOutput: agentEndpointContentModerationConfigShouldEnableOnOutput === "true",
+ *         shouldEnableOnInput: agentEndpointContentModerationConfigShouldEnableOnInput,
+ *         shouldEnableOnOutput: agentEndpointContentModerationConfigShouldEnableOnOutput,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -49,7 +49,7 @@ import * as utilities from "../utilities";
  *         },
  *     },
  *     humanInputConfig: {
- *         shouldEnableHumanInput: agentEndpointHumanInputConfigShouldEnableHumanInput === "true",
+ *         shouldEnableHumanInput: agentEndpointHumanInputConfigShouldEnableHumanInput,
  *     },
  *     metadata: agentEndpointMetadata,
  *     outputConfig: {
@@ -59,7 +59,7 @@ import * as utilities from "../utilities";
  *             outputLocationType: agentEndpointOutputConfigOutputLocationOutputLocationType,
  *             prefix: agentEndpointOutputConfigOutputLocationPrefix,
  *         },
- *         retentionPeriodInMinutes: Number(agentEndpointOutputConfigRetentionPeriodInMinutes),
+ *         retentionPeriodInMinutes: agentEndpointOutputConfigRetentionPeriodInMinutes,
  *     },
  *     provisionedCapacityConfig: {
  *         provisionedCapacityId: testProvisionedCapacity.id,
@@ -73,12 +73,12 @@ import * as utilities from "../utilities";
  *         }],
  *     },
  *     sessionConfig: {
- *         idleTimeoutInSeconds: Number(agentEndpointSessionConfigIdleTimeoutInSeconds),
+ *         idleTimeoutInSeconds: agentEndpointSessionConfigIdleTimeoutInSeconds,
  *     },
- *     shouldEnableCitation: agentEndpointShouldEnableCitation === "true",
- *     shouldEnableMultiLanguage: agentEndpointShouldEnableMultiLanguage === "true",
- *     shouldEnableSession: agentEndpointShouldEnableSession === "true",
- *     shouldEnableTrace: agentEndpointShouldEnableTrace === "true",
+ *     shouldEnableCitation: agentEndpointShouldEnableCitation,
+ *     shouldEnableMultiLanguage: agentEndpointShouldEnableMultiLanguage,
+ *     shouldEnableSession: agentEndpointShouldEnableSession,
+ *     shouldEnableTrace: agentEndpointShouldEnableTrace,
  * });
  * ```
  *

@@ -26,13 +26,13 @@ import * as utilities from "../utilities";
  *     type: databaseToolsDatabaseApiGatewayConfigPoolType,
  *     advancedProperties: databaseToolsDatabaseApiGatewayConfigPoolAdvancedProperties,
  *     databaseActionsStatus: databaseToolsDatabaseApiGatewayConfigPoolDatabaseActionsStatus,
- *     initialPoolSize: Number(databaseToolsDatabaseApiGatewayConfigPoolInitialPoolSize),
+ *     initialPoolSize: databaseToolsDatabaseApiGatewayConfigPoolInitialPoolSize,
  *     jwtProfileAudience: databaseToolsDatabaseApiGatewayConfigPoolJwtProfileAudience,
  *     jwtProfileIssuer: databaseToolsDatabaseApiGatewayConfigPoolJwtProfileIssuer,
  *     jwtProfileJwkUrl: databaseToolsDatabaseApiGatewayConfigPoolJwtProfileJwkUrl,
  *     jwtProfileRoleClaimName: databaseToolsDatabaseApiGatewayConfigPoolJwtProfileRoleClaimName,
- *     maxPoolSize: Number(databaseToolsDatabaseApiGatewayConfigPoolMaxPoolSize),
- *     minPoolSize: Number(databaseToolsDatabaseApiGatewayConfigPoolMinPoolSize),
+ *     maxPoolSize: databaseToolsDatabaseApiGatewayConfigPoolMaxPoolSize,
+ *     minPoolSize: databaseToolsDatabaseApiGatewayConfigPoolMinPoolSize,
  *     restEnabledSqlStatus: databaseToolsDatabaseApiGatewayConfigPoolRestEnabledSqlStatus,
  * });
  * ```

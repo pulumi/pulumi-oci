@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *             .displayName(gdpPipelineDisplayName)
  *             .peeringRegion(gdpPipelinePeeringRegion)
  *             .pipelineType(gdpPipelinePipelineType)
- *             .approvalKeyVaultId(testVault.id())
+ *             .approvalKeyVaultId(testVault.get("id"))
  *             .authorizationDetails(gdpPipelineAuthorizationDetails)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(gdpPipelineDescription)
@@ -73,7 +73,7 @@ import javax.annotation.Nullable;
  *             .isChunkingEnabled(gdpPipelineIsChunkingEnabled)
  *             .isFileOverrideInDestinationEnabled(gdpPipelineIsFileOverrideInDestinationEnabled)
  *             .isScanningEnabled(gdpPipelineIsScanningEnabled)
- *             .serviceLogGroupId(testLogGroup.id())
+ *             .serviceLogGroupId(testLogGroup.get("id"))
  *             .build());
  * 
  *     }

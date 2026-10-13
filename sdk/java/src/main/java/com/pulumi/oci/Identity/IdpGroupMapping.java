@@ -49,8 +49,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testIdpGroupMapping = new IdpGroupMapping("testIdpGroupMapping", IdpGroupMappingArgs.builder()
- *             .groupId(testGroup.id())
- *             .identityProviderId(testIdentityProvider.id())
+ *             .groupId(testGroup.get("id"))
+ *             .identityProviderId(testIdentityProvider.get("id"))
  *             .idpGroupName(idpGroupMappingIdpGroupName)
  *             .build());
  * 

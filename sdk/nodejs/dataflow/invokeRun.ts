@@ -52,7 +52,7 @@ import * as utilities from "../utilities";
  *     logsBucketUri: invokeRunLogsBucketUri,
  *     maxDurationInMinutes: invokeRunMaxDurationInMinutes,
  *     metastoreId: metastoreId,
- *     numExecutors: Number(invokeRunNumExecutors),
+ *     numExecutors: invokeRunNumExecutors,
  *     opcParentRptUrl: invokeRunOpcParentRptUrl,
  *     parameters: [{
  *         name: invokeRunParametersName,

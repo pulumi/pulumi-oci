@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *             .imageType(databaseSoftwareImageImageType)
  *             .lsInventory(databaseSoftwareImageLsInventory)
  *             .patchSet(databaseSoftwareImagePatchSet)
- *             .sourceDbHomeId(testDbHome.id())
+ *             .sourceDbHomeId(testDbHome.get("id"))
  *             .build());
  * 
  *     }

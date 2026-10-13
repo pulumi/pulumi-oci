@@ -608,7 +608,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
-     *             .alertId(testAlertOciDataSafeAlert.id())
+     *             .alertId(testAlertOciDataSafeAlert.get("id"))
      *             .build());
      * 
      *     }
@@ -650,7 +650,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
-     *             .alertId(testAlertOciDataSafeAlert.id())
+     *             .alertId(testAlertOciDataSafeAlert.get("id"))
      *             .build());
      * 
      *     }
@@ -692,7 +692,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
-     *             .alertId(testAlertOciDataSafeAlert.id())
+     *             .alertId(testAlertOciDataSafeAlert.get("id"))
      *             .build());
      * 
      *     }
@@ -734,7 +734,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
-     *             .alertId(testAlertOciDataSafeAlert.id())
+     *             .alertId(testAlertOciDataSafeAlert.get("id"))
      *             .build());
      * 
      *     }
@@ -776,7 +776,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
-     *             .alertId(testAlertOciDataSafeAlert.id())
+     *             .alertId(testAlertOciDataSafeAlert.get("id"))
      *             .build());
      * 
      *     }
@@ -1070,7 +1070,7 @@ public final class DataSafeFunctions {
      *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(alertPolicyAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .compartmentIdInSubtree(alertPolicyCompartmentIdInSubtree)
      *             .displayName(alertPolicyDisplayName)
      *             .isUserDefined(alertPolicyIsUserDefined)
@@ -1121,7 +1121,7 @@ public final class DataSafeFunctions {
      *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(alertPolicyAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .compartmentIdInSubtree(alertPolicyCompartmentIdInSubtree)
      *             .displayName(alertPolicyDisplayName)
      *             .isUserDefined(alertPolicyIsUserDefined)
@@ -1172,7 +1172,7 @@ public final class DataSafeFunctions {
      *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(alertPolicyAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .compartmentIdInSubtree(alertPolicyCompartmentIdInSubtree)
      *             .displayName(alertPolicyDisplayName)
      *             .isUserDefined(alertPolicyIsUserDefined)
@@ -1223,7 +1223,7 @@ public final class DataSafeFunctions {
      *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(alertPolicyAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .compartmentIdInSubtree(alertPolicyCompartmentIdInSubtree)
      *             .displayName(alertPolicyDisplayName)
      *             .isUserDefined(alertPolicyIsUserDefined)
@@ -1274,7 +1274,7 @@ public final class DataSafeFunctions {
      *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(alertPolicyAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .compartmentIdInSubtree(alertPolicyCompartmentIdInSubtree)
      *             .displayName(alertPolicyDisplayName)
      *             .isUserDefined(alertPolicyIsUserDefined)
@@ -1323,7 +1323,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
-     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1365,7 +1365,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
-     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1407,7 +1407,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
-     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1449,7 +1449,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
-     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1491,7 +1491,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
-     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1533,7 +1533,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .ruleKey(alertPolicyRuleRuleKey)
      *             .build());
      * 
@@ -1576,7 +1576,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .ruleKey(alertPolicyRuleRuleKey)
      *             .build());
      * 
@@ -1619,7 +1619,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .ruleKey(alertPolicyRuleRuleKey)
      *             .build());
      * 
@@ -1662,7 +1662,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .ruleKey(alertPolicyRuleRuleKey)
      *             .build());
      * 
@@ -1705,7 +1705,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .ruleKey(alertPolicyRuleRuleKey)
      *             .build());
      * 
@@ -1749,7 +1749,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1792,7 +1792,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1835,7 +1835,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1878,7 +1878,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1921,7 +1921,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2198,7 +2198,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeSet = DataSafeFunctions.getAttributeSet(GetAttributeSetArgs.builder()
-     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.id())
+     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.get("id"))
      *             .build());
      * 
      *     }
@@ -2240,7 +2240,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeSet = DataSafeFunctions.getAttributeSet(GetAttributeSetArgs.builder()
-     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.id())
+     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.get("id"))
      *             .build());
      * 
      *     }
@@ -2282,7 +2282,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeSet = DataSafeFunctions.getAttributeSet(GetAttributeSetArgs.builder()
-     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.id())
+     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.get("id"))
      *             .build());
      * 
      *     }
@@ -2324,7 +2324,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeSet = DataSafeFunctions.getAttributeSet(GetAttributeSetArgs.builder()
-     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.id())
+     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.get("id"))
      *             .build());
      * 
      *     }
@@ -2366,7 +2366,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeSet = DataSafeFunctions.getAttributeSet(GetAttributeSetArgs.builder()
-     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.id())
+     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.get("id"))
      *             .build());
      * 
      *     }
@@ -2408,8 +2408,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeSetAssociatedResources = DataSafeFunctions.getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs.builder()
-     *             .attributeSetId(testAttributeSet.id())
-     *             .associatedResourceId(testResource.id())
+     *             .attributeSetId(testAttributeSet.get("id"))
+     *             .associatedResourceId(testResource.get("id"))
      *             .associatedResourceType(attributeSetAssociatedResourceAssociatedResourceType)
      *             .build());
      * 
@@ -2452,8 +2452,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeSetAssociatedResources = DataSafeFunctions.getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs.builder()
-     *             .attributeSetId(testAttributeSet.id())
-     *             .associatedResourceId(testResource.id())
+     *             .attributeSetId(testAttributeSet.get("id"))
+     *             .associatedResourceId(testResource.get("id"))
      *             .associatedResourceType(attributeSetAssociatedResourceAssociatedResourceType)
      *             .build());
      * 
@@ -2496,8 +2496,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeSetAssociatedResources = DataSafeFunctions.getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs.builder()
-     *             .attributeSetId(testAttributeSet.id())
-     *             .associatedResourceId(testResource.id())
+     *             .attributeSetId(testAttributeSet.get("id"))
+     *             .associatedResourceId(testResource.get("id"))
      *             .associatedResourceType(attributeSetAssociatedResourceAssociatedResourceType)
      *             .build());
      * 
@@ -2540,8 +2540,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeSetAssociatedResources = DataSafeFunctions.getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs.builder()
-     *             .attributeSetId(testAttributeSet.id())
-     *             .associatedResourceId(testResource.id())
+     *             .attributeSetId(testAttributeSet.get("id"))
+     *             .associatedResourceId(testResource.get("id"))
      *             .associatedResourceType(attributeSetAssociatedResourceAssociatedResourceType)
      *             .build());
      * 
@@ -2584,8 +2584,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeSetAssociatedResources = DataSafeFunctions.getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs.builder()
-     *             .attributeSetId(testAttributeSet.id())
-     *             .associatedResourceId(testResource.id())
+     *             .attributeSetId(testAttributeSet.get("id"))
+     *             .associatedResourceId(testResource.get("id"))
      *             .associatedResourceType(attributeSetAssociatedResourceAssociatedResourceType)
      *             .build());
      * 
@@ -2643,7 +2643,7 @@ public final class DataSafeFunctions {
      *         final var testAttributeSets = DataSafeFunctions.getAttributeSets(GetAttributeSetsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(attributeSetAccessLevel)
-     *             .attributeSetId(testAttributeSet.id())
+     *             .attributeSetId(testAttributeSet.get("id"))
      *             .attributeSetType(attributeSetAttributeSetType)
      *             .compartmentIdInSubtree(attributeSetCompartmentIdInSubtree)
      *             .displayName(attributeSetDisplayName)
@@ -2706,7 +2706,7 @@ public final class DataSafeFunctions {
      *         final var testAttributeSets = DataSafeFunctions.getAttributeSets(GetAttributeSetsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(attributeSetAccessLevel)
-     *             .attributeSetId(testAttributeSet.id())
+     *             .attributeSetId(testAttributeSet.get("id"))
      *             .attributeSetType(attributeSetAttributeSetType)
      *             .compartmentIdInSubtree(attributeSetCompartmentIdInSubtree)
      *             .displayName(attributeSetDisplayName)
@@ -2769,7 +2769,7 @@ public final class DataSafeFunctions {
      *         final var testAttributeSets = DataSafeFunctions.getAttributeSets(GetAttributeSetsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(attributeSetAccessLevel)
-     *             .attributeSetId(testAttributeSet.id())
+     *             .attributeSetId(testAttributeSet.get("id"))
      *             .attributeSetType(attributeSetAttributeSetType)
      *             .compartmentIdInSubtree(attributeSetCompartmentIdInSubtree)
      *             .displayName(attributeSetDisplayName)
@@ -2832,7 +2832,7 @@ public final class DataSafeFunctions {
      *         final var testAttributeSets = DataSafeFunctions.getAttributeSets(GetAttributeSetsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(attributeSetAccessLevel)
-     *             .attributeSetId(testAttributeSet.id())
+     *             .attributeSetId(testAttributeSet.get("id"))
      *             .attributeSetType(attributeSetAttributeSetType)
      *             .compartmentIdInSubtree(attributeSetCompartmentIdInSubtree)
      *             .displayName(attributeSetDisplayName)
@@ -2895,7 +2895,7 @@ public final class DataSafeFunctions {
      *         final var testAttributeSets = DataSafeFunctions.getAttributeSets(GetAttributeSetsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(attributeSetAccessLevel)
-     *             .attributeSetId(testAttributeSet.id())
+     *             .attributeSetId(testAttributeSet.get("id"))
      *             .attributeSetType(attributeSetAttributeSetType)
      *             .compartmentIdInSubtree(attributeSetCompartmentIdInSubtree)
      *             .displayName(attributeSetDisplayName)
@@ -2943,7 +2943,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
-     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.get("id"))
      *             .build());
      * 
      *     }
@@ -2985,7 +2985,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
-     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.get("id"))
      *             .build());
      * 
      *     }
@@ -3027,7 +3027,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
-     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.get("id"))
      *             .build());
      * 
      *     }
@@ -3069,7 +3069,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
-     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.get("id"))
      *             .build());
      * 
      *     }
@@ -3111,7 +3111,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
-     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.get("id"))
      *             .build());
      * 
      *     }
@@ -3155,12 +3155,12 @@ public final class DataSafeFunctions {
      *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditArchiveRetrievalAccessLevel)
-     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.get("id"))
      *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
      *             .displayName(auditArchiveRetrievalDisplayName)
      *             .state(auditArchiveRetrievalState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
      * 
@@ -3205,12 +3205,12 @@ public final class DataSafeFunctions {
      *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditArchiveRetrievalAccessLevel)
-     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.get("id"))
      *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
      *             .displayName(auditArchiveRetrievalDisplayName)
      *             .state(auditArchiveRetrievalState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
      * 
@@ -3255,12 +3255,12 @@ public final class DataSafeFunctions {
      *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditArchiveRetrievalAccessLevel)
-     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.get("id"))
      *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
      *             .displayName(auditArchiveRetrievalDisplayName)
      *             .state(auditArchiveRetrievalState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
      * 
@@ -3305,12 +3305,12 @@ public final class DataSafeFunctions {
      *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditArchiveRetrievalAccessLevel)
-     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.get("id"))
      *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
      *             .displayName(auditArchiveRetrievalDisplayName)
      *             .state(auditArchiveRetrievalState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
      * 
@@ -3355,12 +3355,12 @@ public final class DataSafeFunctions {
      *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditArchiveRetrievalAccessLevel)
-     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.get("id"))
      *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
      *             .displayName(auditArchiveRetrievalDisplayName)
      *             .state(auditArchiveRetrievalState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
      * 
@@ -4264,12 +4264,12 @@ public final class DataSafeFunctions {
      *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditPolicyAccessLevel)
-     *             .auditPolicyId(testAuditPolicy.id())
+     *             .auditPolicyId(testAuditPolicy.get("id"))
      *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
      *             .displayName(auditPolicyDisplayName)
      *             .state(auditPolicyState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -4327,12 +4327,12 @@ public final class DataSafeFunctions {
      *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditPolicyAccessLevel)
-     *             .auditPolicyId(testAuditPolicy.id())
+     *             .auditPolicyId(testAuditPolicy.get("id"))
      *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
      *             .displayName(auditPolicyDisplayName)
      *             .state(auditPolicyState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -4390,12 +4390,12 @@ public final class DataSafeFunctions {
      *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditPolicyAccessLevel)
-     *             .auditPolicyId(testAuditPolicy.id())
+     *             .auditPolicyId(testAuditPolicy.get("id"))
      *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
      *             .displayName(auditPolicyDisplayName)
      *             .state(auditPolicyState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -4453,12 +4453,12 @@ public final class DataSafeFunctions {
      *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditPolicyAccessLevel)
-     *             .auditPolicyId(testAuditPolicy.id())
+     *             .auditPolicyId(testAuditPolicy.get("id"))
      *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
      *             .displayName(auditPolicyDisplayName)
      *             .state(auditPolicyState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -4516,12 +4516,12 @@ public final class DataSafeFunctions {
      *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditPolicyAccessLevel)
-     *             .auditPolicyId(testAuditPolicy.id())
+     *             .auditPolicyId(testAuditPolicy.get("id"))
      *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
      *             .displayName(auditPolicyDisplayName)
      *             .state(auditPolicyState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -4563,7 +4563,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
-     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.id())
+     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -4605,7 +4605,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
-     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.id())
+     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -4647,7 +4647,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
-     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.id())
+     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -4689,7 +4689,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
-     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.id())
+     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -4731,7 +4731,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
-     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.id())
+     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -4773,7 +4773,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
-     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.id())
+     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -4815,7 +4815,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
-     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.id())
+     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -4857,7 +4857,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
-     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.id())
+     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -4899,7 +4899,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
-     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.id())
+     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -4941,7 +4941,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
-     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.id())
+     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -5268,8 +5268,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
      *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
@@ -5314,8 +5314,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
      *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
@@ -5360,8 +5360,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
      *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
@@ -5406,8 +5406,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
      *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
@@ -5452,8 +5452,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
      *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
@@ -5498,8 +5498,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
      *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
@@ -5544,8 +5544,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
      *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
@@ -5590,8 +5590,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
      *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
@@ -5636,8 +5636,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
      *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
@@ -5682,8 +5682,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
      *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
@@ -5728,8 +5728,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
@@ -5773,8 +5773,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
@@ -5818,8 +5818,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
@@ -5863,8 +5863,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
@@ -5908,8 +5908,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
@@ -5953,8 +5953,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
@@ -5998,8 +5998,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
@@ -6043,8 +6043,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
@@ -6088,8 +6088,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
@@ -6133,8 +6133,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
-     *             .workRequestId(testWorkRequest.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
      *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
@@ -6178,7 +6178,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileTargetOverrides = DataSafeFunctions.getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
      *             .displayName(auditProfileTargetOverrideDisplayName)
      *             .build());
      * 
@@ -6221,7 +6221,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileTargetOverrides = DataSafeFunctions.getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
      *             .displayName(auditProfileTargetOverrideDisplayName)
      *             .build());
      * 
@@ -6264,7 +6264,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileTargetOverrides = DataSafeFunctions.getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
      *             .displayName(auditProfileTargetOverrideDisplayName)
      *             .build());
      * 
@@ -6307,7 +6307,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileTargetOverrides = DataSafeFunctions.getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
      *             .displayName(auditProfileTargetOverrideDisplayName)
      *             .build());
      * 
@@ -6350,7 +6350,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileTargetOverrides = DataSafeFunctions.getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs.builder()
-     *             .auditProfileId(testAuditProfile.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
      *             .displayName(auditProfileTargetOverrideDisplayName)
      *             .build());
      * 
@@ -6410,14 +6410,14 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditProfileAccessLevel)
      *             .auditCollectedVolumeGreaterThanOrEqualTo(auditProfileAuditCollectedVolumeGreaterThanOrEqualTo)
-     *             .auditProfileId(testAuditProfile.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
      *             .compartmentIdInSubtree(auditProfileCompartmentIdInSubtree)
      *             .displayName(auditProfileDisplayName)
      *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
      *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
      *             .state(auditProfileState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(auditProfileTargetType)
      *             .build());
      * 
@@ -6477,14 +6477,14 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditProfileAccessLevel)
      *             .auditCollectedVolumeGreaterThanOrEqualTo(auditProfileAuditCollectedVolumeGreaterThanOrEqualTo)
-     *             .auditProfileId(testAuditProfile.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
      *             .compartmentIdInSubtree(auditProfileCompartmentIdInSubtree)
      *             .displayName(auditProfileDisplayName)
      *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
      *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
      *             .state(auditProfileState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(auditProfileTargetType)
      *             .build());
      * 
@@ -6544,14 +6544,14 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditProfileAccessLevel)
      *             .auditCollectedVolumeGreaterThanOrEqualTo(auditProfileAuditCollectedVolumeGreaterThanOrEqualTo)
-     *             .auditProfileId(testAuditProfile.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
      *             .compartmentIdInSubtree(auditProfileCompartmentIdInSubtree)
      *             .displayName(auditProfileDisplayName)
      *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
      *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
      *             .state(auditProfileState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(auditProfileTargetType)
      *             .build());
      * 
@@ -6611,14 +6611,14 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditProfileAccessLevel)
      *             .auditCollectedVolumeGreaterThanOrEqualTo(auditProfileAuditCollectedVolumeGreaterThanOrEqualTo)
-     *             .auditProfileId(testAuditProfile.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
      *             .compartmentIdInSubtree(auditProfileCompartmentIdInSubtree)
      *             .displayName(auditProfileDisplayName)
      *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
      *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
      *             .state(auditProfileState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(auditProfileTargetType)
      *             .build());
      * 
@@ -6678,14 +6678,14 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditProfileAccessLevel)
      *             .auditCollectedVolumeGreaterThanOrEqualTo(auditProfileAuditCollectedVolumeGreaterThanOrEqualTo)
-     *             .auditProfileId(testAuditProfile.id())
+     *             .auditProfileId(testAuditProfile.get("id"))
      *             .compartmentIdInSubtree(auditProfileCompartmentIdInSubtree)
      *             .displayName(auditProfileDisplayName)
      *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
      *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
      *             .state(auditProfileState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(auditProfileTargetType)
      *             .build());
      * 
@@ -6728,7 +6728,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
-     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.id())
+     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.get("id"))
      *             .build());
      * 
      *     }
@@ -6770,7 +6770,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
-     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.id())
+     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.get("id"))
      *             .build());
      * 
      *     }
@@ -6812,7 +6812,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
-     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.id())
+     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.get("id"))
      *             .build());
      * 
      *     }
@@ -6854,7 +6854,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
-     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.id())
+     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.get("id"))
      *             .build());
      * 
      *     }
@@ -6896,7 +6896,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
-     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.id())
+     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.get("id"))
      *             .build());
      * 
      *     }
@@ -6954,7 +6954,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(auditTrailAnalyticAccessLevel)
      *             .compartmentIdInSubtree(auditTrailAnalyticCompartmentIdInSubtree)
      *             .groupBies(auditTrailAnalyticGroupBy)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -7012,7 +7012,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(auditTrailAnalyticAccessLevel)
      *             .compartmentIdInSubtree(auditTrailAnalyticCompartmentIdInSubtree)
      *             .groupBies(auditTrailAnalyticGroupBy)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -7070,7 +7070,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(auditTrailAnalyticAccessLevel)
      *             .compartmentIdInSubtree(auditTrailAnalyticCompartmentIdInSubtree)
      *             .groupBies(auditTrailAnalyticGroupBy)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -7128,7 +7128,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(auditTrailAnalyticAccessLevel)
      *             .compartmentIdInSubtree(auditTrailAnalyticCompartmentIdInSubtree)
      *             .groupBies(auditTrailAnalyticGroupBy)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -7186,7 +7186,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(auditTrailAnalyticAccessLevel)
      *             .compartmentIdInSubtree(auditTrailAnalyticCompartmentIdInSubtree)
      *             .groupBies(auditTrailAnalyticGroupBy)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -7243,13 +7243,13 @@ public final class DataSafeFunctions {
      *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditTrailAccessLevel)
-     *             .auditTrailId(testAuditTrail.id())
+     *             .auditTrailId(testAuditTrail.get("id"))
      *             .compartmentIdInSubtree(auditTrailCompartmentIdInSubtree)
      *             .displayName(auditTrailDisplayName)
      *             .state(auditTrailState)
      *             .status(auditTrailStatus)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -7306,13 +7306,13 @@ public final class DataSafeFunctions {
      *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditTrailAccessLevel)
-     *             .auditTrailId(testAuditTrail.id())
+     *             .auditTrailId(testAuditTrail.get("id"))
      *             .compartmentIdInSubtree(auditTrailCompartmentIdInSubtree)
      *             .displayName(auditTrailDisplayName)
      *             .state(auditTrailState)
      *             .status(auditTrailStatus)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -7369,13 +7369,13 @@ public final class DataSafeFunctions {
      *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditTrailAccessLevel)
-     *             .auditTrailId(testAuditTrail.id())
+     *             .auditTrailId(testAuditTrail.get("id"))
      *             .compartmentIdInSubtree(auditTrailCompartmentIdInSubtree)
      *             .displayName(auditTrailDisplayName)
      *             .state(auditTrailState)
      *             .status(auditTrailStatus)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -7432,13 +7432,13 @@ public final class DataSafeFunctions {
      *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditTrailAccessLevel)
-     *             .auditTrailId(testAuditTrail.id())
+     *             .auditTrailId(testAuditTrail.get("id"))
      *             .compartmentIdInSubtree(auditTrailCompartmentIdInSubtree)
      *             .displayName(auditTrailDisplayName)
      *             .state(auditTrailState)
      *             .status(auditTrailStatus)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -7495,13 +7495,13 @@ public final class DataSafeFunctions {
      *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(auditTrailAccessLevel)
-     *             .auditTrailId(testAuditTrail.id())
+     *             .auditTrailId(testAuditTrail.get("id"))
      *             .compartmentIdInSubtree(auditTrailCompartmentIdInSubtree)
      *             .displayName(auditTrailDisplayName)
      *             .state(auditTrailState)
      *             .status(auditTrailStatus)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -8093,7 +8093,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessment = DataSafeFunctions.getCryptoAssessment(GetCryptoAssessmentArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -8135,7 +8135,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessment = DataSafeFunctions.getCryptoAssessment(GetCryptoAssessmentArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -8177,7 +8177,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessment = DataSafeFunctions.getCryptoAssessment(GetCryptoAssessmentArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -8219,7 +8219,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessment = DataSafeFunctions.getCryptoAssessment(GetCryptoAssessmentArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -8261,7 +8261,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessment = DataSafeFunctions.getCryptoAssessment(GetCryptoAssessmentArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessmentOciDataSafeCryptoAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -8305,12 +8305,12 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentBackupSets = DataSafeFunctions.getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentBackupSetAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentBackupSetAssessmentType)
      *             .backupSetKey(cryptoAssessmentBackupSetBackupSetKey)
      *             .compartmentIdInSubtree(cryptoAssessmentBackupSetCompartmentIdInSubtree)
      *             .isEncrypted(cryptoAssessmentBackupSetIsEncrypted)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentBackupSetTargetIds)
      *             .build());
      * 
@@ -8355,12 +8355,12 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentBackupSets = DataSafeFunctions.getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentBackupSetAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentBackupSetAssessmentType)
      *             .backupSetKey(cryptoAssessmentBackupSetBackupSetKey)
      *             .compartmentIdInSubtree(cryptoAssessmentBackupSetCompartmentIdInSubtree)
      *             .isEncrypted(cryptoAssessmentBackupSetIsEncrypted)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentBackupSetTargetIds)
      *             .build());
      * 
@@ -8405,12 +8405,12 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentBackupSets = DataSafeFunctions.getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentBackupSetAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentBackupSetAssessmentType)
      *             .backupSetKey(cryptoAssessmentBackupSetBackupSetKey)
      *             .compartmentIdInSubtree(cryptoAssessmentBackupSetCompartmentIdInSubtree)
      *             .isEncrypted(cryptoAssessmentBackupSetIsEncrypted)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentBackupSetTargetIds)
      *             .build());
      * 
@@ -8455,12 +8455,12 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentBackupSets = DataSafeFunctions.getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentBackupSetAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentBackupSetAssessmentType)
      *             .backupSetKey(cryptoAssessmentBackupSetBackupSetKey)
      *             .compartmentIdInSubtree(cryptoAssessmentBackupSetCompartmentIdInSubtree)
      *             .isEncrypted(cryptoAssessmentBackupSetIsEncrypted)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentBackupSetTargetIds)
      *             .build());
      * 
@@ -8505,12 +8505,12 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentBackupSets = DataSafeFunctions.getCryptoAssessmentBackupSets(GetCryptoAssessmentBackupSetsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentBackupSetAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentBackupSetAssessmentType)
      *             .backupSetKey(cryptoAssessmentBackupSetBackupSetKey)
      *             .compartmentIdInSubtree(cryptoAssessmentBackupSetCompartmentIdInSubtree)
      *             .isEncrypted(cryptoAssessmentBackupSetIsEncrypted)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentBackupSetTargetIds)
      *             .build());
      * 
@@ -8553,7 +8553,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentCbomItems = DataSafeFunctions.getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -8595,7 +8595,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentCbomItems = DataSafeFunctions.getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -8637,7 +8637,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentCbomItems = DataSafeFunctions.getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -8679,7 +8679,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentCbomItems = DataSafeFunctions.getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -8721,7 +8721,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentCbomItems = DataSafeFunctions.getCryptoAssessmentCbomItems(GetCryptoAssessmentCbomItemsArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -8765,7 +8765,7 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentCertificates = DataSafeFunctions.getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentCertificateAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentCertificateAssessmentType)
      *             .certificateTypes(cryptoAssessmentCertificateCertificateType)
      *             .compartmentIdInSubtree(cryptoAssessmentCertificateCompartmentIdInSubtree)
@@ -8774,7 +8774,7 @@ public final class DataSafeFunctions {
      *             .publicKeyTypes(cryptoAssessmentCertificatePublicKeyType)
      *             .signatureAlgorithms(cryptoAssessmentCertificateSignatureAlgorithm)
      *             .statuses(cryptoAssessmentCertificateStatus)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentCertificateTargetIds)
      *             .build());
      * 
@@ -8819,7 +8819,7 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentCertificates = DataSafeFunctions.getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentCertificateAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentCertificateAssessmentType)
      *             .certificateTypes(cryptoAssessmentCertificateCertificateType)
      *             .compartmentIdInSubtree(cryptoAssessmentCertificateCompartmentIdInSubtree)
@@ -8828,7 +8828,7 @@ public final class DataSafeFunctions {
      *             .publicKeyTypes(cryptoAssessmentCertificatePublicKeyType)
      *             .signatureAlgorithms(cryptoAssessmentCertificateSignatureAlgorithm)
      *             .statuses(cryptoAssessmentCertificateStatus)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentCertificateTargetIds)
      *             .build());
      * 
@@ -8873,7 +8873,7 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentCertificates = DataSafeFunctions.getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentCertificateAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentCertificateAssessmentType)
      *             .certificateTypes(cryptoAssessmentCertificateCertificateType)
      *             .compartmentIdInSubtree(cryptoAssessmentCertificateCompartmentIdInSubtree)
@@ -8882,7 +8882,7 @@ public final class DataSafeFunctions {
      *             .publicKeyTypes(cryptoAssessmentCertificatePublicKeyType)
      *             .signatureAlgorithms(cryptoAssessmentCertificateSignatureAlgorithm)
      *             .statuses(cryptoAssessmentCertificateStatus)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentCertificateTargetIds)
      *             .build());
      * 
@@ -8927,7 +8927,7 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentCertificates = DataSafeFunctions.getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentCertificateAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentCertificateAssessmentType)
      *             .certificateTypes(cryptoAssessmentCertificateCertificateType)
      *             .compartmentIdInSubtree(cryptoAssessmentCertificateCompartmentIdInSubtree)
@@ -8936,7 +8936,7 @@ public final class DataSafeFunctions {
      *             .publicKeyTypes(cryptoAssessmentCertificatePublicKeyType)
      *             .signatureAlgorithms(cryptoAssessmentCertificateSignatureAlgorithm)
      *             .statuses(cryptoAssessmentCertificateStatus)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentCertificateTargetIds)
      *             .build());
      * 
@@ -8981,7 +8981,7 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentCertificates = DataSafeFunctions.getCryptoAssessmentCertificates(GetCryptoAssessmentCertificatesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentCertificateAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentCertificateAssessmentType)
      *             .certificateTypes(cryptoAssessmentCertificateCertificateType)
      *             .compartmentIdInSubtree(cryptoAssessmentCertificateCompartmentIdInSubtree)
@@ -8990,7 +8990,7 @@ public final class DataSafeFunctions {
      *             .publicKeyTypes(cryptoAssessmentCertificatePublicKeyType)
      *             .signatureAlgorithms(cryptoAssessmentCertificateSignatureAlgorithm)
      *             .statuses(cryptoAssessmentCertificateStatus)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentCertificateTargetIds)
      *             .build());
      * 
@@ -9275,7 +9275,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(cryptoAssessmentFindingTargetCompartmentIdInSubtree)
      *             .isQuantumReadinessCheck(cryptoAssessmentFindingTargetIsQuantumReadinessCheck)
      *             .status(cryptoAssessmentFindingTargetStatus)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentFindingTargetTargetIds)
      *             .build());
      * 
@@ -9325,7 +9325,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(cryptoAssessmentFindingTargetCompartmentIdInSubtree)
      *             .isQuantumReadinessCheck(cryptoAssessmentFindingTargetIsQuantumReadinessCheck)
      *             .status(cryptoAssessmentFindingTargetStatus)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentFindingTargetTargetIds)
      *             .build());
      * 
@@ -9375,7 +9375,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(cryptoAssessmentFindingTargetCompartmentIdInSubtree)
      *             .isQuantumReadinessCheck(cryptoAssessmentFindingTargetIsQuantumReadinessCheck)
      *             .status(cryptoAssessmentFindingTargetStatus)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentFindingTargetTargetIds)
      *             .build());
      * 
@@ -9425,7 +9425,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(cryptoAssessmentFindingTargetCompartmentIdInSubtree)
      *             .isQuantumReadinessCheck(cryptoAssessmentFindingTargetIsQuantumReadinessCheck)
      *             .status(cryptoAssessmentFindingTargetStatus)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentFindingTargetTargetIds)
      *             .build());
      * 
@@ -9475,7 +9475,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(cryptoAssessmentFindingTargetCompartmentIdInSubtree)
      *             .isQuantumReadinessCheck(cryptoAssessmentFindingTargetIsQuantumReadinessCheck)
      *             .status(cryptoAssessmentFindingTargetStatus)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentFindingTargetTargetIds)
      *             .build());
      * 
@@ -9518,7 +9518,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentFindings = DataSafeFunctions.getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .category(cryptoAssessmentFindingCategory)
      *             .findingKey(cryptoAssessmentFindingFindingKey)
      *             .isQuantumReadinessCheck(cryptoAssessmentFindingIsQuantumReadinessCheck)
@@ -9565,7 +9565,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentFindings = DataSafeFunctions.getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .category(cryptoAssessmentFindingCategory)
      *             .findingKey(cryptoAssessmentFindingFindingKey)
      *             .isQuantumReadinessCheck(cryptoAssessmentFindingIsQuantumReadinessCheck)
@@ -9612,7 +9612,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentFindings = DataSafeFunctions.getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .category(cryptoAssessmentFindingCategory)
      *             .findingKey(cryptoAssessmentFindingFindingKey)
      *             .isQuantumReadinessCheck(cryptoAssessmentFindingIsQuantumReadinessCheck)
@@ -9659,7 +9659,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentFindings = DataSafeFunctions.getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .category(cryptoAssessmentFindingCategory)
      *             .findingKey(cryptoAssessmentFindingFindingKey)
      *             .isQuantumReadinessCheck(cryptoAssessmentFindingIsQuantumReadinessCheck)
@@ -9706,7 +9706,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentFindings = DataSafeFunctions.getCryptoAssessmentFindings(GetCryptoAssessmentFindingsArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .category(cryptoAssessmentFindingCategory)
      *             .findingKey(cryptoAssessmentFindingFindingKey)
      *             .isQuantumReadinessCheck(cryptoAssessmentFindingIsQuantumReadinessCheck)
@@ -9755,14 +9755,14 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentKeys = DataSafeFunctions.getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentKeyAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentKeyAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentKeyCompartmentIdInSubtree)
      *             .feature(cryptoAssessmentKeyFeature)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .keyManagerTypes(cryptoAssessmentKeyKeyManagerType)
      *             .keyType(cryptoAssessmentKeyKeyType)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentKeyTargetIds)
      *             .build());
      * 
@@ -9807,14 +9807,14 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentKeys = DataSafeFunctions.getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentKeyAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentKeyAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentKeyCompartmentIdInSubtree)
      *             .feature(cryptoAssessmentKeyFeature)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .keyManagerTypes(cryptoAssessmentKeyKeyManagerType)
      *             .keyType(cryptoAssessmentKeyKeyType)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentKeyTargetIds)
      *             .build());
      * 
@@ -9859,14 +9859,14 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentKeys = DataSafeFunctions.getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentKeyAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentKeyAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentKeyCompartmentIdInSubtree)
      *             .feature(cryptoAssessmentKeyFeature)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .keyManagerTypes(cryptoAssessmentKeyKeyManagerType)
      *             .keyType(cryptoAssessmentKeyKeyType)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentKeyTargetIds)
      *             .build());
      * 
@@ -9911,14 +9911,14 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentKeys = DataSafeFunctions.getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentKeyAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentKeyAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentKeyCompartmentIdInSubtree)
      *             .feature(cryptoAssessmentKeyFeature)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .keyManagerTypes(cryptoAssessmentKeyKeyManagerType)
      *             .keyType(cryptoAssessmentKeyKeyType)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentKeyTargetIds)
      *             .build());
      * 
@@ -9963,14 +9963,14 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentKeys = DataSafeFunctions.getCryptoAssessmentKeys(GetCryptoAssessmentKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentKeyAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentKeyAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentKeyCompartmentIdInSubtree)
      *             .feature(cryptoAssessmentKeyFeature)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .keyManagerTypes(cryptoAssessmentKeyKeyManagerType)
      *             .keyType(cryptoAssessmentKeyKeyType)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentKeyTargetIds)
      *             .build());
      * 
@@ -10013,7 +10013,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentSqlnetParameter = DataSafeFunctions.getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .parameter(cryptoAssessmentSqlnetParameterParameter)
      *             .quantumReadiness(cryptoAssessmentSqlnetParameterQuantumReadiness)
      *             .build());
@@ -10057,7 +10057,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentSqlnetParameter = DataSafeFunctions.getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .parameter(cryptoAssessmentSqlnetParameterParameter)
      *             .quantumReadiness(cryptoAssessmentSqlnetParameterQuantumReadiness)
      *             .build());
@@ -10101,7 +10101,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentSqlnetParameter = DataSafeFunctions.getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .parameter(cryptoAssessmentSqlnetParameterParameter)
      *             .quantumReadiness(cryptoAssessmentSqlnetParameterQuantumReadiness)
      *             .build());
@@ -10145,7 +10145,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentSqlnetParameter = DataSafeFunctions.getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .parameter(cryptoAssessmentSqlnetParameterParameter)
      *             .quantumReadiness(cryptoAssessmentSqlnetParameterQuantumReadiness)
      *             .build());
@@ -10189,7 +10189,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCryptoAssessmentSqlnetParameter = DataSafeFunctions.getCryptoAssessmentSqlnetParameter(GetCryptoAssessmentSqlnetParameterArgs.builder()
-     *             .cryptoAssessmentId(testCryptoAssessment.id())
+     *             .cryptoAssessmentId(testCryptoAssessment.get("id"))
      *             .parameter(cryptoAssessmentSqlnetParameterParameter)
      *             .quantumReadiness(cryptoAssessmentSqlnetParameterQuantumReadiness)
      *             .build());
@@ -10236,13 +10236,13 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .objectType(cryptoAssessmentTdeObjectObjectType)
      *             .accessLevel(cryptoAssessmentTdeObjectAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentTdeObjectAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentTdeObjectCompartmentIdInSubtree)
      *             .encryptionObserveds(cryptoAssessmentTdeObjectEncryptionObserved)
      *             .encryptionStatus(cryptoAssessmentTdeObjectEncryptionStatus)
      *             .quantumReadiness(cryptoAssessmentTdeObjectQuantumReadiness)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentTdeObjectTargetIds)
      *             .build());
      * 
@@ -10288,13 +10288,13 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .objectType(cryptoAssessmentTdeObjectObjectType)
      *             .accessLevel(cryptoAssessmentTdeObjectAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentTdeObjectAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentTdeObjectCompartmentIdInSubtree)
      *             .encryptionObserveds(cryptoAssessmentTdeObjectEncryptionObserved)
      *             .encryptionStatus(cryptoAssessmentTdeObjectEncryptionStatus)
      *             .quantumReadiness(cryptoAssessmentTdeObjectQuantumReadiness)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentTdeObjectTargetIds)
      *             .build());
      * 
@@ -10340,13 +10340,13 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .objectType(cryptoAssessmentTdeObjectObjectType)
      *             .accessLevel(cryptoAssessmentTdeObjectAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentTdeObjectAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentTdeObjectCompartmentIdInSubtree)
      *             .encryptionObserveds(cryptoAssessmentTdeObjectEncryptionObserved)
      *             .encryptionStatus(cryptoAssessmentTdeObjectEncryptionStatus)
      *             .quantumReadiness(cryptoAssessmentTdeObjectQuantumReadiness)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentTdeObjectTargetIds)
      *             .build());
      * 
@@ -10392,13 +10392,13 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .objectType(cryptoAssessmentTdeObjectObjectType)
      *             .accessLevel(cryptoAssessmentTdeObjectAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentTdeObjectAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentTdeObjectCompartmentIdInSubtree)
      *             .encryptionObserveds(cryptoAssessmentTdeObjectEncryptionObserved)
      *             .encryptionStatus(cryptoAssessmentTdeObjectEncryptionStatus)
      *             .quantumReadiness(cryptoAssessmentTdeObjectQuantumReadiness)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentTdeObjectTargetIds)
      *             .build());
      * 
@@ -10444,13 +10444,13 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .objectType(cryptoAssessmentTdeObjectObjectType)
      *             .accessLevel(cryptoAssessmentTdeObjectAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentTdeObjectAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentTdeObjectCompartmentIdInSubtree)
      *             .encryptionObserveds(cryptoAssessmentTdeObjectEncryptionObserved)
      *             .encryptionStatus(cryptoAssessmentTdeObjectEncryptionStatus)
      *             .quantumReadiness(cryptoAssessmentTdeObjectQuantumReadiness)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentTdeObjectTargetIds)
      *             .build());
      * 
@@ -10495,11 +10495,11 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentWallets = DataSafeFunctions.getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentWalletAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentWalletAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentWalletCompartmentIdInSubtree)
      *             .feature(cryptoAssessmentWalletFeature)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentWalletTargetIds)
      *             .walletEncryptionAlgorithms(cryptoAssessmentWalletWalletEncryptionAlgorithm)
      *             .build());
@@ -10545,11 +10545,11 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentWallets = DataSafeFunctions.getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentWalletAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentWalletAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentWalletCompartmentIdInSubtree)
      *             .feature(cryptoAssessmentWalletFeature)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentWalletTargetIds)
      *             .walletEncryptionAlgorithms(cryptoAssessmentWalletWalletEncryptionAlgorithm)
      *             .build());
@@ -10595,11 +10595,11 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentWallets = DataSafeFunctions.getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentWalletAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentWalletAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentWalletCompartmentIdInSubtree)
      *             .feature(cryptoAssessmentWalletFeature)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentWalletTargetIds)
      *             .walletEncryptionAlgorithms(cryptoAssessmentWalletWalletEncryptionAlgorithm)
      *             .build());
@@ -10645,11 +10645,11 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentWallets = DataSafeFunctions.getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentWalletAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentWalletAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentWalletCompartmentIdInSubtree)
      *             .feature(cryptoAssessmentWalletFeature)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentWalletTargetIds)
      *             .walletEncryptionAlgorithms(cryptoAssessmentWalletWalletEncryptionAlgorithm)
      *             .build());
@@ -10695,11 +10695,11 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessmentWallets = DataSafeFunctions.getCryptoAssessmentWallets(GetCryptoAssessmentWalletsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentWalletAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessmentType(cryptoAssessmentWalletAssessmentType)
      *             .compartmentIdInSubtree(cryptoAssessmentWalletCompartmentIdInSubtree)
      *             .feature(cryptoAssessmentWalletFeature)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentWalletTargetIds)
      *             .walletEncryptionAlgorithms(cryptoAssessmentWalletWalletEncryptionAlgorithm)
      *             .build());
@@ -10745,14 +10745,14 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessments = DataSafeFunctions.getCryptoAssessments(GetCryptoAssessmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .compartmentIdInSubtree(cryptoAssessmentCompartmentIdInSubtree)
      *             .displayName(cryptoAssessmentDisplayName)
      *             .isAssessmentScheduled(cryptoAssessmentIsAssessmentScheduled)
      *             .postureCategories(cryptoAssessmentPostureCategory)
      *             .state(cryptoAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentTargetIds)
      *             .targetType(cryptoAssessmentTargetType)
      *             .type(cryptoAssessmentType)
@@ -10799,14 +10799,14 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessments = DataSafeFunctions.getCryptoAssessments(GetCryptoAssessmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .compartmentIdInSubtree(cryptoAssessmentCompartmentIdInSubtree)
      *             .displayName(cryptoAssessmentDisplayName)
      *             .isAssessmentScheduled(cryptoAssessmentIsAssessmentScheduled)
      *             .postureCategories(cryptoAssessmentPostureCategory)
      *             .state(cryptoAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentTargetIds)
      *             .targetType(cryptoAssessmentTargetType)
      *             .type(cryptoAssessmentType)
@@ -10853,14 +10853,14 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessments = DataSafeFunctions.getCryptoAssessments(GetCryptoAssessmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .compartmentIdInSubtree(cryptoAssessmentCompartmentIdInSubtree)
      *             .displayName(cryptoAssessmentDisplayName)
      *             .isAssessmentScheduled(cryptoAssessmentIsAssessmentScheduled)
      *             .postureCategories(cryptoAssessmentPostureCategory)
      *             .state(cryptoAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentTargetIds)
      *             .targetType(cryptoAssessmentTargetType)
      *             .type(cryptoAssessmentType)
@@ -10907,14 +10907,14 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessments = DataSafeFunctions.getCryptoAssessments(GetCryptoAssessmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .compartmentIdInSubtree(cryptoAssessmentCompartmentIdInSubtree)
      *             .displayName(cryptoAssessmentDisplayName)
      *             .isAssessmentScheduled(cryptoAssessmentIsAssessmentScheduled)
      *             .postureCategories(cryptoAssessmentPostureCategory)
      *             .state(cryptoAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentTargetIds)
      *             .targetType(cryptoAssessmentTargetType)
      *             .type(cryptoAssessmentType)
@@ -10961,14 +10961,14 @@ public final class DataSafeFunctions {
      *         final var testCryptoAssessments = DataSafeFunctions.getCryptoAssessments(GetCryptoAssessmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(cryptoAssessmentAccessLevel)
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .compartmentIdInSubtree(cryptoAssessmentCompartmentIdInSubtree)
      *             .displayName(cryptoAssessmentDisplayName)
      *             .isAssessmentScheduled(cryptoAssessmentIsAssessmentScheduled)
      *             .postureCategories(cryptoAssessmentPostureCategory)
      *             .state(cryptoAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetIds(cryptoAssessmentTargetIds)
      *             .targetType(cryptoAssessmentTargetType)
      *             .type(cryptoAssessmentType)
@@ -11223,7 +11223,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
-     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.id())
+     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -11265,7 +11265,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
-     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.id())
+     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -11307,7 +11307,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
-     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.id())
+     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -11349,7 +11349,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
-     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.id())
+     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -11391,7 +11391,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
-     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.id())
+     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -11438,7 +11438,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(dataSafePrivateEndpointCompartmentIdInSubtree)
      *             .displayName(dataSafePrivateEndpointDisplayName)
      *             .state(dataSafePrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -11485,7 +11485,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(dataSafePrivateEndpointCompartmentIdInSubtree)
      *             .displayName(dataSafePrivateEndpointDisplayName)
      *             .state(dataSafePrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -11532,7 +11532,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(dataSafePrivateEndpointCompartmentIdInSubtree)
      *             .displayName(dataSafePrivateEndpointDisplayName)
      *             .state(dataSafePrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -11579,7 +11579,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(dataSafePrivateEndpointCompartmentIdInSubtree)
      *             .displayName(dataSafePrivateEndpointDisplayName)
      *             .state(dataSafePrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -11626,7 +11626,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(dataSafePrivateEndpointCompartmentIdInSubtree)
      *             .displayName(dataSafePrivateEndpointDisplayName)
      *             .state(dataSafePrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -11668,7 +11668,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSecurityConfig = DataSafeFunctions.getDatabaseSecurityConfig(GetDatabaseSecurityConfigArgs.builder()
-     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.id())
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -11710,7 +11710,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSecurityConfig = DataSafeFunctions.getDatabaseSecurityConfig(GetDatabaseSecurityConfigArgs.builder()
-     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.id())
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -11752,7 +11752,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSecurityConfig = DataSafeFunctions.getDatabaseSecurityConfig(GetDatabaseSecurityConfigArgs.builder()
-     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.id())
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -11794,7 +11794,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSecurityConfig = DataSafeFunctions.getDatabaseSecurityConfig(GetDatabaseSecurityConfigArgs.builder()
-     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.id())
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -11836,7 +11836,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSecurityConfig = DataSafeFunctions.getDatabaseSecurityConfig(GetDatabaseSecurityConfigArgs.builder()
-     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.id())
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -11894,11 +11894,11 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(databaseSecurityConfigAccessLevel)
      *             .compartmentIdInSubtree(databaseSecurityConfigCompartmentIdInSubtree)
-     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.get("id"))
      *             .displayName(databaseSecurityConfigDisplayName)
      *             .state(databaseSecurityConfigState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
      *             .build());
@@ -11958,11 +11958,11 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(databaseSecurityConfigAccessLevel)
      *             .compartmentIdInSubtree(databaseSecurityConfigCompartmentIdInSubtree)
-     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.get("id"))
      *             .displayName(databaseSecurityConfigDisplayName)
      *             .state(databaseSecurityConfigState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
      *             .build());
@@ -12022,11 +12022,11 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(databaseSecurityConfigAccessLevel)
      *             .compartmentIdInSubtree(databaseSecurityConfigCompartmentIdInSubtree)
-     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.get("id"))
      *             .displayName(databaseSecurityConfigDisplayName)
      *             .state(databaseSecurityConfigState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
      *             .build());
@@ -12086,11 +12086,11 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(databaseSecurityConfigAccessLevel)
      *             .compartmentIdInSubtree(databaseSecurityConfigCompartmentIdInSubtree)
-     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.get("id"))
      *             .displayName(databaseSecurityConfigDisplayName)
      *             .state(databaseSecurityConfigState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
      *             .build());
@@ -12150,11 +12150,11 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(databaseSecurityConfigAccessLevel)
      *             .compartmentIdInSubtree(databaseSecurityConfigCompartmentIdInSubtree)
-     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.get("id"))
      *             .displayName(databaseSecurityConfigDisplayName)
      *             .state(databaseSecurityConfigState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
      *             .build());
@@ -12203,8 +12203,8 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
      *             .groupBy(discoveryAnalyticGroupBy)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -12251,8 +12251,8 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
      *             .groupBy(discoveryAnalyticGroupBy)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -12299,8 +12299,8 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
      *             .groupBy(discoveryAnalyticGroupBy)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -12347,8 +12347,8 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
      *             .groupBy(discoveryAnalyticGroupBy)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -12395,8 +12395,8 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
      *             .groupBy(discoveryAnalyticGroupBy)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -12444,11 +12444,11 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
      *             .groupBy(discoveryAnalyticGroupBy)
      *             .isCommon(discoveryAnalyticIsCommon)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -12496,11 +12496,11 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
      *             .groupBy(discoveryAnalyticGroupBy)
      *             .isCommon(discoveryAnalyticIsCommon)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -12548,11 +12548,11 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
      *             .groupBy(discoveryAnalyticGroupBy)
      *             .isCommon(discoveryAnalyticIsCommon)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -12600,11 +12600,11 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
      *             .groupBy(discoveryAnalyticGroupBy)
      *             .isCommon(discoveryAnalyticIsCommon)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -12652,11 +12652,11 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
      *             .groupBy(discoveryAnalyticGroupBy)
      *             .isCommon(discoveryAnalyticIsCommon)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -12698,7 +12698,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.get("id"))
      *             .build());
      * 
      *     }
@@ -12740,7 +12740,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.get("id"))
      *             .build());
      * 
      *     }
@@ -12782,7 +12782,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.get("id"))
      *             .build());
      * 
      *     }
@@ -12824,7 +12824,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.get("id"))
      *             .build());
      * 
      *     }
@@ -12866,7 +12866,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.get("id"))
      *             .build());
      * 
      *     }
@@ -12908,7 +12908,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
-     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJob.get("id"))
      *             .resultKey(discoveryJobsResultResultKey)
      *             .build());
      * 
@@ -12951,7 +12951,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
-     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJob.get("id"))
      *             .resultKey(discoveryJobsResultResultKey)
      *             .build());
      * 
@@ -12994,7 +12994,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
-     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJob.get("id"))
      *             .resultKey(discoveryJobsResultResultKey)
      *             .build());
      * 
@@ -13037,7 +13037,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
-     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJob.get("id"))
      *             .resultKey(discoveryJobsResultResultKey)
      *             .build());
      * 
@@ -13080,7 +13080,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
-     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJob.get("id"))
      *             .resultKey(discoveryJobsResultResultKey)
      *             .build());
      * 
@@ -13123,7 +13123,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
-     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJob.get("id"))
      *             .columnNames(discoveryJobsResultColumnName)
      *             .confidenceLevels(discoveryJobsResultConfidenceLevel)
      *             .discoveryType(discoveryJobsResultDiscoveryType)
@@ -13172,7 +13172,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
-     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJob.get("id"))
      *             .columnNames(discoveryJobsResultColumnName)
      *             .confidenceLevels(discoveryJobsResultConfidenceLevel)
      *             .discoveryType(discoveryJobsResultDiscoveryType)
@@ -13221,7 +13221,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
-     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJob.get("id"))
      *             .columnNames(discoveryJobsResultColumnName)
      *             .confidenceLevels(discoveryJobsResultConfidenceLevel)
      *             .discoveryType(discoveryJobsResultDiscoveryType)
@@ -13270,7 +13270,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
-     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJob.get("id"))
      *             .columnNames(discoveryJobsResultColumnName)
      *             .confidenceLevels(discoveryJobsResultConfidenceLevel)
      *             .discoveryType(discoveryJobsResultDiscoveryType)
@@ -13319,7 +13319,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
-     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .discoveryJobId(testDiscoveryJob.get("id"))
      *             .columnNames(discoveryJobsResultColumnName)
      *             .confidenceLevels(discoveryJobsResultConfidenceLevel)
      *             .discoveryType(discoveryJobsResultDiscoveryType)
@@ -13368,7 +13368,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
-     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.get("id"))
      *             .build());
      * 
      *     }
@@ -13410,7 +13410,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
-     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.get("id"))
      *             .build());
      * 
      *     }
@@ -13452,7 +13452,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
-     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.get("id"))
      *             .build());
      * 
      *     }
@@ -13494,7 +13494,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
-     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.get("id"))
      *             .build());
      * 
      *     }
@@ -13536,7 +13536,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
-     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.get("id"))
      *             .build());
      * 
      *     }
@@ -13582,7 +13582,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(libraryMaskingFormatAccessLevel)
      *             .compartmentIdInSubtree(libraryMaskingFormatCompartmentIdInSubtree)
      *             .displayName(libraryMaskingFormatDisplayName)
-     *             .libraryMaskingFormatId(testLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormat.get("id"))
      *             .libraryMaskingFormatSource(libraryMaskingFormatLibraryMaskingFormatSource)
      *             .state(libraryMaskingFormatState)
      *             .timeCreatedGreaterThanOrEqualTo(libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo)
@@ -13632,7 +13632,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(libraryMaskingFormatAccessLevel)
      *             .compartmentIdInSubtree(libraryMaskingFormatCompartmentIdInSubtree)
      *             .displayName(libraryMaskingFormatDisplayName)
-     *             .libraryMaskingFormatId(testLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormat.get("id"))
      *             .libraryMaskingFormatSource(libraryMaskingFormatLibraryMaskingFormatSource)
      *             .state(libraryMaskingFormatState)
      *             .timeCreatedGreaterThanOrEqualTo(libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo)
@@ -13682,7 +13682,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(libraryMaskingFormatAccessLevel)
      *             .compartmentIdInSubtree(libraryMaskingFormatCompartmentIdInSubtree)
      *             .displayName(libraryMaskingFormatDisplayName)
-     *             .libraryMaskingFormatId(testLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormat.get("id"))
      *             .libraryMaskingFormatSource(libraryMaskingFormatLibraryMaskingFormatSource)
      *             .state(libraryMaskingFormatState)
      *             .timeCreatedGreaterThanOrEqualTo(libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo)
@@ -13732,7 +13732,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(libraryMaskingFormatAccessLevel)
      *             .compartmentIdInSubtree(libraryMaskingFormatCompartmentIdInSubtree)
      *             .displayName(libraryMaskingFormatDisplayName)
-     *             .libraryMaskingFormatId(testLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormat.get("id"))
      *             .libraryMaskingFormatSource(libraryMaskingFormatLibraryMaskingFormatSource)
      *             .state(libraryMaskingFormatState)
      *             .timeCreatedGreaterThanOrEqualTo(libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo)
@@ -13782,7 +13782,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(libraryMaskingFormatAccessLevel)
      *             .compartmentIdInSubtree(libraryMaskingFormatCompartmentIdInSubtree)
      *             .displayName(libraryMaskingFormatDisplayName)
-     *             .libraryMaskingFormatId(testLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormat.get("id"))
      *             .libraryMaskingFormatSource(libraryMaskingFormatLibraryMaskingFormatSource)
      *             .state(libraryMaskingFormatState)
      *             .timeCreatedGreaterThanOrEqualTo(libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo)
@@ -13831,7 +13831,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .userKey(listUserGrantUserKey)
      *             .depthLevel(listUserGrantDepthLevel)
      *             .depthLevelGreaterThanOrEqualTo(listUserGrantDepthLevelGreaterThanOrEqualTo)
@@ -13884,7 +13884,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .userKey(listUserGrantUserKey)
      *             .depthLevel(listUserGrantDepthLevel)
      *             .depthLevelGreaterThanOrEqualTo(listUserGrantDepthLevelGreaterThanOrEqualTo)
@@ -13937,7 +13937,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .userKey(listUserGrantUserKey)
      *             .depthLevel(listUserGrantDepthLevel)
      *             .depthLevelGreaterThanOrEqualTo(listUserGrantDepthLevelGreaterThanOrEqualTo)
@@ -13990,7 +13990,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .userKey(listUserGrantUserKey)
      *             .depthLevel(listUserGrantDepthLevel)
      *             .depthLevelGreaterThanOrEqualTo(listUserGrantDepthLevelGreaterThanOrEqualTo)
@@ -14043,7 +14043,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .userKey(listUserGrantUserKey)
      *             .depthLevel(listUserGrantDepthLevel)
      *             .depthLevelGreaterThanOrEqualTo(listUserGrantDepthLevelGreaterThanOrEqualTo)
@@ -14098,8 +14098,8 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -14146,8 +14146,8 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -14194,8 +14194,8 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -14242,8 +14242,8 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -14290,8 +14290,8 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -14338,10 +14338,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -14388,10 +14388,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -14438,10 +14438,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -14488,10 +14488,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -14538,10 +14538,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -14587,10 +14587,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingPolicyAccessLevel)
      *             .compartmentIdInSubtree(maskingPolicyCompartmentIdInSubtree)
      *             .displayName(maskingPolicyDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(maskingPolicyState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(maskingPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(maskingPolicyTimeCreatedLessThan)
      *             .build());
@@ -14638,10 +14638,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingPolicyAccessLevel)
      *             .compartmentIdInSubtree(maskingPolicyCompartmentIdInSubtree)
      *             .displayName(maskingPolicyDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(maskingPolicyState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(maskingPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(maskingPolicyTimeCreatedLessThan)
      *             .build());
@@ -14689,10 +14689,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingPolicyAccessLevel)
      *             .compartmentIdInSubtree(maskingPolicyCompartmentIdInSubtree)
      *             .displayName(maskingPolicyDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(maskingPolicyState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(maskingPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(maskingPolicyTimeCreatedLessThan)
      *             .build());
@@ -14740,10 +14740,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingPolicyAccessLevel)
      *             .compartmentIdInSubtree(maskingPolicyCompartmentIdInSubtree)
      *             .displayName(maskingPolicyDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(maskingPolicyState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(maskingPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(maskingPolicyTimeCreatedLessThan)
      *             .build());
@@ -14791,10 +14791,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingPolicyAccessLevel)
      *             .compartmentIdInSubtree(maskingPolicyCompartmentIdInSubtree)
      *             .displayName(maskingPolicyDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(maskingPolicyState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(maskingPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(maskingPolicyTimeCreatedLessThan)
      *             .build());
@@ -14839,7 +14839,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
      *             .maskingColumnKey(maskingPoliciesMaskingColumnMaskingColumnKey)
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -14882,7 +14882,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
      *             .maskingColumnKey(maskingPoliciesMaskingColumnMaskingColumnKey)
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -14925,7 +14925,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
      *             .maskingColumnKey(maskingPoliciesMaskingColumnMaskingColumnKey)
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -14968,7 +14968,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
      *             .maskingColumnKey(maskingPoliciesMaskingColumnMaskingColumnKey)
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -15011,7 +15011,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
      *             .maskingColumnKey(maskingPoliciesMaskingColumnMaskingColumnKey)
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -15053,7 +15053,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .columnNames(maskingPoliciesMaskingColumnColumnName)
      *             .dataTypes(maskingPoliciesMaskingColumnDataType)
      *             .isMaskingEnabled(maskingPoliciesMaskingColumnIsMaskingEnabled)
@@ -15063,7 +15063,7 @@ public final class DataSafeFunctions {
      *             .objects(maskingPoliciesMaskingColumnObject)
      *             .objectTypes(maskingPoliciesMaskingColumnObjectType)
      *             .schemaNames(maskingPoliciesMaskingColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(maskingPoliciesMaskingColumnTimeCreatedLessThan)
      *             .timeUpdatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo)
@@ -15109,7 +15109,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .columnNames(maskingPoliciesMaskingColumnColumnName)
      *             .dataTypes(maskingPoliciesMaskingColumnDataType)
      *             .isMaskingEnabled(maskingPoliciesMaskingColumnIsMaskingEnabled)
@@ -15119,7 +15119,7 @@ public final class DataSafeFunctions {
      *             .objects(maskingPoliciesMaskingColumnObject)
      *             .objectTypes(maskingPoliciesMaskingColumnObjectType)
      *             .schemaNames(maskingPoliciesMaskingColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(maskingPoliciesMaskingColumnTimeCreatedLessThan)
      *             .timeUpdatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo)
@@ -15165,7 +15165,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .columnNames(maskingPoliciesMaskingColumnColumnName)
      *             .dataTypes(maskingPoliciesMaskingColumnDataType)
      *             .isMaskingEnabled(maskingPoliciesMaskingColumnIsMaskingEnabled)
@@ -15175,7 +15175,7 @@ public final class DataSafeFunctions {
      *             .objects(maskingPoliciesMaskingColumnObject)
      *             .objectTypes(maskingPoliciesMaskingColumnObjectType)
      *             .schemaNames(maskingPoliciesMaskingColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(maskingPoliciesMaskingColumnTimeCreatedLessThan)
      *             .timeUpdatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo)
@@ -15221,7 +15221,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .columnNames(maskingPoliciesMaskingColumnColumnName)
      *             .dataTypes(maskingPoliciesMaskingColumnDataType)
      *             .isMaskingEnabled(maskingPoliciesMaskingColumnIsMaskingEnabled)
@@ -15231,7 +15231,7 @@ public final class DataSafeFunctions {
      *             .objects(maskingPoliciesMaskingColumnObject)
      *             .objectTypes(maskingPoliciesMaskingColumnObjectType)
      *             .schemaNames(maskingPoliciesMaskingColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(maskingPoliciesMaskingColumnTimeCreatedLessThan)
      *             .timeUpdatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo)
@@ -15277,7 +15277,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .columnNames(maskingPoliciesMaskingColumnColumnName)
      *             .dataTypes(maskingPoliciesMaskingColumnDataType)
      *             .isMaskingEnabled(maskingPoliciesMaskingColumnIsMaskingEnabled)
@@ -15287,7 +15287,7 @@ public final class DataSafeFunctions {
      *             .objects(maskingPoliciesMaskingColumnObject)
      *             .objectTypes(maskingPoliciesMaskingColumnObjectType)
      *             .schemaNames(maskingPoliciesMaskingColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(maskingPoliciesMaskingColumnTimeCreatedLessThan)
      *             .timeUpdatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo)
@@ -15333,7 +15333,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -15375,7 +15375,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -15417,7 +15417,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -15459,7 +15459,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -15501,7 +15501,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -15543,7 +15543,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyHealthReport = DataSafeFunctions.getMaskingPolicyHealthReport(GetMaskingPolicyHealthReportArgs.builder()
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.get("id"))
      *             .build());
      * 
      *     }
@@ -15585,7 +15585,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyHealthReport = DataSafeFunctions.getMaskingPolicyHealthReport(GetMaskingPolicyHealthReportArgs.builder()
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.get("id"))
      *             .build());
      * 
      *     }
@@ -15627,7 +15627,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyHealthReport = DataSafeFunctions.getMaskingPolicyHealthReport(GetMaskingPolicyHealthReportArgs.builder()
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.get("id"))
      *             .build());
      * 
      *     }
@@ -15669,7 +15669,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyHealthReport = DataSafeFunctions.getMaskingPolicyHealthReport(GetMaskingPolicyHealthReportArgs.builder()
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.get("id"))
      *             .build());
      * 
      *     }
@@ -15711,7 +15711,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyHealthReport = DataSafeFunctions.getMaskingPolicyHealthReport(GetMaskingPolicyHealthReportArgs.builder()
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.get("id"))
      *             .build());
      * 
      *     }
@@ -15753,7 +15753,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyHealthReportLogs = DataSafeFunctions.getMaskingPolicyHealthReportLogs(GetMaskingPolicyHealthReportLogsArgs.builder()
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.get("id"))
      *             .messageType(maskingPolicyHealthReportLogMessageType)
      *             .build());
      * 
@@ -15796,7 +15796,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyHealthReportLogs = DataSafeFunctions.getMaskingPolicyHealthReportLogs(GetMaskingPolicyHealthReportLogsArgs.builder()
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.get("id"))
      *             .messageType(maskingPolicyHealthReportLogMessageType)
      *             .build());
      * 
@@ -15839,7 +15839,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyHealthReportLogs = DataSafeFunctions.getMaskingPolicyHealthReportLogs(GetMaskingPolicyHealthReportLogsArgs.builder()
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.get("id"))
      *             .messageType(maskingPolicyHealthReportLogMessageType)
      *             .build());
      * 
@@ -15882,7 +15882,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyHealthReportLogs = DataSafeFunctions.getMaskingPolicyHealthReportLogs(GetMaskingPolicyHealthReportLogsArgs.builder()
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.get("id"))
      *             .messageType(maskingPolicyHealthReportLogMessageType)
      *             .build());
      * 
@@ -15925,7 +15925,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyHealthReportLogs = DataSafeFunctions.getMaskingPolicyHealthReportLogs(GetMaskingPolicyHealthReportLogsArgs.builder()
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.get("id"))
      *             .messageType(maskingPolicyHealthReportLogMessageType)
      *             .build());
      * 
@@ -15972,10 +15972,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingPolicyHealthReportAccessLevel)
      *             .compartmentIdInSubtree(maskingPolicyHealthReportCompartmentIdInSubtree)
      *             .displayName(maskingPolicyHealthReportDisplayName)
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.get("id"))
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .state(maskingPolicyHealthReportState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -16021,10 +16021,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingPolicyHealthReportAccessLevel)
      *             .compartmentIdInSubtree(maskingPolicyHealthReportCompartmentIdInSubtree)
      *             .displayName(maskingPolicyHealthReportDisplayName)
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.get("id"))
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .state(maskingPolicyHealthReportState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -16070,10 +16070,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingPolicyHealthReportAccessLevel)
      *             .compartmentIdInSubtree(maskingPolicyHealthReportCompartmentIdInSubtree)
      *             .displayName(maskingPolicyHealthReportDisplayName)
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.get("id"))
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .state(maskingPolicyHealthReportState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -16119,10 +16119,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingPolicyHealthReportAccessLevel)
      *             .compartmentIdInSubtree(maskingPolicyHealthReportCompartmentIdInSubtree)
      *             .displayName(maskingPolicyHealthReportDisplayName)
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.get("id"))
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .state(maskingPolicyHealthReportState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -16168,10 +16168,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingPolicyHealthReportAccessLevel)
      *             .compartmentIdInSubtree(maskingPolicyHealthReportCompartmentIdInSubtree)
      *             .displayName(maskingPolicyHealthReportDisplayName)
-     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.get("id"))
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .state(maskingPolicyHealthReportState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -16213,7 +16213,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingObjects = DataSafeFunctions.getMaskingPolicyMaskingObjects(GetMaskingPolicyMaskingObjectsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .objects(maskingPolicyMaskingObjectObject)
      *             .objectTypes(maskingPolicyMaskingObjectObjectType)
      *             .schemaNames(maskingPolicyMaskingObjectSchemaName)
@@ -16258,7 +16258,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingObjects = DataSafeFunctions.getMaskingPolicyMaskingObjects(GetMaskingPolicyMaskingObjectsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .objects(maskingPolicyMaskingObjectObject)
      *             .objectTypes(maskingPolicyMaskingObjectObjectType)
      *             .schemaNames(maskingPolicyMaskingObjectSchemaName)
@@ -16303,7 +16303,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingObjects = DataSafeFunctions.getMaskingPolicyMaskingObjects(GetMaskingPolicyMaskingObjectsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .objects(maskingPolicyMaskingObjectObject)
      *             .objectTypes(maskingPolicyMaskingObjectObjectType)
      *             .schemaNames(maskingPolicyMaskingObjectSchemaName)
@@ -16348,7 +16348,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingObjects = DataSafeFunctions.getMaskingPolicyMaskingObjects(GetMaskingPolicyMaskingObjectsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .objects(maskingPolicyMaskingObjectObject)
      *             .objectTypes(maskingPolicyMaskingObjectObjectType)
      *             .schemaNames(maskingPolicyMaskingObjectSchemaName)
@@ -16393,7 +16393,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingObjects = DataSafeFunctions.getMaskingPolicyMaskingObjects(GetMaskingPolicyMaskingObjectsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .objects(maskingPolicyMaskingObjectObject)
      *             .objectTypes(maskingPolicyMaskingObjectObjectType)
      *             .schemaNames(maskingPolicyMaskingObjectSchemaName)
@@ -16438,7 +16438,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingSchemas = DataSafeFunctions.getMaskingPolicyMaskingSchemas(GetMaskingPolicyMaskingSchemasArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .schemaNames(maskingPolicyMaskingSchemaSchemaName)
      *             .build());
      * 
@@ -16481,7 +16481,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingSchemas = DataSafeFunctions.getMaskingPolicyMaskingSchemas(GetMaskingPolicyMaskingSchemasArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .schemaNames(maskingPolicyMaskingSchemaSchemaName)
      *             .build());
      * 
@@ -16524,7 +16524,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingSchemas = DataSafeFunctions.getMaskingPolicyMaskingSchemas(GetMaskingPolicyMaskingSchemasArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .schemaNames(maskingPolicyMaskingSchemaSchemaName)
      *             .build());
      * 
@@ -16567,7 +16567,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingSchemas = DataSafeFunctions.getMaskingPolicyMaskingSchemas(GetMaskingPolicyMaskingSchemasArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .schemaNames(maskingPolicyMaskingSchemaSchemaName)
      *             .build());
      * 
@@ -16610,7 +16610,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingSchemas = DataSafeFunctions.getMaskingPolicyMaskingSchemas(GetMaskingPolicyMaskingSchemasArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .schemaNames(maskingPolicyMaskingSchemaSchemaName)
      *             .build());
      * 
@@ -16653,7 +16653,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyReferentialRelations = DataSafeFunctions.getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .columnNames(maskingPolicyReferentialRelationColumnName)
      *             .objects(maskingPolicyReferentialRelationObject)
      *             .relationTypes(maskingPolicyReferentialRelationRelationType)
@@ -16699,7 +16699,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyReferentialRelations = DataSafeFunctions.getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .columnNames(maskingPolicyReferentialRelationColumnName)
      *             .objects(maskingPolicyReferentialRelationObject)
      *             .relationTypes(maskingPolicyReferentialRelationRelationType)
@@ -16745,7 +16745,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyReferentialRelations = DataSafeFunctions.getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .columnNames(maskingPolicyReferentialRelationColumnName)
      *             .objects(maskingPolicyReferentialRelationObject)
      *             .relationTypes(maskingPolicyReferentialRelationRelationType)
@@ -16791,7 +16791,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyReferentialRelations = DataSafeFunctions.getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .columnNames(maskingPolicyReferentialRelationColumnName)
      *             .objects(maskingPolicyReferentialRelationObject)
      *             .relationTypes(maskingPolicyReferentialRelationRelationType)
@@ -16837,7 +16837,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyReferentialRelations = DataSafeFunctions.getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs.builder()
-     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
      *             .columnNames(maskingPolicyReferentialRelationColumnName)
      *             .objects(maskingPolicyReferentialRelationObject)
      *             .relationTypes(maskingPolicyReferentialRelationRelationType)
@@ -16883,7 +16883,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
-     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.id())
+     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.get("id"))
      *             .build());
      * 
      *     }
@@ -16925,7 +16925,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
-     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.id())
+     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.get("id"))
      *             .build());
      * 
      *     }
@@ -16967,7 +16967,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
-     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.id())
+     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.get("id"))
      *             .build());
      * 
      *     }
@@ -17009,7 +17009,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
-     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.id())
+     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.get("id"))
      *             .build());
      * 
      *     }
@@ -17051,7 +17051,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
-     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.id())
+     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.get("id"))
      *             .build());
      * 
      *     }
@@ -17093,13 +17093,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .columnNames(maskingReportsMaskedColumnColumnName)
      *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
      *             .objects(maskingReportsMaskedColumnObject)
      *             .objectTypes(maskingReportsMaskedColumnObjectType)
      *             .schemaNames(maskingReportsMaskedColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -17141,13 +17141,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .columnNames(maskingReportsMaskedColumnColumnName)
      *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
      *             .objects(maskingReportsMaskedColumnObject)
      *             .objectTypes(maskingReportsMaskedColumnObjectType)
      *             .schemaNames(maskingReportsMaskedColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -17189,13 +17189,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .columnNames(maskingReportsMaskedColumnColumnName)
      *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
      *             .objects(maskingReportsMaskedColumnObject)
      *             .objectTypes(maskingReportsMaskedColumnObjectType)
      *             .schemaNames(maskingReportsMaskedColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -17237,13 +17237,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .columnNames(maskingReportsMaskedColumnColumnName)
      *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
      *             .objects(maskingReportsMaskedColumnObject)
      *             .objectTypes(maskingReportsMaskedColumnObjectType)
      *             .schemaNames(maskingReportsMaskedColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -17285,13 +17285,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .columnNames(maskingReportsMaskedColumnColumnName)
      *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
      *             .objects(maskingReportsMaskedColumnObject)
      *             .objectTypes(maskingReportsMaskedColumnObjectType)
      *             .schemaNames(maskingReportsMaskedColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -17333,7 +17333,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportMaskingErrors = DataSafeFunctions.getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .stepName(maskingReportMaskingErrorStepName)
      *             .build());
      * 
@@ -17376,7 +17376,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportMaskingErrors = DataSafeFunctions.getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .stepName(maskingReportMaskingErrorStepName)
      *             .build());
      * 
@@ -17419,7 +17419,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportMaskingErrors = DataSafeFunctions.getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .stepName(maskingReportMaskingErrorStepName)
      *             .build());
      * 
@@ -17462,7 +17462,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportMaskingErrors = DataSafeFunctions.getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .stepName(maskingReportMaskingErrorStepName)
      *             .build());
      * 
@@ -17505,7 +17505,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportMaskingErrors = DataSafeFunctions.getMaskingReportMaskingErrors(GetMaskingReportMaskingErrorsArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .stepName(maskingReportMaskingErrorStepName)
      *             .build());
      * 
@@ -17551,9 +17551,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(maskingReportAccessLevel)
      *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -17598,9 +17598,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(maskingReportAccessLevel)
      *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -17645,9 +17645,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(maskingReportAccessLevel)
      *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -17692,9 +17692,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(maskingReportAccessLevel)
      *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -17739,9 +17739,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(maskingReportAccessLevel)
      *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -17783,13 +17783,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .columnNames(maskingReportsMaskedColumnColumnName)
      *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
      *             .objects(maskingReportsMaskedColumnObject)
      *             .objectTypes(maskingReportsMaskedColumnObjectType)
      *             .schemaNames(maskingReportsMaskedColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -17831,13 +17831,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .columnNames(maskingReportsMaskedColumnColumnName)
      *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
      *             .objects(maskingReportsMaskedColumnObject)
      *             .objectTypes(maskingReportsMaskedColumnObjectType)
      *             .schemaNames(maskingReportsMaskedColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -17879,13 +17879,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .columnNames(maskingReportsMaskedColumnColumnName)
      *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
      *             .objects(maskingReportsMaskedColumnObject)
      *             .objectTypes(maskingReportsMaskedColumnObjectType)
      *             .schemaNames(maskingReportsMaskedColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -17927,13 +17927,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .columnNames(maskingReportsMaskedColumnColumnName)
      *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
      *             .objects(maskingReportsMaskedColumnObject)
      *             .objectTypes(maskingReportsMaskedColumnObjectType)
      *             .schemaNames(maskingReportsMaskedColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -17975,13 +17975,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
-     *             .maskingReportId(testMaskingReport.id())
+     *             .maskingReportId(testMaskingReport.get("id"))
      *             .columnNames(maskingReportsMaskedColumnColumnName)
      *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
      *             .objects(maskingReportsMaskedColumnObject)
      *             .objectTypes(maskingReportsMaskedColumnObjectType)
      *             .schemaNames(maskingReportsMaskedColumnSchemaName)
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -18023,7 +18023,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
-     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.id())
+     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -18065,7 +18065,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
-     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.id())
+     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -18107,7 +18107,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
-     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.id())
+     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -18149,7 +18149,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
-     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.id())
+     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -18191,7 +18191,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
-     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.id())
+     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -18237,7 +18237,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(onPremConnectorAccessLevel)
      *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
      *             .displayName(onPremConnectorDisplayName)
-     *             .onPremConnectorId(testOnPremConnector.id())
+     *             .onPremConnectorId(testOnPremConnector.get("id"))
      *             .state(onPremConnectorState)
      *             .build());
      * 
@@ -18284,7 +18284,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(onPremConnectorAccessLevel)
      *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
      *             .displayName(onPremConnectorDisplayName)
-     *             .onPremConnectorId(testOnPremConnector.id())
+     *             .onPremConnectorId(testOnPremConnector.get("id"))
      *             .state(onPremConnectorState)
      *             .build());
      * 
@@ -18331,7 +18331,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(onPremConnectorAccessLevel)
      *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
      *             .displayName(onPremConnectorDisplayName)
-     *             .onPremConnectorId(testOnPremConnector.id())
+     *             .onPremConnectorId(testOnPremConnector.get("id"))
      *             .state(onPremConnectorState)
      *             .build());
      * 
@@ -18378,7 +18378,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(onPremConnectorAccessLevel)
      *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
      *             .displayName(onPremConnectorDisplayName)
-     *             .onPremConnectorId(testOnPremConnector.id())
+     *             .onPremConnectorId(testOnPremConnector.get("id"))
      *             .state(onPremConnectorState)
      *             .build());
      * 
@@ -18425,7 +18425,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(onPremConnectorAccessLevel)
      *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
      *             .displayName(onPremConnectorDisplayName)
-     *             .onPremConnectorId(testOnPremConnector.id())
+     *             .onPremConnectorId(testOnPremConnector.get("id"))
      *             .state(onPremConnectorState)
      *             .build());
      * 
@@ -18471,12 +18471,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(registrationPolicyAccessLevel)
      *             .compartmentIdInSubtree(registrationPolicyCompartmentIdInSubtree)
-     *             .connectionId(testConnection.id())
+     *             .connectionId(testConnection.get("id"))
      *             .connectionType(registrationPolicyConnectionType)
      *             .displayName(registrationPolicyDisplayName)
      *             .enablementLevel(registrationPolicyEnablementLevel)
-     *             .registrationPolicyId(testRegistrationPolicy.id())
-     *             .resourceId(testResource.id())
+     *             .registrationPolicyId(testRegistrationPolicy.get("id"))
+     *             .resourceId(testResource.get("id"))
      *             .state(registrationPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(registrationPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(registrationPolicyTimeCreatedLessThan)
@@ -18524,12 +18524,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(registrationPolicyAccessLevel)
      *             .compartmentIdInSubtree(registrationPolicyCompartmentIdInSubtree)
-     *             .connectionId(testConnection.id())
+     *             .connectionId(testConnection.get("id"))
      *             .connectionType(registrationPolicyConnectionType)
      *             .displayName(registrationPolicyDisplayName)
      *             .enablementLevel(registrationPolicyEnablementLevel)
-     *             .registrationPolicyId(testRegistrationPolicy.id())
-     *             .resourceId(testResource.id())
+     *             .registrationPolicyId(testRegistrationPolicy.get("id"))
+     *             .resourceId(testResource.get("id"))
      *             .state(registrationPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(registrationPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(registrationPolicyTimeCreatedLessThan)
@@ -18577,12 +18577,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(registrationPolicyAccessLevel)
      *             .compartmentIdInSubtree(registrationPolicyCompartmentIdInSubtree)
-     *             .connectionId(testConnection.id())
+     *             .connectionId(testConnection.get("id"))
      *             .connectionType(registrationPolicyConnectionType)
      *             .displayName(registrationPolicyDisplayName)
      *             .enablementLevel(registrationPolicyEnablementLevel)
-     *             .registrationPolicyId(testRegistrationPolicy.id())
-     *             .resourceId(testResource.id())
+     *             .registrationPolicyId(testRegistrationPolicy.get("id"))
+     *             .resourceId(testResource.get("id"))
      *             .state(registrationPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(registrationPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(registrationPolicyTimeCreatedLessThan)
@@ -18630,12 +18630,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(registrationPolicyAccessLevel)
      *             .compartmentIdInSubtree(registrationPolicyCompartmentIdInSubtree)
-     *             .connectionId(testConnection.id())
+     *             .connectionId(testConnection.get("id"))
      *             .connectionType(registrationPolicyConnectionType)
      *             .displayName(registrationPolicyDisplayName)
      *             .enablementLevel(registrationPolicyEnablementLevel)
-     *             .registrationPolicyId(testRegistrationPolicy.id())
-     *             .resourceId(testResource.id())
+     *             .registrationPolicyId(testRegistrationPolicy.get("id"))
+     *             .resourceId(testResource.get("id"))
      *             .state(registrationPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(registrationPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(registrationPolicyTimeCreatedLessThan)
@@ -18683,12 +18683,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(registrationPolicyAccessLevel)
      *             .compartmentIdInSubtree(registrationPolicyCompartmentIdInSubtree)
-     *             .connectionId(testConnection.id())
+     *             .connectionId(testConnection.get("id"))
      *             .connectionType(registrationPolicyConnectionType)
      *             .displayName(registrationPolicyDisplayName)
      *             .enablementLevel(registrationPolicyEnablementLevel)
-     *             .registrationPolicyId(testRegistrationPolicy.id())
-     *             .resourceId(testResource.id())
+     *             .registrationPolicyId(testRegistrationPolicy.get("id"))
+     *             .resourceId(testResource.get("id"))
      *             .state(registrationPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(registrationPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(registrationPolicyTimeCreatedLessThan)
@@ -18733,7 +18733,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegistrationPolicy = DataSafeFunctions.getRegistrationPolicy(GetRegistrationPolicyArgs.builder()
-     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.id())
+     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -18775,7 +18775,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegistrationPolicy = DataSafeFunctions.getRegistrationPolicy(GetRegistrationPolicyArgs.builder()
-     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.id())
+     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -18817,7 +18817,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegistrationPolicy = DataSafeFunctions.getRegistrationPolicy(GetRegistrationPolicyArgs.builder()
-     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.id())
+     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -18859,7 +18859,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegistrationPolicy = DataSafeFunctions.getRegistrationPolicy(GetRegistrationPolicyArgs.builder()
-     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.id())
+     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -18901,7 +18901,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegistrationPolicy = DataSafeFunctions.getRegistrationPolicy(GetRegistrationPolicyArgs.builder()
-     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.id())
+     *             .registrationPolicyId(testRegistrationPolicyOciDataSafeRegistrationPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -18944,9 +18944,9 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRegistrationPolicyTargetDatabases = DataSafeFunctions.getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .registrationPolicyId(testRegistrationPolicy.get("id"))
      *             .membershipStatus(registrationPolicyTargetDatabaseMembershipStatus)
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -18989,9 +18989,9 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRegistrationPolicyTargetDatabases = DataSafeFunctions.getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .registrationPolicyId(testRegistrationPolicy.get("id"))
      *             .membershipStatus(registrationPolicyTargetDatabaseMembershipStatus)
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -19034,9 +19034,9 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRegistrationPolicyTargetDatabases = DataSafeFunctions.getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .registrationPolicyId(testRegistrationPolicy.get("id"))
      *             .membershipStatus(registrationPolicyTargetDatabaseMembershipStatus)
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -19079,9 +19079,9 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRegistrationPolicyTargetDatabases = DataSafeFunctions.getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .registrationPolicyId(testRegistrationPolicy.get("id"))
      *             .membershipStatus(registrationPolicyTargetDatabaseMembershipStatus)
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -19124,9 +19124,9 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRegistrationPolicyTargetDatabases = DataSafeFunctions.getRegistrationPolicyTargetDatabases(GetRegistrationPolicyTargetDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .registrationPolicyId(testRegistrationPolicy.id())
+     *             .registrationPolicyId(testRegistrationPolicy.get("id"))
      *             .membershipStatus(registrationPolicyTargetDatabaseMembershipStatus)
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -19168,7 +19168,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
-     *             .reportId(testReportOciDataSafeReport.id())
+     *             .reportId(testReportOciDataSafeReport.get("id"))
      *             .build());
      * 
      *     }
@@ -19210,7 +19210,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
-     *             .reportId(testReportOciDataSafeReport.id())
+     *             .reportId(testReportOciDataSafeReport.get("id"))
      *             .build());
      * 
      *     }
@@ -19252,7 +19252,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
-     *             .reportId(testReportOciDataSafeReport.id())
+     *             .reportId(testReportOciDataSafeReport.get("id"))
      *             .build());
      * 
      *     }
@@ -19294,7 +19294,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
-     *             .reportId(testReportOciDataSafeReport.id())
+     *             .reportId(testReportOciDataSafeReport.get("id"))
      *             .build());
      * 
      *     }
@@ -19336,7 +19336,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
-     *             .reportId(testReportOciDataSafeReport.id())
+     *             .reportId(testReportOciDataSafeReport.get("id"))
      *             .build());
      * 
      *     }
@@ -19378,7 +19378,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
-     *             .reportId(testReport.id())
+     *             .reportId(testReport.get("id"))
      *             .build());
      * 
      *     }
@@ -19420,7 +19420,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
-     *             .reportId(testReport.id())
+     *             .reportId(testReport.get("id"))
      *             .build());
      * 
      *     }
@@ -19462,7 +19462,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
-     *             .reportId(testReport.id())
+     *             .reportId(testReport.get("id"))
      *             .build());
      * 
      *     }
@@ -19504,7 +19504,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
-     *             .reportId(testReport.id())
+     *             .reportId(testReport.get("id"))
      *             .build());
      * 
      *     }
@@ -19546,7 +19546,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
-     *             .reportId(testReport.id())
+     *             .reportId(testReport.get("id"))
      *             .build());
      * 
      *     }
@@ -19588,7 +19588,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
-     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.id())
+     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -19630,7 +19630,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
-     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.id())
+     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -19672,7 +19672,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
-     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.id())
+     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -19714,7 +19714,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
-     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.id())
+     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -19756,7 +19756,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
-     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.id())
+     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -20059,7 +20059,7 @@ public final class DataSafeFunctions {
      *             .dataSource(reportDataSource)
      *             .displayName(reportDisplayName)
      *             .mimeType(reportMimeType)
-     *             .reportDefinitionId(testReportDefinition.id())
+     *             .reportDefinitionId(testReportDefinition.get("id"))
      *             .state(reportState)
      *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
      *             .timeGeneratedLessThan(reportTimeGeneratedLessThan)
@@ -20111,7 +20111,7 @@ public final class DataSafeFunctions {
      *             .dataSource(reportDataSource)
      *             .displayName(reportDisplayName)
      *             .mimeType(reportMimeType)
-     *             .reportDefinitionId(testReportDefinition.id())
+     *             .reportDefinitionId(testReportDefinition.get("id"))
      *             .state(reportState)
      *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
      *             .timeGeneratedLessThan(reportTimeGeneratedLessThan)
@@ -20163,7 +20163,7 @@ public final class DataSafeFunctions {
      *             .dataSource(reportDataSource)
      *             .displayName(reportDisplayName)
      *             .mimeType(reportMimeType)
-     *             .reportDefinitionId(testReportDefinition.id())
+     *             .reportDefinitionId(testReportDefinition.get("id"))
      *             .state(reportState)
      *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
      *             .timeGeneratedLessThan(reportTimeGeneratedLessThan)
@@ -20215,7 +20215,7 @@ public final class DataSafeFunctions {
      *             .dataSource(reportDataSource)
      *             .displayName(reportDisplayName)
      *             .mimeType(reportMimeType)
-     *             .reportDefinitionId(testReportDefinition.id())
+     *             .reportDefinitionId(testReportDefinition.get("id"))
      *             .state(reportState)
      *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
      *             .timeGeneratedLessThan(reportTimeGeneratedLessThan)
@@ -20267,7 +20267,7 @@ public final class DataSafeFunctions {
      *             .dataSource(reportDataSource)
      *             .displayName(reportDisplayName)
      *             .mimeType(reportMimeType)
-     *             .reportDefinitionId(testReportDefinition.id())
+     *             .reportDefinitionId(testReportDefinition.get("id"))
      *             .state(reportState)
      *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
      *             .timeGeneratedLessThan(reportTimeGeneratedLessThan)
@@ -20313,7 +20313,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifference = DataSafeFunctions.getSdmMaskingPolicyDifference(GetSdmMaskingPolicyDifferenceArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.get("id"))
      *             .build());
      * 
      *     }
@@ -20355,7 +20355,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifference = DataSafeFunctions.getSdmMaskingPolicyDifference(GetSdmMaskingPolicyDifferenceArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.get("id"))
      *             .build());
      * 
      *     }
@@ -20397,7 +20397,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifference = DataSafeFunctions.getSdmMaskingPolicyDifference(GetSdmMaskingPolicyDifferenceArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.get("id"))
      *             .build());
      * 
      *     }
@@ -20439,7 +20439,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifference = DataSafeFunctions.getSdmMaskingPolicyDifference(GetSdmMaskingPolicyDifferenceArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.get("id"))
      *             .build());
      * 
      *     }
@@ -20481,7 +20481,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifference = DataSafeFunctions.getSdmMaskingPolicyDifference(GetSdmMaskingPolicyDifferenceArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.get("id"))
      *             .build());
      * 
      *     }
@@ -20524,7 +20524,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumn = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumn(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs.builder()
      *             .differenceColumnKey(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey)
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.get("id"))
      *             .build());
      * 
      *     }
@@ -20567,7 +20567,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumn = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumn(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs.builder()
      *             .differenceColumnKey(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey)
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.get("id"))
      *             .build());
      * 
      *     }
@@ -20610,7 +20610,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumn = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumn(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs.builder()
      *             .differenceColumnKey(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey)
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.get("id"))
      *             .build());
      * 
      *     }
@@ -20653,7 +20653,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumn = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumn(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs.builder()
      *             .differenceColumnKey(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey)
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.get("id"))
      *             .build());
      * 
      *     }
@@ -20696,7 +20696,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumn = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumn(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs.builder()
      *             .differenceColumnKey(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey)
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.get("id"))
      *             .build());
      * 
      *     }
@@ -20738,7 +20738,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumns = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumns(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.get("id"))
      *             .columnNames(sdmMaskingPolicyDifferenceDifferenceColumnColumnName)
      *             .differenceType(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType)
      *             .objects(sdmMaskingPolicyDifferenceDifferenceColumnObject)
@@ -20786,7 +20786,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumns = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumns(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.get("id"))
      *             .columnNames(sdmMaskingPolicyDifferenceDifferenceColumnColumnName)
      *             .differenceType(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType)
      *             .objects(sdmMaskingPolicyDifferenceDifferenceColumnObject)
@@ -20834,7 +20834,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumns = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumns(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.get("id"))
      *             .columnNames(sdmMaskingPolicyDifferenceDifferenceColumnColumnName)
      *             .differenceType(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType)
      *             .objects(sdmMaskingPolicyDifferenceDifferenceColumnObject)
@@ -20882,7 +20882,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumns = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumns(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.get("id"))
      *             .columnNames(sdmMaskingPolicyDifferenceDifferenceColumnColumnName)
      *             .differenceType(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType)
      *             .objects(sdmMaskingPolicyDifferenceDifferenceColumnObject)
@@ -20930,7 +20930,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumns = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumns(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.get("id"))
      *             .columnNames(sdmMaskingPolicyDifferenceDifferenceColumnColumnName)
      *             .differenceType(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType)
      *             .objects(sdmMaskingPolicyDifferenceDifferenceColumnObject)
@@ -20982,8 +20982,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sdmMaskingPolicyDifferenceCompartmentIdInSubtree)
      *             .differenceAccessLevel(sdmMaskingPolicyDifferenceDifferenceAccessLevel)
      *             .displayName(sdmMaskingPolicyDifferenceDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(sdmMaskingPolicyDifferenceState)
      *             .build());
      * 
@@ -21030,8 +21030,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sdmMaskingPolicyDifferenceCompartmentIdInSubtree)
      *             .differenceAccessLevel(sdmMaskingPolicyDifferenceDifferenceAccessLevel)
      *             .displayName(sdmMaskingPolicyDifferenceDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(sdmMaskingPolicyDifferenceState)
      *             .build());
      * 
@@ -21078,8 +21078,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sdmMaskingPolicyDifferenceCompartmentIdInSubtree)
      *             .differenceAccessLevel(sdmMaskingPolicyDifferenceDifferenceAccessLevel)
      *             .displayName(sdmMaskingPolicyDifferenceDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(sdmMaskingPolicyDifferenceState)
      *             .build());
      * 
@@ -21126,8 +21126,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sdmMaskingPolicyDifferenceCompartmentIdInSubtree)
      *             .differenceAccessLevel(sdmMaskingPolicyDifferenceDifferenceAccessLevel)
      *             .displayName(sdmMaskingPolicyDifferenceDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(sdmMaskingPolicyDifferenceState)
      *             .build());
      * 
@@ -21174,8 +21174,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sdmMaskingPolicyDifferenceCompartmentIdInSubtree)
      *             .differenceAccessLevel(sdmMaskingPolicyDifferenceDifferenceAccessLevel)
      *             .displayName(sdmMaskingPolicyDifferenceDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(sdmMaskingPolicyDifferenceState)
      *             .build());
      * 
@@ -21218,7 +21218,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -21260,7 +21260,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -21302,7 +21302,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -21344,7 +21344,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -21386,7 +21386,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -21428,7 +21428,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentChecks = DataSafeFunctions.getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .accessLevel(securityAssessmentCheckAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentCheckCompartmentIdInSubtree)
      *             .containsReferences(securityAssessmentCheckContainsReferences)
@@ -21476,7 +21476,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentChecks = DataSafeFunctions.getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .accessLevel(securityAssessmentCheckAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentCheckCompartmentIdInSubtree)
      *             .containsReferences(securityAssessmentCheckContainsReferences)
@@ -21524,7 +21524,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentChecks = DataSafeFunctions.getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .accessLevel(securityAssessmentCheckAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentCheckCompartmentIdInSubtree)
      *             .containsReferences(securityAssessmentCheckContainsReferences)
@@ -21572,7 +21572,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentChecks = DataSafeFunctions.getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .accessLevel(securityAssessmentCheckAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentCheckCompartmentIdInSubtree)
      *             .containsReferences(securityAssessmentCheckContainsReferences)
@@ -21620,7 +21620,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentChecks = DataSafeFunctions.getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .accessLevel(securityAssessmentCheckAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentCheckCompartmentIdInSubtree)
      *             .containsReferences(securityAssessmentCheckContainsReferences)
@@ -21668,8 +21668,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.get("id"))
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -21711,8 +21711,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.get("id"))
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -21754,8 +21754,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.get("id"))
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -21797,8 +21797,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.get("id"))
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -21840,8 +21840,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.get("id"))
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -22233,7 +22233,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .findingKey(securityAssessmentFindingsChangeAuditLogFindingKey)
      *             .findingTitle(securityAssessmentFindingsChangeAuditLogFindingTitle)
      *             .isRiskDeferred(securityAssessmentFindingsChangeAuditLogIsRiskDeferred)
@@ -22284,7 +22284,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .findingKey(securityAssessmentFindingsChangeAuditLogFindingKey)
      *             .findingTitle(securityAssessmentFindingsChangeAuditLogFindingTitle)
      *             .isRiskDeferred(securityAssessmentFindingsChangeAuditLogIsRiskDeferred)
@@ -22335,7 +22335,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .findingKey(securityAssessmentFindingsChangeAuditLogFindingKey)
      *             .findingTitle(securityAssessmentFindingsChangeAuditLogFindingTitle)
      *             .isRiskDeferred(securityAssessmentFindingsChangeAuditLogIsRiskDeferred)
@@ -22386,7 +22386,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .findingKey(securityAssessmentFindingsChangeAuditLogFindingKey)
      *             .findingTitle(securityAssessmentFindingsChangeAuditLogFindingTitle)
      *             .isRiskDeferred(securityAssessmentFindingsChangeAuditLogIsRiskDeferred)
@@ -22437,7 +22437,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .findingKey(securityAssessmentFindingsChangeAuditLogFindingKey)
      *             .findingTitle(securityAssessmentFindingsChangeAuditLogFindingTitle)
      *             .isRiskDeferred(securityAssessmentFindingsChangeAuditLogIsRiskDeferred)
@@ -22498,7 +22498,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentSecurityFeatureAnalyticAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -22550,7 +22550,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentSecurityFeatureAnalyticAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -22602,7 +22602,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentSecurityFeatureAnalyticAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -22654,7 +22654,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentSecurityFeatureAnalyticAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -22706,7 +22706,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentSecurityFeatureAnalyticAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -22751,7 +22751,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentSecurityFeatureAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetsWithColumnEncryption(securityAssessmentSecurityFeatureTargetsWithColumnEncryption)
      *             .targetsWithDatabaseVault(securityAssessmentSecurityFeatureTargetsWithDatabaseVault)
      *             .targetsWithExternalAuthentication(securityAssessmentSecurityFeatureTargetsWithExternalAuthentication)
@@ -22807,7 +22807,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentSecurityFeatureAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetsWithColumnEncryption(securityAssessmentSecurityFeatureTargetsWithColumnEncryption)
      *             .targetsWithDatabaseVault(securityAssessmentSecurityFeatureTargetsWithDatabaseVault)
      *             .targetsWithExternalAuthentication(securityAssessmentSecurityFeatureTargetsWithExternalAuthentication)
@@ -22863,7 +22863,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentSecurityFeatureAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetsWithColumnEncryption(securityAssessmentSecurityFeatureTargetsWithColumnEncryption)
      *             .targetsWithDatabaseVault(securityAssessmentSecurityFeatureTargetsWithDatabaseVault)
      *             .targetsWithExternalAuthentication(securityAssessmentSecurityFeatureTargetsWithExternalAuthentication)
@@ -22919,7 +22919,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentSecurityFeatureAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetsWithColumnEncryption(securityAssessmentSecurityFeatureTargetsWithColumnEncryption)
      *             .targetsWithDatabaseVault(securityAssessmentSecurityFeatureTargetsWithDatabaseVault)
      *             .targetsWithExternalAuthentication(securityAssessmentSecurityFeatureTargetsWithExternalAuthentication)
@@ -22975,7 +22975,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentSecurityFeatureAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetsWithColumnEncryption(securityAssessmentSecurityFeatureTargetsWithColumnEncryption)
      *             .targetsWithDatabaseVault(securityAssessmentSecurityFeatureTargetsWithDatabaseVault)
      *             .targetsWithExternalAuthentication(securityAssessmentSecurityFeatureTargetsWithExternalAuthentication)
@@ -23047,10 +23047,10 @@ public final class DataSafeFunctions {
      *             .isCompared(securityAssessmentTemplateAnalyticIsCompared)
      *             .isCompliant(securityAssessmentTemplateAnalyticIsCompliant)
      *             .isGroup(securityAssessmentTemplateAnalyticIsGroup)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
-     *             .templateAssessmentId(testTemplateAssessment.id())
-     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -23111,10 +23111,10 @@ public final class DataSafeFunctions {
      *             .isCompared(securityAssessmentTemplateAnalyticIsCompared)
      *             .isCompliant(securityAssessmentTemplateAnalyticIsCompliant)
      *             .isGroup(securityAssessmentTemplateAnalyticIsGroup)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
-     *             .templateAssessmentId(testTemplateAssessment.id())
-     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -23175,10 +23175,10 @@ public final class DataSafeFunctions {
      *             .isCompared(securityAssessmentTemplateAnalyticIsCompared)
      *             .isCompliant(securityAssessmentTemplateAnalyticIsCompliant)
      *             .isGroup(securityAssessmentTemplateAnalyticIsGroup)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
-     *             .templateAssessmentId(testTemplateAssessment.id())
-     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -23239,10 +23239,10 @@ public final class DataSafeFunctions {
      *             .isCompared(securityAssessmentTemplateAnalyticIsCompared)
      *             .isCompliant(securityAssessmentTemplateAnalyticIsCompliant)
      *             .isGroup(securityAssessmentTemplateAnalyticIsGroup)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
-     *             .templateAssessmentId(testTemplateAssessment.id())
-     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -23303,10 +23303,10 @@ public final class DataSafeFunctions {
      *             .isCompared(securityAssessmentTemplateAnalyticIsCompared)
      *             .isCompliant(securityAssessmentTemplateAnalyticIsCompliant)
      *             .isGroup(securityAssessmentTemplateAnalyticIsGroup)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
-     *             .templateAssessmentId(testTemplateAssessment.id())
-     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -23365,10 +23365,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentTemplateAssociationAnalyticAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
-     *             .templateAssessmentId(testTemplateAssessment.id())
-     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -23427,10 +23427,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentTemplateAssociationAnalyticAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
-     *             .templateAssessmentId(testTemplateAssessment.id())
-     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -23489,10 +23489,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentTemplateAssociationAnalyticAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
-     *             .templateAssessmentId(testTemplateAssessment.id())
-     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -23551,10 +23551,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentTemplateAssociationAnalyticAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
-     *             .templateAssessmentId(testTemplateAssessment.id())
-     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -23613,10 +23613,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(securityAssessmentTemplateAssociationAnalyticAccessLevel)
      *             .compartmentIdInSubtree(securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
-     *             .templateAssessmentId(testTemplateAssessment.id())
-     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -23658,11 +23658,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentTemplateBaselineComparison = DataSafeFunctions.getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.get("id"))
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .category(securityAssessmentTemplateBaselineComparisonCategory)
      *             .findingKey(securityAssessmentTemplateBaselineComparisonFindingKey)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -23704,11 +23704,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentTemplateBaselineComparison = DataSafeFunctions.getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.get("id"))
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .category(securityAssessmentTemplateBaselineComparisonCategory)
      *             .findingKey(securityAssessmentTemplateBaselineComparisonFindingKey)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -23750,11 +23750,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentTemplateBaselineComparison = DataSafeFunctions.getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.get("id"))
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .category(securityAssessmentTemplateBaselineComparisonCategory)
      *             .findingKey(securityAssessmentTemplateBaselineComparisonFindingKey)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -23796,11 +23796,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentTemplateBaselineComparison = DataSafeFunctions.getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.get("id"))
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .category(securityAssessmentTemplateBaselineComparisonCategory)
      *             .findingKey(securityAssessmentTemplateBaselineComparisonFindingKey)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -23842,11 +23842,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentTemplateBaselineComparison = DataSafeFunctions.getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
-     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.get("id"))
+     *             .securityAssessmentId(testSecurityAssessment.get("id"))
      *             .category(securityAssessmentTemplateBaselineComparisonCategory)
      *             .findingKey(securityAssessmentTemplateBaselineComparisonFindingKey)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -23908,12 +23908,12 @@ public final class DataSafeFunctions {
      *             .displayName(securityAssessmentDisplayName)
      *             .isBaseline(securityAssessmentIsBaseline)
      *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
-     *             .scheduleAssessmentId(testScheduleAssessment.id())
+     *             .scheduleAssessmentId(testScheduleAssessment.get("id"))
      *             .state(securityAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(securityAssessmentTargetType)
-     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
      *             .triggeredBy(securityAssessmentTriggeredBy)
@@ -23979,12 +23979,12 @@ public final class DataSafeFunctions {
      *             .displayName(securityAssessmentDisplayName)
      *             .isBaseline(securityAssessmentIsBaseline)
      *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
-     *             .scheduleAssessmentId(testScheduleAssessment.id())
+     *             .scheduleAssessmentId(testScheduleAssessment.get("id"))
      *             .state(securityAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(securityAssessmentTargetType)
-     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
      *             .triggeredBy(securityAssessmentTriggeredBy)
@@ -24050,12 +24050,12 @@ public final class DataSafeFunctions {
      *             .displayName(securityAssessmentDisplayName)
      *             .isBaseline(securityAssessmentIsBaseline)
      *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
-     *             .scheduleAssessmentId(testScheduleAssessment.id())
+     *             .scheduleAssessmentId(testScheduleAssessment.get("id"))
      *             .state(securityAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(securityAssessmentTargetType)
-     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
      *             .triggeredBy(securityAssessmentTriggeredBy)
@@ -24121,12 +24121,12 @@ public final class DataSafeFunctions {
      *             .displayName(securityAssessmentDisplayName)
      *             .isBaseline(securityAssessmentIsBaseline)
      *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
-     *             .scheduleAssessmentId(testScheduleAssessment.id())
+     *             .scheduleAssessmentId(testScheduleAssessment.get("id"))
      *             .state(securityAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(securityAssessmentTargetType)
-     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
      *             .triggeredBy(securityAssessmentTriggeredBy)
@@ -24192,12 +24192,12 @@ public final class DataSafeFunctions {
      *             .displayName(securityAssessmentDisplayName)
      *             .isBaseline(securityAssessmentIsBaseline)
      *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
-     *             .scheduleAssessmentId(testScheduleAssessment.id())
+     *             .scheduleAssessmentId(testScheduleAssessment.get("id"))
      *             .state(securityAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(securityAssessmentTargetType)
-     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateAssessmentId(testTemplateAssessment.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
      *             .triggeredBy(securityAssessmentTriggeredBy)
@@ -24260,7 +24260,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
      *             .displayName(securityPolicyDisplayName)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .securityPolicyType(securityPolicySecurityPolicyType)
      *             .state(securityPolicyState)
      *             .build());
@@ -24321,7 +24321,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
      *             .displayName(securityPolicyDisplayName)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .securityPolicyType(securityPolicySecurityPolicyType)
      *             .state(securityPolicyState)
      *             .build());
@@ -24382,7 +24382,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
      *             .displayName(securityPolicyDisplayName)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .securityPolicyType(securityPolicySecurityPolicyType)
      *             .state(securityPolicyState)
      *             .build());
@@ -24443,7 +24443,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
      *             .displayName(securityPolicyDisplayName)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .securityPolicyType(securityPolicySecurityPolicyType)
      *             .state(securityPolicyState)
      *             .build());
@@ -24504,7 +24504,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
      *             .displayName(securityPolicyDisplayName)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .securityPolicyType(securityPolicySecurityPolicyType)
      *             .state(securityPolicyState)
      *             .build());
@@ -24548,7 +24548,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -24590,7 +24590,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -24632,7 +24632,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -24674,7 +24674,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -24716,7 +24716,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -24758,7 +24758,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyConfig = DataSafeFunctions.getSecurityPolicyConfig(GetSecurityPolicyConfigArgs.builder()
-     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.id())
+     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -24800,7 +24800,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyConfig = DataSafeFunctions.getSecurityPolicyConfig(GetSecurityPolicyConfigArgs.builder()
-     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.id())
+     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -24842,7 +24842,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyConfig = DataSafeFunctions.getSecurityPolicyConfig(GetSecurityPolicyConfigArgs.builder()
-     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.id())
+     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -24884,7 +24884,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyConfig = DataSafeFunctions.getSecurityPolicyConfig(GetSecurityPolicyConfigArgs.builder()
-     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.id())
+     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -24926,7 +24926,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyConfig = DataSafeFunctions.getSecurityPolicyConfig(GetSecurityPolicyConfigArgs.builder()
-     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.id())
+     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -24985,8 +24985,8 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyConfigAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyConfigCompartmentIdInSubtree)
      *             .displayName(securityPolicyConfigDisplayName)
-     *             .securityPolicyConfigId(testSecurityPolicyConfig.id())
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyConfigId(testSecurityPolicyConfig.get("id"))
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(securityPolicyConfigState)
      *             .timeCreatedGreaterThanOrEqualTo(securityPolicyConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityPolicyConfigTimeCreatedLessThan)
@@ -25048,8 +25048,8 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyConfigAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyConfigCompartmentIdInSubtree)
      *             .displayName(securityPolicyConfigDisplayName)
-     *             .securityPolicyConfigId(testSecurityPolicyConfig.id())
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyConfigId(testSecurityPolicyConfig.get("id"))
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(securityPolicyConfigState)
      *             .timeCreatedGreaterThanOrEqualTo(securityPolicyConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityPolicyConfigTimeCreatedLessThan)
@@ -25111,8 +25111,8 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyConfigAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyConfigCompartmentIdInSubtree)
      *             .displayName(securityPolicyConfigDisplayName)
-     *             .securityPolicyConfigId(testSecurityPolicyConfig.id())
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyConfigId(testSecurityPolicyConfig.get("id"))
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(securityPolicyConfigState)
      *             .timeCreatedGreaterThanOrEqualTo(securityPolicyConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityPolicyConfigTimeCreatedLessThan)
@@ -25174,8 +25174,8 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyConfigAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyConfigCompartmentIdInSubtree)
      *             .displayName(securityPolicyConfigDisplayName)
-     *             .securityPolicyConfigId(testSecurityPolicyConfig.id())
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyConfigId(testSecurityPolicyConfig.get("id"))
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(securityPolicyConfigState)
      *             .timeCreatedGreaterThanOrEqualTo(securityPolicyConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityPolicyConfigTimeCreatedLessThan)
@@ -25237,8 +25237,8 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyConfigAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyConfigCompartmentIdInSubtree)
      *             .displayName(securityPolicyConfigDisplayName)
-     *             .securityPolicyConfigId(testSecurityPolicyConfig.id())
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyConfigId(testSecurityPolicyConfig.get("id"))
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(securityPolicyConfigState)
      *             .timeCreatedGreaterThanOrEqualTo(securityPolicyConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityPolicyConfigTimeCreatedLessThan)
@@ -25283,7 +25283,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -25325,7 +25325,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -25367,7 +25367,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -25409,7 +25409,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -25451,7 +25451,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -25493,8 +25493,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
-     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
+     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.get("id"))
      *             .build());
      * 
      *     }
@@ -25536,8 +25536,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
-     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
+     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.get("id"))
      *             .build());
      * 
      *     }
@@ -25579,8 +25579,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
-     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
+     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.get("id"))
      *             .build());
      * 
      *     }
@@ -25622,8 +25622,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
-     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
+     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.get("id"))
      *             .build());
      * 
      *     }
@@ -25665,8 +25665,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
-     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
+     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.get("id"))
      *             .build());
      * 
      *     }
@@ -25710,11 +25710,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
      *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
-     *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
+     *             .securityPolicyEntryId(testSecurityPolicyEntry.get("id"))
      *             .securityPolicyEntryType(securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -25758,11 +25758,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
      *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
-     *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
+     *             .securityPolicyEntryId(testSecurityPolicyEntry.get("id"))
      *             .securityPolicyEntryType(securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -25806,11 +25806,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
      *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
-     *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
+     *             .securityPolicyEntryId(testSecurityPolicyEntry.get("id"))
      *             .securityPolicyEntryType(securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -25854,11 +25854,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
      *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
-     *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
+     *             .securityPolicyEntryId(testSecurityPolicyEntry.get("id"))
      *             .securityPolicyEntryType(securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -25902,11 +25902,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
      *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
-     *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
+     *             .securityPolicyEntryId(testSecurityPolicyEntry.get("id"))
      *             .securityPolicyEntryType(securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -25965,10 +25965,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyDeploymentAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyDeploymentCompartmentIdInSubtree)
      *             .displayName(securityPolicyDeploymentDisplayName)
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(securityPolicyDeploymentState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetType(securityPolicyDeploymentTargetType)
      *             .build());
      * 
@@ -26028,10 +26028,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyDeploymentAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyDeploymentCompartmentIdInSubtree)
      *             .displayName(securityPolicyDeploymentDisplayName)
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(securityPolicyDeploymentState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetType(securityPolicyDeploymentTargetType)
      *             .build());
      * 
@@ -26091,10 +26091,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyDeploymentAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyDeploymentCompartmentIdInSubtree)
      *             .displayName(securityPolicyDeploymentDisplayName)
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(securityPolicyDeploymentState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetType(securityPolicyDeploymentTargetType)
      *             .build());
      * 
@@ -26154,10 +26154,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyDeploymentAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyDeploymentCompartmentIdInSubtree)
      *             .displayName(securityPolicyDeploymentDisplayName)
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(securityPolicyDeploymentState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetType(securityPolicyDeploymentTargetType)
      *             .build());
      * 
@@ -26217,10 +26217,10 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyDeploymentAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyDeploymentCompartmentIdInSubtree)
      *             .displayName(securityPolicyDeploymentDisplayName)
-     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.get("id"))
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(securityPolicyDeploymentState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetType(securityPolicyDeploymentTargetType)
      *             .build());
      * 
@@ -26263,7 +26263,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -26305,7 +26305,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -26347,7 +26347,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -26389,7 +26389,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -26431,7 +26431,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -26475,7 +26475,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .scimQuery(securityPolicyReportDatabaseTableAccessEntryScimQuery)
      *             .build());
      * 
@@ -26520,7 +26520,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .scimQuery(securityPolicyReportDatabaseTableAccessEntryScimQuery)
      *             .build());
      * 
@@ -26565,7 +26565,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .scimQuery(securityPolicyReportDatabaseTableAccessEntryScimQuery)
      *             .build());
      * 
@@ -26610,7 +26610,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .scimQuery(securityPolicyReportDatabaseTableAccessEntryScimQuery)
      *             .build());
      * 
@@ -26655,7 +26655,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .scimQuery(securityPolicyReportDatabaseTableAccessEntryScimQuery)
      *             .build());
      * 
@@ -26699,7 +26699,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
      *             .databaseTableAccessEntryKey(securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -26742,7 +26742,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
      *             .databaseTableAccessEntryKey(securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -26785,7 +26785,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
      *             .databaseTableAccessEntryKey(securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -26828,7 +26828,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
      *             .databaseTableAccessEntryKey(securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -26871,7 +26871,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
      *             .databaseTableAccessEntryKey(securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -26915,9 +26915,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .scimQuery(securityPolicyReportDatabaseViewAccessEntryScimQuery)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -26961,9 +26961,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .scimQuery(securityPolicyReportDatabaseViewAccessEntryScimQuery)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -27007,9 +27007,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .scimQuery(securityPolicyReportDatabaseViewAccessEntryScimQuery)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -27053,9 +27053,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .scimQuery(securityPolicyReportDatabaseViewAccessEntryScimQuery)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -27099,9 +27099,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .scimQuery(securityPolicyReportDatabaseViewAccessEntryScimQuery)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -27144,7 +27144,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
      *             .databaseViewAccessEntryKey(securityPolicyReportDatabaseViewAccessEntryDatabaseViewAccessEntryKey)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -27187,7 +27187,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
      *             .databaseViewAccessEntryKey(securityPolicyReportDatabaseViewAccessEntryDatabaseViewAccessEntryKey)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -27230,7 +27230,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
      *             .databaseViewAccessEntryKey(securityPolicyReportDatabaseViewAccessEntryDatabaseViewAccessEntryKey)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -27273,7 +27273,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
      *             .databaseViewAccessEntryKey(securityPolicyReportDatabaseViewAccessEntryDatabaseViewAccessEntryKey)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -27316,7 +27316,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
      *             .databaseViewAccessEntryKey(securityPolicyReportDatabaseViewAccessEntryDatabaseViewAccessEntryKey)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -27362,7 +27362,7 @@ public final class DataSafeFunctions {
      *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
      *             .grantedRole(securityPolicyReportRoleGrantPathGrantedRole)
      *             .grantee(securityPolicyReportRoleGrantPathGrantee)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -27408,7 +27408,7 @@ public final class DataSafeFunctions {
      *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
      *             .grantedRole(securityPolicyReportRoleGrantPathGrantedRole)
      *             .grantee(securityPolicyReportRoleGrantPathGrantee)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -27454,7 +27454,7 @@ public final class DataSafeFunctions {
      *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
      *             .grantedRole(securityPolicyReportRoleGrantPathGrantedRole)
      *             .grantee(securityPolicyReportRoleGrantPathGrantee)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -27500,7 +27500,7 @@ public final class DataSafeFunctions {
      *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
      *             .grantedRole(securityPolicyReportRoleGrantPathGrantedRole)
      *             .grantee(securityPolicyReportRoleGrantPathGrantee)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -27546,7 +27546,7 @@ public final class DataSafeFunctions {
      *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
      *             .grantedRole(securityPolicyReportRoleGrantPathGrantedRole)
      *             .grantee(securityPolicyReportRoleGrantPathGrantee)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .build());
      * 
      *     }
@@ -27605,9 +27605,9 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyReportAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyReportCompartmentIdInSubtree)
      *             .displayName(securityPolicyReportDisplayName)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .state(securityPolicyReportState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -27666,9 +27666,9 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyReportAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyReportCompartmentIdInSubtree)
      *             .displayName(securityPolicyReportDisplayName)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .state(securityPolicyReportState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -27727,9 +27727,9 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyReportAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyReportCompartmentIdInSubtree)
      *             .displayName(securityPolicyReportDisplayName)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .state(securityPolicyReportState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -27788,9 +27788,9 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyReportAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyReportCompartmentIdInSubtree)
      *             .displayName(securityPolicyReportDisplayName)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .state(securityPolicyReportState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -27849,9 +27849,9 @@ public final class DataSafeFunctions {
      *             .accessLevel(securityPolicyReportAccessLevel)
      *             .compartmentIdInSubtree(securityPolicyReportCompartmentIdInSubtree)
      *             .displayName(securityPolicyReportDisplayName)
-     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.get("id"))
      *             .state(securityPolicyReportState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -27909,11 +27909,11 @@ public final class DataSafeFunctions {
      *             .groupBies(sensitiveColumnAnalyticGroupBy)
      *             .objects(sensitiveColumnAnalyticObject)
      *             .schemaNames(sensitiveColumnAnalyticSchemaName)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeIds(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeIds(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -27971,11 +27971,11 @@ public final class DataSafeFunctions {
      *             .groupBies(sensitiveColumnAnalyticGroupBy)
      *             .objects(sensitiveColumnAnalyticObject)
      *             .schemaNames(sensitiveColumnAnalyticSchemaName)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeIds(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeIds(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -28033,11 +28033,11 @@ public final class DataSafeFunctions {
      *             .groupBies(sensitiveColumnAnalyticGroupBy)
      *             .objects(sensitiveColumnAnalyticObject)
      *             .schemaNames(sensitiveColumnAnalyticSchemaName)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeIds(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeIds(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -28095,11 +28095,11 @@ public final class DataSafeFunctions {
      *             .groupBies(sensitiveColumnAnalyticGroupBy)
      *             .objects(sensitiveColumnAnalyticObject)
      *             .schemaNames(sensitiveColumnAnalyticSchemaName)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeIds(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeIds(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -28157,11 +28157,11 @@ public final class DataSafeFunctions {
      *             .groupBies(sensitiveColumnAnalyticGroupBy)
      *             .objects(sensitiveColumnAnalyticObject)
      *             .schemaNames(sensitiveColumnAnalyticSchemaName)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeIds(testSensitiveType.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeIds(testSensitiveType.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -28203,7 +28203,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.get("id"))
      *             .build());
      * 
      *     }
@@ -28245,7 +28245,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.get("id"))
      *             .build());
      * 
      *     }
@@ -28287,7 +28287,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.get("id"))
      *             .build());
      * 
      *     }
@@ -28329,7 +28329,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.get("id"))
      *             .build());
      * 
      *     }
@@ -28371,7 +28371,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.get("id"))
      *             .build());
      * 
      *     }
@@ -28468,7 +28468,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelReferentialRelations = DataSafeFunctions.getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .columnNames(sensitiveDataModelReferentialRelationColumnName)
      *             .isSensitive(sensitiveDataModelReferentialRelationIsSensitive)
      *             .objects(sensitiveDataModelReferentialRelationObject)
@@ -28515,7 +28515,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelReferentialRelations = DataSafeFunctions.getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .columnNames(sensitiveDataModelReferentialRelationColumnName)
      *             .isSensitive(sensitiveDataModelReferentialRelationIsSensitive)
      *             .objects(sensitiveDataModelReferentialRelationObject)
@@ -28562,7 +28562,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelReferentialRelations = DataSafeFunctions.getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .columnNames(sensitiveDataModelReferentialRelationColumnName)
      *             .isSensitive(sensitiveDataModelReferentialRelationIsSensitive)
      *             .objects(sensitiveDataModelReferentialRelationObject)
@@ -28609,7 +28609,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelReferentialRelations = DataSafeFunctions.getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .columnNames(sensitiveDataModelReferentialRelationColumnName)
      *             .isSensitive(sensitiveDataModelReferentialRelationIsSensitive)
      *             .objects(sensitiveDataModelReferentialRelationObject)
@@ -28656,7 +28656,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelReferentialRelations = DataSafeFunctions.getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .columnNames(sensitiveDataModelReferentialRelationColumnName)
      *             .isSensitive(sensitiveDataModelReferentialRelationIsSensitive)
      *             .objects(sensitiveDataModelReferentialRelationObject)
@@ -28703,7 +28703,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveObjects = DataSafeFunctions.getSensitiveDataModelSensitiveObjects(GetSensitiveDataModelSensitiveObjectsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .objects(sensitiveDataModelSensitiveObjectObject)
      *             .objectTypes(sensitiveDataModelSensitiveObjectObjectType)
      *             .schemaNames(sensitiveDataModelSensitiveObjectSchemaName)
@@ -28748,7 +28748,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveObjects = DataSafeFunctions.getSensitiveDataModelSensitiveObjects(GetSensitiveDataModelSensitiveObjectsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .objects(sensitiveDataModelSensitiveObjectObject)
      *             .objectTypes(sensitiveDataModelSensitiveObjectObjectType)
      *             .schemaNames(sensitiveDataModelSensitiveObjectSchemaName)
@@ -28793,7 +28793,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveObjects = DataSafeFunctions.getSensitiveDataModelSensitiveObjects(GetSensitiveDataModelSensitiveObjectsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .objects(sensitiveDataModelSensitiveObjectObject)
      *             .objectTypes(sensitiveDataModelSensitiveObjectObjectType)
      *             .schemaNames(sensitiveDataModelSensitiveObjectSchemaName)
@@ -28838,7 +28838,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveObjects = DataSafeFunctions.getSensitiveDataModelSensitiveObjects(GetSensitiveDataModelSensitiveObjectsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .objects(sensitiveDataModelSensitiveObjectObject)
      *             .objectTypes(sensitiveDataModelSensitiveObjectObjectType)
      *             .schemaNames(sensitiveDataModelSensitiveObjectSchemaName)
@@ -28883,7 +28883,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveObjects = DataSafeFunctions.getSensitiveDataModelSensitiveObjects(GetSensitiveDataModelSensitiveObjectsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .objects(sensitiveDataModelSensitiveObjectObject)
      *             .objectTypes(sensitiveDataModelSensitiveObjectObjectType)
      *             .schemaNames(sensitiveDataModelSensitiveObjectSchemaName)
@@ -28928,7 +28928,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveSchemas = DataSafeFunctions.getSensitiveDataModelSensitiveSchemas(GetSensitiveDataModelSensitiveSchemasArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .schemaNames(sensitiveDataModelSensitiveSchemaSchemaName)
      *             .build());
      * 
@@ -28971,7 +28971,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveSchemas = DataSafeFunctions.getSensitiveDataModelSensitiveSchemas(GetSensitiveDataModelSensitiveSchemasArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .schemaNames(sensitiveDataModelSensitiveSchemaSchemaName)
      *             .build());
      * 
@@ -29014,7 +29014,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveSchemas = DataSafeFunctions.getSensitiveDataModelSensitiveSchemas(GetSensitiveDataModelSensitiveSchemasArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .schemaNames(sensitiveDataModelSensitiveSchemaSchemaName)
      *             .build());
      * 
@@ -29057,7 +29057,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveSchemas = DataSafeFunctions.getSensitiveDataModelSensitiveSchemas(GetSensitiveDataModelSensitiveSchemasArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .schemaNames(sensitiveDataModelSensitiveSchemaSchemaName)
      *             .build());
      * 
@@ -29100,7 +29100,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveSchemas = DataSafeFunctions.getSensitiveDataModelSensitiveSchemas(GetSensitiveDataModelSensitiveSchemasArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .schemaNames(sensitiveDataModelSensitiveSchemaSchemaName)
      *             .build());
      * 
@@ -29143,8 +29143,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveTypes = DataSafeFunctions.getSensitiveDataModelSensitiveTypes(GetSensitiveDataModelSensitiveTypesArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -29186,8 +29186,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveTypes = DataSafeFunctions.getSensitiveDataModelSensitiveTypes(GetSensitiveDataModelSensitiveTypesArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -29229,8 +29229,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveTypes = DataSafeFunctions.getSensitiveDataModelSensitiveTypes(GetSensitiveDataModelSensitiveTypesArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -29272,8 +29272,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveTypes = DataSafeFunctions.getSensitiveDataModelSensitiveTypes(GetSensitiveDataModelSensitiveTypesArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -29315,8 +29315,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveTypes = DataSafeFunctions.getSensitiveDataModelSensitiveTypes(GetSensitiveDataModelSensitiveTypesArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -29362,9 +29362,9 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveDataModelAccessLevel)
      *             .compartmentIdInSubtree(sensitiveDataModelCompartmentIdInSubtree)
      *             .displayName(sensitiveDataModelDisplayName)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(sensitiveDataModelState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveDataModelTimeCreatedLessThan)
      *             .build());
@@ -29412,9 +29412,9 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveDataModelAccessLevel)
      *             .compartmentIdInSubtree(sensitiveDataModelCompartmentIdInSubtree)
      *             .displayName(sensitiveDataModelDisplayName)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(sensitiveDataModelState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveDataModelTimeCreatedLessThan)
      *             .build());
@@ -29462,9 +29462,9 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveDataModelAccessLevel)
      *             .compartmentIdInSubtree(sensitiveDataModelCompartmentIdInSubtree)
      *             .displayName(sensitiveDataModelDisplayName)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(sensitiveDataModelState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveDataModelTimeCreatedLessThan)
      *             .build());
@@ -29512,9 +29512,9 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveDataModelAccessLevel)
      *             .compartmentIdInSubtree(sensitiveDataModelCompartmentIdInSubtree)
      *             .displayName(sensitiveDataModelDisplayName)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(sensitiveDataModelState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveDataModelTimeCreatedLessThan)
      *             .build());
@@ -29562,9 +29562,9 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveDataModelAccessLevel)
      *             .compartmentIdInSubtree(sensitiveDataModelCompartmentIdInSubtree)
      *             .displayName(sensitiveDataModelDisplayName)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(sensitiveDataModelState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveDataModelTimeCreatedLessThan)
      *             .build());
@@ -29609,7 +29609,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
      *             .sensitiveColumnKey(sensitiveDataModelsSensitiveColumnSensitiveColumnKey)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .build());
      * 
      *     }
@@ -29652,7 +29652,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
      *             .sensitiveColumnKey(sensitiveDataModelsSensitiveColumnSensitiveColumnKey)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .build());
      * 
      *     }
@@ -29695,7 +29695,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
      *             .sensitiveColumnKey(sensitiveDataModelsSensitiveColumnSensitiveColumnKey)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .build());
      * 
      *     }
@@ -29738,7 +29738,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
      *             .sensitiveColumnKey(sensitiveDataModelsSensitiveColumnSensitiveColumnKey)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .build());
      * 
      *     }
@@ -29781,7 +29781,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
      *             .sensitiveColumnKey(sensitiveDataModelsSensitiveColumnSensitiveColumnKey)
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .build());
      * 
      *     }
@@ -29823,7 +29823,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .columnDataCountFilter(sensitiveDataModelsSensitiveColumnColumnDataCountFilter)
      *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
      *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
@@ -29836,7 +29836,7 @@ public final class DataSafeFunctions {
      *             .relationTypes(sensitiveDataModelsSensitiveColumnRelationType)
      *             .schemaNames(sensitiveDataModelsSensitiveColumnSchemaName)
      *             .sensitiveColumnLifecycleState(sensitiveDataModelsSensitiveColumnSensitiveColumnLifecycleState)
-     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .sensitiveTypeIds(testSensitiveType.get("id"))
      *             .statuses(sensitiveDataModelsSensitiveColumnStatus)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveDataModelsSensitiveColumnTimeCreatedLessThan)
@@ -29883,7 +29883,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .columnDataCountFilter(sensitiveDataModelsSensitiveColumnColumnDataCountFilter)
      *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
      *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
@@ -29896,7 +29896,7 @@ public final class DataSafeFunctions {
      *             .relationTypes(sensitiveDataModelsSensitiveColumnRelationType)
      *             .schemaNames(sensitiveDataModelsSensitiveColumnSchemaName)
      *             .sensitiveColumnLifecycleState(sensitiveDataModelsSensitiveColumnSensitiveColumnLifecycleState)
-     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .sensitiveTypeIds(testSensitiveType.get("id"))
      *             .statuses(sensitiveDataModelsSensitiveColumnStatus)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveDataModelsSensitiveColumnTimeCreatedLessThan)
@@ -29943,7 +29943,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .columnDataCountFilter(sensitiveDataModelsSensitiveColumnColumnDataCountFilter)
      *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
      *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
@@ -29956,7 +29956,7 @@ public final class DataSafeFunctions {
      *             .relationTypes(sensitiveDataModelsSensitiveColumnRelationType)
      *             .schemaNames(sensitiveDataModelsSensitiveColumnSchemaName)
      *             .sensitiveColumnLifecycleState(sensitiveDataModelsSensitiveColumnSensitiveColumnLifecycleState)
-     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .sensitiveTypeIds(testSensitiveType.get("id"))
      *             .statuses(sensitiveDataModelsSensitiveColumnStatus)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveDataModelsSensitiveColumnTimeCreatedLessThan)
@@ -30003,7 +30003,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .columnDataCountFilter(sensitiveDataModelsSensitiveColumnColumnDataCountFilter)
      *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
      *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
@@ -30016,7 +30016,7 @@ public final class DataSafeFunctions {
      *             .relationTypes(sensitiveDataModelsSensitiveColumnRelationType)
      *             .schemaNames(sensitiveDataModelsSensitiveColumnSchemaName)
      *             .sensitiveColumnLifecycleState(sensitiveDataModelsSensitiveColumnSensitiveColumnLifecycleState)
-     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .sensitiveTypeIds(testSensitiveType.get("id"))
      *             .statuses(sensitiveDataModelsSensitiveColumnStatus)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveDataModelsSensitiveColumnTimeCreatedLessThan)
@@ -30063,7 +30063,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .columnDataCountFilter(sensitiveDataModelsSensitiveColumnColumnDataCountFilter)
      *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
      *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
@@ -30076,7 +30076,7 @@ public final class DataSafeFunctions {
      *             .relationTypes(sensitiveDataModelsSensitiveColumnRelationType)
      *             .schemaNames(sensitiveDataModelsSensitiveColumnSchemaName)
      *             .sensitiveColumnLifecycleState(sensitiveDataModelsSensitiveColumnSensitiveColumnLifecycleState)
-     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .sensitiveTypeIds(testSensitiveType.get("id"))
      *             .statuses(sensitiveDataModelsSensitiveColumnStatus)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveDataModelsSensitiveColumnTimeCreatedLessThan)
@@ -30123,7 +30123,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
-     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -30165,7 +30165,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
-     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -30207,7 +30207,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
-     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -30249,7 +30249,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
-     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -30291,7 +30291,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
-     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.id())
+     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -30333,7 +30333,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypeGroup = DataSafeFunctions.getSensitiveTypeGroup(GetSensitiveTypeGroupArgs.builder()
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -30375,7 +30375,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypeGroup = DataSafeFunctions.getSensitiveTypeGroup(GetSensitiveTypeGroupArgs.builder()
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -30417,7 +30417,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypeGroup = DataSafeFunctions.getSensitiveTypeGroup(GetSensitiveTypeGroupArgs.builder()
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -30459,7 +30459,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypeGroup = DataSafeFunctions.getSensitiveTypeGroup(GetSensitiveTypeGroupArgs.builder()
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -30501,7 +30501,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypeGroup = DataSafeFunctions.getSensitiveTypeGroup(GetSensitiveTypeGroupArgs.builder()
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroupOciDataSafeSensitiveTypeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -30543,8 +30543,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypeGroupGroupedSensitiveTypes = DataSafeFunctions.getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs.builder()
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -30586,8 +30586,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypeGroupGroupedSensitiveTypes = DataSafeFunctions.getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs.builder()
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -30629,8 +30629,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypeGroupGroupedSensitiveTypes = DataSafeFunctions.getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs.builder()
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -30672,8 +30672,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypeGroupGroupedSensitiveTypes = DataSafeFunctions.getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs.builder()
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -30715,8 +30715,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypeGroupGroupedSensitiveTypes = DataSafeFunctions.getSensitiveTypeGroupGroupedSensitiveTypes(GetSensitiveTypeGroupGroupedSensitiveTypesArgs.builder()
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .build());
      * 
      *     }
@@ -30762,7 +30762,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveTypeGroupAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypeGroupCompartmentIdInSubtree)
      *             .displayName(sensitiveTypeGroupDisplayName)
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
      *             .state(sensitiveTypeGroupState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeGroupTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveTypeGroupTimeCreatedLessThan)
@@ -30811,7 +30811,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveTypeGroupAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypeGroupCompartmentIdInSubtree)
      *             .displayName(sensitiveTypeGroupDisplayName)
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
      *             .state(sensitiveTypeGroupState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeGroupTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveTypeGroupTimeCreatedLessThan)
@@ -30860,7 +30860,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveTypeGroupAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypeGroupCompartmentIdInSubtree)
      *             .displayName(sensitiveTypeGroupDisplayName)
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
      *             .state(sensitiveTypeGroupState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeGroupTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveTypeGroupTimeCreatedLessThan)
@@ -30909,7 +30909,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveTypeGroupAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypeGroupCompartmentIdInSubtree)
      *             .displayName(sensitiveTypeGroupDisplayName)
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
      *             .state(sensitiveTypeGroupState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeGroupTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveTypeGroupTimeCreatedLessThan)
@@ -30958,7 +30958,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveTypeGroupAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypeGroupCompartmentIdInSubtree)
      *             .displayName(sensitiveTypeGroupDisplayName)
-     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
      *             .state(sensitiveTypeGroupState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeGroupTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveTypeGroupTimeCreatedLessThan)
@@ -31006,12 +31006,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sensitiveTypeAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypeCompartmentIdInSubtree)
-     *             .defaultMaskingFormatId(testDefaultMaskingFormat.id())
+     *             .defaultMaskingFormatId(testDefaultMaskingFormat.get("id"))
      *             .displayName(sensitiveTypeDisplayName)
      *             .entityType(sensitiveTypeEntityType)
      *             .isCommon(sensitiveTypeIsCommon)
-     *             .parentCategoryId(testCategory.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .parentCategoryId(testCategory.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .sensitiveTypeSource(sensitiveTypeSensitiveTypeSource)
      *             .state(sensitiveTypeState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeTimeCreatedGreaterThanOrEqualTo)
@@ -31060,12 +31060,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sensitiveTypeAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypeCompartmentIdInSubtree)
-     *             .defaultMaskingFormatId(testDefaultMaskingFormat.id())
+     *             .defaultMaskingFormatId(testDefaultMaskingFormat.get("id"))
      *             .displayName(sensitiveTypeDisplayName)
      *             .entityType(sensitiveTypeEntityType)
      *             .isCommon(sensitiveTypeIsCommon)
-     *             .parentCategoryId(testCategory.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .parentCategoryId(testCategory.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .sensitiveTypeSource(sensitiveTypeSensitiveTypeSource)
      *             .state(sensitiveTypeState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeTimeCreatedGreaterThanOrEqualTo)
@@ -31114,12 +31114,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sensitiveTypeAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypeCompartmentIdInSubtree)
-     *             .defaultMaskingFormatId(testDefaultMaskingFormat.id())
+     *             .defaultMaskingFormatId(testDefaultMaskingFormat.get("id"))
      *             .displayName(sensitiveTypeDisplayName)
      *             .entityType(sensitiveTypeEntityType)
      *             .isCommon(sensitiveTypeIsCommon)
-     *             .parentCategoryId(testCategory.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .parentCategoryId(testCategory.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .sensitiveTypeSource(sensitiveTypeSensitiveTypeSource)
      *             .state(sensitiveTypeState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeTimeCreatedGreaterThanOrEqualTo)
@@ -31168,12 +31168,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sensitiveTypeAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypeCompartmentIdInSubtree)
-     *             .defaultMaskingFormatId(testDefaultMaskingFormat.id())
+     *             .defaultMaskingFormatId(testDefaultMaskingFormat.get("id"))
      *             .displayName(sensitiveTypeDisplayName)
      *             .entityType(sensitiveTypeEntityType)
      *             .isCommon(sensitiveTypeIsCommon)
-     *             .parentCategoryId(testCategory.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .parentCategoryId(testCategory.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .sensitiveTypeSource(sensitiveTypeSensitiveTypeSource)
      *             .state(sensitiveTypeState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeTimeCreatedGreaterThanOrEqualTo)
@@ -31222,12 +31222,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sensitiveTypeAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypeCompartmentIdInSubtree)
-     *             .defaultMaskingFormatId(testDefaultMaskingFormat.id())
+     *             .defaultMaskingFormatId(testDefaultMaskingFormat.get("id"))
      *             .displayName(sensitiveTypeDisplayName)
      *             .entityType(sensitiveTypeEntityType)
      *             .isCommon(sensitiveTypeIsCommon)
-     *             .parentCategoryId(testCategory.id())
-     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .parentCategoryId(testCategory.get("id"))
+     *             .sensitiveTypeId(testSensitiveType.get("id"))
      *             .sensitiveTypeSource(sensitiveTypeSensitiveTypeSource)
      *             .state(sensitiveTypeState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeTimeCreatedGreaterThanOrEqualTo)
@@ -31273,7 +31273,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypesExport = DataSafeFunctions.getSensitiveTypesExport(GetSensitiveTypesExportArgs.builder()
-     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id())
+     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.get("id"))
      *             .build());
      * 
      *     }
@@ -31315,7 +31315,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypesExport = DataSafeFunctions.getSensitiveTypesExport(GetSensitiveTypesExportArgs.builder()
-     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id())
+     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.get("id"))
      *             .build());
      * 
      *     }
@@ -31357,7 +31357,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypesExport = DataSafeFunctions.getSensitiveTypesExport(GetSensitiveTypesExportArgs.builder()
-     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id())
+     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.get("id"))
      *             .build());
      * 
      *     }
@@ -31399,7 +31399,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypesExport = DataSafeFunctions.getSensitiveTypesExport(GetSensitiveTypesExportArgs.builder()
-     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id())
+     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.get("id"))
      *             .build());
      * 
      *     }
@@ -31441,7 +31441,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypesExport = DataSafeFunctions.getSensitiveTypesExport(GetSensitiveTypesExportArgs.builder()
-     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id())
+     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.get("id"))
      *             .build());
      * 
      *     }
@@ -31488,7 +31488,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveTypesExportAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypesExportCompartmentIdInSubtree)
      *             .displayName(sensitiveTypesExportDisplayName)
-     *             .sensitiveTypesExportId(testSensitiveTypesExport.id())
+     *             .sensitiveTypesExportId(testSensitiveTypesExport.get("id"))
      *             .state(sensitiveTypesExportState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypesExportTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveTypesExportTimeCreatedLessThan)
@@ -31538,7 +31538,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveTypesExportAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypesExportCompartmentIdInSubtree)
      *             .displayName(sensitiveTypesExportDisplayName)
-     *             .sensitiveTypesExportId(testSensitiveTypesExport.id())
+     *             .sensitiveTypesExportId(testSensitiveTypesExport.get("id"))
      *             .state(sensitiveTypesExportState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypesExportTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveTypesExportTimeCreatedLessThan)
@@ -31588,7 +31588,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveTypesExportAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypesExportCompartmentIdInSubtree)
      *             .displayName(sensitiveTypesExportDisplayName)
-     *             .sensitiveTypesExportId(testSensitiveTypesExport.id())
+     *             .sensitiveTypesExportId(testSensitiveTypesExport.get("id"))
      *             .state(sensitiveTypesExportState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypesExportTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveTypesExportTimeCreatedLessThan)
@@ -31638,7 +31638,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveTypesExportAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypesExportCompartmentIdInSubtree)
      *             .displayName(sensitiveTypesExportDisplayName)
-     *             .sensitiveTypesExportId(testSensitiveTypesExport.id())
+     *             .sensitiveTypesExportId(testSensitiveTypesExport.get("id"))
      *             .state(sensitiveTypesExportState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypesExportTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveTypesExportTimeCreatedLessThan)
@@ -31688,7 +31688,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sensitiveTypesExportAccessLevel)
      *             .compartmentIdInSubtree(sensitiveTypesExportCompartmentIdInSubtree)
      *             .displayName(sensitiveTypesExportDisplayName)
-     *             .sensitiveTypesExportId(testSensitiveTypesExport.id())
+     *             .sensitiveTypesExportId(testSensitiveTypesExport.get("id"))
      *             .state(sensitiveTypesExportState)
      *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypesExportTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sensitiveTypesExportTimeCreatedLessThan)
@@ -31733,7 +31733,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlCollection = DataSafeFunctions.getSqlCollection(GetSqlCollectionArgs.builder()
-     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.get("id"))
      *             .build());
      * 
      *     }
@@ -31775,7 +31775,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlCollection = DataSafeFunctions.getSqlCollection(GetSqlCollectionArgs.builder()
-     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.get("id"))
      *             .build());
      * 
      *     }
@@ -31817,7 +31817,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlCollection = DataSafeFunctions.getSqlCollection(GetSqlCollectionArgs.builder()
-     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.get("id"))
      *             .build());
      * 
      *     }
@@ -31859,7 +31859,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlCollection = DataSafeFunctions.getSqlCollection(GetSqlCollectionArgs.builder()
-     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.get("id"))
      *             .build());
      * 
      *     }
@@ -31901,7 +31901,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlCollection = DataSafeFunctions.getSqlCollection(GetSqlCollectionArgs.builder()
-     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.get("id"))
      *             .build());
      * 
      *     }
@@ -31961,8 +31961,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlCollectionAnalyticGroupBy)
      *             .state(sqlCollectionAnalyticState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeEnded(sqlCollectionAnalyticTimeEnded)
      *             .timeStarted(sqlCollectionAnalyticTimeStarted)
      *             .build());
@@ -32024,8 +32024,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlCollectionAnalyticGroupBy)
      *             .state(sqlCollectionAnalyticState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeEnded(sqlCollectionAnalyticTimeEnded)
      *             .timeStarted(sqlCollectionAnalyticTimeStarted)
      *             .build());
@@ -32087,8 +32087,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlCollectionAnalyticGroupBy)
      *             .state(sqlCollectionAnalyticState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeEnded(sqlCollectionAnalyticTimeEnded)
      *             .timeStarted(sqlCollectionAnalyticTimeStarted)
      *             .build());
@@ -32150,8 +32150,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlCollectionAnalyticGroupBy)
      *             .state(sqlCollectionAnalyticState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeEnded(sqlCollectionAnalyticTimeEnded)
      *             .timeStarted(sqlCollectionAnalyticTimeStarted)
      *             .build());
@@ -32213,8 +32213,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlCollectionAnalyticGroupBy)
      *             .state(sqlCollectionAnalyticState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeEnded(sqlCollectionAnalyticTimeEnded)
      *             .timeStarted(sqlCollectionAnalyticTimeStarted)
      *             .build());
@@ -32258,7 +32258,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlCollectionLogInsights = DataSafeFunctions.getSqlCollectionLogInsights(GetSqlCollectionLogInsightsArgs.builder()
-     *             .sqlCollectionId(testSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollection.get("id"))
      *             .timeEnded(sqlCollectionLogInsightTimeEnded)
      *             .timeStarted(sqlCollectionLogInsightTimeStarted)
      *             .groupBy(sqlCollectionLogInsightGroupBy)
@@ -32303,7 +32303,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlCollectionLogInsights = DataSafeFunctions.getSqlCollectionLogInsights(GetSqlCollectionLogInsightsArgs.builder()
-     *             .sqlCollectionId(testSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollection.get("id"))
      *             .timeEnded(sqlCollectionLogInsightTimeEnded)
      *             .timeStarted(sqlCollectionLogInsightTimeStarted)
      *             .groupBy(sqlCollectionLogInsightGroupBy)
@@ -32348,7 +32348,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlCollectionLogInsights = DataSafeFunctions.getSqlCollectionLogInsights(GetSqlCollectionLogInsightsArgs.builder()
-     *             .sqlCollectionId(testSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollection.get("id"))
      *             .timeEnded(sqlCollectionLogInsightTimeEnded)
      *             .timeStarted(sqlCollectionLogInsightTimeStarted)
      *             .groupBy(sqlCollectionLogInsightGroupBy)
@@ -32393,7 +32393,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlCollectionLogInsights = DataSafeFunctions.getSqlCollectionLogInsights(GetSqlCollectionLogInsightsArgs.builder()
-     *             .sqlCollectionId(testSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollection.get("id"))
      *             .timeEnded(sqlCollectionLogInsightTimeEnded)
      *             .timeStarted(sqlCollectionLogInsightTimeStarted)
      *             .groupBy(sqlCollectionLogInsightGroupBy)
@@ -32438,7 +32438,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlCollectionLogInsights = DataSafeFunctions.getSqlCollectionLogInsights(GetSqlCollectionLogInsightsArgs.builder()
-     *             .sqlCollectionId(testSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollection.get("id"))
      *             .timeEnded(sqlCollectionLogInsightTimeEnded)
      *             .timeStarted(sqlCollectionLogInsightTimeStarted)
      *             .groupBy(sqlCollectionLogInsightGroupBy)
@@ -32499,12 +32499,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sqlCollectionAccessLevel)
      *             .compartmentIdInSubtree(sqlCollectionCompartmentIdInSubtree)
-     *             .dbUserName(testUser.name())
+     *             .dbUserName(testUser.get("name"))
      *             .displayName(sqlCollectionDisplayName)
-     *             .sqlCollectionId(testSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollection.get("id"))
      *             .state(sqlCollectionState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
      *             .build());
@@ -32564,12 +32564,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sqlCollectionAccessLevel)
      *             .compartmentIdInSubtree(sqlCollectionCompartmentIdInSubtree)
-     *             .dbUserName(testUser.name())
+     *             .dbUserName(testUser.get("name"))
      *             .displayName(sqlCollectionDisplayName)
-     *             .sqlCollectionId(testSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollection.get("id"))
      *             .state(sqlCollectionState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
      *             .build());
@@ -32629,12 +32629,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sqlCollectionAccessLevel)
      *             .compartmentIdInSubtree(sqlCollectionCompartmentIdInSubtree)
-     *             .dbUserName(testUser.name())
+     *             .dbUserName(testUser.get("name"))
      *             .displayName(sqlCollectionDisplayName)
-     *             .sqlCollectionId(testSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollection.get("id"))
      *             .state(sqlCollectionState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
      *             .build());
@@ -32694,12 +32694,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sqlCollectionAccessLevel)
      *             .compartmentIdInSubtree(sqlCollectionCompartmentIdInSubtree)
-     *             .dbUserName(testUser.name())
+     *             .dbUserName(testUser.get("name"))
      *             .displayName(sqlCollectionDisplayName)
-     *             .sqlCollectionId(testSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollection.get("id"))
      *             .state(sqlCollectionState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
      *             .build());
@@ -32759,12 +32759,12 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sqlCollectionAccessLevel)
      *             .compartmentIdInSubtree(sqlCollectionCompartmentIdInSubtree)
-     *             .dbUserName(testUser.name())
+     *             .dbUserName(testUser.get("name"))
      *             .displayName(sqlCollectionDisplayName)
-     *             .sqlCollectionId(testSqlCollection.id())
+     *             .sqlCollectionId(testSqlCollection.get("id"))
      *             .state(sqlCollectionState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
      *             .build());
@@ -32808,7 +32808,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlFirewallAllowedSql = DataSafeFunctions.getSqlFirewallAllowedSql(GetSqlFirewallAllowedSqlArgs.builder()
-     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.id())
+     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.get("id"))
      *             .build());
      * 
      *     }
@@ -32850,7 +32850,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlFirewallAllowedSql = DataSafeFunctions.getSqlFirewallAllowedSql(GetSqlFirewallAllowedSqlArgs.builder()
-     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.id())
+     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.get("id"))
      *             .build());
      * 
      *     }
@@ -32892,7 +32892,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlFirewallAllowedSql = DataSafeFunctions.getSqlFirewallAllowedSql(GetSqlFirewallAllowedSqlArgs.builder()
-     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.id())
+     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.get("id"))
      *             .build());
      * 
      *     }
@@ -32934,7 +32934,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlFirewallAllowedSql = DataSafeFunctions.getSqlFirewallAllowedSql(GetSqlFirewallAllowedSqlArgs.builder()
-     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.id())
+     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.get("id"))
      *             .build());
      * 
      *     }
@@ -32976,7 +32976,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlFirewallAllowedSql = DataSafeFunctions.getSqlFirewallAllowedSql(GetSqlFirewallAllowedSqlArgs.builder()
-     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.id())
+     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.get("id"))
      *             .build());
      * 
      *     }
@@ -33619,10 +33619,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sqlFirewallPolicyAccessLevel)
      *             .compartmentIdInSubtree(sqlFirewallPolicyCompartmentIdInSubtree)
-     *             .dbUserName(testUser.name())
+     *             .dbUserName(testUser.get("name"))
      *             .displayName(sqlFirewallPolicyDisplayName)
-     *             .securityPolicyId(testSecurityPolicy.id())
-     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.get("id"))
      *             .state(sqlFirewallPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(sqlFirewallPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlFirewallPolicyTimeCreatedLessThan)
@@ -33684,10 +33684,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sqlFirewallPolicyAccessLevel)
      *             .compartmentIdInSubtree(sqlFirewallPolicyCompartmentIdInSubtree)
-     *             .dbUserName(testUser.name())
+     *             .dbUserName(testUser.get("name"))
      *             .displayName(sqlFirewallPolicyDisplayName)
-     *             .securityPolicyId(testSecurityPolicy.id())
-     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.get("id"))
      *             .state(sqlFirewallPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(sqlFirewallPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlFirewallPolicyTimeCreatedLessThan)
@@ -33749,10 +33749,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sqlFirewallPolicyAccessLevel)
      *             .compartmentIdInSubtree(sqlFirewallPolicyCompartmentIdInSubtree)
-     *             .dbUserName(testUser.name())
+     *             .dbUserName(testUser.get("name"))
      *             .displayName(sqlFirewallPolicyDisplayName)
-     *             .securityPolicyId(testSecurityPolicy.id())
-     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.get("id"))
      *             .state(sqlFirewallPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(sqlFirewallPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlFirewallPolicyTimeCreatedLessThan)
@@ -33814,10 +33814,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sqlFirewallPolicyAccessLevel)
      *             .compartmentIdInSubtree(sqlFirewallPolicyCompartmentIdInSubtree)
-     *             .dbUserName(testUser.name())
+     *             .dbUserName(testUser.get("name"))
      *             .displayName(sqlFirewallPolicyDisplayName)
-     *             .securityPolicyId(testSecurityPolicy.id())
-     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.get("id"))
      *             .state(sqlFirewallPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(sqlFirewallPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlFirewallPolicyTimeCreatedLessThan)
@@ -33879,10 +33879,10 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(sqlFirewallPolicyAccessLevel)
      *             .compartmentIdInSubtree(sqlFirewallPolicyCompartmentIdInSubtree)
-     *             .dbUserName(testUser.name())
+     *             .dbUserName(testUser.get("name"))
      *             .displayName(sqlFirewallPolicyDisplayName)
-     *             .securityPolicyId(testSecurityPolicy.id())
-     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.get("id"))
      *             .state(sqlFirewallPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(sqlFirewallPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlFirewallPolicyTimeCreatedLessThan)
@@ -33928,7 +33928,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlFirewallPolicy = DataSafeFunctions.getSqlFirewallPolicy(GetSqlFirewallPolicyArgs.builder()
-     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.id())
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -33970,7 +33970,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlFirewallPolicy = DataSafeFunctions.getSqlFirewallPolicy(GetSqlFirewallPolicyArgs.builder()
-     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.id())
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -34012,7 +34012,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlFirewallPolicy = DataSafeFunctions.getSqlFirewallPolicy(GetSqlFirewallPolicyArgs.builder()
-     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.id())
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -34054,7 +34054,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlFirewallPolicy = DataSafeFunctions.getSqlFirewallPolicy(GetSqlFirewallPolicyArgs.builder()
-     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.id())
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -34096,7 +34096,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlFirewallPolicy = DataSafeFunctions.getSqlFirewallPolicy(GetSqlFirewallPolicyArgs.builder()
-     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.id())
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -34153,7 +34153,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sqlFirewallPolicyAnalyticAccessLevel)
      *             .compartmentIdInSubtree(sqlFirewallPolicyAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlFirewallPolicyAnalyticGroupBy)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(sqlFirewallPolicyAnalyticState)
      *             .timeEnded(sqlFirewallPolicyAnalyticTimeEnded)
      *             .timeStarted(sqlFirewallPolicyAnalyticTimeStarted)
@@ -34213,7 +34213,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sqlFirewallPolicyAnalyticAccessLevel)
      *             .compartmentIdInSubtree(sqlFirewallPolicyAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlFirewallPolicyAnalyticGroupBy)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(sqlFirewallPolicyAnalyticState)
      *             .timeEnded(sqlFirewallPolicyAnalyticTimeEnded)
      *             .timeStarted(sqlFirewallPolicyAnalyticTimeStarted)
@@ -34273,7 +34273,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sqlFirewallPolicyAnalyticAccessLevel)
      *             .compartmentIdInSubtree(sqlFirewallPolicyAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlFirewallPolicyAnalyticGroupBy)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(sqlFirewallPolicyAnalyticState)
      *             .timeEnded(sqlFirewallPolicyAnalyticTimeEnded)
      *             .timeStarted(sqlFirewallPolicyAnalyticTimeStarted)
@@ -34333,7 +34333,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sqlFirewallPolicyAnalyticAccessLevel)
      *             .compartmentIdInSubtree(sqlFirewallPolicyAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlFirewallPolicyAnalyticGroupBy)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(sqlFirewallPolicyAnalyticState)
      *             .timeEnded(sqlFirewallPolicyAnalyticTimeEnded)
      *             .timeStarted(sqlFirewallPolicyAnalyticTimeStarted)
@@ -34393,7 +34393,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(sqlFirewallPolicyAnalyticAccessLevel)
      *             .compartmentIdInSubtree(sqlFirewallPolicyAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlFirewallPolicyAnalyticGroupBy)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(sqlFirewallPolicyAnalyticState)
      *             .timeEnded(sqlFirewallPolicyAnalyticTimeEnded)
      *             .timeStarted(sqlFirewallPolicyAnalyticTimeStarted)
@@ -34918,9 +34918,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(subsettingAnalyticCompartmentIdInSubtree)
      *             .groupBy(subsettingAnalyticGroupBy)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(subsettingAnalyticTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(subsettingAnalyticTimeCreatedLessThan)
      *             .build());
@@ -34969,9 +34969,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(subsettingAnalyticCompartmentIdInSubtree)
      *             .groupBy(subsettingAnalyticGroupBy)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(subsettingAnalyticTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(subsettingAnalyticTimeCreatedLessThan)
      *             .build());
@@ -35020,9 +35020,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(subsettingAnalyticCompartmentIdInSubtree)
      *             .groupBy(subsettingAnalyticGroupBy)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(subsettingAnalyticTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(subsettingAnalyticTimeCreatedLessThan)
      *             .build());
@@ -35071,9 +35071,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(subsettingAnalyticCompartmentIdInSubtree)
      *             .groupBy(subsettingAnalyticGroupBy)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(subsettingAnalyticTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(subsettingAnalyticTimeCreatedLessThan)
      *             .build());
@@ -35122,9 +35122,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(subsettingAnalyticCompartmentIdInSubtree)
      *             .groupBy(subsettingAnalyticGroupBy)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(subsettingAnalyticTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(subsettingAnalyticTimeCreatedLessThan)
      *             .build());
@@ -35172,11 +35172,11 @@ public final class DataSafeFunctions {
      *             .accessLevel(subsettingPolicyAccessLevel)
      *             .compartmentIdInSubtree(subsettingPolicyCompartmentIdInSubtree)
      *             .displayName(subsettingPolicyDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(subsettingPolicyState)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(subsettingPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(subsettingPolicyTimeCreatedLessThan)
      *             .build());
@@ -35224,11 +35224,11 @@ public final class DataSafeFunctions {
      *             .accessLevel(subsettingPolicyAccessLevel)
      *             .compartmentIdInSubtree(subsettingPolicyCompartmentIdInSubtree)
      *             .displayName(subsettingPolicyDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(subsettingPolicyState)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(subsettingPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(subsettingPolicyTimeCreatedLessThan)
      *             .build());
@@ -35276,11 +35276,11 @@ public final class DataSafeFunctions {
      *             .accessLevel(subsettingPolicyAccessLevel)
      *             .compartmentIdInSubtree(subsettingPolicyCompartmentIdInSubtree)
      *             .displayName(subsettingPolicyDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(subsettingPolicyState)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(subsettingPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(subsettingPolicyTimeCreatedLessThan)
      *             .build());
@@ -35328,11 +35328,11 @@ public final class DataSafeFunctions {
      *             .accessLevel(subsettingPolicyAccessLevel)
      *             .compartmentIdInSubtree(subsettingPolicyCompartmentIdInSubtree)
      *             .displayName(subsettingPolicyDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(subsettingPolicyState)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(subsettingPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(subsettingPolicyTimeCreatedLessThan)
      *             .build());
@@ -35380,11 +35380,11 @@ public final class DataSafeFunctions {
      *             .accessLevel(subsettingPolicyAccessLevel)
      *             .compartmentIdInSubtree(subsettingPolicyCompartmentIdInSubtree)
      *             .displayName(subsettingPolicyDisplayName)
-     *             .maskingPolicyId(testMaskingPolicy.id())
-     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .maskingPolicyId(testMaskingPolicy.get("id"))
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
      *             .state(subsettingPolicyState)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(subsettingPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(subsettingPolicyTimeCreatedLessThan)
      *             .build());
@@ -35428,7 +35428,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicy = DataSafeFunctions.getSubsettingPolicy(GetSubsettingPolicyArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -35470,7 +35470,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicy = DataSafeFunctions.getSubsettingPolicy(GetSubsettingPolicyArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -35512,7 +35512,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicy = DataSafeFunctions.getSubsettingPolicy(GetSubsettingPolicyArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -35554,7 +35554,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicy = DataSafeFunctions.getSubsettingPolicy(GetSubsettingPolicyArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -35596,7 +35596,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicy = DataSafeFunctions.getSubsettingPolicy(GetSubsettingPolicyArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicyOciDataSafeSubsettingPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -35638,7 +35638,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyHealthReport = DataSafeFunctions.getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs.builder()
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.get("id"))
      *             .build());
      * 
      *     }
@@ -35680,7 +35680,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyHealthReport = DataSafeFunctions.getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs.builder()
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.get("id"))
      *             .build());
      * 
      *     }
@@ -35722,7 +35722,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyHealthReport = DataSafeFunctions.getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs.builder()
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.get("id"))
      *             .build());
      * 
      *     }
@@ -35764,7 +35764,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyHealthReport = DataSafeFunctions.getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs.builder()
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.get("id"))
      *             .build());
      * 
      *     }
@@ -35806,7 +35806,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyHealthReport = DataSafeFunctions.getSubsettingPolicyHealthReport(GetSubsettingPolicyHealthReportArgs.builder()
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReportOciDataSafeSubsettingPolicyHealthReport.get("id"))
      *             .build());
      * 
      *     }
@@ -35848,7 +35848,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyHealthReportLogs = DataSafeFunctions.getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs.builder()
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.get("id"))
      *             .messageType(subsettingPolicyHealthReportLogMessageType)
      *             .build());
      * 
@@ -35891,7 +35891,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyHealthReportLogs = DataSafeFunctions.getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs.builder()
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.get("id"))
      *             .messageType(subsettingPolicyHealthReportLogMessageType)
      *             .build());
      * 
@@ -35934,7 +35934,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyHealthReportLogs = DataSafeFunctions.getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs.builder()
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.get("id"))
      *             .messageType(subsettingPolicyHealthReportLogMessageType)
      *             .build());
      * 
@@ -35977,7 +35977,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyHealthReportLogs = DataSafeFunctions.getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs.builder()
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.get("id"))
      *             .messageType(subsettingPolicyHealthReportLogMessageType)
      *             .build());
      * 
@@ -36020,7 +36020,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyHealthReportLogs = DataSafeFunctions.getSubsettingPolicyHealthReportLogs(GetSubsettingPolicyHealthReportLogsArgs.builder()
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.get("id"))
      *             .messageType(subsettingPolicyHealthReportLogMessageType)
      *             .build());
      * 
@@ -36068,9 +36068,9 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(subsettingPolicyHealthReportCompartmentIdInSubtree)
      *             .displayName(subsettingPolicyHealthReportDisplayName)
      *             .state(subsettingPolicyHealthReportState)
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.get("id"))
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -36117,9 +36117,9 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(subsettingPolicyHealthReportCompartmentIdInSubtree)
      *             .displayName(subsettingPolicyHealthReportDisplayName)
      *             .state(subsettingPolicyHealthReportState)
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.get("id"))
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -36166,9 +36166,9 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(subsettingPolicyHealthReportCompartmentIdInSubtree)
      *             .displayName(subsettingPolicyHealthReportDisplayName)
      *             .state(subsettingPolicyHealthReportState)
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.get("id"))
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -36215,9 +36215,9 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(subsettingPolicyHealthReportCompartmentIdInSubtree)
      *             .displayName(subsettingPolicyHealthReportDisplayName)
      *             .state(subsettingPolicyHealthReportState)
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.get("id"))
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -36264,9 +36264,9 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(subsettingPolicyHealthReportCompartmentIdInSubtree)
      *             .displayName(subsettingPolicyHealthReportDisplayName)
      *             .state(subsettingPolicyHealthReportState)
-     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.id())
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyHealthReportId(testSubsettingPolicyHealthReport.get("id"))
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -36308,7 +36308,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRule = DataSafeFunctions.getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingRuleKey(subsettingPolicySubsettingRuleSubsettingRuleKey)
      *             .build());
      * 
@@ -36351,7 +36351,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRule = DataSafeFunctions.getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingRuleKey(subsettingPolicySubsettingRuleSubsettingRuleKey)
      *             .build());
      * 
@@ -36394,7 +36394,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRule = DataSafeFunctions.getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingRuleKey(subsettingPolicySubsettingRuleSubsettingRuleKey)
      *             .build());
      * 
@@ -36437,7 +36437,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRule = DataSafeFunctions.getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingRuleKey(subsettingPolicySubsettingRuleSubsettingRuleKey)
      *             .build());
      * 
@@ -36480,7 +36480,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRule = DataSafeFunctions.getSubsettingPolicySubsettingRule(GetSubsettingPolicySubsettingRuleArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingRuleKey(subsettingPolicySubsettingRuleSubsettingRuleKey)
      *             .build());
      * 
@@ -36526,7 +36526,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRuleProcessingChainObjects = DataSafeFunctions.getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingRuleKey(subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey)
      *             .isEnabledForProcessing(subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing)
      *             .build());
@@ -36573,7 +36573,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRuleProcessingChainObjects = DataSafeFunctions.getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingRuleKey(subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey)
      *             .isEnabledForProcessing(subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing)
      *             .build());
@@ -36620,7 +36620,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRuleProcessingChainObjects = DataSafeFunctions.getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingRuleKey(subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey)
      *             .isEnabledForProcessing(subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing)
      *             .build());
@@ -36667,7 +36667,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRuleProcessingChainObjects = DataSafeFunctions.getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingRuleKey(subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey)
      *             .isEnabledForProcessing(subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing)
      *             .build());
@@ -36714,7 +36714,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRuleProcessingChainObjects = DataSafeFunctions.getSubsettingPolicySubsettingRuleProcessingChainObjects(GetSubsettingPolicySubsettingRuleProcessingChainObjectsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingRuleKey(subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey)
      *             .isEnabledForProcessing(subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing)
      *             .build());
@@ -36761,7 +36761,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRules = DataSafeFunctions.getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingRuleObject)
      *             .schemaNames(subsettingPolicySubsettingRuleSchemaName)
      *             .build());
@@ -36808,7 +36808,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRules = DataSafeFunctions.getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingRuleObject)
      *             .schemaNames(subsettingPolicySubsettingRuleSchemaName)
      *             .build());
@@ -36855,7 +36855,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRules = DataSafeFunctions.getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingRuleObject)
      *             .schemaNames(subsettingPolicySubsettingRuleSchemaName)
      *             .build());
@@ -36902,7 +36902,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRules = DataSafeFunctions.getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingRuleObject)
      *             .schemaNames(subsettingPolicySubsettingRuleSchemaName)
      *             .build());
@@ -36949,7 +36949,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingRules = DataSafeFunctions.getSubsettingPolicySubsettingRules(GetSubsettingPolicySubsettingRulesArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingRuleObject)
      *             .schemaNames(subsettingPolicySubsettingRuleSchemaName)
      *             .build());
@@ -36993,7 +36993,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaObjects = DataSafeFunctions.getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingSchemaObjectObject)
      *             .schemaNames(subsettingPolicySubsettingSchemaObjectSchemaName)
      *             .build());
@@ -37037,7 +37037,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaObjects = DataSafeFunctions.getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingSchemaObjectObject)
      *             .schemaNames(subsettingPolicySubsettingSchemaObjectSchemaName)
      *             .build());
@@ -37081,7 +37081,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaObjects = DataSafeFunctions.getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingSchemaObjectObject)
      *             .schemaNames(subsettingPolicySubsettingSchemaObjectSchemaName)
      *             .build());
@@ -37125,7 +37125,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaObjects = DataSafeFunctions.getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingSchemaObjectObject)
      *             .schemaNames(subsettingPolicySubsettingSchemaObjectSchemaName)
      *             .build());
@@ -37169,7 +37169,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaObjects = DataSafeFunctions.getSubsettingPolicySubsettingSchemaObjects(GetSubsettingPolicySubsettingSchemaObjectsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingSchemaObjectObject)
      *             .schemaNames(subsettingPolicySubsettingSchemaObjectSchemaName)
      *             .build());
@@ -37213,7 +37213,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaRelation = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingSchemaRelationKey(subsettingPolicySubsettingSchemaRelationSubsettingSchemaRelationKey)
      *             .build());
      * 
@@ -37256,7 +37256,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaRelation = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingSchemaRelationKey(subsettingPolicySubsettingSchemaRelationSubsettingSchemaRelationKey)
      *             .build());
      * 
@@ -37299,7 +37299,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaRelation = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingSchemaRelationKey(subsettingPolicySubsettingSchemaRelationSubsettingSchemaRelationKey)
      *             .build());
      * 
@@ -37342,7 +37342,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaRelation = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingSchemaRelationKey(subsettingPolicySubsettingSchemaRelationSubsettingSchemaRelationKey)
      *             .build());
      * 
@@ -37385,7 +37385,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaRelation = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelation(GetSubsettingPolicySubsettingSchemaRelationArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .subsettingSchemaRelationKey(subsettingPolicySubsettingSchemaRelationSubsettingSchemaRelationKey)
      *             .build());
      * 
@@ -37428,7 +37428,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaRelations = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingSchemaRelationObject)
      *             .relationType(subsettingPolicySubsettingSchemaRelationRelationType)
      *             .schemaNames(subsettingPolicySubsettingSchemaRelationSchemaName)
@@ -37473,7 +37473,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaRelations = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingSchemaRelationObject)
      *             .relationType(subsettingPolicySubsettingSchemaRelationRelationType)
      *             .schemaNames(subsettingPolicySubsettingSchemaRelationSchemaName)
@@ -37518,7 +37518,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaRelations = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingSchemaRelationObject)
      *             .relationType(subsettingPolicySubsettingSchemaRelationRelationType)
      *             .schemaNames(subsettingPolicySubsettingSchemaRelationSchemaName)
@@ -37563,7 +37563,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaRelations = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingSchemaRelationObject)
      *             .relationType(subsettingPolicySubsettingSchemaRelationRelationType)
      *             .schemaNames(subsettingPolicySubsettingSchemaRelationSchemaName)
@@ -37608,7 +37608,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemaRelations = DataSafeFunctions.getSubsettingPolicySubsettingSchemaRelations(GetSubsettingPolicySubsettingSchemaRelationsArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicySubsettingSchemaRelationObject)
      *             .relationType(subsettingPolicySubsettingSchemaRelationRelationType)
      *             .schemaNames(subsettingPolicySubsettingSchemaRelationSchemaName)
@@ -37653,7 +37653,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemas = DataSafeFunctions.getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .isDerivedSchema(subsettingPolicySubsettingSchemaIsDerivedSchema)
      *             .schemaNames(subsettingPolicySubsettingSchemaSchemaName)
      *             .build());
@@ -37697,7 +37697,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemas = DataSafeFunctions.getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .isDerivedSchema(subsettingPolicySubsettingSchemaIsDerivedSchema)
      *             .schemaNames(subsettingPolicySubsettingSchemaSchemaName)
      *             .build());
@@ -37741,7 +37741,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemas = DataSafeFunctions.getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .isDerivedSchema(subsettingPolicySubsettingSchemaIsDerivedSchema)
      *             .schemaNames(subsettingPolicySubsettingSchemaSchemaName)
      *             .build());
@@ -37785,7 +37785,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemas = DataSafeFunctions.getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .isDerivedSchema(subsettingPolicySubsettingSchemaIsDerivedSchema)
      *             .schemaNames(subsettingPolicySubsettingSchemaSchemaName)
      *             .build());
@@ -37829,7 +37829,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicySubsettingSchemas = DataSafeFunctions.getSubsettingPolicySubsettingSchemas(GetSubsettingPolicySubsettingSchemasArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .isDerivedSchema(subsettingPolicySubsettingSchemaIsDerivedSchema)
      *             .schemaNames(subsettingPolicySubsettingSchemaSchemaName)
      *             .build());
@@ -37873,10 +37873,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyTableEstimates = DataSafeFunctions.getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicyTableEstimateObject)
      *             .schemaNames(subsettingPolicyTableEstimateSchemaName)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -37918,10 +37918,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyTableEstimates = DataSafeFunctions.getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicyTableEstimateObject)
      *             .schemaNames(subsettingPolicyTableEstimateSchemaName)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -37963,10 +37963,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyTableEstimates = DataSafeFunctions.getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicyTableEstimateObject)
      *             .schemaNames(subsettingPolicyTableEstimateSchemaName)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -38008,10 +38008,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyTableEstimates = DataSafeFunctions.getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicyTableEstimateObject)
      *             .schemaNames(subsettingPolicyTableEstimateSchemaName)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -38053,10 +38053,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingPolicyTableEstimates = DataSafeFunctions.getSubsettingPolicyTableEstimates(GetSubsettingPolicyTableEstimatesArgs.builder()
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
      *             .objects(subsettingPolicyTableEstimateObject)
      *             .schemaNames(subsettingPolicyTableEstimateSchemaName)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -38098,7 +38098,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReport = DataSafeFunctions.getSubsettingReport(GetSubsettingReportArgs.builder()
-     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.get("id"))
      *             .build());
      * 
      *     }
@@ -38140,7 +38140,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReport = DataSafeFunctions.getSubsettingReport(GetSubsettingReportArgs.builder()
-     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.get("id"))
      *             .build());
      * 
      *     }
@@ -38182,7 +38182,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReport = DataSafeFunctions.getSubsettingReport(GetSubsettingReportArgs.builder()
-     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.get("id"))
      *             .build());
      * 
      *     }
@@ -38224,7 +38224,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReport = DataSafeFunctions.getSubsettingReport(GetSubsettingReportArgs.builder()
-     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.get("id"))
      *             .build());
      * 
      *     }
@@ -38266,7 +38266,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReport = DataSafeFunctions.getSubsettingReport(GetSubsettingReportArgs.builder()
-     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReportOciDataSafeSubsettingReport.get("id"))
      *             .build());
      * 
      *     }
@@ -38308,7 +38308,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReportSubsettedObjects = DataSafeFunctions.getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs.builder()
-     *             .subsettingReportId(testSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReport.get("id"))
      *             .objects(subsettingReportSubsettedObjectObject)
      *             .schemaNames(subsettingReportSubsettedObjectSchemaName)
      *             .build());
@@ -38352,7 +38352,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReportSubsettedObjects = DataSafeFunctions.getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs.builder()
-     *             .subsettingReportId(testSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReport.get("id"))
      *             .objects(subsettingReportSubsettedObjectObject)
      *             .schemaNames(subsettingReportSubsettedObjectSchemaName)
      *             .build());
@@ -38396,7 +38396,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReportSubsettedObjects = DataSafeFunctions.getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs.builder()
-     *             .subsettingReportId(testSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReport.get("id"))
      *             .objects(subsettingReportSubsettedObjectObject)
      *             .schemaNames(subsettingReportSubsettedObjectSchemaName)
      *             .build());
@@ -38440,7 +38440,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReportSubsettedObjects = DataSafeFunctions.getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs.builder()
-     *             .subsettingReportId(testSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReport.get("id"))
      *             .objects(subsettingReportSubsettedObjectObject)
      *             .schemaNames(subsettingReportSubsettedObjectSchemaName)
      *             .build());
@@ -38484,7 +38484,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReportSubsettedObjects = DataSafeFunctions.getSubsettingReportSubsettedObjects(GetSubsettingReportSubsettedObjectsArgs.builder()
-     *             .subsettingReportId(testSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReport.get("id"))
      *             .objects(subsettingReportSubsettedObjectObject)
      *             .schemaNames(subsettingReportSubsettedObjectSchemaName)
      *             .build());
@@ -38528,7 +38528,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReportSubsettingErrors = DataSafeFunctions.getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs.builder()
-     *             .subsettingReportId(testSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReport.get("id"))
      *             .stepName(subsettingReportSubsettingErrorStepName)
      *             .build());
      * 
@@ -38571,7 +38571,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReportSubsettingErrors = DataSafeFunctions.getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs.builder()
-     *             .subsettingReportId(testSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReport.get("id"))
      *             .stepName(subsettingReportSubsettingErrorStepName)
      *             .build());
      * 
@@ -38614,7 +38614,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReportSubsettingErrors = DataSafeFunctions.getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs.builder()
-     *             .subsettingReportId(testSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReport.get("id"))
      *             .stepName(subsettingReportSubsettingErrorStepName)
      *             .build());
      * 
@@ -38657,7 +38657,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReportSubsettingErrors = DataSafeFunctions.getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs.builder()
-     *             .subsettingReportId(testSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReport.get("id"))
      *             .stepName(subsettingReportSubsettingErrorStepName)
      *             .build());
      * 
@@ -38700,7 +38700,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubsettingReportSubsettingErrors = DataSafeFunctions.getSubsettingReportSubsettingErrors(GetSubsettingReportSubsettingErrorsArgs.builder()
-     *             .subsettingReportId(testSubsettingReport.id())
+     *             .subsettingReportId(testSubsettingReport.get("id"))
      *             .stepName(subsettingReportSubsettingErrorStepName)
      *             .build());
      * 
@@ -38746,9 +38746,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(subsettingReportAccessLevel)
      *             .compartmentIdInSubtree(subsettingReportCompartmentIdInSubtree)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -38793,9 +38793,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(subsettingReportAccessLevel)
      *             .compartmentIdInSubtree(subsettingReportCompartmentIdInSubtree)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -38840,9 +38840,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(subsettingReportAccessLevel)
      *             .compartmentIdInSubtree(subsettingReportCompartmentIdInSubtree)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -38887,9 +38887,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(subsettingReportAccessLevel)
      *             .compartmentIdInSubtree(subsettingReportCompartmentIdInSubtree)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -38934,9 +38934,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(subsettingReportAccessLevel)
      *             .compartmentIdInSubtree(subsettingReportCompartmentIdInSubtree)
-     *             .subsettingPolicyId(testSubsettingPolicy.id())
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -38978,7 +38978,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -39020,7 +39020,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -39062,7 +39062,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -39104,7 +39104,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -39146,7 +39146,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -39188,7 +39188,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociationUnassociatedTargetMembers = DataSafeFunctions.getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs.builder()
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -39230,7 +39230,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociationUnassociatedTargetMembers = DataSafeFunctions.getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs.builder()
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -39272,7 +39272,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociationUnassociatedTargetMembers = DataSafeFunctions.getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs.builder()
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -39314,7 +39314,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociationUnassociatedTargetMembers = DataSafeFunctions.getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs.builder()
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -39356,7 +39356,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociationUnassociatedTargetMembers = DataSafeFunctions.getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs.builder()
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -39400,11 +39400,11 @@ public final class DataSafeFunctions {
      *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
      *             .state(targetAlertPolicyAssociationState)
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
-     *             .targetId(testTarget.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(targetAlertPolicyAssociationTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
@@ -39451,11 +39451,11 @@ public final class DataSafeFunctions {
      *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
      *             .state(targetAlertPolicyAssociationState)
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
-     *             .targetId(testTarget.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(targetAlertPolicyAssociationTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
@@ -39502,11 +39502,11 @@ public final class DataSafeFunctions {
      *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
      *             .state(targetAlertPolicyAssociationState)
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
-     *             .targetId(testTarget.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(targetAlertPolicyAssociationTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
@@ -39553,11 +39553,11 @@ public final class DataSafeFunctions {
      *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
      *             .state(targetAlertPolicyAssociationState)
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
-     *             .targetId(testTarget.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(targetAlertPolicyAssociationTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
@@ -39604,11 +39604,11 @@ public final class DataSafeFunctions {
      *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
+     *             .alertPolicyId(testAlertPolicy.get("id"))
      *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
      *             .state(targetAlertPolicyAssociationState)
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
-     *             .targetId(testTarget.id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(targetAlertPolicyAssociationTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
@@ -39653,7 +39653,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
-     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -39695,7 +39695,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
-     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -39737,7 +39737,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
-     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -39779,7 +39779,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
-     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -39821,7 +39821,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
-     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -39863,7 +39863,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseGroup = DataSafeFunctions.getTargetDatabaseGroup(GetTargetDatabaseGroupArgs.builder()
-     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -39905,7 +39905,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseGroup = DataSafeFunctions.getTargetDatabaseGroup(GetTargetDatabaseGroupArgs.builder()
-     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -39947,7 +39947,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseGroup = DataSafeFunctions.getTargetDatabaseGroup(GetTargetDatabaseGroupArgs.builder()
-     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -39989,7 +39989,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseGroup = DataSafeFunctions.getTargetDatabaseGroup(GetTargetDatabaseGroupArgs.builder()
-     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -40031,7 +40031,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseGroup = DataSafeFunctions.getTargetDatabaseGroup(GetTargetDatabaseGroupArgs.builder()
-     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -40073,8 +40073,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseGroupGroupMember = DataSafeFunctions.getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs.builder()
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40116,8 +40116,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseGroupGroupMember = DataSafeFunctions.getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs.builder()
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40159,8 +40159,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseGroupGroupMember = DataSafeFunctions.getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs.builder()
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40202,8 +40202,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseGroupGroupMember = DataSafeFunctions.getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs.builder()
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40245,8 +40245,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseGroupGroupMember = DataSafeFunctions.getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs.builder()
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40293,7 +40293,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(targetDatabaseGroupCompartmentIdInSubtree)
      *             .displayName(targetDatabaseGroupDisplayName)
      *             .state(targetDatabaseGroupState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
      *             .targetDatabaseGroupFilter(targetDatabaseGroupTargetDatabaseGroupFilter)
      *             .timeCreatedGreaterThanOrEqualTo(targetDatabaseGroupTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(targetDatabaseGroupTimeCreatedLessThan)
@@ -40343,7 +40343,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(targetDatabaseGroupCompartmentIdInSubtree)
      *             .displayName(targetDatabaseGroupDisplayName)
      *             .state(targetDatabaseGroupState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
      *             .targetDatabaseGroupFilter(targetDatabaseGroupTargetDatabaseGroupFilter)
      *             .timeCreatedGreaterThanOrEqualTo(targetDatabaseGroupTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(targetDatabaseGroupTimeCreatedLessThan)
@@ -40393,7 +40393,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(targetDatabaseGroupCompartmentIdInSubtree)
      *             .displayName(targetDatabaseGroupDisplayName)
      *             .state(targetDatabaseGroupState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
      *             .targetDatabaseGroupFilter(targetDatabaseGroupTargetDatabaseGroupFilter)
      *             .timeCreatedGreaterThanOrEqualTo(targetDatabaseGroupTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(targetDatabaseGroupTimeCreatedLessThan)
@@ -40443,7 +40443,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(targetDatabaseGroupCompartmentIdInSubtree)
      *             .displayName(targetDatabaseGroupDisplayName)
      *             .state(targetDatabaseGroupState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
      *             .targetDatabaseGroupFilter(targetDatabaseGroupTargetDatabaseGroupFilter)
      *             .timeCreatedGreaterThanOrEqualTo(targetDatabaseGroupTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(targetDatabaseGroupTimeCreatedLessThan)
@@ -40493,7 +40493,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(targetDatabaseGroupCompartmentIdInSubtree)
      *             .displayName(targetDatabaseGroupDisplayName)
      *             .state(targetDatabaseGroupState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
      *             .targetDatabaseGroupFilter(targetDatabaseGroupTargetDatabaseGroupFilter)
      *             .timeCreatedGreaterThanOrEqualTo(targetDatabaseGroupTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(targetDatabaseGroupTimeCreatedLessThan)
@@ -40538,8 +40538,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
-     *             .peerTargetDatabaseId(testTargetDatabase.id())
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .peerTargetDatabaseId(testTargetDatabase.get("id"))
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40581,8 +40581,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
-     *             .peerTargetDatabaseId(testTargetDatabase.id())
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .peerTargetDatabaseId(testTargetDatabase.get("id"))
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40624,8 +40624,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
-     *             .peerTargetDatabaseId(testTargetDatabase.id())
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .peerTargetDatabaseId(testTargetDatabase.get("id"))
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40667,8 +40667,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
-     *             .peerTargetDatabaseId(testTargetDatabase.id())
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .peerTargetDatabaseId(testTargetDatabase.get("id"))
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40710,8 +40710,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
-     *             .peerTargetDatabaseId(testTargetDatabase.id())
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .peerTargetDatabaseId(testTargetDatabase.get("id"))
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40753,7 +40753,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40795,7 +40795,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40837,7 +40837,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40879,7 +40879,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40921,7 +40921,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -40978,7 +40978,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .authenticationType(targetDatabaseRoleAuthenticationType)
      *             .isOracleMaintained(targetDatabaseRoleIsOracleMaintained)
      *             .roleNames(targetDatabaseRoleRoleName)
@@ -41024,7 +41024,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .authenticationType(targetDatabaseRoleAuthenticationType)
      *             .isOracleMaintained(targetDatabaseRoleIsOracleMaintained)
      *             .roleNames(targetDatabaseRoleRoleName)
@@ -41070,7 +41070,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .authenticationType(targetDatabaseRoleAuthenticationType)
      *             .isOracleMaintained(targetDatabaseRoleIsOracleMaintained)
      *             .roleNames(targetDatabaseRoleRoleName)
@@ -41116,7 +41116,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .authenticationType(targetDatabaseRoleAuthenticationType)
      *             .isOracleMaintained(targetDatabaseRoleIsOracleMaintained)
      *             .roleNames(targetDatabaseRoleRoleName)
@@ -41162,7 +41162,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .authenticationType(targetDatabaseRoleAuthenticationType)
      *             .isOracleMaintained(targetDatabaseRoleIsOracleMaintained)
      *             .roleNames(targetDatabaseRoleRoleName)
@@ -41210,14 +41210,14 @@ public final class DataSafeFunctions {
      *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(targetDatabaseAccessLevel)
-     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
      *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
      *             .databaseType(targetDatabaseDatabaseType)
      *             .displayName(targetDatabaseDisplayName)
      *             .enablementResourceOcid(targetDatabaseEnablementResourceOcid)
      *             .infrastructureType(targetDatabaseInfrastructureType)
      *             .state(targetDatabaseState)
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -41261,14 +41261,14 @@ public final class DataSafeFunctions {
      *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(targetDatabaseAccessLevel)
-     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
      *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
      *             .databaseType(targetDatabaseDatabaseType)
      *             .displayName(targetDatabaseDisplayName)
      *             .enablementResourceOcid(targetDatabaseEnablementResourceOcid)
      *             .infrastructureType(targetDatabaseInfrastructureType)
      *             .state(targetDatabaseState)
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -41312,14 +41312,14 @@ public final class DataSafeFunctions {
      *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(targetDatabaseAccessLevel)
-     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
      *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
      *             .databaseType(targetDatabaseDatabaseType)
      *             .displayName(targetDatabaseDisplayName)
      *             .enablementResourceOcid(targetDatabaseEnablementResourceOcid)
      *             .infrastructureType(targetDatabaseInfrastructureType)
      *             .state(targetDatabaseState)
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -41363,14 +41363,14 @@ public final class DataSafeFunctions {
      *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(targetDatabaseAccessLevel)
-     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
      *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
      *             .databaseType(targetDatabaseDatabaseType)
      *             .displayName(targetDatabaseDisplayName)
      *             .enablementResourceOcid(targetDatabaseEnablementResourceOcid)
      *             .infrastructureType(targetDatabaseInfrastructureType)
      *             .state(targetDatabaseState)
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -41414,14 +41414,14 @@ public final class DataSafeFunctions {
      *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .accessLevel(targetDatabaseAccessLevel)
-     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
      *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
      *             .databaseType(targetDatabaseDatabaseType)
      *             .displayName(targetDatabaseDisplayName)
      *             .enablementResourceOcid(targetDatabaseEnablementResourceOcid)
      *             .infrastructureType(targetDatabaseInfrastructureType)
      *             .state(targetDatabaseState)
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -41463,13 +41463,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .columnNames(targetDatabasesColumnColumnName)
      *             .columnNameContains(targetDatabasesColumnColumnNameContains)
      *             .datatypes(targetDatabasesColumnDatatype)
      *             .schemaNames(targetDatabasesColumnSchemaName)
      *             .schemaNameContains(targetDatabasesColumnSchemaNameContains)
-     *             .tableNames(testTable.name())
+     *             .tableNames(testTable.get("name"))
      *             .tableNameContains(targetDatabasesColumnTableNameContains)
      *             .build());
      * 
@@ -41512,13 +41512,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .columnNames(targetDatabasesColumnColumnName)
      *             .columnNameContains(targetDatabasesColumnColumnNameContains)
      *             .datatypes(targetDatabasesColumnDatatype)
      *             .schemaNames(targetDatabasesColumnSchemaName)
      *             .schemaNameContains(targetDatabasesColumnSchemaNameContains)
-     *             .tableNames(testTable.name())
+     *             .tableNames(testTable.get("name"))
      *             .tableNameContains(targetDatabasesColumnTableNameContains)
      *             .build());
      * 
@@ -41561,13 +41561,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .columnNames(targetDatabasesColumnColumnName)
      *             .columnNameContains(targetDatabasesColumnColumnNameContains)
      *             .datatypes(targetDatabasesColumnDatatype)
      *             .schemaNames(targetDatabasesColumnSchemaName)
      *             .schemaNameContains(targetDatabasesColumnSchemaNameContains)
-     *             .tableNames(testTable.name())
+     *             .tableNames(testTable.get("name"))
      *             .tableNameContains(targetDatabasesColumnTableNameContains)
      *             .build());
      * 
@@ -41610,13 +41610,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .columnNames(targetDatabasesColumnColumnName)
      *             .columnNameContains(targetDatabasesColumnColumnNameContains)
      *             .datatypes(targetDatabasesColumnDatatype)
      *             .schemaNames(targetDatabasesColumnSchemaName)
      *             .schemaNameContains(targetDatabasesColumnSchemaNameContains)
-     *             .tableNames(testTable.name())
+     *             .tableNames(testTable.get("name"))
      *             .tableNameContains(targetDatabasesColumnTableNameContains)
      *             .build());
      * 
@@ -41659,13 +41659,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .columnNames(targetDatabasesColumnColumnName)
      *             .columnNameContains(targetDatabasesColumnColumnNameContains)
      *             .datatypes(targetDatabasesColumnDatatype)
      *             .schemaNames(targetDatabasesColumnSchemaName)
      *             .schemaNameContains(targetDatabasesColumnSchemaNameContains)
-     *             .tableNames(testTable.name())
+     *             .tableNames(testTable.get("name"))
      *             .tableNameContains(targetDatabasesColumnTableNameContains)
      *             .build());
      * 
@@ -41708,7 +41708,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .isOracleMaintained(targetDatabasesSchemaIsOracleMaintained)
      *             .schemaNames(targetDatabasesSchemaSchemaName)
      *             .schemaNameContains(targetDatabasesSchemaSchemaNameContains)
@@ -41753,7 +41753,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .isOracleMaintained(targetDatabasesSchemaIsOracleMaintained)
      *             .schemaNames(targetDatabasesSchemaSchemaName)
      *             .schemaNameContains(targetDatabasesSchemaSchemaNameContains)
@@ -41798,7 +41798,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .isOracleMaintained(targetDatabasesSchemaIsOracleMaintained)
      *             .schemaNames(targetDatabasesSchemaSchemaName)
      *             .schemaNameContains(targetDatabasesSchemaSchemaNameContains)
@@ -41843,7 +41843,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .isOracleMaintained(targetDatabasesSchemaIsOracleMaintained)
      *             .schemaNames(targetDatabasesSchemaSchemaName)
      *             .schemaNameContains(targetDatabasesSchemaSchemaNameContains)
@@ -41888,7 +41888,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .isOracleMaintained(targetDatabasesSchemaIsOracleMaintained)
      *             .schemaNames(targetDatabasesSchemaSchemaName)
      *             .schemaNameContains(targetDatabasesSchemaSchemaNameContains)
@@ -41933,10 +41933,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .schemaNames(targetDatabasesTableSchemaName)
      *             .schemaNameContains(targetDatabasesTableSchemaNameContains)
-     *             .tableNames(testTable.name())
+     *             .tableNames(testTable.get("name"))
      *             .tableNameContains(targetDatabasesTableTableNameContains)
      *             .build());
      * 
@@ -41979,10 +41979,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .schemaNames(targetDatabasesTableSchemaName)
      *             .schemaNameContains(targetDatabasesTableSchemaNameContains)
-     *             .tableNames(testTable.name())
+     *             .tableNames(testTable.get("name"))
      *             .tableNameContains(targetDatabasesTableTableNameContains)
      *             .build());
      * 
@@ -42025,10 +42025,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .schemaNames(targetDatabasesTableSchemaName)
      *             .schemaNameContains(targetDatabasesTableSchemaNameContains)
-     *             .tableNames(testTable.name())
+     *             .tableNames(testTable.get("name"))
      *             .tableNameContains(targetDatabasesTableTableNameContains)
      *             .build());
      * 
@@ -42071,10 +42071,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .schemaNames(targetDatabasesTableSchemaName)
      *             .schemaNameContains(targetDatabasesTableSchemaNameContains)
-     *             .tableNames(testTable.name())
+     *             .tableNames(testTable.get("name"))
      *             .tableNameContains(targetDatabasesTableTableNameContains)
      *             .build());
      * 
@@ -42117,10 +42117,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
-     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.get("id"))
      *             .schemaNames(targetDatabasesTableSchemaName)
      *             .schemaNameContains(targetDatabasesTableSchemaNameContains)
-     *             .tableNames(testTable.name())
+     *             .tableNames(testTable.get("name"))
      *             .tableNameContains(targetDatabasesTableTableNameContains)
      *             .build());
      * 
@@ -42181,12 +42181,12 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(unifiedAuditPolicyCompartmentIdInSubtree)
      *             .displayName(unifiedAuditPolicyDisplayName)
      *             .isSeeded(unifiedAuditPolicyIsSeeded)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(unifiedAuditPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(unifiedAuditPolicyTimeCreatedLessThan)
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
-     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.id())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.get("id"))
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -42246,12 +42246,12 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(unifiedAuditPolicyCompartmentIdInSubtree)
      *             .displayName(unifiedAuditPolicyDisplayName)
      *             .isSeeded(unifiedAuditPolicyIsSeeded)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(unifiedAuditPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(unifiedAuditPolicyTimeCreatedLessThan)
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
-     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.id())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.get("id"))
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -42311,12 +42311,12 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(unifiedAuditPolicyCompartmentIdInSubtree)
      *             .displayName(unifiedAuditPolicyDisplayName)
      *             .isSeeded(unifiedAuditPolicyIsSeeded)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(unifiedAuditPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(unifiedAuditPolicyTimeCreatedLessThan)
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
-     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.id())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.get("id"))
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -42376,12 +42376,12 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(unifiedAuditPolicyCompartmentIdInSubtree)
      *             .displayName(unifiedAuditPolicyDisplayName)
      *             .isSeeded(unifiedAuditPolicyIsSeeded)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(unifiedAuditPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(unifiedAuditPolicyTimeCreatedLessThan)
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
-     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.id())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.get("id"))
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -42441,12 +42441,12 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(unifiedAuditPolicyCompartmentIdInSubtree)
      *             .displayName(unifiedAuditPolicyDisplayName)
      *             .isSeeded(unifiedAuditPolicyIsSeeded)
-     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicy.get("id"))
      *             .state(unifiedAuditPolicyState)
      *             .timeCreatedGreaterThanOrEqualTo(unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(unifiedAuditPolicyTimeCreatedLessThan)
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
-     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.id())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.get("id"))
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -42488,7 +42488,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAuditPolicy = DataSafeFunctions.getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs.builder()
-     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.id())
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -42530,7 +42530,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAuditPolicy = DataSafeFunctions.getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs.builder()
-     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.id())
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -42572,7 +42572,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAuditPolicy = DataSafeFunctions.getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs.builder()
-     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.id())
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -42614,7 +42614,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAuditPolicy = DataSafeFunctions.getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs.builder()
-     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.id())
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -42656,7 +42656,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAuditPolicy = DataSafeFunctions.getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs.builder()
-     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.id())
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -42698,7 +42698,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAuditPolicyDefinition = DataSafeFunctions.getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs.builder()
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -42740,7 +42740,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAuditPolicyDefinition = DataSafeFunctions.getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs.builder()
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -42782,7 +42782,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAuditPolicyDefinition = DataSafeFunctions.getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs.builder()
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -42824,7 +42824,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAuditPolicyDefinition = DataSafeFunctions.getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs.builder()
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -42866,7 +42866,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAuditPolicyDefinition = DataSafeFunctions.getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs.builder()
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -42928,8 +42928,8 @@ public final class DataSafeFunctions {
      *             .isSeeded(unifiedAuditPolicyDefinitionIsSeeded)
      *             .state(unifiedAuditPolicyDefinitionState)
      *             .unifiedAuditPolicyCategory(unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory)
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
-     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.name())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.get("id"))
+     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.get("name"))
      *             .build());
      * 
      *     }
@@ -42991,8 +42991,8 @@ public final class DataSafeFunctions {
      *             .isSeeded(unifiedAuditPolicyDefinitionIsSeeded)
      *             .state(unifiedAuditPolicyDefinitionState)
      *             .unifiedAuditPolicyCategory(unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory)
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
-     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.name())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.get("id"))
+     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.get("name"))
      *             .build());
      * 
      *     }
@@ -43054,8 +43054,8 @@ public final class DataSafeFunctions {
      *             .isSeeded(unifiedAuditPolicyDefinitionIsSeeded)
      *             .state(unifiedAuditPolicyDefinitionState)
      *             .unifiedAuditPolicyCategory(unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory)
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
-     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.name())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.get("id"))
+     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.get("name"))
      *             .build());
      * 
      *     }
@@ -43117,8 +43117,8 @@ public final class DataSafeFunctions {
      *             .isSeeded(unifiedAuditPolicyDefinitionIsSeeded)
      *             .state(unifiedAuditPolicyDefinitionState)
      *             .unifiedAuditPolicyCategory(unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory)
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
-     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.name())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.get("id"))
+     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.get("name"))
      *             .build());
      * 
      *     }
@@ -43180,8 +43180,8 @@ public final class DataSafeFunctions {
      *             .isSeeded(unifiedAuditPolicyDefinitionIsSeeded)
      *             .state(unifiedAuditPolicyDefinitionState)
      *             .unifiedAuditPolicyCategory(unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory)
-     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
-     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.name())
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.get("id"))
+     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.get("name"))
      *             .build());
      * 
      *     }
@@ -43223,7 +43223,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
-     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.id())
+     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -43265,7 +43265,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
-     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.id())
+     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -43307,7 +43307,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
-     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.id())
+     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -43349,7 +43349,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
-     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.id())
+     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -43391,7 +43391,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
-     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.id())
+     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -43433,8 +43433,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
-     *             .comparisonUserAssessmentId(testUserAssessment.id())
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .comparisonUserAssessmentId(testUserAssessment.get("id"))
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -43476,8 +43476,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
-     *             .comparisonUserAssessmentId(testUserAssessment.id())
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .comparisonUserAssessmentId(testUserAssessment.get("id"))
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -43519,8 +43519,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
-     *             .comparisonUserAssessmentId(testUserAssessment.id())
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .comparisonUserAssessmentId(testUserAssessment.get("id"))
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -43562,8 +43562,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
-     *             .comparisonUserAssessmentId(testUserAssessment.id())
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .comparisonUserAssessmentId(testUserAssessment.get("id"))
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -43605,8 +43605,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
-     *             .comparisonUserAssessmentId(testUserAssessment.id())
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .comparisonUserAssessmentId(testUserAssessment.get("id"))
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -43658,7 +43658,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentPasswordExpiryDateAnalytics = DataSafeFunctions.getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentPasswordExpiryDateAnalyticAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree)
      *             .timePasswordExpiryLessThan(userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan)
@@ -43714,7 +43714,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentPasswordExpiryDateAnalytics = DataSafeFunctions.getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentPasswordExpiryDateAnalyticAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree)
      *             .timePasswordExpiryLessThan(userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan)
@@ -43770,7 +43770,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentPasswordExpiryDateAnalytics = DataSafeFunctions.getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentPasswordExpiryDateAnalyticAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree)
      *             .timePasswordExpiryLessThan(userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan)
@@ -43826,7 +43826,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentPasswordExpiryDateAnalytics = DataSafeFunctions.getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentPasswordExpiryDateAnalyticAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree)
      *             .timePasswordExpiryLessThan(userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan)
@@ -43882,7 +43882,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentPasswordExpiryDateAnalytics = DataSafeFunctions.getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentPasswordExpiryDateAnalyticAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree)
      *             .timePasswordExpiryLessThan(userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan)
@@ -43943,11 +43943,11 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfileAnalytics = DataSafeFunctions.getUserAssessmentProfileAnalytics(GetUserAssessmentProfileAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentProfileAnalyticAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentProfileAnalyticCompartmentIdInSubtree)
-     *             .profileName(testProfile.name())
-     *             .targetId(testTarget.id())
+     *             .profileName(testProfile.get("name"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -44004,11 +44004,11 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfileAnalytics = DataSafeFunctions.getUserAssessmentProfileAnalytics(GetUserAssessmentProfileAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentProfileAnalyticAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentProfileAnalyticCompartmentIdInSubtree)
-     *             .profileName(testProfile.name())
-     *             .targetId(testTarget.id())
+     *             .profileName(testProfile.get("name"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -44065,11 +44065,11 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfileAnalytics = DataSafeFunctions.getUserAssessmentProfileAnalytics(GetUserAssessmentProfileAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentProfileAnalyticAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentProfileAnalyticCompartmentIdInSubtree)
-     *             .profileName(testProfile.name())
-     *             .targetId(testTarget.id())
+     *             .profileName(testProfile.get("name"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -44126,11 +44126,11 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfileAnalytics = DataSafeFunctions.getUserAssessmentProfileAnalytics(GetUserAssessmentProfileAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentProfileAnalyticAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentProfileAnalyticCompartmentIdInSubtree)
-     *             .profileName(testProfile.name())
-     *             .targetId(testTarget.id())
+     *             .profileName(testProfile.get("name"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -44187,11 +44187,11 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfileAnalytics = DataSafeFunctions.getUserAssessmentProfileAnalytics(GetUserAssessmentProfileAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentProfileAnalyticAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentProfileAnalyticCompartmentIdInSubtree)
-     *             .profileName(testProfile.name())
-     *             .targetId(testTarget.id())
+     *             .profileName(testProfile.get("name"))
+     *             .targetId(testTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -44248,7 +44248,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfiles = DataSafeFunctions.getUserAssessmentProfiles(GetUserAssessmentProfilesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentProfileAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentProfileCompartmentIdInSubtree)
      *             .failedLoginAttemptsGreaterThanOrEqual(userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual)
@@ -44259,10 +44259,10 @@ public final class DataSafeFunctions {
      *             .passwordLockTimeGreaterThanOrEqual(userAssessmentProfilePasswordLockTimeGreaterThanOrEqual)
      *             .passwordLockTimeLessThan(userAssessmentProfilePasswordLockTimeLessThan)
      *             .passwordVerificationFunction(userAssessmentProfilePasswordVerificationFunction)
-     *             .profileName(testProfile.name())
+     *             .profileName(testProfile.get("name"))
      *             .sessionsPerUserGreaterThanOrEqual(userAssessmentProfileSessionsPerUserGreaterThanOrEqual)
      *             .sessionsPerUserLessThan(userAssessmentProfileSessionsPerUserLessThan)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .userCountGreaterThanOrEqual(userAssessmentProfileUserCountGreaterThanOrEqual)
      *             .userCountLessThan(userAssessmentProfileUserCountLessThan)
      *             .build());
@@ -44321,7 +44321,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfiles = DataSafeFunctions.getUserAssessmentProfiles(GetUserAssessmentProfilesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentProfileAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentProfileCompartmentIdInSubtree)
      *             .failedLoginAttemptsGreaterThanOrEqual(userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual)
@@ -44332,10 +44332,10 @@ public final class DataSafeFunctions {
      *             .passwordLockTimeGreaterThanOrEqual(userAssessmentProfilePasswordLockTimeGreaterThanOrEqual)
      *             .passwordLockTimeLessThan(userAssessmentProfilePasswordLockTimeLessThan)
      *             .passwordVerificationFunction(userAssessmentProfilePasswordVerificationFunction)
-     *             .profileName(testProfile.name())
+     *             .profileName(testProfile.get("name"))
      *             .sessionsPerUserGreaterThanOrEqual(userAssessmentProfileSessionsPerUserGreaterThanOrEqual)
      *             .sessionsPerUserLessThan(userAssessmentProfileSessionsPerUserLessThan)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .userCountGreaterThanOrEqual(userAssessmentProfileUserCountGreaterThanOrEqual)
      *             .userCountLessThan(userAssessmentProfileUserCountLessThan)
      *             .build());
@@ -44394,7 +44394,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfiles = DataSafeFunctions.getUserAssessmentProfiles(GetUserAssessmentProfilesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentProfileAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentProfileCompartmentIdInSubtree)
      *             .failedLoginAttemptsGreaterThanOrEqual(userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual)
@@ -44405,10 +44405,10 @@ public final class DataSafeFunctions {
      *             .passwordLockTimeGreaterThanOrEqual(userAssessmentProfilePasswordLockTimeGreaterThanOrEqual)
      *             .passwordLockTimeLessThan(userAssessmentProfilePasswordLockTimeLessThan)
      *             .passwordVerificationFunction(userAssessmentProfilePasswordVerificationFunction)
-     *             .profileName(testProfile.name())
+     *             .profileName(testProfile.get("name"))
      *             .sessionsPerUserGreaterThanOrEqual(userAssessmentProfileSessionsPerUserGreaterThanOrEqual)
      *             .sessionsPerUserLessThan(userAssessmentProfileSessionsPerUserLessThan)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .userCountGreaterThanOrEqual(userAssessmentProfileUserCountGreaterThanOrEqual)
      *             .userCountLessThan(userAssessmentProfileUserCountLessThan)
      *             .build());
@@ -44467,7 +44467,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfiles = DataSafeFunctions.getUserAssessmentProfiles(GetUserAssessmentProfilesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentProfileAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentProfileCompartmentIdInSubtree)
      *             .failedLoginAttemptsGreaterThanOrEqual(userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual)
@@ -44478,10 +44478,10 @@ public final class DataSafeFunctions {
      *             .passwordLockTimeGreaterThanOrEqual(userAssessmentProfilePasswordLockTimeGreaterThanOrEqual)
      *             .passwordLockTimeLessThan(userAssessmentProfilePasswordLockTimeLessThan)
      *             .passwordVerificationFunction(userAssessmentProfilePasswordVerificationFunction)
-     *             .profileName(testProfile.name())
+     *             .profileName(testProfile.get("name"))
      *             .sessionsPerUserGreaterThanOrEqual(userAssessmentProfileSessionsPerUserGreaterThanOrEqual)
      *             .sessionsPerUserLessThan(userAssessmentProfileSessionsPerUserLessThan)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .userCountGreaterThanOrEqual(userAssessmentProfileUserCountGreaterThanOrEqual)
      *             .userCountLessThan(userAssessmentProfileUserCountLessThan)
      *             .build());
@@ -44540,7 +44540,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfiles = DataSafeFunctions.getUserAssessmentProfiles(GetUserAssessmentProfilesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentProfileAccessLevel)
      *             .compartmentIdInSubtree(userAssessmentProfileCompartmentIdInSubtree)
      *             .failedLoginAttemptsGreaterThanOrEqual(userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual)
@@ -44551,10 +44551,10 @@ public final class DataSafeFunctions {
      *             .passwordLockTimeGreaterThanOrEqual(userAssessmentProfilePasswordLockTimeGreaterThanOrEqual)
      *             .passwordLockTimeLessThan(userAssessmentProfilePasswordLockTimeLessThan)
      *             .passwordVerificationFunction(userAssessmentProfilePasswordVerificationFunction)
-     *             .profileName(testProfile.name())
+     *             .profileName(testProfile.get("name"))
      *             .sessionsPerUserGreaterThanOrEqual(userAssessmentProfileSessionsPerUserGreaterThanOrEqual)
      *             .sessionsPerUserLessThan(userAssessmentProfileSessionsPerUserLessThan)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .userCountGreaterThanOrEqual(userAssessmentProfileUserCountGreaterThanOrEqual)
      *             .userCountLessThan(userAssessmentProfileUserCountLessThan)
      *             .build());
@@ -44598,7 +44598,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -44640,7 +44640,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -44682,7 +44682,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -44724,7 +44724,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -44766,7 +44766,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -44822,12 +44822,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentUserAnalyticAccessLevel)
      *             .accountStatus(userAssessmentUserAnalyticAccountStatus)
      *             .authenticationType(userAssessmentUserAnalyticAuthenticationType)
      *             .compartmentIdInSubtree(userAssessmentUserAnalyticCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
      *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo)
@@ -44838,7 +44838,7 @@ public final class DataSafeFunctions {
      *             .timeUserCreatedLessThan(userAssessmentUserAnalyticTimeUserCreatedLessThan)
      *             .userCategory(userAssessmentUserAnalyticUserCategory)
      *             .userKey(userAssessmentUserAnalyticUserKey)
-     *             .userName(testUser.name())
+     *             .userName(testUser.get("name"))
      *             .build());
      * 
      *     }
@@ -44894,12 +44894,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentUserAnalyticAccessLevel)
      *             .accountStatus(userAssessmentUserAnalyticAccountStatus)
      *             .authenticationType(userAssessmentUserAnalyticAuthenticationType)
      *             .compartmentIdInSubtree(userAssessmentUserAnalyticCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
      *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo)
@@ -44910,7 +44910,7 @@ public final class DataSafeFunctions {
      *             .timeUserCreatedLessThan(userAssessmentUserAnalyticTimeUserCreatedLessThan)
      *             .userCategory(userAssessmentUserAnalyticUserCategory)
      *             .userKey(userAssessmentUserAnalyticUserKey)
-     *             .userName(testUser.name())
+     *             .userName(testUser.get("name"))
      *             .build());
      * 
      *     }
@@ -44966,12 +44966,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentUserAnalyticAccessLevel)
      *             .accountStatus(userAssessmentUserAnalyticAccountStatus)
      *             .authenticationType(userAssessmentUserAnalyticAuthenticationType)
      *             .compartmentIdInSubtree(userAssessmentUserAnalyticCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
      *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo)
@@ -44982,7 +44982,7 @@ public final class DataSafeFunctions {
      *             .timeUserCreatedLessThan(userAssessmentUserAnalyticTimeUserCreatedLessThan)
      *             .userCategory(userAssessmentUserAnalyticUserCategory)
      *             .userKey(userAssessmentUserAnalyticUserKey)
-     *             .userName(testUser.name())
+     *             .userName(testUser.get("name"))
      *             .build());
      * 
      *     }
@@ -45038,12 +45038,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentUserAnalyticAccessLevel)
      *             .accountStatus(userAssessmentUserAnalyticAccountStatus)
      *             .authenticationType(userAssessmentUserAnalyticAuthenticationType)
      *             .compartmentIdInSubtree(userAssessmentUserAnalyticCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
      *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo)
@@ -45054,7 +45054,7 @@ public final class DataSafeFunctions {
      *             .timeUserCreatedLessThan(userAssessmentUserAnalyticTimeUserCreatedLessThan)
      *             .userCategory(userAssessmentUserAnalyticUserCategory)
      *             .userKey(userAssessmentUserAnalyticUserKey)
-     *             .userName(testUser.name())
+     *             .userName(testUser.get("name"))
      *             .build());
      * 
      *     }
@@ -45110,12 +45110,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentUserAnalyticAccessLevel)
      *             .accountStatus(userAssessmentUserAnalyticAccountStatus)
      *             .authenticationType(userAssessmentUserAnalyticAuthenticationType)
      *             .compartmentIdInSubtree(userAssessmentUserAnalyticCompartmentIdInSubtree)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
      *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo)
@@ -45126,7 +45126,7 @@ public final class DataSafeFunctions {
      *             .timeUserCreatedLessThan(userAssessmentUserAnalyticTimeUserCreatedLessThan)
      *             .userCategory(userAssessmentUserAnalyticUserCategory)
      *             .userKey(userAssessmentUserAnalyticUserKey)
-     *             .userName(testUser.name())
+     *             .userName(testUser.get("name"))
      *             .build());
      * 
      *     }
@@ -45171,7 +45171,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentUserAccessLevel)
      *             .accountStatus(userAssessmentUserAccountStatus)
      *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
@@ -45179,7 +45179,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
      *             .schemaLists(userAssessmentUserSchemaList)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
      *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo)
@@ -45190,7 +45190,7 @@ public final class DataSafeFunctions {
      *             .timeUserCreatedLessThan(userAssessmentUserTimeUserCreatedLessThan)
      *             .userCategory(userAssessmentUserUserCategory)
      *             .userKey(userAssessmentUserUserKey)
-     *             .userName(testUser.name())
+     *             .userName(testUser.get("name"))
      *             .userProfile(userAssessmentUserUserProfile)
      *             .userRole(userAssessmentUserUserRole)
      *             .userType(userAssessmentUserUserType)
@@ -45238,7 +45238,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentUserAccessLevel)
      *             .accountStatus(userAssessmentUserAccountStatus)
      *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
@@ -45246,7 +45246,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
      *             .schemaLists(userAssessmentUserSchemaList)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
      *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo)
@@ -45257,7 +45257,7 @@ public final class DataSafeFunctions {
      *             .timeUserCreatedLessThan(userAssessmentUserTimeUserCreatedLessThan)
      *             .userCategory(userAssessmentUserUserCategory)
      *             .userKey(userAssessmentUserUserKey)
-     *             .userName(testUser.name())
+     *             .userName(testUser.get("name"))
      *             .userProfile(userAssessmentUserUserProfile)
      *             .userRole(userAssessmentUserUserRole)
      *             .userType(userAssessmentUserUserType)
@@ -45305,7 +45305,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentUserAccessLevel)
      *             .accountStatus(userAssessmentUserAccountStatus)
      *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
@@ -45313,7 +45313,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
      *             .schemaLists(userAssessmentUserSchemaList)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
      *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo)
@@ -45324,7 +45324,7 @@ public final class DataSafeFunctions {
      *             .timeUserCreatedLessThan(userAssessmentUserTimeUserCreatedLessThan)
      *             .userCategory(userAssessmentUserUserCategory)
      *             .userKey(userAssessmentUserUserKey)
-     *             .userName(testUser.name())
+     *             .userName(testUser.get("name"))
      *             .userProfile(userAssessmentUserUserProfile)
      *             .userRole(userAssessmentUserUserRole)
      *             .userType(userAssessmentUserUserType)
@@ -45372,7 +45372,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentUserAccessLevel)
      *             .accountStatus(userAssessmentUserAccountStatus)
      *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
@@ -45380,7 +45380,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
      *             .schemaLists(userAssessmentUserSchemaList)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
      *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo)
@@ -45391,7 +45391,7 @@ public final class DataSafeFunctions {
      *             .timeUserCreatedLessThan(userAssessmentUserTimeUserCreatedLessThan)
      *             .userCategory(userAssessmentUserUserCategory)
      *             .userKey(userAssessmentUserUserKey)
-     *             .userName(testUser.name())
+     *             .userName(testUser.get("name"))
      *             .userProfile(userAssessmentUserUserProfile)
      *             .userRole(userAssessmentUserUserRole)
      *             .userType(userAssessmentUserUserType)
@@ -45439,7 +45439,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
-     *             .userAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.get("id"))
      *             .accessLevel(userAssessmentUserAccessLevel)
      *             .accountStatus(userAssessmentUserAccountStatus)
      *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
@@ -45447,7 +45447,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
      *             .schemaLists(userAssessmentUserSchemaList)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
      *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo)
@@ -45458,7 +45458,7 @@ public final class DataSafeFunctions {
      *             .timeUserCreatedLessThan(userAssessmentUserTimeUserCreatedLessThan)
      *             .userCategory(userAssessmentUserUserCategory)
      *             .userKey(userAssessmentUserUserKey)
-     *             .userName(testUser.name())
+     *             .userName(testUser.get("name"))
      *             .userProfile(userAssessmentUserUserProfile)
      *             .userRole(userAssessmentUserUserRole)
      *             .userType(userAssessmentUserUserType)
@@ -45523,10 +45523,10 @@ public final class DataSafeFunctions {
      *             .displayName(userAssessmentDisplayName)
      *             .isBaseline(userAssessmentIsBaseline)
      *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
-     *             .scheduleUserAssessmentId(testUserAssessment.id())
+     *             .scheduleUserAssessmentId(testUserAssessment.get("id"))
      *             .state(userAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(userAssessmentTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
@@ -45593,10 +45593,10 @@ public final class DataSafeFunctions {
      *             .displayName(userAssessmentDisplayName)
      *             .isBaseline(userAssessmentIsBaseline)
      *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
-     *             .scheduleUserAssessmentId(testUserAssessment.id())
+     *             .scheduleUserAssessmentId(testUserAssessment.get("id"))
      *             .state(userAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(userAssessmentTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
@@ -45663,10 +45663,10 @@ public final class DataSafeFunctions {
      *             .displayName(userAssessmentDisplayName)
      *             .isBaseline(userAssessmentIsBaseline)
      *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
-     *             .scheduleUserAssessmentId(testUserAssessment.id())
+     *             .scheduleUserAssessmentId(testUserAssessment.get("id"))
      *             .state(userAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(userAssessmentTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
@@ -45733,10 +45733,10 @@ public final class DataSafeFunctions {
      *             .displayName(userAssessmentDisplayName)
      *             .isBaseline(userAssessmentIsBaseline)
      *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
-     *             .scheduleUserAssessmentId(testUserAssessment.id())
+     *             .scheduleUserAssessmentId(testUserAssessment.get("id"))
      *             .state(userAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(userAssessmentTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
@@ -45803,10 +45803,10 @@ public final class DataSafeFunctions {
      *             .displayName(userAssessmentDisplayName)
      *             .isBaseline(userAssessmentIsBaseline)
      *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
-     *             .scheduleUserAssessmentId(testUserAssessment.id())
+     *             .scheduleUserAssessmentId(testUserAssessment.get("id"))
      *             .state(userAssessmentState)
-     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
-     *             .targetId(testTarget.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.get("id"))
+     *             .targetId(testTarget.get("id"))
      *             .targetType(userAssessmentTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)

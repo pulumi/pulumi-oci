@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var test = new CloudDatabaseManagement("test", CloudDatabaseManagementArgs.builder()
- *             .databaseId(testDatabase.id())
+ *             .databaseId(testDatabase.get("id"))
  *             .managementType(databaseCloudDatabaseManagementDetailsManagementType)
  *             .privateEndPointId(databaseCloudDatabaseManagementDetailsPrivateEndPointId)
  *             .serviceName(databaseCloudDatabaseManagementDetailsServiceName)
@@ -64,7 +64,7 @@ import javax.annotation.Nullable;
  *             .port(cloudDatabaseManagementPort)
  *             .protocol(cloudDatabaseManagementProtocol)
  *             .role(cloudDatabaseManagementRole)
- *             .sslSecretId(testSecret.id())
+ *             .sslSecretId(testSecret.get("id"))
  *             .build());
  * 
  *     }

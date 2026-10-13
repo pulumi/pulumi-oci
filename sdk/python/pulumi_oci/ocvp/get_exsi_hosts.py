@@ -195,8 +195,8 @@ def get_exsi_hosts(cluster_id: Optional[_builtins.str] = None,
         compartment_id=compartment_id,
         compute_instance_id=test_instance["id"],
         display_name=esxi_host_display_name,
-        is_billing_donors_only=esxi_host_is_billing_donors_only == "true",
-        is_swap_billing_only=esxi_host_is_swap_billing_only == "true",
+        is_billing_donors_only=esxi_host_is_billing_donors_only,
+        is_swap_billing_only=esxi_host_is_swap_billing_only,
         sddc_id=test_sddc["id"],
         state=esxi_host_state)
     ```
@@ -269,8 +269,8 @@ def get_exsi_hosts_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.s
         compartment_id=compartment_id,
         compute_instance_id=test_instance["id"],
         display_name=esxi_host_display_name,
-        is_billing_donors_only=esxi_host_is_billing_donors_only == "true",
-        is_swap_billing_only=esxi_host_is_swap_billing_only == "true",
+        is_billing_donors_only=esxi_host_is_billing_donors_only,
+        is_swap_billing_only=esxi_host_is_swap_billing_only,
         sddc_id=test_sddc["id"],
         state=esxi_host_state)
     ```

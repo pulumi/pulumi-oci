@@ -52,14 +52,14 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     interfaceDownTimerValueInMilliseconds: Number(crossConnectInterfaceDownTimerValueInMilliseconds),
+ *     interfaceDownTimerValueInMilliseconds: crossConnectInterfaceDownTimerValueInMilliseconds,
  *     interfaceName: crossConnectInterfaceName,
- *     isInterfaceHoldTimerEnabled: crossConnectIsInterfaceHoldTimerEnabled === "true",
- *     isQosEnabled: crossConnectIsQosEnabled === "true",
+ *     isInterfaceHoldTimerEnabled: crossConnectIsInterfaceHoldTimerEnabled,
+ *     isQosEnabled: crossConnectIsQosEnabled,
  *     macsecProperties: {
  *         state: crossConnectMacsecPropertiesState,
  *         encryptionCipher: crossConnectMacsecPropertiesEncryptionCipher,
- *         isUnprotectedTrafficAllowed: crossConnectMacsecPropertiesIsUnprotectedTrafficAllowed === "true",
+ *         isUnprotectedTrafficAllowed: crossConnectMacsecPropertiesIsUnprotectedTrafficAllowed,
  *         primaryKey: {
  *             connectivityAssociationKeySecretId: testSecret.id,
  *             connectivityAssociationNameSecretId: testSecret.id,

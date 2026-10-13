@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     scanListenerInfos: [{
  *         scanListenerFqdn: odaPrivateEndpointScanProxyScanListenerInfosScanListenerFqdn,
  *         scanListenerIp: odaPrivateEndpointScanProxyScanListenerInfosScanListenerIp,
- *         scanListenerPort: Number(odaPrivateEndpointScanProxyScanListenerInfosScanListenerPort),
+ *         scanListenerPort: odaPrivateEndpointScanProxyScanListenerInfosScanListenerPort,
  *     }],
  *     scanListenerType: odaPrivateEndpointScanProxyScanListenerType,
  * });

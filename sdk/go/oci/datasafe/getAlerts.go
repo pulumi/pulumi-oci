@@ -33,7 +33,7 @@ import (
 //				CompartmentId:          compartmentId,
 //				AccessLevel:            pulumi.StringRef(alertAccessLevel),
 //				CompartmentIdInSubtree: pulumi.BoolRef(alertCompartmentIdInSubtree),
-//				Fields:                 pulumi.ToArray(alertField),
+//				Fields:                 alertField,
 //				Id:                     pulumi.StringRef(alertId),
 //				ScimQuery:              pulumi.StringRef(alertScimQuery),
 //			}, nil)

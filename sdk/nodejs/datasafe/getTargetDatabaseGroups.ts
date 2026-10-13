@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testTargetDatabaseGroups = oci.datasafe.getTargetDatabaseGroups({
  *     compartmentId: compartmentId,
  *     accessLevel: targetDatabaseGroupAccessLevel,
- *     compartmentIdInSubtree: targetDatabaseGroupCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: targetDatabaseGroupCompartmentIdInSubtree,
  *     displayName: targetDatabaseGroupDisplayName,
  *     state: targetDatabaseGroupState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
@@ -139,7 +139,7 @@ export interface GetTargetDatabaseGroupsResult {
  * const testTargetDatabaseGroups = oci.datasafe.getTargetDatabaseGroups({
  *     compartmentId: compartmentId,
  *     accessLevel: targetDatabaseGroupAccessLevel,
- *     compartmentIdInSubtree: targetDatabaseGroupCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: targetDatabaseGroupCompartmentIdInSubtree,
  *     displayName: targetDatabaseGroupDisplayName,
  *     state: targetDatabaseGroupState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,

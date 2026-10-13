@@ -215,13 +215,13 @@ def get_domains_identity_proofing_providers(attribute_sets: Optional[Sequence[_b
     import pulumi_oci as oci
 
     test_identity_proofing_providers = oci.identity.get_domains_identity_proofing_providers(idcs_endpoint=test_domain["url"],
-        identity_proofing_provider_count=int(identity_proofing_provider_identity_proofing_provider_count),
+        identity_proofing_provider_count=identity_proofing_provider_identity_proofing_provider_count,
         identity_proofing_provider_filter=identity_proofing_provider_identity_proofing_provider_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=identity_proofing_provider_authorization,
         resource_type_schema_version=identity_proofing_provider_resource_type_schema_version,
-        start_index=int(identity_proofing_provider_start_index))
+        start_index=identity_proofing_provider_start_index)
     ```
 
 
@@ -290,13 +290,13 @@ def get_domains_identity_proofing_providers_output(attribute_sets: pulumi.Input[
     import pulumi_oci as oci
 
     test_identity_proofing_providers = oci.identity.get_domains_identity_proofing_providers(idcs_endpoint=test_domain["url"],
-        identity_proofing_provider_count=int(identity_proofing_provider_identity_proofing_provider_count),
+        identity_proofing_provider_count=identity_proofing_provider_identity_proofing_provider_count,
         identity_proofing_provider_filter=identity_proofing_provider_identity_proofing_provider_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=identity_proofing_provider_authorization,
         resource_type_schema_version=identity_proofing_provider_resource_type_schema_version,
-        start_index=int(identity_proofing_provider_start_index))
+        start_index=identity_proofing_provider_start_index)
     ```
 
 

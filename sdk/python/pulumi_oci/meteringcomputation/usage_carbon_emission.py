@@ -449,7 +449,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
             tenant_id=test_tenant["id"],
             time_usage_ended=usage_carbon_emission_time_usage_ended,
             time_usage_started=usage_carbon_emission_time_usage_started,
-            compartment_depth=int(usage_carbon_emission_compartment_depth),
+            compartment_depth=usage_carbon_emission_compartment_depth,
             emission_calculation_method=usage_carbon_emission_emission_calculation_method,
             emission_type=usage_carbon_emission_emission_type,
             granularity=usage_carbon_emission_granularity,
@@ -459,7 +459,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
                 "namespace": usage_carbon_emission_group_by_tag_namespace,
                 "value": usage_carbon_emission_group_by_tag_value,
             }],
-            is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time == "true",
+            is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time,
             usage_carbon_emission_filter=usage_carbon_emission_usage_carbon_emission_filter)
         ```
 
@@ -513,7 +513,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
             tenant_id=test_tenant["id"],
             time_usage_ended=usage_carbon_emission_time_usage_ended,
             time_usage_started=usage_carbon_emission_time_usage_started,
-            compartment_depth=int(usage_carbon_emission_compartment_depth),
+            compartment_depth=usage_carbon_emission_compartment_depth,
             emission_calculation_method=usage_carbon_emission_emission_calculation_method,
             emission_type=usage_carbon_emission_emission_type,
             granularity=usage_carbon_emission_granularity,
@@ -523,7 +523,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
                 "namespace": usage_carbon_emission_group_by_tag_namespace,
                 "value": usage_carbon_emission_group_by_tag_value,
             }],
-            is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time == "true",
+            is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time,
             usage_carbon_emission_filter=usage_carbon_emission_usage_carbon_emission_filter)
         ```
 

@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceNodeReplaceConfiguration = new BdsInstanceNodeReplaceConfiguration("testBdsInstanceNodeReplaceConfiguration", BdsInstanceNodeReplaceConfigurationArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
  *             .durationInMinutes(bdsInstanceNodeReplaceConfigurationDurationInMinutes)
  *             .levelTypeDetails(BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs.builder()
  *                 .levelType(bdsInstanceNodeReplaceConfigurationLevelTypeDetailsLevelType)
@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *             .metricType(bdsInstanceNodeReplaceConfigurationMetricType)
  *             .clusterAdminPassword(bdsInstanceNodeReplaceConfigurationClusterAdminPassword)
  *             .displayName(bdsInstanceNodeReplaceConfigurationDisplayName)
- *             .secretId(testSecret.id())
+ *             .secretId(testSecret.get("id"))
  *             .build());
  * 
  *     }

@@ -100,7 +100,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
-     *             .zoneNameOrId(testZoneNameOr.id())
+     *             .zoneNameOrId(testZoneNameOr.get("id"))
      *             .domain(recordDomain)
      *             .domainContains(recordDomainContains)
      *             .rtype(recordRtype)
@@ -153,7 +153,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
-     *             .zoneNameOrId(testZoneNameOr.id())
+     *             .zoneNameOrId(testZoneNameOr.get("id"))
      *             .domain(recordDomain)
      *             .domainContains(recordDomainContains)
      *             .rtype(recordRtype)
@@ -206,7 +206,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
-     *             .zoneNameOrId(testZoneNameOr.id())
+     *             .zoneNameOrId(testZoneNameOr.get("id"))
      *             .domain(recordDomain)
      *             .domainContains(recordDomainContains)
      *             .rtype(recordRtype)
@@ -259,7 +259,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
-     *             .zoneNameOrId(testZoneNameOr.id())
+     *             .zoneNameOrId(testZoneNameOr.get("id"))
      *             .domain(recordDomain)
      *             .domainContains(recordDomainContains)
      *             .rtype(recordRtype)
@@ -312,7 +312,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
-     *             .zoneNameOrId(testZoneNameOr.id())
+     *             .zoneNameOrId(testZoneNameOr.get("id"))
      *             .domain(recordDomain)
      *             .domainContains(recordDomainContains)
      *             .rtype(recordRtype)
@@ -361,7 +361,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
-     *             .resolverId(testResolverOciDnsResolver.id())
+     *             .resolverId(testResolverOciDnsResolver.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -407,7 +407,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
-     *             .resolverId(testResolverOciDnsResolver.id())
+     *             .resolverId(testResolverOciDnsResolver.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -453,7 +453,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
-     *             .resolverId(testResolverOciDnsResolver.id())
+     *             .resolverId(testResolverOciDnsResolver.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -499,7 +499,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
-     *             .resolverId(testResolverOciDnsResolver.id())
+     *             .resolverId(testResolverOciDnsResolver.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -545,7 +545,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
-     *             .resolverId(testResolverOciDnsResolver.id())
+     *             .resolverId(testResolverOciDnsResolver.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -591,8 +591,8 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
-     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
-     *             .resolverId(testResolver.id())
+     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.get("name"))
+     *             .resolverId(testResolver.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -638,8 +638,8 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
-     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
-     *             .resolverId(testResolver.id())
+     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.get("name"))
+     *             .resolverId(testResolver.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -685,8 +685,8 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
-     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
-     *             .resolverId(testResolver.id())
+     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.get("name"))
+     *             .resolverId(testResolver.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -732,8 +732,8 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
-     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
-     *             .resolverId(testResolver.id())
+     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.get("name"))
+     *             .resolverId(testResolver.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -779,8 +779,8 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
-     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
-     *             .resolverId(testResolver.id())
+     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.get("name"))
+     *             .resolverId(testResolver.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -826,7 +826,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
-     *             .resolverId(testResolver.id())
+     *             .resolverId(testResolver.get("id"))
      *             .scope("PRIVATE")
      *             .name(resolverEndpointName)
      *             .state(resolverEndpointState)
@@ -874,7 +874,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
-     *             .resolverId(testResolver.id())
+     *             .resolverId(testResolver.get("id"))
      *             .scope("PRIVATE")
      *             .name(resolverEndpointName)
      *             .state(resolverEndpointState)
@@ -922,7 +922,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
-     *             .resolverId(testResolver.id())
+     *             .resolverId(testResolver.get("id"))
      *             .scope("PRIVATE")
      *             .name(resolverEndpointName)
      *             .state(resolverEndpointState)
@@ -970,7 +970,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
-     *             .resolverId(testResolver.id())
+     *             .resolverId(testResolver.get("id"))
      *             .scope("PRIVATE")
      *             .name(resolverEndpointName)
      *             .state(resolverEndpointState)
@@ -1018,7 +1018,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
-     *             .resolverId(testResolver.id())
+     *             .resolverId(testResolver.get("id"))
      *             .scope("PRIVATE")
      *             .name(resolverEndpointName)
      *             .state(resolverEndpointState)
@@ -1322,8 +1322,8 @@ public final class DnsFunctions {
      *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .zoneNameOrId(testZone.id())
-     *             .viewId(testView.id())
+     *             .zoneNameOrId(testZone.get("id"))
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -1369,8 +1369,8 @@ public final class DnsFunctions {
      *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .zoneNameOrId(testZone.id())
-     *             .viewId(testView.id())
+     *             .zoneNameOrId(testZone.get("id"))
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -1416,8 +1416,8 @@ public final class DnsFunctions {
      *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .zoneNameOrId(testZone.id())
-     *             .viewId(testView.id())
+     *             .zoneNameOrId(testZone.get("id"))
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -1463,8 +1463,8 @@ public final class DnsFunctions {
      *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .zoneNameOrId(testZone.id())
-     *             .viewId(testView.id())
+     *             .zoneNameOrId(testZone.get("id"))
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -1510,8 +1510,8 @@ public final class DnsFunctions {
      *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .zoneNameOrId(testZone.id())
-     *             .viewId(testView.id())
+     *             .zoneNameOrId(testZone.get("id"))
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -1555,11 +1555,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
-     *             .zoneNameOrId(testZone.id())
+     *             .zoneNameOrId(testZone.get("id"))
      *             .domain(rrsetDomain)
      *             .domainContains(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -1603,11 +1603,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
-     *             .zoneNameOrId(testZone.id())
+     *             .zoneNameOrId(testZone.get("id"))
      *             .domain(rrsetDomain)
      *             .domainContains(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -1651,11 +1651,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
-     *             .zoneNameOrId(testZone.id())
+     *             .zoneNameOrId(testZone.get("id"))
      *             .domain(rrsetDomain)
      *             .domainContains(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -1699,11 +1699,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
-     *             .zoneNameOrId(testZone.id())
+     *             .zoneNameOrId(testZone.get("id"))
      *             .domain(rrsetDomain)
      *             .domainContains(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -1747,11 +1747,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
-     *             .zoneNameOrId(testZone.id())
+     *             .zoneNameOrId(testZone.get("id"))
      *             .domain(rrsetDomain)
      *             .domainContains(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -1796,7 +1796,7 @@ public final class DnsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(steeringPolicyDisplayName)
      *             .displayNameContains(steeringPolicyDisplayNameContains)
-     *             .healthCheckMonitorId(testHttpMonitor.id())
+     *             .healthCheckMonitorId(testHttpMonitor.get("id"))
      *             .id(steeringPolicyId)
      *             .state(steeringPolicyState)
      *             .template(steeringPolicyTemplate)
@@ -1846,7 +1846,7 @@ public final class DnsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(steeringPolicyDisplayName)
      *             .displayNameContains(steeringPolicyDisplayNameContains)
-     *             .healthCheckMonitorId(testHttpMonitor.id())
+     *             .healthCheckMonitorId(testHttpMonitor.get("id"))
      *             .id(steeringPolicyId)
      *             .state(steeringPolicyState)
      *             .template(steeringPolicyTemplate)
@@ -1896,7 +1896,7 @@ public final class DnsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(steeringPolicyDisplayName)
      *             .displayNameContains(steeringPolicyDisplayNameContains)
-     *             .healthCheckMonitorId(testHttpMonitor.id())
+     *             .healthCheckMonitorId(testHttpMonitor.get("id"))
      *             .id(steeringPolicyId)
      *             .state(steeringPolicyState)
      *             .template(steeringPolicyTemplate)
@@ -1946,7 +1946,7 @@ public final class DnsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(steeringPolicyDisplayName)
      *             .displayNameContains(steeringPolicyDisplayNameContains)
-     *             .healthCheckMonitorId(testHttpMonitor.id())
+     *             .healthCheckMonitorId(testHttpMonitor.get("id"))
      *             .id(steeringPolicyId)
      *             .state(steeringPolicyState)
      *             .template(steeringPolicyTemplate)
@@ -1996,7 +1996,7 @@ public final class DnsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(steeringPolicyDisplayName)
      *             .displayNameContains(steeringPolicyDisplayNameContains)
-     *             .healthCheckMonitorId(testHttpMonitor.id())
+     *             .healthCheckMonitorId(testHttpMonitor.get("id"))
      *             .id(steeringPolicyId)
      *             .state(steeringPolicyState)
      *             .template(steeringPolicyTemplate)
@@ -2043,7 +2043,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
-     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.id())
+     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2085,7 +2085,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
-     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.id())
+     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2127,7 +2127,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
-     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.id())
+     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2169,7 +2169,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
-     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.id())
+     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2211,7 +2211,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
-     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.id())
+     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2253,7 +2253,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
-     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.id())
+     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -2295,7 +2295,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
-     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.id())
+     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -2337,7 +2337,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
-     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.id())
+     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -2379,7 +2379,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
-     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.id())
+     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -2421,7 +2421,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
-     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.id())
+     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -2469,10 +2469,10 @@ public final class DnsFunctions {
      *             .domainContains(steeringPolicyAttachmentDomainContains)
      *             .id(steeringPolicyAttachmentId)
      *             .state(steeringPolicyAttachmentState)
-     *             .steeringPolicyId(testSteeringPolicy.id())
+     *             .steeringPolicyId(testSteeringPolicy.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(steeringPolicyAttachmentTimeCreatedLessThan)
-     *             .zoneId(testZone.id())
+     *             .zoneId(testZone.get("id"))
      *             .build());
      * 
      *     }
@@ -2520,10 +2520,10 @@ public final class DnsFunctions {
      *             .domainContains(steeringPolicyAttachmentDomainContains)
      *             .id(steeringPolicyAttachmentId)
      *             .state(steeringPolicyAttachmentState)
-     *             .steeringPolicyId(testSteeringPolicy.id())
+     *             .steeringPolicyId(testSteeringPolicy.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(steeringPolicyAttachmentTimeCreatedLessThan)
-     *             .zoneId(testZone.id())
+     *             .zoneId(testZone.get("id"))
      *             .build());
      * 
      *     }
@@ -2571,10 +2571,10 @@ public final class DnsFunctions {
      *             .domainContains(steeringPolicyAttachmentDomainContains)
      *             .id(steeringPolicyAttachmentId)
      *             .state(steeringPolicyAttachmentState)
-     *             .steeringPolicyId(testSteeringPolicy.id())
+     *             .steeringPolicyId(testSteeringPolicy.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(steeringPolicyAttachmentTimeCreatedLessThan)
-     *             .zoneId(testZone.id())
+     *             .zoneId(testZone.get("id"))
      *             .build());
      * 
      *     }
@@ -2622,10 +2622,10 @@ public final class DnsFunctions {
      *             .domainContains(steeringPolicyAttachmentDomainContains)
      *             .id(steeringPolicyAttachmentId)
      *             .state(steeringPolicyAttachmentState)
-     *             .steeringPolicyId(testSteeringPolicy.id())
+     *             .steeringPolicyId(testSteeringPolicy.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(steeringPolicyAttachmentTimeCreatedLessThan)
-     *             .zoneId(testZone.id())
+     *             .zoneId(testZone.get("id"))
      *             .build());
      * 
      *     }
@@ -2673,10 +2673,10 @@ public final class DnsFunctions {
      *             .domainContains(steeringPolicyAttachmentDomainContains)
      *             .id(steeringPolicyAttachmentId)
      *             .state(steeringPolicyAttachmentState)
-     *             .steeringPolicyId(testSteeringPolicy.id())
+     *             .steeringPolicyId(testSteeringPolicy.get("id"))
      *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(steeringPolicyAttachmentTimeCreatedLessThan)
-     *             .zoneId(testZone.id())
+     *             .zoneId(testZone.get("id"))
      *             .build());
      * 
      *     }
@@ -2718,7 +2718,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
-     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.id())
+     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.get("id"))
      *             .build());
      * 
      *     }
@@ -2760,7 +2760,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
-     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.id())
+     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.get("id"))
      *             .build());
      * 
      *     }
@@ -2802,7 +2802,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
-     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.id())
+     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.get("id"))
      *             .build());
      * 
      *     }
@@ -2844,7 +2844,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
-     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.id())
+     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.get("id"))
      *             .build());
      * 
      *     }
@@ -2886,7 +2886,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
-     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.id())
+     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.get("id"))
      *             .build());
      * 
      *     }
@@ -3157,7 +3157,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(testViewOciDnsView.id())
+     *             .viewId(testViewOciDnsView.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -3204,7 +3204,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(testViewOciDnsView.id())
+     *             .viewId(testViewOciDnsView.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -3251,7 +3251,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(testViewOciDnsView.id())
+     *             .viewId(testViewOciDnsView.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -3298,7 +3298,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(testViewOciDnsView.id())
+     *             .viewId(testViewOciDnsView.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -3345,7 +3345,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(testViewOciDnsView.id())
+     *             .viewId(testViewOciDnsView.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -3392,7 +3392,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(testViewOciDnsView.id())
+     *             .viewId(testViewOciDnsView.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -3439,7 +3439,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(testViewOciDnsView.id())
+     *             .viewId(testViewOciDnsView.get("id"))
      *             .scope("PRIVATE")
      *             .build());
      * 
@@ -3744,7 +3744,7 @@ public final class DnsFunctions {
      *         final var target = DnsFunctions.getZone(GetZoneArgs.builder()
      *             .zoneNameOrId(zoneOcid)
      *             .scope("PRIVATE")
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -3776,9 +3776,9 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var targetByName = DnsFunctions.getZone(GetZoneArgs.builder()
-     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.name()))
+     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.get("name")))
      *             .scope("PRIVATE")
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -3827,7 +3827,7 @@ public final class DnsFunctions {
      *         final var target = DnsFunctions.getZone(GetZoneArgs.builder()
      *             .zoneNameOrId(zoneOcid)
      *             .scope("PRIVATE")
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -3859,9 +3859,9 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var targetByName = DnsFunctions.getZone(GetZoneArgs.builder()
-     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.name()))
+     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.get("name")))
      *             .scope("PRIVATE")
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -3910,7 +3910,7 @@ public final class DnsFunctions {
      *         final var target = DnsFunctions.getZone(GetZoneArgs.builder()
      *             .zoneNameOrId(zoneOcid)
      *             .scope("PRIVATE")
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -3942,9 +3942,9 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var targetByName = DnsFunctions.getZone(GetZoneArgs.builder()
-     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.name()))
+     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.get("name")))
      *             .scope("PRIVATE")
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -3993,7 +3993,7 @@ public final class DnsFunctions {
      *         final var target = DnsFunctions.getZone(GetZoneArgs.builder()
      *             .zoneNameOrId(zoneOcid)
      *             .scope("PRIVATE")
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -4025,9 +4025,9 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var targetByName = DnsFunctions.getZone(GetZoneArgs.builder()
-     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.name()))
+     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.get("name")))
      *             .scope("PRIVATE")
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -4076,7 +4076,7 @@ public final class DnsFunctions {
      *         final var target = DnsFunctions.getZone(GetZoneArgs.builder()
      *             .zoneNameOrId(zoneOcid)
      *             .scope("PRIVATE")
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -4108,9 +4108,9 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var targetByName = DnsFunctions.getZone(GetZoneArgs.builder()
-     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.name()))
+     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.get("name")))
      *             .scope("PRIVATE")
-     *             .viewId(testView.id())
+     *             .viewId(testView.get("id"))
      *             .build());
      * 
      *     }
@@ -4163,8 +4163,8 @@ public final class DnsFunctions {
      *             .state(zoneState)
      *             .timeCreatedGreaterThanOrEqualTo(zoneTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(zoneTimeCreatedLessThan)
-     *             .tsigKeyId(testTsigKey.id())
-     *             .viewId(testView.id())
+     *             .tsigKeyId(testTsigKey.get("id"))
+     *             .viewId(testView.get("id"))
      *             .zoneType(zoneZoneType)
      *             .build());
      * 
@@ -4218,8 +4218,8 @@ public final class DnsFunctions {
      *             .state(zoneState)
      *             .timeCreatedGreaterThanOrEqualTo(zoneTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(zoneTimeCreatedLessThan)
-     *             .tsigKeyId(testTsigKey.id())
-     *             .viewId(testView.id())
+     *             .tsigKeyId(testTsigKey.get("id"))
+     *             .viewId(testView.get("id"))
      *             .zoneType(zoneZoneType)
      *             .build());
      * 
@@ -4273,8 +4273,8 @@ public final class DnsFunctions {
      *             .state(zoneState)
      *             .timeCreatedGreaterThanOrEqualTo(zoneTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(zoneTimeCreatedLessThan)
-     *             .tsigKeyId(testTsigKey.id())
-     *             .viewId(testView.id())
+     *             .tsigKeyId(testTsigKey.get("id"))
+     *             .viewId(testView.get("id"))
      *             .zoneType(zoneZoneType)
      *             .build());
      * 
@@ -4328,8 +4328,8 @@ public final class DnsFunctions {
      *             .state(zoneState)
      *             .timeCreatedGreaterThanOrEqualTo(zoneTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(zoneTimeCreatedLessThan)
-     *             .tsigKeyId(testTsigKey.id())
-     *             .viewId(testView.id())
+     *             .tsigKeyId(testTsigKey.get("id"))
+     *             .viewId(testView.get("id"))
      *             .zoneType(zoneZoneType)
      *             .build());
      * 
@@ -4383,8 +4383,8 @@ public final class DnsFunctions {
      *             .state(zoneState)
      *             .timeCreatedGreaterThanOrEqualTo(zoneTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(zoneTimeCreatedLessThan)
-     *             .tsigKeyId(testTsigKey.id())
-     *             .viewId(testView.id())
+     *             .tsigKeyId(testTsigKey.get("id"))
+     *             .viewId(testView.get("id"))
      *             .zoneType(zoneZoneType)
      *             .build());
      * 

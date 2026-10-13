@@ -131,7 +131,7 @@ public final class CapacityManagementFunctions {
      *         final var testInternalNamespaceOccOverviews = CapacityManagementFunctions.getInternalNamespaceOccOverviews(GetInternalNamespaceOccOverviewsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .namespace(internalNamespaceOccOverviewNamespace)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .from(internalNamespaceOccOverviewFrom)
      *             .to(internalNamespaceOccOverviewTo)
      *             .workloadType(internalNamespaceOccOverviewWorkloadType)
@@ -178,7 +178,7 @@ public final class CapacityManagementFunctions {
      *         final var testInternalNamespaceOccOverviews = CapacityManagementFunctions.getInternalNamespaceOccOverviews(GetInternalNamespaceOccOverviewsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .namespace(internalNamespaceOccOverviewNamespace)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .from(internalNamespaceOccOverviewFrom)
      *             .to(internalNamespaceOccOverviewTo)
      *             .workloadType(internalNamespaceOccOverviewWorkloadType)
@@ -225,7 +225,7 @@ public final class CapacityManagementFunctions {
      *         final var testInternalNamespaceOccOverviews = CapacityManagementFunctions.getInternalNamespaceOccOverviews(GetInternalNamespaceOccOverviewsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .namespace(internalNamespaceOccOverviewNamespace)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .from(internalNamespaceOccOverviewFrom)
      *             .to(internalNamespaceOccOverviewTo)
      *             .workloadType(internalNamespaceOccOverviewWorkloadType)
@@ -272,7 +272,7 @@ public final class CapacityManagementFunctions {
      *         final var testInternalNamespaceOccOverviews = CapacityManagementFunctions.getInternalNamespaceOccOverviews(GetInternalNamespaceOccOverviewsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .namespace(internalNamespaceOccOverviewNamespace)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .from(internalNamespaceOccOverviewFrom)
      *             .to(internalNamespaceOccOverviewTo)
      *             .workloadType(internalNamespaceOccOverviewWorkloadType)
@@ -319,7 +319,7 @@ public final class CapacityManagementFunctions {
      *         final var testInternalNamespaceOccOverviews = CapacityManagementFunctions.getInternalNamespaceOccOverviews(GetInternalNamespaceOccOverviewsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .namespace(internalNamespaceOccOverviewNamespace)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .from(internalNamespaceOccOverviewFrom)
      *             .to(internalNamespaceOccOverviewTo)
      *             .workloadType(internalNamespaceOccOverviewWorkloadType)
@@ -365,7 +365,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccAvailabilityCatalogs = CapacityManagementFunctions.getInternalOccAvailabilityCatalogs(GetInternalOccAvailabilityCatalogsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .catalogState(internalOccAvailabilityCatalogCatalogState)
      *             .displayName(internalOccAvailabilityCatalogDisplayName)
      *             .id(internalOccAvailabilityCatalogId)
@@ -412,7 +412,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccAvailabilityCatalogs = CapacityManagementFunctions.getInternalOccAvailabilityCatalogs(GetInternalOccAvailabilityCatalogsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .catalogState(internalOccAvailabilityCatalogCatalogState)
      *             .displayName(internalOccAvailabilityCatalogDisplayName)
      *             .id(internalOccAvailabilityCatalogId)
@@ -459,7 +459,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccAvailabilityCatalogs = CapacityManagementFunctions.getInternalOccAvailabilityCatalogs(GetInternalOccAvailabilityCatalogsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .catalogState(internalOccAvailabilityCatalogCatalogState)
      *             .displayName(internalOccAvailabilityCatalogDisplayName)
      *             .id(internalOccAvailabilityCatalogId)
@@ -506,7 +506,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccAvailabilityCatalogs = CapacityManagementFunctions.getInternalOccAvailabilityCatalogs(GetInternalOccAvailabilityCatalogsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .catalogState(internalOccAvailabilityCatalogCatalogState)
      *             .displayName(internalOccAvailabilityCatalogDisplayName)
      *             .id(internalOccAvailabilityCatalogId)
@@ -553,7 +553,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccAvailabilityCatalogs = CapacityManagementFunctions.getInternalOccAvailabilityCatalogs(GetInternalOccAvailabilityCatalogsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .catalogState(internalOccAvailabilityCatalogCatalogState)
      *             .displayName(internalOccAvailabilityCatalogDisplayName)
      *             .id(internalOccAvailabilityCatalogId)
@@ -599,8 +599,8 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccHandoverResourceBlockDetails = CapacityManagementFunctions.getInternalOccHandoverResourceBlockDetails(GetInternalOccHandoverResourceBlockDetailsArgs.builder()
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
-     *             .hostId(testHost.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .build());
      * 
      *     }
@@ -642,8 +642,8 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccHandoverResourceBlockDetails = CapacityManagementFunctions.getInternalOccHandoverResourceBlockDetails(GetInternalOccHandoverResourceBlockDetailsArgs.builder()
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
-     *             .hostId(testHost.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .build());
      * 
      *     }
@@ -685,8 +685,8 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccHandoverResourceBlockDetails = CapacityManagementFunctions.getInternalOccHandoverResourceBlockDetails(GetInternalOccHandoverResourceBlockDetailsArgs.builder()
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
-     *             .hostId(testHost.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .build());
      * 
      *     }
@@ -728,8 +728,8 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccHandoverResourceBlockDetails = CapacityManagementFunctions.getInternalOccHandoverResourceBlockDetails(GetInternalOccHandoverResourceBlockDetailsArgs.builder()
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
-     *             .hostId(testHost.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .build());
      * 
      *     }
@@ -771,8 +771,8 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccHandoverResourceBlockDetails = CapacityManagementFunctions.getInternalOccHandoverResourceBlockDetails(GetInternalOccHandoverResourceBlockDetailsArgs.builder()
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
-     *             .hostId(testHost.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .build());
      * 
      *     }
@@ -816,11 +816,11 @@ public final class CapacityManagementFunctions {
      *         final var testInternalOccHandoverResourceBlocks = CapacityManagementFunctions.getInternalOccHandoverResourceBlocks(GetInternalOccHandoverResourceBlocksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .namespace(internalOccHandoverResourceBlockNamespace)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .handoverDateGreaterThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .handoverResourceName(testResource.get("name"))
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -864,11 +864,11 @@ public final class CapacityManagementFunctions {
      *         final var testInternalOccHandoverResourceBlocks = CapacityManagementFunctions.getInternalOccHandoverResourceBlocks(GetInternalOccHandoverResourceBlocksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .namespace(internalOccHandoverResourceBlockNamespace)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .handoverDateGreaterThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .handoverResourceName(testResource.get("name"))
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -912,11 +912,11 @@ public final class CapacityManagementFunctions {
      *         final var testInternalOccHandoverResourceBlocks = CapacityManagementFunctions.getInternalOccHandoverResourceBlocks(GetInternalOccHandoverResourceBlocksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .namespace(internalOccHandoverResourceBlockNamespace)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .handoverDateGreaterThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .handoverResourceName(testResource.get("name"))
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -960,11 +960,11 @@ public final class CapacityManagementFunctions {
      *         final var testInternalOccHandoverResourceBlocks = CapacityManagementFunctions.getInternalOccHandoverResourceBlocks(GetInternalOccHandoverResourceBlocksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .namespace(internalOccHandoverResourceBlockNamespace)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .handoverDateGreaterThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .handoverResourceName(testResource.get("name"))
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -1008,11 +1008,11 @@ public final class CapacityManagementFunctions {
      *         final var testInternalOccHandoverResourceBlocks = CapacityManagementFunctions.getInternalOccHandoverResourceBlocks(GetInternalOccHandoverResourceBlocksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .namespace(internalOccHandoverResourceBlockNamespace)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .handoverDateGreaterThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(internalOccHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .handoverResourceName(testResource.get("name"))
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -1054,7 +1054,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignal = CapacityManagementFunctions.getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs.builder()
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -1096,7 +1096,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignal = CapacityManagementFunctions.getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs.builder()
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -1138,7 +1138,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignal = CapacityManagementFunctions.getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs.builder()
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -1180,7 +1180,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignal = CapacityManagementFunctions.getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs.builder()
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -1222,7 +1222,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignal = CapacityManagementFunctions.getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs.builder()
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -1264,7 +1264,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalog = CapacityManagementFunctions.getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs.builder()
-     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .occmDemandSignalCatalogId(testCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -1306,7 +1306,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalog = CapacityManagementFunctions.getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs.builder()
-     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .occmDemandSignalCatalogId(testCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -1348,7 +1348,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalog = CapacityManagementFunctions.getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs.builder()
-     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .occmDemandSignalCatalogId(testCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -1390,7 +1390,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalog = CapacityManagementFunctions.getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs.builder()
-     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .occmDemandSignalCatalogId(testCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -1432,7 +1432,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalog = CapacityManagementFunctions.getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs.builder()
-     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .occmDemandSignalCatalogId(testCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -1475,8 +1475,8 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalogResources = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
-     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
+     *             .occmDemandSignalCatalogId(testCatalog.get("id"))
      *             .demandSignalNamespace(internalOccmDemandSignalCatalogResourceDemandSignalNamespace)
      *             .name(internalOccmDemandSignalCatalogResourceName)
      *             .build());
@@ -1521,8 +1521,8 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalogResources = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
-     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
+     *             .occmDemandSignalCatalogId(testCatalog.get("id"))
      *             .demandSignalNamespace(internalOccmDemandSignalCatalogResourceDemandSignalNamespace)
      *             .name(internalOccmDemandSignalCatalogResourceName)
      *             .build());
@@ -1567,8 +1567,8 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalogResources = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
-     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
+     *             .occmDemandSignalCatalogId(testCatalog.get("id"))
      *             .demandSignalNamespace(internalOccmDemandSignalCatalogResourceDemandSignalNamespace)
      *             .name(internalOccmDemandSignalCatalogResourceName)
      *             .build());
@@ -1613,8 +1613,8 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalogResources = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
-     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
+     *             .occmDemandSignalCatalogId(testCatalog.get("id"))
      *             .demandSignalNamespace(internalOccmDemandSignalCatalogResourceDemandSignalNamespace)
      *             .name(internalOccmDemandSignalCatalogResourceName)
      *             .build());
@@ -1659,8 +1659,8 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalogResources = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
-     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
+     *             .occmDemandSignalCatalogId(testCatalog.get("id"))
      *             .demandSignalNamespace(internalOccmDemandSignalCatalogResourceDemandSignalNamespace)
      *             .name(internalOccmDemandSignalCatalogResourceName)
      *             .build());
@@ -1705,7 +1705,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalogs = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .displayName(internalOccmDemandSignalCatalogDisplayName)
      *             .build());
      * 
@@ -1749,7 +1749,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalogs = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .displayName(internalOccmDemandSignalCatalogDisplayName)
      *             .build());
      * 
@@ -1793,7 +1793,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalogs = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .displayName(internalOccmDemandSignalCatalogDisplayName)
      *             .build());
      * 
@@ -1837,7 +1837,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalogs = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .displayName(internalOccmDemandSignalCatalogDisplayName)
      *             .build());
      * 
@@ -1881,7 +1881,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalCatalogs = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .displayName(internalOccmDemandSignalCatalogDisplayName)
      *             .build());
      * 
@@ -1925,9 +1925,9 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalDeliveries = CapacityManagementFunctions.getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .id(internalOccmDemandSignalDeliveryId)
-     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -1970,9 +1970,9 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalDeliveries = CapacityManagementFunctions.getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .id(internalOccmDemandSignalDeliveryId)
-     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -2015,9 +2015,9 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalDeliveries = CapacityManagementFunctions.getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .id(internalOccmDemandSignalDeliveryId)
-     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -2060,9 +2060,9 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalDeliveries = CapacityManagementFunctions.getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .id(internalOccmDemandSignalDeliveryId)
-     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -2105,9 +2105,9 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalDeliveries = CapacityManagementFunctions.getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .id(internalOccmDemandSignalDeliveryId)
-     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -2149,7 +2149,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalDelivery = CapacityManagementFunctions.getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs.builder()
-     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.id())
+     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.get("id"))
      *             .build());
      * 
      *     }
@@ -2191,7 +2191,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalDelivery = CapacityManagementFunctions.getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs.builder()
-     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.id())
+     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.get("id"))
      *             .build());
      * 
      *     }
@@ -2233,7 +2233,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalDelivery = CapacityManagementFunctions.getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs.builder()
-     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.id())
+     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.get("id"))
      *             .build());
      * 
      *     }
@@ -2275,7 +2275,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalDelivery = CapacityManagementFunctions.getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs.builder()
-     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.id())
+     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.get("id"))
      *             .build());
      * 
      *     }
@@ -2317,7 +2317,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalDelivery = CapacityManagementFunctions.getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs.builder()
-     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.id())
+     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.get("id"))
      *             .build());
      * 
      *     }
@@ -2360,10 +2360,10 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalItems = CapacityManagementFunctions.getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .demandSignalNamespace(internalOccmDemandSignalItemDemandSignalNamespace)
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
-     *             .resourceName(testResource.name())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
+     *             .resourceName(testResource.get("name"))
      *             .build());
      * 
      *     }
@@ -2406,10 +2406,10 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalItems = CapacityManagementFunctions.getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .demandSignalNamespace(internalOccmDemandSignalItemDemandSignalNamespace)
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
-     *             .resourceName(testResource.name())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
+     *             .resourceName(testResource.get("name"))
      *             .build());
      * 
      *     }
@@ -2452,10 +2452,10 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalItems = CapacityManagementFunctions.getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .demandSignalNamespace(internalOccmDemandSignalItemDemandSignalNamespace)
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
-     *             .resourceName(testResource.name())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
+     *             .resourceName(testResource.get("name"))
      *             .build());
      * 
      *     }
@@ -2498,10 +2498,10 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalItems = CapacityManagementFunctions.getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .demandSignalNamespace(internalOccmDemandSignalItemDemandSignalNamespace)
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
-     *             .resourceName(testResource.name())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
+     *             .resourceName(testResource.get("name"))
      *             .build());
      * 
      *     }
@@ -2544,10 +2544,10 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignalItems = CapacityManagementFunctions.getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .demandSignalNamespace(internalOccmDemandSignalItemDemandSignalNamespace)
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
-     *             .resourceName(testResource.name())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
+     *             .resourceName(testResource.get("name"))
      *             .build());
      * 
      *     }
@@ -2590,7 +2590,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignals = CapacityManagementFunctions.getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .displayName(internalOccmDemandSignalDisplayName)
      *             .id(internalOccmDemandSignalId)
      *             .lifecycleDetails(internalOccmDemandSignalLifecycleDetails)
@@ -2636,7 +2636,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignals = CapacityManagementFunctions.getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .displayName(internalOccmDemandSignalDisplayName)
      *             .id(internalOccmDemandSignalId)
      *             .lifecycleDetails(internalOccmDemandSignalLifecycleDetails)
@@ -2682,7 +2682,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignals = CapacityManagementFunctions.getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .displayName(internalOccmDemandSignalDisplayName)
      *             .id(internalOccmDemandSignalId)
      *             .lifecycleDetails(internalOccmDemandSignalLifecycleDetails)
@@ -2728,7 +2728,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignals = CapacityManagementFunctions.getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .displayName(internalOccmDemandSignalDisplayName)
      *             .id(internalOccmDemandSignalId)
      *             .lifecycleDetails(internalOccmDemandSignalLifecycleDetails)
@@ -2774,7 +2774,7 @@ public final class CapacityManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInternalOccmDemandSignals = CapacityManagementFunctions.getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
      *             .displayName(internalOccmDemandSignalDisplayName)
      *             .id(internalOccmDemandSignalId)
      *             .lifecycleDetails(internalOccmDemandSignalLifecycleDetails)
@@ -3049,7 +3049,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalog = CapacityManagementFunctions.getOccAvailabilityCatalog(GetOccAvailabilityCatalogArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -3091,7 +3091,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalog = CapacityManagementFunctions.getOccAvailabilityCatalog(GetOccAvailabilityCatalogArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -3133,7 +3133,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalog = CapacityManagementFunctions.getOccAvailabilityCatalog(GetOccAvailabilityCatalogArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -3175,7 +3175,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalog = CapacityManagementFunctions.getOccAvailabilityCatalog(GetOccAvailabilityCatalogArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -3217,7 +3217,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalog = CapacityManagementFunctions.getOccAvailabilityCatalog(GetOccAvailabilityCatalogArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -3259,7 +3259,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogContent = CapacityManagementFunctions.getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -3301,7 +3301,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogContent = CapacityManagementFunctions.getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -3343,7 +3343,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogContent = CapacityManagementFunctions.getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -3385,7 +3385,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogContent = CapacityManagementFunctions.getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -3427,7 +3427,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogContent = CapacityManagementFunctions.getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -3469,9 +3469,9 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogOccAvailabilities = CapacityManagementFunctions.getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .dateExpectedCapacityHandover(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover)
-     *             .resourceName(testResource.name())
+     *             .resourceName(testResource.get("name"))
      *             .resourceType(occAvailabilityCatalogOccAvailabilityResourceType)
      *             .workloadType(occAvailabilityCatalogOccAvailabilityWorkloadType)
      *             .build());
@@ -3515,9 +3515,9 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogOccAvailabilities = CapacityManagementFunctions.getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .dateExpectedCapacityHandover(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover)
-     *             .resourceName(testResource.name())
+     *             .resourceName(testResource.get("name"))
      *             .resourceType(occAvailabilityCatalogOccAvailabilityResourceType)
      *             .workloadType(occAvailabilityCatalogOccAvailabilityWorkloadType)
      *             .build());
@@ -3561,9 +3561,9 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogOccAvailabilities = CapacityManagementFunctions.getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .dateExpectedCapacityHandover(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover)
-     *             .resourceName(testResource.name())
+     *             .resourceName(testResource.get("name"))
      *             .resourceType(occAvailabilityCatalogOccAvailabilityResourceType)
      *             .workloadType(occAvailabilityCatalogOccAvailabilityWorkloadType)
      *             .build());
@@ -3607,9 +3607,9 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogOccAvailabilities = CapacityManagementFunctions.getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .dateExpectedCapacityHandover(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover)
-     *             .resourceName(testResource.name())
+     *             .resourceName(testResource.get("name"))
      *             .resourceType(occAvailabilityCatalogOccAvailabilityResourceType)
      *             .workloadType(occAvailabilityCatalogOccAvailabilityWorkloadType)
      *             .build());
@@ -3653,9 +3653,9 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogOccAvailabilities = CapacityManagementFunctions.getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs.builder()
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .dateExpectedCapacityHandover(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover)
-     *             .resourceName(testResource.name())
+     *             .resourceName(testResource.get("name"))
      *             .resourceType(occAvailabilityCatalogOccAvailabilityResourceType)
      *             .workloadType(occAvailabilityCatalogOccAvailabilityWorkloadType)
      *             .build());
@@ -3929,7 +3929,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequest = CapacityManagementFunctions.getOccCapacityRequest(GetOccCapacityRequestArgs.builder()
-     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id())
+     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3971,7 +3971,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequest = CapacityManagementFunctions.getOccCapacityRequest(GetOccCapacityRequestArgs.builder()
-     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id())
+     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -4013,7 +4013,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequest = CapacityManagementFunctions.getOccCapacityRequest(GetOccCapacityRequestArgs.builder()
-     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id())
+     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -4055,7 +4055,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequest = CapacityManagementFunctions.getOccCapacityRequest(GetOccCapacityRequestArgs.builder()
-     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id())
+     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -4097,7 +4097,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequest = CapacityManagementFunctions.getOccCapacityRequest(GetOccCapacityRequestArgs.builder()
-     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id())
+     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -4143,7 +4143,7 @@ public final class CapacityManagementFunctions {
      *             .displayName(occCapacityRequestDisplayName)
      *             .id(occCapacityRequestId)
      *             .namespace(occCapacityRequestNamespace)
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .requestType(occCapacityRequestRequestType)
      *             .build());
      * 
@@ -4190,7 +4190,7 @@ public final class CapacityManagementFunctions {
      *             .displayName(occCapacityRequestDisplayName)
      *             .id(occCapacityRequestId)
      *             .namespace(occCapacityRequestNamespace)
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .requestType(occCapacityRequestRequestType)
      *             .build());
      * 
@@ -4237,7 +4237,7 @@ public final class CapacityManagementFunctions {
      *             .displayName(occCapacityRequestDisplayName)
      *             .id(occCapacityRequestId)
      *             .namespace(occCapacityRequestNamespace)
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .requestType(occCapacityRequestRequestType)
      *             .build());
      * 
@@ -4284,7 +4284,7 @@ public final class CapacityManagementFunctions {
      *             .displayName(occCapacityRequestDisplayName)
      *             .id(occCapacityRequestId)
      *             .namespace(occCapacityRequestNamespace)
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .requestType(occCapacityRequestRequestType)
      *             .build());
      * 
@@ -4331,7 +4331,7 @@ public final class CapacityManagementFunctions {
      *             .displayName(occCapacityRequestDisplayName)
      *             .id(occCapacityRequestId)
      *             .namespace(occCapacityRequestNamespace)
-     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.get("id"))
      *             .requestType(occCapacityRequestRequestType)
      *             .build());
      * 
@@ -4374,7 +4374,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroup = CapacityManagementFunctions.getOccCustomerGroup(GetOccCustomerGroupArgs.builder()
-     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -4416,7 +4416,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroup = CapacityManagementFunctions.getOccCustomerGroup(GetOccCustomerGroupArgs.builder()
-     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -4458,7 +4458,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroup = CapacityManagementFunctions.getOccCustomerGroup(GetOccCustomerGroupArgs.builder()
-     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -4500,7 +4500,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroup = CapacityManagementFunctions.getOccCustomerGroup(GetOccCustomerGroupArgs.builder()
-     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -4542,7 +4542,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroup = CapacityManagementFunctions.getOccCustomerGroup(GetOccCustomerGroupArgs.builder()
-     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id())
+     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -4809,8 +4809,8 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccHandoverResourceBlockDetails = CapacityManagementFunctions.getOccHandoverResourceBlockDetails(GetOccHandoverResourceBlockDetailsArgs.builder()
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
-     *             .hostId(testHost.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .build());
      * 
      *     }
@@ -4852,8 +4852,8 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccHandoverResourceBlockDetails = CapacityManagementFunctions.getOccHandoverResourceBlockDetails(GetOccHandoverResourceBlockDetailsArgs.builder()
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
-     *             .hostId(testHost.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .build());
      * 
      *     }
@@ -4895,8 +4895,8 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccHandoverResourceBlockDetails = CapacityManagementFunctions.getOccHandoverResourceBlockDetails(GetOccHandoverResourceBlockDetailsArgs.builder()
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
-     *             .hostId(testHost.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .build());
      * 
      *     }
@@ -4938,8 +4938,8 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccHandoverResourceBlockDetails = CapacityManagementFunctions.getOccHandoverResourceBlockDetails(GetOccHandoverResourceBlockDetailsArgs.builder()
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
-     *             .hostId(testHost.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .build());
      * 
      *     }
@@ -4981,8 +4981,8 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccHandoverResourceBlockDetails = CapacityManagementFunctions.getOccHandoverResourceBlockDetails(GetOccHandoverResourceBlockDetailsArgs.builder()
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
-     *             .hostId(testHost.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .build());
      * 
      *     }
@@ -5027,9 +5027,9 @@ public final class CapacityManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .handoverDateGreaterThanOrEqualTo(occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(occHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
+     *             .handoverResourceName(testResource.get("name"))
      *             .namespace(occHandoverResourceBlockNamespace)
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -5074,9 +5074,9 @@ public final class CapacityManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .handoverDateGreaterThanOrEqualTo(occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(occHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
+     *             .handoverResourceName(testResource.get("name"))
      *             .namespace(occHandoverResourceBlockNamespace)
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -5121,9 +5121,9 @@ public final class CapacityManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .handoverDateGreaterThanOrEqualTo(occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(occHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
+     *             .handoverResourceName(testResource.get("name"))
      *             .namespace(occHandoverResourceBlockNamespace)
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -5168,9 +5168,9 @@ public final class CapacityManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .handoverDateGreaterThanOrEqualTo(occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(occHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
+     *             .handoverResourceName(testResource.get("name"))
      *             .namespace(occHandoverResourceBlockNamespace)
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -5215,9 +5215,9 @@ public final class CapacityManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .handoverDateGreaterThanOrEqualTo(occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(occHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
+     *             .handoverResourceName(testResource.get("name"))
      *             .namespace(occHandoverResourceBlockNamespace)
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -5262,9 +5262,9 @@ public final class CapacityManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .handoverDateGreaterThanOrEqualTo(occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(occHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
+     *             .handoverResourceName(testResource.get("name"))
      *             .namespace(occHandoverResourceBlockNamespace)
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -5309,9 +5309,9 @@ public final class CapacityManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .handoverDateGreaterThanOrEqualTo(occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo)
      *             .handoverDateLessThanOrEqualTo(occHandoverResourceBlockHandoverDateLessThanOrEqualTo)
-     *             .handoverResourceName(testResource.name())
+     *             .handoverResourceName(testResource.get("name"))
      *             .namespace(occHandoverResourceBlockNamespace)
-     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+     *             .occHandoverResourceBlockId(testOccHandoverResourceBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -5353,7 +5353,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccmDemandSignal = CapacityManagementFunctions.getOccmDemandSignal(GetOccmDemandSignalArgs.builder()
-     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id())
+     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -5395,7 +5395,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccmDemandSignal = CapacityManagementFunctions.getOccmDemandSignal(GetOccmDemandSignalArgs.builder()
-     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id())
+     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -5437,7 +5437,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccmDemandSignal = CapacityManagementFunctions.getOccmDemandSignal(GetOccmDemandSignalArgs.builder()
-     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id())
+     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -5479,7 +5479,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccmDemandSignal = CapacityManagementFunctions.getOccmDemandSignal(GetOccmDemandSignalArgs.builder()
-     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id())
+     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -5521,7 +5521,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccmDemandSignal = CapacityManagementFunctions.getOccmDemandSignal(GetOccmDemandSignalArgs.builder()
-     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id())
+     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -5785,7 +5785,7 @@ public final class CapacityManagementFunctions {
      *         final var testOccmDemandSignalDeliveries = CapacityManagementFunctions.getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .id(occmDemandSignalDeliveryId)
-     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -5829,7 +5829,7 @@ public final class CapacityManagementFunctions {
      *         final var testOccmDemandSignalDeliveries = CapacityManagementFunctions.getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .id(occmDemandSignalDeliveryId)
-     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -5873,7 +5873,7 @@ public final class CapacityManagementFunctions {
      *         final var testOccmDemandSignalDeliveries = CapacityManagementFunctions.getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .id(occmDemandSignalDeliveryId)
-     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -5917,7 +5917,7 @@ public final class CapacityManagementFunctions {
      *         final var testOccmDemandSignalDeliveries = CapacityManagementFunctions.getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .id(occmDemandSignalDeliveryId)
-     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -5961,7 +5961,7 @@ public final class CapacityManagementFunctions {
      *         final var testOccmDemandSignalDeliveries = CapacityManagementFunctions.getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .id(occmDemandSignalDeliveryId)
-     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -6003,7 +6003,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccmDemandSignalItem = CapacityManagementFunctions.getOccmDemandSignalItem(GetOccmDemandSignalItemArgs.builder()
-     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -6045,7 +6045,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccmDemandSignalItem = CapacityManagementFunctions.getOccmDemandSignalItem(GetOccmDemandSignalItemArgs.builder()
-     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -6087,7 +6087,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccmDemandSignalItem = CapacityManagementFunctions.getOccmDemandSignalItem(GetOccmDemandSignalItemArgs.builder()
-     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -6129,7 +6129,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccmDemandSignalItem = CapacityManagementFunctions.getOccmDemandSignalItem(GetOccmDemandSignalItemArgs.builder()
-     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -6171,7 +6171,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccmDemandSignalItem = CapacityManagementFunctions.getOccmDemandSignalItem(GetOccmDemandSignalItemArgs.builder()
-     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.id())
+     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.get("id"))
      *             .build());
      * 
      *     }
@@ -6215,8 +6215,8 @@ public final class CapacityManagementFunctions {
      *         final var testOccmDemandSignalItems = CapacityManagementFunctions.getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .demandSignalNamespace(occmDemandSignalItemDemandSignalNamespace)
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
-     *             .resourceName(testResource.name())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
+     *             .resourceName(testResource.get("name"))
      *             .build());
      * 
      *     }
@@ -6260,8 +6260,8 @@ public final class CapacityManagementFunctions {
      *         final var testOccmDemandSignalItems = CapacityManagementFunctions.getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .demandSignalNamespace(occmDemandSignalItemDemandSignalNamespace)
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
-     *             .resourceName(testResource.name())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
+     *             .resourceName(testResource.get("name"))
      *             .build());
      * 
      *     }
@@ -6305,8 +6305,8 @@ public final class CapacityManagementFunctions {
      *         final var testOccmDemandSignalItems = CapacityManagementFunctions.getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .demandSignalNamespace(occmDemandSignalItemDemandSignalNamespace)
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
-     *             .resourceName(testResource.name())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
+     *             .resourceName(testResource.get("name"))
      *             .build());
      * 
      *     }
@@ -6350,8 +6350,8 @@ public final class CapacityManagementFunctions {
      *         final var testOccmDemandSignalItems = CapacityManagementFunctions.getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .demandSignalNamespace(occmDemandSignalItemDemandSignalNamespace)
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
-     *             .resourceName(testResource.name())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
+     *             .resourceName(testResource.get("name"))
      *             .build());
      * 
      *     }
@@ -6395,8 +6395,8 @@ public final class CapacityManagementFunctions {
      *         final var testOccmDemandSignalItems = CapacityManagementFunctions.getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .demandSignalNamespace(occmDemandSignalItemDemandSignalNamespace)
-     *             .occmDemandSignalId(testOccmDemandSignal.id())
-     *             .resourceName(testResource.name())
+     *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
+     *             .resourceName(testResource.get("name"))
      *             .build());
      * 
      *     }

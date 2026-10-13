@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceSwitchSnapChannelManagement = new ManagedInstanceSwitchSnapChannelManagement("testManagedInstanceSwitchSnapChannelManagement", ManagedInstanceSwitchSnapChannelManagementArgs.builder()
- *             .managedInstanceId(testManagedInstance.id())
+ *             .managedInstanceId(testManagedInstance.get("id"))
  *             .snapDetails(ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs.builder()
  *                 .name(managedInstanceSwitchSnapChannelManagementSnapDetailsName)
  *                 .channel(managedInstanceSwitchSnapChannelManagementSnapDetailsChannel)

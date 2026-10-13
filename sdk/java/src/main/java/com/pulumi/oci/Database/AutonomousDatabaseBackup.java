@@ -53,11 +53,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousDatabaseBackup = new AutonomousDatabaseBackup("testAutonomousDatabaseBackup", AutonomousDatabaseBackupArgs.builder()
- *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .autonomousDatabaseId(testAutonomousDatabase.get("id"))
  *             .backupDestinationDetails(AutonomousDatabaseBackupBackupDestinationDetailsArgs.builder()
  *                 .type(autonomousDatabaseBackupBackupDestinationDetailsType)
  *                 .backupRetentionPolicyOnTerminate(autonomousDatabaseBackupBackupDestinationDetailsBackupRetentionPolicyOnTerminate)
- *                 .dbrsPolicyId(testPolicy.id())
+ *                 .dbrsPolicyId(testPolicy.get("id"))
  *                 .id(autonomousDatabaseBackupBackupDestinationDetailsId)
  *                 .internetProxy(autonomousDatabaseBackupBackupDestinationDetailsInternetProxy)
  *                 .isRemote(autonomousDatabaseBackupBackupDestinationDetailsIsRemote)

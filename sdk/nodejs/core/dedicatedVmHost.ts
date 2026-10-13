@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled === "true",
+ *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled,
  *     placementConstraintDetails: {
  *         type: dedicatedVmHostPlacementConstraintDetailsType,
  *         computeBareMetalHostId: testComputeBareMetalHost.id,

@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *         var testAdvancedClusterFileSystem = new AdvancedClusterFileSystem("testAdvancedClusterFileSystem", AdvancedClusterFileSystemArgs.builder()
  *             .name(advancedClusterFileSystemName)
  *             .storageInGbs(advancedClusterFileSystemStorageInGbs)
- *             .vmClusterId(testVmCluster.id())
+ *             .vmClusterId(testVmCluster.get("id"))
  *             .compartmentId(compartmentId)
  *             .definedTags(advancedClusterFileSystemDefinedTags)
  *             .freeformTags(Map.of("Department", "Finance"))

@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRecord = new Record("testRecord", RecordArgs.builder()
- *             .zoneNameOrId(testZoneNameOr.id())
+ *             .zoneNameOrId(testZoneNameOr.get("id"))
  *             .domain(recordItemsDomain)
  *             .rtype(recordItemsRtype)
  *             .rdata(recordItemsRdata)

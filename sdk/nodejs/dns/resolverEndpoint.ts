@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResolverEndpoint = new oci.dns.ResolverEndpoint("test_resolver_endpoint", {
- *     isForwarding: resolverEndpointIsForwarding === "true",
- *     isListening: resolverEndpointIsListening === "true",
+ *     isForwarding: resolverEndpointIsForwarding,
+ *     isListening: resolverEndpointIsListening,
  *     name: resolverEndpointName,
  *     resolverId: testResolver.id,
  *     subnetId: testSubnet.id,

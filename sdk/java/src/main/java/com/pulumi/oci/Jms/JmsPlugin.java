@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .agentType(jmsPluginAgentType)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
- *             .fleetId(testFleet.id())
+ *             .fleetId(testFleet.get("id"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .build());
  * 

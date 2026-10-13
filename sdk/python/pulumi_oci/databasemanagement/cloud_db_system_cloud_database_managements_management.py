@@ -199,8 +199,8 @@ class CloudDbSystemCloudDatabaseManagementsManagement(pulumi.CustomResource):
 
         test_cloud_db_system_cloud_database_managements_management = oci.databasemanagement.CloudDbSystemCloudDatabaseManagementsManagement("test_cloud_db_system_cloud_database_managements_management",
             cloud_db_system_id=test_cloud_db_system["id"],
-            enable_cloud_database_management=enable_cloud_database_management == "true",
-            is_enabled=cloud_db_system_cloud_database_managements_management_is_enabled == "true",
+            enable_cloud_database_management=enable_cloud_database_management,
+            is_enabled=cloud_db_system_cloud_database_managements_management_is_enabled,
             metadata=cloud_db_system_cloud_database_managements_management_metadata)
         ```
 
@@ -237,8 +237,8 @@ class CloudDbSystemCloudDatabaseManagementsManagement(pulumi.CustomResource):
 
         test_cloud_db_system_cloud_database_managements_management = oci.databasemanagement.CloudDbSystemCloudDatabaseManagementsManagement("test_cloud_db_system_cloud_database_managements_management",
             cloud_db_system_id=test_cloud_db_system["id"],
-            enable_cloud_database_management=enable_cloud_database_management == "true",
-            is_enabled=cloud_db_system_cloud_database_managements_management_is_enabled == "true",
+            enable_cloud_database_management=enable_cloud_database_management,
+            is_enabled=cloud_db_system_cloud_database_managements_management_is_enabled,
             metadata=cloud_db_system_cloud_database_managements_management_metadata)
         ```
 

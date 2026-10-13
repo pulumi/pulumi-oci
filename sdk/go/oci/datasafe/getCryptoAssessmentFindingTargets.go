@@ -31,14 +31,14 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetCryptoAssessmentFindingTargets(ctx, &datasafe.GetCryptoAssessmentFindingTargetsArgs{
 //				CompartmentId:           compartmentId,
-//				FindingKeys:             pulumi.ToArray(cryptoAssessmentFindingTargetFindingKey),
+//				FindingKeys:             cryptoAssessmentFindingTargetFindingKey,
 //				AccessLevel:             pulumi.StringRef(cryptoAssessmentFindingTargetAccessLevel),
 //				AssessmentType:          pulumi.StringRef(cryptoAssessmentFindingTargetAssessmentType),
 //				CompartmentIdInSubtree:  pulumi.BoolRef(cryptoAssessmentFindingTargetCompartmentIdInSubtree),
 //				IsQuantumReadinessCheck: pulumi.BoolRef(cryptoAssessmentFindingTargetIsQuantumReadinessCheck),
 //				Status:                  pulumi.StringRef(cryptoAssessmentFindingTargetStatus),
 //				TargetId:                pulumi.StringRef(testTarget.Id),
-//				TargetIds:               pulumi.ToArray(cryptoAssessmentFindingTargetTargetIds),
+//				TargetIds:               cryptoAssessmentFindingTargetTargetIds,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -48,8 +48,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testFleetProperty = new FleetProperty("testFleetProperty", FleetPropertyArgs.builder()
- *             .fleetId(testFleet.id())
- *             .propertyId(testProperty.id())
+ *             .fleetId(testFleet.get("id"))
+ *             .propertyId(testProperty.get("id"))
  *             .value(fleetPropertyValue)
  *             .build());
  * 

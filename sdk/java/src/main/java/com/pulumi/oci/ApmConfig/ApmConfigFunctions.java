@@ -54,8 +54,8 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = ApmConfigFunctions.getConfig(GetConfigArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .configId(testConfigOciApmConfigConfig.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .configId(testConfigOciApmConfigConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -97,8 +97,8 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = ApmConfigFunctions.getConfig(GetConfigArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .configId(testConfigOciApmConfigConfig.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .configId(testConfigOciApmConfigConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -140,8 +140,8 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = ApmConfigFunctions.getConfig(GetConfigArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .configId(testConfigOciApmConfigConfig.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .configId(testConfigOciApmConfigConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -183,8 +183,8 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = ApmConfigFunctions.getConfig(GetConfigArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .configId(testConfigOciApmConfigConfig.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .configId(testConfigOciApmConfigConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -226,8 +226,8 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = ApmConfigFunctions.getConfig(GetConfigArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .configId(testConfigOciApmConfigConfig.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .configId(testConfigOciApmConfigConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -269,7 +269,7 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = ApmConfigFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .configType(configConfigType)
      *             .definedTagEquals(configDefinedTagEquals)
      *             .definedTagExists(configDefinedTagExists)
@@ -318,7 +318,7 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = ApmConfigFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .configType(configConfigType)
      *             .definedTagEquals(configDefinedTagEquals)
      *             .definedTagExists(configDefinedTagExists)
@@ -367,7 +367,7 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = ApmConfigFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .configType(configConfigType)
      *             .definedTagEquals(configDefinedTagEquals)
      *             .definedTagExists(configDefinedTagExists)
@@ -416,7 +416,7 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = ApmConfigFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .configType(configConfigType)
      *             .definedTagEquals(configDefinedTagEquals)
      *             .definedTagExists(configDefinedTagExists)
@@ -465,7 +465,7 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = ApmConfigFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .configType(configConfigType)
      *             .definedTagEquals(configDefinedTagEquals)
      *             .definedTagExists(configDefinedTagExists)
@@ -514,9 +514,9 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataFile = ApmConfigFunctions.getDataFile(GetDataFileArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .apmType(dataFileApmType)
-     *             .dataFileName(testDataFileOciApmConfigDataFile.name())
+     *             .dataFileName(testDataFileOciApmConfigDataFile.get("name"))
      *             .build());
      * 
      *     }
@@ -558,9 +558,9 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataFile = ApmConfigFunctions.getDataFile(GetDataFileArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .apmType(dataFileApmType)
-     *             .dataFileName(testDataFileOciApmConfigDataFile.name())
+     *             .dataFileName(testDataFileOciApmConfigDataFile.get("name"))
      *             .build());
      * 
      *     }
@@ -602,9 +602,9 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataFile = ApmConfigFunctions.getDataFile(GetDataFileArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .apmType(dataFileApmType)
-     *             .dataFileName(testDataFileOciApmConfigDataFile.name())
+     *             .dataFileName(testDataFileOciApmConfigDataFile.get("name"))
      *             .build());
      * 
      *     }
@@ -646,9 +646,9 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataFile = ApmConfigFunctions.getDataFile(GetDataFileArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .apmType(dataFileApmType)
-     *             .dataFileName(testDataFileOciApmConfigDataFile.name())
+     *             .dataFileName(testDataFileOciApmConfigDataFile.get("name"))
      *             .build());
      * 
      *     }
@@ -690,9 +690,9 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataFile = ApmConfigFunctions.getDataFile(GetDataFileArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .apmType(dataFileApmType)
-     *             .dataFileName(testDataFileOciApmConfigDataFile.name())
+     *             .dataFileName(testDataFileOciApmConfigDataFile.get("name"))
      *             .build());
      * 
      *     }
@@ -734,7 +734,7 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataFiles = ApmConfigFunctions.getDataFiles(GetDataFilesArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .apmType(dataFileApmType)
      *             .metadata(dataFileMetadata)
      *             .name(dataFileName)
@@ -781,7 +781,7 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataFiles = ApmConfigFunctions.getDataFiles(GetDataFilesArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .apmType(dataFileApmType)
      *             .metadata(dataFileMetadata)
      *             .name(dataFileName)
@@ -828,7 +828,7 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataFiles = ApmConfigFunctions.getDataFiles(GetDataFilesArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .apmType(dataFileApmType)
      *             .metadata(dataFileMetadata)
      *             .name(dataFileName)
@@ -875,7 +875,7 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataFiles = ApmConfigFunctions.getDataFiles(GetDataFilesArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .apmType(dataFileApmType)
      *             .metadata(dataFileMetadata)
      *             .name(dataFileName)
@@ -922,7 +922,7 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataFiles = ApmConfigFunctions.getDataFiles(GetDataFilesArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .apmType(dataFileApmType)
      *             .metadata(dataFileMetadata)
      *             .name(dataFileName)

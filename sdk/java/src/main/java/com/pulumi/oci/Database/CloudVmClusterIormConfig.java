@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *                 .dbName(cloudVmClusterIormConfigDbPlansDbName)
  *                 .share(cloudVmClusterIormConfigDbPlansShare)
  *                 .build())
- *             .cloudVmClusterId(testCloudVmCluster.id())
+ *             .cloudVmClusterId(testCloudVmCluster.get("id"))
  *             .objective("AUTO")
  *             .build());
  * 

@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  * const testSqlFirewallPolicyAnalytics = oci.datasafe.getSqlFirewallPolicyAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallPolicyAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree,
  *     groupBies: sqlFirewallPolicyAnalyticGroupBy,
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: sqlFirewallPolicyAnalyticState,
@@ -147,7 +147,7 @@ export interface GetSqlFirewallPolicyAnalyticsResult {
  * const testSqlFirewallPolicyAnalytics = oci.datasafe.getSqlFirewallPolicyAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallPolicyAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree,
  *     groupBies: sqlFirewallPolicyAnalyticGroupBy,
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: sqlFirewallPolicyAnalyticState,

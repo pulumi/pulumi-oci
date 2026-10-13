@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceGroupRebootManagement = new ManagedInstanceGroupRebootManagement("testManagedInstanceGroupRebootManagement", ManagedInstanceGroupRebootManagementArgs.builder()
- *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+ *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
  *             .rebootTimeoutInMins(managedInstanceGroupRebootManagementRebootTimeoutInMins)
  *             .workRequestDetails(ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs.builder()
  *                 .description(managedInstanceGroupRebootManagementWorkRequestDetailsDescription)

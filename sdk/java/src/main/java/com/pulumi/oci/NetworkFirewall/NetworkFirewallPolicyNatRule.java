@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *                 .sourceAddresses(networkFirewallPolicyNatRuleConditionSourceAddress)
  *                 .build())
  *             .name(networkFirewallPolicyNatRuleName)
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
  *             .type(networkFirewallPolicyNatRuleType)
  *             .description(networkFirewallPolicyNatRuleDescription)
  *             .position(NetworkFirewallPolicyNatRulePositionArgs.builder()

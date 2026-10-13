@@ -45,8 +45,8 @@ import javax.annotation.Nullable;
  *         var testModelCustomMetadataArtifact = new ModelCustomMetadataArtifact("testModelCustomMetadataArtifact", ModelCustomMetadataArtifactArgs.builder()
  *             .modelCustomMetadatumArtifact(modelCustomMetadataArtifactModelCustomMetadatumArtifact)
  *             .contentLength(modelCustomMetadataArtifactContentLength)
- *             .metadatumKeyName(testKey.name())
- *             .modelId(testModel.id())
+ *             .metadatumKeyName(testKey.get("name"))
+ *             .modelId(testModel.get("id"))
  *             .contentDisposition(modelCustomMetadataArtifactContentDisposition)
  *             .build());
  * 

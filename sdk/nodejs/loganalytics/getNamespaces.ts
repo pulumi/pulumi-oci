@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testNamespaces = oci.loganalytics.getNamespaces({
  *     compartmentId: compartmentId,
- *     isCompartmentDelete: namespaceIsCompartmentDelete === "true",
+ *     isCompartmentDelete: namespaceIsCompartmentDelete,
  * });
  * ```
  */
@@ -81,7 +81,7 @@ export interface GetNamespacesResult {
  *
  * const testNamespaces = oci.loganalytics.getNamespaces({
  *     compartmentId: compartmentId,
- *     isCompartmentDelete: namespaceIsCompartmentDelete === "true",
+ *     isCompartmentDelete: namespaceIsCompartmentDelete,
  * });
  * ```
  */

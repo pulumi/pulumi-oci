@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAlertRule = new Rule("testAlertRule", RuleArgs.builder()
- *             .budgetId(testBudget.id())
+ *             .budgetId(testBudget.get("id"))
  *             .threshold(alertRuleThreshold)
  *             .thresholdType(alertRuleThresholdType)
  *             .type(alertRuleType)

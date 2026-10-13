@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testApiKey = new DomainsApiKey("testApiKey", DomainsApiKeyArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .key(apiKeyKey)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:apikey")
  *             .attributeSets()
@@ -76,8 +76,8 @@ import javax.annotation.Nullable;
  *                 .allowSelfChange(apiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange)
  *                 .build())
  *             .user(DomainsApiKeyUserArgs.builder()
- *                 .ocid(testUser.ocid())
- *                 .value(testUser.id())
+ *                 .ocid(testUser.get("ocid"))
+ *                 .value(testUser.get("id"))
  *                 .build())
  *             .build());
  * 

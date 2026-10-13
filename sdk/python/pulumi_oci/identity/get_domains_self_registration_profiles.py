@@ -215,13 +215,13 @@ def get_domains_self_registration_profiles(attribute_sets: Optional[Sequence[_bu
     import pulumi_oci as oci
 
     test_self_registration_profiles = oci.identity.get_domains_self_registration_profiles(idcs_endpoint=test_domain["url"],
-        self_registration_profile_count=int(self_registration_profile_self_registration_profile_count),
+        self_registration_profile_count=self_registration_profile_self_registration_profile_count,
         self_registration_profile_filter=self_registration_profile_self_registration_profile_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=self_registration_profile_authorization,
         resource_type_schema_version=self_registration_profile_resource_type_schema_version,
-        start_index=int(self_registration_profile_start_index))
+        start_index=self_registration_profile_start_index)
     ```
 
 
@@ -290,13 +290,13 @@ def get_domains_self_registration_profiles_output(attribute_sets: pulumi.Input[O
     import pulumi_oci as oci
 
     test_self_registration_profiles = oci.identity.get_domains_self_registration_profiles(idcs_endpoint=test_domain["url"],
-        self_registration_profile_count=int(self_registration_profile_self_registration_profile_count),
+        self_registration_profile_count=self_registration_profile_self_registration_profile_count,
         self_registration_profile_filter=self_registration_profile_self_registration_profile_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=self_registration_profile_authorization,
         resource_type_schema_version=self_registration_profile_resource_type_schema_version,
-        start_index=int(self_registration_profile_start_index))
+        start_index=self_registration_profile_start_index)
     ```
 
 

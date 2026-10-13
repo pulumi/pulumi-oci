@@ -427,8 +427,8 @@ class HttpProbe(pulumi.CustomResource):
             headers=http_probe_headers,
             method=http_probe_method,
             path=http_probe_path,
-            port=int(http_probe_port),
-            timeout_in_seconds=int(http_probe_timeout_in_seconds),
+            port=http_probe_port,
+            timeout_in_seconds=http_probe_timeout_in_seconds,
             vantage_point_names=http_probe_vantage_point_names)
         ```
 
@@ -488,8 +488,8 @@ class HttpProbe(pulumi.CustomResource):
             headers=http_probe_headers,
             method=http_probe_method,
             path=http_probe_path,
-            port=int(http_probe_port),
-            timeout_in_seconds=int(http_probe_timeout_in_seconds),
+            port=http_probe_port,
+            timeout_in_seconds=http_probe_timeout_in_seconds,
             vantage_point_names=http_probe_vantage_point_names)
         ```
 

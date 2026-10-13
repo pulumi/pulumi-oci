@@ -21,8 +21,8 @@ import * as utilities from "../utilities";
  *     configurationId: testConfiguration.id,
  *     dbVersion: defaultConfigurationDbVersion,
  *     displayName: defaultConfigurationDisplayName,
- *     instanceMemorySizeInGbs: Number(defaultConfigurationInstanceMemorySizeInGbs),
- *     instanceOcpuCount: Number(defaultConfigurationInstanceOcpuCount),
+ *     instanceMemorySizeInGbs: defaultConfigurationInstanceMemorySizeInGbs,
+ *     instanceOcpuCount: defaultConfigurationInstanceOcpuCount,
  *     shape: defaultConfigurationShape,
  *     state: defaultConfigurationState,
  * });
@@ -132,8 +132,8 @@ export interface GetDefaultConfigurationsResult {
  *     configurationId: testConfiguration.id,
  *     dbVersion: defaultConfigurationDbVersion,
  *     displayName: defaultConfigurationDisplayName,
- *     instanceMemorySizeInGbs: Number(defaultConfigurationInstanceMemorySizeInGbs),
- *     instanceOcpuCount: Number(defaultConfigurationInstanceOcpuCount),
+ *     instanceMemorySizeInGbs: defaultConfigurationInstanceMemorySizeInGbs,
+ *     instanceOcpuCount: defaultConfigurationInstanceOcpuCount,
  *     shape: defaultConfigurationShape,
  *     state: defaultConfigurationState,
  * });

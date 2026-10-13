@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     architecture: softwarePackageArchitecture,
  *     displayName: softwarePackageDisplayName,
  *     displayNameContains: softwarePackageDisplayNameContains,
- *     isLatest: softwarePackageIsLatest === "true",
+ *     isLatest: softwarePackageIsLatest,
  *     osFamily: softwarePackageOsFamily,
  *     version: softwarePackageVersion,
  * });
@@ -121,7 +121,7 @@ export interface GetSoftwarePackagesResult {
  *     architecture: softwarePackageArchitecture,
  *     displayName: softwarePackageDisplayName,
  *     displayNameContains: softwarePackageDisplayNameContains,
- *     isLatest: softwarePackageIsLatest === "true",
+ *     isLatest: softwarePackageIsLatest,
  *     osFamily: softwarePackageOsFamily,
  *     version: softwarePackageVersion,
  * });

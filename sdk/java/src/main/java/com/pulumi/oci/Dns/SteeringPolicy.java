@@ -69,7 +69,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .definedTags(steeringPolicyDefinedTags)
  *             .freeformTags(steeringPolicyFreeformTags)
- *             .healthCheckMonitorId(testHttpMonitor.id())
+ *             .healthCheckMonitorId(testHttpMonitor.get("id"))
  *             .rules(SteeringPolicyRuleArgs.builder()
  *                 .ruleType(steeringPolicyRulesRuleType)
  *                 .cases(SteeringPolicyRuleCaseArgs.builder()

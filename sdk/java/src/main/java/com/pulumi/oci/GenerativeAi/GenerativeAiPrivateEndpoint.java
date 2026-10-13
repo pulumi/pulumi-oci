@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *         var testGenerativeAiPrivateEndpoint = new GenerativeAiPrivateEndpoint("testGenerativeAiPrivateEndpoint", GenerativeAiPrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dnsPrefix(generativeAiPrivateEndpointDnsPrefix)
- *             .subnetId(testSubnet.id())
+ *             .subnetId(testSubnet.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(generativeAiPrivateEndpointDescription)
  *             .displayName(generativeAiPrivateEndpointDisplayName)

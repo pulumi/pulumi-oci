@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .name(projectName)
  *             .notificationConfig(ProjectNotificationConfigArgs.builder()
- *                 .topicId(testNotificationTopic.id())
+ *                 .topicId(testNotificationTopic.get("id"))
  *                 .build())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(projectDescription)

@@ -367,13 +367,13 @@ class Stream(pulumi.CustomResource):
 
         test_stream = oci.streaming.Stream("test_stream",
             name=stream_name,
-            partitions=int(stream_partitions),
+            partitions=stream_partitions,
             compartment_id=compartment_id,
             defined_tags=stream_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            retention_in_hours=int(stream_retention_in_hours),
+            retention_in_hours=stream_retention_in_hours,
             stream_pool_id=test_stream_pool["id"])
         ```
 
@@ -425,13 +425,13 @@ class Stream(pulumi.CustomResource):
 
         test_stream = oci.streaming.Stream("test_stream",
             name=stream_name,
-            partitions=int(stream_partitions),
+            partitions=stream_partitions,
             compartment_id=compartment_id,
             defined_tags=stream_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            retention_in_hours=int(stream_retention_in_hours),
+            retention_in_hours=stream_retention_in_hours,
             stream_pool_id=test_stream_pool["id"])
         ```
 

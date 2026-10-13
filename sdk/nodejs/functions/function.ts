@@ -48,7 +48,7 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     detachedModeTimeoutInSeconds: Number(functionDetachedModeTimeoutInSeconds),
+ *     detachedModeTimeoutInSeconds: functionDetachedModeTimeoutInSeconds,
  *     failureDestination: {
  *         kind: functionFailureDestinationKind,
  *         channelId: testChannel.id,
@@ -61,7 +61,7 @@ import * as utilities from "../utilities";
  *     },
  *     provisionedConcurrencyConfig: {
  *         strategy: functionProvisionedConcurrencyConfigStrategy,
- *         count: Number(functionProvisionedConcurrencyConfigCount),
+ *         count: functionProvisionedConcurrencyConfigCount,
  *     },
  *     successDestination: {
  *         kind: functionSuccessDestinationKind,
@@ -70,9 +70,9 @@ import * as utilities from "../utilities";
  *         streamId: testStream.id,
  *         topicId: testNotificationTopic.id,
  *     },
- *     timeoutInSeconds: Number(functionTimeoutInSeconds),
+ *     timeoutInSeconds: functionTimeoutInSeconds,
  *     traceConfig: {
- *         isEnabled: functionTraceConfigIsEnabled === "true",
+ *         isEnabled: functionTraceConfigIsEnabled,
  *     },
  * });
  * ```

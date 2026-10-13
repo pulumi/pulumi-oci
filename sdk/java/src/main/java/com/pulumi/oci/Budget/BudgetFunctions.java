@@ -75,8 +75,8 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
-     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.id())
-     *             .budgetId(testBudget.id())
+     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.get("id"))
+     *             .budgetId(testBudget.get("id"))
      *             .build());
      * 
      *     }
@@ -118,8 +118,8 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
-     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.id())
-     *             .budgetId(testBudget.id())
+     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.get("id"))
+     *             .budgetId(testBudget.get("id"))
      *             .build());
      * 
      *     }
@@ -161,8 +161,8 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
-     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.id())
-     *             .budgetId(testBudget.id())
+     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.get("id"))
+     *             .budgetId(testBudget.get("id"))
      *             .build());
      * 
      *     }
@@ -204,8 +204,8 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
-     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.id())
-     *             .budgetId(testBudget.id())
+     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.get("id"))
+     *             .budgetId(testBudget.get("id"))
      *             .build());
      * 
      *     }
@@ -247,8 +247,8 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
-     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.id())
-     *             .budgetId(testBudget.id())
+     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.get("id"))
+     *             .budgetId(testBudget.get("id"))
      *             .build());
      * 
      *     }
@@ -290,7 +290,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
-     *             .budgetId(testBudget.id())
+     *             .budgetId(testBudget.get("id"))
      *             .displayName(alertRuleDisplayName)
      *             .state(alertRuleState)
      *             .build());
@@ -334,7 +334,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
-     *             .budgetId(testBudget.id())
+     *             .budgetId(testBudget.get("id"))
      *             .displayName(alertRuleDisplayName)
      *             .state(alertRuleState)
      *             .build());
@@ -378,7 +378,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
-     *             .budgetId(testBudget.id())
+     *             .budgetId(testBudget.get("id"))
      *             .displayName(alertRuleDisplayName)
      *             .state(alertRuleState)
      *             .build());
@@ -422,7 +422,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
-     *             .budgetId(testBudget.id())
+     *             .budgetId(testBudget.get("id"))
      *             .displayName(alertRuleDisplayName)
      *             .state(alertRuleState)
      *             .build());
@@ -466,7 +466,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
-     *             .budgetId(testBudget.id())
+     *             .budgetId(testBudget.get("id"))
      *             .displayName(alertRuleDisplayName)
      *             .state(alertRuleState)
      *             .build());
@@ -510,7 +510,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
-     *             .budgetId(testBudgetOciBudgetBudget.id())
+     *             .budgetId(testBudgetOciBudgetBudget.get("id"))
      *             .build());
      * 
      *     }
@@ -552,7 +552,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
-     *             .budgetId(testBudgetOciBudgetBudget.id())
+     *             .budgetId(testBudgetOciBudgetBudget.get("id"))
      *             .build());
      * 
      *     }
@@ -594,7 +594,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
-     *             .budgetId(testBudgetOciBudgetBudget.id())
+     *             .budgetId(testBudgetOciBudgetBudget.get("id"))
      *             .build());
      * 
      *     }
@@ -636,7 +636,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
-     *             .budgetId(testBudgetOciBudgetBudget.id())
+     *             .budgetId(testBudgetOciBudgetBudget.get("id"))
      *             .build());
      * 
      *     }
@@ -678,7 +678,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
-     *             .budgetId(testBudgetOciBudgetBudget.id())
+     *             .budgetId(testBudgetOciBudgetBudget.get("id"))
      *             .build());
      * 
      *     }
@@ -975,7 +975,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAlertSubscription = BudgetFunctions.getCostAlertSubscription(GetCostAlertSubscriptionArgs.builder()
-     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.id())
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1017,7 +1017,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAlertSubscription = BudgetFunctions.getCostAlertSubscription(GetCostAlertSubscriptionArgs.builder()
-     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.id())
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1059,7 +1059,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAlertSubscription = BudgetFunctions.getCostAlertSubscription(GetCostAlertSubscriptionArgs.builder()
-     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.id())
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1101,7 +1101,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAlertSubscription = BudgetFunctions.getCostAlertSubscription(GetCostAlertSubscriptionArgs.builder()
-     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.id())
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1143,7 +1143,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAlertSubscription = BudgetFunctions.getCostAlertSubscription(GetCostAlertSubscriptionArgs.builder()
-     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.id())
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1405,7 +1405,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvent = BudgetFunctions.getCostAnomalyEvent(GetCostAnomalyEventArgs.builder()
-     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.id())
+     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -1447,7 +1447,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvent = BudgetFunctions.getCostAnomalyEvent(GetCostAnomalyEventArgs.builder()
-     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.id())
+     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -1489,7 +1489,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvent = BudgetFunctions.getCostAnomalyEvent(GetCostAnomalyEventArgs.builder()
-     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.id())
+     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -1531,7 +1531,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvent = BudgetFunctions.getCostAnomalyEvent(GetCostAnomalyEventArgs.builder()
-     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.id())
+     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -1573,7 +1573,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvent = BudgetFunctions.getCostAnomalyEvent(GetCostAnomalyEventArgs.builder()
-     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.id())
+     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -1616,12 +1616,12 @@ public final class BudgetFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEventAnalytics = BudgetFunctions.getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventAnalyticCostImpact)
      *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
      *             .name(costAnomalyEventAnalyticName)
      *             .regions(costAnomalyEventAnalyticRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
      *             .build());
@@ -1666,12 +1666,12 @@ public final class BudgetFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEventAnalytics = BudgetFunctions.getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventAnalyticCostImpact)
      *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
      *             .name(costAnomalyEventAnalyticName)
      *             .regions(costAnomalyEventAnalyticRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
      *             .build());
@@ -1716,12 +1716,12 @@ public final class BudgetFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEventAnalytics = BudgetFunctions.getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventAnalyticCostImpact)
      *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
      *             .name(costAnomalyEventAnalyticName)
      *             .regions(costAnomalyEventAnalyticRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
      *             .build());
@@ -1766,12 +1766,12 @@ public final class BudgetFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEventAnalytics = BudgetFunctions.getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventAnalyticCostImpact)
      *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
      *             .name(costAnomalyEventAnalyticName)
      *             .regions(costAnomalyEventAnalyticRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
      *             .build());
@@ -1816,12 +1816,12 @@ public final class BudgetFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEventAnalytics = BudgetFunctions.getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventAnalyticCostImpact)
      *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
      *             .name(costAnomalyEventAnalyticName)
      *             .regions(costAnomalyEventAnalyticRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
      *             .build());
@@ -1866,12 +1866,12 @@ public final class BudgetFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvents = BudgetFunctions.getCostAnomalyEvents(GetCostAnomalyEventsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventCostImpact)
      *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
      *             .name(costAnomalyEventName)
      *             .regions(costAnomalyEventRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
      *             .build());
@@ -1916,12 +1916,12 @@ public final class BudgetFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvents = BudgetFunctions.getCostAnomalyEvents(GetCostAnomalyEventsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventCostImpact)
      *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
      *             .name(costAnomalyEventName)
      *             .regions(costAnomalyEventRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
      *             .build());
@@ -1966,12 +1966,12 @@ public final class BudgetFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvents = BudgetFunctions.getCostAnomalyEvents(GetCostAnomalyEventsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventCostImpact)
      *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
      *             .name(costAnomalyEventName)
      *             .regions(costAnomalyEventRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
      *             .build());
@@ -2016,12 +2016,12 @@ public final class BudgetFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvents = BudgetFunctions.getCostAnomalyEvents(GetCostAnomalyEventsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventCostImpact)
      *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
      *             .name(costAnomalyEventName)
      *             .regions(costAnomalyEventRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
      *             .build());
@@ -2066,12 +2066,12 @@ public final class BudgetFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvents = BudgetFunctions.getCostAnomalyEvents(GetCostAnomalyEventsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventCostImpact)
      *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
      *             .name(costAnomalyEventName)
      *             .regions(costAnomalyEventRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
      *             .build());
@@ -2115,7 +2115,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyMonitor = BudgetFunctions.getCostAnomalyMonitor(GetCostAnomalyMonitorArgs.builder()
-     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -2157,7 +2157,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyMonitor = BudgetFunctions.getCostAnomalyMonitor(GetCostAnomalyMonitorArgs.builder()
-     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -2199,7 +2199,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyMonitor = BudgetFunctions.getCostAnomalyMonitor(GetCostAnomalyMonitorArgs.builder()
-     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -2241,7 +2241,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyMonitor = BudgetFunctions.getCostAnomalyMonitor(GetCostAnomalyMonitorArgs.builder()
-     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -2283,7 +2283,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyMonitor = BudgetFunctions.getCostAnomalyMonitor(GetCostAnomalyMonitorArgs.builder()
-     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -2329,7 +2329,7 @@ public final class BudgetFunctions {
      *             .name(costAnomalyMonitorName)
      *             .regions(costAnomalyMonitorRegion)
      *             .state(costAnomalyMonitorState)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -2375,7 +2375,7 @@ public final class BudgetFunctions {
      *             .name(costAnomalyMonitorName)
      *             .regions(costAnomalyMonitorRegion)
      *             .state(costAnomalyMonitorState)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -2421,7 +2421,7 @@ public final class BudgetFunctions {
      *             .name(costAnomalyMonitorName)
      *             .regions(costAnomalyMonitorRegion)
      *             .state(costAnomalyMonitorState)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -2467,7 +2467,7 @@ public final class BudgetFunctions {
      *             .name(costAnomalyMonitorName)
      *             .regions(costAnomalyMonitorRegion)
      *             .state(costAnomalyMonitorState)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -2513,7 +2513,7 @@ public final class BudgetFunctions {
      *             .name(costAnomalyMonitorName)
      *             .regions(costAnomalyMonitorRegion)
      *             .state(costAnomalyMonitorState)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .build());
      * 
      *     }

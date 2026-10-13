@@ -294,7 +294,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
-     *             .dkimId(testDkimOciEmailDkim.id())
+     *             .dkimId(testDkimOciEmailDkim.get("id"))
      *             .build());
      * 
      *     }
@@ -336,7 +336,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
-     *             .dkimId(testDkimOciEmailDkim.id())
+     *             .dkimId(testDkimOciEmailDkim.get("id"))
      *             .build());
      * 
      *     }
@@ -378,7 +378,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
-     *             .dkimId(testDkimOciEmailDkim.id())
+     *             .dkimId(testDkimOciEmailDkim.get("id"))
      *             .build());
      * 
      *     }
@@ -420,7 +420,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
-     *             .dkimId(testDkimOciEmailDkim.id())
+     *             .dkimId(testDkimOciEmailDkim.get("id"))
      *             .build());
      * 
      *     }
@@ -462,7 +462,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
-     *             .dkimId(testDkimOciEmailDkim.id())
+     *             .dkimId(testDkimOciEmailDkim.get("id"))
      *             .build());
      * 
      *     }
@@ -504,7 +504,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
-     *             .emailDomainId(testEmailDomain.id())
+     *             .emailDomainId(testEmailDomain.get("id"))
      *             .id(dkimId)
      *             .name(dkimName)
      *             .state(dkimState)
@@ -549,7 +549,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
-     *             .emailDomainId(testEmailDomain.id())
+     *             .emailDomainId(testEmailDomain.get("id"))
      *             .id(dkimId)
      *             .name(dkimName)
      *             .state(dkimState)
@@ -594,7 +594,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
-     *             .emailDomainId(testEmailDomain.id())
+     *             .emailDomainId(testEmailDomain.get("id"))
      *             .id(dkimId)
      *             .name(dkimName)
      *             .state(dkimState)
@@ -639,7 +639,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
-     *             .emailDomainId(testEmailDomain.id())
+     *             .emailDomainId(testEmailDomain.get("id"))
      *             .id(dkimId)
      *             .name(dkimName)
      *             .state(dkimState)
@@ -684,7 +684,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
-     *             .emailDomainId(testEmailDomain.id())
+     *             .emailDomainId(testEmailDomain.get("id"))
      *             .id(dkimId)
      *             .name(dkimName)
      *             .state(dkimState)
@@ -729,7 +729,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
-     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.id())
+     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -771,7 +771,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
-     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.id())
+     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -813,7 +813,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
-     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.id())
+     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -855,7 +855,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
-     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.id())
+     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -897,7 +897,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
-     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.id())
+     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -1164,7 +1164,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailIpPool = EmailFunctions.getEmailIpPool(GetEmailIpPoolArgs.builder()
-     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.id())
+     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1206,7 +1206,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailIpPool = EmailFunctions.getEmailIpPool(GetEmailIpPoolArgs.builder()
-     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.id())
+     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1248,7 +1248,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailIpPool = EmailFunctions.getEmailIpPool(GetEmailIpPoolArgs.builder()
-     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.id())
+     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1290,7 +1290,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailIpPool = EmailFunctions.getEmailIpPool(GetEmailIpPoolArgs.builder()
-     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.id())
+     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1332,7 +1332,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailIpPool = EmailFunctions.getEmailIpPool(GetEmailIpPoolArgs.builder()
-     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.id())
+     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1824,7 +1824,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailReturnPath = EmailFunctions.getEmailReturnPath(GetEmailReturnPathArgs.builder()
-     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.id())
+     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.get("id"))
      *             .build());
      * 
      *     }
@@ -1866,7 +1866,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailReturnPath = EmailFunctions.getEmailReturnPath(GetEmailReturnPathArgs.builder()
-     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.id())
+     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.get("id"))
      *             .build());
      * 
      *     }
@@ -1908,7 +1908,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailReturnPath = EmailFunctions.getEmailReturnPath(GetEmailReturnPathArgs.builder()
-     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.id())
+     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.get("id"))
      *             .build());
      * 
      *     }
@@ -1950,7 +1950,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailReturnPath = EmailFunctions.getEmailReturnPath(GetEmailReturnPathArgs.builder()
-     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.id())
+     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.get("id"))
      *             .build());
      * 
      *     }
@@ -1992,7 +1992,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailReturnPath = EmailFunctions.getEmailReturnPath(GetEmailReturnPathArgs.builder()
-     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.id())
+     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.get("id"))
      *             .build());
      * 
      *     }
@@ -2037,7 +2037,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .id(emailReturnPathId)
      *             .name(emailReturnPathName)
-     *             .parentResourceId(testResource.id())
+     *             .parentResourceId(testResource.get("id"))
      *             .state(emailReturnPathState)
      *             .build());
      * 
@@ -2083,7 +2083,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .id(emailReturnPathId)
      *             .name(emailReturnPathName)
-     *             .parentResourceId(testResource.id())
+     *             .parentResourceId(testResource.get("id"))
      *             .state(emailReturnPathState)
      *             .build());
      * 
@@ -2129,7 +2129,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .id(emailReturnPathId)
      *             .name(emailReturnPathName)
-     *             .parentResourceId(testResource.id())
+     *             .parentResourceId(testResource.get("id"))
      *             .state(emailReturnPathState)
      *             .build());
      * 
@@ -2175,7 +2175,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .id(emailReturnPathId)
      *             .name(emailReturnPathName)
-     *             .parentResourceId(testResource.id())
+     *             .parentResourceId(testResource.get("id"))
      *             .state(emailReturnPathState)
      *             .build());
      * 
@@ -2221,7 +2221,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .id(emailReturnPathId)
      *             .name(emailReturnPathName)
-     *             .parentResourceId(testResource.id())
+     *             .parentResourceId(testResource.get("id"))
      *             .state(emailReturnPathState)
      *             .build());
      * 
@@ -2267,7 +2267,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .id(emailReturnPathId)
      *             .name(emailReturnPathName)
-     *             .parentResourceId(testResource.id())
+     *             .parentResourceId(testResource.get("id"))
      *             .state(emailReturnPathState)
      *             .build());
      * 
@@ -2313,7 +2313,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .id(emailReturnPathId)
      *             .name(emailReturnPathName)
-     *             .parentResourceId(testResource.id())
+     *             .parentResourceId(testResource.get("id"))
      *             .state(emailReturnPathState)
      *             .build());
      * 
@@ -2356,7 +2356,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
-     *             .senderId(testSenderOciEmailSender.id())
+     *             .senderId(testSenderOciEmailSender.get("id"))
      *             .build());
      * 
      *     }
@@ -2398,7 +2398,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
-     *             .senderId(testSenderOciEmailSender.id())
+     *             .senderId(testSenderOciEmailSender.get("id"))
      *             .build());
      * 
      *     }
@@ -2440,7 +2440,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
-     *             .senderId(testSenderOciEmailSender.id())
+     *             .senderId(testSenderOciEmailSender.get("id"))
      *             .build());
      * 
      *     }
@@ -2482,7 +2482,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
-     *             .senderId(testSenderOciEmailSender.id())
+     *             .senderId(testSenderOciEmailSender.get("id"))
      *             .build());
      * 
      *     }
@@ -2524,7 +2524,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
-     *             .senderId(testSenderOciEmailSender.id())
+     *             .senderId(testSenderOciEmailSender.get("id"))
      *             .build());
      * 
      *     }
@@ -2569,7 +2569,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .domain(senderDomain)
      *             .emailAddress(senderEmailAddress)
-     *             .emailIpPoolId(testEmailIpPool.id())
+     *             .emailIpPoolId(testEmailIpPool.get("id"))
      *             .state(senderState)
      *             .build());
      * 
@@ -2615,7 +2615,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .domain(senderDomain)
      *             .emailAddress(senderEmailAddress)
-     *             .emailIpPoolId(testEmailIpPool.id())
+     *             .emailIpPoolId(testEmailIpPool.get("id"))
      *             .state(senderState)
      *             .build());
      * 
@@ -2661,7 +2661,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .domain(senderDomain)
      *             .emailAddress(senderEmailAddress)
-     *             .emailIpPoolId(testEmailIpPool.id())
+     *             .emailIpPoolId(testEmailIpPool.get("id"))
      *             .state(senderState)
      *             .build());
      * 
@@ -2707,7 +2707,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .domain(senderDomain)
      *             .emailAddress(senderEmailAddress)
-     *             .emailIpPoolId(testEmailIpPool.id())
+     *             .emailIpPoolId(testEmailIpPool.get("id"))
      *             .state(senderState)
      *             .build());
      * 
@@ -2753,7 +2753,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .domain(senderDomain)
      *             .emailAddress(senderEmailAddress)
-     *             .emailIpPoolId(testEmailIpPool.id())
+     *             .emailIpPoolId(testEmailIpPool.get("id"))
      *             .state(senderState)
      *             .build());
      * 
@@ -2797,7 +2797,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
-     *             .suppressionId(testSuppressionOciEmailSuppression.id())
+     *             .suppressionId(testSuppressionOciEmailSuppression.get("id"))
      *             .build());
      * 
      *     }
@@ -2840,7 +2840,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
-     *             .suppressionId(testSuppressionOciEmailSuppression.id())
+     *             .suppressionId(testSuppressionOciEmailSuppression.get("id"))
      *             .build());
      * 
      *     }
@@ -2883,7 +2883,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
-     *             .suppressionId(testSuppressionOciEmailSuppression.id())
+     *             .suppressionId(testSuppressionOciEmailSuppression.get("id"))
      *             .build());
      * 
      *     }
@@ -2926,7 +2926,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
-     *             .suppressionId(testSuppressionOciEmailSuppression.id())
+     *             .suppressionId(testSuppressionOciEmailSuppression.get("id"))
      *             .build());
      * 
      *     }
@@ -2969,7 +2969,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
-     *             .suppressionId(testSuppressionOciEmailSuppression.id())
+     *             .suppressionId(testSuppressionOciEmailSuppression.get("id"))
      *             .build());
      * 
      *     }

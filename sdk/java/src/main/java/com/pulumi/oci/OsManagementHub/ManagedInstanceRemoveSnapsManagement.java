@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceRemoveSnapsManagement = new ManagedInstanceRemoveSnapsManagement("testManagedInstanceRemoveSnapsManagement", ManagedInstanceRemoveSnapsManagementArgs.builder()
- *             .managedInstanceId(testManagedInstance.id())
+ *             .managedInstanceId(testManagedInstance.get("id"))
  *             .snapDetails(ManagedInstanceRemoveSnapsManagementSnapDetailArgs.builder()
  *                 .name(managedInstanceRemoveSnapsManagementSnapDetailsName)
  *                 .revision(managedInstanceRemoveSnapsManagementSnapDetailsRevision)

@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRepositoryMirror = new RepositoryMirror("testRepositoryMirror", RepositoryMirrorArgs.builder()
- *             .repositoryId(testRepository.id())
+ *             .repositoryId(testRepository.get("id"))
  *             .build());
  * 
  *     }

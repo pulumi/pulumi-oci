@@ -199,7 +199,7 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
 
         test_job_advisor_report_check = oci.databasemigration.JobAdvisorReportCheck("test_job_advisor_report_check",
             advisor_report_check_id=test_advisor_report_check["id"],
-            is_reviewed=job_advisor_report_check_is_reviewed == "true",
+            is_reviewed=job_advisor_report_check_is_reviewed,
             job_id=test_job["id"])
         ```
 
@@ -243,7 +243,7 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
 
         test_job_advisor_report_check = oci.databasemigration.JobAdvisorReportCheck("test_job_advisor_report_check",
             advisor_report_check_id=test_advisor_report_check["id"],
-            is_reviewed=job_advisor_report_check_is_reviewed == "true",
+            is_reviewed=job_advisor_report_check_is_reviewed,
             job_id=test_job["id"])
         ```
 

@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *         var testSecurityZone = new SecurityZone("testSecurityZone", SecurityZoneArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(securityZoneDisplayName)
- *             .securityZoneRecipeId(testSecurityZoneRecipe.id())
+ *             .securityZoneRecipeId(testSecurityZoneRecipe.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(securityZoneDescription)
  *             .freeformTags(Map.of("bar-key", "value"))

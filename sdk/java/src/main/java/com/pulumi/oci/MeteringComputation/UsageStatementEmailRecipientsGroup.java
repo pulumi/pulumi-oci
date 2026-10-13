@@ -51,12 +51,12 @@ import javax.annotation.Nullable;
  *         var testUsageStatementEmailRecipientsGroup = new UsageStatementEmailRecipientsGroup("testUsageStatementEmailRecipientsGroup", UsageStatementEmailRecipientsGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .recipientsLists(UsageStatementEmailRecipientsGroupRecipientsListArgs.builder()
- *                 .emailId(testEmail.id())
+ *                 .emailId(testEmail.get("id"))
  *                 .state(usageStatementEmailRecipientsGroupRecipientsListState)
  *                 .firstName(usageStatementEmailRecipientsGroupRecipientsListFirstName)
  *                 .lastName(usageStatementEmailRecipientsGroupRecipientsListLastName)
  *                 .build())
- *             .subscriptionId(testSubscription.id())
+ *             .subscriptionId(testSubscription.get("id"))
  *             .build());
  * 
  *     }

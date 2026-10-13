@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testGroups = oci.identity.getDomainsGroups({
  *     idcsEndpoint: testDomain.url,
- *     groupCount: Number(groupGroupCount),
+ *     groupCount: groupGroupCount,
  *     groupFilter: groupGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: groupAuthorization,
  *     resourceTypeSchemaVersion: groupResourceTypeSchemaVersion,
- *     startIndex: Number(groupStartIndex),
+ *     startIndex: groupStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsGroupsResult {
  *
  * const testGroups = oci.identity.getDomainsGroups({
  *     idcsEndpoint: testDomain.url,
- *     groupCount: Number(groupGroupCount),
+ *     groupCount: groupGroupCount,
  *     groupFilter: groupGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: groupAuthorization,
  *     resourceTypeSchemaVersion: groupResourceTypeSchemaVersion,
- *     startIndex: Number(groupStartIndex),
+ *     startIndex: groupStartIndex,
  * });
  * ```
  */

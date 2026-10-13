@@ -160,7 +160,7 @@ def get_subscriptions(buyer_email: Optional[_builtins.str] = None,
 
     test_subscriptions = oci.osubsubscription.get_subscriptions(compartment_id=compartment_id,
         buyer_email=subscription_buyer_email,
-        is_commit_info_required=subscription_is_commit_info_required == "true",
+        is_commit_info_required=subscription_is_commit_info_required,
         plan_number=subscription_plan_number,
         subscription_id=test_subscription["id"],
         x_one_gateway_subscription_id=subscription_x_one_gateway_subscription_id,
@@ -224,7 +224,7 @@ def get_subscriptions_output(buyer_email: pulumi.Input[Optional[Optional[_builti
 
     test_subscriptions = oci.osubsubscription.get_subscriptions(compartment_id=compartment_id,
         buyer_email=subscription_buyer_email,
-        is_commit_info_required=subscription_is_commit_info_required == "true",
+        is_commit_info_required=subscription_is_commit_info_required,
         plan_number=subscription_plan_number,
         subscription_id=test_subscription["id"],
         x_one_gateway_subscription_id=subscription_x_one_gateway_subscription_id,

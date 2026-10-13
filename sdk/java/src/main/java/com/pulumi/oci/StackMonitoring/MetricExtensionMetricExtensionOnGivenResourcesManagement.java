@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMetricExtensionMetricExtensionOnGivenResourcesManagement = new MetricExtensionMetricExtensionOnGivenResourcesManagement("testMetricExtensionMetricExtensionOnGivenResourcesManagement", MetricExtensionMetricExtensionOnGivenResourcesManagementArgs.builder()
- *             .metricExtensionId(testMetricExtension.id())
+ *             .metricExtensionId(testMetricExtension.get("id"))
  *             .resourceIds(metricExtensionMetricExtensionOnGivenResourcesManagementResourceIds[0])
  *             .enableMetricExtensionOnGivenResources(enableMetricExtensionOnGivenResources)
  *             .build());

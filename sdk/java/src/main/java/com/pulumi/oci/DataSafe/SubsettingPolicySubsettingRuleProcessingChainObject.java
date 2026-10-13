@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSubsettingPolicySubsettingRuleProcessingChainObject = new SubsettingPolicySubsettingRuleProcessingChainObject("testSubsettingPolicySubsettingRuleProcessingChainObject", SubsettingPolicySubsettingRuleProcessingChainObjectArgs.builder()
  *             .processingChainObjectKey(subsettingPolicySubsettingRuleProcessingChainObjectProcessingChainObjectKey)
- *             .subsettingPolicyId(testSubsettingPolicy.id())
+ *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
  *             .subsettingRuleKey(subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey)
  *             .isEnabledForProcessing(subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing)
  *             .build());

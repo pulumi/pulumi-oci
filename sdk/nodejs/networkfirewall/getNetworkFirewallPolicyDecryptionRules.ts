@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testNetworkFirewallPolicyDecryptionRules = oci.networkfirewall.getNetworkFirewallPolicyDecryptionRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
- *     decryptionRulePriorityOrder: Number(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder),
+ *     decryptionRulePriorityOrder: networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder,
  *     displayName: networkFirewallPolicyDecryptionRuleDisplayName,
  * });
  * ```
@@ -83,7 +83,7 @@ export interface GetNetworkFirewallPolicyDecryptionRulesResult {
  *
  * const testNetworkFirewallPolicyDecryptionRules = oci.networkfirewall.getNetworkFirewallPolicyDecryptionRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
- *     decryptionRulePriorityOrder: Number(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder),
+ *     decryptionRulePriorityOrder: networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder,
  *     displayName: networkFirewallPolicyDecryptionRuleDisplayName,
  * });
  * ```

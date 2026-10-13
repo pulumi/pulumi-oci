@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDrgNatRule = new DrgNatPolicyDrgNatRule("testDrgNatRule", DrgNatPolicyDrgNatRuleArgs.builder()
- *             .drgNatPolicyId(testDrgNatPolicy.id())
+ *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
  *             .drgNatRulePriority(100)
  *             .originalSource("10.0.0.0/24")
  *             .translatedSource("192.168.0.0/24")

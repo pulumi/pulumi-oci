@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  *
  * const testDiscoveryAnalytics = oci.datasafe.getDiscoveryAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
  *     groupBy: discoveryAnalyticGroupBy,
- *     isCommon: discoveryAnalyticIsCommon === "true",
+ *     isCommon: discoveryAnalyticIsCommon,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeId: testSensitiveType.id,
@@ -138,9 +138,9 @@ export interface GetDiscoveryAnalyticsResult {
  *
  * const testDiscoveryAnalytics = oci.datasafe.getDiscoveryAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
  *     groupBy: discoveryAnalyticGroupBy,
- *     isCommon: discoveryAnalyticIsCommon === "true",
+ *     isCommon: discoveryAnalyticIsCommon,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeId: testSensitiveType.id,

@@ -494,7 +494,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
-     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.id())
+     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -536,7 +536,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
-     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.id())
+     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -578,7 +578,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
-     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.id())
+     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -620,7 +620,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
-     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.id())
+     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -662,7 +662,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
-     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.id())
+     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -704,7 +704,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
-     *             .productLicenseId(testProductLicense.id())
+     *             .productLicenseId(testProductLicense.get("id"))
      *             .build());
      * 
      *     }
@@ -746,7 +746,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
-     *             .productLicenseId(testProductLicense.id())
+     *             .productLicenseId(testProductLicense.get("id"))
      *             .build());
      * 
      *     }
@@ -788,7 +788,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
-     *             .productLicenseId(testProductLicense.id())
+     *             .productLicenseId(testProductLicense.get("id"))
      *             .build());
      * 
      *     }
@@ -830,7 +830,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
-     *             .productLicenseId(testProductLicense.id())
+     *             .productLicenseId(testProductLicense.get("id"))
      *             .build());
      * 
      *     }
@@ -872,7 +872,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
-     *             .productLicenseId(testProductLicense.id())
+     *             .productLicenseId(testProductLicense.get("id"))
      *             .build());
      * 
      *     }
@@ -914,7 +914,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
-     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.id())
+     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.get("id"))
      *             .build());
      * 
      *     }
@@ -956,7 +956,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
-     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.id())
+     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.get("id"))
      *             .build());
      * 
      *     }
@@ -998,7 +998,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
-     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.id())
+     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.get("id"))
      *             .build());
      * 
      *     }
@@ -1040,7 +1040,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
-     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.id())
+     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.get("id"))
      *             .build());
      * 
      *     }
@@ -1082,7 +1082,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
-     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.id())
+     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.get("id"))
      *             .build());
      * 
      *     }
@@ -1125,7 +1125,7 @@ public final class LicenseManagerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .productLicenseId(testProductLicense.id())
+     *             .productLicenseId(testProductLicense.get("id"))
      *             .isCompartmentIdInSubtree(productLicenseConsumerIsCompartmentIdInSubtree)
      *             .build());
      * 
@@ -1169,7 +1169,7 @@ public final class LicenseManagerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .productLicenseId(testProductLicense.id())
+     *             .productLicenseId(testProductLicense.get("id"))
      *             .isCompartmentIdInSubtree(productLicenseConsumerIsCompartmentIdInSubtree)
      *             .build());
      * 
@@ -1213,7 +1213,7 @@ public final class LicenseManagerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .productLicenseId(testProductLicense.id())
+     *             .productLicenseId(testProductLicense.get("id"))
      *             .isCompartmentIdInSubtree(productLicenseConsumerIsCompartmentIdInSubtree)
      *             .build());
      * 
@@ -1257,7 +1257,7 @@ public final class LicenseManagerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .productLicenseId(testProductLicense.id())
+     *             .productLicenseId(testProductLicense.get("id"))
      *             .isCompartmentIdInSubtree(productLicenseConsumerIsCompartmentIdInSubtree)
      *             .build());
      * 
@@ -1301,7 +1301,7 @@ public final class LicenseManagerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .productLicenseId(testProductLicense.id())
+     *             .productLicenseId(testProductLicense.get("id"))
      *             .isCompartmentIdInSubtree(productLicenseConsumerIsCompartmentIdInSubtree)
      *             .build());
      * 

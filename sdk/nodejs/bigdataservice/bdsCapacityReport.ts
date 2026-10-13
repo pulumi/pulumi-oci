@@ -25,9 +25,9 @@ import * as utilities from "../utilities";
  *     shapeAvailabilities: [{
  *         shape: bdsCapacityReportShapeAvailabilitiesShape,
  *         shapeConfig: {
- *             memoryInGbs: Number(bdsCapacityReportShapeAvailabilitiesShapeConfigMemoryInGbs),
- *             nvmes: Number(bdsCapacityReportShapeAvailabilitiesShapeConfigNvmes),
- *             ocpus: Number(bdsCapacityReportShapeAvailabilitiesShapeConfigOcpus),
+ *             memoryInGbs: bdsCapacityReportShapeAvailabilitiesShapeConfigMemoryInGbs,
+ *             nvmes: bdsCapacityReportShapeAvailabilitiesShapeConfigNvmes,
+ *             ocpus: bdsCapacityReportShapeAvailabilitiesShapeConfigOcpus,
  *         },
  *     }],
  * });

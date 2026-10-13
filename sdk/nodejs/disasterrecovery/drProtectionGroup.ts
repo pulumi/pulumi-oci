@@ -47,14 +47,14 @@ import * as utilities from "../utilities";
  *         autonomousDatabaseStandbyTypeForDrDrills: drProtectionGroupMembersAutonomousDatabaseStandbyTypeForDrDrills,
  *         backendSetMappings: [{
  *             destinationBackendSetName: testBackendSet.name,
- *             isBackendSetForNonMovable: drProtectionGroupMembersBackendSetMappingsIsBackendSetForNonMovable === "true",
+ *             isBackendSetForNonMovable: drProtectionGroupMembersBackendSetMappingsIsBackendSetForNonMovable,
  *             sourceBackendSetName: testBackendSet.name,
  *         }],
  *         backupConfig: {
  *             backupSchedule: drProtectionGroupMembersBackupConfigBackupSchedule,
  *             excludeNamespaces: drProtectionGroupMembersBackupConfigExcludeNamespaces,
  *             imageReplicationVaultSecretId: testSecret.id,
- *             maxNumberOfBackupsRetained: Number(drProtectionGroupMembersBackupConfigMaxNumberOfBackupsRetained),
+ *             maxNumberOfBackupsRetained: drProtectionGroupMembersBackupConfigMaxNumberOfBackupsRetained,
  *             namespaces: drProtectionGroupMembersBackupConfigNamespaces,
  *             replicateImages: drProtectionGroupMembersBackupConfigReplicateImages,
  *         },
@@ -121,11 +121,11 @@ import * as utilities from "../utilities";
  *                 mountTargetId: testMountTarget.id,
  *             },
  *         }],
- *         gtidReconciliationTimeout: Number(drProtectionGroupMembersGtidReconciliationTimeout),
- *         isContinueOnGtidReconciliationTimeout: drProtectionGroupMembersIsContinueOnGtidReconciliationTimeout === "true",
- *         isMovable: drProtectionGroupMembersIsMovable === "true",
- *         isRetainFaultDomain: drProtectionGroupMembersIsRetainFaultDomain === "true",
- *         isStartStopEnabled: drProtectionGroupMembersIsStartStopEnabled === "true",
+ *         gtidReconciliationTimeout: drProtectionGroupMembersGtidReconciliationTimeout,
+ *         isContinueOnGtidReconciliationTimeout: drProtectionGroupMembersIsContinueOnGtidReconciliationTimeout,
+ *         isMovable: drProtectionGroupMembersIsMovable,
+ *         isRetainFaultDomain: drProtectionGroupMembersIsRetainFaultDomain,
+ *         isStartStopEnabled: drProtectionGroupMembersIsStartStopEnabled,
  *         jumpHostId: testJumpHost.id,
  *         loadBalancerMappings: [{
  *             destinationLoadBalancerId: testLoadBalancer.id,
@@ -133,8 +133,8 @@ import * as utilities from "../utilities";
  *         }],
  *         managedNodePoolConfigs: [{
  *             id: drProtectionGroupMembersManagedNodePoolConfigsId,
- *             maximum: Number(drProtectionGroupMembersManagedNodePoolConfigsMaximum),
- *             minimum: Number(drProtectionGroupMembersManagedNodePoolConfigsMinimum),
+ *             maximum: drProtectionGroupMembersManagedNodePoolConfigsMaximum,
+ *             minimum: drProtectionGroupMembersManagedNodePoolConfigsMinimum,
  *         }],
  *         namespace: drProtectionGroupMembersNamespace,
  *         passwordVaultSecretId: passwordVaultSecretId,
@@ -161,8 +161,8 @@ import * as utilities from "../utilities";
  *         }],
  *         virtualNodePoolConfigs: [{
  *             id: drProtectionGroupMembersVirtualNodePoolConfigsId,
- *             maximum: Number(drProtectionGroupMembersVirtualNodePoolConfigsMaximum),
- *             minimum: Number(drProtectionGroupMembersVirtualNodePoolConfigsMinimum),
+ *             maximum: drProtectionGroupMembersVirtualNodePoolConfigsMaximum,
+ *             minimum: drProtectionGroupMembersVirtualNodePoolConfigsMinimum,
  *         }],
  *         vnicMappings: [
  *             {

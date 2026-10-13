@@ -59,11 +59,11 @@ import javax.annotation.Nullable;
  *         var testDrgRpcAttachment = new DrgAttachmentManagement("testDrgRpcAttachment", DrgAttachmentManagementArgs.builder()
  *             .attachmentType("REMOTE_PEERING_CONNECTION")
  *             .compartmentId(compartmentOcid)
- *             .networkId(testRpc.id())
- *             .drgId(testDrg.id())
+ *             .networkId(testRpc.get("id"))
+ *             .drgId(testDrg.get("id"))
  *             .displayName("MyTestDrgAttachmentForRpc")
- *             .drgRouteTableId(testDrgRouteTable.id())
- *             .drgNatPolicyId(testDrgNatPolicy.id())
+ *             .drgRouteTableId(testDrgRouteTable.get("id"))
+ *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
  *             .build());
  * 
  *     }

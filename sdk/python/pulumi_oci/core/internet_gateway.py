@@ -350,7 +350,7 @@ class InternetGateway(pulumi.CustomResource):
         test_internet_gateway = oci.core.InternetGateway("test_internet_gateway",
             compartment_id=compartment_id,
             vcn_id=test_vcn["id"],
-            enabled=internet_gateway_enabled == "true",
+            enabled=internet_gateway_enabled,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -425,7 +425,7 @@ class InternetGateway(pulumi.CustomResource):
         test_internet_gateway = oci.core.InternetGateway("test_internet_gateway",
             compartment_id=compartment_id,
             vcn_id=test_vcn["id"],
-            enabled=internet_gateway_enabled == "true",
+            enabled=internet_gateway_enabled,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

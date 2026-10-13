@@ -35,7 +35,7 @@ import (
 //				DisplayName:               pulumi.StringRef(databaseToolsMcpServerDisplayName),
 //				RelatedResourceIdentifier: pulumi.StringRef(databaseToolsMcpServerRelatedResourceIdentifier),
 //				State:                     pulumi.StringRef(databaseToolsMcpServerState),
-//				Types:                     pulumi.ToArray(databaseToolsMcpServerType),
+//				Types:                     databaseToolsMcpServerType,
 //			}, nil)
 //			if err != nil {
 //				return err

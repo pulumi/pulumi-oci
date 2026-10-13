@@ -86,7 +86,7 @@ import javax.annotation.Nullable;
  *                 .isAggregateByTime(scheduleQueryPropertiesIsAggregateByTime)
  *                 .queryType(scheduleQueryPropertiesQueryType)
  *                 .build())
- *             .savedReportId(testReport.id())
+ *             .savedReportId(testReport.get("id"))
  *             .build());
  * 
  *     }

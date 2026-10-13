@@ -845,7 +845,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -890,7 +890,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -935,7 +935,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -980,7 +980,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -1025,7 +1025,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -1068,7 +1068,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -1111,7 +1111,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -1154,7 +1154,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -1197,7 +1197,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -1240,7 +1240,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -2713,7 +2713,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -2756,7 +2756,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -2799,7 +2799,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -2842,7 +2842,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -2885,7 +2885,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -2927,7 +2927,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .name(dbCredentialName)
      *             .state(dbCredentialState)
      *             .build());
@@ -2971,7 +2971,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .name(dbCredentialName)
      *             .state(dbCredentialState)
      *             .build());
@@ -3015,7 +3015,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .name(dbCredentialName)
      *             .state(dbCredentialState)
      *             .build());
@@ -3059,7 +3059,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .name(dbCredentialName)
      *             .state(dbCredentialState)
      *             .build());
@@ -3103,7 +3103,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .name(dbCredentialName)
      *             .state(dbCredentialState)
      *             .build());
@@ -3150,7 +3150,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(testDomainOciIdentityDomain.id())
+     *             .domainId(testDomainOciIdentityDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -3195,7 +3195,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(testDomainOciIdentityDomain.id())
+     *             .domainId(testDomainOciIdentityDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -3240,7 +3240,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(testDomainOciIdentityDomain.id())
+     *             .domainId(testDomainOciIdentityDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -3285,7 +3285,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(testDomainOciIdentityDomain.id())
+     *             .domainId(testDomainOciIdentityDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -3330,7 +3330,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(testDomainOciIdentityDomain.id())
+     *             .domainId(testDomainOciIdentityDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -3627,8 +3627,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
-     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
@@ -3674,8 +3674,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
-     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
@@ -3721,8 +3721,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
-     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
@@ -3768,8 +3768,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
-     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
@@ -3815,8 +3815,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
-     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
@@ -3862,7 +3862,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfos = IdentityFunctions.getDomainsAccountMgmtInfos(GetDomainsAccountMgmtInfosArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
      *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
      *             .attributeSets("all")
@@ -3911,7 +3911,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfos = IdentityFunctions.getDomainsAccountMgmtInfos(GetDomainsAccountMgmtInfosArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
      *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
      *             .attributeSets("all")
@@ -3960,7 +3960,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfos = IdentityFunctions.getDomainsAccountMgmtInfos(GetDomainsAccountMgmtInfosArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
      *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
      *             .attributeSets("all")
@@ -4009,7 +4009,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfos = IdentityFunctions.getDomainsAccountMgmtInfos(GetDomainsAccountMgmtInfosArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
      *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
      *             .attributeSets("all")
@@ -4058,7 +4058,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfos = IdentityFunctions.getDomainsAccountMgmtInfos(GetDomainsAccountMgmtInfosArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
      *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
      *             .attributeSets("all")
@@ -4107,8 +4107,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
-     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
@@ -4154,8 +4154,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
-     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
@@ -4201,8 +4201,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
-     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
@@ -4248,8 +4248,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
-     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
@@ -4295,8 +4295,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
-     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
@@ -4342,7 +4342,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
@@ -4388,7 +4388,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
@@ -4434,7 +4434,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
@@ -4480,7 +4480,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
@@ -4526,7 +4526,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
@@ -4572,8 +4572,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKey = IdentityFunctions.getDomainsApiKey(GetDomainsApiKeyArgs.builder()
-     *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .apiKeyId(testApiKeyOciIdentityApiKey.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(apiKeyAuthorization)
@@ -4619,8 +4619,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKey = IdentityFunctions.getDomainsApiKey(GetDomainsApiKeyArgs.builder()
-     *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .apiKeyId(testApiKeyOciIdentityApiKey.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(apiKeyAuthorization)
@@ -4666,8 +4666,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKey = IdentityFunctions.getDomainsApiKey(GetDomainsApiKeyArgs.builder()
-     *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .apiKeyId(testApiKeyOciIdentityApiKey.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(apiKeyAuthorization)
@@ -4713,8 +4713,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKey = IdentityFunctions.getDomainsApiKey(GetDomainsApiKeyArgs.builder()
-     *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .apiKeyId(testApiKeyOciIdentityApiKey.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(apiKeyAuthorization)
@@ -4760,8 +4760,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKey = IdentityFunctions.getDomainsApiKey(GetDomainsApiKeyArgs.builder()
-     *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .apiKeyId(testApiKeyOciIdentityApiKey.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(apiKeyAuthorization)
@@ -4807,7 +4807,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getDomainsApiKeys(GetDomainsApiKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .apiKeyCount(apiKeyApiKeyCount)
      *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
@@ -4856,7 +4856,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getDomainsApiKeys(GetDomainsApiKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .apiKeyCount(apiKeyApiKeyCount)
      *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
@@ -4905,7 +4905,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getDomainsApiKeys(GetDomainsApiKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .apiKeyCount(apiKeyApiKeyCount)
      *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
@@ -4954,7 +4954,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getDomainsApiKeys(GetDomainsApiKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .apiKeyCount(apiKeyApiKeyCount)
      *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
@@ -5003,7 +5003,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getDomainsApiKeys(GetDomainsApiKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .apiKeyCount(apiKeyApiKeyCount)
      *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
@@ -5052,8 +5052,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
-     *             .appId(testAppOciIdentityDomainsApp.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .appId(testAppOciIdentityDomainsApp.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(appAuthorization)
@@ -5099,8 +5099,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
-     *             .appId(testAppOciIdentityDomainsApp.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .appId(testAppOciIdentityDomainsApp.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(appAuthorization)
@@ -5146,8 +5146,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
-     *             .appId(testAppOciIdentityDomainsApp.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .appId(testAppOciIdentityDomainsApp.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(appAuthorization)
@@ -5193,8 +5193,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
-     *             .appId(testAppOciIdentityDomainsApp.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .appId(testAppOciIdentityDomainsApp.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(appAuthorization)
@@ -5240,8 +5240,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
-     *             .appId(testAppOciIdentityDomainsApp.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .appId(testAppOciIdentityDomainsApp.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(appAuthorization)
@@ -5287,8 +5287,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
-     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(appRoleAuthorization)
@@ -5334,8 +5334,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
-     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(appRoleAuthorization)
@@ -5381,8 +5381,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
-     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(appRoleAuthorization)
@@ -5428,8 +5428,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
-     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(appRoleAuthorization)
@@ -5475,8 +5475,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
-     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(appRoleAuthorization)
@@ -5522,7 +5522,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRoles = IdentityFunctions.getDomainsAppRoles(GetDomainsAppRolesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .appRoleCount(appRoleAppRoleCount)
      *             .appRoleFilter(appRoleAppRoleFilter)
      *             .attributeSets("all")
@@ -5571,7 +5571,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRoles = IdentityFunctions.getDomainsAppRoles(GetDomainsAppRolesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .appRoleCount(appRoleAppRoleCount)
      *             .appRoleFilter(appRoleAppRoleFilter)
      *             .attributeSets("all")
@@ -5620,7 +5620,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRoles = IdentityFunctions.getDomainsAppRoles(GetDomainsAppRolesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .appRoleCount(appRoleAppRoleCount)
      *             .appRoleFilter(appRoleAppRoleFilter)
      *             .attributeSets("all")
@@ -5669,7 +5669,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRoles = IdentityFunctions.getDomainsAppRoles(GetDomainsAppRolesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .appRoleCount(appRoleAppRoleCount)
      *             .appRoleFilter(appRoleAppRoleFilter)
      *             .attributeSets("all")
@@ -5718,7 +5718,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRoles = IdentityFunctions.getDomainsAppRoles(GetDomainsAppRolesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .appRoleCount(appRoleAppRoleCount)
      *             .appRoleFilter(appRoleAppRoleFilter)
      *             .attributeSets("all")
@@ -5767,8 +5767,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
-     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
@@ -5814,8 +5814,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
-     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
@@ -5861,8 +5861,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
-     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
@@ -5908,8 +5908,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
-     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
@@ -5955,8 +5955,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
-     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
@@ -6002,8 +6002,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
-     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
@@ -6049,8 +6049,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
-     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
@@ -6096,8 +6096,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
-     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
@@ -6143,8 +6143,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
-     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
@@ -6190,8 +6190,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
-     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
@@ -6237,7 +6237,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
      *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
      *             .attributeSets("all")
@@ -6286,7 +6286,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
      *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
      *             .attributeSets("all")
@@ -6335,7 +6335,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
      *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
      *             .attributeSets("all")
@@ -6384,7 +6384,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
      *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
      *             .attributeSets("all")
@@ -6433,7 +6433,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
      *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
      *             .attributeSets("all")
@@ -6482,8 +6482,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
-     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
@@ -6529,8 +6529,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
-     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
@@ -6576,8 +6576,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
-     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
@@ -6623,8 +6623,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
-     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
@@ -6670,8 +6670,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
-     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
@@ -6717,7 +6717,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
      *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
      *             .attributeSets("all")
@@ -6766,7 +6766,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
      *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
      *             .attributeSets("all")
@@ -6815,7 +6815,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
      *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
      *             .attributeSets("all")
@@ -6864,7 +6864,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
      *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
      *             .attributeSets("all")
@@ -6913,7 +6913,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
      *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
      *             .attributeSets("all")
@@ -6962,7 +6962,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
      *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
      *             .attributeSets("all")
@@ -7011,7 +7011,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
      *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
      *             .attributeSets("all")
@@ -7060,7 +7060,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
      *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
      *             .attributeSets("all")
@@ -7109,7 +7109,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
      *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
      *             .attributeSets("all")
@@ -7158,7 +7158,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
      *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
      *             .attributeSets("all")
@@ -7207,7 +7207,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApps = IdentityFunctions.getDomainsApps(GetDomainsAppsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .appCount(appAppCount)
      *             .appFilter(appAppFilter)
      *             .attributeSets("all")
@@ -7256,7 +7256,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApps = IdentityFunctions.getDomainsApps(GetDomainsAppsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .appCount(appAppCount)
      *             .appFilter(appAppFilter)
      *             .attributeSets("all")
@@ -7305,7 +7305,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApps = IdentityFunctions.getDomainsApps(GetDomainsAppsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .appCount(appAppCount)
      *             .appFilter(appAppFilter)
      *             .attributeSets("all")
@@ -7354,7 +7354,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApps = IdentityFunctions.getDomainsApps(GetDomainsAppsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .appCount(appAppCount)
      *             .appFilter(appAppFilter)
      *             .attributeSets("all")
@@ -7403,7 +7403,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApps = IdentityFunctions.getDomainsApps(GetDomainsAppsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .appCount(appAppCount)
      *             .appFilter(appAppFilter)
      *             .attributeSets("all")
@@ -7452,8 +7452,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthToken = IdentityFunctions.getDomainsAuthToken(GetDomainsAuthTokenArgs.builder()
-     *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .authTokenId(testAuthTokenOciIdentityAuthToken.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authTokenAuthorization)
@@ -7499,8 +7499,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthToken = IdentityFunctions.getDomainsAuthToken(GetDomainsAuthTokenArgs.builder()
-     *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .authTokenId(testAuthTokenOciIdentityAuthToken.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authTokenAuthorization)
@@ -7546,8 +7546,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthToken = IdentityFunctions.getDomainsAuthToken(GetDomainsAuthTokenArgs.builder()
-     *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .authTokenId(testAuthTokenOciIdentityAuthToken.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authTokenAuthorization)
@@ -7593,8 +7593,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthToken = IdentityFunctions.getDomainsAuthToken(GetDomainsAuthTokenArgs.builder()
-     *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .authTokenId(testAuthTokenOciIdentityAuthToken.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authTokenAuthorization)
@@ -7640,8 +7640,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthToken = IdentityFunctions.getDomainsAuthToken(GetDomainsAuthTokenArgs.builder()
-     *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .authTokenId(testAuthTokenOciIdentityAuthToken.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authTokenAuthorization)
@@ -7687,7 +7687,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getDomainsAuthTokens(GetDomainsAuthTokensArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .authTokenCount(authTokenAuthTokenCount)
      *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
@@ -7736,7 +7736,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getDomainsAuthTokens(GetDomainsAuthTokensArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .authTokenCount(authTokenAuthTokenCount)
      *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
@@ -7785,7 +7785,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getDomainsAuthTokens(GetDomainsAuthTokensArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .authTokenCount(authTokenAuthTokenCount)
      *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
@@ -7834,7 +7834,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getDomainsAuthTokens(GetDomainsAuthTokensArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .authTokenCount(authTokenAuthTokenCount)
      *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
@@ -7883,7 +7883,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getDomainsAuthTokens(GetDomainsAuthTokensArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .authTokenCount(authTokenAuthTokenCount)
      *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
@@ -7932,8 +7932,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSetting = IdentityFunctions.getDomainsAuthenticationFactorSetting(GetDomainsAuthenticationFactorSettingArgs.builder()
-     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
@@ -7979,8 +7979,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSetting = IdentityFunctions.getDomainsAuthenticationFactorSetting(GetDomainsAuthenticationFactorSettingArgs.builder()
-     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
@@ -8026,8 +8026,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSetting = IdentityFunctions.getDomainsAuthenticationFactorSetting(GetDomainsAuthenticationFactorSettingArgs.builder()
-     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
@@ -8073,8 +8073,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSetting = IdentityFunctions.getDomainsAuthenticationFactorSetting(GetDomainsAuthenticationFactorSettingArgs.builder()
-     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
@@ -8120,8 +8120,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSetting = IdentityFunctions.getDomainsAuthenticationFactorSetting(GetDomainsAuthenticationFactorSettingArgs.builder()
-     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
@@ -8167,7 +8167,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
@@ -8213,7 +8213,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
@@ -8259,7 +8259,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
@@ -8305,7 +8305,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
@@ -8351,7 +8351,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
@@ -8398,7 +8398,7 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
      *             .brandingSettingId("BrandingSettings")
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
@@ -8445,7 +8445,7 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
      *             .brandingSettingId("BrandingSettings")
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
@@ -8492,7 +8492,7 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
      *             .brandingSettingId("BrandingSettings")
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
@@ -8539,7 +8539,7 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
      *             .brandingSettingId("BrandingSettings")
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
@@ -8586,7 +8586,7 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
      *             .brandingSettingId("BrandingSettings")
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
@@ -8632,7 +8632,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
@@ -8678,7 +8678,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
@@ -8724,7 +8724,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
@@ -8770,7 +8770,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
@@ -8816,7 +8816,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
@@ -8862,8 +8862,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
-     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateAuthorization)
@@ -8909,8 +8909,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
-     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateAuthorization)
@@ -8956,8 +8956,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
-     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateAuthorization)
@@ -9003,8 +9003,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
-     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateAuthorization)
@@ -9050,8 +9050,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
-     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateAuthorization)
@@ -9097,8 +9097,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
-     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
@@ -9144,8 +9144,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
-     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
@@ -9191,8 +9191,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
-     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
@@ -9238,8 +9238,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
-     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
@@ -9285,8 +9285,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
-     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
@@ -9332,7 +9332,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
      *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
      *             .attributeSets("all")
@@ -9381,7 +9381,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
      *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
      *             .attributeSets("all")
@@ -9430,7 +9430,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
      *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
      *             .attributeSets("all")
@@ -9479,7 +9479,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
      *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
      *             .attributeSets("all")
@@ -9528,7 +9528,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
      *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
      *             .attributeSets("all")
@@ -9577,8 +9577,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
-     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
@@ -9624,8 +9624,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
-     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
@@ -9671,8 +9671,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
-     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
@@ -9718,8 +9718,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
-     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
@@ -9765,8 +9765,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
-     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
@@ -9812,7 +9812,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
      *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
      *             .attributeSets("all")
@@ -9861,7 +9861,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
      *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
      *             .attributeSets("all")
@@ -9910,7 +9910,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
      *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
      *             .attributeSets("all")
@@ -9959,7 +9959,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
      *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
      *             .attributeSets("all")
@@ -10008,7 +10008,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
      *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
      *             .attributeSets("all")
@@ -10057,7 +10057,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateCount(cloudGateCloudGateCount)
      *             .cloudGateFilter(cloudGateCloudGateFilter)
      *             .attributeSets("all")
@@ -10106,7 +10106,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateCount(cloudGateCloudGateCount)
      *             .cloudGateFilter(cloudGateCloudGateFilter)
      *             .attributeSets("all")
@@ -10155,7 +10155,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateCount(cloudGateCloudGateCount)
      *             .cloudGateFilter(cloudGateCloudGateFilter)
      *             .attributeSets("all")
@@ -10204,7 +10204,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateCount(cloudGateCloudGateCount)
      *             .cloudGateFilter(cloudGateCloudGateFilter)
      *             .attributeSets("all")
@@ -10253,7 +10253,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .cloudGateCount(cloudGateCloudGateCount)
      *             .cloudGateFilter(cloudGateCloudGateFilter)
      *             .attributeSets("all")
@@ -10302,8 +10302,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
-     *             .conditionId(testConditionOciIdentityDomainsCondition.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .conditionId(testConditionOciIdentityDomainsCondition.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(conditionAuthorization)
@@ -10349,8 +10349,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
-     *             .conditionId(testConditionOciIdentityDomainsCondition.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .conditionId(testConditionOciIdentityDomainsCondition.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(conditionAuthorization)
@@ -10396,8 +10396,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
-     *             .conditionId(testConditionOciIdentityDomainsCondition.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .conditionId(testConditionOciIdentityDomainsCondition.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(conditionAuthorization)
@@ -10443,8 +10443,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
-     *             .conditionId(testConditionOciIdentityDomainsCondition.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .conditionId(testConditionOciIdentityDomainsCondition.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(conditionAuthorization)
@@ -10490,8 +10490,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
-     *             .conditionId(testConditionOciIdentityDomainsCondition.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .conditionId(testConditionOciIdentityDomainsCondition.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(conditionAuthorization)
@@ -10537,7 +10537,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .conditionCount(conditionConditionCount)
      *             .conditionFilter(conditionConditionFilter)
      *             .attributeSets("all")
@@ -10586,7 +10586,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .conditionCount(conditionConditionCount)
      *             .conditionFilter(conditionConditionFilter)
      *             .attributeSets("all")
@@ -10635,7 +10635,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .conditionCount(conditionConditionCount)
      *             .conditionFilter(conditionConditionFilter)
      *             .attributeSets("all")
@@ -10684,7 +10684,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .conditionCount(conditionConditionCount)
      *             .conditionFilter(conditionConditionFilter)
      *             .attributeSets("all")
@@ -10733,7 +10733,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .conditionCount(conditionConditionCount)
      *             .conditionFilter(conditionConditionFilter)
      *             .attributeSets("all")
@@ -10782,8 +10782,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKey = IdentityFunctions.getDomainsCustomerSecretKey(GetDomainsCustomerSecretKeyArgs.builder()
-     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
@@ -10829,8 +10829,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKey = IdentityFunctions.getDomainsCustomerSecretKey(GetDomainsCustomerSecretKeyArgs.builder()
-     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
@@ -10876,8 +10876,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKey = IdentityFunctions.getDomainsCustomerSecretKey(GetDomainsCustomerSecretKeyArgs.builder()
-     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
@@ -10923,8 +10923,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKey = IdentityFunctions.getDomainsCustomerSecretKey(GetDomainsCustomerSecretKeyArgs.builder()
-     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
@@ -10970,8 +10970,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKey = IdentityFunctions.getDomainsCustomerSecretKey(GetDomainsCustomerSecretKeyArgs.builder()
-     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
@@ -11017,7 +11017,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getDomainsCustomerSecretKeys(GetDomainsCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
      *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
@@ -11066,7 +11066,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getDomainsCustomerSecretKeys(GetDomainsCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
      *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
@@ -11115,7 +11115,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getDomainsCustomerSecretKeys(GetDomainsCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
      *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
@@ -11164,7 +11164,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getDomainsCustomerSecretKeys(GetDomainsCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
      *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
@@ -11213,7 +11213,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getDomainsCustomerSecretKeys(GetDomainsCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
      *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
@@ -11262,8 +11262,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroup = IdentityFunctions.getDomainsDynamicResourceGroup(GetDomainsDynamicResourceGroupArgs.builder()
-     *             .dynamicResourceGroupId(testGroup.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .dynamicResourceGroupId(testGroup.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
@@ -11309,8 +11309,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroup = IdentityFunctions.getDomainsDynamicResourceGroup(GetDomainsDynamicResourceGroupArgs.builder()
-     *             .dynamicResourceGroupId(testGroup.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .dynamicResourceGroupId(testGroup.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
@@ -11356,8 +11356,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroup = IdentityFunctions.getDomainsDynamicResourceGroup(GetDomainsDynamicResourceGroupArgs.builder()
-     *             .dynamicResourceGroupId(testGroup.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .dynamicResourceGroupId(testGroup.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
@@ -11403,8 +11403,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroup = IdentityFunctions.getDomainsDynamicResourceGroup(GetDomainsDynamicResourceGroupArgs.builder()
-     *             .dynamicResourceGroupId(testGroup.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .dynamicResourceGroupId(testGroup.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
@@ -11450,8 +11450,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroup = IdentityFunctions.getDomainsDynamicResourceGroup(GetDomainsDynamicResourceGroupArgs.builder()
-     *             .dynamicResourceGroupId(testGroup.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .dynamicResourceGroupId(testGroup.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
@@ -11497,7 +11497,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroups = IdentityFunctions.getDomainsDynamicResourceGroups(GetDomainsDynamicResourceGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
      *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
@@ -11546,7 +11546,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroups = IdentityFunctions.getDomainsDynamicResourceGroups(GetDomainsDynamicResourceGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
      *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
@@ -11595,7 +11595,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroups = IdentityFunctions.getDomainsDynamicResourceGroups(GetDomainsDynamicResourceGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
      *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
@@ -11644,7 +11644,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroups = IdentityFunctions.getDomainsDynamicResourceGroups(GetDomainsDynamicResourceGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
      *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
@@ -11693,7 +11693,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroups = IdentityFunctions.getDomainsDynamicResourceGroups(GetDomainsDynamicResourceGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
      *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
@@ -11742,8 +11742,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
-     *             .grantId(testGrantOciIdentityDomainsGrant.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .grantId(testGrantOciIdentityDomainsGrant.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(grantAuthorization)
@@ -11789,8 +11789,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
-     *             .grantId(testGrantOciIdentityDomainsGrant.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .grantId(testGrantOciIdentityDomainsGrant.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(grantAuthorization)
@@ -11836,8 +11836,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
-     *             .grantId(testGrantOciIdentityDomainsGrant.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .grantId(testGrantOciIdentityDomainsGrant.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(grantAuthorization)
@@ -11883,8 +11883,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
-     *             .grantId(testGrantOciIdentityDomainsGrant.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .grantId(testGrantOciIdentityDomainsGrant.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(grantAuthorization)
@@ -11930,8 +11930,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
-     *             .grantId(testGrantOciIdentityDomainsGrant.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .grantId(testGrantOciIdentityDomainsGrant.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(grantAuthorization)
@@ -11977,7 +11977,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrants = IdentityFunctions.getDomainsGrants(GetDomainsGrantsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .grantCount(grantGrantCount)
      *             .grantFilter(grantGrantFilter)
      *             .attributeSets("all")
@@ -12026,7 +12026,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrants = IdentityFunctions.getDomainsGrants(GetDomainsGrantsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .grantCount(grantGrantCount)
      *             .grantFilter(grantGrantFilter)
      *             .attributeSets("all")
@@ -12075,7 +12075,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrants = IdentityFunctions.getDomainsGrants(GetDomainsGrantsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .grantCount(grantGrantCount)
      *             .grantFilter(grantGrantFilter)
      *             .attributeSets("all")
@@ -12124,7 +12124,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrants = IdentityFunctions.getDomainsGrants(GetDomainsGrantsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .grantCount(grantGrantCount)
      *             .grantFilter(grantGrantFilter)
      *             .attributeSets("all")
@@ -12173,7 +12173,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrants = IdentityFunctions.getDomainsGrants(GetDomainsGrantsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .grantCount(grantGrantCount)
      *             .grantFilter(grantGrantFilter)
      *             .attributeSets("all")
@@ -12222,8 +12222,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getDomainsGroup(GetDomainsGroupArgs.builder()
-     *             .groupId(testGroupOciIdentityGroup.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .groupId(testGroupOciIdentityGroup.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(groupAuthorization)
@@ -12269,8 +12269,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getDomainsGroup(GetDomainsGroupArgs.builder()
-     *             .groupId(testGroupOciIdentityGroup.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .groupId(testGroupOciIdentityGroup.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(groupAuthorization)
@@ -12316,8 +12316,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getDomainsGroup(GetDomainsGroupArgs.builder()
-     *             .groupId(testGroupOciIdentityGroup.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .groupId(testGroupOciIdentityGroup.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(groupAuthorization)
@@ -12363,8 +12363,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getDomainsGroup(GetDomainsGroupArgs.builder()
-     *             .groupId(testGroupOciIdentityGroup.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .groupId(testGroupOciIdentityGroup.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(groupAuthorization)
@@ -12410,8 +12410,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getDomainsGroup(GetDomainsGroupArgs.builder()
-     *             .groupId(testGroupOciIdentityGroup.id())
-     *             .idcsEndpoint(testDomain.url())
+     *             .groupId(testGroupOciIdentityGroup.get("id"))
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(groupAuthorization)
@@ -12457,7 +12457,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getDomainsGroups(GetDomainsGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .groupCount(groupGroupCount)
      *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
@@ -12506,7 +12506,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getDomainsGroups(GetDomainsGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .groupCount(groupGroupCount)
      *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
@@ -12555,7 +12555,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getDomainsGroups(GetDomainsGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .groupCount(groupGroupCount)
      *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
@@ -12604,7 +12604,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getDomainsGroups(GetDomainsGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .groupCount(groupGroupCount)
      *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
@@ -12653,7 +12653,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getDomainsGroups(GetDomainsGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .groupCount(groupGroupCount)
      *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
@@ -12702,8 +12702,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProvider = IdentityFunctions.getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityProofingProviderAuthorization)
@@ -12749,8 +12749,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProvider = IdentityFunctions.getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityProofingProviderAuthorization)
@@ -12796,8 +12796,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProvider = IdentityFunctions.getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityProofingProviderAuthorization)
@@ -12843,8 +12843,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProvider = IdentityFunctions.getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityProofingProviderAuthorization)
@@ -12890,8 +12890,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProvider = IdentityFunctions.getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityProofingProviderAuthorization)
@@ -12937,8 +12937,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviderTemplate = IdentityFunctions.getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityProofingProviderTemplateAuthorization)
@@ -12984,8 +12984,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviderTemplate = IdentityFunctions.getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityProofingProviderTemplateAuthorization)
@@ -13031,8 +13031,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviderTemplate = IdentityFunctions.getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityProofingProviderTemplateAuthorization)
@@ -13078,8 +13078,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviderTemplate = IdentityFunctions.getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityProofingProviderTemplateAuthorization)
@@ -13125,8 +13125,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviderTemplate = IdentityFunctions.getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityProofingProviderTemplateAuthorization)
@@ -13172,7 +13172,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviderTemplates = IdentityFunctions.getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProofingProviderTemplateCount(identityProofingProviderTemplateIdentityProofingProviderTemplateCount)
      *             .identityProofingProviderTemplateFilter(identityProofingProviderTemplateIdentityProofingProviderTemplateFilter)
      *             .attributeSets("all")
@@ -13221,7 +13221,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviderTemplates = IdentityFunctions.getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProofingProviderTemplateCount(identityProofingProviderTemplateIdentityProofingProviderTemplateCount)
      *             .identityProofingProviderTemplateFilter(identityProofingProviderTemplateIdentityProofingProviderTemplateFilter)
      *             .attributeSets("all")
@@ -13270,7 +13270,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviderTemplates = IdentityFunctions.getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProofingProviderTemplateCount(identityProofingProviderTemplateIdentityProofingProviderTemplateCount)
      *             .identityProofingProviderTemplateFilter(identityProofingProviderTemplateIdentityProofingProviderTemplateFilter)
      *             .attributeSets("all")
@@ -13319,7 +13319,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviderTemplates = IdentityFunctions.getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProofingProviderTemplateCount(identityProofingProviderTemplateIdentityProofingProviderTemplateCount)
      *             .identityProofingProviderTemplateFilter(identityProofingProviderTemplateIdentityProofingProviderTemplateFilter)
      *             .attributeSets("all")
@@ -13368,7 +13368,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviderTemplates = IdentityFunctions.getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProofingProviderTemplateCount(identityProofingProviderTemplateIdentityProofingProviderTemplateCount)
      *             .identityProofingProviderTemplateFilter(identityProofingProviderTemplateIdentityProofingProviderTemplateFilter)
      *             .attributeSets("all")
@@ -13417,7 +13417,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviders = IdentityFunctions.getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProofingProviderCount(identityProofingProviderIdentityProofingProviderCount)
      *             .identityProofingProviderFilter(identityProofingProviderIdentityProofingProviderFilter)
      *             .attributeSets("all")
@@ -13466,7 +13466,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviders = IdentityFunctions.getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProofingProviderCount(identityProofingProviderIdentityProofingProviderCount)
      *             .identityProofingProviderFilter(identityProofingProviderIdentityProofingProviderFilter)
      *             .attributeSets("all")
@@ -13515,7 +13515,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviders = IdentityFunctions.getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProofingProviderCount(identityProofingProviderIdentityProofingProviderCount)
      *             .identityProofingProviderFilter(identityProofingProviderIdentityProofingProviderFilter)
      *             .attributeSets("all")
@@ -13564,7 +13564,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviders = IdentityFunctions.getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProofingProviderCount(identityProofingProviderIdentityProofingProviderCount)
      *             .identityProofingProviderFilter(identityProofingProviderIdentityProofingProviderFilter)
      *             .attributeSets("all")
@@ -13613,7 +13613,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProofingProviders = IdentityFunctions.getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProofingProviderCount(identityProofingProviderIdentityProofingProviderCount)
      *             .identityProofingProviderFilter(identityProofingProviderIdentityProofingProviderFilter)
      *             .attributeSets("all")
@@ -13662,8 +13662,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
@@ -13709,8 +13709,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
@@ -13756,8 +13756,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
@@ -13803,8 +13803,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
@@ -13850,8 +13850,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
@@ -13897,7 +13897,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
      *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
      *             .attributeSets("all")
@@ -13946,7 +13946,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
      *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
      *             .attributeSets("all")
@@ -13995,7 +13995,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
      *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
      *             .attributeSets("all")
@@ -14044,7 +14044,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
      *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
      *             .attributeSets("all")
@@ -14093,7 +14093,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
      *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
      *             .attributeSets("all")
@@ -14142,8 +14142,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProvider = IdentityFunctions.getDomainsIdentityProvider(GetDomainsIdentityProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(identityProviderAuthorization)
@@ -14189,8 +14189,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProvider = IdentityFunctions.getDomainsIdentityProvider(GetDomainsIdentityProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(identityProviderAuthorization)
@@ -14236,8 +14236,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProvider = IdentityFunctions.getDomainsIdentityProvider(GetDomainsIdentityProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(identityProviderAuthorization)
@@ -14283,8 +14283,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProvider = IdentityFunctions.getDomainsIdentityProvider(GetDomainsIdentityProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(identityProviderAuthorization)
@@ -14330,8 +14330,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProvider = IdentityFunctions.getDomainsIdentityProvider(GetDomainsIdentityProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(identityProviderAuthorization)
@@ -14377,7 +14377,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getDomainsIdentityProviders(GetDomainsIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProviderCount(identityProviderIdentityProviderCount)
      *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
@@ -14426,7 +14426,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getDomainsIdentityProviders(GetDomainsIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProviderCount(identityProviderIdentityProviderCount)
      *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
@@ -14475,7 +14475,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getDomainsIdentityProviders(GetDomainsIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProviderCount(identityProviderIdentityProviderCount)
      *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
@@ -14524,7 +14524,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getDomainsIdentityProviders(GetDomainsIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProviderCount(identityProviderIdentityProviderCount)
      *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
@@ -14573,7 +14573,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getDomainsIdentityProviders(GetDomainsIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .identityProviderCount(identityProviderIdentityProviderCount)
      *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
@@ -14622,8 +14622,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identitySettingAuthorization)
@@ -14669,8 +14669,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identitySettingAuthorization)
@@ -14716,8 +14716,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identitySettingAuthorization)
@@ -14763,8 +14763,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identitySettingAuthorization)
@@ -14810,8 +14810,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identitySettingAuthorization)
@@ -14857,7 +14857,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identitySettingAuthorization)
@@ -14903,7 +14903,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identitySettingAuthorization)
@@ -14949,7 +14949,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identitySettingAuthorization)
@@ -14995,7 +14995,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identitySettingAuthorization)
@@ -15041,7 +15041,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(identitySettingAuthorization)
@@ -15087,8 +15087,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSetting = IdentityFunctions.getDomainsKmsiSetting(GetDomainsKmsiSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
@@ -15134,8 +15134,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSetting = IdentityFunctions.getDomainsKmsiSetting(GetDomainsKmsiSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
@@ -15181,8 +15181,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSetting = IdentityFunctions.getDomainsKmsiSetting(GetDomainsKmsiSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
@@ -15228,8 +15228,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSetting = IdentityFunctions.getDomainsKmsiSetting(GetDomainsKmsiSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
@@ -15275,8 +15275,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSetting = IdentityFunctions.getDomainsKmsiSetting(GetDomainsKmsiSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
@@ -15322,7 +15322,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
@@ -15368,7 +15368,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
@@ -15414,7 +15414,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
@@ -15460,7 +15460,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
@@ -15506,7 +15506,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
@@ -15552,8 +15552,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMappedAttribute = IdentityFunctions.getDomainsMappedAttribute(GetDomainsMappedAttributeArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(mappedAttributeAuthorization)
@@ -15599,8 +15599,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMappedAttribute = IdentityFunctions.getDomainsMappedAttribute(GetDomainsMappedAttributeArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(mappedAttributeAuthorization)
@@ -15646,8 +15646,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMappedAttribute = IdentityFunctions.getDomainsMappedAttribute(GetDomainsMappedAttributeArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(mappedAttributeAuthorization)
@@ -15693,8 +15693,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMappedAttribute = IdentityFunctions.getDomainsMappedAttribute(GetDomainsMappedAttributeArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(mappedAttributeAuthorization)
@@ -15740,8 +15740,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMappedAttribute = IdentityFunctions.getDomainsMappedAttribute(GetDomainsMappedAttributeArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(mappedAttributeAuthorization)
@@ -15787,7 +15787,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMappedAttributes = IdentityFunctions.getDomainsMappedAttributes(GetDomainsMappedAttributesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mappedAttributeCount(mappedAttributeMappedAttributeCount)
      *             .mappedAttributeFilter(mappedAttributeMappedAttributeFilter)
      *             .attributeSets("all")
@@ -15836,7 +15836,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMappedAttributes = IdentityFunctions.getDomainsMappedAttributes(GetDomainsMappedAttributesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mappedAttributeCount(mappedAttributeMappedAttributeCount)
      *             .mappedAttributeFilter(mappedAttributeMappedAttributeFilter)
      *             .attributeSets("all")
@@ -15885,7 +15885,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMappedAttributes = IdentityFunctions.getDomainsMappedAttributes(GetDomainsMappedAttributesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mappedAttributeCount(mappedAttributeMappedAttributeCount)
      *             .mappedAttributeFilter(mappedAttributeMappedAttributeFilter)
      *             .attributeSets("all")
@@ -15934,7 +15934,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMappedAttributes = IdentityFunctions.getDomainsMappedAttributes(GetDomainsMappedAttributesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mappedAttributeCount(mappedAttributeMappedAttributeCount)
      *             .mappedAttributeFilter(mappedAttributeMappedAttributeFilter)
      *             .attributeSets("all")
@@ -15983,7 +15983,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMappedAttributes = IdentityFunctions.getDomainsMappedAttributes(GetDomainsMappedAttributesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mappedAttributeCount(mappedAttributeMappedAttributeCount)
      *             .mappedAttributeFilter(mappedAttributeMappedAttributeFilter)
      *             .attributeSets("all")
@@ -16032,8 +16032,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKey = IdentityFunctions.getDomainsMyApiKey(GetDomainsMyApiKeyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myApiKeyId(testApiKey.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myApiKeyId(testApiKey.get("id"))
      *             .authorization(myApiKeyAuthorization)
      *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
      *             .build());
@@ -16077,8 +16077,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKey = IdentityFunctions.getDomainsMyApiKey(GetDomainsMyApiKeyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myApiKeyId(testApiKey.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myApiKeyId(testApiKey.get("id"))
      *             .authorization(myApiKeyAuthorization)
      *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
      *             .build());
@@ -16122,8 +16122,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKey = IdentityFunctions.getDomainsMyApiKey(GetDomainsMyApiKeyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myApiKeyId(testApiKey.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myApiKeyId(testApiKey.get("id"))
      *             .authorization(myApiKeyAuthorization)
      *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
      *             .build());
@@ -16167,8 +16167,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKey = IdentityFunctions.getDomainsMyApiKey(GetDomainsMyApiKeyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myApiKeyId(testApiKey.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myApiKeyId(testApiKey.get("id"))
      *             .authorization(myApiKeyAuthorization)
      *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
      *             .build());
@@ -16212,8 +16212,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKey = IdentityFunctions.getDomainsMyApiKey(GetDomainsMyApiKeyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myApiKeyId(testApiKey.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myApiKeyId(testApiKey.get("id"))
      *             .authorization(myApiKeyAuthorization)
      *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
      *             .build());
@@ -16257,7 +16257,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKeys = IdentityFunctions.getDomainsMyApiKeys(GetDomainsMyApiKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myApiKeyCount(myApiKeyMyApiKeyCount)
      *             .myApiKeyFilter(myApiKeyMyApiKeyFilter)
      *             .authorization(myApiKeyAuthorization)
@@ -16304,7 +16304,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKeys = IdentityFunctions.getDomainsMyApiKeys(GetDomainsMyApiKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myApiKeyCount(myApiKeyMyApiKeyCount)
      *             .myApiKeyFilter(myApiKeyMyApiKeyFilter)
      *             .authorization(myApiKeyAuthorization)
@@ -16351,7 +16351,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKeys = IdentityFunctions.getDomainsMyApiKeys(GetDomainsMyApiKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myApiKeyCount(myApiKeyMyApiKeyCount)
      *             .myApiKeyFilter(myApiKeyMyApiKeyFilter)
      *             .authorization(myApiKeyAuthorization)
@@ -16398,7 +16398,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKeys = IdentityFunctions.getDomainsMyApiKeys(GetDomainsMyApiKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myApiKeyCount(myApiKeyMyApiKeyCount)
      *             .myApiKeyFilter(myApiKeyMyApiKeyFilter)
      *             .authorization(myApiKeyAuthorization)
@@ -16445,7 +16445,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKeys = IdentityFunctions.getDomainsMyApiKeys(GetDomainsMyApiKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myApiKeyCount(myApiKeyMyApiKeyCount)
      *             .myApiKeyFilter(myApiKeyMyApiKeyFilter)
      *             .authorization(myApiKeyAuthorization)
@@ -16492,7 +16492,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApps = IdentityFunctions.getDomainsMyApps(GetDomainsMyAppsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myAppCount(myAppMyAppCount)
      *             .myAppFilter(myAppMyAppFilter)
      *             .authorization(myAppAuthorization)
@@ -16539,7 +16539,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApps = IdentityFunctions.getDomainsMyApps(GetDomainsMyAppsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myAppCount(myAppMyAppCount)
      *             .myAppFilter(myAppMyAppFilter)
      *             .authorization(myAppAuthorization)
@@ -16586,7 +16586,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApps = IdentityFunctions.getDomainsMyApps(GetDomainsMyAppsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myAppCount(myAppMyAppCount)
      *             .myAppFilter(myAppMyAppFilter)
      *             .authorization(myAppAuthorization)
@@ -16633,7 +16633,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApps = IdentityFunctions.getDomainsMyApps(GetDomainsMyAppsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myAppCount(myAppMyAppCount)
      *             .myAppFilter(myAppMyAppFilter)
      *             .authorization(myAppAuthorization)
@@ -16680,7 +16680,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApps = IdentityFunctions.getDomainsMyApps(GetDomainsMyAppsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myAppCount(myAppMyAppCount)
      *             .myAppFilter(myAppMyAppFilter)
      *             .authorization(myAppAuthorization)
@@ -16727,8 +16727,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthToken = IdentityFunctions.getDomainsMyAuthToken(GetDomainsMyAuthTokenArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myAuthTokenId(testAuthToken.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myAuthTokenId(testAuthToken.get("id"))
      *             .authorization(myAuthTokenAuthorization)
      *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
      *             .build());
@@ -16772,8 +16772,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthToken = IdentityFunctions.getDomainsMyAuthToken(GetDomainsMyAuthTokenArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myAuthTokenId(testAuthToken.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myAuthTokenId(testAuthToken.get("id"))
      *             .authorization(myAuthTokenAuthorization)
      *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
      *             .build());
@@ -16817,8 +16817,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthToken = IdentityFunctions.getDomainsMyAuthToken(GetDomainsMyAuthTokenArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myAuthTokenId(testAuthToken.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myAuthTokenId(testAuthToken.get("id"))
      *             .authorization(myAuthTokenAuthorization)
      *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
      *             .build());
@@ -16862,8 +16862,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthToken = IdentityFunctions.getDomainsMyAuthToken(GetDomainsMyAuthTokenArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myAuthTokenId(testAuthToken.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myAuthTokenId(testAuthToken.get("id"))
      *             .authorization(myAuthTokenAuthorization)
      *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
      *             .build());
@@ -16907,8 +16907,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthToken = IdentityFunctions.getDomainsMyAuthToken(GetDomainsMyAuthTokenArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myAuthTokenId(testAuthToken.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myAuthTokenId(testAuthToken.get("id"))
      *             .authorization(myAuthTokenAuthorization)
      *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
      *             .build());
@@ -16952,7 +16952,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthTokens = IdentityFunctions.getDomainsMyAuthTokens(GetDomainsMyAuthTokensArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myAuthTokenCount(myAuthTokenMyAuthTokenCount)
      *             .myAuthTokenFilter(myAuthTokenMyAuthTokenFilter)
      *             .authorization(myAuthTokenAuthorization)
@@ -16999,7 +16999,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthTokens = IdentityFunctions.getDomainsMyAuthTokens(GetDomainsMyAuthTokensArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myAuthTokenCount(myAuthTokenMyAuthTokenCount)
      *             .myAuthTokenFilter(myAuthTokenMyAuthTokenFilter)
      *             .authorization(myAuthTokenAuthorization)
@@ -17046,7 +17046,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthTokens = IdentityFunctions.getDomainsMyAuthTokens(GetDomainsMyAuthTokensArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myAuthTokenCount(myAuthTokenMyAuthTokenCount)
      *             .myAuthTokenFilter(myAuthTokenMyAuthTokenFilter)
      *             .authorization(myAuthTokenAuthorization)
@@ -17093,7 +17093,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthTokens = IdentityFunctions.getDomainsMyAuthTokens(GetDomainsMyAuthTokensArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myAuthTokenCount(myAuthTokenMyAuthTokenCount)
      *             .myAuthTokenFilter(myAuthTokenMyAuthTokenFilter)
      *             .authorization(myAuthTokenAuthorization)
@@ -17140,7 +17140,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthTokens = IdentityFunctions.getDomainsMyAuthTokens(GetDomainsMyAuthTokensArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myAuthTokenCount(myAuthTokenMyAuthTokenCount)
      *             .myAuthTokenFilter(myAuthTokenMyAuthTokenFilter)
      *             .authorization(myAuthTokenAuthorization)
@@ -17187,8 +17187,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.get("id"))
      *             .authorization(myCompletedApprovalAuthorization)
      *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
      *             .build());
@@ -17232,8 +17232,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.get("id"))
      *             .authorization(myCompletedApprovalAuthorization)
      *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
      *             .build());
@@ -17277,8 +17277,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.get("id"))
      *             .authorization(myCompletedApprovalAuthorization)
      *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
      *             .build());
@@ -17322,8 +17322,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.get("id"))
      *             .authorization(myCompletedApprovalAuthorization)
      *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
      *             .build());
@@ -17367,8 +17367,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.get("id"))
      *             .authorization(myCompletedApprovalAuthorization)
      *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
      *             .build());
@@ -17412,7 +17412,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myCompletedApprovalCount(myCompletedApprovalMyCompletedApprovalCount)
      *             .myCompletedApprovalFilter(myCompletedApprovalMyCompletedApprovalFilter)
      *             .authorization(myCompletedApprovalAuthorization)
@@ -17459,7 +17459,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myCompletedApprovalCount(myCompletedApprovalMyCompletedApprovalCount)
      *             .myCompletedApprovalFilter(myCompletedApprovalMyCompletedApprovalFilter)
      *             .authorization(myCompletedApprovalAuthorization)
@@ -17506,7 +17506,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myCompletedApprovalCount(myCompletedApprovalMyCompletedApprovalCount)
      *             .myCompletedApprovalFilter(myCompletedApprovalMyCompletedApprovalFilter)
      *             .authorization(myCompletedApprovalAuthorization)
@@ -17553,7 +17553,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myCompletedApprovalCount(myCompletedApprovalMyCompletedApprovalCount)
      *             .myCompletedApprovalFilter(myCompletedApprovalMyCompletedApprovalFilter)
      *             .authorization(myCompletedApprovalAuthorization)
@@ -17600,7 +17600,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myCompletedApprovalCount(myCompletedApprovalMyCompletedApprovalCount)
      *             .myCompletedApprovalFilter(myCompletedApprovalMyCompletedApprovalFilter)
      *             .authorization(myCompletedApprovalAuthorization)
@@ -17647,8 +17647,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKey = IdentityFunctions.getDomainsMyCustomerSecretKey(GetDomainsMyCustomerSecretKeyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myCustomerSecretKeyId(testCustomerSecretKey.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myCustomerSecretKeyId(testCustomerSecretKey.get("id"))
      *             .authorization(myCustomerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
      *             .build());
@@ -17692,8 +17692,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKey = IdentityFunctions.getDomainsMyCustomerSecretKey(GetDomainsMyCustomerSecretKeyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myCustomerSecretKeyId(testCustomerSecretKey.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myCustomerSecretKeyId(testCustomerSecretKey.get("id"))
      *             .authorization(myCustomerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
      *             .build());
@@ -17737,8 +17737,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKey = IdentityFunctions.getDomainsMyCustomerSecretKey(GetDomainsMyCustomerSecretKeyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myCustomerSecretKeyId(testCustomerSecretKey.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myCustomerSecretKeyId(testCustomerSecretKey.get("id"))
      *             .authorization(myCustomerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
      *             .build());
@@ -17782,8 +17782,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKey = IdentityFunctions.getDomainsMyCustomerSecretKey(GetDomainsMyCustomerSecretKeyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myCustomerSecretKeyId(testCustomerSecretKey.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myCustomerSecretKeyId(testCustomerSecretKey.get("id"))
      *             .authorization(myCustomerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
      *             .build());
@@ -17827,8 +17827,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKey = IdentityFunctions.getDomainsMyCustomerSecretKey(GetDomainsMyCustomerSecretKeyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myCustomerSecretKeyId(testCustomerSecretKey.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myCustomerSecretKeyId(testCustomerSecretKey.get("id"))
      *             .authorization(myCustomerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
      *             .build());
@@ -17872,7 +17872,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKeys = IdentityFunctions.getDomainsMyCustomerSecretKeys(GetDomainsMyCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myCustomerSecretKeyCount(myCustomerSecretKeyMyCustomerSecretKeyCount)
      *             .myCustomerSecretKeyFilter(myCustomerSecretKeyMyCustomerSecretKeyFilter)
      *             .authorization(myCustomerSecretKeyAuthorization)
@@ -17919,7 +17919,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKeys = IdentityFunctions.getDomainsMyCustomerSecretKeys(GetDomainsMyCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myCustomerSecretKeyCount(myCustomerSecretKeyMyCustomerSecretKeyCount)
      *             .myCustomerSecretKeyFilter(myCustomerSecretKeyMyCustomerSecretKeyFilter)
      *             .authorization(myCustomerSecretKeyAuthorization)
@@ -17966,7 +17966,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKeys = IdentityFunctions.getDomainsMyCustomerSecretKeys(GetDomainsMyCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myCustomerSecretKeyCount(myCustomerSecretKeyMyCustomerSecretKeyCount)
      *             .myCustomerSecretKeyFilter(myCustomerSecretKeyMyCustomerSecretKeyFilter)
      *             .authorization(myCustomerSecretKeyAuthorization)
@@ -18013,7 +18013,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKeys = IdentityFunctions.getDomainsMyCustomerSecretKeys(GetDomainsMyCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myCustomerSecretKeyCount(myCustomerSecretKeyMyCustomerSecretKeyCount)
      *             .myCustomerSecretKeyFilter(myCustomerSecretKeyMyCustomerSecretKeyFilter)
      *             .authorization(myCustomerSecretKeyAuthorization)
@@ -18060,7 +18060,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKeys = IdentityFunctions.getDomainsMyCustomerSecretKeys(GetDomainsMyCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myCustomerSecretKeyCount(myCustomerSecretKeyMyCustomerSecretKeyCount)
      *             .myCustomerSecretKeyFilter(myCustomerSecretKeyMyCustomerSecretKeyFilter)
      *             .authorization(myCustomerSecretKeyAuthorization)
@@ -18107,8 +18107,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevice = IdentityFunctions.getDomainsMyDevice(GetDomainsMyDeviceArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(myDeviceAuthorization)
@@ -18154,8 +18154,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevice = IdentityFunctions.getDomainsMyDevice(GetDomainsMyDeviceArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(myDeviceAuthorization)
@@ -18201,8 +18201,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevice = IdentityFunctions.getDomainsMyDevice(GetDomainsMyDeviceArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(myDeviceAuthorization)
@@ -18248,8 +18248,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevice = IdentityFunctions.getDomainsMyDevice(GetDomainsMyDeviceArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(myDeviceAuthorization)
@@ -18295,8 +18295,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevice = IdentityFunctions.getDomainsMyDevice(GetDomainsMyDeviceArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(myDeviceAuthorization)
@@ -18342,7 +18342,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevices = IdentityFunctions.getDomainsMyDevices(GetDomainsMyDevicesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myDeviceCount(myDeviceMyDeviceCount)
      *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
@@ -18391,7 +18391,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevices = IdentityFunctions.getDomainsMyDevices(GetDomainsMyDevicesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myDeviceCount(myDeviceMyDeviceCount)
      *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
@@ -18440,7 +18440,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevices = IdentityFunctions.getDomainsMyDevices(GetDomainsMyDevicesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myDeviceCount(myDeviceMyDeviceCount)
      *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
@@ -18489,7 +18489,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevices = IdentityFunctions.getDomainsMyDevices(GetDomainsMyDevicesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myDeviceCount(myDeviceMyDeviceCount)
      *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
@@ -18538,7 +18538,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevices = IdentityFunctions.getDomainsMyDevices(GetDomainsMyDevicesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myDeviceCount(myDeviceMyDeviceCount)
      *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
@@ -18587,7 +18587,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyGroups = IdentityFunctions.getDomainsMyGroups(GetDomainsMyGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myGroupCount(myGroupMyGroupCount)
      *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
@@ -18636,7 +18636,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyGroups = IdentityFunctions.getDomainsMyGroups(GetDomainsMyGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myGroupCount(myGroupMyGroupCount)
      *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
@@ -18685,7 +18685,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyGroups = IdentityFunctions.getDomainsMyGroups(GetDomainsMyGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myGroupCount(myGroupMyGroupCount)
      *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
@@ -18734,7 +18734,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyGroups = IdentityFunctions.getDomainsMyGroups(GetDomainsMyGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myGroupCount(myGroupMyGroupCount)
      *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
@@ -18783,7 +18783,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyGroups = IdentityFunctions.getDomainsMyGroups(GetDomainsMyGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myGroupCount(myGroupMyGroupCount)
      *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
@@ -18832,8 +18832,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredential = IdentityFunctions.getDomainsMyOauth2clientCredential(GetDomainsMyOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.get("id"))
      *             .authorization(myOauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -18877,8 +18877,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredential = IdentityFunctions.getDomainsMyOauth2clientCredential(GetDomainsMyOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.get("id"))
      *             .authorization(myOauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -18922,8 +18922,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredential = IdentityFunctions.getDomainsMyOauth2clientCredential(GetDomainsMyOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.get("id"))
      *             .authorization(myOauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -18967,8 +18967,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredential = IdentityFunctions.getDomainsMyOauth2clientCredential(GetDomainsMyOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.get("id"))
      *             .authorization(myOauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -19012,8 +19012,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredential = IdentityFunctions.getDomainsMyOauth2clientCredential(GetDomainsMyOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.get("id"))
      *             .authorization(myOauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -19057,7 +19057,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredentials = IdentityFunctions.getDomainsMyOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myOauth2clientCredentialCount(myOauth2clientCredentialMyOauth2clientCredentialCount)
      *             .myOauth2clientCredentialFilter(myOauth2clientCredentialMyOauth2clientCredentialFilter)
      *             .authorization(myOauth2clientCredentialAuthorization)
@@ -19104,7 +19104,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredentials = IdentityFunctions.getDomainsMyOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myOauth2clientCredentialCount(myOauth2clientCredentialMyOauth2clientCredentialCount)
      *             .myOauth2clientCredentialFilter(myOauth2clientCredentialMyOauth2clientCredentialFilter)
      *             .authorization(myOauth2clientCredentialAuthorization)
@@ -19151,7 +19151,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredentials = IdentityFunctions.getDomainsMyOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myOauth2clientCredentialCount(myOauth2clientCredentialMyOauth2clientCredentialCount)
      *             .myOauth2clientCredentialFilter(myOauth2clientCredentialMyOauth2clientCredentialFilter)
      *             .authorization(myOauth2clientCredentialAuthorization)
@@ -19198,7 +19198,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredentials = IdentityFunctions.getDomainsMyOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myOauth2clientCredentialCount(myOauth2clientCredentialMyOauth2clientCredentialCount)
      *             .myOauth2clientCredentialFilter(myOauth2clientCredentialMyOauth2clientCredentialFilter)
      *             .authorization(myOauth2clientCredentialAuthorization)
@@ -19245,7 +19245,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredentials = IdentityFunctions.getDomainsMyOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myOauth2clientCredentialCount(myOauth2clientCredentialMyOauth2clientCredentialCount)
      *             .myOauth2clientCredentialFilter(myOauth2clientCredentialMyOauth2clientCredentialFilter)
      *             .authorization(myOauth2clientCredentialAuthorization)
@@ -19292,8 +19292,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.get("id"))
      *             .authorization(myPendingApprovalAuthorization)
      *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
      *             .build());
@@ -19337,8 +19337,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.get("id"))
      *             .authorization(myPendingApprovalAuthorization)
      *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
      *             .build());
@@ -19382,8 +19382,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.get("id"))
      *             .authorization(myPendingApprovalAuthorization)
      *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
      *             .build());
@@ -19427,8 +19427,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.get("id"))
      *             .authorization(myPendingApprovalAuthorization)
      *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
      *             .build());
@@ -19472,8 +19472,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.get("id"))
      *             .authorization(myPendingApprovalAuthorization)
      *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
      *             .build());
@@ -19517,7 +19517,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myPendingApprovalCount(myPendingApprovalMyPendingApprovalCount)
      *             .myPendingApprovalFilter(myPendingApprovalMyPendingApprovalFilter)
      *             .authorization(myPendingApprovalAuthorization)
@@ -19564,7 +19564,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myPendingApprovalCount(myPendingApprovalMyPendingApprovalCount)
      *             .myPendingApprovalFilter(myPendingApprovalMyPendingApprovalFilter)
      *             .authorization(myPendingApprovalAuthorization)
@@ -19611,7 +19611,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myPendingApprovalCount(myPendingApprovalMyPendingApprovalCount)
      *             .myPendingApprovalFilter(myPendingApprovalMyPendingApprovalFilter)
      *             .authorization(myPendingApprovalAuthorization)
@@ -19658,7 +19658,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myPendingApprovalCount(myPendingApprovalMyPendingApprovalCount)
      *             .myPendingApprovalFilter(myPendingApprovalMyPendingApprovalFilter)
      *             .authorization(myPendingApprovalAuthorization)
@@ -19705,7 +19705,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myPendingApprovalCount(myPendingApprovalMyPendingApprovalCount)
      *             .myPendingApprovalFilter(myPendingApprovalMyPendingApprovalFilter)
      *             .authorization(myPendingApprovalAuthorization)
@@ -19752,7 +19752,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequestableGroups = IdentityFunctions.getDomainsMyRequestableGroups(GetDomainsMyRequestableGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myRequestableGroupCount(myRequestableGroupMyRequestableGroupCount)
      *             .myRequestableGroupFilter(myRequestableGroupMyRequestableGroupFilter)
      *             .authorization(myRequestableGroupAuthorization)
@@ -19799,7 +19799,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequestableGroups = IdentityFunctions.getDomainsMyRequestableGroups(GetDomainsMyRequestableGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myRequestableGroupCount(myRequestableGroupMyRequestableGroupCount)
      *             .myRequestableGroupFilter(myRequestableGroupMyRequestableGroupFilter)
      *             .authorization(myRequestableGroupAuthorization)
@@ -19846,7 +19846,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequestableGroups = IdentityFunctions.getDomainsMyRequestableGroups(GetDomainsMyRequestableGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myRequestableGroupCount(myRequestableGroupMyRequestableGroupCount)
      *             .myRequestableGroupFilter(myRequestableGroupMyRequestableGroupFilter)
      *             .authorization(myRequestableGroupAuthorization)
@@ -19893,7 +19893,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequestableGroups = IdentityFunctions.getDomainsMyRequestableGroups(GetDomainsMyRequestableGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myRequestableGroupCount(myRequestableGroupMyRequestableGroupCount)
      *             .myRequestableGroupFilter(myRequestableGroupMyRequestableGroupFilter)
      *             .authorization(myRequestableGroupAuthorization)
@@ -19940,7 +19940,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequestableGroups = IdentityFunctions.getDomainsMyRequestableGroups(GetDomainsMyRequestableGroupsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myRequestableGroupCount(myRequestableGroupMyRequestableGroupCount)
      *             .myRequestableGroupFilter(myRequestableGroupMyRequestableGroupFilter)
      *             .authorization(myRequestableGroupAuthorization)
@@ -19987,7 +19987,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequests = IdentityFunctions.getDomainsMyRequests(GetDomainsMyRequestsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myRequestCount(myRequestMyRequestCount)
      *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
@@ -20036,7 +20036,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequests = IdentityFunctions.getDomainsMyRequests(GetDomainsMyRequestsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myRequestCount(myRequestMyRequestCount)
      *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
@@ -20085,7 +20085,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequests = IdentityFunctions.getDomainsMyRequests(GetDomainsMyRequestsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myRequestCount(myRequestMyRequestCount)
      *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
@@ -20134,7 +20134,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequests = IdentityFunctions.getDomainsMyRequests(GetDomainsMyRequestsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myRequestCount(myRequestMyRequestCount)
      *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
@@ -20183,7 +20183,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequests = IdentityFunctions.getDomainsMyRequests(GetDomainsMyRequestsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myRequestCount(myRequestMyRequestCount)
      *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
@@ -20232,8 +20232,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredential = IdentityFunctions.getDomainsMySmtpCredential(GetDomainsMySmtpCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mySmtpCredentialId(testSmtpCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mySmtpCredentialId(testSmtpCredential.get("id"))
      *             .authorization(mySmtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -20277,8 +20277,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredential = IdentityFunctions.getDomainsMySmtpCredential(GetDomainsMySmtpCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mySmtpCredentialId(testSmtpCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mySmtpCredentialId(testSmtpCredential.get("id"))
      *             .authorization(mySmtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -20322,8 +20322,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredential = IdentityFunctions.getDomainsMySmtpCredential(GetDomainsMySmtpCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mySmtpCredentialId(testSmtpCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mySmtpCredentialId(testSmtpCredential.get("id"))
      *             .authorization(mySmtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -20367,8 +20367,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredential = IdentityFunctions.getDomainsMySmtpCredential(GetDomainsMySmtpCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mySmtpCredentialId(testSmtpCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mySmtpCredentialId(testSmtpCredential.get("id"))
      *             .authorization(mySmtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -20412,8 +20412,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredential = IdentityFunctions.getDomainsMySmtpCredential(GetDomainsMySmtpCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mySmtpCredentialId(testSmtpCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mySmtpCredentialId(testSmtpCredential.get("id"))
      *             .authorization(mySmtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -20457,7 +20457,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredentials = IdentityFunctions.getDomainsMySmtpCredentials(GetDomainsMySmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mySmtpCredentialCount(mySmtpCredentialMySmtpCredentialCount)
      *             .mySmtpCredentialFilter(mySmtpCredentialMySmtpCredentialFilter)
      *             .authorization(mySmtpCredentialAuthorization)
@@ -20504,7 +20504,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredentials = IdentityFunctions.getDomainsMySmtpCredentials(GetDomainsMySmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mySmtpCredentialCount(mySmtpCredentialMySmtpCredentialCount)
      *             .mySmtpCredentialFilter(mySmtpCredentialMySmtpCredentialFilter)
      *             .authorization(mySmtpCredentialAuthorization)
@@ -20551,7 +20551,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredentials = IdentityFunctions.getDomainsMySmtpCredentials(GetDomainsMySmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mySmtpCredentialCount(mySmtpCredentialMySmtpCredentialCount)
      *             .mySmtpCredentialFilter(mySmtpCredentialMySmtpCredentialFilter)
      *             .authorization(mySmtpCredentialAuthorization)
@@ -20598,7 +20598,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredentials = IdentityFunctions.getDomainsMySmtpCredentials(GetDomainsMySmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mySmtpCredentialCount(mySmtpCredentialMySmtpCredentialCount)
      *             .mySmtpCredentialFilter(mySmtpCredentialMySmtpCredentialFilter)
      *             .authorization(mySmtpCredentialAuthorization)
@@ -20645,7 +20645,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredentials = IdentityFunctions.getDomainsMySmtpCredentials(GetDomainsMySmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mySmtpCredentialCount(mySmtpCredentialMySmtpCredentialCount)
      *             .mySmtpCredentialFilter(mySmtpCredentialMySmtpCredentialFilter)
      *             .authorization(mySmtpCredentialAuthorization)
@@ -20692,8 +20692,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccount = IdentityFunctions.getDomainsMySupportAccount(GetDomainsMySupportAccountArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.get("id"))
      *             .authorization(mySupportAccountAuthorization)
      *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
      *             .build());
@@ -20737,8 +20737,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccount = IdentityFunctions.getDomainsMySupportAccount(GetDomainsMySupportAccountArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.get("id"))
      *             .authorization(mySupportAccountAuthorization)
      *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
      *             .build());
@@ -20782,8 +20782,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccount = IdentityFunctions.getDomainsMySupportAccount(GetDomainsMySupportAccountArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.get("id"))
      *             .authorization(mySupportAccountAuthorization)
      *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
      *             .build());
@@ -20827,8 +20827,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccount = IdentityFunctions.getDomainsMySupportAccount(GetDomainsMySupportAccountArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.get("id"))
      *             .authorization(mySupportAccountAuthorization)
      *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
      *             .build());
@@ -20872,8 +20872,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccount = IdentityFunctions.getDomainsMySupportAccount(GetDomainsMySupportAccountArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.get("id"))
      *             .authorization(mySupportAccountAuthorization)
      *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
      *             .build());
@@ -20917,7 +20917,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccounts = IdentityFunctions.getDomainsMySupportAccounts(GetDomainsMySupportAccountsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mySupportAccountCount(mySupportAccountMySupportAccountCount)
      *             .mySupportAccountFilter(mySupportAccountMySupportAccountFilter)
      *             .authorization(mySupportAccountAuthorization)
@@ -20964,7 +20964,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccounts = IdentityFunctions.getDomainsMySupportAccounts(GetDomainsMySupportAccountsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mySupportAccountCount(mySupportAccountMySupportAccountCount)
      *             .mySupportAccountFilter(mySupportAccountMySupportAccountFilter)
      *             .authorization(mySupportAccountAuthorization)
@@ -21011,7 +21011,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccounts = IdentityFunctions.getDomainsMySupportAccounts(GetDomainsMySupportAccountsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mySupportAccountCount(mySupportAccountMySupportAccountCount)
      *             .mySupportAccountFilter(mySupportAccountMySupportAccountFilter)
      *             .authorization(mySupportAccountAuthorization)
@@ -21058,7 +21058,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccounts = IdentityFunctions.getDomainsMySupportAccounts(GetDomainsMySupportAccountsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mySupportAccountCount(mySupportAccountMySupportAccountCount)
      *             .mySupportAccountFilter(mySupportAccountMySupportAccountFilter)
      *             .authorization(mySupportAccountAuthorization)
@@ -21105,7 +21105,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccounts = IdentityFunctions.getDomainsMySupportAccounts(GetDomainsMySupportAccountsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .mySupportAccountCount(mySupportAccountMySupportAccountCount)
      *             .mySupportAccountFilter(mySupportAccountMySupportAccountFilter)
      *             .authorization(mySupportAccountAuthorization)
@@ -21152,8 +21152,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgent = IdentityFunctions.getDomainsMyTrustedUserAgent(GetDomainsMyTrustedUserAgentArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myTrustedUserAgentId(testAgent.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myTrustedUserAgentId(testAgent.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
@@ -21199,8 +21199,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgent = IdentityFunctions.getDomainsMyTrustedUserAgent(GetDomainsMyTrustedUserAgentArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myTrustedUserAgentId(testAgent.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myTrustedUserAgentId(testAgent.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
@@ -21246,8 +21246,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgent = IdentityFunctions.getDomainsMyTrustedUserAgent(GetDomainsMyTrustedUserAgentArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myTrustedUserAgentId(testAgent.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myTrustedUserAgentId(testAgent.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
@@ -21293,8 +21293,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgent = IdentityFunctions.getDomainsMyTrustedUserAgent(GetDomainsMyTrustedUserAgentArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myTrustedUserAgentId(testAgent.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myTrustedUserAgentId(testAgent.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
@@ -21340,8 +21340,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgent = IdentityFunctions.getDomainsMyTrustedUserAgent(GetDomainsMyTrustedUserAgentArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myTrustedUserAgentId(testAgent.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myTrustedUserAgentId(testAgent.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
@@ -21387,7 +21387,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgents = IdentityFunctions.getDomainsMyTrustedUserAgents(GetDomainsMyTrustedUserAgentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
      *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
@@ -21436,7 +21436,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgents = IdentityFunctions.getDomainsMyTrustedUserAgents(GetDomainsMyTrustedUserAgentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
      *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
@@ -21485,7 +21485,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgents = IdentityFunctions.getDomainsMyTrustedUserAgents(GetDomainsMyTrustedUserAgentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
      *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
@@ -21534,7 +21534,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgents = IdentityFunctions.getDomainsMyTrustedUserAgents(GetDomainsMyTrustedUserAgentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
      *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
@@ -21583,7 +21583,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgents = IdentityFunctions.getDomainsMyTrustedUserAgents(GetDomainsMyTrustedUserAgentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
      *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
@@ -21632,8 +21632,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredential = IdentityFunctions.getDomainsMyUserDbCredential(GetDomainsMyUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myUserDbCredentialId(testDbCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myUserDbCredentialId(testDbCredential.get("id"))
      *             .authorization(myUserDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -21677,8 +21677,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredential = IdentityFunctions.getDomainsMyUserDbCredential(GetDomainsMyUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myUserDbCredentialId(testDbCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myUserDbCredentialId(testDbCredential.get("id"))
      *             .authorization(myUserDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -21722,8 +21722,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredential = IdentityFunctions.getDomainsMyUserDbCredential(GetDomainsMyUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myUserDbCredentialId(testDbCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myUserDbCredentialId(testDbCredential.get("id"))
      *             .authorization(myUserDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -21767,8 +21767,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredential = IdentityFunctions.getDomainsMyUserDbCredential(GetDomainsMyUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myUserDbCredentialId(testDbCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myUserDbCredentialId(testDbCredential.get("id"))
      *             .authorization(myUserDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -21812,8 +21812,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredential = IdentityFunctions.getDomainsMyUserDbCredential(GetDomainsMyUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .myUserDbCredentialId(testDbCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .myUserDbCredentialId(testDbCredential.get("id"))
      *             .authorization(myUserDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
      *             .build());
@@ -21857,7 +21857,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredentials = IdentityFunctions.getDomainsMyUserDbCredentials(GetDomainsMyUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myUserDbCredentialCount(myUserDbCredentialMyUserDbCredentialCount)
      *             .myUserDbCredentialFilter(myUserDbCredentialMyUserDbCredentialFilter)
      *             .authorization(myUserDbCredentialAuthorization)
@@ -21904,7 +21904,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredentials = IdentityFunctions.getDomainsMyUserDbCredentials(GetDomainsMyUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myUserDbCredentialCount(myUserDbCredentialMyUserDbCredentialCount)
      *             .myUserDbCredentialFilter(myUserDbCredentialMyUserDbCredentialFilter)
      *             .authorization(myUserDbCredentialAuthorization)
@@ -21951,7 +21951,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredentials = IdentityFunctions.getDomainsMyUserDbCredentials(GetDomainsMyUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myUserDbCredentialCount(myUserDbCredentialMyUserDbCredentialCount)
      *             .myUserDbCredentialFilter(myUserDbCredentialMyUserDbCredentialFilter)
      *             .authorization(myUserDbCredentialAuthorization)
@@ -21998,7 +21998,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredentials = IdentityFunctions.getDomainsMyUserDbCredentials(GetDomainsMyUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myUserDbCredentialCount(myUserDbCredentialMyUserDbCredentialCount)
      *             .myUserDbCredentialFilter(myUserDbCredentialMyUserDbCredentialFilter)
      *             .authorization(myUserDbCredentialAuthorization)
@@ -22045,7 +22045,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredentials = IdentityFunctions.getDomainsMyUserDbCredentials(GetDomainsMyUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .myUserDbCredentialCount(myUserDbCredentialMyUserDbCredentialCount)
      *             .myUserDbCredentialFilter(myUserDbCredentialMyUserDbCredentialFilter)
      *             .authorization(myUserDbCredentialAuthorization)
@@ -22092,8 +22092,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
@@ -22139,8 +22139,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
@@ -22186,8 +22186,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
@@ -22233,8 +22233,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
@@ -22280,8 +22280,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
@@ -22327,7 +22327,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
      *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
      *             .attributeSets("all")
@@ -22376,7 +22376,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
      *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
      *             .attributeSets("all")
@@ -22425,7 +22425,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
      *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
      *             .attributeSets("all")
@@ -22474,7 +22474,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
      *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
      *             .attributeSets("all")
@@ -22523,7 +22523,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
      *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
      *             .attributeSets("all")
@@ -22572,8 +22572,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
@@ -22619,8 +22619,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
@@ -22666,8 +22666,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
@@ -22713,8 +22713,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
@@ -22760,8 +22760,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
@@ -22807,7 +22807,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
@@ -22853,7 +22853,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
@@ -22899,7 +22899,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
@@ -22945,7 +22945,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
@@ -22991,7 +22991,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
@@ -23037,8 +23037,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredential = IdentityFunctions.getDomainsOauth2clientCredential(GetDomainsOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuth2clientCredentialId(testOAuth2clientCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
@@ -23084,8 +23084,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredential = IdentityFunctions.getDomainsOauth2clientCredential(GetDomainsOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuth2clientCredentialId(testOAuth2clientCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
@@ -23131,8 +23131,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredential = IdentityFunctions.getDomainsOauth2clientCredential(GetDomainsOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuth2clientCredentialId(testOAuth2clientCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
@@ -23178,8 +23178,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredential = IdentityFunctions.getDomainsOauth2clientCredential(GetDomainsOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuth2clientCredentialId(testOAuth2clientCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
@@ -23225,8 +23225,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredential = IdentityFunctions.getDomainsOauth2clientCredential(GetDomainsOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuth2clientCredentialId(testOAuth2clientCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
@@ -23272,7 +23272,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredentials = IdentityFunctions.getDomainsOauth2clientCredentials(GetDomainsOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
      *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
@@ -23321,7 +23321,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredentials = IdentityFunctions.getDomainsOauth2clientCredentials(GetDomainsOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
      *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
@@ -23370,7 +23370,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredentials = IdentityFunctions.getDomainsOauth2clientCredentials(GetDomainsOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
      *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
@@ -23419,7 +23419,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredentials = IdentityFunctions.getDomainsOauth2clientCredentials(GetDomainsOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
      *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
@@ -23468,7 +23468,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredentials = IdentityFunctions.getDomainsOauth2clientCredentials(GetDomainsOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
      *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
@@ -23517,8 +23517,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuthClientCertificateId(testCertificate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuthClientCertificateId(testCertificate.get("id"))
      *             .authorization(oauthClientCertificateAuthorization)
      *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
      *             .build());
@@ -23562,8 +23562,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuthClientCertificateId(testCertificate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuthClientCertificateId(testCertificate.get("id"))
      *             .authorization(oauthClientCertificateAuthorization)
      *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
      *             .build());
@@ -23607,8 +23607,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuthClientCertificateId(testCertificate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuthClientCertificateId(testCertificate.get("id"))
      *             .authorization(oauthClientCertificateAuthorization)
      *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
      *             .build());
@@ -23652,8 +23652,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuthClientCertificateId(testCertificate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuthClientCertificateId(testCertificate.get("id"))
      *             .authorization(oauthClientCertificateAuthorization)
      *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
      *             .build());
@@ -23697,8 +23697,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuthClientCertificateId(testCertificate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuthClientCertificateId(testCertificate.get("id"))
      *             .authorization(oauthClientCertificateAuthorization)
      *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
      *             .build());
@@ -23742,7 +23742,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauthClientCertificateCount(oauthClientCertificateOauthClientCertificateCount)
      *             .oauthClientCertificateFilter(oauthClientCertificateOauthClientCertificateFilter)
      *             .authorization(oauthClientCertificateAuthorization)
@@ -23789,7 +23789,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauthClientCertificateCount(oauthClientCertificateOauthClientCertificateCount)
      *             .oauthClientCertificateFilter(oauthClientCertificateOauthClientCertificateFilter)
      *             .authorization(oauthClientCertificateAuthorization)
@@ -23836,7 +23836,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauthClientCertificateCount(oauthClientCertificateOauthClientCertificateCount)
      *             .oauthClientCertificateFilter(oauthClientCertificateOauthClientCertificateFilter)
      *             .authorization(oauthClientCertificateAuthorization)
@@ -23883,7 +23883,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauthClientCertificateCount(oauthClientCertificateOauthClientCertificateCount)
      *             .oauthClientCertificateFilter(oauthClientCertificateOauthClientCertificateFilter)
      *             .authorization(oauthClientCertificateAuthorization)
@@ -23930,7 +23930,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauthClientCertificateCount(oauthClientCertificateOauthClientCertificateCount)
      *             .oauthClientCertificateFilter(oauthClientCertificateOauthClientCertificateFilter)
      *             .authorization(oauthClientCertificateAuthorization)
@@ -23977,8 +23977,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.get("id"))
      *             .authorization(oauthPartnerCertificateAuthorization)
      *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
      *             .build());
@@ -24022,8 +24022,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.get("id"))
      *             .authorization(oauthPartnerCertificateAuthorization)
      *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
      *             .build());
@@ -24067,8 +24067,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.get("id"))
      *             .authorization(oauthPartnerCertificateAuthorization)
      *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
      *             .build());
@@ -24112,8 +24112,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.get("id"))
      *             .authorization(oauthPartnerCertificateAuthorization)
      *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
      *             .build());
@@ -24157,8 +24157,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.get("id"))
      *             .authorization(oauthPartnerCertificateAuthorization)
      *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
      *             .build());
@@ -24202,7 +24202,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauthPartnerCertificateCount(oauthPartnerCertificateOauthPartnerCertificateCount)
      *             .oauthPartnerCertificateFilter(oauthPartnerCertificateOauthPartnerCertificateFilter)
      *             .authorization(oauthPartnerCertificateAuthorization)
@@ -24249,7 +24249,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauthPartnerCertificateCount(oauthPartnerCertificateOauthPartnerCertificateCount)
      *             .oauthPartnerCertificateFilter(oauthPartnerCertificateOauthPartnerCertificateFilter)
      *             .authorization(oauthPartnerCertificateAuthorization)
@@ -24296,7 +24296,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauthPartnerCertificateCount(oauthPartnerCertificateOauthPartnerCertificateCount)
      *             .oauthPartnerCertificateFilter(oauthPartnerCertificateOauthPartnerCertificateFilter)
      *             .authorization(oauthPartnerCertificateAuthorization)
@@ -24343,7 +24343,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauthPartnerCertificateCount(oauthPartnerCertificateOauthPartnerCertificateCount)
      *             .oauthPartnerCertificateFilter(oauthPartnerCertificateOauthPartnerCertificateFilter)
      *             .authorization(oauthPartnerCertificateAuthorization)
@@ -24390,7 +24390,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .oauthPartnerCertificateCount(oauthPartnerCertificateOauthPartnerCertificateCount)
      *             .oauthPartnerCertificateFilter(oauthPartnerCertificateOauthPartnerCertificateFilter)
      *             .authorization(oauthPartnerCertificateAuthorization)
@@ -24437,8 +24437,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciConsoleSignOnPolicyConsent = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsent(GetDomainsOciConsoleSignOnPolicyConsentArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.get("id"))
      *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
      *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
      *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
@@ -24484,8 +24484,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciConsoleSignOnPolicyConsent = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsent(GetDomainsOciConsoleSignOnPolicyConsentArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.get("id"))
      *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
      *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
      *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
@@ -24531,8 +24531,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciConsoleSignOnPolicyConsent = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsent(GetDomainsOciConsoleSignOnPolicyConsentArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.get("id"))
      *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
      *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
      *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
@@ -24578,8 +24578,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciConsoleSignOnPolicyConsent = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsent(GetDomainsOciConsoleSignOnPolicyConsentArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.get("id"))
      *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
      *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
      *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
@@ -24625,8 +24625,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciConsoleSignOnPolicyConsent = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsent(GetDomainsOciConsoleSignOnPolicyConsentArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.get("id"))
      *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
      *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
      *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
@@ -24672,7 +24672,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciConsoleSignOnPolicyConsents = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsents(GetDomainsOciConsoleSignOnPolicyConsentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .ociConsoleSignOnPolicyConsentCount(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount)
      *             .ociConsoleSignOnPolicyConsentFilter(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter)
      *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
@@ -24721,7 +24721,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciConsoleSignOnPolicyConsents = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsents(GetDomainsOciConsoleSignOnPolicyConsentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .ociConsoleSignOnPolicyConsentCount(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount)
      *             .ociConsoleSignOnPolicyConsentFilter(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter)
      *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
@@ -24770,7 +24770,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciConsoleSignOnPolicyConsents = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsents(GetDomainsOciConsoleSignOnPolicyConsentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .ociConsoleSignOnPolicyConsentCount(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount)
      *             .ociConsoleSignOnPolicyConsentFilter(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter)
      *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
@@ -24819,7 +24819,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciConsoleSignOnPolicyConsents = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsents(GetDomainsOciConsoleSignOnPolicyConsentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .ociConsoleSignOnPolicyConsentCount(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount)
      *             .ociConsoleSignOnPolicyConsentFilter(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter)
      *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
@@ -24868,7 +24868,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciConsoleSignOnPolicyConsents = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsents(GetDomainsOciConsoleSignOnPolicyConsentsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .ociConsoleSignOnPolicyConsentCount(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount)
      *             .ociConsoleSignOnPolicyConsentFilter(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter)
      *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
@@ -24917,7 +24917,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicies = IdentityFunctions.getDomainsPasswordPolicies(GetDomainsPasswordPoliciesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
      *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
@@ -24966,7 +24966,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicies = IdentityFunctions.getDomainsPasswordPolicies(GetDomainsPasswordPoliciesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
      *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
@@ -25015,7 +25015,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicies = IdentityFunctions.getDomainsPasswordPolicies(GetDomainsPasswordPoliciesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
      *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
@@ -25064,7 +25064,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicies = IdentityFunctions.getDomainsPasswordPolicies(GetDomainsPasswordPoliciesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
      *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
@@ -25113,7 +25113,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicies = IdentityFunctions.getDomainsPasswordPolicies(GetDomainsPasswordPoliciesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
      *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
@@ -25162,8 +25162,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicy = IdentityFunctions.getDomainsPasswordPolicy(GetDomainsPasswordPolicyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .passwordPolicyId(testPolicy.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .passwordPolicyId(testPolicy.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
@@ -25209,8 +25209,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicy = IdentityFunctions.getDomainsPasswordPolicy(GetDomainsPasswordPolicyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .passwordPolicyId(testPolicy.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .passwordPolicyId(testPolicy.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
@@ -25256,8 +25256,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicy = IdentityFunctions.getDomainsPasswordPolicy(GetDomainsPasswordPolicyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .passwordPolicyId(testPolicy.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .passwordPolicyId(testPolicy.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
@@ -25303,8 +25303,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicy = IdentityFunctions.getDomainsPasswordPolicy(GetDomainsPasswordPolicyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .passwordPolicyId(testPolicy.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .passwordPolicyId(testPolicy.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
@@ -25350,8 +25350,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicy = IdentityFunctions.getDomainsPasswordPolicy(GetDomainsPasswordPolicyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .passwordPolicyId(testPolicy.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .passwordPolicyId(testPolicy.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
@@ -25397,7 +25397,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .policyCount(policyPolicyCount)
      *             .policyFilter(policyPolicyFilter)
      *             .attributeSets("all")
@@ -25446,7 +25446,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .policyCount(policyPolicyCount)
      *             .policyFilter(policyPolicyFilter)
      *             .attributeSets("all")
@@ -25495,7 +25495,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .policyCount(policyPolicyCount)
      *             .policyFilter(policyPolicyFilter)
      *             .attributeSets("all")
@@ -25544,7 +25544,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .policyCount(policyPolicyCount)
      *             .policyFilter(policyPolicyFilter)
      *             .attributeSets("all")
@@ -25593,7 +25593,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .policyCount(policyPolicyCount)
      *             .policyFilter(policyPolicyFilter)
      *             .attributeSets("all")
@@ -25642,8 +25642,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .policyId(testPolicyOciIdentityPolicy.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .policyId(testPolicyOciIdentityPolicy.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(policyAuthorization)
@@ -25689,8 +25689,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .policyId(testPolicyOciIdentityPolicy.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .policyId(testPolicyOciIdentityPolicy.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(policyAuthorization)
@@ -25736,8 +25736,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .policyId(testPolicyOciIdentityPolicy.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .policyId(testPolicyOciIdentityPolicy.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(policyAuthorization)
@@ -25783,8 +25783,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .policyId(testPolicyOciIdentityPolicy.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .policyId(testPolicyOciIdentityPolicy.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(policyAuthorization)
@@ -25830,8 +25830,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .policyId(testPolicyOciIdentityPolicy.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .policyId(testPolicyOciIdentityPolicy.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(policyAuthorization)
@@ -25877,7 +25877,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceTypeSchemaAttributes = IdentityFunctions.getDomainsResourceTypeSchemaAttributes(GetDomainsResourceTypeSchemaAttributesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
      *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
      *             .attributeSets("all")
@@ -25926,7 +25926,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceTypeSchemaAttributes = IdentityFunctions.getDomainsResourceTypeSchemaAttributes(GetDomainsResourceTypeSchemaAttributesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
      *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
      *             .attributeSets("all")
@@ -25975,7 +25975,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceTypeSchemaAttributes = IdentityFunctions.getDomainsResourceTypeSchemaAttributes(GetDomainsResourceTypeSchemaAttributesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
      *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
      *             .attributeSets("all")
@@ -26024,7 +26024,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceTypeSchemaAttributes = IdentityFunctions.getDomainsResourceTypeSchemaAttributes(GetDomainsResourceTypeSchemaAttributesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
      *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
      *             .attributeSets("all")
@@ -26073,7 +26073,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceTypeSchemaAttributes = IdentityFunctions.getDomainsResourceTypeSchemaAttributes(GetDomainsResourceTypeSchemaAttributesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
      *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
      *             .attributeSets("all")
@@ -26122,8 +26122,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .ruleId(testRuleOciEventsRule.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .ruleId(testRuleOciEventsRule.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(ruleAuthorization)
@@ -26169,8 +26169,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .ruleId(testRuleOciEventsRule.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .ruleId(testRuleOciEventsRule.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(ruleAuthorization)
@@ -26216,8 +26216,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .ruleId(testRuleOciEventsRule.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .ruleId(testRuleOciEventsRule.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(ruleAuthorization)
@@ -26263,8 +26263,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .ruleId(testRuleOciEventsRule.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .ruleId(testRuleOciEventsRule.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(ruleAuthorization)
@@ -26310,8 +26310,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .ruleId(testRuleOciEventsRule.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .ruleId(testRuleOciEventsRule.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(ruleAuthorization)
@@ -26357,7 +26357,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .ruleCount(ruleRuleCount)
      *             .ruleFilter(ruleRuleFilter)
      *             .attributeSets("all")
@@ -26406,7 +26406,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .ruleCount(ruleRuleCount)
      *             .ruleFilter(ruleRuleFilter)
      *             .attributeSets("all")
@@ -26455,7 +26455,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .ruleCount(ruleRuleCount)
      *             .ruleFilter(ruleRuleFilter)
      *             .attributeSets("all")
@@ -26504,7 +26504,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .ruleCount(ruleRuleCount)
      *             .ruleFilter(ruleRuleFilter)
      *             .attributeSets("all")
@@ -26553,7 +26553,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .ruleCount(ruleRuleCount)
      *             .ruleFilter(ruleRuleFilter)
      *             .attributeSets("all")
@@ -26602,8 +26602,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
@@ -26649,8 +26649,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
@@ -26696,8 +26696,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
@@ -26743,8 +26743,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
@@ -26790,8 +26790,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
@@ -26837,8 +26837,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
@@ -26884,8 +26884,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
@@ -26931,8 +26931,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
@@ -26978,8 +26978,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
@@ -27025,8 +27025,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
@@ -27072,7 +27072,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
@@ -27118,7 +27118,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
@@ -27164,7 +27164,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
@@ -27210,7 +27210,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
@@ -27256,7 +27256,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
@@ -27302,7 +27302,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestions = IdentityFunctions.getDomainsSecurityQuestions(GetDomainsSecurityQuestionsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
      *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
      *             .attributeSets("all")
@@ -27351,7 +27351,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestions = IdentityFunctions.getDomainsSecurityQuestions(GetDomainsSecurityQuestionsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
      *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
      *             .attributeSets("all")
@@ -27400,7 +27400,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestions = IdentityFunctions.getDomainsSecurityQuestions(GetDomainsSecurityQuestionsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
      *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
      *             .attributeSets("all")
@@ -27449,7 +27449,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestions = IdentityFunctions.getDomainsSecurityQuestions(GetDomainsSecurityQuestionsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
      *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
      *             .attributeSets("all")
@@ -27498,7 +27498,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestions = IdentityFunctions.getDomainsSecurityQuestions(GetDomainsSecurityQuestionsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
      *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
      *             .attributeSets("all")
@@ -27547,8 +27547,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .selfRegistrationProfileId(testProfile.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .selfRegistrationProfileId(testProfile.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
@@ -27594,8 +27594,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .selfRegistrationProfileId(testProfile.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .selfRegistrationProfileId(testProfile.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
@@ -27641,8 +27641,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .selfRegistrationProfileId(testProfile.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .selfRegistrationProfileId(testProfile.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
@@ -27688,8 +27688,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .selfRegistrationProfileId(testProfile.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .selfRegistrationProfileId(testProfile.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
@@ -27735,8 +27735,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .selfRegistrationProfileId(testProfile.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .selfRegistrationProfileId(testProfile.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
@@ -27782,7 +27782,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
      *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
      *             .attributeSets("all")
@@ -27831,7 +27831,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
      *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
      *             .attributeSets("all")
@@ -27880,7 +27880,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
      *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
      *             .attributeSets("all")
@@ -27929,7 +27929,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
      *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
      *             .attributeSets("all")
@@ -27978,7 +27978,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
      *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
      *             .attributeSets("all")
@@ -28027,7 +28027,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .settingId("Settings")
      *             .attributeSets("all")
      *             .attributes("")
@@ -28074,7 +28074,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .settingId("Settings")
      *             .attributeSets("all")
      *             .attributes("")
@@ -28121,7 +28121,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .settingId("Settings")
      *             .attributeSets("all")
      *             .attributes("")
@@ -28168,7 +28168,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .settingId("Settings")
      *             .attributeSets("all")
      *             .attributes("")
@@ -28215,7 +28215,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .settingId("Settings")
      *             .attributeSets("all")
      *             .attributes("")
@@ -28262,7 +28262,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(settingAuthorization)
@@ -28308,7 +28308,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(settingAuthorization)
@@ -28354,7 +28354,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(settingAuthorization)
@@ -28400,7 +28400,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(settingAuthorization)
@@ -28446,7 +28446,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(settingAuthorization)
@@ -28492,8 +28492,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredential = IdentityFunctions.getDomainsSmtpCredential(GetDomainsSmtpCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
@@ -28539,8 +28539,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredential = IdentityFunctions.getDomainsSmtpCredential(GetDomainsSmtpCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
@@ -28586,8 +28586,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredential = IdentityFunctions.getDomainsSmtpCredential(GetDomainsSmtpCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
@@ -28633,8 +28633,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredential = IdentityFunctions.getDomainsSmtpCredential(GetDomainsSmtpCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
@@ -28680,8 +28680,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredential = IdentityFunctions.getDomainsSmtpCredential(GetDomainsSmtpCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
@@ -28727,7 +28727,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getDomainsSmtpCredentials(GetDomainsSmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
      *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
@@ -28776,7 +28776,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getDomainsSmtpCredentials(GetDomainsSmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
      *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
@@ -28825,7 +28825,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getDomainsSmtpCredentials(GetDomainsSmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
      *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
@@ -28874,7 +28874,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getDomainsSmtpCredentials(GetDomainsSmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
      *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
@@ -28923,7 +28923,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getDomainsSmtpCredentials(GetDomainsSmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
      *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
@@ -28972,8 +28972,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSocialIdentityProvider = IdentityFunctions.getDomainsSocialIdentityProvider(GetDomainsSocialIdentityProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .socialIdentityProviderId(testIdentityProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .socialIdentityProviderId(testIdentityProvider.get("id"))
      *             .authorization(socialIdentityProviderAuthorization)
      *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
      *             .build());
@@ -29017,8 +29017,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSocialIdentityProvider = IdentityFunctions.getDomainsSocialIdentityProvider(GetDomainsSocialIdentityProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .socialIdentityProviderId(testIdentityProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .socialIdentityProviderId(testIdentityProvider.get("id"))
      *             .authorization(socialIdentityProviderAuthorization)
      *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
      *             .build());
@@ -29062,8 +29062,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSocialIdentityProvider = IdentityFunctions.getDomainsSocialIdentityProvider(GetDomainsSocialIdentityProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .socialIdentityProviderId(testIdentityProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .socialIdentityProviderId(testIdentityProvider.get("id"))
      *             .authorization(socialIdentityProviderAuthorization)
      *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
      *             .build());
@@ -29107,8 +29107,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSocialIdentityProvider = IdentityFunctions.getDomainsSocialIdentityProvider(GetDomainsSocialIdentityProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .socialIdentityProviderId(testIdentityProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .socialIdentityProviderId(testIdentityProvider.get("id"))
      *             .authorization(socialIdentityProviderAuthorization)
      *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
      *             .build());
@@ -29152,8 +29152,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSocialIdentityProvider = IdentityFunctions.getDomainsSocialIdentityProvider(GetDomainsSocialIdentityProviderArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .socialIdentityProviderId(testIdentityProvider.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .socialIdentityProviderId(testIdentityProvider.get("id"))
      *             .authorization(socialIdentityProviderAuthorization)
      *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
      *             .build());
@@ -29197,7 +29197,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSocialIdentityProviders = IdentityFunctions.getDomainsSocialIdentityProviders(GetDomainsSocialIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .socialIdentityProviderCount(socialIdentityProviderSocialIdentityProviderCount)
      *             .socialIdentityProviderFilter(socialIdentityProviderSocialIdentityProviderFilter)
      *             .authorization(socialIdentityProviderAuthorization)
@@ -29244,7 +29244,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSocialIdentityProviders = IdentityFunctions.getDomainsSocialIdentityProviders(GetDomainsSocialIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .socialIdentityProviderCount(socialIdentityProviderSocialIdentityProviderCount)
      *             .socialIdentityProviderFilter(socialIdentityProviderSocialIdentityProviderFilter)
      *             .authorization(socialIdentityProviderAuthorization)
@@ -29291,7 +29291,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSocialIdentityProviders = IdentityFunctions.getDomainsSocialIdentityProviders(GetDomainsSocialIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .socialIdentityProviderCount(socialIdentityProviderSocialIdentityProviderCount)
      *             .socialIdentityProviderFilter(socialIdentityProviderSocialIdentityProviderFilter)
      *             .authorization(socialIdentityProviderAuthorization)
@@ -29338,7 +29338,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSocialIdentityProviders = IdentityFunctions.getDomainsSocialIdentityProviders(GetDomainsSocialIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .socialIdentityProviderCount(socialIdentityProviderSocialIdentityProviderCount)
      *             .socialIdentityProviderFilter(socialIdentityProviderSocialIdentityProviderFilter)
      *             .authorization(socialIdentityProviderAuthorization)
@@ -29385,7 +29385,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSocialIdentityProviders = IdentityFunctions.getDomainsSocialIdentityProviders(GetDomainsSocialIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .socialIdentityProviderCount(socialIdentityProviderSocialIdentityProviderCount)
      *             .socialIdentityProviderFilter(socialIdentityProviderSocialIdentityProviderFilter)
      *             .authorization(socialIdentityProviderAuthorization)
@@ -29432,8 +29432,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getDomainsUser(GetDomainsUserArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userId(testUserOciIdentityUser.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userId(testUserOciIdentityUser.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(userAuthorization)
@@ -29479,8 +29479,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getDomainsUser(GetDomainsUserArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userId(testUserOciIdentityUser.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userId(testUserOciIdentityUser.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(userAuthorization)
@@ -29526,8 +29526,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getDomainsUser(GetDomainsUserArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userId(testUserOciIdentityUser.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userId(testUserOciIdentityUser.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(userAuthorization)
@@ -29573,8 +29573,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getDomainsUser(GetDomainsUserArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userId(testUserOciIdentityUser.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userId(testUserOciIdentityUser.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(userAuthorization)
@@ -29620,8 +29620,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getDomainsUser(GetDomainsUserArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userId(testUserOciIdentityUser.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userId(testUserOciIdentityUser.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(userAuthorization)
@@ -29667,8 +29667,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
@@ -29714,8 +29714,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
@@ -29761,8 +29761,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
@@ -29808,8 +29808,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
@@ -29855,8 +29855,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.get("id"))
      *             .attributeSets("all")
      *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
@@ -29957,8 +29957,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredential = IdentityFunctions.getDomainsUserDbCredential(GetDomainsUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userDbCredentialId(testDbCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userDbCredentialId(testDbCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
@@ -30004,8 +30004,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredential = IdentityFunctions.getDomainsUserDbCredential(GetDomainsUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userDbCredentialId(testDbCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userDbCredentialId(testDbCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
@@ -30051,8 +30051,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredential = IdentityFunctions.getDomainsUserDbCredential(GetDomainsUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userDbCredentialId(testDbCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userDbCredentialId(testDbCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
@@ -30098,8 +30098,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredential = IdentityFunctions.getDomainsUserDbCredential(GetDomainsUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userDbCredentialId(testDbCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userDbCredentialId(testDbCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
@@ -30145,8 +30145,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredential = IdentityFunctions.getDomainsUserDbCredential(GetDomainsUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
-     *             .userDbCredentialId(testDbCredential.id())
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userDbCredentialId(testDbCredential.get("id"))
      *             .attributeSets()
      *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
@@ -30192,7 +30192,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredentials = IdentityFunctions.getDomainsUserDbCredentials(GetDomainsUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
      *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
@@ -30241,7 +30241,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredentials = IdentityFunctions.getDomainsUserDbCredentials(GetDomainsUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
      *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
@@ -30290,7 +30290,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredentials = IdentityFunctions.getDomainsUserDbCredentials(GetDomainsUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
      *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
@@ -30339,7 +30339,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredentials = IdentityFunctions.getDomainsUserDbCredentials(GetDomainsUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
      *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
@@ -30388,7 +30388,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredentials = IdentityFunctions.getDomainsUserDbCredentials(GetDomainsUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
      *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
@@ -30437,7 +30437,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getDomainsUsers(GetDomainsUsersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .userCount(userUserCount)
      *             .userFilter(userUserFilter)
      *             .attributeSets()
@@ -30486,7 +30486,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getDomainsUsers(GetDomainsUsersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .userCount(userUserCount)
      *             .userFilter(userUserFilter)
      *             .attributeSets()
@@ -30535,7 +30535,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getDomainsUsers(GetDomainsUsersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .userCount(userUserCount)
      *             .userFilter(userUserFilter)
      *             .attributeSets()
@@ -30584,7 +30584,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getDomainsUsers(GetDomainsUsersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .userCount(userUserCount)
      *             .userFilter(userUserFilter)
      *             .attributeSets()
@@ -30633,7 +30633,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getDomainsUsers(GetDomainsUsersArgs.builder()
-     *             .idcsEndpoint(testDomain.url())
+     *             .idcsEndpoint(testDomain.get("url"))
      *             .userCount(userUserCount)
      *             .userFilter(userUserFilter)
      *             .attributeSets()
@@ -31141,7 +31141,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
-     *             .groupId(testGroupOciIdentityGroup.id())
+     *             .groupId(testGroupOciIdentityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -31187,7 +31187,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
-     *             .groupId(testGroupOciIdentityGroup.id())
+     *             .groupId(testGroupOciIdentityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -31233,7 +31233,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
-     *             .groupId(testGroupOciIdentityGroup.id())
+     *             .groupId(testGroupOciIdentityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -31279,7 +31279,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
-     *             .groupId(testGroupOciIdentityGroup.id())
+     *             .groupId(testGroupOciIdentityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -31325,7 +31325,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
-     *             .groupId(testGroupOciIdentityGroup.id())
+     *             .groupId(testGroupOciIdentityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -31601,7 +31601,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -31647,7 +31647,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -31693,7 +31693,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -31739,7 +31739,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -31785,7 +31785,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -31831,7 +31831,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -31877,7 +31877,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -31923,7 +31923,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -31969,7 +31969,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -32015,7 +32015,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -32061,7 +32061,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -32107,7 +32107,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -32153,7 +32153,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -32199,7 +32199,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -32245,7 +32245,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
-     *             .iamWorkRequestId(testIamWorkRequest.id())
+     *             .iamWorkRequestId(testIamWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -32519,7 +32519,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .name(identityProviderGroupName)
      *             .state(identityProviderGroupState)
      *             .build());
@@ -32565,7 +32565,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .name(identityProviderGroupName)
      *             .state(identityProviderGroupState)
      *             .build());
@@ -32611,7 +32611,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .name(identityProviderGroupName)
      *             .state(identityProviderGroupState)
      *             .build());
@@ -32657,7 +32657,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .name(identityProviderGroupName)
      *             .state(identityProviderGroupState)
      *             .build());
@@ -32703,7 +32703,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .name(identityProviderGroupName)
      *             .state(identityProviderGroupState)
      *             .build());
@@ -32999,7 +32999,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .build());
      * 
      *     }
@@ -33043,7 +33043,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .build());
      * 
      *     }
@@ -33087,7 +33087,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .build());
      * 
      *     }
@@ -33131,7 +33131,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .build());
      * 
      *     }
@@ -33175,7 +33175,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .build());
      * 
      *     }
@@ -33217,7 +33217,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
-     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.id())
+     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.get("id"))
      *             .build());
      * 
      *     }
@@ -33259,7 +33259,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
-     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.id())
+     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.get("id"))
      *             .build());
      * 
      *     }
@@ -33301,7 +33301,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
-     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.id())
+     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.get("id"))
      *             .build());
      * 
      *     }
@@ -33343,7 +33343,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
-     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.id())
+     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.get("id"))
      *             .build());
      * 
      *     }
@@ -33385,7 +33385,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
-     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.id())
+     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.get("id"))
      *             .build());
      * 
      *     }
@@ -33897,7 +33897,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -33939,7 +33939,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -33981,7 +33981,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -34023,7 +34023,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -34065,7 +34065,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -34395,7 +34395,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -34438,7 +34438,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -34481,7 +34481,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -34524,7 +34524,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -34567,7 +34567,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -34609,8 +34609,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
-     *             .tagName(testTagOciIdentityTag.name())
-     *             .tagNamespaceId(testTagNamespace.id())
+     *             .tagName(testTagOciIdentityTag.get("name"))
+     *             .tagNamespaceId(testTagNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -34652,8 +34652,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
-     *             .tagName(testTagOciIdentityTag.name())
-     *             .tagNamespaceId(testTagNamespace.id())
+     *             .tagName(testTagOciIdentityTag.get("name"))
+     *             .tagNamespaceId(testTagNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -34695,8 +34695,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
-     *             .tagName(testTagOciIdentityTag.name())
-     *             .tagNamespaceId(testTagNamespace.id())
+     *             .tagName(testTagOciIdentityTag.get("name"))
+     *             .tagNamespaceId(testTagNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -34738,8 +34738,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
-     *             .tagName(testTagOciIdentityTag.name())
-     *             .tagNamespaceId(testTagNamespace.id())
+     *             .tagName(testTagOciIdentityTag.get("name"))
+     *             .tagNamespaceId(testTagNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -34781,8 +34781,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
-     *             .tagName(testTagOciIdentityTag.name())
-     *             .tagNamespaceId(testTagNamespace.id())
+     *             .tagName(testTagOciIdentityTag.get("name"))
+     *             .tagNamespaceId(testTagNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -34824,7 +34824,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
-     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.id())
+     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.get("id"))
      *             .build());
      * 
      *     }
@@ -34866,7 +34866,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
-     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.id())
+     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.get("id"))
      *             .build());
      * 
      *     }
@@ -34908,7 +34908,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
-     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.id())
+     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.get("id"))
      *             .build());
      * 
      *     }
@@ -34950,7 +34950,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
-     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.id())
+     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.get("id"))
      *             .build());
      * 
      *     }
@@ -34992,7 +34992,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
-     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.id())
+     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.get("id"))
      *             .build());
      * 
      *     }
@@ -35037,7 +35037,7 @@ public final class IdentityFunctions {
      *             .compartmentId(compartmentId)
      *             .id(tagDefaultId)
      *             .state(tagDefaultState)
-     *             .tagDefinitionId(testTagDefinition.id())
+     *             .tagDefinitionId(testTagDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -35082,7 +35082,7 @@ public final class IdentityFunctions {
      *             .compartmentId(compartmentId)
      *             .id(tagDefaultId)
      *             .state(tagDefaultState)
-     *             .tagDefinitionId(testTagDefinition.id())
+     *             .tagDefinitionId(testTagDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -35127,7 +35127,7 @@ public final class IdentityFunctions {
      *             .compartmentId(compartmentId)
      *             .id(tagDefaultId)
      *             .state(tagDefaultState)
-     *             .tagDefinitionId(testTagDefinition.id())
+     *             .tagDefinitionId(testTagDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -35172,7 +35172,7 @@ public final class IdentityFunctions {
      *             .compartmentId(compartmentId)
      *             .id(tagDefaultId)
      *             .state(tagDefaultState)
-     *             .tagDefinitionId(testTagDefinition.id())
+     *             .tagDefinitionId(testTagDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -35217,7 +35217,7 @@ public final class IdentityFunctions {
      *             .compartmentId(compartmentId)
      *             .id(tagDefaultId)
      *             .state(tagDefaultState)
-     *             .tagDefinitionId(testTagDefinition.id())
+     *             .tagDefinitionId(testTagDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -35262,7 +35262,7 @@ public final class IdentityFunctions {
      *             .compartmentId(compartmentId)
      *             .id(tagDefaultId)
      *             .state(tagDefaultState)
-     *             .tagDefinitionId(testTagDefinition.id())
+     *             .tagDefinitionId(testTagDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -35307,7 +35307,7 @@ public final class IdentityFunctions {
      *             .compartmentId(compartmentId)
      *             .id(tagDefaultId)
      *             .state(tagDefaultState)
-     *             .tagDefinitionId(testTagDefinition.id())
+     *             .tagDefinitionId(testTagDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -35570,7 +35570,7 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .standardTagNamespaceName(testTagNamespace.name())
+     *             .standardTagNamespaceName(testTagNamespace.get("name"))
      *             .build());
      * 
      *     }
@@ -35613,7 +35613,7 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .standardTagNamespaceName(testTagNamespace.name())
+     *             .standardTagNamespaceName(testTagNamespace.get("name"))
      *             .build());
      * 
      *     }
@@ -35656,7 +35656,7 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .standardTagNamespaceName(testTagNamespace.name())
+     *             .standardTagNamespaceName(testTagNamespace.get("name"))
      *             .build());
      * 
      *     }
@@ -35699,7 +35699,7 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .standardTagNamespaceName(testTagNamespace.name())
+     *             .standardTagNamespaceName(testTagNamespace.get("name"))
      *             .build());
      * 
      *     }
@@ -35742,7 +35742,7 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .standardTagNamespaceName(testTagNamespace.name())
+     *             .standardTagNamespaceName(testTagNamespace.get("name"))
      *             .build());
      * 
      *     }
@@ -35994,7 +35994,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
-     *             .tagNamespaceId(testTagNamespace.id())
+     *             .tagNamespaceId(testTagNamespace.get("id"))
      *             .state(tagState)
      *             .build());
      * 
@@ -36037,7 +36037,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
-     *             .tagNamespaceId(testTagNamespace.id())
+     *             .tagNamespaceId(testTagNamespace.get("id"))
      *             .state(tagState)
      *             .build());
      * 
@@ -36080,7 +36080,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
-     *             .tagNamespaceId(testTagNamespace.id())
+     *             .tagNamespaceId(testTagNamespace.get("id"))
      *             .state(tagState)
      *             .build());
      * 
@@ -36123,7 +36123,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
-     *             .tagNamespaceId(testTagNamespace.id())
+     *             .tagNamespaceId(testTagNamespace.get("id"))
      *             .state(tagState)
      *             .build());
      * 
@@ -36166,7 +36166,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
-     *             .tagNamespaceId(testTagNamespace.id())
+     *             .tagNamespaceId(testTagNamespace.get("id"))
      *             .state(tagState)
      *             .build());
      * 
@@ -36420,7 +36420,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36463,7 +36463,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36506,7 +36506,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36549,7 +36549,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36592,7 +36592,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
-     *             .userId(testUser.id())
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36634,7 +36634,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
-     *             .userId(testUserOciIdentityUser.id())
+     *             .userId(testUserOciIdentityUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36676,7 +36676,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
-     *             .userId(testUserOciIdentityUser.id())
+     *             .userId(testUserOciIdentityUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36718,7 +36718,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
-     *             .userId(testUserOciIdentityUser.id())
+     *             .userId(testUserOciIdentityUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36760,7 +36760,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
-     *             .userId(testUserOciIdentityUser.id())
+     *             .userId(testUserOciIdentityUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36802,7 +36802,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
-     *             .userId(testUserOciIdentityUser.id())
+     *             .userId(testUserOciIdentityUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36854,8 +36854,8 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
      *             .compartmentId(tenancyOcid)
-     *             .groupId(testGroup.id())
-     *             .userId(testUser.id())
+     *             .groupId(testGroup.get("id"))
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36907,8 +36907,8 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
      *             .compartmentId(tenancyOcid)
-     *             .groupId(testGroup.id())
-     *             .userId(testUser.id())
+     *             .groupId(testGroup.get("id"))
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -36960,8 +36960,8 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
      *             .compartmentId(tenancyOcid)
-     *             .groupId(testGroup.id())
-     *             .userId(testUser.id())
+     *             .groupId(testGroup.get("id"))
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -37013,8 +37013,8 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
      *             .compartmentId(tenancyOcid)
-     *             .groupId(testGroup.id())
-     *             .userId(testUser.id())
+     *             .groupId(testGroup.get("id"))
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -37066,8 +37066,8 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
      *             .compartmentId(tenancyOcid)
-     *             .groupId(testGroup.id())
-     *             .userId(testUser.id())
+     *             .groupId(testGroup.get("id"))
+     *             .userId(testUser.get("id"))
      *             .build());
      * 
      *     }
@@ -37113,7 +37113,7 @@ public final class IdentityFunctions {
      *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .externalIdentifier(userExternalIdentifier)
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .name(userName)
      *             .state(userState)
      *             .build());
@@ -37161,7 +37161,7 @@ public final class IdentityFunctions {
      *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .externalIdentifier(userExternalIdentifier)
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .name(userName)
      *             .state(userState)
      *             .build());
@@ -37209,7 +37209,7 @@ public final class IdentityFunctions {
      *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .externalIdentifier(userExternalIdentifier)
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .name(userName)
      *             .state(userState)
      *             .build());
@@ -37257,7 +37257,7 @@ public final class IdentityFunctions {
      *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .externalIdentifier(userExternalIdentifier)
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .name(userName)
      *             .state(userState)
      *             .build());
@@ -37305,7 +37305,7 @@ public final class IdentityFunctions {
      *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .externalIdentifier(userExternalIdentifier)
-     *             .identityProviderId(testIdentityProvider.id())
+     *             .identityProviderId(testIdentityProvider.get("id"))
      *             .name(userName)
      *             .state(userState)
      *             .build());

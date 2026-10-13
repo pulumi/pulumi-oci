@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testMySupportAccounts = oci.identity.getDomainsMySupportAccounts({
  *     idcsEndpoint: testDomain.url,
- *     mySupportAccountCount: Number(mySupportAccountMySupportAccountCount),
+ *     mySupportAccountCount: mySupportAccountMySupportAccountCount,
  *     mySupportAccountFilter: mySupportAccountMySupportAccountFilter,
  *     authorization: mySupportAccountAuthorization,
  *     resourceTypeSchemaVersion: mySupportAccountResourceTypeSchemaVersion,
- *     startIndex: Number(mySupportAccountStartIndex),
+ *     startIndex: mySupportAccountStartIndex,
  * });
  * ```
  */
@@ -116,11 +116,11 @@ export interface GetDomainsMySupportAccountsResult {
  *
  * const testMySupportAccounts = oci.identity.getDomainsMySupportAccounts({
  *     idcsEndpoint: testDomain.url,
- *     mySupportAccountCount: Number(mySupportAccountMySupportAccountCount),
+ *     mySupportAccountCount: mySupportAccountMySupportAccountCount,
  *     mySupportAccountFilter: mySupportAccountMySupportAccountFilter,
  *     authorization: mySupportAccountAuthorization,
  *     resourceTypeSchemaVersion: mySupportAccountResourceTypeSchemaVersion,
- *     startIndex: Number(mySupportAccountStartIndex),
+ *     startIndex: mySupportAccountStartIndex,
  * });
  * ```
  */

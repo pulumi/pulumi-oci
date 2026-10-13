@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDynamicSetRebootManagement = new DynamicSetRebootManagement("testDynamicSetRebootManagement", DynamicSetRebootManagementArgs.builder()
- *             .dynamicSetId(testDynamicSet.id())
+ *             .dynamicSetId(testDynamicSet.get("id"))
  *             .managedInstances(dynamicSetRebootManagementManagedInstances)
  *             .rebootTimeoutInMins(dynamicSetRebootManagementRebootTimeoutInMins)
  *             .workRequestDetails(DynamicSetRebootManagementWorkRequestDetailsArgs.builder()

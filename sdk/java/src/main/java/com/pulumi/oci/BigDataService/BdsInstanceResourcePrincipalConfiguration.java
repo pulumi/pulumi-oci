@@ -49,10 +49,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceResourcePrincipalConfiguration = new BdsInstanceResourcePrincipalConfiguration("testBdsInstanceResourcePrincipalConfiguration", BdsInstanceResourcePrincipalConfigurationArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
  *             .displayName(bdsInstanceResourcePrincipalConfigurationDisplayName)
  *             .clusterAdminPassword(bdsInstanceResourcePrincipalConfigurationClusterAdminPassword)
- *             .secretId(testSecret.id())
+ *             .secretId(testSecret.get("id"))
  *             .sessionTokenLifeSpanDurationInHours(bdsInstanceResourcePrincipalConfigurationSessionTokenLifeSpanDurationInHours)
  *             .build());
  * 

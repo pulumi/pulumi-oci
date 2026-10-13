@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     networkSecurityGroupIds: analyticsInstancePrivateAccessChannelNetworkSecurityGroupIds,
  *     privateSourceScanHosts: [{
  *         scanHostname: analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanHostname,
- *         scanPort: Number(analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanPort),
+ *         scanPort: analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanPort,
  *         description: analyticsInstancePrivateAccessChannelPrivateSourceScanHostsDescription,
  *     }],
  * });

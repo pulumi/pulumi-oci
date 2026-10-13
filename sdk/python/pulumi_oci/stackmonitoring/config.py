@@ -602,7 +602,7 @@ class Config(pulumi.CustomResource):
         test_config = oci.stackmonitoring.Config("test_config",
             compartment_id=compartment_id,
             config_type=config_config_type,
-            is_enabled=config_is_enabled == "true",
+            is_enabled=config_is_enabled,
             resource_type=config_resource_type,
             license=config_license,
             defined_tags={
@@ -672,7 +672,7 @@ class Config(pulumi.CustomResource):
         test_config = oci.stackmonitoring.Config("test_config",
             compartment_id=compartment_id,
             config_type=config_config_type,
-            is_enabled=config_is_enabled == "true",
+            is_enabled=config_is_enabled,
             resource_type=config_resource_type,
             license=config_license,
             defined_tags={

@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * const testJavaFamilies = oci.jms.getJavaFamilies({
  *     displayName: javaFamilyDisplayName,
  *     familyVersion: javaFamilyFamilyVersion,
- *     isSupportedVersion: javaFamilyIsSupportedVersion === "true",
+ *     isSupportedVersion: javaFamilyIsSupportedVersion,
  * });
  * ```
  */
@@ -96,7 +96,7 @@ export interface GetJavaFamiliesResult {
  * const testJavaFamilies = oci.jms.getJavaFamilies({
  *     displayName: javaFamilyDisplayName,
  *     familyVersion: javaFamilyFamilyVersion,
- *     isSupportedVersion: javaFamilyIsSupportedVersion === "true",
+ *     isSupportedVersion: javaFamilyIsSupportedVersion,
  * });
  * ```
  */

@@ -101,7 +101,7 @@ import javax.annotation.Nullable;
  *                 .preference(infrastructureMaintenanceWindowPreference)
  *                 .weeksOfMonths(infrastructureMaintenanceWindowWeeksOfMonth)
  *                 .build())
- *             .vlanId(testVlan.id())
+ *             .vlanId(testVlan.get("id"))
  *             .build());
  * 
  *     }

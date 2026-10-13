@@ -24,16 +24,16 @@ import * as utilities from "../utilities";
  *     apmDomainId: testApmDomain.id,
  *     displayName: monitorDisplayName,
  *     monitorType: monitorMonitorType,
- *     repeatIntervalInSeconds: Number(monitorRepeatIntervalInSeconds),
+ *     repeatIntervalInSeconds: monitorRepeatIntervalInSeconds,
  *     vantagePoints: [{
  *         name: monitorVantagePointsName,
  *         displayName: monitorVantagePointsParamDisplayName,
  *     }],
  *     availabilityConfiguration: {
- *         maxAllowedFailuresPerInterval: Number(monitorAvailabilityConfigurationMaxAllowedFailuresPerInterval),
- *         minAllowedRunsPerInterval: Number(monitorAvailabilityConfigurationMinAllowedRunsPerInterval),
+ *         maxAllowedFailuresPerInterval: monitorAvailabilityConfigurationMaxAllowedFailuresPerInterval,
+ *         minAllowedRunsPerInterval: monitorAvailabilityConfigurationMinAllowedRunsPerInterval,
  *     },
- *     batchIntervalInSeconds: Number(monitorBatchIntervalInSeconds),
+ *     batchIntervalInSeconds: monitorBatchIntervalInSeconds,
  *     configuration: {
  *         clientCertificateDetails: {
  *             clientCertificate: {
@@ -63,10 +63,10 @@ import * as utilities from "../utilities";
  *             serviceName: testService.name,
  *         },
  *         dnsConfiguration: {
- *             isOverrideDns: monitorConfigurationDnsConfigurationIsOverrideDns === "true",
+ *             isOverrideDns: monitorConfigurationDnsConfigurationIsOverrideDns,
  *             overrideDnsIp: monitorConfigurationDnsConfigurationOverrideDnsIp,
  *         },
- *         downloadSizeLimitInBytes: Number(monitorConfigurationDownloadSizeLimitInBytes),
+ *         downloadSizeLimitInBytes: monitorConfigurationDownloadSizeLimitInBytes,
  *         ftpBasicAuthenticationDetails: {
  *             password: {
  *                 password: monitorConfigurationFtpBasicAuthenticationDetailsPasswordPassword,
@@ -77,19 +77,19 @@ import * as utilities from "../utilities";
  *         },
  *         ftpProtocol: monitorConfigurationFtpProtocol,
  *         ftpRequestType: monitorConfigurationFtpRequestType,
- *         isActiveMode: monitorConfigurationIsActiveMode === "true",
- *         isCertificateValidationEnabled: monitorConfigurationIsCertificateValidationEnabled === "true",
- *         isDefaultSnapshotEnabled: monitorConfigurationIsDefaultSnapshotEnabled === "true",
- *         isFailureRetried: monitorConfigurationIsFailureRetried === "true",
- *         isQueryRecursive: monitorConfigurationIsQueryRecursive === "true",
- *         isRedirectionEnabled: monitorConfigurationIsRedirectionEnabled === "true",
+ *         isActiveMode: monitorConfigurationIsActiveMode,
+ *         isCertificateValidationEnabled: monitorConfigurationIsCertificateValidationEnabled,
+ *         isDefaultSnapshotEnabled: monitorConfigurationIsDefaultSnapshotEnabled,
+ *         isFailureRetried: monitorConfigurationIsFailureRetried,
+ *         isQueryRecursive: monitorConfigurationIsQueryRecursive,
+ *         isRedirectionEnabled: monitorConfigurationIsRedirectionEnabled,
  *         nameServer: monitorConfigurationNameServer,
  *         networkConfiguration: {
- *             numberOfHops: Number(monitorConfigurationNetworkConfigurationNumberOfHops),
+ *             numberOfHops: monitorConfigurationNetworkConfigurationNumberOfHops,
  *             probeMode: monitorConfigurationNetworkConfigurationProbeMode,
- *             probePerHop: Number(monitorConfigurationNetworkConfigurationProbePerHop),
+ *             probePerHop: monitorConfigurationNetworkConfigurationProbePerHop,
  *             protocol: monitorConfigurationNetworkConfigurationProtocol,
- *             transmissionRate: Number(monitorConfigurationNetworkConfigurationTransmissionRate),
+ *             transmissionRate: monitorConfigurationNetworkConfigurationTransmissionRate,
  *         },
  *         protocol: monitorConfigurationProtocol,
  *         query: monitorConfigurationQuery,
@@ -118,7 +118,7 @@ import * as utilities from "../utilities";
  *             paramName: monitorConfigurationRequestQueryParamsParamName,
  *             paramValue: monitorConfigurationRequestQueryParamsParamValue,
  *         }],
- *         uploadFileSizeInBytes: Number(monitorConfigurationUploadFileSizeInBytes),
+ *         uploadFileSizeInBytes: monitorConfigurationUploadFileSizeInBytes,
  *         verifyResponseCodes: monitorConfigurationVerifyResponseCodes,
  *         verifyResponseContent: monitorConfigurationVerifyResponseContent,
  *         verifyTexts: [{
@@ -131,9 +131,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isIpv6: monitorIsIpv6 === "true",
- *     isRunNow: monitorIsRunNow === "true",
- *     isRunOnce: monitorIsRunOnce === "true",
+ *     isIpv6: monitorIsIpv6,
+ *     isRunNow: monitorIsRunNow,
+ *     isRunOnce: monitorIsRunOnce,
  *     maintenanceWindowSchedule: {
  *         recurrenceType: monitorMaintenanceWindowScheduleRecurrenceType,
  *         scheduleType: "RECURRING",
@@ -148,7 +148,7 @@ import * as utilities from "../utilities";
  *     }],
  *     status: monitorStatus,
  *     target: monitorTarget,
- *     timeoutInSeconds: Number(monitorTimeoutInSeconds),
+ *     timeoutInSeconds: monitorTimeoutInSeconds,
  * });
  * ```
  *

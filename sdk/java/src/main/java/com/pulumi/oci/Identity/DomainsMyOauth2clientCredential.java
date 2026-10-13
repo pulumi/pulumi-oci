@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMyOauth2clientCredential = new DomainsMyOauth2clientCredential("testMyOauth2clientCredential", DomainsMyOauth2clientCredentialArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .name(myOauth2clientCredentialName)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential")
  *             .scopes(DomainsMyOauth2clientCredentialScopeArgs.builder()

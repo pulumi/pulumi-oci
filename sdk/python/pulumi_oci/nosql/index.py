@@ -305,7 +305,7 @@ class Index(pulumi.CustomResource):
             name=index_name,
             table_name_or_id=test_table_name_or["id"],
             compartment_id=compartment_id,
-            is_if_not_exists=index_is_if_not_exists == "true")
+            is_if_not_exists=index_is_if_not_exists)
         ```
 
         ## Import
@@ -357,7 +357,7 @@ class Index(pulumi.CustomResource):
             name=index_name,
             table_name_or_id=test_table_name_or["id"],
             compartment_id=compartment_id,
-            is_if_not_exists=index_is_if_not_exists == "true")
+            is_if_not_exists=index_is_if_not_exists)
         ```
 
         ## Import

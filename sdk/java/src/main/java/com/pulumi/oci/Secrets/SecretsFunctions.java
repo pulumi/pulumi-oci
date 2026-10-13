@@ -49,8 +49,8 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
-     *             .secretId(testSecret.id())
-     *             .secretVersionName(testSecretVersion.name())
+     *             .secretId(testSecret.get("id"))
+     *             .secretVersionName(testSecretVersion.get("name"))
      *             .stage(secretbundleStage)
      *             .versionNumber(secretbundleVersionNumber)
      *             .build());
@@ -95,8 +95,8 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
-     *             .secretId(testSecret.id())
-     *             .secretVersionName(testSecretVersion.name())
+     *             .secretId(testSecret.get("id"))
+     *             .secretVersionName(testSecretVersion.get("name"))
      *             .stage(secretbundleStage)
      *             .versionNumber(secretbundleVersionNumber)
      *             .build());
@@ -141,8 +141,8 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
-     *             .secretId(testSecret.id())
-     *             .secretVersionName(testSecretVersion.name())
+     *             .secretId(testSecret.get("id"))
+     *             .secretVersionName(testSecretVersion.get("name"))
      *             .stage(secretbundleStage)
      *             .versionNumber(secretbundleVersionNumber)
      *             .build());
@@ -187,8 +187,8 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
-     *             .secretId(testSecret.id())
-     *             .secretVersionName(testSecretVersion.name())
+     *             .secretId(testSecret.get("id"))
+     *             .secretVersionName(testSecretVersion.get("name"))
      *             .stage(secretbundleStage)
      *             .versionNumber(secretbundleVersionNumber)
      *             .build());
@@ -233,8 +233,8 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
-     *             .secretId(testSecret.id())
-     *             .secretVersionName(testSecretVersion.name())
+     *             .secretId(testSecret.get("id"))
+     *             .secretVersionName(testSecretVersion.get("name"))
      *             .stage(secretbundleStage)
      *             .versionNumber(secretbundleVersionNumber)
      *             .build());
@@ -278,7 +278,7 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
-     *             .secretId(testSecret.id())
+     *             .secretId(testSecret.get("id"))
      *             .build());
      * 
      *     }
@@ -320,7 +320,7 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
-     *             .secretId(testSecret.id())
+     *             .secretId(testSecret.get("id"))
      *             .build());
      * 
      *     }
@@ -362,7 +362,7 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
-     *             .secretId(testSecret.id())
+     *             .secretId(testSecret.get("id"))
      *             .build());
      * 
      *     }
@@ -404,7 +404,7 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
-     *             .secretId(testSecret.id())
+     *             .secretId(testSecret.get("id"))
      *             .build());
      * 
      *     }
@@ -446,7 +446,7 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
-     *             .secretId(testSecret.id())
+     *             .secretId(testSecret.get("id"))
      *             .build());
      * 
      *     }

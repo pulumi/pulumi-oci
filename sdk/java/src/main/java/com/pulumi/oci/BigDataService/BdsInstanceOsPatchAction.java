@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceOsPatchAction = new BdsInstanceOsPatchAction("testBdsInstanceOsPatchAction", BdsInstanceOsPatchActionArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
  *             .clusterAdminPassword(bdsInstanceOsPatchActionClusterAdminPassword)
  *             .osPatchVersion(bdsInstanceOsPatchActionOsPatchVersion)
  *             .isDryRun(isDryRun)

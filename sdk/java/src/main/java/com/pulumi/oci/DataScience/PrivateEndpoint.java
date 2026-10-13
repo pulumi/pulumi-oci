@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *         var testDataSciencePrivateEndpoint = new PrivateEndpoint("testDataSciencePrivateEndpoint", PrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dataScienceResourceType(dataSciencePrivateEndpointDataScienceResourceType)
- *             .subnetId(testSubnet.id())
+ *             .subnetId(testSubnet.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(dataSciencePrivateEndpointDescription)
  *             .displayName(dataSciencePrivateEndpointDisplayName)

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testManagementAgentInstallKeys = oci.managementagent.getManagementAgentInstallKeys({
  *     compartmentId: compartmentId,
  *     accessLevel: managementAgentInstallKeyAccessLevel,
- *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree,
  *     displayName: managementAgentInstallKeyDisplayName,
  *     state: managementAgentInstallKeyState,
  * });
@@ -107,7 +107,7 @@ export interface GetManagementAgentInstallKeysResult {
  * const testManagementAgentInstallKeys = oci.managementagent.getManagementAgentInstallKeys({
  *     compartmentId: compartmentId,
  *     accessLevel: managementAgentInstallKeyAccessLevel,
- *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree,
  *     displayName: managementAgentInstallKeyDisplayName,
  *     state: managementAgentInstallKeyState,
  * });

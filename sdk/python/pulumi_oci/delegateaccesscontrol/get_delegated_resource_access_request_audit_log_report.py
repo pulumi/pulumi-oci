@@ -130,7 +130,7 @@ def get_delegated_resource_access_request_audit_log_report(delegated_resource_ac
     import pulumi_oci as oci
 
     test_delegated_resource_access_request_audit_log_report = oci.delegateaccesscontrol.get_delegated_resource_access_request_audit_log_report(delegated_resource_access_request_id=test_delegated_resource_access_request["id"],
-        is_process_tree_enabled=delegated_resource_access_request_audit_log_report_is_process_tree_enabled == "true")
+        is_process_tree_enabled=delegated_resource_access_request_audit_log_report_is_process_tree_enabled)
     ```
 
 
@@ -166,7 +166,7 @@ def get_delegated_resource_access_request_audit_log_report_output(delegated_reso
     import pulumi_oci as oci
 
     test_delegated_resource_access_request_audit_log_report = oci.delegateaccesscontrol.get_delegated_resource_access_request_audit_log_report(delegated_resource_access_request_id=test_delegated_resource_access_request["id"],
-        is_process_tree_enabled=delegated_resource_access_request_audit_log_report_is_process_tree_enabled == "true")
+        is_process_tree_enabled=delegated_resource_access_request_audit_log_report_is_process_tree_enabled)
     ```
 
 

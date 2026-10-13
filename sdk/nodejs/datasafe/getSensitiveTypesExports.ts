@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * const testSensitiveTypesExports = oci.datasafe.getSensitiveTypesExports({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveTypesExportAccessLevel,
- *     compartmentIdInSubtree: sensitiveTypesExportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sensitiveTypesExportCompartmentIdInSubtree,
  *     displayName: sensitiveTypesExportDisplayName,
  *     sensitiveTypesExportId: testSensitiveTypesExport.id,
  *     state: sensitiveTypesExportState,
@@ -134,7 +134,7 @@ export interface GetSensitiveTypesExportsResult {
  * const testSensitiveTypesExports = oci.datasafe.getSensitiveTypesExports({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveTypesExportAccessLevel,
- *     compartmentIdInSubtree: sensitiveTypesExportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sensitiveTypesExportCompartmentIdInSubtree,
  *     displayName: sensitiveTypesExportDisplayName,
  *     sensitiveTypesExportId: testSensitiveTypesExport.id,
  *     state: sensitiveTypesExportState,

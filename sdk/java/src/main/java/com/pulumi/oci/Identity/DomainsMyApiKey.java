@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMyApiKey = new DomainsMyApiKey("testMyApiKey", DomainsMyApiKeyArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .key(myApiKeyKey)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:apikey")
  *             .authorization(myApiKeyAuthorization)

@@ -1479,7 +1479,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                 "value": cloud_gate_mapping_tags_value,
             }],
             upstream_server_group={
-                "ssl": cloud_gate_mapping_upstream_server_group_ssl == "true",
+                "ssl": cloud_gate_mapping_upstream_server_group_ssl,
                 "value": cloud_gate_mapping_upstream_server_group_value,
             })
         ```
@@ -1684,7 +1684,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                 "value": cloud_gate_mapping_tags_value,
             }],
             upstream_server_group={
-                "ssl": cloud_gate_mapping_upstream_server_group_ssl == "true",
+                "ssl": cloud_gate_mapping_upstream_server_group_ssl,
                 "value": cloud_gate_mapping_upstream_server_group_value,
             })
         ```

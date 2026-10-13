@@ -147,7 +147,7 @@ def get_user_assessment_password_expiry_date_analytics(access_level: Optional[_b
 
     test_user_assessment_password_expiry_date_analytics = oci.datasafe.get_user_assessment_password_expiry_date_analytics(user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_password_expiry_date_analytic_access_level,
-        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree,
         time_password_expiry_less_than=user_assessment_password_expiry_date_analytic_time_password_expiry_less_than,
         user_category=user_assessment_password_expiry_date_analytic_user_category)
     ```
@@ -208,7 +208,7 @@ def get_user_assessment_password_expiry_date_analytics_output(access_level: pulu
 
     test_user_assessment_password_expiry_date_analytics = oci.datasafe.get_user_assessment_password_expiry_date_analytics(user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_password_expiry_date_analytic_access_level,
-        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree,
         time_password_expiry_less_than=user_assessment_password_expiry_date_analytic_time_password_expiry_less_than,
         user_category=user_assessment_password_expiry_date_analytic_user_category)
     ```

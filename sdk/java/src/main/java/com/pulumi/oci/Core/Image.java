@@ -77,7 +77,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testImage = new Image("testImage", ImageArgs.builder()
  *             .compartmentId(compartmentId)
- *             .instanceId(testInstance.id())
+ *             .instanceId(testInstance.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(imageDisplayName)
  *             .launchMode(imageLaunchMode)

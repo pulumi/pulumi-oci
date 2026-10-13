@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testManagedEntityCounts = oci.fleetappsmanagement.getManagedEntityCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -77,7 +77,7 @@ export interface GetManagedEntityCountsResult {
  *
  * const testManagedEntityCounts = oci.fleetappsmanagement.getManagedEntityCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree,
  * });
  * ```
  */

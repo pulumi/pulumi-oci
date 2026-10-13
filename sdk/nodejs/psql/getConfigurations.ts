@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *     configurationId: testConfiguration.id,
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
- *     instanceMemorySizeInGbs: Number(configurationInstanceMemorySizeInGbs),
- *     instanceOcpuCount: Number(configurationInstanceOcpuCount),
+ *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
+ *     instanceOcpuCount: configurationInstanceOcpuCount,
  *     shape: configurationShape,
  *     state: configurationState,
  * });
@@ -154,8 +154,8 @@ export interface GetConfigurationsResult {
  *     configurationId: testConfiguration.id,
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
- *     instanceMemorySizeInGbs: Number(configurationInstanceMemorySizeInGbs),
- *     instanceOcpuCount: Number(configurationInstanceOcpuCount),
+ *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
+ *     instanceOcpuCount: configurationInstanceOcpuCount,
  *     shape: configurationShape,
  *     state: configurationState,
  * });

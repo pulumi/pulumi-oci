@@ -26,17 +26,17 @@ import * as utilities from "../utilities";
  *     name: workspaceFolderName,
  *     registryMetadata: {
  *         aggregatorKey: workspaceFolderRegistryMetadataAggregatorKey,
- *         isFavorite: workspaceFolderRegistryMetadataIsFavorite === "true",
+ *         isFavorite: workspaceFolderRegistryMetadataIsFavorite,
  *         key: workspaceFolderRegistryMetadataKey,
  *         labels: workspaceFolderRegistryMetadataLabels,
- *         registryVersion: Number(workspaceFolderRegistryMetadataRegistryVersion),
+ *         registryVersion: workspaceFolderRegistryMetadataRegistryVersion,
  *     },
  *     workspaceId: testWorkspace.id,
  *     categoryName: testCategory.name,
  *     description: workspaceFolderDescription,
  *     key: workspaceFolderKey,
  *     modelVersion: workspaceFolderModelVersion,
- *     objectStatus: Number(workspaceFolderObjectStatus),
+ *     objectStatus: workspaceFolderObjectStatus,
  * });
  * ```
  *

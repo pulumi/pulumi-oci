@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSensitiveDataModels = oci.datasafe.getSensitiveDataModels({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveDataModelAccessLevel,
- *     compartmentIdInSubtree: sensitiveDataModelCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sensitiveDataModelCompartmentIdInSubtree,
  *     displayName: sensitiveDataModelDisplayName,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     state: sensitiveDataModelState,
@@ -142,7 +142,7 @@ export interface GetSensitiveDataModelsResult {
  * const testSensitiveDataModels = oci.datasafe.getSensitiveDataModels({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveDataModelAccessLevel,
- *     compartmentIdInSubtree: sensitiveDataModelCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sensitiveDataModelCompartmentIdInSubtree,
  *     displayName: sensitiveDataModelDisplayName,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     state: sensitiveDataModelState,

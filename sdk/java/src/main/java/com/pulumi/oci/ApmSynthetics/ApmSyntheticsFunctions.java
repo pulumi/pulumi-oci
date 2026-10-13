@@ -81,8 +81,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.get("id"))
      *             .build());
      * 
      *     }
@@ -124,8 +124,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.get("id"))
      *             .build());
      * 
      *     }
@@ -167,8 +167,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.get("id"))
      *             .build());
      * 
      *     }
@@ -210,8 +210,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.get("id"))
      *             .build());
      * 
      *     }
@@ -253,8 +253,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.get("id"))
      *             .build());
      * 
      *     }
@@ -296,7 +296,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(dedicatedVantagePointDisplayName)
      *             .name(dedicatedVantagePointName)
      *             .status(dedicatedVantagePointStatus)
@@ -341,7 +341,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(dedicatedVantagePointDisplayName)
      *             .name(dedicatedVantagePointName)
      *             .status(dedicatedVantagePointStatus)
@@ -386,7 +386,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(dedicatedVantagePointDisplayName)
      *             .name(dedicatedVantagePointName)
      *             .status(dedicatedVantagePointStatus)
@@ -431,7 +431,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(dedicatedVantagePointDisplayName)
      *             .name(dedicatedVantagePointName)
      *             .status(dedicatedVantagePointStatus)
@@ -476,7 +476,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(dedicatedVantagePointDisplayName)
      *             .name(dedicatedVantagePointName)
      *             .status(dedicatedVantagePointStatus)
@@ -521,8 +521,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .monitorId(testMonitorOciApmSyntheticsMonitor.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .monitorId(testMonitorOciApmSyntheticsMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -564,8 +564,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .monitorId(testMonitorOciApmSyntheticsMonitor.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .monitorId(testMonitorOciApmSyntheticsMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -607,8 +607,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .monitorId(testMonitorOciApmSyntheticsMonitor.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .monitorId(testMonitorOciApmSyntheticsMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -650,8 +650,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .monitorId(testMonitorOciApmSyntheticsMonitor.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .monitorId(testMonitorOciApmSyntheticsMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -693,8 +693,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .monitorId(testMonitorOciApmSyntheticsMonitor.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .monitorId(testMonitorOciApmSyntheticsMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -736,12 +736,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(monitorDisplayName)
      *             .isMaintenanceWindowActive(monitorIsMaintenanceWindowActive)
      *             .isMaintenanceWindowSet(monitorIsMaintenanceWindowSet)
      *             .monitorType(monitorMonitorType)
-     *             .scriptId(testScript.id())
+     *             .scriptId(testScript.get("id"))
      *             .status(monitorStatus)
      *             .vantagePoint(monitorVantagePoint)
      *             .build());
@@ -785,12 +785,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(monitorDisplayName)
      *             .isMaintenanceWindowActive(monitorIsMaintenanceWindowActive)
      *             .isMaintenanceWindowSet(monitorIsMaintenanceWindowSet)
      *             .monitorType(monitorMonitorType)
-     *             .scriptId(testScript.id())
+     *             .scriptId(testScript.get("id"))
      *             .status(monitorStatus)
      *             .vantagePoint(monitorVantagePoint)
      *             .build());
@@ -834,12 +834,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(monitorDisplayName)
      *             .isMaintenanceWindowActive(monitorIsMaintenanceWindowActive)
      *             .isMaintenanceWindowSet(monitorIsMaintenanceWindowSet)
      *             .monitorType(monitorMonitorType)
-     *             .scriptId(testScript.id())
+     *             .scriptId(testScript.get("id"))
      *             .status(monitorStatus)
      *             .vantagePoint(monitorVantagePoint)
      *             .build());
@@ -883,12 +883,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(monitorDisplayName)
      *             .isMaintenanceWindowActive(monitorIsMaintenanceWindowActive)
      *             .isMaintenanceWindowSet(monitorIsMaintenanceWindowSet)
      *             .monitorType(monitorMonitorType)
-     *             .scriptId(testScript.id())
+     *             .scriptId(testScript.get("id"))
      *             .status(monitorStatus)
      *             .vantagePoint(monitorVantagePoint)
      *             .build());
@@ -932,12 +932,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(monitorDisplayName)
      *             .isMaintenanceWindowActive(monitorIsMaintenanceWindowActive)
      *             .isMaintenanceWindowSet(monitorIsMaintenanceWindowSet)
      *             .monitorType(monitorMonitorType)
-     *             .scriptId(testScript.id())
+     *             .scriptId(testScript.get("id"))
      *             .status(monitorStatus)
      *             .vantagePoint(monitorVantagePoint)
      *             .build());
@@ -981,8 +981,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.get("id"))
      *             .build());
      * 
      *     }
@@ -1024,8 +1024,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.get("id"))
      *             .build());
      * 
      *     }
@@ -1067,8 +1067,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.get("id"))
      *             .build());
      * 
      *     }
@@ -1110,8 +1110,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.get("id"))
      *             .build());
      * 
      *     }
@@ -1153,8 +1153,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.get("id"))
      *             .build());
      * 
      *     }
@@ -1196,9 +1196,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
-     *             .workerId(testWorker.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.get("id"))
+     *             .workerId(testWorker.get("id"))
      *             .build());
      * 
      *     }
@@ -1240,9 +1240,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
-     *             .workerId(testWorker.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.get("id"))
+     *             .workerId(testWorker.get("id"))
      *             .build());
      * 
      *     }
@@ -1284,9 +1284,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
-     *             .workerId(testWorker.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.get("id"))
+     *             .workerId(testWorker.get("id"))
      *             .build());
      * 
      *     }
@@ -1328,9 +1328,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
-     *             .workerId(testWorker.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.get("id"))
+     *             .workerId(testWorker.get("id"))
      *             .build());
      * 
      *     }
@@ -1372,9 +1372,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
-     *             .workerId(testWorker.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.get("id"))
+     *             .workerId(testWorker.get("id"))
      *             .build());
      * 
      *     }
@@ -1416,8 +1416,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.get("id"))
      *             .capability(onPremiseVantagePointWorkerCapability)
      *             .displayName(onPremiseVantagePointWorkerDisplayName)
      *             .name(onPremiseVantagePointWorkerName)
@@ -1463,8 +1463,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.get("id"))
      *             .capability(onPremiseVantagePointWorkerCapability)
      *             .displayName(onPremiseVantagePointWorkerDisplayName)
      *             .name(onPremiseVantagePointWorkerName)
@@ -1510,8 +1510,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.get("id"))
      *             .capability(onPremiseVantagePointWorkerCapability)
      *             .displayName(onPremiseVantagePointWorkerDisplayName)
      *             .name(onPremiseVantagePointWorkerName)
@@ -1557,8 +1557,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.get("id"))
      *             .capability(onPremiseVantagePointWorkerCapability)
      *             .displayName(onPremiseVantagePointWorkerDisplayName)
      *             .name(onPremiseVantagePointWorkerName)
@@ -1604,8 +1604,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.get("id"))
      *             .capability(onPremiseVantagePointWorkerCapability)
      *             .displayName(onPremiseVantagePointWorkerDisplayName)
      *             .name(onPremiseVantagePointWorkerName)
@@ -1651,7 +1651,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(onPremiseVantagePointDisplayName)
      *             .name(onPremiseVantagePointName)
      *             .build());
@@ -1695,7 +1695,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(onPremiseVantagePointDisplayName)
      *             .name(onPremiseVantagePointName)
      *             .build());
@@ -1739,7 +1739,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(onPremiseVantagePointDisplayName)
      *             .name(onPremiseVantagePointName)
      *             .build());
@@ -1783,7 +1783,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(onPremiseVantagePointDisplayName)
      *             .name(onPremiseVantagePointName)
      *             .build());
@@ -1827,7 +1827,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(onPremiseVantagePointDisplayName)
      *             .name(onPremiseVantagePointName)
      *             .build());
@@ -1871,9 +1871,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .executionTime(resultExecutionTime)
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .resultContentType(resultResultContentType)
      *             .resultType(resultResultType)
      *             .vantagePoint(resultVantagePoint)
@@ -1918,9 +1918,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .executionTime(resultExecutionTime)
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .resultContentType(resultResultContentType)
      *             .resultType(resultResultType)
      *             .vantagePoint(resultVantagePoint)
@@ -1965,9 +1965,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .executionTime(resultExecutionTime)
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .resultContentType(resultResultContentType)
      *             .resultType(resultResultType)
      *             .vantagePoint(resultVantagePoint)
@@ -2012,9 +2012,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .executionTime(resultExecutionTime)
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .resultContentType(resultResultContentType)
      *             .resultType(resultResultType)
      *             .vantagePoint(resultVantagePoint)
@@ -2059,9 +2059,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .executionTime(resultExecutionTime)
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .resultContentType(resultResultContentType)
      *             .resultType(resultResultType)
      *             .vantagePoint(resultVantagePoint)
@@ -2106,8 +2106,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .scriptId(testScriptOciApmSyntheticsScript.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .scriptId(testScriptOciApmSyntheticsScript.get("id"))
      *             .build());
      * 
      *     }
@@ -2149,8 +2149,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .scriptId(testScriptOciApmSyntheticsScript.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .scriptId(testScriptOciApmSyntheticsScript.get("id"))
      *             .build());
      * 
      *     }
@@ -2192,8 +2192,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .scriptId(testScriptOciApmSyntheticsScript.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .scriptId(testScriptOciApmSyntheticsScript.get("id"))
      *             .build());
      * 
      *     }
@@ -2235,8 +2235,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .scriptId(testScriptOciApmSyntheticsScript.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .scriptId(testScriptOciApmSyntheticsScript.get("id"))
      *             .build());
      * 
      *     }
@@ -2278,8 +2278,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .scriptId(testScriptOciApmSyntheticsScript.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .scriptId(testScriptOciApmSyntheticsScript.get("id"))
      *             .build());
      * 
      *     }
@@ -2321,7 +2321,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .contentType(scriptContentType)
      *             .displayName(scriptDisplayName)
      *             .build());
@@ -2365,7 +2365,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .contentType(scriptContentType)
      *             .displayName(scriptDisplayName)
      *             .build());
@@ -2409,7 +2409,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .contentType(scriptContentType)
      *             .displayName(scriptDisplayName)
      *             .build());
@@ -2453,7 +2453,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .contentType(scriptContentType)
      *             .displayName(scriptDisplayName)
      *             .build());
@@ -2497,7 +2497,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .contentType(scriptContentType)
      *             .displayName(scriptDisplayName)
      *             .build());
@@ -2541,7 +2541,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(publicVantagePointDisplayName)
      *             .name(publicVantagePointName)
      *             .build());
@@ -2585,7 +2585,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(publicVantagePointDisplayName)
      *             .name(publicVantagePointName)
      *             .build());
@@ -2629,7 +2629,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(publicVantagePointDisplayName)
      *             .name(publicVantagePointName)
      *             .build());
@@ -2673,7 +2673,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(publicVantagePointDisplayName)
      *             .name(publicVantagePointName)
      *             .build());
@@ -2717,7 +2717,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(publicVantagePointDisplayName)
      *             .name(publicVantagePointName)
      *             .build());
@@ -2761,7 +2761,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(publicVantagePointDisplayName)
      *             .name(publicVantagePointName)
      *             .build());
@@ -2805,7 +2805,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(publicVantagePointDisplayName)
      *             .name(publicVantagePointName)
      *             .build());
@@ -2849,7 +2849,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(publicVantagePointDisplayName)
      *             .name(publicVantagePointName)
      *             .build());
@@ -2893,7 +2893,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(publicVantagePointDisplayName)
      *             .name(publicVantagePointName)
      *             .build());
@@ -2937,7 +2937,7 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(publicVantagePointDisplayName)
      *             .name(publicVantagePointName)
      *             .build());

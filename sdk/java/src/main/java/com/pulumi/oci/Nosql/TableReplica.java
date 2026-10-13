@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testTableReplica = new TableReplica("testTableReplica", TableReplicaArgs.builder()
  *             .region(tableReplicaRegion)
- *             .tableNameOrId(testTableNameOr.id())
+ *             .tableNameOrId(testTableNameOr.get("id"))
  *             .compartmentId(compartmentId)
  *             .maxReadUnits(tableReplicaMaxReadUnits)
  *             .maxWriteUnits(tableReplicaMaxWriteUnits)

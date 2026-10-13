@@ -31,8 +31,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetSubsettingPolicyTableEstimates(ctx, &datasafe.GetSubsettingPolicyTableEstimatesArgs{
 //				SubsettingPolicyId: testSubsettingPolicy.Id,
-//				Objects:            pulumi.ToArray(subsettingPolicyTableEstimateObject),
-//				SchemaNames:        pulumi.ToArray(subsettingPolicyTableEstimateSchemaName),
+//				Objects:            subsettingPolicyTableEstimateObject,
+//				SchemaNames:        subsettingPolicyTableEstimateSchemaName,
 //				TargetId:           pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {

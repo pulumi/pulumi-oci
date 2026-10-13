@@ -34,7 +34,7 @@ import (
 //				DatabaseToolsMcpServerId: pulumi.StringRef(testDatabaseToolsMcpServer.Id),
 //				DisplayName:              pulumi.StringRef(databaseToolsMcpToolsetDisplayName),
 //				State:                    pulumi.StringRef(databaseToolsMcpToolsetState),
-//				Types:                    pulumi.ToArray(databaseToolsMcpToolsetType),
+//				Types:                    databaseToolsMcpToolsetType,
 //			}, nil)
 //			if err != nil {
 //				return err

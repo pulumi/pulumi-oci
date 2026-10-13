@@ -51,9 +51,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isDropTempTablesEnabled: maskingPolicyIsDropTempTablesEnabled === "true",
- *     isRedoLoggingEnabled: maskingPolicyIsRedoLoggingEnabled === "true",
- *     isRefreshStatsEnabled: maskingPolicyIsRefreshStatsEnabled === "true",
+ *     isDropTempTablesEnabled: maskingPolicyIsDropTempTablesEnabled,
+ *     isRedoLoggingEnabled: maskingPolicyIsRedoLoggingEnabled,
+ *     isRefreshStatsEnabled: maskingPolicyIsRefreshStatsEnabled,
  *     parallelDegree: maskingPolicyParallelDegree,
  *     postMaskingScript: maskingPolicyPostMaskingScript,
  *     preMaskingScript: maskingPolicyPreMaskingScript,

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSecurityAssessmentChecks = oci.datasafe.getSecurityAssessmentChecks({
  *     securityAssessmentId: testSecurityAssessment.id,
  *     accessLevel: securityAssessmentCheckAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree,
  *     containsReferences: securityAssessmentCheckContainsReferences,
  *     containsSeverities: securityAssessmentCheckContainsSeverity,
  *     key: securityAssessmentCheckKey,
@@ -118,7 +118,7 @@ export interface GetSecurityAssessmentChecksResult {
  * const testSecurityAssessmentChecks = oci.datasafe.getSecurityAssessmentChecks({
  *     securityAssessmentId: testSecurityAssessment.id,
  *     accessLevel: securityAssessmentCheckAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree,
  *     containsReferences: securityAssessmentCheckContainsReferences,
  *     containsSeverities: securityAssessmentCheckContainsSeverity,
  *     key: securityAssessmentCheckKey,

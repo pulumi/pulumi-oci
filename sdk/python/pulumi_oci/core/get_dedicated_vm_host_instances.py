@@ -137,7 +137,7 @@ def get_dedicated_vm_host_instances(availability_domain: Optional[_builtins.str]
     test_dedicated_vm_hosts_instances = oci.core.get_dedicated_vm_host_instances(compartment_id=compartment_id,
         dedicated_vm_host_id=test_dedicated_vm_host["id"],
         availability_domain=dedicated_vm_hosts_instance_availability_domain,
-        is_memory_encryption_enabled=dedicated_vm_hosts_instance_is_memory_encryption_enabled == "true")
+        is_memory_encryption_enabled=dedicated_vm_hosts_instance_is_memory_encryption_enabled)
     ```
 
 
@@ -183,7 +183,7 @@ def get_dedicated_vm_host_instances_output(availability_domain: pulumi.Input[Opt
     test_dedicated_vm_hosts_instances = oci.core.get_dedicated_vm_host_instances(compartment_id=compartment_id,
         dedicated_vm_host_id=test_dedicated_vm_host["id"],
         availability_domain=dedicated_vm_hosts_instance_availability_domain,
-        is_memory_encryption_enabled=dedicated_vm_hosts_instance_is_memory_encryption_enabled == "true")
+        is_memory_encryption_enabled=dedicated_vm_hosts_instance_is_memory_encryption_enabled)
     ```
 
 

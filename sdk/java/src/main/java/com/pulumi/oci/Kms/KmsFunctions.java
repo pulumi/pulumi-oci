@@ -83,7 +83,7 @@ public final class KmsFunctions {
      *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
      *             .ciphertext(decryptedDataCiphertext)
      *             .cryptoEndpoint(decryptedDataCryptoEndpoint)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .associatedData(decryptedDataAssociatedData)
      *             .build());
      * 
@@ -128,7 +128,7 @@ public final class KmsFunctions {
      *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
      *             .ciphertext(decryptedDataCiphertext)
      *             .cryptoEndpoint(decryptedDataCryptoEndpoint)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .associatedData(decryptedDataAssociatedData)
      *             .build());
      * 
@@ -173,7 +173,7 @@ public final class KmsFunctions {
      *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
      *             .ciphertext(decryptedDataCiphertext)
      *             .cryptoEndpoint(decryptedDataCryptoEndpoint)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .associatedData(decryptedDataAssociatedData)
      *             .build());
      * 
@@ -218,7 +218,7 @@ public final class KmsFunctions {
      *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
      *             .ciphertext(decryptedDataCiphertext)
      *             .cryptoEndpoint(decryptedDataCryptoEndpoint)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .associatedData(decryptedDataAssociatedData)
      *             .build());
      * 
@@ -263,7 +263,7 @@ public final class KmsFunctions {
      *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
      *             .ciphertext(decryptedDataCiphertext)
      *             .cryptoEndpoint(decryptedDataCryptoEndpoint)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .associatedData(decryptedDataAssociatedData)
      *             .build());
      * 
@@ -306,7 +306,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
-     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.id())
+     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -348,7 +348,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
-     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.id())
+     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -390,7 +390,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
-     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.id())
+     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -432,7 +432,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
-     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.id())
+     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -474,7 +474,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
-     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.id())
+     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -729,7 +729,7 @@ public final class KmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
      *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .plaintext(encryptedDataPlaintext)
      *             .associatedData(encryptedDataAssociatedData)
      *             .build());
@@ -776,7 +776,7 @@ public final class KmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
      *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .plaintext(encryptedDataPlaintext)
      *             .associatedData(encryptedDataAssociatedData)
      *             .build());
@@ -823,7 +823,7 @@ public final class KmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
      *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .plaintext(encryptedDataPlaintext)
      *             .associatedData(encryptedDataAssociatedData)
      *             .build());
@@ -870,7 +870,7 @@ public final class KmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
      *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .plaintext(encryptedDataPlaintext)
      *             .associatedData(encryptedDataAssociatedData)
      *             .build());
@@ -917,7 +917,7 @@ public final class KmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
      *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .plaintext(encryptedDataPlaintext)
      *             .associatedData(encryptedDataAssociatedData)
      *             .build());
@@ -966,7 +966,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
-     *             .keyId(testKeyOciKmsKey.id())
+     *             .keyId(testKeyOciKmsKey.get("id"))
      *             .managementEndpoint(keyManagementEndpoint)
      *             .build());
      * 
@@ -1014,7 +1014,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
-     *             .keyId(testKeyOciKmsKey.id())
+     *             .keyId(testKeyOciKmsKey.get("id"))
      *             .managementEndpoint(keyManagementEndpoint)
      *             .build());
      * 
@@ -1062,7 +1062,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
-     *             .keyId(testKeyOciKmsKey.id())
+     *             .keyId(testKeyOciKmsKey.get("id"))
      *             .managementEndpoint(keyManagementEndpoint)
      *             .build());
      * 
@@ -1110,7 +1110,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
-     *             .keyId(testKeyOciKmsKey.id())
+     *             .keyId(testKeyOciKmsKey.get("id"))
      *             .managementEndpoint(keyManagementEndpoint)
      *             .build());
      * 
@@ -1158,7 +1158,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
-     *             .keyId(testKeyOciKmsKey.id())
+     *             .keyId(testKeyOciKmsKey.get("id"))
      *             .managementEndpoint(keyManagementEndpoint)
      *             .build());
      * 
@@ -1206,8 +1206,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
-     *             .keyId(testKey.id())
-     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.id())
+     *             .keyId(testKey.get("id"))
+     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.get("id"))
      *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
@@ -1255,8 +1255,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
-     *             .keyId(testKey.id())
-     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.id())
+     *             .keyId(testKey.get("id"))
+     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.get("id"))
      *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
@@ -1304,8 +1304,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
-     *             .keyId(testKey.id())
-     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.id())
+     *             .keyId(testKey.get("id"))
+     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.get("id"))
      *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
@@ -1353,8 +1353,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
-     *             .keyId(testKey.id())
-     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.id())
+     *             .keyId(testKey.get("id"))
+     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.get("id"))
      *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
@@ -1402,8 +1402,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
-     *             .keyId(testKey.id())
-     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.id())
+     *             .keyId(testKey.get("id"))
+     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.get("id"))
      *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
@@ -1452,7 +1452,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
@@ -1501,7 +1501,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
@@ -1550,7 +1550,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
@@ -1599,7 +1599,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
@@ -1648,7 +1648,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
-     *             .keyId(testKey.id())
+     *             .keyId(testKey.get("id"))
      *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
@@ -1700,7 +1700,7 @@ public final class KmsFunctions {
      *             .managementEndpoint(keyManagementEndpoint)
      *             .algorithm(keyAlgorithm)
      *             .length(keyLength)
-     *             .curveId(testCurve.id())
+     *             .curveId(testCurve.get("id"))
      *             .protectionMode(keyProtectionMode)
      *             .build());
      * 
@@ -1752,7 +1752,7 @@ public final class KmsFunctions {
      *             .managementEndpoint(keyManagementEndpoint)
      *             .algorithm(keyAlgorithm)
      *             .length(keyLength)
-     *             .curveId(testCurve.id())
+     *             .curveId(testCurve.get("id"))
      *             .protectionMode(keyProtectionMode)
      *             .build());
      * 
@@ -1804,7 +1804,7 @@ public final class KmsFunctions {
      *             .managementEndpoint(keyManagementEndpoint)
      *             .algorithm(keyAlgorithm)
      *             .length(keyLength)
-     *             .curveId(testCurve.id())
+     *             .curveId(testCurve.get("id"))
      *             .protectionMode(keyProtectionMode)
      *             .build());
      * 
@@ -1856,7 +1856,7 @@ public final class KmsFunctions {
      *             .managementEndpoint(keyManagementEndpoint)
      *             .algorithm(keyAlgorithm)
      *             .length(keyLength)
-     *             .curveId(testCurve.id())
+     *             .curveId(testCurve.get("id"))
      *             .protectionMode(keyProtectionMode)
      *             .build());
      * 
@@ -1908,7 +1908,7 @@ public final class KmsFunctions {
      *             .managementEndpoint(keyManagementEndpoint)
      *             .algorithm(keyAlgorithm)
      *             .length(keyLength)
-     *             .curveId(testCurve.id())
+     *             .curveId(testCurve.get("id"))
      *             .protectionMode(keyProtectionMode)
      *             .build());
      * 
@@ -1954,7 +1954,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
-     *             .replicationId(testReplication.id())
+     *             .replicationId(testReplication.get("id"))
      *             .managementEndpoint(replicationStatusManagementEndpoint)
      *             .build());
      * 
@@ -2000,7 +2000,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
-     *             .replicationId(testReplication.id())
+     *             .replicationId(testReplication.get("id"))
      *             .managementEndpoint(replicationStatusManagementEndpoint)
      *             .build());
      * 
@@ -2046,7 +2046,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
-     *             .replicationId(testReplication.id())
+     *             .replicationId(testReplication.get("id"))
      *             .managementEndpoint(replicationStatusManagementEndpoint)
      *             .build());
      * 
@@ -2092,7 +2092,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
-     *             .replicationId(testReplication.id())
+     *             .replicationId(testReplication.get("id"))
      *             .managementEndpoint(replicationStatusManagementEndpoint)
      *             .build());
      * 
@@ -2138,7 +2138,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
-     *             .replicationId(testReplication.id())
+     *             .replicationId(testReplication.get("id"))
      *             .managementEndpoint(replicationStatusManagementEndpoint)
      *             .build());
      * 
@@ -2186,7 +2186,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
-     *             .vaultId(testVaultOciKmsVault.id())
+     *             .vaultId(testVaultOciKmsVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2233,7 +2233,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
-     *             .vaultId(testVaultOciKmsVault.id())
+     *             .vaultId(testVaultOciKmsVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2280,7 +2280,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
-     *             .vaultId(testVaultOciKmsVault.id())
+     *             .vaultId(testVaultOciKmsVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2327,7 +2327,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
-     *             .vaultId(testVaultOciKmsVault.id())
+     *             .vaultId(testVaultOciKmsVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2374,7 +2374,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
-     *             .vaultId(testVaultOciKmsVault.id())
+     *             .vaultId(testVaultOciKmsVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2421,7 +2421,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2468,7 +2468,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2515,7 +2515,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2562,7 +2562,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2609,7 +2609,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2651,7 +2651,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2693,7 +2693,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2735,7 +2735,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2777,7 +2777,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -2819,7 +2819,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }

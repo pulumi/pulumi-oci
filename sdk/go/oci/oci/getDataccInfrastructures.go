@@ -32,7 +32,7 @@ import (
 //			_, err := oci.GetDataccInfrastructures(ctx, &oci.GetDataccInfrastructuresArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(infrastructureDisplayName),
-//				States:        pulumi.ToArray(infrastructureState),
+//				States:        infrastructureState,
 //			}, nil)
 //			if err != nil {
 //				return err

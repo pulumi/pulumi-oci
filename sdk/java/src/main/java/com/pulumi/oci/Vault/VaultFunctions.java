@@ -51,7 +51,7 @@ public final class VaultFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecret = VaultFunctions.getSecret(GetSecretArgs.builder()
-     *             .secretId(testSecretOciVaultSecret.id())
+     *             .secretId(testSecretOciVaultSecret.get("id"))
      *             .build());
      * 
      *     }
@@ -93,7 +93,7 @@ public final class VaultFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecret = VaultFunctions.getSecret(GetSecretArgs.builder()
-     *             .secretId(testSecretOciVaultSecret.id())
+     *             .secretId(testSecretOciVaultSecret.get("id"))
      *             .build());
      * 
      *     }
@@ -135,7 +135,7 @@ public final class VaultFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecret = VaultFunctions.getSecret(GetSecretArgs.builder()
-     *             .secretId(testSecretOciVaultSecret.id())
+     *             .secretId(testSecretOciVaultSecret.get("id"))
      *             .build());
      * 
      *     }
@@ -177,7 +177,7 @@ public final class VaultFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecret = VaultFunctions.getSecret(GetSecretArgs.builder()
-     *             .secretId(testSecretOciVaultSecret.id())
+     *             .secretId(testSecretOciVaultSecret.get("id"))
      *             .build());
      * 
      *     }
@@ -219,7 +219,7 @@ public final class VaultFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecret = VaultFunctions.getSecret(GetSecretArgs.builder()
-     *             .secretId(testSecretOciVaultSecret.id())
+     *             .secretId(testSecretOciVaultSecret.get("id"))
      *             .build());
      * 
      *     }
@@ -279,7 +279,7 @@ public final class VaultFunctions {
      *             .compartmentId(compartmentId)
      *             .name(secretName)
      *             .state(secretState)
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -324,7 +324,7 @@ public final class VaultFunctions {
      *             .compartmentId(compartmentId)
      *             .name(secretName)
      *             .state(secretState)
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -369,7 +369,7 @@ public final class VaultFunctions {
      *             .compartmentId(compartmentId)
      *             .name(secretName)
      *             .state(secretState)
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -414,7 +414,7 @@ public final class VaultFunctions {
      *             .compartmentId(compartmentId)
      *             .name(secretName)
      *             .state(secretState)
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }
@@ -459,7 +459,7 @@ public final class VaultFunctions {
      *             .compartmentId(compartmentId)
      *             .name(secretName)
      *             .state(secretState)
-     *             .vaultId(testVault.id())
+     *             .vaultId(testVault.get("id"))
      *             .build());
      * 
      *     }

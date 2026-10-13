@@ -172,7 +172,7 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
         test_software_source_add_packages_management = oci.osmanagementhub.SoftwareSourceAddPackagesManagement("test_software_source_add_packages_management",
             packages=software_source_add_packages_management_packages,
             software_source_id=test_software_source["id"],
-            is_continue_on_missing_packages=software_source_add_packages_management_is_continue_on_missing_packages == "true")
+            is_continue_on_missing_packages=software_source_add_packages_management_is_continue_on_missing_packages)
         ```
 
         ## Import
@@ -221,7 +221,7 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
         test_software_source_add_packages_management = oci.osmanagementhub.SoftwareSourceAddPackagesManagement("test_software_source_add_packages_management",
             packages=software_source_add_packages_management_packages,
             software_source_id=test_software_source["id"],
-            is_continue_on_missing_packages=software_source_add_packages_management_is_continue_on_missing_packages == "true")
+            is_continue_on_missing_packages=software_source_add_packages_management_is_continue_on_missing_packages)
         ```
 
         ## Import

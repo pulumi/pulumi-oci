@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testDynamicSetManagedInstances = oci.osmanagementhub.getDynamicSetManagedInstances({
  *     dynamicSetId: testDynamicSet.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree,
  *     displayName: dynamicSetManagedInstanceDisplayName,
  *     displayNameContains: dynamicSetManagedInstanceDisplayNameContains,
  * });
@@ -104,7 +104,7 @@ export interface GetDynamicSetManagedInstancesResult {
  * const testDynamicSetManagedInstances = oci.osmanagementhub.getDynamicSetManagedInstances({
  *     dynamicSetId: testDynamicSet.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree,
  *     displayName: dynamicSetManagedInstanceDisplayName,
  *     displayNameContains: dynamicSetManagedInstanceDisplayNameContains,
  * });

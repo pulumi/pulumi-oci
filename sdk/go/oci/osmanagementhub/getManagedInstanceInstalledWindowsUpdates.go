@@ -34,7 +34,7 @@ import (
 //				CompartmentId:       pulumi.StringRef(compartmentId),
 //				DisplayName:         pulumi.StringRef(managedInstanceInstalledWindowsUpdateDisplayName),
 //				DisplayNameContains: pulumi.StringRef(managedInstanceInstalledWindowsUpdateDisplayNameContains),
-//				Names:               pulumi.ToArray(managedInstanceInstalledWindowsUpdateName),
+//				Names:               managedInstanceInstalledWindowsUpdateName,
 //			}, nil)
 //			if err != nil {
 //				return err

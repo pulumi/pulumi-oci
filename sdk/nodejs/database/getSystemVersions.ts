@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSystemVersions = oci.database.getSystemVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionGiVersion,
- *     isLatest: systemVersionIsLatest === "true",
+ *     isLatest: systemVersionIsLatest,
  *     resourceId: testResource.id,
  *     shape: systemVersionShape,
  * });
@@ -104,7 +104,7 @@ export interface GetSystemVersionsResult {
  * const testSystemVersions = oci.database.getSystemVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionGiVersion,
- *     isLatest: systemVersionIsLatest === "true",
+ *     isLatest: systemVersionIsLatest,
  *     resourceId: testResource.id,
  *     shape: systemVersionShape,
  * });

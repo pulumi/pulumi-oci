@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testEstimateTableSizes = new EstimateTableSizes("testEstimateTableSizes", EstimateTableSizesArgs.builder()
- *             .subsettingPolicyId(testSubsettingPolicy.id())
+ *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
  *             .targetId(targetId)
  *             .targetCredentials(EstimateTableSizesTargetCredentialsArgs.builder()
  *                 .userName(targetDatabaseUserName)

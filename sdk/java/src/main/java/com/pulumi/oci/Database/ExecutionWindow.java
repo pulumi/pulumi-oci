@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testExecutionWindow = new ExecutionWindow("testExecutionWindow", ExecutionWindowArgs.builder()
  *             .compartmentId(compartmentId)
- *             .executionResourceId(testResource.id())
+ *             .executionResourceId(testResource.get("id"))
  *             .timeScheduled(executionWindowTimeScheduled)
  *             .windowDurationInMins(executionWindowWindowDurationInMins)
  *             .definedTags(executionWindowDefinedTags)

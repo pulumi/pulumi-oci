@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     targetConnectionDetails: {
  *         connectionId: testConnection.id,
  *     },
- *     cpuCoreCount: Number(pipelineCpuCoreCount),
+ *     cpuCoreCount: pipelineCpuCoreCount,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -39,7 +39,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isAutoScalingEnabled: pipelineIsAutoScalingEnabled === "true",
+ *     isAutoScalingEnabled: pipelineIsAutoScalingEnabled,
  *     locks: [{
  *         type: pipelineLocksType,
  *         message: pipelineLocksMessage,

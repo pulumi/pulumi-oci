@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testOauthClientCertificates = oci.identity.getDomainsOauthClientCertificates({
  *     idcsEndpoint: testDomain.url,
- *     oauthClientCertificateCount: Number(oauthClientCertificateOauthClientCertificateCount),
+ *     oauthClientCertificateCount: oauthClientCertificateOauthClientCertificateCount,
  *     oauthClientCertificateFilter: oauthClientCertificateOauthClientCertificateFilter,
  *     authorization: oauthClientCertificateAuthorization,
  *     resourceTypeSchemaVersion: oauthClientCertificateResourceTypeSchemaVersion,
- *     startIndex: Number(oauthClientCertificateStartIndex),
+ *     startIndex: oauthClientCertificateStartIndex,
  * });
  * ```
  */
@@ -116,11 +116,11 @@ export interface GetDomainsOauthClientCertificatesResult {
  *
  * const testOauthClientCertificates = oci.identity.getDomainsOauthClientCertificates({
  *     idcsEndpoint: testDomain.url,
- *     oauthClientCertificateCount: Number(oauthClientCertificateOauthClientCertificateCount),
+ *     oauthClientCertificateCount: oauthClientCertificateOauthClientCertificateCount,
  *     oauthClientCertificateFilter: oauthClientCertificateOauthClientCertificateFilter,
  *     authorization: oauthClientCertificateAuthorization,
  *     resourceTypeSchemaVersion: oauthClientCertificateResourceTypeSchemaVersion,
- *     startIndex: Number(oauthClientCertificateStartIndex),
+ *     startIndex: oauthClientCertificateStartIndex,
  * });
  * ```
  */

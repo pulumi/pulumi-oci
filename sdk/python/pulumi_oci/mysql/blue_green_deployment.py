@@ -538,7 +538,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
             target_db_system_details={
                 "mysql_version": blue_green_deployment_target_db_system_details_mysql_version,
                 "configuration_id": test_mysql_configuration["id"],
-                "data_storage_size_in_gb": int(blue_green_deployment_target_db_system_details_data_storage_size_in_gb),
+                "data_storage_size_in_gb": blue_green_deployment_target_db_system_details_data_storage_size_in_gb,
                 "shape_name": test_shape["name"],
             },
             defined_tags={
@@ -610,7 +610,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
             target_db_system_details={
                 "mysql_version": blue_green_deployment_target_db_system_details_mysql_version,
                 "configuration_id": test_mysql_configuration["id"],
-                "data_storage_size_in_gb": int(blue_green_deployment_target_db_system_details_data_storage_size_in_gb),
+                "data_storage_size_in_gb": blue_green_deployment_target_db_system_details_data_storage_size_in_gb,
                 "shape_name": test_shape["name"],
             },
             defined_tags={

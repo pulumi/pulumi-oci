@@ -56,9 +56,9 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testPluggableDatabasesRemoteClone = new PluggableDatabasesRemoteClone("testPluggableDatabasesRemoteClone", PluggableDatabasesRemoteCloneArgs.builder()
  *             .clonedPdbName(pluggableDatabasesRemoteCloneClonedPdbName)
- *             .pluggableDatabaseId(testPluggableDatabase.id())
+ *             .pluggableDatabaseId(testPluggableDatabase.get("id"))
  *             .sourceContainerDbAdminPassword(pluggableDatabasesRemoteCloneSourceContainerDbAdminPassword)
- *             .targetContainerDatabaseId(testDatabase.id())
+ *             .targetContainerDatabaseId(testDatabase.get("id"))
  *             .pdbAdminPassword(pluggableDatabasesRemoteClonePdbAdminPassword)
  *             .shouldPdbAdminAccountBeLocked(pluggableDatabasesRemoteCloneShouldPdbAdminAccountBeLocked)
  *             .targetTdeWalletPassword(pluggableDatabasesRemoteCloneTargetTdeWalletPassword)

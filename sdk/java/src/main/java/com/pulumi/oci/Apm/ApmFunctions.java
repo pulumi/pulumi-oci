@@ -51,7 +51,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
-     *             .apmDomainId(testApmDomainOciApmApmDomain.id())
+     *             .apmDomainId(testApmDomainOciApmApmDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -93,7 +93,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
-     *             .apmDomainId(testApmDomainOciApmApmDomain.id())
+     *             .apmDomainId(testApmDomainOciApmApmDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -135,7 +135,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
-     *             .apmDomainId(testApmDomainOciApmApmDomain.id())
+     *             .apmDomainId(testApmDomainOciApmApmDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -177,7 +177,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
-     *             .apmDomainId(testApmDomainOciApmApmDomain.id())
+     *             .apmDomainId(testApmDomainOciApmApmDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -219,7 +219,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
-     *             .apmDomainId(testApmDomainOciApmApmDomain.id())
+     *             .apmDomainId(testApmDomainOciApmApmDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -482,7 +482,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .dataKeyType(dataKeyDataKeyType)
      *             .build());
      * 
@@ -526,7 +526,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .dataKeyType(dataKeyDataKeyType)
      *             .build());
      * 
@@ -570,7 +570,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .dataKeyType(dataKeyDataKeyType)
      *             .build());
      * 
@@ -614,7 +614,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .dataKeyType(dataKeyDataKeyType)
      *             .build());
      * 
@@ -658,7 +658,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .dataKeyType(dataKeyDataKeyType)
      *             .build());
      * 

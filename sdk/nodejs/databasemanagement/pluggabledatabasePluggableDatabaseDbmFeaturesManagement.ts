@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testPluggabledatabasePluggableDatabaseDbmFeaturesManagement = new oci.databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagement("test_pluggabledatabase_pluggable_database_dbm_features_management", {
  *     pluggableDatabaseId: testPluggableDatabase.id,
- *     enablePluggableDatabaseDbmFeature: enablePluggableDatabaseDbmFeature === "true",
+ *     enablePluggableDatabaseDbmFeature: enablePluggableDatabaseDbmFeature,
  *     featureDetails: {
  *         feature: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsFeature,
  *         enablePluggableDatabaseDbmFeature: enablePluggableDatabaseDbmFeature,
@@ -43,13 +43,13 @@ import * as utilities from "../utilities";
  *             },
  *             connectionString: {
  *                 connectionType: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
- *                 port: Number(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort),
+ *                 port: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
  *                 protocol: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
  *                 service: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
  *             },
  *         },
- *         canEnableAllCurrentPdbs: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs === "true",
- *         isAutoEnablePluggableDatabase: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase === "true",
+ *         canEnableAllCurrentPdbs: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
+ *         isAutoEnablePluggableDatabase: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
  *         managementType: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsManagementType,
  *     },
  * });

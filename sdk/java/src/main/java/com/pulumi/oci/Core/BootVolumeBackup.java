@@ -57,14 +57,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBootVolumeBackup = new BootVolumeBackup("testBootVolumeBackup", BootVolumeBackupArgs.builder()
- *             .bootVolumeId(testBootVolume.id())
+ *             .bootVolumeId(testBootVolume.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(bootVolumeBackupDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isIndefiniteRetentionEnabled(bootVolumeBackupIsIndefiniteRetentionEnabled)
  *             .isPreventDeletionEnabled(bootVolumeBackupIsPreventDeletionEnabled)
  *             .isRetentionLockEnabled(bootVolumeBackupIsRetentionLockEnabled)
- *             .kmsKeyId(testKey.id())
+ *             .kmsKeyId(testKey.get("id"))
  *             .retentionPeriod(BootVolumeBackupRetentionPeriodArgs.builder()
  *                 .retentionTimeAmount(bootVolumeBackupRetentionPeriodRetentionTimeAmount)
  *                 .retentionTimeUnit(bootVolumeBackupRetentionPeriodRetentionTimeUnit)

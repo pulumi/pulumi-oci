@@ -636,9 +636,9 @@ class DataccVmClusterNetwork(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            listener_port=int(vm_cluster_network_listener_port),
-            listener_port_ssl=int(vm_cluster_network_listener_port_ssl),
-            node_count=int(vm_cluster_network_node_count),
+            listener_port=vm_cluster_network_listener_port,
+            listener_port_ssl=vm_cluster_network_listener_port_ssl,
+            node_count=vm_cluster_network_node_count,
             ntp_servers=vm_cluster_network_ntp_servers,
             scans=[{
                 "hostname": vm_cluster_network_scans_hostname,
@@ -717,9 +717,9 @@ class DataccVmClusterNetwork(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            listener_port=int(vm_cluster_network_listener_port),
-            listener_port_ssl=int(vm_cluster_network_listener_port_ssl),
-            node_count=int(vm_cluster_network_node_count),
+            listener_port=vm_cluster_network_listener_port,
+            listener_port_ssl=vm_cluster_network_listener_port_ssl,
+            node_count=vm_cluster_network_node_count,
             ntp_servers=vm_cluster_network_ntp_servers,
             scans=[{
                 "hostname": vm_cluster_network_scans_hostname,

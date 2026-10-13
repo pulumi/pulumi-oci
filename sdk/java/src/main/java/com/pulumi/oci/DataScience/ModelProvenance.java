@@ -46,12 +46,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testModelProvenance = new ModelProvenance("testModelProvenance", ModelProvenanceArgs.builder()
- *             .modelId(testModel.id())
+ *             .modelId(testModel.get("id"))
  *             .gitBranch(modelProvenanceGitBranch)
  *             .gitCommit(modelProvenanceGitCommit)
  *             .repositoryUrl(modelProvenanceRepositoryUrl)
  *             .scriptDir(modelProvenanceScriptDir)
- *             .trainingId(testTraining.id())
+ *             .trainingId(testTraining.get("id"))
  *             .trainingScript(modelProvenanceTrainingScript)
  *             .build());
  * 

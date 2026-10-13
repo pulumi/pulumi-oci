@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  *
  * const testDbManagementPrivateEndpoints = oci.databasemanagement.getDbManagementPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     isCluster: dbManagementPrivateEndpointIsCluster === "true",
- *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled === "true",
+ *     isCluster: dbManagementPrivateEndpointIsCluster,
+ *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled,
  *     name: dbManagementPrivateEndpointName,
  *     state: dbManagementPrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -122,8 +122,8 @@ export interface GetDbManagementPrivateEndpointsResult {
  *
  * const testDbManagementPrivateEndpoints = oci.databasemanagement.getDbManagementPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     isCluster: dbManagementPrivateEndpointIsCluster === "true",
- *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled === "true",
+ *     isCluster: dbManagementPrivateEndpointIsCluster,
+ *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled,
  *     name: dbManagementPrivateEndpointName,
  *     state: dbManagementPrivateEndpointState,
  *     vcnId: testVcn.id,

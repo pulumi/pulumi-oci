@@ -67,7 +67,7 @@ import * as utilities from "../utilities";
  *         },
  *         amount: subscriptionSubscriptionDetailsAmount,
  *         currency: subscriptionSubscriptionDetailsCurrency,
- *         isAutoRenew: subscriptionSubscriptionDetailsIsAutoRenew === "true",
+ *         isAutoRenew: subscriptionSubscriptionDetailsIsAutoRenew,
  *     },
  *     tenantId: testTenant.id,
  *     additionalDetails: [{

@@ -129,7 +129,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
-     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.id())
+     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -171,7 +171,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
-     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.id())
+     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -213,7 +213,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
-     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.id())
+     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -255,7 +255,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
-     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.id())
+     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -297,7 +297,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
-     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.id())
+     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -339,7 +339,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallHealthStatus = NetworkFirewallFunctions.getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs.builder()
-     *             .networkFirewallId(testNetworkFirewall.id())
+     *             .networkFirewallId(testNetworkFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -381,7 +381,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallHealthStatus = NetworkFirewallFunctions.getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs.builder()
-     *             .networkFirewallId(testNetworkFirewall.id())
+     *             .networkFirewallId(testNetworkFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -423,7 +423,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallHealthStatus = NetworkFirewallFunctions.getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs.builder()
-     *             .networkFirewallId(testNetworkFirewall.id())
+     *             .networkFirewallId(testNetworkFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -465,7 +465,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallHealthStatus = NetworkFirewallFunctions.getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs.builder()
-     *             .networkFirewallId(testNetworkFirewall.id())
+     *             .networkFirewallId(testNetworkFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -507,7 +507,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallHealthStatus = NetworkFirewallFunctions.getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs.builder()
-     *             .networkFirewallId(testNetworkFirewall.id())
+     *             .networkFirewallId(testNetworkFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -774,7 +774,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -816,7 +816,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -858,7 +858,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -900,7 +900,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -942,7 +942,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1039,7 +1039,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyAddressListDisplayName)
      *             .build());
      * 
@@ -1082,7 +1082,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyAddressListDisplayName)
      *             .build());
      * 
@@ -1125,7 +1125,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyAddressListDisplayName)
      *             .build());
      * 
@@ -1168,7 +1168,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyAddressListDisplayName)
      *             .build());
      * 
@@ -1211,7 +1211,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyAddressListDisplayName)
      *             .build());
      * 
@@ -1364,7 +1364,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyApplicationGroupDisplayName)
      *             .build());
      * 
@@ -1407,7 +1407,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyApplicationGroupDisplayName)
      *             .build());
      * 
@@ -1450,7 +1450,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyApplicationGroupDisplayName)
      *             .build());
      * 
@@ -1493,7 +1493,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyApplicationGroupDisplayName)
      *             .build());
      * 
@@ -1536,7 +1536,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyApplicationGroupDisplayName)
      *             .build());
      * 
@@ -1579,7 +1579,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyApplicationDisplayName)
      *             .build());
      * 
@@ -1622,7 +1622,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyApplicationDisplayName)
      *             .build());
      * 
@@ -1665,7 +1665,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyApplicationDisplayName)
      *             .build());
      * 
@@ -1708,7 +1708,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyApplicationDisplayName)
      *             .build());
      * 
@@ -1751,7 +1751,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyApplicationDisplayName)
      *             .build());
      * 
@@ -1849,7 +1849,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyDecryptionProfileDisplayName)
      *             .build());
      * 
@@ -1892,7 +1892,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyDecryptionProfileDisplayName)
      *             .build());
      * 
@@ -1935,7 +1935,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyDecryptionProfileDisplayName)
      *             .build());
      * 
@@ -1978,7 +1978,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyDecryptionProfileDisplayName)
      *             .build());
      * 
@@ -2021,7 +2021,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyDecryptionProfileDisplayName)
      *             .build());
      * 
@@ -2119,7 +2119,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .decryptionRulePriorityOrder(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder)
      *             .displayName(networkFirewallPolicyDecryptionRuleDisplayName)
      *             .build());
@@ -2163,7 +2163,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .decryptionRulePriorityOrder(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder)
      *             .displayName(networkFirewallPolicyDecryptionRuleDisplayName)
      *             .build());
@@ -2207,7 +2207,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .decryptionRulePriorityOrder(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder)
      *             .displayName(networkFirewallPolicyDecryptionRuleDisplayName)
      *             .build());
@@ -2251,7 +2251,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .decryptionRulePriorityOrder(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder)
      *             .displayName(networkFirewallPolicyDecryptionRuleDisplayName)
      *             .build());
@@ -2295,7 +2295,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .decryptionRulePriorityOrder(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder)
      *             .displayName(networkFirewallPolicyDecryptionRuleDisplayName)
      *             .build());
@@ -2394,7 +2394,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyMappedSecretDisplayName)
      *             .build());
      * 
@@ -2437,7 +2437,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyMappedSecretDisplayName)
      *             .build());
      * 
@@ -2480,7 +2480,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyMappedSecretDisplayName)
      *             .build());
      * 
@@ -2523,7 +2523,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyMappedSecretDisplayName)
      *             .build());
      * 
@@ -2566,7 +2566,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyMappedSecretDisplayName)
      *             .build());
      * 
@@ -2609,8 +2609,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyNatRule = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs.builder()
-     *             .natRuleName(testRule.name())
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .natRuleName(testRule.get("name"))
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2652,8 +2652,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyNatRule = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs.builder()
-     *             .natRuleName(testRule.name())
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .natRuleName(testRule.get("name"))
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2695,8 +2695,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyNatRule = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs.builder()
-     *             .natRuleName(testRule.name())
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .natRuleName(testRule.get("name"))
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2738,8 +2738,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyNatRule = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs.builder()
-     *             .natRuleName(testRule.name())
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .natRuleName(testRule.get("name"))
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2781,8 +2781,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyNatRule = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs.builder()
-     *             .natRuleName(testRule.name())
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .natRuleName(testRule.get("name"))
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2824,7 +2824,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyNatRules = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyNatRuleDisplayName)
      *             .natRulePriorityOrder(networkFirewallPolicyNatRuleNatRulePriorityOrder)
      *             .build());
@@ -2868,7 +2868,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyNatRules = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyNatRuleDisplayName)
      *             .natRulePriorityOrder(networkFirewallPolicyNatRuleNatRulePriorityOrder)
      *             .build());
@@ -2912,7 +2912,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyNatRules = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyNatRuleDisplayName)
      *             .natRulePriorityOrder(networkFirewallPolicyNatRuleNatRulePriorityOrder)
      *             .build());
@@ -2956,7 +2956,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyNatRules = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyNatRuleDisplayName)
      *             .natRulePriorityOrder(networkFirewallPolicyNatRuleNatRulePriorityOrder)
      *             .build());
@@ -3000,7 +3000,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyNatRules = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyNatRuleDisplayName)
      *             .natRulePriorityOrder(networkFirewallPolicyNatRuleNatRulePriorityOrder)
      *             .build());
@@ -3099,7 +3099,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicySecurityRuleDisplayName)
      *             .securityRulePriorityOrder(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder)
      *             .build());
@@ -3143,7 +3143,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicySecurityRuleDisplayName)
      *             .securityRulePriorityOrder(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder)
      *             .build());
@@ -3187,7 +3187,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicySecurityRuleDisplayName)
      *             .securityRulePriorityOrder(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder)
      *             .build());
@@ -3231,7 +3231,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicySecurityRuleDisplayName)
      *             .securityRulePriorityOrder(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder)
      *             .build());
@@ -3275,7 +3275,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicySecurityRuleDisplayName)
      *             .securityRulePriorityOrder(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder)
      *             .build());
@@ -3429,7 +3429,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyServiceListDisplayName)
      *             .build());
      * 
@@ -3472,7 +3472,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyServiceListDisplayName)
      *             .build());
      * 
@@ -3515,7 +3515,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyServiceListDisplayName)
      *             .build());
      * 
@@ -3558,7 +3558,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyServiceListDisplayName)
      *             .build());
      * 
@@ -3601,7 +3601,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyServiceListDisplayName)
      *             .build());
      * 
@@ -3644,7 +3644,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyServiceDisplayName)
      *             .build());
      * 
@@ -3687,7 +3687,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyServiceDisplayName)
      *             .build());
      * 
@@ -3730,7 +3730,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyServiceDisplayName)
      *             .build());
      * 
@@ -3773,7 +3773,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyServiceDisplayName)
      *             .build());
      * 
@@ -3816,7 +3816,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyServiceDisplayName)
      *             .build());
      * 
@@ -3859,8 +3859,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyTunnelInspectionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRule(GetNetworkFirewallPolicyTunnelInspectionRuleArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
-     *             .tunnelInspectionRuleName(testRule.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .tunnelInspectionRuleName(testRule.get("name"))
      *             .build());
      * 
      *     }
@@ -3902,8 +3902,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyTunnelInspectionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRule(GetNetworkFirewallPolicyTunnelInspectionRuleArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
-     *             .tunnelInspectionRuleName(testRule.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .tunnelInspectionRuleName(testRule.get("name"))
      *             .build());
      * 
      *     }
@@ -3945,8 +3945,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyTunnelInspectionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRule(GetNetworkFirewallPolicyTunnelInspectionRuleArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
-     *             .tunnelInspectionRuleName(testRule.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .tunnelInspectionRuleName(testRule.get("name"))
      *             .build());
      * 
      *     }
@@ -3988,8 +3988,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyTunnelInspectionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRule(GetNetworkFirewallPolicyTunnelInspectionRuleArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
-     *             .tunnelInspectionRuleName(testRule.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .tunnelInspectionRuleName(testRule.get("name"))
      *             .build());
      * 
      *     }
@@ -4031,8 +4031,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyTunnelInspectionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRule(GetNetworkFirewallPolicyTunnelInspectionRuleArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
-     *             .tunnelInspectionRuleName(testRule.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .tunnelInspectionRuleName(testRule.get("name"))
      *             .build());
      * 
      *     }
@@ -4074,7 +4074,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyTunnelInspectionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRules(GetNetworkFirewallPolicyTunnelInspectionRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyTunnelInspectionRuleDisplayName)
      *             .tunnelInspectionRulePriorityOrder(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder)
      *             .build());
@@ -4118,7 +4118,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyTunnelInspectionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRules(GetNetworkFirewallPolicyTunnelInspectionRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyTunnelInspectionRuleDisplayName)
      *             .tunnelInspectionRulePriorityOrder(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder)
      *             .build());
@@ -4162,7 +4162,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyTunnelInspectionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRules(GetNetworkFirewallPolicyTunnelInspectionRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyTunnelInspectionRuleDisplayName)
      *             .tunnelInspectionRulePriorityOrder(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder)
      *             .build());
@@ -4206,7 +4206,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyTunnelInspectionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRules(GetNetworkFirewallPolicyTunnelInspectionRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyTunnelInspectionRuleDisplayName)
      *             .tunnelInspectionRulePriorityOrder(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder)
      *             .build());
@@ -4250,7 +4250,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyTunnelInspectionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRules(GetNetworkFirewallPolicyTunnelInspectionRulesArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyTunnelInspectionRuleDisplayName)
      *             .tunnelInspectionRulePriorityOrder(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder)
      *             .build());
@@ -4349,7 +4349,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyUrlListDisplayName)
      *             .build());
      * 
@@ -4392,7 +4392,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyUrlListDisplayName)
      *             .build());
      * 
@@ -4435,7 +4435,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyUrlListDisplayName)
      *             .build());
      * 
@@ -4478,7 +4478,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyUrlListDisplayName)
      *             .build());
      * 
@@ -4521,7 +4521,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .displayName(networkFirewallPolicyUrlListDisplayName)
      *             .build());
      * 
@@ -4568,7 +4568,7 @@ public final class NetworkFirewallFunctions {
      *             .availabilityDomain(networkFirewallAvailabilityDomain)
      *             .displayName(networkFirewallDisplayName)
      *             .id(networkFirewallId)
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .state(networkFirewallState)
      *             .build());
      * 
@@ -4615,7 +4615,7 @@ public final class NetworkFirewallFunctions {
      *             .availabilityDomain(networkFirewallAvailabilityDomain)
      *             .displayName(networkFirewallDisplayName)
      *             .id(networkFirewallId)
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .state(networkFirewallState)
      *             .build());
      * 
@@ -4662,7 +4662,7 @@ public final class NetworkFirewallFunctions {
      *             .availabilityDomain(networkFirewallAvailabilityDomain)
      *             .displayName(networkFirewallDisplayName)
      *             .id(networkFirewallId)
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .state(networkFirewallState)
      *             .build());
      * 
@@ -4709,7 +4709,7 @@ public final class NetworkFirewallFunctions {
      *             .availabilityDomain(networkFirewallAvailabilityDomain)
      *             .displayName(networkFirewallDisplayName)
      *             .id(networkFirewallId)
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .state(networkFirewallState)
      *             .build());
      * 
@@ -4756,7 +4756,7 @@ public final class NetworkFirewallFunctions {
      *             .availabilityDomain(networkFirewallAvailabilityDomain)
      *             .displayName(networkFirewallDisplayName)
      *             .id(networkFirewallId)
-     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
      *             .state(networkFirewallState)
      *             .build());
      * 

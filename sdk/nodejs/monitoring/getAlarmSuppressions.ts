@@ -28,9 +28,9 @@ import * as utilities from "../utilities";
  * const testAlarmSuppressions = oci.monitoring.getAlarmSuppressions({
  *     alarmId: testAlarm.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree,
  *     displayName: alarmSuppressionDisplayName,
- *     isAllSuppressions: alarmSuppressionIsAllSuppressions === "true",
+ *     isAllSuppressions: alarmSuppressionIsAllSuppressions,
  *     level: alarmSuppressionLevel,
  *     state: alarmSuppressionState,
  *     targetType: alarmSuppressionTargetType,
@@ -165,9 +165,9 @@ export interface GetAlarmSuppressionsResult {
  * const testAlarmSuppressions = oci.monitoring.getAlarmSuppressions({
  *     alarmId: testAlarm.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree,
  *     displayName: alarmSuppressionDisplayName,
- *     isAllSuppressions: alarmSuppressionIsAllSuppressions === "true",
+ *     isAllSuppressions: alarmSuppressionIsAllSuppressions,
  *     level: alarmSuppressionLevel,
  *     state: alarmSuppressionState,
  *     targetType: alarmSuppressionTargetType,

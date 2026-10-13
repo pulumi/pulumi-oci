@@ -29,9 +29,9 @@ import * as utilities from "../utilities";
  *     policies: [{
  *         policyType: autoScalingConfigurationPoliciesPolicyType,
  *         capacity: {
- *             initial: Number(autoScalingConfigurationPoliciesCapacityInitial),
- *             max: Number(autoScalingConfigurationPoliciesCapacityMax),
- *             min: Number(autoScalingConfigurationPoliciesCapacityMin),
+ *             initial: autoScalingConfigurationPoliciesCapacityInitial,
+ *             max: autoScalingConfigurationPoliciesCapacityMax,
+ *             min: autoScalingConfigurationPoliciesCapacityMin,
  *         },
  *         displayName: autoScalingConfigurationPoliciesDisplayName,
  *         executionSchedule: {
@@ -39,7 +39,7 @@ import * as utilities from "../utilities";
  *             timezone: autoScalingConfigurationPoliciesExecutionScheduleTimezone,
  *             type: autoScalingConfigurationPoliciesExecutionScheduleType,
  *         },
- *         isEnabled: autoScalingConfigurationPoliciesIsEnabled === "true",
+ *         isEnabled: autoScalingConfigurationPoliciesIsEnabled,
  *         resourceAction: {
  *             action: autoScalingConfigurationPoliciesResourceActionAction,
  *             actionType: autoScalingConfigurationPoliciesResourceActionActionType,
@@ -47,7 +47,7 @@ import * as utilities from "../utilities";
  *         rules: [{
  *             action: {
  *                 type: autoScalingConfigurationPoliciesRulesActionType,
- *                 value: Number(autoScalingConfigurationPoliciesRulesActionValue),
+ *                 value: autoScalingConfigurationPoliciesRulesActionValue,
  *             },
  *             displayName: autoScalingConfigurationPoliciesRulesDisplayName,
  *             metric: {
@@ -60,12 +60,12 @@ import * as utilities from "../utilities";
  *                 resourceGroup: autoScalingConfigurationPoliciesRulesMetricResourceGroup,
  *                 threshold: {
  *                     operator: autoScalingConfigurationPoliciesRulesMetricThresholdOperator,
- *                     value: Number(autoScalingConfigurationPoliciesRulesMetricThresholdValue),
+ *                     value: autoScalingConfigurationPoliciesRulesMetricThresholdValue,
  *                 },
  *             },
  *         }],
  *     }],
- *     coolDownInSeconds: Number(autoScalingConfigurationCoolDownInSeconds),
+ *     coolDownInSeconds: autoScalingConfigurationCoolDownInSeconds,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -73,7 +73,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnabled: autoScalingConfigurationIsEnabled === "true",
+ *     isEnabled: autoScalingConfigurationIsEnabled,
  * });
  * ```
  *

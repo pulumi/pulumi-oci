@@ -34,7 +34,7 @@ import (
 //				BaseServerId:     pulumi.StringRef(testBaseServer.Id),
 //				DisplayName:      pulumi.StringRef(vmInstanceDisplayName),
 //				InfrastructureId: pulumi.StringRef(testInfrastructure.Id),
-//				States:           pulumi.ToArray(vmInstanceState),
+//				States:           vmInstanceState,
 //			}, nil)
 //			if err != nil {
 //				return err

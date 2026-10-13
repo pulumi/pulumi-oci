@@ -84,7 +84,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplication = DataFlowFunctions.getApplication(GetApplicationArgs.builder()
-     *             .applicationId(testApplicationOciDataflowApplication.id())
+     *             .applicationId(testApplicationOciDataflowApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -126,7 +126,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplication = DataFlowFunctions.getApplication(GetApplicationArgs.builder()
-     *             .applicationId(testApplicationOciDataflowApplication.id())
+     *             .applicationId(testApplicationOciDataflowApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -168,7 +168,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplication = DataFlowFunctions.getApplication(GetApplicationArgs.builder()
-     *             .applicationId(testApplicationOciDataflowApplication.id())
+     *             .applicationId(testApplicationOciDataflowApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -210,7 +210,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplication = DataFlowFunctions.getApplication(GetApplicationArgs.builder()
-     *             .applicationId(testApplicationOciDataflowApplication.id())
+     *             .applicationId(testApplicationOciDataflowApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -252,7 +252,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplication = DataFlowFunctions.getApplication(GetApplicationArgs.builder()
-     *             .applicationId(testApplicationOciDataflowApplication.id())
+     *             .applicationId(testApplicationOciDataflowApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -297,7 +297,7 @@ public final class DataFlowFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(applicationDisplayName)
      *             .displayNameStartsWith(applicationDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
      *             .sparkVersion(applicationSparkVersion)
      *             .build());
      * 
@@ -343,7 +343,7 @@ public final class DataFlowFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(applicationDisplayName)
      *             .displayNameStartsWith(applicationDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
      *             .sparkVersion(applicationSparkVersion)
      *             .build());
      * 
@@ -389,7 +389,7 @@ public final class DataFlowFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(applicationDisplayName)
      *             .displayNameStartsWith(applicationDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
      *             .sparkVersion(applicationSparkVersion)
      *             .build());
      * 
@@ -435,7 +435,7 @@ public final class DataFlowFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(applicationDisplayName)
      *             .displayNameStartsWith(applicationDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
      *             .sparkVersion(applicationSparkVersion)
      *             .build());
      * 
@@ -481,7 +481,7 @@ public final class DataFlowFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(applicationDisplayName)
      *             .displayNameStartsWith(applicationDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
      *             .sparkVersion(applicationSparkVersion)
      *             .build());
      * 
@@ -524,7 +524,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvokeRun = DataFlowFunctions.getInvokeRun(GetInvokeRunArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -566,7 +566,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvokeRun = DataFlowFunctions.getInvokeRun(GetInvokeRunArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -608,7 +608,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvokeRun = DataFlowFunctions.getInvokeRun(GetInvokeRunArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -650,7 +650,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvokeRun = DataFlowFunctions.getInvokeRun(GetInvokeRunArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -692,7 +692,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvokeRun = DataFlowFunctions.getInvokeRun(GetInvokeRunArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -735,11 +735,11 @@ public final class DataFlowFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvokeRuns = DataFlowFunctions.getInvokeRuns(GetInvokeRunsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .displayName(invokeRunDisplayName)
      *             .displayNameStartsWith(invokeRunDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
-     *             .poolId(testPool.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
+     *             .poolId(testPool.get("id"))
      *             .state(invokeRunState)
      *             .timeCreatedGreaterThan(invokeRunTimeCreatedGreaterThan)
      *             .build());
@@ -784,11 +784,11 @@ public final class DataFlowFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvokeRuns = DataFlowFunctions.getInvokeRuns(GetInvokeRunsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .displayName(invokeRunDisplayName)
      *             .displayNameStartsWith(invokeRunDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
-     *             .poolId(testPool.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
+     *             .poolId(testPool.get("id"))
      *             .state(invokeRunState)
      *             .timeCreatedGreaterThan(invokeRunTimeCreatedGreaterThan)
      *             .build());
@@ -833,11 +833,11 @@ public final class DataFlowFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvokeRuns = DataFlowFunctions.getInvokeRuns(GetInvokeRunsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .displayName(invokeRunDisplayName)
      *             .displayNameStartsWith(invokeRunDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
-     *             .poolId(testPool.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
+     *             .poolId(testPool.get("id"))
      *             .state(invokeRunState)
      *             .timeCreatedGreaterThan(invokeRunTimeCreatedGreaterThan)
      *             .build());
@@ -882,11 +882,11 @@ public final class DataFlowFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvokeRuns = DataFlowFunctions.getInvokeRuns(GetInvokeRunsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .displayName(invokeRunDisplayName)
      *             .displayNameStartsWith(invokeRunDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
-     *             .poolId(testPool.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
+     *             .poolId(testPool.get("id"))
      *             .state(invokeRunState)
      *             .timeCreatedGreaterThan(invokeRunTimeCreatedGreaterThan)
      *             .build());
@@ -931,11 +931,11 @@ public final class DataFlowFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvokeRuns = DataFlowFunctions.getInvokeRuns(GetInvokeRunsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .displayName(invokeRunDisplayName)
      *             .displayNameStartsWith(invokeRunDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
-     *             .poolId(testPool.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
+     *             .poolId(testPool.get("id"))
      *             .state(invokeRunState)
      *             .timeCreatedGreaterThan(invokeRunTimeCreatedGreaterThan)
      *             .build());
@@ -979,7 +979,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPool = DataFlowFunctions.getPool(GetPoolArgs.builder()
-     *             .poolId(testPoolOciDataflowPool.id())
+     *             .poolId(testPoolOciDataflowPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1021,7 +1021,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPool = DataFlowFunctions.getPool(GetPoolArgs.builder()
-     *             .poolId(testPoolOciDataflowPool.id())
+     *             .poolId(testPoolOciDataflowPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1063,7 +1063,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPool = DataFlowFunctions.getPool(GetPoolArgs.builder()
-     *             .poolId(testPoolOciDataflowPool.id())
+     *             .poolId(testPoolOciDataflowPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1105,7 +1105,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPool = DataFlowFunctions.getPool(GetPoolArgs.builder()
-     *             .poolId(testPoolOciDataflowPool.id())
+     *             .poolId(testPoolOciDataflowPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1147,7 +1147,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPool = DataFlowFunctions.getPool(GetPoolArgs.builder()
-     *             .poolId(testPoolOciDataflowPool.id())
+     *             .poolId(testPoolOciDataflowPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1192,7 +1192,7 @@ public final class DataFlowFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(poolDisplayName)
      *             .displayNameStartsWith(poolDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
      *             .state(poolState)
      *             .build());
      * 
@@ -1238,7 +1238,7 @@ public final class DataFlowFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(poolDisplayName)
      *             .displayNameStartsWith(poolDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
      *             .state(poolState)
      *             .build());
      * 
@@ -1284,7 +1284,7 @@ public final class DataFlowFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(poolDisplayName)
      *             .displayNameStartsWith(poolDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
      *             .state(poolState)
      *             .build());
      * 
@@ -1330,7 +1330,7 @@ public final class DataFlowFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(poolDisplayName)
      *             .displayNameStartsWith(poolDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
      *             .state(poolState)
      *             .build());
      * 
@@ -1376,7 +1376,7 @@ public final class DataFlowFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(poolDisplayName)
      *             .displayNameStartsWith(poolDisplayNameStartsWith)
-     *             .ownerPrincipalId(testOwnerPrincipal.id())
+     *             .ownerPrincipalId(testOwnerPrincipal.get("id"))
      *             .state(poolState)
      *             .build());
      * 
@@ -1419,7 +1419,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoint = DataFlowFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .privateEndpointId(testPrivateEndpointOciDataflowPrivateEndpoint.id())
+     *             .privateEndpointId(testPrivateEndpointOciDataflowPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -1461,7 +1461,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoint = DataFlowFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .privateEndpointId(testPrivateEndpointOciDataflowPrivateEndpoint.id())
+     *             .privateEndpointId(testPrivateEndpointOciDataflowPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -1503,7 +1503,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoint = DataFlowFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .privateEndpointId(testPrivateEndpointOciDataflowPrivateEndpoint.id())
+     *             .privateEndpointId(testPrivateEndpointOciDataflowPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -1545,7 +1545,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoint = DataFlowFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .privateEndpointId(testPrivateEndpointOciDataflowPrivateEndpoint.id())
+     *             .privateEndpointId(testPrivateEndpointOciDataflowPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -1587,7 +1587,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoint = DataFlowFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .privateEndpointId(testPrivateEndpointOciDataflowPrivateEndpoint.id())
+     *             .privateEndpointId(testPrivateEndpointOciDataflowPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -1860,7 +1860,7 @@ public final class DataFlowFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunLog = DataFlowFunctions.getRunLog(GetRunLogArgs.builder()
      *             .name(runLogName)
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1903,7 +1903,7 @@ public final class DataFlowFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunLog = DataFlowFunctions.getRunLog(GetRunLogArgs.builder()
      *             .name(runLogName)
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1946,7 +1946,7 @@ public final class DataFlowFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunLog = DataFlowFunctions.getRunLog(GetRunLogArgs.builder()
      *             .name(runLogName)
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1989,7 +1989,7 @@ public final class DataFlowFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunLog = DataFlowFunctions.getRunLog(GetRunLogArgs.builder()
      *             .name(runLogName)
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -2032,7 +2032,7 @@ public final class DataFlowFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunLog = DataFlowFunctions.getRunLog(GetRunLogArgs.builder()
      *             .name(runLogName)
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -2074,7 +2074,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunLogs = DataFlowFunctions.getRunLogs(GetRunLogsArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -2116,7 +2116,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunLogs = DataFlowFunctions.getRunLogs(GetRunLogsArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -2158,7 +2158,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunLogs = DataFlowFunctions.getRunLogs(GetRunLogsArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -2200,7 +2200,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunLogs = DataFlowFunctions.getRunLogs(GetRunLogsArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -2242,7 +2242,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunLogs = DataFlowFunctions.getRunLogs(GetRunLogsArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .build());
      * 
      *     }
@@ -2284,8 +2284,8 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunStatement = DataFlowFunctions.getRunStatement(GetRunStatementArgs.builder()
-     *             .runId(testRun.id())
-     *             .statementId(testStatement.id())
+     *             .runId(testRun.get("id"))
+     *             .statementId(testStatement.get("id"))
      *             .build());
      * 
      *     }
@@ -2327,8 +2327,8 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunStatement = DataFlowFunctions.getRunStatement(GetRunStatementArgs.builder()
-     *             .runId(testRun.id())
-     *             .statementId(testStatement.id())
+     *             .runId(testRun.get("id"))
+     *             .statementId(testStatement.get("id"))
      *             .build());
      * 
      *     }
@@ -2370,8 +2370,8 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunStatement = DataFlowFunctions.getRunStatement(GetRunStatementArgs.builder()
-     *             .runId(testRun.id())
-     *             .statementId(testStatement.id())
+     *             .runId(testRun.get("id"))
+     *             .statementId(testStatement.get("id"))
      *             .build());
      * 
      *     }
@@ -2413,8 +2413,8 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunStatement = DataFlowFunctions.getRunStatement(GetRunStatementArgs.builder()
-     *             .runId(testRun.id())
-     *             .statementId(testStatement.id())
+     *             .runId(testRun.get("id"))
+     *             .statementId(testStatement.get("id"))
      *             .build());
      * 
      *     }
@@ -2456,8 +2456,8 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunStatement = DataFlowFunctions.getRunStatement(GetRunStatementArgs.builder()
-     *             .runId(testRun.id())
-     *             .statementId(testStatement.id())
+     *             .runId(testRun.get("id"))
+     *             .statementId(testStatement.get("id"))
      *             .build());
      * 
      *     }
@@ -2499,7 +2499,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunStatements = DataFlowFunctions.getRunStatements(GetRunStatementsArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .state(runStatementState)
      *             .build());
      * 
@@ -2542,7 +2542,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunStatements = DataFlowFunctions.getRunStatements(GetRunStatementsArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .state(runStatementState)
      *             .build());
      * 
@@ -2585,7 +2585,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunStatements = DataFlowFunctions.getRunStatements(GetRunStatementsArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .state(runStatementState)
      *             .build());
      * 
@@ -2628,7 +2628,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunStatements = DataFlowFunctions.getRunStatements(GetRunStatementsArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .state(runStatementState)
      *             .build());
      * 
@@ -2671,7 +2671,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunStatements = DataFlowFunctions.getRunStatements(GetRunStatementsArgs.builder()
-     *             .runId(testRun.id())
+     *             .runId(testRun.get("id"))
      *             .state(runStatementState)
      *             .build());
      * 
@@ -2714,7 +2714,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlEndpoint = DataFlowFunctions.getSqlEndpoint(GetSqlEndpointArgs.builder()
-     *             .sqlEndpointId(testSqlEndpointOciDataflowSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpointOciDataflowSqlEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -2756,7 +2756,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlEndpoint = DataFlowFunctions.getSqlEndpoint(GetSqlEndpointArgs.builder()
-     *             .sqlEndpointId(testSqlEndpointOciDataflowSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpointOciDataflowSqlEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -2798,7 +2798,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlEndpoint = DataFlowFunctions.getSqlEndpoint(GetSqlEndpointArgs.builder()
-     *             .sqlEndpointId(testSqlEndpointOciDataflowSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpointOciDataflowSqlEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -2840,7 +2840,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlEndpoint = DataFlowFunctions.getSqlEndpoint(GetSqlEndpointArgs.builder()
-     *             .sqlEndpointId(testSqlEndpointOciDataflowSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpointOciDataflowSqlEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -2882,7 +2882,7 @@ public final class DataFlowFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSqlEndpoint = DataFlowFunctions.getSqlEndpoint(GetSqlEndpointArgs.builder()
-     *             .sqlEndpointId(testSqlEndpointOciDataflowSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpointOciDataflowSqlEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -2928,7 +2928,7 @@ public final class DataFlowFunctions {
      *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(sqlEndpointDisplayName)
-     *             .sqlEndpointId(testSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpoint.get("id"))
      *             .state(sqlEndpointState)
      *             .build());
      * 
@@ -2975,7 +2975,7 @@ public final class DataFlowFunctions {
      *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(sqlEndpointDisplayName)
-     *             .sqlEndpointId(testSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpoint.get("id"))
      *             .state(sqlEndpointState)
      *             .build());
      * 
@@ -3022,7 +3022,7 @@ public final class DataFlowFunctions {
      *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(sqlEndpointDisplayName)
-     *             .sqlEndpointId(testSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpoint.get("id"))
      *             .state(sqlEndpointState)
      *             .build());
      * 
@@ -3069,7 +3069,7 @@ public final class DataFlowFunctions {
      *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(sqlEndpointDisplayName)
-     *             .sqlEndpointId(testSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpoint.get("id"))
      *             .state(sqlEndpointState)
      *             .build());
      * 
@@ -3116,7 +3116,7 @@ public final class DataFlowFunctions {
      *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(sqlEndpointDisplayName)
-     *             .sqlEndpointId(testSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpoint.get("id"))
      *             .state(sqlEndpointState)
      *             .build());
      * 
@@ -3163,7 +3163,7 @@ public final class DataFlowFunctions {
      *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(sqlEndpointDisplayName)
-     *             .sqlEndpointId(testSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpoint.get("id"))
      *             .state(sqlEndpointState)
      *             .build());
      * 
@@ -3210,7 +3210,7 @@ public final class DataFlowFunctions {
      *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(sqlEndpointDisplayName)
-     *             .sqlEndpointId(testSqlEndpoint.id())
+     *             .sqlEndpointId(testSqlEndpoint.get("id"))
      *             .state(sqlEndpointState)
      *             .build());
      * 

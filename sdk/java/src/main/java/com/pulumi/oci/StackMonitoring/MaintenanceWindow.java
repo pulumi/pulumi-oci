@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .name(maintenanceWindowName)
  *             .resources(MaintenanceWindowResourceArgs.builder()
- *                 .resourceId(testResource.id())
+ *                 .resourceId(testResource.get("id"))
  *                 .areMembersIncluded(maintenanceWindowResourcesAreMembersIncluded)
  *                 .build())
  *             .schedule(MaintenanceWindowScheduleArgs.builder()

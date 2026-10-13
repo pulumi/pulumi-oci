@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLifecycleStageRebootManagement = new LifecycleStageRebootManagement("testLifecycleStageRebootManagement", LifecycleStageRebootManagementArgs.builder()
- *             .lifecycleStageId(testLifecycleStage.id())
+ *             .lifecycleStageId(testLifecycleStage.get("id"))
  *             .rebootTimeoutInMins(lifecycleStageRebootManagementRebootTimeoutInMins)
  *             .workRequestDetails(LifecycleStageRebootManagementWorkRequestDetailsArgs.builder()
  *                 .description(lifecycleStageRebootManagementWorkRequestDetailsDescription)

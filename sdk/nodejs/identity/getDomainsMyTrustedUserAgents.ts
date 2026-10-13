@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testMyTrustedUserAgents = oci.identity.getDomainsMyTrustedUserAgents({
  *     idcsEndpoint: testDomain.url,
- *     myTrustedUserAgentCount: Number(myTrustedUserAgentMyTrustedUserAgentCount),
+ *     myTrustedUserAgentCount: myTrustedUserAgentMyTrustedUserAgentCount,
  *     myTrustedUserAgentFilter: myTrustedUserAgentMyTrustedUserAgentFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myTrustedUserAgentAuthorization,
  *     resourceTypeSchemaVersion: myTrustedUserAgentResourceTypeSchemaVersion,
- *     startIndex: Number(myTrustedUserAgentStartIndex),
+ *     startIndex: myTrustedUserAgentStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsMyTrustedUserAgentsResult {
  *
  * const testMyTrustedUserAgents = oci.identity.getDomainsMyTrustedUserAgents({
  *     idcsEndpoint: testDomain.url,
- *     myTrustedUserAgentCount: Number(myTrustedUserAgentMyTrustedUserAgentCount),
+ *     myTrustedUserAgentCount: myTrustedUserAgentMyTrustedUserAgentCount,
  *     myTrustedUserAgentFilter: myTrustedUserAgentMyTrustedUserAgentFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myTrustedUserAgentAuthorization,
  *     resourceTypeSchemaVersion: myTrustedUserAgentResourceTypeSchemaVersion,
- *     startIndex: Number(myTrustedUserAgentStartIndex),
+ *     startIndex: myTrustedUserAgentStartIndex,
  * });
  * ```
  */

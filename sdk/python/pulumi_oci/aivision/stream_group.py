@@ -368,7 +368,7 @@ class StreamGroup(pulumi.CustomResource):
             defined_tags=stream_group_defined_tags,
             display_name=stream_group_display_name,
             freeform_tags=stream_group_freeform_tags,
-            is_enabled=stream_group_is_enabled == "true",
+            is_enabled=stream_group_is_enabled,
             stream_overlaps=[{
                 "overlapping_streams": stream_group_stream_overlaps_overlapping_streams,
             }],
@@ -422,7 +422,7 @@ class StreamGroup(pulumi.CustomResource):
             defined_tags=stream_group_defined_tags,
             display_name=stream_group_display_name,
             freeform_tags=stream_group_freeform_tags,
-            is_enabled=stream_group_is_enabled == "true",
+            is_enabled=stream_group_is_enabled,
             stream_overlaps=[{
                 "overlapping_streams": stream_group_stream_overlaps_overlapping_streams,
             }],

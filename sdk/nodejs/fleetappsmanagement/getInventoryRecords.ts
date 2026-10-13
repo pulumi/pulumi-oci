@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  *
  * const testInventoryRecords = oci.fleetappsmanagement.getInventoryRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree,
  *     fleetId: testFleet.id,
- *     isDetailsRequired: inventoryRecordIsDetailsRequired === "true",
+ *     isDetailsRequired: inventoryRecordIsDetailsRequired,
  *     resourceId: testResource.id,
  * });
  * ```
@@ -100,9 +100,9 @@ export interface GetInventoryRecordsResult {
  *
  * const testInventoryRecords = oci.fleetappsmanagement.getInventoryRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree,
  *     fleetId: testFleet.id,
- *     isDetailsRequired: inventoryRecordIsDetailsRequired === "true",
+ *     isDetailsRequired: inventoryRecordIsDetailsRequired,
  *     resourceId: testResource.id,
  * });
  * ```

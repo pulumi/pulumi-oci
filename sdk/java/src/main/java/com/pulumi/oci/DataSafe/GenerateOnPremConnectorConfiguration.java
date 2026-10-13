@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testGenerateOnPremConnectorConfiguration = new GenerateOnPremConnectorConfiguration("testGenerateOnPremConnectorConfiguration", GenerateOnPremConnectorConfigurationArgs.builder()
- *             .onPremConnectorId(testOnPremConnector.id())
+ *             .onPremConnectorId(testOnPremConnector.get("id"))
  *             .password(generateOnPremConnectorConfigurationPassword)
  *             .build());
  * 

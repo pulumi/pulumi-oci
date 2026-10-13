@@ -54,7 +54,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsumerGroup = QueueFunctions.getConsumerGroup(GetConsumerGroupArgs.builder()
-     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.id())
+     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -96,7 +96,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsumerGroup = QueueFunctions.getConsumerGroup(GetConsumerGroupArgs.builder()
-     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.id())
+     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -138,7 +138,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsumerGroup = QueueFunctions.getConsumerGroup(GetConsumerGroupArgs.builder()
-     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.id())
+     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -180,7 +180,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsumerGroup = QueueFunctions.getConsumerGroup(GetConsumerGroupArgs.builder()
-     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.id())
+     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -222,7 +222,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsumerGroup = QueueFunctions.getConsumerGroup(GetConsumerGroupArgs.builder()
-     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.id())
+     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -266,7 +266,7 @@ public final class QueueFunctions {
      *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
      *             .displayName(consumerGroupDisplayName)
      *             .id(consumerGroupId)
-     *             .queueId(testQueue.id())
+     *             .queueId(testQueue.get("id"))
      *             .state(consumerGroupState)
      *             .build());
      * 
@@ -311,7 +311,7 @@ public final class QueueFunctions {
      *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
      *             .displayName(consumerGroupDisplayName)
      *             .id(consumerGroupId)
-     *             .queueId(testQueue.id())
+     *             .queueId(testQueue.get("id"))
      *             .state(consumerGroupState)
      *             .build());
      * 
@@ -356,7 +356,7 @@ public final class QueueFunctions {
      *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
      *             .displayName(consumerGroupDisplayName)
      *             .id(consumerGroupId)
-     *             .queueId(testQueue.id())
+     *             .queueId(testQueue.get("id"))
      *             .state(consumerGroupState)
      *             .build());
      * 
@@ -401,7 +401,7 @@ public final class QueueFunctions {
      *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
      *             .displayName(consumerGroupDisplayName)
      *             .id(consumerGroupId)
-     *             .queueId(testQueue.id())
+     *             .queueId(testQueue.get("id"))
      *             .state(consumerGroupState)
      *             .build());
      * 
@@ -446,7 +446,7 @@ public final class QueueFunctions {
      *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
      *             .displayName(consumerGroupDisplayName)
      *             .id(consumerGroupId)
-     *             .queueId(testQueue.id())
+     *             .queueId(testQueue.get("id"))
      *             .state(consumerGroupState)
      *             .build());
      * 
@@ -491,7 +491,7 @@ public final class QueueFunctions {
      *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
      *             .displayName(consumerGroupDisplayName)
      *             .id(consumerGroupId)
-     *             .queueId(testQueue.id())
+     *             .queueId(testQueue.get("id"))
      *             .state(consumerGroupState)
      *             .build());
      * 
@@ -536,7 +536,7 @@ public final class QueueFunctions {
      *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
      *             .displayName(consumerGroupDisplayName)
      *             .id(consumerGroupId)
-     *             .queueId(testQueue.id())
+     *             .queueId(testQueue.get("id"))
      *             .state(consumerGroupState)
      *             .build());
      * 
@@ -579,7 +579,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueue = QueueFunctions.getQueue(GetQueueArgs.builder()
-     *             .queueId(testQueueOciQueueQueue.id())
+     *             .queueId(testQueueOciQueueQueue.get("id"))
      *             .build());
      * 
      *     }
@@ -621,7 +621,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueue = QueueFunctions.getQueue(GetQueueArgs.builder()
-     *             .queueId(testQueueOciQueueQueue.id())
+     *             .queueId(testQueueOciQueueQueue.get("id"))
      *             .build());
      * 
      *     }
@@ -663,7 +663,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueue = QueueFunctions.getQueue(GetQueueArgs.builder()
-     *             .queueId(testQueueOciQueueQueue.id())
+     *             .queueId(testQueueOciQueueQueue.get("id"))
      *             .build());
      * 
      *     }
@@ -705,7 +705,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueue = QueueFunctions.getQueue(GetQueueArgs.builder()
-     *             .queueId(testQueueOciQueueQueue.id())
+     *             .queueId(testQueueOciQueueQueue.get("id"))
      *             .build());
      * 
      *     }
@@ -747,7 +747,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueue = QueueFunctions.getQueue(GetQueueArgs.builder()
-     *             .queueId(testQueueOciQueueQueue.id())
+     *             .queueId(testQueueOciQueueQueue.get("id"))
      *             .build());
      * 
      *     }

@@ -174,7 +174,7 @@ def get_alarm_statuses(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_alarm_statuses = oci.monitoring.get_alarm_statuses(compartment_id=compartment_id,
-        compartment_id_in_subtree=alarm_status_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=alarm_status_compartment_id_in_subtree,
         display_name=alarm_status_display_name,
         entity_id=test_entity["id"],
         resource_id=test_resource["id"],
@@ -247,7 +247,7 @@ def get_alarm_statuses_output(compartment_id: pulumi.Input[Optional[_builtins.st
     import pulumi_oci as oci
 
     test_alarm_statuses = oci.monitoring.get_alarm_statuses(compartment_id=compartment_id,
-        compartment_id_in_subtree=alarm_status_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=alarm_status_compartment_id_in_subtree,
         display_name=alarm_status_display_name,
         entity_id=test_entity["id"],
         resource_id=test_resource["id"],

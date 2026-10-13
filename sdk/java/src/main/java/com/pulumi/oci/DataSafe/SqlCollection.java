@@ -50,8 +50,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSqlCollection = new SqlCollection("testSqlCollection", SqlCollectionArgs.builder()
  *             .compartmentId(compartmentId)
- *             .dbUserName(testUser.name())
- *             .targetId(testTarget.id())
+ *             .dbUserName(testUser.get("name"))
+ *             .targetId(testTarget.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(sqlCollectionDescription)
  *             .displayName(sqlCollectionDisplayName)

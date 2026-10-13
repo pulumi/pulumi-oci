@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testSecurityQuestions = oci.identity.getDomainsSecurityQuestions({
  *     idcsEndpoint: testDomain.url,
- *     securityQuestionCount: Number(securityQuestionSecurityQuestionCount),
+ *     securityQuestionCount: securityQuestionSecurityQuestionCount,
  *     securityQuestionFilter: securityQuestionSecurityQuestionFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: securityQuestionAuthorization,
  *     resourceTypeSchemaVersion: securityQuestionResourceTypeSchemaVersion,
- *     startIndex: Number(securityQuestionStartIndex),
+ *     startIndex: securityQuestionStartIndex,
  * });
  * ```
  */
@@ -134,13 +134,13 @@ export interface GetDomainsSecurityQuestionsResult {
  *
  * const testSecurityQuestions = oci.identity.getDomainsSecurityQuestions({
  *     idcsEndpoint: testDomain.url,
- *     securityQuestionCount: Number(securityQuestionSecurityQuestionCount),
+ *     securityQuestionCount: securityQuestionSecurityQuestionCount,
  *     securityQuestionFilter: securityQuestionSecurityQuestionFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: securityQuestionAuthorization,
  *     resourceTypeSchemaVersion: securityQuestionResourceTypeSchemaVersion,
- *     startIndex: Number(securityQuestionStartIndex),
+ *     startIndex: securityQuestionStartIndex,
  * });
  * ```
  */

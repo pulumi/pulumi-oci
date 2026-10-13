@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVolumeGroupBackup = new VolumeGroupBackup("testVolumeGroupBackup", VolumeGroupBackupArgs.builder()
- *             .volumeGroupId(testVolumeGroup.id())
+ *             .volumeGroupId(testVolumeGroup.get("id"))
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(volumeGroupBackupDisplayName)

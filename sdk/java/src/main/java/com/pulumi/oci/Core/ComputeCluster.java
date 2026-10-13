@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .placementConstraintDetails(ComputeClusterPlacementConstraintDetailsArgs.builder()
  *                 .type("COMPUTE_CLUSTER")
- *                 .hpcIslandId(testHpcIsland.id())
+ *                 .hpcIslandId(testHpcIsland.get("id"))
  *                 .logicalPlacementConstraint(computeClusterPlacementConstraintDetailsLogicalPlacementConstraint)
  *                 .targetMemoryFabricIds(computeClusterPlacementConstraintDetailsTargetMemoryFabricIds)
  *                 .targetNetworkBlockIds(computeClusterPlacementConstraintDetailsTargetNetworkBlockIds)

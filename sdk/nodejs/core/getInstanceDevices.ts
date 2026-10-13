@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testInstanceDevices = oci.core.getInstanceDevices({
  *     instanceId: testInstance.id,
- *     isAvailable: instanceDeviceIsAvailable === "true",
+ *     isAvailable: instanceDeviceIsAvailable,
  *     name: instanceDeviceName,
  * });
  * ```
@@ -89,7 +89,7 @@ export interface GetInstanceDevicesResult {
  *
  * const testInstanceDevices = oci.core.getInstanceDevices({
  *     instanceId: testInstance.id,
- *     isAvailable: instanceDeviceIsAvailable === "true",
+ *     isAvailable: instanceDeviceIsAvailable,
  *     name: instanceDeviceName,
  * });
  * ```

@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testMyDevices = oci.identity.getDomainsMyDevices({
  *     idcsEndpoint: testDomain.url,
- *     myDeviceCount: Number(myDeviceMyDeviceCount),
+ *     myDeviceCount: myDeviceMyDeviceCount,
  *     myDeviceFilter: myDeviceMyDeviceFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myDeviceAuthorization,
  *     resourceTypeSchemaVersion: myDeviceResourceTypeSchemaVersion,
- *     startIndex: Number(myDeviceStartIndex),
+ *     startIndex: myDeviceStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsMyDevicesResult {
  *
  * const testMyDevices = oci.identity.getDomainsMyDevices({
  *     idcsEndpoint: testDomain.url,
- *     myDeviceCount: Number(myDeviceMyDeviceCount),
+ *     myDeviceCount: myDeviceMyDeviceCount,
  *     myDeviceFilter: myDeviceMyDeviceFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myDeviceAuthorization,
  *     resourceTypeSchemaVersion: myDeviceResourceTypeSchemaVersion,
- *     startIndex: Number(myDeviceStartIndex),
+ *     startIndex: myDeviceStartIndex,
  * });
  * ```
  */

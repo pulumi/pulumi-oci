@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  *     namespace: objectLifecyclePolicyNamespace,
  *     rules: [{
  *         action: objectLifecyclePolicyRulesAction,
- *         isEnabled: objectLifecyclePolicyRulesIsEnabled === "true",
+ *         isEnabled: objectLifecyclePolicyRulesIsEnabled,
  *         name: objectLifecyclePolicyRulesName,
  *         timeAmount: objectLifecyclePolicyRulesTimeAmount,
  *         timeUnit: objectLifecyclePolicyRulesTimeUnit,

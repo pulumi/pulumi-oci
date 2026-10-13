@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testConditions = oci.identity.getDomainsConditions({
  *     idcsEndpoint: testDomain.url,
- *     conditionCount: Number(conditionConditionCount),
+ *     conditionCount: conditionConditionCount,
  *     conditionFilter: conditionConditionFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: conditionAuthorization,
  *     resourceTypeSchemaVersion: conditionResourceTypeSchemaVersion,
- *     startIndex: Number(conditionStartIndex),
+ *     startIndex: conditionStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsConditionsResult {
  *
  * const testConditions = oci.identity.getDomainsConditions({
  *     idcsEndpoint: testDomain.url,
- *     conditionCount: Number(conditionConditionCount),
+ *     conditionCount: conditionConditionCount,
  *     conditionFilter: conditionConditionFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: conditionAuthorization,
  *     resourceTypeSchemaVersion: conditionResourceTypeSchemaVersion,
- *     startIndex: Number(conditionStartIndex),
+ *     startIndex: conditionStartIndex,
  * });
  * ```
  */

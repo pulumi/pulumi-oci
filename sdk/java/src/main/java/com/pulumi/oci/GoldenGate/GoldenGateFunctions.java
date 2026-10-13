@@ -149,7 +149,7 @@ public final class GoldenGateFunctions {
      *             .compartmentId(compartmentId)
      *             .providerType(aiModelProviderType)
      *             .region(aiModelRegion)
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -196,7 +196,7 @@ public final class GoldenGateFunctions {
      *             .compartmentId(compartmentId)
      *             .providerType(aiModelProviderType)
      *             .region(aiModelRegion)
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -243,7 +243,7 @@ public final class GoldenGateFunctions {
      *             .compartmentId(compartmentId)
      *             .providerType(aiModelProviderType)
      *             .region(aiModelRegion)
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -290,7 +290,7 @@ public final class GoldenGateFunctions {
      *             .compartmentId(compartmentId)
      *             .providerType(aiModelProviderType)
      *             .region(aiModelRegion)
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -337,7 +337,7 @@ public final class GoldenGateFunctions {
      *             .compartmentId(compartmentId)
      *             .providerType(aiModelProviderType)
      *             .region(aiModelRegion)
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -644,7 +644,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignment = GoldenGateFunctions.getConnectionAssignment(GetConnectionAssignmentArgs.builder()
-     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.id())
+     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.get("id"))
      *             .build());
      * 
      *     }
@@ -686,7 +686,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignment = GoldenGateFunctions.getConnectionAssignment(GetConnectionAssignmentArgs.builder()
-     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.id())
+     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.get("id"))
      *             .build());
      * 
      *     }
@@ -728,7 +728,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignment = GoldenGateFunctions.getConnectionAssignment(GetConnectionAssignmentArgs.builder()
-     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.id())
+     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.get("id"))
      *             .build());
      * 
      *     }
@@ -770,7 +770,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignment = GoldenGateFunctions.getConnectionAssignment(GetConnectionAssignmentArgs.builder()
-     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.id())
+     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.get("id"))
      *             .build());
      * 
      *     }
@@ -812,7 +812,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignment = GoldenGateFunctions.getConnectionAssignment(GetConnectionAssignmentArgs.builder()
-     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.id())
+     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.get("id"))
      *             .build());
      * 
      *     }
@@ -855,10 +855,10 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .connectionId(testConnection.id())
+     *             .connectionId(testConnection.get("id"))
      *             .connectionTypes(connectionAssignmentConnectionType)
      *             .connectionTypeNotEqualTos(connectionAssignmentConnectionTypeNotEqualTo)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .name(connectionAssignmentName)
      *             .state(connectionAssignmentState)
      *             .build());
@@ -903,10 +903,10 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .connectionId(testConnection.id())
+     *             .connectionId(testConnection.get("id"))
      *             .connectionTypes(connectionAssignmentConnectionType)
      *             .connectionTypeNotEqualTos(connectionAssignmentConnectionTypeNotEqualTo)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .name(connectionAssignmentName)
      *             .state(connectionAssignmentState)
      *             .build());
@@ -951,10 +951,10 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .connectionId(testConnection.id())
+     *             .connectionId(testConnection.get("id"))
      *             .connectionTypes(connectionAssignmentConnectionType)
      *             .connectionTypeNotEqualTos(connectionAssignmentConnectionTypeNotEqualTo)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .name(connectionAssignmentName)
      *             .state(connectionAssignmentState)
      *             .build());
@@ -999,10 +999,10 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .connectionId(testConnection.id())
+     *             .connectionId(testConnection.get("id"))
      *             .connectionTypes(connectionAssignmentConnectionType)
      *             .connectionTypeNotEqualTos(connectionAssignmentConnectionTypeNotEqualTo)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .name(connectionAssignmentName)
      *             .state(connectionAssignmentState)
      *             .build());
@@ -1047,10 +1047,10 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .connectionId(testConnection.id())
+     *             .connectionId(testConnection.get("id"))
      *             .connectionTypes(connectionAssignmentConnectionType)
      *             .connectionTypeNotEqualTos(connectionAssignmentConnectionTypeNotEqualTo)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .name(connectionAssignmentName)
      *             .state(connectionAssignmentState)
      *             .build());
@@ -1095,9 +1095,9 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConnections = GoldenGateFunctions.getConnections(GetConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .assignableDeploymentId(testDeployment.id())
+     *             .assignableDeploymentId(testDeployment.get("id"))
      *             .assignableDeploymentType(connectionAssignableDeploymentType)
-     *             .assignedDeploymentId(testDeployment.id())
+     *             .assignedDeploymentId(testDeployment.get("id"))
      *             .connectionTypes(connectionConnectionType)
      *             .connectionTypeNotEqualTos(connectionConnectionTypeNotEqualTo)
      *             .displayName(connectionDisplayName)
@@ -1145,9 +1145,9 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConnections = GoldenGateFunctions.getConnections(GetConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .assignableDeploymentId(testDeployment.id())
+     *             .assignableDeploymentId(testDeployment.get("id"))
      *             .assignableDeploymentType(connectionAssignableDeploymentType)
-     *             .assignedDeploymentId(testDeployment.id())
+     *             .assignedDeploymentId(testDeployment.get("id"))
      *             .connectionTypes(connectionConnectionType)
      *             .connectionTypeNotEqualTos(connectionConnectionTypeNotEqualTo)
      *             .displayName(connectionDisplayName)
@@ -1195,9 +1195,9 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConnections = GoldenGateFunctions.getConnections(GetConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .assignableDeploymentId(testDeployment.id())
+     *             .assignableDeploymentId(testDeployment.get("id"))
      *             .assignableDeploymentType(connectionAssignableDeploymentType)
-     *             .assignedDeploymentId(testDeployment.id())
+     *             .assignedDeploymentId(testDeployment.get("id"))
      *             .connectionTypes(connectionConnectionType)
      *             .connectionTypeNotEqualTos(connectionConnectionTypeNotEqualTo)
      *             .displayName(connectionDisplayName)
@@ -1245,9 +1245,9 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConnections = GoldenGateFunctions.getConnections(GetConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .assignableDeploymentId(testDeployment.id())
+     *             .assignableDeploymentId(testDeployment.get("id"))
      *             .assignableDeploymentType(connectionAssignableDeploymentType)
-     *             .assignedDeploymentId(testDeployment.id())
+     *             .assignedDeploymentId(testDeployment.get("id"))
      *             .connectionTypes(connectionConnectionType)
      *             .connectionTypeNotEqualTos(connectionConnectionTypeNotEqualTo)
      *             .displayName(connectionDisplayName)
@@ -1295,9 +1295,9 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testConnections = GoldenGateFunctions.getConnections(GetConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .assignableDeploymentId(testDeployment.id())
+     *             .assignableDeploymentId(testDeployment.get("id"))
      *             .assignableDeploymentType(connectionAssignableDeploymentType)
-     *             .assignedDeploymentId(testDeployment.id())
+     *             .assignedDeploymentId(testDeployment.get("id"))
      *             .connectionTypes(connectionConnectionType)
      *             .connectionTypeNotEqualTos(connectionConnectionTypeNotEqualTo)
      *             .displayName(connectionDisplayName)
@@ -1345,7 +1345,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
-     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id())
+     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.get("id"))
      *             .build());
      * 
      *     }
@@ -1388,7 +1388,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
-     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id())
+     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.get("id"))
      *             .build());
      * 
      *     }
@@ -1431,7 +1431,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
-     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id())
+     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.get("id"))
      *             .build());
      * 
      *     }
@@ -1474,7 +1474,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
-     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id())
+     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.get("id"))
      *             .build());
      * 
      *     }
@@ -1517,7 +1517,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
-     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id())
+     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.get("id"))
      *             .build());
      * 
      *     }
@@ -1784,7 +1784,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciGoldenGateDeployment.id())
+     *             .deploymentId(testDeploymentOciGoldenGateDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -1826,7 +1826,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciGoldenGateDeployment.id())
+     *             .deploymentId(testDeploymentOciGoldenGateDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -1868,7 +1868,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciGoldenGateDeployment.id())
+     *             .deploymentId(testDeploymentOciGoldenGateDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -1910,7 +1910,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciGoldenGateDeployment.id())
+     *             .deploymentId(testDeploymentOciGoldenGateDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -1952,7 +1952,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciGoldenGateDeployment.id())
+     *             .deploymentId(testDeploymentOciGoldenGateDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -1994,7 +1994,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
-     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.id())
+     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -2036,7 +2036,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
-     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.id())
+     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -2078,7 +2078,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
-     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.id())
+     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -2120,7 +2120,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
-     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.id())
+     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -2162,7 +2162,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
-     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.id())
+     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -2205,7 +2205,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentBackupDisplayName)
      *             .state(deploymentBackupState)
      *             .build());
@@ -2250,7 +2250,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentBackupDisplayName)
      *             .state(deploymentBackupState)
      *             .build());
@@ -2295,7 +2295,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentBackupDisplayName)
      *             .state(deploymentBackupState)
      *             .build());
@@ -2340,7 +2340,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentBackupDisplayName)
      *             .state(deploymentBackupState)
      *             .build());
@@ -2385,7 +2385,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentBackupDisplayName)
      *             .state(deploymentBackupState)
      *             .build());
@@ -2430,7 +2430,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
      *             .certificateKey(deploymentCertificateCertificateKey)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -2473,7 +2473,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
      *             .certificateKey(deploymentCertificateCertificateKey)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -2516,7 +2516,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
      *             .certificateKey(deploymentCertificateCertificateKey)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -2559,7 +2559,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
      *             .certificateKey(deploymentCertificateCertificateKey)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -2602,7 +2602,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
      *             .certificateKey(deploymentCertificateCertificateKey)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -2644,7 +2644,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .state(deploymentCertificateState)
      *             .build());
      * 
@@ -2687,7 +2687,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .state(deploymentCertificateState)
      *             .build());
      * 
@@ -2730,7 +2730,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .state(deploymentCertificateState)
      *             .build());
      * 
@@ -2773,7 +2773,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .state(deploymentCertificateState)
      *             .build());
      * 
@@ -2816,7 +2816,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .state(deploymentCertificateState)
      *             .build());
      * 
@@ -2860,7 +2860,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentDisasterRecoveryPrecheckReport = GoldenGateFunctions.getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs.builder()
      *             .availabilityDomain(deploymentDisasterRecoveryPrecheckReportAvailabilityDomain)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .faultDomain(deploymentDisasterRecoveryPrecheckReportFaultDomain)
      *             .build());
      * 
@@ -2904,7 +2904,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentDisasterRecoveryPrecheckReport = GoldenGateFunctions.getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs.builder()
      *             .availabilityDomain(deploymentDisasterRecoveryPrecheckReportAvailabilityDomain)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .faultDomain(deploymentDisasterRecoveryPrecheckReportFaultDomain)
      *             .build());
      * 
@@ -2948,7 +2948,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentDisasterRecoveryPrecheckReport = GoldenGateFunctions.getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs.builder()
      *             .availabilityDomain(deploymentDisasterRecoveryPrecheckReportAvailabilityDomain)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .faultDomain(deploymentDisasterRecoveryPrecheckReportFaultDomain)
      *             .build());
      * 
@@ -2992,7 +2992,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentDisasterRecoveryPrecheckReport = GoldenGateFunctions.getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs.builder()
      *             .availabilityDomain(deploymentDisasterRecoveryPrecheckReportAvailabilityDomain)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .faultDomain(deploymentDisasterRecoveryPrecheckReportFaultDomain)
      *             .build());
      * 
@@ -3036,7 +3036,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentDisasterRecoveryPrecheckReport = GoldenGateFunctions.getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs.builder()
      *             .availabilityDomain(deploymentDisasterRecoveryPrecheckReportAvailabilityDomain)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .faultDomain(deploymentDisasterRecoveryPrecheckReportFaultDomain)
      *             .build());
      * 
@@ -3289,7 +3289,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentPeers = GoldenGateFunctions.getDeploymentPeers(GetDeploymentPeersArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentPeerDisplayName)
      *             .state(deploymentPeerState)
      *             .build());
@@ -3333,7 +3333,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentPeers = GoldenGateFunctions.getDeploymentPeers(GetDeploymentPeersArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentPeerDisplayName)
      *             .state(deploymentPeerState)
      *             .build());
@@ -3377,7 +3377,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentPeers = GoldenGateFunctions.getDeploymentPeers(GetDeploymentPeersArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentPeerDisplayName)
      *             .state(deploymentPeerState)
      *             .build());
@@ -3421,7 +3421,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentPeers = GoldenGateFunctions.getDeploymentPeers(GetDeploymentPeersArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentPeerDisplayName)
      *             .state(deploymentPeerState)
      *             .build());
@@ -3465,7 +3465,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentPeers = GoldenGateFunctions.getDeploymentPeers(GetDeploymentPeersArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentPeerDisplayName)
      *             .state(deploymentPeerState)
      *             .build());
@@ -3949,7 +3949,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
-     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id())
+     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.get("id"))
      *             .build());
      * 
      *     }
@@ -3991,7 +3991,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
-     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id())
+     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.get("id"))
      *             .build());
      * 
      *     }
@@ -4033,7 +4033,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
-     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id())
+     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.get("id"))
      *             .build());
      * 
      *     }
@@ -4075,7 +4075,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
-     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id())
+     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.get("id"))
      *             .build());
      * 
      *     }
@@ -4117,7 +4117,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
-     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id())
+     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.get("id"))
      *             .build());
      * 
      *     }
@@ -4160,7 +4160,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentUpgradeDisplayName)
      *             .state(deploymentUpgradeState)
      *             .build());
@@ -4205,7 +4205,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentUpgradeDisplayName)
      *             .state(deploymentUpgradeState)
      *             .build());
@@ -4250,7 +4250,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentUpgradeDisplayName)
      *             .state(deploymentUpgradeState)
      *             .build());
@@ -4295,7 +4295,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentUpgradeDisplayName)
      *             .state(deploymentUpgradeState)
      *             .build());
@@ -4340,7 +4340,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .displayName(deploymentUpgradeDisplayName)
      *             .state(deploymentUpgradeState)
      *             .build());
@@ -4385,7 +4385,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentVersions = GoldenGateFunctions.getDeploymentVersions(GetDeploymentVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .deploymentType(deploymentVersionDeploymentType)
      *             .build());
      * 
@@ -4429,7 +4429,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentVersions = GoldenGateFunctions.getDeploymentVersions(GetDeploymentVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .deploymentType(deploymentVersionDeploymentType)
      *             .build());
      * 
@@ -4473,7 +4473,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentVersions = GoldenGateFunctions.getDeploymentVersions(GetDeploymentVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .deploymentType(deploymentVersionDeploymentType)
      *             .build());
      * 
@@ -4517,7 +4517,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentVersions = GoldenGateFunctions.getDeploymentVersions(GetDeploymentVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .deploymentType(deploymentVersionDeploymentType)
      *             .build());
      * 
@@ -4561,7 +4561,7 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeploymentVersions = GoldenGateFunctions.getDeploymentVersions(GetDeploymentVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .deploymentType(deploymentVersionDeploymentType)
      *             .build());
      * 
@@ -4605,8 +4605,8 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .assignableConnectionId(testConnection.id())
-     *             .assignedConnectionId(testConnection.id())
+     *             .assignableConnectionId(testConnection.get("id"))
+     *             .assignedConnectionId(testConnection.get("id"))
      *             .deploymentType(deploymentDeploymentType)
      *             .displayName(deploymentDisplayName)
      *             .fqdn(deploymentFqdn)
@@ -4655,8 +4655,8 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .assignableConnectionId(testConnection.id())
-     *             .assignedConnectionId(testConnection.id())
+     *             .assignableConnectionId(testConnection.get("id"))
+     *             .assignedConnectionId(testConnection.get("id"))
      *             .deploymentType(deploymentDeploymentType)
      *             .displayName(deploymentDisplayName)
      *             .fqdn(deploymentFqdn)
@@ -4705,8 +4705,8 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .assignableConnectionId(testConnection.id())
-     *             .assignedConnectionId(testConnection.id())
+     *             .assignableConnectionId(testConnection.get("id"))
+     *             .assignedConnectionId(testConnection.get("id"))
      *             .deploymentType(deploymentDeploymentType)
      *             .displayName(deploymentDisplayName)
      *             .fqdn(deploymentFqdn)
@@ -4755,8 +4755,8 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .assignableConnectionId(testConnection.id())
-     *             .assignedConnectionId(testConnection.id())
+     *             .assignableConnectionId(testConnection.get("id"))
+     *             .assignedConnectionId(testConnection.get("id"))
      *             .deploymentType(deploymentDeploymentType)
      *             .displayName(deploymentDisplayName)
      *             .fqdn(deploymentFqdn)
@@ -4805,8 +4805,8 @@ public final class GoldenGateFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .assignableConnectionId(testConnection.id())
-     *             .assignedConnectionId(testConnection.id())
+     *             .assignableConnectionId(testConnection.get("id"))
+     *             .assignedConnectionId(testConnection.get("id"))
      *             .deploymentType(deploymentDeploymentType)
      *             .displayName(deploymentDisplayName)
      *             .fqdn(deploymentFqdn)
@@ -4854,7 +4854,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessage = GoldenGateFunctions.getMessage(GetMessageArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -4896,7 +4896,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessage = GoldenGateFunctions.getMessage(GetMessageArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -4938,7 +4938,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessage = GoldenGateFunctions.getMessage(GetMessageArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -4980,7 +4980,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessage = GoldenGateFunctions.getMessage(GetMessageArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -5022,7 +5022,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessage = GoldenGateFunctions.getMessage(GetMessageArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -5064,7 +5064,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessages = GoldenGateFunctions.getMessages(GetMessagesArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -5106,7 +5106,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessages = GoldenGateFunctions.getMessages(GetMessagesArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -5148,7 +5148,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessages = GoldenGateFunctions.getMessages(GetMessagesArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -5190,7 +5190,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessages = GoldenGateFunctions.getMessages(GetMessagesArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -5232,7 +5232,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessages = GoldenGateFunctions.getMessages(GetMessagesArgs.builder()
-     *             .deploymentId(testDeployment.id())
+     *             .deploymentId(testDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -5274,7 +5274,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = GoldenGateFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(testPipelineOciGoldenGatePipeline.id())
+     *             .pipelineId(testPipelineOciGoldenGatePipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -5316,7 +5316,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = GoldenGateFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(testPipelineOciGoldenGatePipeline.id())
+     *             .pipelineId(testPipelineOciGoldenGatePipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -5358,7 +5358,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = GoldenGateFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(testPipelineOciGoldenGatePipeline.id())
+     *             .pipelineId(testPipelineOciGoldenGatePipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -5400,7 +5400,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = GoldenGateFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(testPipelineOciGoldenGatePipeline.id())
+     *             .pipelineId(testPipelineOciGoldenGatePipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -5442,7 +5442,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = GoldenGateFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(testPipelineOciGoldenGatePipeline.id())
+     *             .pipelineId(testPipelineOciGoldenGatePipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -5484,7 +5484,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRunningProcesses = GoldenGateFunctions.getPipelineRunningProcesses(GetPipelineRunningProcessesArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -5526,7 +5526,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRunningProcesses = GoldenGateFunctions.getPipelineRunningProcesses(GetPipelineRunningProcessesArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -5568,7 +5568,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRunningProcesses = GoldenGateFunctions.getPipelineRunningProcesses(GetPipelineRunningProcessesArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -5610,7 +5610,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRunningProcesses = GoldenGateFunctions.getPipelineRunningProcesses(GetPipelineRunningProcessesArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -5652,7 +5652,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRunningProcesses = GoldenGateFunctions.getPipelineRunningProcesses(GetPipelineRunningProcessesArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -5694,7 +5694,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineSchemaTables = GoldenGateFunctions.getPipelineSchemaTables(GetPipelineSchemaTablesArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .sourceSchemaName(pipelineSchemaTableSourceSchemaName)
      *             .targetSchemaName(pipelineSchemaTableTargetSchemaName)
      *             .displayName(pipelineSchemaTableDisplayName)
@@ -5739,7 +5739,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineSchemaTables = GoldenGateFunctions.getPipelineSchemaTables(GetPipelineSchemaTablesArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .sourceSchemaName(pipelineSchemaTableSourceSchemaName)
      *             .targetSchemaName(pipelineSchemaTableTargetSchemaName)
      *             .displayName(pipelineSchemaTableDisplayName)
@@ -5784,7 +5784,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineSchemaTables = GoldenGateFunctions.getPipelineSchemaTables(GetPipelineSchemaTablesArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .sourceSchemaName(pipelineSchemaTableSourceSchemaName)
      *             .targetSchemaName(pipelineSchemaTableTargetSchemaName)
      *             .displayName(pipelineSchemaTableDisplayName)
@@ -5829,7 +5829,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineSchemaTables = GoldenGateFunctions.getPipelineSchemaTables(GetPipelineSchemaTablesArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .sourceSchemaName(pipelineSchemaTableSourceSchemaName)
      *             .targetSchemaName(pipelineSchemaTableTargetSchemaName)
      *             .displayName(pipelineSchemaTableDisplayName)
@@ -5874,7 +5874,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineSchemaTables = GoldenGateFunctions.getPipelineSchemaTables(GetPipelineSchemaTablesArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .sourceSchemaName(pipelineSchemaTableSourceSchemaName)
      *             .targetSchemaName(pipelineSchemaTableTargetSchemaName)
      *             .displayName(pipelineSchemaTableDisplayName)
@@ -5919,7 +5919,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineSchemas = GoldenGateFunctions.getPipelineSchemas(GetPipelineSchemasArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .displayName(pipelineSchemaDisplayName)
      *             .build());
      * 
@@ -5962,7 +5962,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineSchemas = GoldenGateFunctions.getPipelineSchemas(GetPipelineSchemasArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .displayName(pipelineSchemaDisplayName)
      *             .build());
      * 
@@ -6005,7 +6005,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineSchemas = GoldenGateFunctions.getPipelineSchemas(GetPipelineSchemasArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .displayName(pipelineSchemaDisplayName)
      *             .build());
      * 
@@ -6048,7 +6048,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineSchemas = GoldenGateFunctions.getPipelineSchemas(GetPipelineSchemasArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .displayName(pipelineSchemaDisplayName)
      *             .build());
      * 
@@ -6091,7 +6091,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineSchemas = GoldenGateFunctions.getPipelineSchemas(GetPipelineSchemasArgs.builder()
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .displayName(pipelineSchemaDisplayName)
      *             .build());
      * 
@@ -6579,8 +6579,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFile = GoldenGateFunctions.getTrailFile(GetTrailFileArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.get("id"))
      *             .displayName(trailFileDisplayName)
      *             .build());
      * 
@@ -6623,8 +6623,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFile = GoldenGateFunctions.getTrailFile(GetTrailFileArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.get("id"))
      *             .displayName(trailFileDisplayName)
      *             .build());
      * 
@@ -6667,8 +6667,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFile = GoldenGateFunctions.getTrailFile(GetTrailFileArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.get("id"))
      *             .displayName(trailFileDisplayName)
      *             .build());
      * 
@@ -6711,8 +6711,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFile = GoldenGateFunctions.getTrailFile(GetTrailFileArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.get("id"))
      *             .displayName(trailFileDisplayName)
      *             .build());
      * 
@@ -6755,8 +6755,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFile = GoldenGateFunctions.getTrailFile(GetTrailFileArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.get("id"))
      *             .displayName(trailFileDisplayName)
      *             .build());
      * 
@@ -6800,8 +6800,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFiles = GoldenGateFunctions.getTrailFiles(GetTrailFilesArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailFileDisplayName)
      *             .build());
      * 
@@ -6845,8 +6845,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFiles = GoldenGateFunctions.getTrailFiles(GetTrailFilesArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailFileDisplayName)
      *             .build());
      * 
@@ -6890,8 +6890,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFiles = GoldenGateFunctions.getTrailFiles(GetTrailFilesArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailFileDisplayName)
      *             .build());
      * 
@@ -6935,8 +6935,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFiles = GoldenGateFunctions.getTrailFiles(GetTrailFilesArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailFileDisplayName)
      *             .build());
      * 
@@ -6980,8 +6980,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFiles = GoldenGateFunctions.getTrailFiles(GetTrailFilesArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailFileDisplayName)
      *             .build());
      * 
@@ -7024,10 +7024,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequence = GoldenGateFunctions.getTrailSequence(GetTrailSequenceArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailSequenceDisplayName)
-     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.id())
+     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.get("id"))
      *             .build());
      * 
      *     }
@@ -7069,10 +7069,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequence = GoldenGateFunctions.getTrailSequence(GetTrailSequenceArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailSequenceDisplayName)
-     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.id())
+     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.get("id"))
      *             .build());
      * 
      *     }
@@ -7114,10 +7114,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequence = GoldenGateFunctions.getTrailSequence(GetTrailSequenceArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailSequenceDisplayName)
-     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.id())
+     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.get("id"))
      *             .build());
      * 
      *     }
@@ -7159,10 +7159,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequence = GoldenGateFunctions.getTrailSequence(GetTrailSequenceArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailSequenceDisplayName)
-     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.id())
+     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.get("id"))
      *             .build());
      * 
      *     }
@@ -7204,10 +7204,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequence = GoldenGateFunctions.getTrailSequence(GetTrailSequenceArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailSequenceDisplayName)
-     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.id())
+     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.get("id"))
      *             .build());
      * 
      *     }
@@ -7250,10 +7250,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequences = GoldenGateFunctions.getTrailSequences(GetTrailSequencesArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailSequenceDisplayName)
-     *             .trailSequenceId(testTrailSequence.id())
+     *             .trailSequenceId(testTrailSequence.get("id"))
      *             .build());
      * 
      *     }
@@ -7296,10 +7296,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequences = GoldenGateFunctions.getTrailSequences(GetTrailSequencesArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailSequenceDisplayName)
-     *             .trailSequenceId(testTrailSequence.id())
+     *             .trailSequenceId(testTrailSequence.get("id"))
      *             .build());
      * 
      *     }
@@ -7342,10 +7342,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequences = GoldenGateFunctions.getTrailSequences(GetTrailSequencesArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailSequenceDisplayName)
-     *             .trailSequenceId(testTrailSequence.id())
+     *             .trailSequenceId(testTrailSequence.get("id"))
      *             .build());
      * 
      *     }
@@ -7388,10 +7388,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequences = GoldenGateFunctions.getTrailSequences(GetTrailSequencesArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailSequenceDisplayName)
-     *             .trailSequenceId(testTrailSequence.id())
+     *             .trailSequenceId(testTrailSequence.get("id"))
      *             .build());
      * 
      *     }
@@ -7434,10 +7434,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequences = GoldenGateFunctions.getTrailSequences(GetTrailSequencesArgs.builder()
-     *             .deploymentId(testDeployment.id())
-     *             .trailFileId(testTrailFile.id())
+     *             .deploymentId(testDeployment.get("id"))
+     *             .trailFileId(testTrailFile.get("id"))
      *             .displayName(trailSequenceDisplayName)
-     *             .trailSequenceId(testTrailSequence.id())
+     *             .trailSequenceId(testTrailSequence.get("id"))
      *             .build());
      * 
      *     }

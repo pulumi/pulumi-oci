@@ -313,11 +313,11 @@ class GeneratedKey(pulumi.CustomResource):
 
         test_generated_key = oci.kms.GeneratedKey("test_generated_key",
             crypto_endpoint=generated_key_crypto_endpoint,
-            include_plaintext_key=generated_key_include_plaintext_key == "true",
+            include_plaintext_key=generated_key_include_plaintext_key,
             key_id=test_key["id"],
             key_shape={
                 "algorithm": generated_key_key_shape_algorithm,
-                "length": int(generated_key_key_shape_length),
+                "length": generated_key_key_shape_length,
                 "curve_id": test_curve["id"],
             },
             associated_data=generated_key_associated_data,
@@ -363,11 +363,11 @@ class GeneratedKey(pulumi.CustomResource):
 
         test_generated_key = oci.kms.GeneratedKey("test_generated_key",
             crypto_endpoint=generated_key_crypto_endpoint,
-            include_plaintext_key=generated_key_include_plaintext_key == "true",
+            include_plaintext_key=generated_key_include_plaintext_key,
             key_id=test_key["id"],
             key_shape={
                 "algorithm": generated_key_key_shape_algorithm,
-                "length": int(generated_key_key_shape_length),
+                "length": generated_key_key_shape_length,
                 "curve_id": test_curve["id"],
             },
             associated_data=generated_key_associated_data,

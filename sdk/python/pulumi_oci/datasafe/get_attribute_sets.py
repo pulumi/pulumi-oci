@@ -210,10 +210,10 @@ def get_attribute_sets(access_level: Optional[_builtins.str] = None,
         access_level=attribute_set_access_level,
         attribute_set_id=test_attribute_set["id"],
         attribute_set_type=attribute_set_attribute_set_type,
-        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree,
         display_name=attribute_set_display_name,
         in_use=attribute_set_in_use,
-        is_user_defined=attribute_set_is_user_defined == "true",
+        is_user_defined=attribute_set_is_user_defined,
         state=attribute_set_state)
     ```
 
@@ -294,10 +294,10 @@ def get_attribute_sets_output(access_level: pulumi.Input[Optional[Optional[_buil
         access_level=attribute_set_access_level,
         attribute_set_id=test_attribute_set["id"],
         attribute_set_type=attribute_set_attribute_set_type,
-        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree,
         display_name=attribute_set_display_name,
         in_use=attribute_set_in_use,
-        is_user_defined=attribute_set_is_user_defined == "true",
+        is_user_defined=attribute_set_is_user_defined,
         state=attribute_set_state)
     ```
 

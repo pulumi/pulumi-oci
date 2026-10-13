@@ -157,7 +157,7 @@ def get_unified_agent_configurations(compartment_id: Optional[_builtins.str] = N
     test_unified_agent_configurations = oci.logging.get_unified_agent_configurations(compartment_id=compartment_id,
         display_name=unified_agent_configuration_display_name,
         group_id=test_group["id"],
-        is_compartment_id_in_subtree=unified_agent_configuration_is_compartment_id_in_subtree == "true",
+        is_compartment_id_in_subtree=unified_agent_configuration_is_compartment_id_in_subtree,
         log_id=test_log["id"],
         state=unified_agent_configuration_state)
     ```
@@ -213,7 +213,7 @@ def get_unified_agent_configurations_output(compartment_id: pulumi.Input[Optiona
     test_unified_agent_configurations = oci.logging.get_unified_agent_configurations(compartment_id=compartment_id,
         display_name=unified_agent_configuration_display_name,
         group_id=test_group["id"],
-        is_compartment_id_in_subtree=unified_agent_configuration_is_compartment_id_in_subtree == "true",
+        is_compartment_id_in_subtree=unified_agent_configuration_is_compartment_id_in_subtree,
         log_id=test_log["id"],
         state=unified_agent_configuration_state)
     ```

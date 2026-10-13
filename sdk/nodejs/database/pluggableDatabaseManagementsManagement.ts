@@ -21,14 +21,14 @@ import * as utilities from "../utilities";
  *
  * const testPluggableDatabasePluggabledatabasemanagementsManagement = new oci.database.PluggableDatabaseManagementsManagement("test_pluggable_database_pluggabledatabasemanagements_management", {
  *     pluggableDatabaseId: testPluggableDatabase.id,
- *     enablePluggabledatabasemanagement: enablePluggabledatabasemanagement === "true",
+ *     enablePluggabledatabasemanagement: enablePluggabledatabasemanagement,
  *     credentialDetails: {
  *         passwordSecretId: testSecret.id,
  *         userName: testUser.name,
  *     },
  *     privateEndPointId: testPrivateEndPoint.id,
  *     serviceName: testService.name,
- *     port: Number(pluggableDatabasePluggabledatabasemanagementsManagementPort),
+ *     port: pluggableDatabasePluggabledatabasemanagementsManagementPort,
  *     protocol: pluggableDatabasePluggabledatabasemanagementsManagementProtocol,
  *     role: pluggableDatabasePluggabledatabasemanagementsManagementRole,
  *     sslSecretId: testSecret.id,

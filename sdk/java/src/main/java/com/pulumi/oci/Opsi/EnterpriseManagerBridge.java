@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *         var testEnterpriseManagerBridge = new EnterpriseManagerBridge("testEnterpriseManagerBridge", EnterpriseManagerBridgeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(enterpriseManagerBridgeDisplayName)
- *             .objectStorageBucketName(testBucket.name())
+ *             .objectStorageBucketName(testBucket.get("name"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(enterpriseManagerBridgeDescription)
  *             .freeformTags(Map.of("bar-key", "value"))

@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testOciConsoleSignOnPolicyConsents = oci.identity.getDomainsOciConsoleSignOnPolicyConsents({
  *     idcsEndpoint: testDomain.url,
- *     ociConsoleSignOnPolicyConsentCount: Number(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount),
+ *     ociConsoleSignOnPolicyConsentCount: ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount,
  *     ociConsoleSignOnPolicyConsentFilter: ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter,
  *     attributeSets: ociConsoleSignOnPolicyConsentAttributeSets,
  *     attributes: ociConsoleSignOnPolicyConsentAttributes,
  *     authorization: ociConsoleSignOnPolicyConsentAuthorization,
  *     resourceTypeSchemaVersion: ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion,
- *     startIndex: Number(ociConsoleSignOnPolicyConsentStartIndex),
+ *     startIndex: ociConsoleSignOnPolicyConsentStartIndex,
  * });
  * ```
  */
@@ -129,13 +129,13 @@ export interface GetDomainsOciConsoleSignOnPolicyConsentsResult {
  *
  * const testOciConsoleSignOnPolicyConsents = oci.identity.getDomainsOciConsoleSignOnPolicyConsents({
  *     idcsEndpoint: testDomain.url,
- *     ociConsoleSignOnPolicyConsentCount: Number(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount),
+ *     ociConsoleSignOnPolicyConsentCount: ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount,
  *     ociConsoleSignOnPolicyConsentFilter: ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter,
  *     attributeSets: ociConsoleSignOnPolicyConsentAttributeSets,
  *     attributes: ociConsoleSignOnPolicyConsentAttributes,
  *     authorization: ociConsoleSignOnPolicyConsentAuthorization,
  *     resourceTypeSchemaVersion: ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion,
- *     startIndex: Number(ociConsoleSignOnPolicyConsentStartIndex),
+ *     startIndex: ociConsoleSignOnPolicyConsentStartIndex,
  * });
  * ```
  */

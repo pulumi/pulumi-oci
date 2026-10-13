@@ -822,7 +822,7 @@ class MonitoredResource(pulumi.CustomResource):
                 "type": monitored_resource_credentials_type,
             },
             database_connection_details={
-                "port": int(monitored_resource_database_connection_details_port),
+                "port": monitored_resource_database_connection_details_port,
                 "protocol": monitored_resource_database_connection_details_protocol,
                 "service_name": monitored_resource_database_service_name,
                 "connector_id": monitored_resource_database_connector_id,
@@ -951,7 +951,7 @@ class MonitoredResource(pulumi.CustomResource):
                 "type": monitored_resource_credentials_type,
             },
             database_connection_details={
-                "port": int(monitored_resource_database_connection_details_port),
+                "port": monitored_resource_database_connection_details_port,
                 "protocol": monitored_resource_database_connection_details_protocol,
                 "service_name": monitored_resource_database_service_name,
                 "connector_id": monitored_resource_database_connector_id,

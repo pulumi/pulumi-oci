@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testLogGroups = oci.logging.getLogGroups({
  *     compartmentId: compartmentId,
  *     displayName: logGroupDisplayName,
- *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -90,7 +90,7 @@ export interface GetLogGroupsResult {
  * const testLogGroups = oci.logging.getLogGroups({
  *     compartmentId: compartmentId,
  *     displayName: logGroupDisplayName,
- *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree,
  * });
  * ```
  */

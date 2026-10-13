@@ -50,9 +50,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testJobAdvisorReportCheck = new JobAdvisorReportCheck("testJobAdvisorReportCheck", JobAdvisorReportCheckArgs.builder()
- *             .advisorReportCheckId(testAdvisorReportCheck.id())
+ *             .advisorReportCheckId(testAdvisorReportCheck.get("id"))
  *             .isReviewed(jobAdvisorReportCheckIsReviewed)
- *             .jobId(testJob.id())
+ *             .jobId(testJob.get("id"))
  *             .build());
  * 
  *     }

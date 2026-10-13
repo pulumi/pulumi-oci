@@ -153,7 +153,7 @@ def get_managed_instance_group_managed_instances(compartment_id: Optional[_built
 
     test_managed_instance_group_managed_instances = oci.osmanagementhub.get_managed_instance_group_managed_instances(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=managed_instance_group_managed_instance_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=managed_instance_group_managed_instance_compartment_id_in_subtree,
         display_names=managed_instance_group_managed_instance_display_name,
         display_name_contains=managed_instance_group_managed_instance_display_name_contains,
         managed_instance_id=test_managed_instance["id"])
@@ -209,7 +209,7 @@ def get_managed_instance_group_managed_instances_output(compartment_id: pulumi.I
 
     test_managed_instance_group_managed_instances = oci.osmanagementhub.get_managed_instance_group_managed_instances(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=managed_instance_group_managed_instance_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=managed_instance_group_managed_instance_compartment_id_in_subtree,
         display_names=managed_instance_group_managed_instance_display_name,
         display_name_contains=managed_instance_group_managed_instance_display_name_contains,
         managed_instance_id=test_managed_instance["id"])

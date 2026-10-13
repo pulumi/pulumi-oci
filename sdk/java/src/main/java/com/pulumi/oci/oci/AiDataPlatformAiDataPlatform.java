@@ -50,15 +50,15 @@ import javax.annotation.Nullable;
  *         var testAiDataPlatform = new AiDataPlatformAiDataPlatform("testAiDataPlatform", AiDataPlatformAiDataPlatformArgs.builder()
  *             .compartmentId(compartmentId)
  *             .aiDataPlatformType(aiDataPlatformAiDataPlatformType)
- *             .defaultWorkspaceName(testWorkspace.name())
+ *             .defaultWorkspaceName(testWorkspace.get("name"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(aiDataPlatformDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isEnableAiFeature(aiDataPlatformIsEnableAiFeature)
  *             .systemTags(aiDataPlatformSystemTags)
  *             .vectorDbAdminCred(aiDataPlatformVectorDbAdminCred)
- *             .vectorDbAdminSecretId(testSecret.id())
- *             .vectorDbId(testVectorDb.id())
+ *             .vectorDbAdminSecretId(testSecret.get("id"))
+ *             .vectorDbId(testVectorDb.get("id"))
  *             .build());
  * 
  *     }

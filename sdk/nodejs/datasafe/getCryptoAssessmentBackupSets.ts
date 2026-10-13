@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *     assessmentId: testAssessment.id,
  *     assessmentType: cryptoAssessmentBackupSetAssessmentType,
  *     backupSetKey: cryptoAssessmentBackupSetBackupSetKey,
- *     compartmentIdInSubtree: cryptoAssessmentBackupSetCompartmentIdInSubtree === "true",
- *     isEncrypted: cryptoAssessmentBackupSetIsEncrypted === "true",
+ *     compartmentIdInSubtree: cryptoAssessmentBackupSetCompartmentIdInSubtree,
+ *     isEncrypted: cryptoAssessmentBackupSetIsEncrypted,
  *     targetId: testTarget.id,
  *     targetIds: cryptoAssessmentBackupSetTargetIds,
  * });
@@ -141,8 +141,8 @@ export interface GetCryptoAssessmentBackupSetsResult {
  *     assessmentId: testAssessment.id,
  *     assessmentType: cryptoAssessmentBackupSetAssessmentType,
  *     backupSetKey: cryptoAssessmentBackupSetBackupSetKey,
- *     compartmentIdInSubtree: cryptoAssessmentBackupSetCompartmentIdInSubtree === "true",
- *     isEncrypted: cryptoAssessmentBackupSetIsEncrypted === "true",
+ *     compartmentIdInSubtree: cryptoAssessmentBackupSetCompartmentIdInSubtree,
+ *     isEncrypted: cryptoAssessmentBackupSetIsEncrypted,
  *     targetId: testTarget.id,
  *     targetIds: cryptoAssessmentBackupSetTargetIds,
  * });

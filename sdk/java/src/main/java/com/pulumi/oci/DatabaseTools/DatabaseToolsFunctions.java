@@ -147,7 +147,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -189,7 +189,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -231,7 +231,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -273,7 +273,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -315,7 +315,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -597,7 +597,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfig = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -639,7 +639,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfig = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -681,7 +681,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfig = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -723,7 +723,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfig = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -765,7 +765,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfig = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -1032,7 +1032,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
-     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id())
+     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.get("id"))
      *             .build());
      * 
      *     }
@@ -1074,7 +1074,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
-     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id())
+     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.get("id"))
      *             .build());
      * 
      *     }
@@ -1116,7 +1116,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
-     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id())
+     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.get("id"))
      *             .build());
      * 
      *     }
@@ -1158,7 +1158,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
-     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id())
+     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.get("id"))
      *             .build());
      * 
      *     }
@@ -1200,7 +1200,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
-     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id())
+     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.get("id"))
      *             .build());
      * 
      *     }
@@ -1468,7 +1468,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsIdentities = DatabaseToolsFunctions.getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .displayName(databaseToolsIdentityDisplayName)
      *             .state(databaseToolsIdentityState)
      *             .types(databaseToolsIdentityType)
@@ -1514,7 +1514,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsIdentities = DatabaseToolsFunctions.getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .displayName(databaseToolsIdentityDisplayName)
      *             .state(databaseToolsIdentityState)
      *             .types(databaseToolsIdentityType)
@@ -1560,7 +1560,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsIdentities = DatabaseToolsFunctions.getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .displayName(databaseToolsIdentityDisplayName)
      *             .state(databaseToolsIdentityState)
      *             .types(databaseToolsIdentityType)
@@ -1606,7 +1606,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsIdentities = DatabaseToolsFunctions.getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .displayName(databaseToolsIdentityDisplayName)
      *             .state(databaseToolsIdentityState)
      *             .types(databaseToolsIdentityType)
@@ -1652,7 +1652,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsIdentities = DatabaseToolsFunctions.getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .displayName(databaseToolsIdentityDisplayName)
      *             .state(databaseToolsIdentityState)
      *             .types(databaseToolsIdentityType)
@@ -1697,7 +1697,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsIdentity = DatabaseToolsFunctions.getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs.builder()
-     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.id())
+     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.get("id"))
      *             .build());
      * 
      *     }
@@ -1739,7 +1739,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsIdentity = DatabaseToolsFunctions.getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs.builder()
-     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.id())
+     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.get("id"))
      *             .build());
      * 
      *     }
@@ -1781,7 +1781,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsIdentity = DatabaseToolsFunctions.getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs.builder()
-     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.id())
+     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.get("id"))
      *             .build());
      * 
      *     }
@@ -1823,7 +1823,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsIdentity = DatabaseToolsFunctions.getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs.builder()
-     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.id())
+     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.get("id"))
      *             .build());
      * 
      *     }
@@ -1865,7 +1865,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsIdentity = DatabaseToolsFunctions.getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs.builder()
-     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.id())
+     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.get("id"))
      *             .build());
      * 
      *     }
@@ -1907,7 +1907,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpServer = DatabaseToolsFunctions.getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs.builder()
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.get("id"))
      *             .build());
      * 
      *     }
@@ -1949,7 +1949,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpServer = DatabaseToolsFunctions.getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs.builder()
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.get("id"))
      *             .build());
      * 
      *     }
@@ -1991,7 +1991,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpServer = DatabaseToolsFunctions.getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs.builder()
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.get("id"))
      *             .build());
      * 
      *     }
@@ -2033,7 +2033,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpServer = DatabaseToolsFunctions.getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs.builder()
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.get("id"))
      *             .build());
      * 
      *     }
@@ -2075,7 +2075,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpServer = DatabaseToolsFunctions.getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs.builder()
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.get("id"))
      *             .build());
      * 
      *     }
@@ -2118,7 +2118,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpServers = DatabaseToolsFunctions.getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .displayName(databaseToolsMcpServerDisplayName)
      *             .relatedResourceIdentifier(databaseToolsMcpServerRelatedResourceIdentifier)
      *             .state(databaseToolsMcpServerState)
@@ -2165,7 +2165,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpServers = DatabaseToolsFunctions.getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .displayName(databaseToolsMcpServerDisplayName)
      *             .relatedResourceIdentifier(databaseToolsMcpServerRelatedResourceIdentifier)
      *             .state(databaseToolsMcpServerState)
@@ -2212,7 +2212,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpServers = DatabaseToolsFunctions.getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .displayName(databaseToolsMcpServerDisplayName)
      *             .relatedResourceIdentifier(databaseToolsMcpServerRelatedResourceIdentifier)
      *             .state(databaseToolsMcpServerState)
@@ -2259,7 +2259,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpServers = DatabaseToolsFunctions.getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .displayName(databaseToolsMcpServerDisplayName)
      *             .relatedResourceIdentifier(databaseToolsMcpServerRelatedResourceIdentifier)
      *             .state(databaseToolsMcpServerState)
@@ -2306,7 +2306,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpServers = DatabaseToolsFunctions.getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .displayName(databaseToolsMcpServerDisplayName)
      *             .relatedResourceIdentifier(databaseToolsMcpServerRelatedResourceIdentifier)
      *             .state(databaseToolsMcpServerState)
@@ -2352,7 +2352,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolset = DatabaseToolsFunctions.getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs.builder()
-     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.id())
+     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.get("id"))
      *             .build());
      * 
      *     }
@@ -2394,7 +2394,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolset = DatabaseToolsFunctions.getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs.builder()
-     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.id())
+     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.get("id"))
      *             .build());
      * 
      *     }
@@ -2436,7 +2436,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolset = DatabaseToolsFunctions.getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs.builder()
-     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.id())
+     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.get("id"))
      *             .build());
      * 
      *     }
@@ -2478,7 +2478,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolset = DatabaseToolsFunctions.getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs.builder()
-     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.id())
+     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.get("id"))
      *             .build());
      * 
      *     }
@@ -2520,7 +2520,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolset = DatabaseToolsFunctions.getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs.builder()
-     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.id())
+     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.get("id"))
      *             .build());
      * 
      *     }
@@ -2563,7 +2563,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolsetVersions = DatabaseToolsFunctions.getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.get("id"))
      *             .displayName(databaseToolsMcpToolsetVersionDisplayName)
      *             .build());
      * 
@@ -2607,7 +2607,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolsetVersions = DatabaseToolsFunctions.getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.get("id"))
      *             .displayName(databaseToolsMcpToolsetVersionDisplayName)
      *             .build());
      * 
@@ -2651,7 +2651,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolsetVersions = DatabaseToolsFunctions.getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.get("id"))
      *             .displayName(databaseToolsMcpToolsetVersionDisplayName)
      *             .build());
      * 
@@ -2695,7 +2695,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolsetVersions = DatabaseToolsFunctions.getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.get("id"))
      *             .displayName(databaseToolsMcpToolsetVersionDisplayName)
      *             .build());
      * 
@@ -2739,7 +2739,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolsetVersions = DatabaseToolsFunctions.getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.get("id"))
      *             .displayName(databaseToolsMcpToolsetVersionDisplayName)
      *             .build());
      * 
@@ -2783,7 +2783,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolsets = DatabaseToolsFunctions.getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.get("id"))
      *             .displayName(databaseToolsMcpToolsetDisplayName)
      *             .state(databaseToolsMcpToolsetState)
      *             .types(databaseToolsMcpToolsetType)
@@ -2829,7 +2829,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolsets = DatabaseToolsFunctions.getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.get("id"))
      *             .displayName(databaseToolsMcpToolsetDisplayName)
      *             .state(databaseToolsMcpToolsetState)
      *             .types(databaseToolsMcpToolsetType)
@@ -2875,7 +2875,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolsets = DatabaseToolsFunctions.getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.get("id"))
      *             .displayName(databaseToolsMcpToolsetDisplayName)
      *             .state(databaseToolsMcpToolsetState)
      *             .types(databaseToolsMcpToolsetType)
@@ -2921,7 +2921,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolsets = DatabaseToolsFunctions.getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.get("id"))
      *             .displayName(databaseToolsMcpToolsetDisplayName)
      *             .state(databaseToolsMcpToolsetState)
      *             .types(databaseToolsMcpToolsetType)
@@ -2967,7 +2967,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsMcpToolsets = DatabaseToolsFunctions.getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.get("id"))
      *             .displayName(databaseToolsMcpToolsetDisplayName)
      *             .state(databaseToolsMcpToolsetState)
      *             .types(databaseToolsMcpToolsetType)
@@ -3012,7 +3012,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
-     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id())
+     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -3054,7 +3054,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
-     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id())
+     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -3096,7 +3096,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
-     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id())
+     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -3138,7 +3138,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
-     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id())
+     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -3180,7 +3180,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
-     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id())
+     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -3224,9 +3224,9 @@ public final class DatabaseToolsFunctions {
      *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(databaseToolsPrivateEndpointDisplayName)
-     *             .endpointServiceId(testService.id())
+     *             .endpointServiceId(testService.get("id"))
      *             .state(databaseToolsPrivateEndpointState)
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -3270,9 +3270,9 @@ public final class DatabaseToolsFunctions {
      *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(databaseToolsPrivateEndpointDisplayName)
-     *             .endpointServiceId(testService.id())
+     *             .endpointServiceId(testService.get("id"))
      *             .state(databaseToolsPrivateEndpointState)
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -3316,9 +3316,9 @@ public final class DatabaseToolsFunctions {
      *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(databaseToolsPrivateEndpointDisplayName)
-     *             .endpointServiceId(testService.id())
+     *             .endpointServiceId(testService.get("id"))
      *             .state(databaseToolsPrivateEndpointState)
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -3362,9 +3362,9 @@ public final class DatabaseToolsFunctions {
      *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(databaseToolsPrivateEndpointDisplayName)
-     *             .endpointServiceId(testService.id())
+     *             .endpointServiceId(testService.get("id"))
      *             .state(databaseToolsPrivateEndpointState)
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -3408,9 +3408,9 @@ public final class DatabaseToolsFunctions {
      *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(databaseToolsPrivateEndpointDisplayName)
-     *             .endpointServiceId(testService.id())
+     *             .endpointServiceId(testService.get("id"))
      *             .state(databaseToolsPrivateEndpointState)
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -3452,7 +3452,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsSqlReport = DatabaseToolsFunctions.getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs.builder()
-     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.id())
+     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.get("id"))
      *             .build());
      * 
      *     }
@@ -3494,7 +3494,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsSqlReport = DatabaseToolsFunctions.getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs.builder()
-     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.id())
+     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.get("id"))
      *             .build());
      * 
      *     }
@@ -3536,7 +3536,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsSqlReport = DatabaseToolsFunctions.getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs.builder()
-     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.id())
+     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.get("id"))
      *             .build());
      * 
      *     }
@@ -3578,7 +3578,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsSqlReport = DatabaseToolsFunctions.getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs.builder()
-     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.id())
+     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.get("id"))
      *             .build());
      * 
      *     }
@@ -3620,7 +3620,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsSqlReport = DatabaseToolsFunctions.getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs.builder()
-     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.id())
+     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.get("id"))
      *             .build());
      * 
      *     }
@@ -3888,7 +3888,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -3931,7 +3931,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -3974,7 +3974,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4017,7 +4017,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4060,7 +4060,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4103,7 +4103,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialExecuteGrantee = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .executeGranteeKey(databaseToolsConnectionCredentialExecuteGranteeExecuteGranteeKey)
      *             .build());
      * 
@@ -4147,7 +4147,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialExecuteGrantee = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .executeGranteeKey(databaseToolsConnectionCredentialExecuteGranteeExecuteGranteeKey)
      *             .build());
      * 
@@ -4191,7 +4191,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialExecuteGrantee = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .executeGranteeKey(databaseToolsConnectionCredentialExecuteGranteeExecuteGranteeKey)
      *             .build());
      * 
@@ -4235,7 +4235,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialExecuteGrantee = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .executeGranteeKey(databaseToolsConnectionCredentialExecuteGranteeExecuteGranteeKey)
      *             .build());
      * 
@@ -4279,7 +4279,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialExecuteGrantee = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .executeGranteeKey(databaseToolsConnectionCredentialExecuteGranteeExecuteGranteeKey)
      *             .build());
      * 
@@ -4323,7 +4323,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialExecuteGrantees = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4366,7 +4366,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialExecuteGrantees = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4409,7 +4409,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialExecuteGrantees = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4452,7 +4452,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialExecuteGrantees = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4495,7 +4495,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialExecuteGrantees = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4538,7 +4538,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialPublicSynonym = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .publicSynonymKey(databaseToolsConnectionCredentialPublicSynonymPublicSynonymKey)
      *             .build());
      * 
@@ -4582,7 +4582,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialPublicSynonym = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .publicSynonymKey(databaseToolsConnectionCredentialPublicSynonymPublicSynonymKey)
      *             .build());
      * 
@@ -4626,7 +4626,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialPublicSynonym = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .publicSynonymKey(databaseToolsConnectionCredentialPublicSynonymPublicSynonymKey)
      *             .build());
      * 
@@ -4670,7 +4670,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialPublicSynonym = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .publicSynonymKey(databaseToolsConnectionCredentialPublicSynonymPublicSynonymKey)
      *             .build());
      * 
@@ -4714,7 +4714,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialPublicSynonym = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .publicSynonymKey(databaseToolsConnectionCredentialPublicSynonymPublicSynonymKey)
      *             .build());
      * 
@@ -4758,7 +4758,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialPublicSynonyms = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4801,7 +4801,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialPublicSynonyms = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4844,7 +4844,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialPublicSynonyms = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4887,7 +4887,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialPublicSynonyms = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4930,7 +4930,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentialPublicSynonyms = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs.builder()
      *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -4972,7 +4972,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -5014,7 +5014,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -5056,7 +5056,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -5098,7 +5098,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -5140,7 +5140,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -5182,7 +5182,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionPropertySet = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .propertySetKey(databaseToolsConnectionPropertySetPropertySetKey)
      *             .build());
      * 
@@ -5225,7 +5225,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionPropertySet = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .propertySetKey(databaseToolsConnectionPropertySetPropertySetKey)
      *             .build());
      * 
@@ -5268,7 +5268,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionPropertySet = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .propertySetKey(databaseToolsConnectionPropertySetPropertySetKey)
      *             .build());
      * 
@@ -5311,7 +5311,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionPropertySet = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .propertySetKey(databaseToolsConnectionPropertySetPropertySetKey)
      *             .build());
      * 
@@ -5354,7 +5354,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionPropertySet = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .propertySetKey(databaseToolsConnectionPropertySetPropertySetKey)
      *             .build());
      * 
@@ -5398,7 +5398,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionUserCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs.builder()
      *             .credentialKey(databaseToolsConnectionUserCredentialCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .userKey(databaseToolsConnectionUserCredentialUserKey)
      *             .build());
      * 
@@ -5442,7 +5442,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionUserCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs.builder()
      *             .credentialKey(databaseToolsConnectionUserCredentialCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .userKey(databaseToolsConnectionUserCredentialUserKey)
      *             .build());
      * 
@@ -5486,7 +5486,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionUserCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs.builder()
      *             .credentialKey(databaseToolsConnectionUserCredentialCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .userKey(databaseToolsConnectionUserCredentialUserKey)
      *             .build());
      * 
@@ -5530,7 +5530,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionUserCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs.builder()
      *             .credentialKey(databaseToolsConnectionUserCredentialCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .userKey(databaseToolsConnectionUserCredentialUserKey)
      *             .build());
      * 
@@ -5574,7 +5574,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionUserCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs.builder()
      *             .credentialKey(databaseToolsConnectionUserCredentialCredentialKey)
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .userKey(databaseToolsConnectionUserCredentialUserKey)
      *             .build());
      * 
@@ -5617,7 +5617,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionUserCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .userKey(databaseToolsConnectionUserCredentialUserKey)
      *             .build());
      * 
@@ -5660,7 +5660,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionUserCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .userKey(databaseToolsConnectionUserCredentialUserKey)
      *             .build());
      * 
@@ -5703,7 +5703,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionUserCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .userKey(databaseToolsConnectionUserCredentialUserKey)
      *             .build());
      * 
@@ -5746,7 +5746,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionUserCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .userKey(databaseToolsConnectionUserCredentialUserKey)
      *             .build());
      * 
@@ -5789,7 +5789,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnectionUserCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs.builder()
-     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
      *             .userKey(databaseToolsConnectionUserCredentialUserKey)
      *             .build());
      * 
@@ -6119,7 +6119,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigContent = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -6161,7 +6161,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigContent = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -6203,7 +6203,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigContent = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -6245,7 +6245,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigContent = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -6287,7 +6287,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigContent = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -6329,7 +6329,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigGlobal = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .globalKey(databaseToolsDatabaseApiGatewayConfigGlobalGlobalKey)
      *             .build());
      * 
@@ -6372,7 +6372,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigGlobal = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .globalKey(databaseToolsDatabaseApiGatewayConfigGlobalGlobalKey)
      *             .build());
      * 
@@ -6415,7 +6415,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigGlobal = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .globalKey(databaseToolsDatabaseApiGatewayConfigGlobalGlobalKey)
      *             .build());
      * 
@@ -6458,7 +6458,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigGlobal = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .globalKey(databaseToolsDatabaseApiGatewayConfigGlobalGlobalKey)
      *             .build());
      * 
@@ -6501,7 +6501,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigGlobal = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .globalKey(databaseToolsDatabaseApiGatewayConfigGlobalGlobalKey)
      *             .build());
      * 
@@ -6544,7 +6544,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPool = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolPoolKey)
      *             .build());
      * 
@@ -6587,7 +6587,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPool = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolPoolKey)
      *             .build());
      * 
@@ -6630,7 +6630,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPool = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolPoolKey)
      *             .build());
      * 
@@ -6673,7 +6673,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPool = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolPoolKey)
      *             .build());
      * 
@@ -6716,7 +6716,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPool = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolPoolKey)
      *             .build());
      * 
@@ -6760,7 +6760,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs.builder()
      *             .apiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecApiSpecKey)
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
      *             .build());
      * 
@@ -6804,7 +6804,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs.builder()
      *             .apiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecApiSpecKey)
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
      *             .build());
      * 
@@ -6848,7 +6848,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs.builder()
      *             .apiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecApiSpecKey)
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
      *             .build());
      * 
@@ -6892,7 +6892,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs.builder()
      *             .apiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecApiSpecKey)
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
      *             .build());
      * 
@@ -6936,7 +6936,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs.builder()
      *             .apiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecApiSpecKey)
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
      *             .build());
      * 
@@ -6979,7 +6979,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolApiSpecDisplayName)
      *             .build());
@@ -7023,7 +7023,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolApiSpecDisplayName)
      *             .build());
@@ -7067,7 +7067,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolApiSpecDisplayName)
      *             .build());
@@ -7111,7 +7111,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolApiSpecDisplayName)
      *             .build());
@@ -7155,7 +7155,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolApiSpecDisplayName)
      *             .build());
@@ -7200,7 +7200,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs.builder()
      *             .autoApiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecAutoApiSpecKey)
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
      *             .build());
      * 
@@ -7244,7 +7244,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs.builder()
      *             .autoApiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecAutoApiSpecKey)
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
      *             .build());
      * 
@@ -7288,7 +7288,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs.builder()
      *             .autoApiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecAutoApiSpecKey)
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
      *             .build());
      * 
@@ -7332,7 +7332,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs.builder()
      *             .autoApiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecAutoApiSpecKey)
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
      *             .build());
      * 
@@ -7376,7 +7376,7 @@ public final class DatabaseToolsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs.builder()
      *             .autoApiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecAutoApiSpecKey)
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
      *             .build());
      * 
@@ -7419,7 +7419,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDisplayName)
      *             .build());
@@ -7463,7 +7463,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDisplayName)
      *             .build());
@@ -7507,7 +7507,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDisplayName)
      *             .build());
@@ -7551,7 +7551,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDisplayName)
      *             .build());
@@ -7595,7 +7595,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDisplayName)
      *             .build());
@@ -7639,7 +7639,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPools = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolDisplayName)
      *             .build());
      * 
@@ -7682,7 +7682,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPools = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolDisplayName)
      *             .build());
      * 
@@ -7725,7 +7725,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPools = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolDisplayName)
      *             .build());
      * 
@@ -7768,7 +7768,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPools = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolDisplayName)
      *             .build());
      * 
@@ -7811,7 +7811,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsDatabaseApiGatewayConfigPools = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs.builder()
-     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
      *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolDisplayName)
      *             .build());
      * 

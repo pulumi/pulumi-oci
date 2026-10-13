@@ -28,11 +28,11 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isAutoReclaimable: tableIsAutoReclaimable === "true",
+ *     isAutoReclaimable: tableIsAutoReclaimable,
  *     tableLimits: {
- *         maxReadUnits: Number(tableTableLimitsMaxReadUnits),
- *         maxStorageInGbs: Number(tableTableLimitsMaxStorageInGbs),
- *         maxWriteUnits: Number(tableTableLimitsMaxWriteUnits),
+ *         maxReadUnits: tableTableLimitsMaxReadUnits,
+ *         maxStorageInGbs: tableTableLimitsMaxStorageInGbs,
+ *         maxWriteUnits: tableTableLimitsMaxWriteUnits,
  *         capacityMode: tableTableLimitsCapacityMode,
  *     },
  * });

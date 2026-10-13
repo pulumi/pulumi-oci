@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     datasetFormatDetails: {
  *         formatType: datasetDatasetFormatDetailsFormatType,
  *         textFileTypeMetadata: {
- *             columnIndex: Number(datasetDatasetFormatDetailsTextFileTypeMetadataColumnIndex),
+ *             columnIndex: datasetDatasetFormatDetailsTextFileTypeMetadataColumnIndex,
  *             formatType: datasetDatasetFormatDetailsTextFileTypeMetadataFormatType,
  *             columnDelimiter: datasetDatasetFormatDetailsTextFileTypeMetadataColumnDelimiter,
  *             columnName: datasetDatasetFormatDetailsTextFileTypeMetadataColumnName,

@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  *
  * const testHistories = oci.optimizer.getHistories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: historyCompartmentIdInSubtree === "true",
- *     includeResourceMetadata: historyIncludeResourceMetadata === "true",
+ *     compartmentIdInSubtree: historyCompartmentIdInSubtree,
+ *     includeResourceMetadata: historyIncludeResourceMetadata,
  *     name: historyName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,
@@ -150,8 +150,8 @@ export interface GetHistoriesResult {
  *
  * const testHistories = oci.optimizer.getHistories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: historyCompartmentIdInSubtree === "true",
- *     includeResourceMetadata: historyIncludeResourceMetadata === "true",
+ *     compartmentIdInSubtree: historyCompartmentIdInSubtree,
+ *     includeResourceMetadata: historyIncludeResourceMetadata,
  *     name: historyName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,

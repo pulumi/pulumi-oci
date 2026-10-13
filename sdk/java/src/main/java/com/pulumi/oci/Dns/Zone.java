@@ -69,17 +69,17 @@ import javax.annotation.Nullable;
  *             .externalDownstreams(ZoneExternalDownstreamArgs.builder()
  *                 .address(zoneExternalDownstreamsAddress)
  *                 .port(zoneExternalDownstreamsPort)
- *                 .tsigKeyId(testTsigKey.id())
+ *                 .tsigKeyId(testTsigKey.get("id"))
  *                 .build())
  *             .externalMasters(ZoneExternalMasterArgs.builder()
  *                 .address(zoneExternalMastersAddress)
  *                 .port(zoneExternalMastersPort)
- *                 .tsigKeyId(testTsigKey.id())
+ *                 .tsigKeyId(testTsigKey.get("id"))
  *                 .build())
  *             .freeformTags(zoneFreeformTags)
  *             .resolutionMode(zoneResolutionMode)
  *             .scope(zoneScope)
- *             .viewId(testView.id())
+ *             .viewId(testView.get("id"))
  *             .build());
  * 
  *     }

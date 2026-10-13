@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousDatabaseInstanceWalletManagement = new AutonomousDatabaseInstanceWalletManagement("testAutonomousDatabaseInstanceWalletManagement", AutonomousDatabaseInstanceWalletManagementArgs.builder()
- *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .autonomousDatabaseId(testAutonomousDatabase.get("id"))
  *             .gracePeriod(autonomousDatabaseInstanceWalletManagementGracePeriod)
  *             .shouldRotate(autonomousDatabaseInstanceWalletManagementShouldRotate)
  *             .build());

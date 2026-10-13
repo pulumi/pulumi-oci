@@ -574,7 +574,7 @@ public final class ZprFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testZprPolicy = ZprFunctions.getZprPolicy(GetZprPolicyArgs.builder()
-     *             .zprPolicyId(testZprPolicyOciZprZprPolicy.id())
+     *             .zprPolicyId(testZprPolicyOciZprZprPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -616,7 +616,7 @@ public final class ZprFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testZprPolicy = ZprFunctions.getZprPolicy(GetZprPolicyArgs.builder()
-     *             .zprPolicyId(testZprPolicyOciZprZprPolicy.id())
+     *             .zprPolicyId(testZprPolicyOciZprZprPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -658,7 +658,7 @@ public final class ZprFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testZprPolicy = ZprFunctions.getZprPolicy(GetZprPolicyArgs.builder()
-     *             .zprPolicyId(testZprPolicyOciZprZprPolicy.id())
+     *             .zprPolicyId(testZprPolicyOciZprZprPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -700,7 +700,7 @@ public final class ZprFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testZprPolicy = ZprFunctions.getZprPolicy(GetZprPolicyArgs.builder()
-     *             .zprPolicyId(testZprPolicyOciZprZprPolicy.id())
+     *             .zprPolicyId(testZprPolicyOciZprZprPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -742,7 +742,7 @@ public final class ZprFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testZprPolicy = ZprFunctions.getZprPolicy(GetZprPolicyArgs.builder()
-     *             .zprPolicyId(testZprPolicyOciZprZprPolicy.id())
+     *             .zprPolicyId(testZprPolicyOciZprZprPolicy.get("id"))
      *             .build());
      * 
      *     }

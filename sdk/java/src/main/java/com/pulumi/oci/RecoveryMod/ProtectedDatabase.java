@@ -56,17 +56,17 @@ import javax.annotation.Nullable;
  *             .dbUniqueName(protectedDatabaseDbUniqueName)
  *             .displayName(protectedDatabaseDisplayName)
  *             .password(protectedDatabasePassword)
- *             .protectionPolicyId(testProtectionPolicy.id())
+ *             .protectionPolicyId(testProtectionPolicy.get("id"))
  *             .recoveryServiceSubnets(ProtectedDatabaseRecoveryServiceSubnetArgs.builder()
- *                 .recoveryServiceSubnetId(testRecoveryServiceSubnet.id())
+ *                 .recoveryServiceSubnetId(testRecoveryServiceSubnet.get("id"))
  *                 .build())
- *             .databaseId(testDatabase.id())
+ *             .databaseId(testDatabase.get("id"))
  *             .databaseSize(protectedDatabaseDatabaseSize)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .deletionSchedule("DELETE_AFTER_72_HOURS")
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .isRedoLogsShipped(protectedDatabaseIsRedoLogsShipped)
- *             .subscriptionId(testSubscription.id())
+ *             .subscriptionId(testSubscription.get("id"))
  *             .build());
  * 
  *     }

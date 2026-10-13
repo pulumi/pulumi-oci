@@ -146,7 +146,7 @@ def get_target_database_roles(authentication_type: Optional[_builtins.str] = Non
 
     test_target_database_roles = oci.datasafe.get_target_database_roles(target_database_id=test_target_database["id"],
         authentication_type=target_database_role_authentication_type,
-        is_oracle_maintained=target_database_role_is_oracle_maintained == "true",
+        is_oracle_maintained=target_database_role_is_oracle_maintained,
         role_names=target_database_role_role_name,
         role_name_contains=target_database_role_role_name_contains)
     ```
@@ -197,7 +197,7 @@ def get_target_database_roles_output(authentication_type: pulumi.Input[Optional[
 
     test_target_database_roles = oci.datasafe.get_target_database_roles(target_database_id=test_target_database["id"],
         authentication_type=target_database_role_authentication_type,
-        is_oracle_maintained=target_database_role_is_oracle_maintained == "true",
+        is_oracle_maintained=target_database_role_is_oracle_maintained,
         role_names=target_database_role_role_name,
         role_name_contains=target_database_role_role_name_contains)
     ```

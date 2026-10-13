@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Identity
     ///                 StreetAddress = userAddressesStreetAddress,
     ///             },
     ///         },
-    ///         AttributeSets = new[] {},
+    ///         AttributeSets = new() {},
     ///         Attributes = "",
     ///         Authorization = userAuthorization,
     ///         Description = userDescription,

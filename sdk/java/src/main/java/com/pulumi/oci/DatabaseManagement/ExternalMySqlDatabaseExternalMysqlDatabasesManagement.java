@@ -47,9 +47,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalMySqlDatabaseExternalMysqlDatabasesManagement = new ExternalMySqlDatabaseExternalMysqlDatabasesManagement("testExternalMySqlDatabaseExternalMysqlDatabasesManagement", ExternalMySqlDatabaseExternalMysqlDatabasesManagementArgs.builder()
- *             .externalMySqlDatabaseId(testExternalMySqlDatabase.id())
+ *             .externalMySqlDatabaseId(testExternalMySqlDatabase.get("id"))
  *             .enableExternalMysqlDatabase(enableExternalMysqlDatabase)
- *             .connectorId(testConnector.id())
+ *             .connectorId(testConnector.get("id"))
  *             .build());
  * 
  *     }

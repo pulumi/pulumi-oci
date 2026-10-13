@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .location(managedInstanceGroupLocation)
  *             .managedInstanceIds(managedInstanceGroupManagedInstanceIds)
- *             .notificationTopicId(testNotificationTopic.id())
+ *             .notificationTopicId(testNotificationTopic.get("id"))
  *             .build());
  * 
  *     }

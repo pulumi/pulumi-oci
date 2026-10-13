@@ -46,10 +46,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testKafkaClusterSuperusersManagement = new ManagedKafkaKafkaClusterSuperusersManagement("testKafkaClusterSuperusersManagement", ManagedKafkaKafkaClusterSuperusersManagementArgs.builder()
- *             .kafkaClusterId(testKafkaCluster.id())
+ *             .kafkaClusterId(testKafkaCluster.get("id"))
  *             .enableSuperuser(enableSuperuser)
  *             .compartmentId(compartmentId)
- *             .secretId(testSecret.id())
+ *             .secretId(testSecret.get("id"))
  *             .build());
  * 
  *     }

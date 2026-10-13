@@ -62,12 +62,12 @@ import javax.annotation.Nullable;
  *                 .compartmentId(compartmentId)
  *                 .type(mediaWorkflowJobLocksType)
  *                 .message(mediaWorkflowJobLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(mediaWorkflowJobLocksTimeCreated)
  *                 .build())
  *             .mediaWorkflowConfigurationIds(mediaWorkflowJobMediaWorkflowConfigurationIds)
- *             .mediaWorkflowId(testMediaWorkflow.id())
- *             .mediaWorkflowName(testMediaWorkflow.name())
+ *             .mediaWorkflowId(testMediaWorkflow.get("id"))
+ *             .mediaWorkflowName(testMediaWorkflow.get("name"))
  *             .parameters(mediaWorkflowJobParameters)
  *             .build());
  * 

@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     resourceType: privilegedApiControlResourceType,
  *     approverGroupLevelLists: [{
  *         groupIds: testGroup.id,
- *         groupLevel: Number(privilegedApiControlApproverGroupLevelListGroupLevel),
+ *         groupLevel: privilegedApiControlApproverGroupLevelListGroupLevel,
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -42,7 +42,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     numberOfApprovers: Number(privilegedApiControlNumberOfApprovers),
+ *     numberOfApprovers: privilegedApiControlNumberOfApprovers,
  *     resources: privilegedApiControlResources,
  * });
  * ```

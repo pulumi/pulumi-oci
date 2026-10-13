@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testAppRoles = oci.identity.getDomainsAppRoles({
  *     idcsEndpoint: testDomain.url,
- *     appRoleCount: Number(appRoleAppRoleCount),
+ *     appRoleCount: appRoleAppRoleCount,
  *     appRoleFilter: appRoleAppRoleFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: appRoleAuthorization,
  *     resourceTypeSchemaVersion: appRoleResourceTypeSchemaVersion,
- *     startIndex: Number(appRoleStartIndex),
+ *     startIndex: appRoleStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsAppRolesResult {
  *
  * const testAppRoles = oci.identity.getDomainsAppRoles({
  *     idcsEndpoint: testDomain.url,
- *     appRoleCount: Number(appRoleAppRoleCount),
+ *     appRoleCount: appRoleAppRoleCount,
  *     appRoleFilter: appRoleAppRoleFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: appRoleAuthorization,
  *     resourceTypeSchemaVersion: appRoleResourceTypeSchemaVersion,
- *     startIndex: Number(appRoleStartIndex),
+ *     startIndex: appRoleStartIndex,
  * });
  * ```
  */

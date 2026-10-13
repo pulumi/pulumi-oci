@@ -32,7 +32,7 @@ import (
 //			_, err := datacatalog.GetCatalogType(ctx, &datacatalog.GetCatalogTypeArgs{
 //				CatalogId: testCatalog.Id,
 //				TypeKey:   catalogTypeTypeKey,
-//				Fields:    pulumi.ToArray(catalogTypeFields),
+//				Fields:    catalogTypeFields,
 //			}, nil)
 //			if err != nil {
 //				return err

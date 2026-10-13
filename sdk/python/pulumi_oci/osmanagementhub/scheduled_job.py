@@ -843,7 +843,7 @@ class ScheduledJob(pulumi.CustomResource):
                 "install_snap_details": {
                     "name": scheduled_job_operations_install_snap_details_name,
                     "channel": scheduled_job_operations_install_snap_details_channel,
-                    "is_signed": scheduled_job_operations_install_snap_details_is_signed == "true",
+                    "is_signed": scheduled_job_operations_install_snap_details_is_signed,
                     "mode": scheduled_job_operations_install_snap_details_mode,
                     "revision": scheduled_job_operations_install_snap_details_revision,
                 },
@@ -872,7 +872,7 @@ class ScheduledJob(pulumi.CustomResource):
                     }],
                 },
                 "package_names": scheduled_job_operations_package_names,
-                "reboot_timeout_in_mins": int(scheduled_job_operations_reboot_timeout_in_mins),
+                "reboot_timeout_in_mins": scheduled_job_operations_reboot_timeout_in_mins,
                 "remove_snap_details": {
                     "name": scheduled_job_operations_remove_snap_details_name,
                     "revision": scheduled_job_operations_remove_snap_details_revision,
@@ -900,8 +900,8 @@ class ScheduledJob(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux == "true",
-            is_subcompartment_included=scheduled_job_is_subcompartment_included == "true",
+            is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux,
+            is_subcompartment_included=scheduled_job_is_subcompartment_included,
             lifecycle_stage_ids=scheduled_job_lifecycle_stage_ids,
             locations=scheduled_job_locations,
             managed_compartment_ids=scheduled_job_managed_compartment_ids,
@@ -981,7 +981,7 @@ class ScheduledJob(pulumi.CustomResource):
                 "install_snap_details": {
                     "name": scheduled_job_operations_install_snap_details_name,
                     "channel": scheduled_job_operations_install_snap_details_channel,
-                    "is_signed": scheduled_job_operations_install_snap_details_is_signed == "true",
+                    "is_signed": scheduled_job_operations_install_snap_details_is_signed,
                     "mode": scheduled_job_operations_install_snap_details_mode,
                     "revision": scheduled_job_operations_install_snap_details_revision,
                 },
@@ -1010,7 +1010,7 @@ class ScheduledJob(pulumi.CustomResource):
                     }],
                 },
                 "package_names": scheduled_job_operations_package_names,
-                "reboot_timeout_in_mins": int(scheduled_job_operations_reboot_timeout_in_mins),
+                "reboot_timeout_in_mins": scheduled_job_operations_reboot_timeout_in_mins,
                 "remove_snap_details": {
                     "name": scheduled_job_operations_remove_snap_details_name,
                     "revision": scheduled_job_operations_remove_snap_details_revision,
@@ -1038,8 +1038,8 @@ class ScheduledJob(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux == "true",
-            is_subcompartment_included=scheduled_job_is_subcompartment_included == "true",
+            is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux,
+            is_subcompartment_included=scheduled_job_is_subcompartment_included,
             lifecycle_stage_ids=scheduled_job_lifecycle_stage_ids,
             locations=scheduled_job_locations,
             managed_compartment_ids=scheduled_job_managed_compartment_ids,

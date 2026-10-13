@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *             .applicationKey(workspaceApplicationScheduleApplicationKey)
  *             .identifier(workspaceApplicationScheduleIdentifier)
  *             .name(workspaceApplicationScheduleName)
- *             .workspaceId(testWorkspace.id())
+ *             .workspaceId(testWorkspace.get("id"))
  *             .description(workspaceApplicationScheduleDescription)
  *             .frequencyDetails(WorkspaceApplicationScheduleFrequencyDetailsArgs.builder()
  *                 .modelType(workspaceApplicationScheduleFrequencyDetailsModelType)

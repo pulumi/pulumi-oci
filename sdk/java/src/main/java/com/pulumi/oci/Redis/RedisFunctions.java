@@ -78,7 +78,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheBackup = RedisFunctions.getOciCacheBackup(GetOciCacheBackupArgs.builder()
-     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.id())
+     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -120,7 +120,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheBackup = RedisFunctions.getOciCacheBackup(GetOciCacheBackupArgs.builder()
-     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.id())
+     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -162,7 +162,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheBackup = RedisFunctions.getOciCacheBackup(GetOciCacheBackupArgs.builder()
-     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.id())
+     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -204,7 +204,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheBackup = RedisFunctions.getOciCacheBackup(GetOciCacheBackupArgs.builder()
-     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.id())
+     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -246,7 +246,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheBackup = RedisFunctions.getOciCacheBackup(GetOciCacheBackupArgs.builder()
-     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.id())
+     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -290,8 +290,8 @@ public final class RedisFunctions {
      *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(ociCacheBackupDisplayName)
-     *             .ociCacheBackupId(testOciCacheBackup.id())
-     *             .sourceClusterId(testRedisCluster.id())
+     *             .ociCacheBackupId(testOciCacheBackup.get("id"))
+     *             .sourceClusterId(testRedisCluster.get("id"))
      *             .state(ociCacheBackupState)
      *             .build());
      * 
@@ -336,8 +336,8 @@ public final class RedisFunctions {
      *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(ociCacheBackupDisplayName)
-     *             .ociCacheBackupId(testOciCacheBackup.id())
-     *             .sourceClusterId(testRedisCluster.id())
+     *             .ociCacheBackupId(testOciCacheBackup.get("id"))
+     *             .sourceClusterId(testRedisCluster.get("id"))
      *             .state(ociCacheBackupState)
      *             .build());
      * 
@@ -382,8 +382,8 @@ public final class RedisFunctions {
      *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(ociCacheBackupDisplayName)
-     *             .ociCacheBackupId(testOciCacheBackup.id())
-     *             .sourceClusterId(testRedisCluster.id())
+     *             .ociCacheBackupId(testOciCacheBackup.get("id"))
+     *             .sourceClusterId(testRedisCluster.get("id"))
      *             .state(ociCacheBackupState)
      *             .build());
      * 
@@ -428,8 +428,8 @@ public final class RedisFunctions {
      *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(ociCacheBackupDisplayName)
-     *             .ociCacheBackupId(testOciCacheBackup.id())
-     *             .sourceClusterId(testRedisCluster.id())
+     *             .ociCacheBackupId(testOciCacheBackup.get("id"))
+     *             .sourceClusterId(testRedisCluster.get("id"))
      *             .state(ociCacheBackupState)
      *             .build());
      * 
@@ -474,8 +474,8 @@ public final class RedisFunctions {
      *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(ociCacheBackupDisplayName)
-     *             .ociCacheBackupId(testOciCacheBackup.id())
-     *             .sourceClusterId(testRedisCluster.id())
+     *             .ociCacheBackupId(testOciCacheBackup.get("id"))
+     *             .sourceClusterId(testRedisCluster.get("id"))
      *             .state(ociCacheBackupState)
      *             .build());
      * 
@@ -520,8 +520,8 @@ public final class RedisFunctions {
      *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(ociCacheBackupDisplayName)
-     *             .ociCacheBackupId(testOciCacheBackup.id())
-     *             .sourceClusterId(testRedisCluster.id())
+     *             .ociCacheBackupId(testOciCacheBackup.get("id"))
+     *             .sourceClusterId(testRedisCluster.get("id"))
      *             .state(ociCacheBackupState)
      *             .build());
      * 
@@ -566,8 +566,8 @@ public final class RedisFunctions {
      *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(ociCacheBackupDisplayName)
-     *             .ociCacheBackupId(testOciCacheBackup.id())
-     *             .sourceClusterId(testRedisCluster.id())
+     *             .ociCacheBackupId(testOciCacheBackup.get("id"))
+     *             .sourceClusterId(testRedisCluster.get("id"))
      *             .state(ociCacheBackupState)
      *             .build());
      * 
@@ -610,7 +610,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheConfigSet = RedisFunctions.getOciCacheConfigSet(GetOciCacheConfigSetArgs.builder()
-     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.id())
+     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.get("id"))
      *             .build());
      * 
      *     }
@@ -652,7 +652,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheConfigSet = RedisFunctions.getOciCacheConfigSet(GetOciCacheConfigSetArgs.builder()
-     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.id())
+     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.get("id"))
      *             .build());
      * 
      *     }
@@ -694,7 +694,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheConfigSet = RedisFunctions.getOciCacheConfigSet(GetOciCacheConfigSetArgs.builder()
-     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.id())
+     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.get("id"))
      *             .build());
      * 
      *     }
@@ -736,7 +736,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheConfigSet = RedisFunctions.getOciCacheConfigSet(GetOciCacheConfigSetArgs.builder()
-     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.id())
+     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.get("id"))
      *             .build());
      * 
      *     }
@@ -778,7 +778,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheConfigSet = RedisFunctions.getOciCacheConfigSet(GetOciCacheConfigSetArgs.builder()
-     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.id())
+     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.get("id"))
      *             .build());
      * 
      *     }
@@ -1143,7 +1143,7 @@ public final class RedisFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOciCacheDefaultConfigSet = RedisFunctions.getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id())
+     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.get("id"))
      *             .build());
      * 
      *     }
@@ -1186,7 +1186,7 @@ public final class RedisFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOciCacheDefaultConfigSet = RedisFunctions.getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id())
+     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.get("id"))
      *             .build());
      * 
      *     }
@@ -1229,7 +1229,7 @@ public final class RedisFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOciCacheDefaultConfigSet = RedisFunctions.getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id())
+     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.get("id"))
      *             .build());
      * 
      *     }
@@ -1272,7 +1272,7 @@ public final class RedisFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOciCacheDefaultConfigSet = RedisFunctions.getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id())
+     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.get("id"))
      *             .build());
      * 
      *     }
@@ -1315,7 +1315,7 @@ public final class RedisFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOciCacheDefaultConfigSet = RedisFunctions.getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id())
+     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.get("id"))
      *             .build());
      * 
      *     }
@@ -1797,7 +1797,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheUser = RedisFunctions.getOciCacheUser(GetOciCacheUserArgs.builder()
-     *             .ociCacheUserId(testOciCacheUserOciRedisOciCacheUser.id())
+     *             .ociCacheUserId(testOciCacheUserOciRedisOciCacheUser.get("id"))
      *             .build());
      * 
      *     }
@@ -1839,7 +1839,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheUser = RedisFunctions.getOciCacheUser(GetOciCacheUserArgs.builder()
-     *             .ociCacheUserId(testOciCacheUserOciRedisOciCacheUser.id())
+     *             .ociCacheUserId(testOciCacheUserOciRedisOciCacheUser.get("id"))
      *             .build());
      * 
      *     }
@@ -1881,7 +1881,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheUser = RedisFunctions.getOciCacheUser(GetOciCacheUserArgs.builder()
-     *             .ociCacheUserId(testOciCacheUserOciRedisOciCacheUser.id())
+     *             .ociCacheUserId(testOciCacheUserOciRedisOciCacheUser.get("id"))
      *             .build());
      * 
      *     }
@@ -1923,7 +1923,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheUser = RedisFunctions.getOciCacheUser(GetOciCacheUserArgs.builder()
-     *             .ociCacheUserId(testOciCacheUserOciRedisOciCacheUser.id())
+     *             .ociCacheUserId(testOciCacheUserOciRedisOciCacheUser.get("id"))
      *             .build());
      * 
      *     }
@@ -1965,7 +1965,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCacheUser = RedisFunctions.getOciCacheUser(GetOciCacheUserArgs.builder()
-     *             .ociCacheUserId(testOciCacheUserOciRedisOciCacheUser.id())
+     *             .ociCacheUserId(testOciCacheUserOciRedisOciCacheUser.get("id"))
      *             .build());
      * 
      *     }
@@ -2315,7 +2315,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisCluster = RedisFunctions.getRedisCluster(GetRedisClusterArgs.builder()
-     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.id())
+     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2357,7 +2357,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisCluster = RedisFunctions.getRedisCluster(GetRedisClusterArgs.builder()
-     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.id())
+     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2399,7 +2399,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisCluster = RedisFunctions.getRedisCluster(GetRedisClusterArgs.builder()
-     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.id())
+     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2441,7 +2441,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisCluster = RedisFunctions.getRedisCluster(GetRedisClusterArgs.builder()
-     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.id())
+     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2483,7 +2483,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisCluster = RedisFunctions.getRedisCluster(GetRedisClusterArgs.builder()
-     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.id())
+     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2525,7 +2525,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisClusterNodes = RedisFunctions.getRedisClusterNodes(GetRedisClusterNodesArgs.builder()
-     *             .redisClusterId(testRedisCluster.id())
+     *             .redisClusterId(testRedisCluster.get("id"))
      *             .displayName(redisClusterNodeDisplayName)
      *             .build());
      * 
@@ -2568,7 +2568,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisClusterNodes = RedisFunctions.getRedisClusterNodes(GetRedisClusterNodesArgs.builder()
-     *             .redisClusterId(testRedisCluster.id())
+     *             .redisClusterId(testRedisCluster.get("id"))
      *             .displayName(redisClusterNodeDisplayName)
      *             .build());
      * 
@@ -2611,7 +2611,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisClusterNodes = RedisFunctions.getRedisClusterNodes(GetRedisClusterNodesArgs.builder()
-     *             .redisClusterId(testRedisCluster.id())
+     *             .redisClusterId(testRedisCluster.get("id"))
      *             .displayName(redisClusterNodeDisplayName)
      *             .build());
      * 
@@ -2654,7 +2654,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisClusterNodes = RedisFunctions.getRedisClusterNodes(GetRedisClusterNodesArgs.builder()
-     *             .redisClusterId(testRedisCluster.id())
+     *             .redisClusterId(testRedisCluster.get("id"))
      *             .displayName(redisClusterNodeDisplayName)
      *             .build());
      * 
@@ -2697,7 +2697,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisClusterNodes = RedisFunctions.getRedisClusterNodes(GetRedisClusterNodesArgs.builder()
-     *             .redisClusterId(testRedisCluster.id())
+     *             .redisClusterId(testRedisCluster.get("id"))
      *             .displayName(redisClusterNodeDisplayName)
      *             .build());
      * 

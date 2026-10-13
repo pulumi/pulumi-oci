@@ -40,7 +40,7 @@ import * as utilities from "../utilities";
  * const testInternetGateway = new oci.core.InternetGateway("test_internet_gateway", {
  *     compartmentId: compartmentId,
  *     vcnId: testVcn.id,
- *     enabled: internetGatewayEnabled === "true",
+ *     enabled: internetGatewayEnabled,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

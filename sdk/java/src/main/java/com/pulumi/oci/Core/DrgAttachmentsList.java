@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDrgAttachmentsList = new DrgAttachmentsList("testDrgAttachmentsList", DrgAttachmentsListArgs.builder()
- *             .drgId(testDrg.id())
+ *             .drgId(testDrg.get("id"))
  *             .attachmentType(drgAttachmentsListAttachmentType)
  *             .isCrossTenancy(drgAttachmentsListIsCrossTenancy)
  *             .build());

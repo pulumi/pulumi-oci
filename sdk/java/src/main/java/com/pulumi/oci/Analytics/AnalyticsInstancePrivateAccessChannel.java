@@ -52,14 +52,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAnalyticsInstancePrivateAccessChannel = new AnalyticsInstancePrivateAccessChannel("testAnalyticsInstancePrivateAccessChannel", AnalyticsInstancePrivateAccessChannelArgs.builder()
- *             .analyticsInstanceId(testAnalyticsInstance.id())
+ *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
  *             .displayName(analyticsInstancePrivateAccessChannelDisplayName)
  *             .privateSourceDnsZones(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs.builder()
  *                 .dnsZone(analyticsInstancePrivateAccessChannelPrivateSourceDnsZonesDnsZone)
  *                 .description(analyticsInstancePrivateAccessChannelPrivateSourceDnsZonesDescription)
  *                 .build())
- *             .subnetId(testSubnet.id())
- *             .vcnId(testVcn.id())
+ *             .subnetId(testSubnet.get("id"))
+ *             .vcnId(testVcn.get("id"))
  *             .networkSecurityGroupIds(analyticsInstancePrivateAccessChannelNetworkSecurityGroupIds)
  *             .privateSourceScanHosts(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs.builder()
  *                 .scanHostname(analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanHostname)

@@ -444,7 +444,7 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
         test_operations_insights_warehouse_user = oci.opsi.OperationsInsightsWarehouseUser("test_operations_insights_warehouse_user",
             compartment_id=compartment_id,
             connection_password=operations_insights_warehouse_user_connection_password,
-            is_awr_data_access=operations_insights_warehouse_user_is_awr_data_access == "true",
+            is_awr_data_access=operations_insights_warehouse_user_is_awr_data_access,
             name=operations_insights_warehouse_user_name,
             operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
             defined_tags={
@@ -453,8 +453,8 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_em_data_access=operations_insights_warehouse_user_is_em_data_access == "true",
-            is_opsi_data_access=operations_insights_warehouse_user_is_opsi_data_access == "true")
+            is_em_data_access=operations_insights_warehouse_user_is_em_data_access,
+            is_opsi_data_access=operations_insights_warehouse_user_is_opsi_data_access)
         ```
 
         ## Import
@@ -505,7 +505,7 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
         test_operations_insights_warehouse_user = oci.opsi.OperationsInsightsWarehouseUser("test_operations_insights_warehouse_user",
             compartment_id=compartment_id,
             connection_password=operations_insights_warehouse_user_connection_password,
-            is_awr_data_access=operations_insights_warehouse_user_is_awr_data_access == "true",
+            is_awr_data_access=operations_insights_warehouse_user_is_awr_data_access,
             name=operations_insights_warehouse_user_name,
             operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
             defined_tags={
@@ -514,8 +514,8 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_em_data_access=operations_insights_warehouse_user_is_em_data_access == "true",
-            is_opsi_data_access=operations_insights_warehouse_user_is_opsi_data_access == "true")
+            is_em_data_access=operations_insights_warehouse_user_is_em_data_access,
+            is_opsi_data_access=operations_insights_warehouse_user_is_opsi_data_access)
         ```
 
         ## Import

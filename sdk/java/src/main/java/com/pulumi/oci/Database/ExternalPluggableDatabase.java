@@ -54,10 +54,10 @@ import javax.annotation.Nullable;
  *         var testExternalPluggableDatabase = new ExternalPluggableDatabase("testExternalPluggableDatabase", ExternalPluggableDatabaseArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(externalPluggableDatabaseDisplayName)
- *             .externalContainerDatabaseId(testExternalContainerDatabase.id())
+ *             .externalContainerDatabaseId(testExternalContainerDatabase.get("id"))
  *             .definedTags(externalPluggableDatabaseDefinedTags)
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .sourceId(testSource.id())
+ *             .sourceId(testSource.get("id"))
  *             .build());
  * 
  *     }

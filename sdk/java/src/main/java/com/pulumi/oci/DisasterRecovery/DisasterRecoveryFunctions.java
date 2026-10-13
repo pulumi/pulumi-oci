@@ -66,7 +66,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutomaticDrConfiguration = DisasterRecoveryFunctions.getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs.builder()
-     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id())
+     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -108,7 +108,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutomaticDrConfiguration = DisasterRecoveryFunctions.getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs.builder()
-     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id())
+     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -150,7 +150,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutomaticDrConfiguration = DisasterRecoveryFunctions.getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs.builder()
-     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id())
+     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -192,7 +192,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutomaticDrConfiguration = DisasterRecoveryFunctions.getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs.builder()
-     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id())
+     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -234,7 +234,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutomaticDrConfiguration = DisasterRecoveryFunctions.getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs.builder()
-     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id())
+     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -276,8 +276,8 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutomaticDrConfigurations = DisasterRecoveryFunctions.getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
-     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
+     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.get("id"))
      *             .displayName(automaticDrConfigurationDisplayName)
      *             .lifecycleStateNotEqualTo(automaticDrConfigurationLifecycleStateNotEqualTo)
      *             .state(automaticDrConfigurationState)
@@ -322,8 +322,8 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutomaticDrConfigurations = DisasterRecoveryFunctions.getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
-     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
+     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.get("id"))
      *             .displayName(automaticDrConfigurationDisplayName)
      *             .lifecycleStateNotEqualTo(automaticDrConfigurationLifecycleStateNotEqualTo)
      *             .state(automaticDrConfigurationState)
@@ -368,8 +368,8 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutomaticDrConfigurations = DisasterRecoveryFunctions.getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
-     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
+     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.get("id"))
      *             .displayName(automaticDrConfigurationDisplayName)
      *             .lifecycleStateNotEqualTo(automaticDrConfigurationLifecycleStateNotEqualTo)
      *             .state(automaticDrConfigurationState)
@@ -414,8 +414,8 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutomaticDrConfigurations = DisasterRecoveryFunctions.getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
-     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
+     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.get("id"))
      *             .displayName(automaticDrConfigurationDisplayName)
      *             .lifecycleStateNotEqualTo(automaticDrConfigurationLifecycleStateNotEqualTo)
      *             .state(automaticDrConfigurationState)
@@ -460,8 +460,8 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutomaticDrConfigurations = DisasterRecoveryFunctions.getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
-     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
+     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.get("id"))
      *             .displayName(automaticDrConfigurationDisplayName)
      *             .lifecycleStateNotEqualTo(automaticDrConfigurationLifecycleStateNotEqualTo)
      *             .state(automaticDrConfigurationState)
@@ -506,7 +506,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlan = DisasterRecoveryFunctions.getDrPlan(GetDrPlanArgs.builder()
-     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.id())
+     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.get("id"))
      *             .build());
      * 
      *     }
@@ -548,7 +548,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlan = DisasterRecoveryFunctions.getDrPlan(GetDrPlanArgs.builder()
-     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.id())
+     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.get("id"))
      *             .build());
      * 
      *     }
@@ -590,7 +590,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlan = DisasterRecoveryFunctions.getDrPlan(GetDrPlanArgs.builder()
-     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.id())
+     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.get("id"))
      *             .build());
      * 
      *     }
@@ -632,7 +632,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlan = DisasterRecoveryFunctions.getDrPlan(GetDrPlanArgs.builder()
-     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.id())
+     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.get("id"))
      *             .build());
      * 
      *     }
@@ -674,7 +674,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlan = DisasterRecoveryFunctions.getDrPlan(GetDrPlanArgs.builder()
-     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.id())
+     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.get("id"))
      *             .build());
      * 
      *     }
@@ -716,7 +716,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecution = DisasterRecoveryFunctions.getDrPlanExecution(GetDrPlanExecutionArgs.builder()
-     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id())
+     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.get("id"))
      *             .build());
      * 
      *     }
@@ -758,7 +758,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecution = DisasterRecoveryFunctions.getDrPlanExecution(GetDrPlanExecutionArgs.builder()
-     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id())
+     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.get("id"))
      *             .build());
      * 
      *     }
@@ -800,7 +800,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecution = DisasterRecoveryFunctions.getDrPlanExecution(GetDrPlanExecutionArgs.builder()
-     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id())
+     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.get("id"))
      *             .build());
      * 
      *     }
@@ -842,7 +842,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecution = DisasterRecoveryFunctions.getDrPlanExecution(GetDrPlanExecutionArgs.builder()
-     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id())
+     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.get("id"))
      *             .build());
      * 
      *     }
@@ -884,7 +884,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecution = DisasterRecoveryFunctions.getDrPlanExecution(GetDrPlanExecutionArgs.builder()
-     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id())
+     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.get("id"))
      *             .build());
      * 
      *     }
@@ -926,9 +926,9 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecutions = DisasterRecoveryFunctions.getDrPlanExecutions(GetDrPlanExecutionsArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .displayName(drPlanExecutionDisplayName)
-     *             .drPlanExecutionId(testDrPlanExecution.id())
+     *             .drPlanExecutionId(testDrPlanExecution.get("id"))
      *             .state(drPlanExecutionState)
      *             .build());
      * 
@@ -971,9 +971,9 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecutions = DisasterRecoveryFunctions.getDrPlanExecutions(GetDrPlanExecutionsArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .displayName(drPlanExecutionDisplayName)
-     *             .drPlanExecutionId(testDrPlanExecution.id())
+     *             .drPlanExecutionId(testDrPlanExecution.get("id"))
      *             .state(drPlanExecutionState)
      *             .build());
      * 
@@ -1016,9 +1016,9 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecutions = DisasterRecoveryFunctions.getDrPlanExecutions(GetDrPlanExecutionsArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .displayName(drPlanExecutionDisplayName)
-     *             .drPlanExecutionId(testDrPlanExecution.id())
+     *             .drPlanExecutionId(testDrPlanExecution.get("id"))
      *             .state(drPlanExecutionState)
      *             .build());
      * 
@@ -1061,9 +1061,9 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecutions = DisasterRecoveryFunctions.getDrPlanExecutions(GetDrPlanExecutionsArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .displayName(drPlanExecutionDisplayName)
-     *             .drPlanExecutionId(testDrPlanExecution.id())
+     *             .drPlanExecutionId(testDrPlanExecution.get("id"))
      *             .state(drPlanExecutionState)
      *             .build());
      * 
@@ -1106,9 +1106,9 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecutions = DisasterRecoveryFunctions.getDrPlanExecutions(GetDrPlanExecutionsArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .displayName(drPlanExecutionDisplayName)
-     *             .drPlanExecutionId(testDrPlanExecution.id())
+     *             .drPlanExecutionId(testDrPlanExecution.get("id"))
      *             .state(drPlanExecutionState)
      *             .build());
      * 
@@ -1151,9 +1151,9 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlans = DisasterRecoveryFunctions.getDrPlans(GetDrPlansArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .displayName(drPlanDisplayName)
-     *             .drPlanId(testDrPlan.id())
+     *             .drPlanId(testDrPlan.get("id"))
      *             .drPlanType(drPlanDrPlanType)
      *             .lifecycleSubState(drPlanLifecycleSubState)
      *             .state(drPlanState)
@@ -1198,9 +1198,9 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlans = DisasterRecoveryFunctions.getDrPlans(GetDrPlansArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .displayName(drPlanDisplayName)
-     *             .drPlanId(testDrPlan.id())
+     *             .drPlanId(testDrPlan.get("id"))
      *             .drPlanType(drPlanDrPlanType)
      *             .lifecycleSubState(drPlanLifecycleSubState)
      *             .state(drPlanState)
@@ -1245,9 +1245,9 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlans = DisasterRecoveryFunctions.getDrPlans(GetDrPlansArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .displayName(drPlanDisplayName)
-     *             .drPlanId(testDrPlan.id())
+     *             .drPlanId(testDrPlan.get("id"))
      *             .drPlanType(drPlanDrPlanType)
      *             .lifecycleSubState(drPlanLifecycleSubState)
      *             .state(drPlanState)
@@ -1292,9 +1292,9 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlans = DisasterRecoveryFunctions.getDrPlans(GetDrPlansArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .displayName(drPlanDisplayName)
-     *             .drPlanId(testDrPlan.id())
+     *             .drPlanId(testDrPlan.get("id"))
      *             .drPlanType(drPlanDrPlanType)
      *             .lifecycleSubState(drPlanLifecycleSubState)
      *             .state(drPlanState)
@@ -1339,9 +1339,9 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlans = DisasterRecoveryFunctions.getDrPlans(GetDrPlansArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .displayName(drPlanDisplayName)
-     *             .drPlanId(testDrPlan.id())
+     *             .drPlanId(testDrPlan.get("id"))
      *             .drPlanType(drPlanDrPlanType)
      *             .lifecycleSubState(drPlanLifecycleSubState)
      *             .state(drPlanState)
@@ -1386,7 +1386,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroup = DisasterRecoveryFunctions.getDrProtectionGroup(GetDrProtectionGroupArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -1428,7 +1428,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroup = DisasterRecoveryFunctions.getDrProtectionGroup(GetDrProtectionGroupArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -1470,7 +1470,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroup = DisasterRecoveryFunctions.getDrProtectionGroup(GetDrProtectionGroupArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -1512,7 +1512,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroup = DisasterRecoveryFunctions.getDrProtectionGroup(GetDrProtectionGroupArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -1554,7 +1554,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroup = DisasterRecoveryFunctions.getDrProtectionGroup(GetDrProtectionGroupArgs.builder()
-     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -1598,7 +1598,7 @@ public final class DisasterRecoveryFunctions {
      *         final var testDrProtectionGroups = DisasterRecoveryFunctions.getDrProtectionGroups(GetDrProtectionGroupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(drProtectionGroupDisplayName)
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .lifecycleSubState(drProtectionGroupLifecycleSubState)
      *             .role(drProtectionGroupRole)
      *             .state(drProtectionGroupState)
@@ -1645,7 +1645,7 @@ public final class DisasterRecoveryFunctions {
      *         final var testDrProtectionGroups = DisasterRecoveryFunctions.getDrProtectionGroups(GetDrProtectionGroupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(drProtectionGroupDisplayName)
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .lifecycleSubState(drProtectionGroupLifecycleSubState)
      *             .role(drProtectionGroupRole)
      *             .state(drProtectionGroupState)
@@ -1692,7 +1692,7 @@ public final class DisasterRecoveryFunctions {
      *         final var testDrProtectionGroups = DisasterRecoveryFunctions.getDrProtectionGroups(GetDrProtectionGroupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(drProtectionGroupDisplayName)
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .lifecycleSubState(drProtectionGroupLifecycleSubState)
      *             .role(drProtectionGroupRole)
      *             .state(drProtectionGroupState)
@@ -1739,7 +1739,7 @@ public final class DisasterRecoveryFunctions {
      *         final var testDrProtectionGroups = DisasterRecoveryFunctions.getDrProtectionGroups(GetDrProtectionGroupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(drProtectionGroupDisplayName)
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .lifecycleSubState(drProtectionGroupLifecycleSubState)
      *             .role(drProtectionGroupRole)
      *             .state(drProtectionGroupState)
@@ -1786,7 +1786,7 @@ public final class DisasterRecoveryFunctions {
      *         final var testDrProtectionGroups = DisasterRecoveryFunctions.getDrProtectionGroups(GetDrProtectionGroupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(drProtectionGroupDisplayName)
-     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
      *             .lifecycleSubState(drProtectionGroupLifecycleSubState)
      *             .role(drProtectionGroupRole)
      *             .state(drProtectionGroupState)

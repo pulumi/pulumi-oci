@@ -50,16 +50,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement = new ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement("testExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement", ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs.builder()
- *             .externalPluggableDatabaseId(testExternalPluggableDatabase.id())
+ *             .externalPluggableDatabaseId(testExternalPluggableDatabase.get("id"))
  *             .enableExternalPluggableDbmFeature(enableExternalPluggableDbmFeature)
  *             .featureDetails(ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs.builder()
  *                 .feature(externalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsFeature)
  *                 .enableExternalPluggableDbmFeature(enableExternalPluggableDbmFeature)
  *                 .connectorDetails(ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs.builder()
  *                     .connectorType(externalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType)
- *                     .databaseConnectorId(testDatabaseConnector.id())
- *                     .managementAgentId(testManagementAgent.id())
- *                     .privateEndPointId(testPrivateEndPoint.id())
+ *                     .databaseConnectorId(testDatabaseConnector.get("id"))
+ *                     .managementAgentId(testManagementAgent.get("id"))
+ *                     .privateEndPointId(testPrivateEndPoint.get("id"))
  *                     .build())
  *                 .build())
  *             .build());

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testSubsettingPolicySubsettingSchemas = oci.datasafe.getSubsettingPolicySubsettingSchemas({
  *     subsettingPolicyId: testSubsettingPolicy.id,
- *     isDerivedSchema: subsettingPolicySubsettingSchemaIsDerivedSchema === "true",
+ *     isDerivedSchema: subsettingPolicySubsettingSchemaIsDerivedSchema,
  *     schemaNames: subsettingPolicySubsettingSchemaSchemaName,
  * });
  * ```
@@ -86,7 +86,7 @@ export interface GetSubsettingPolicySubsettingSchemasResult {
  *
  * const testSubsettingPolicySubsettingSchemas = oci.datasafe.getSubsettingPolicySubsettingSchemas({
  *     subsettingPolicyId: testSubsettingPolicy.id,
- *     isDerivedSchema: subsettingPolicySubsettingSchemaIsDerivedSchema === "true",
+ *     isDerivedSchema: subsettingPolicySubsettingSchemaIsDerivedSchema,
  *     schemaNames: subsettingPolicySubsettingSchemaSchemaName,
  * });
  * ```

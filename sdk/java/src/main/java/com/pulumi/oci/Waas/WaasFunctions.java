@@ -81,7 +81,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
-     *             .addressListId(testAddressListOciWaasAddressList.id())
+     *             .addressListId(testAddressListOciWaasAddressList.get("id"))
      *             .build());
      * 
      *     }
@@ -123,7 +123,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
-     *             .addressListId(testAddressListOciWaasAddressList.id())
+     *             .addressListId(testAddressListOciWaasAddressList.get("id"))
      *             .build());
      * 
      *     }
@@ -165,7 +165,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
-     *             .addressListId(testAddressListOciWaasAddressList.id())
+     *             .addressListId(testAddressListOciWaasAddressList.get("id"))
      *             .build());
      * 
      *     }
@@ -207,7 +207,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
-     *             .addressListId(testAddressListOciWaasAddressList.id())
+     *             .addressListId(testAddressListOciWaasAddressList.get("id"))
      *             .build());
      * 
      *     }
@@ -249,7 +249,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
-     *             .addressListId(testAddressListOciWaasAddressList.id())
+     *             .addressListId(testAddressListOciWaasAddressList.get("id"))
      *             .build());
      * 
      *     }
@@ -526,7 +526,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciWaasCertificate.id())
+     *             .certificateId(testCertificateOciWaasCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -568,7 +568,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciWaasCertificate.id())
+     *             .certificateId(testCertificateOciWaasCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -610,7 +610,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciWaasCertificate.id())
+     *             .certificateId(testCertificateOciWaasCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -652,7 +652,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciWaasCertificate.id())
+     *             .certificateId(testCertificateOciWaasCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -694,7 +694,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciWaasCertificate.id())
+     *             .certificateId(testCertificateOciWaasCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -971,7 +971,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
-     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.id())
+     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1013,7 +1013,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
-     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.id())
+     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1055,7 +1055,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
-     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.id())
+     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1097,7 +1097,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
-     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.id())
+     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1139,7 +1139,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
-     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.id())
+     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1703,7 +1703,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
-     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.id())
+     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.get("id"))
      *             .build());
      * 
      *     }
@@ -1745,7 +1745,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
-     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.id())
+     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.get("id"))
      *             .build());
      * 
      *     }
@@ -1787,7 +1787,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
-     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.id())
+     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.get("id"))
      *             .build());
      * 
      *     }
@@ -1829,7 +1829,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
-     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.id())
+     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.get("id"))
      *             .build());
      * 
      *     }
@@ -1871,7 +1871,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
-     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.id())
+     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.get("id"))
      *             .build());
      * 
      *     }
@@ -2149,7 +2149,7 @@ public final class WaasFunctions {
      *     public static void stack(Context ctx) {
      *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
      *             .protectionRuleKey(protectionRuleProtectionRuleKey)
-     *             .waasPolicyId(testWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2192,7 +2192,7 @@ public final class WaasFunctions {
      *     public static void stack(Context ctx) {
      *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
      *             .protectionRuleKey(protectionRuleProtectionRuleKey)
-     *             .waasPolicyId(testWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2235,7 +2235,7 @@ public final class WaasFunctions {
      *     public static void stack(Context ctx) {
      *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
      *             .protectionRuleKey(protectionRuleProtectionRuleKey)
-     *             .waasPolicyId(testWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2278,7 +2278,7 @@ public final class WaasFunctions {
      *     public static void stack(Context ctx) {
      *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
      *             .protectionRuleKey(protectionRuleProtectionRuleKey)
-     *             .waasPolicyId(testWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2321,7 +2321,7 @@ public final class WaasFunctions {
      *     public static void stack(Context ctx) {
      *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
      *             .protectionRuleKey(protectionRuleProtectionRuleKey)
-     *             .waasPolicyId(testWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2364,9 +2364,9 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
-     *             .waasPolicyId(testWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicy.get("id"))
      *             .actions(protectionRuleAction)
-     *             .modSecurityRuleIds(testRule.id())
+     *             .modSecurityRuleIds(testRule.get("id"))
      *             .build());
      * 
      *     }
@@ -2409,9 +2409,9 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
-     *             .waasPolicyId(testWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicy.get("id"))
      *             .actions(protectionRuleAction)
-     *             .modSecurityRuleIds(testRule.id())
+     *             .modSecurityRuleIds(testRule.get("id"))
      *             .build());
      * 
      *     }
@@ -2454,9 +2454,9 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
-     *             .waasPolicyId(testWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicy.get("id"))
      *             .actions(protectionRuleAction)
-     *             .modSecurityRuleIds(testRule.id())
+     *             .modSecurityRuleIds(testRule.get("id"))
      *             .build());
      * 
      *     }
@@ -2499,9 +2499,9 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
-     *             .waasPolicyId(testWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicy.get("id"))
      *             .actions(protectionRuleAction)
-     *             .modSecurityRuleIds(testRule.id())
+     *             .modSecurityRuleIds(testRule.get("id"))
      *             .build());
      * 
      *     }
@@ -2544,9 +2544,9 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
-     *             .waasPolicyId(testWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicy.get("id"))
      *             .actions(protectionRuleAction)
-     *             .modSecurityRuleIds(testRule.id())
+     *             .modSecurityRuleIds(testRule.get("id"))
      *             .build());
      * 
      *     }
@@ -2823,7 +2823,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
-     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2865,7 +2865,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
-     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2907,7 +2907,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
-     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2949,7 +2949,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
-     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -2991,7 +2991,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
-     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.id())
+     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.get("id"))
      *             .build());
      * 
      *     }

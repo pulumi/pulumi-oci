@@ -56,16 +56,16 @@ import javax.annotation.Nullable;
  *             .description(workspaceDescription)
  *             .dnsServerIp(workspaceDnsServerIp)
  *             .dnsServerZone(workspaceDnsServerZone)
- *             .endpointCompartmentId(testCompartment.id())
- *             .endpointId(testEndpoint.id())
+ *             .endpointCompartmentId(testCompartment.get("id"))
+ *             .endpointId(testEndpoint.get("id"))
  *             .endpointName(workspaceEndpointName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isPrivateNetworkEnabled(workspaceIsPrivateNetworkEnabled)
- *             .registryCompartmentId(testCompartment.id())
- *             .registryId(testRegistry.id())
- *             .registryName(testRegistry.name())
- *             .subnetId(testSubnet.id())
- *             .vcnId(testVcn.id())
+ *             .registryCompartmentId(testCompartment.get("id"))
+ *             .registryId(testRegistry.get("id"))
+ *             .registryName(testRegistry.get("name"))
+ *             .subnetId(testSubnet.get("id"))
+ *             .vcnId(testVcn.get("id"))
  *             .build());
  * 
  *     }

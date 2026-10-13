@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *         var testDbManagementPrivateEndpoint = new DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint", DbManagementPrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(dbManagementPrivateEndpointName)
- *             .subnetId(testSubnet.id())
+ *             .subnetId(testSubnet.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(dbManagementPrivateEndpointDescription)
  *             .freeformTags(Map.of("Department", "Finance"))

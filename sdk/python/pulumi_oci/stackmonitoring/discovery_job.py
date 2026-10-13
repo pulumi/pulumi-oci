@@ -441,7 +441,7 @@ class DiscoveryJob(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources == "true")
+            should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources)
         ```
 
         ## Import
@@ -517,7 +517,7 @@ class DiscoveryJob(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources == "true")
+            should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources)
         ```
 
         ## Import

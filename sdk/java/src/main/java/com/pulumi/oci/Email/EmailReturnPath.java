@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testEmailReturnPath = new EmailReturnPath("testEmailReturnPath", EmailReturnPathArgs.builder()
- *             .parentResourceId(testResource.id())
+ *             .parentResourceId(testResource.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(emailReturnPathDescription)
  *             .freeformTags(Map.of("Department", "Finance"))

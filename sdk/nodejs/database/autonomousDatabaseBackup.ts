@@ -28,15 +28,15 @@ import * as utilities from "../utilities";
  *         dbrsPolicyId: testPolicy.id,
  *         id: autonomousDatabaseBackupBackupDestinationDetailsId,
  *         internetProxy: autonomousDatabaseBackupBackupDestinationDetailsInternetProxy,
- *         isRemote: autonomousDatabaseBackupBackupDestinationDetailsIsRemote === "true",
- *         isRetentionLockEnabled: autonomousDatabaseBackupBackupDestinationDetailsIsRetentionLockEnabled === "true",
+ *         isRemote: autonomousDatabaseBackupBackupDestinationDetailsIsRemote,
+ *         isRetentionLockEnabled: autonomousDatabaseBackupBackupDestinationDetailsIsRetentionLockEnabled,
  *         remoteRegion: autonomousDatabaseBackupBackupDestinationDetailsRemoteRegion,
  *         vpcPassword: autonomousDatabaseBackupBackupDestinationDetailsVpcPassword,
  *         vpcUser: autonomousDatabaseBackupBackupDestinationDetailsVpcUser,
  *     },
  *     displayName: autonomousDatabaseBackupDisplayName,
- *     isLongTermBackup: autonomousDatabaseBackupIsLongTermBackup === "true",
- *     retentionPeriodInDays: Number(autonomousDatabaseBackupRetentionPeriodInDays),
+ *     isLongTermBackup: autonomousDatabaseBackupIsLongTermBackup,
+ *     retentionPeriodInDays: autonomousDatabaseBackupRetentionPeriodInDays,
  * });
  * ```
  *

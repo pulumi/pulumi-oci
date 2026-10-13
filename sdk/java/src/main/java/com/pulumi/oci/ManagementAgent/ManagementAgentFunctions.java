@@ -87,7 +87,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
-     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.id())
+     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -129,7 +129,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
-     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.id())
+     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -171,7 +171,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
-     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.id())
+     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -213,7 +213,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
-     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.id())
+     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -255,7 +255,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
-     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.id())
+     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -297,7 +297,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .timeAvailabilityStatusEndedGreaterThan(managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan)
      *             .timeAvailabilityStatusStartedLessThan(managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan)
      *             .build());
@@ -341,7 +341,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .timeAvailabilityStatusEndedGreaterThan(managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan)
      *             .timeAvailabilityStatusStartedLessThan(managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan)
      *             .build());
@@ -385,7 +385,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .timeAvailabilityStatusEndedGreaterThan(managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan)
      *             .timeAvailabilityStatusStartedLessThan(managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan)
      *             .build());
@@ -429,7 +429,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .timeAvailabilityStatusEndedGreaterThan(managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan)
      *             .timeAvailabilityStatusStartedLessThan(managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan)
      *             .build());
@@ -473,7 +473,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .timeAvailabilityStatusEndedGreaterThan(managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan)
      *             .timeAvailabilityStatusStartedLessThan(managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan)
      *             .build());
@@ -748,7 +748,7 @@ public final class ManagementAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
      *             .dataSourceKey(managementAgentDataSourceDataSourceKey)
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -791,7 +791,7 @@ public final class ManagementAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
      *             .dataSourceKey(managementAgentDataSourceDataSourceKey)
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -834,7 +834,7 @@ public final class ManagementAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
      *             .dataSourceKey(managementAgentDataSourceDataSourceKey)
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -877,7 +877,7 @@ public final class ManagementAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
      *             .dataSourceKey(managementAgentDataSourceDataSourceKey)
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -920,7 +920,7 @@ public final class ManagementAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
      *             .dataSourceKey(managementAgentDataSourceDataSourceKey)
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -962,7 +962,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .name(managementAgentDataSourceName)
      *             .build());
      * 
@@ -1005,7 +1005,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .name(managementAgentDataSourceName)
      *             .build());
      * 
@@ -1048,7 +1048,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .name(managementAgentDataSourceName)
      *             .build());
      * 
@@ -1091,7 +1091,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .name(managementAgentDataSourceName)
      *             .build());
      * 
@@ -1134,7 +1134,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .name(managementAgentDataSourceName)
      *             .build());
      * 
@@ -1617,7 +1617,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
-     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id())
+     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.get("id"))
      *             .build());
      * 
      *     }
@@ -1659,7 +1659,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
-     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id())
+     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.get("id"))
      *             .build());
      * 
      *     }
@@ -1701,7 +1701,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
-     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id())
+     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.get("id"))
      *             .build());
      * 
      *     }
@@ -1743,7 +1743,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
-     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id())
+     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.get("id"))
      *             .build());
      * 
      *     }
@@ -1785,7 +1785,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
-     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id())
+     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.get("id"))
      *             .build());
      * 
      *     }
@@ -2058,7 +2058,7 @@ public final class ManagementAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentNamedCredentialsMetadata = ManagementAgentFunctions.getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -2101,7 +2101,7 @@ public final class ManagementAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentNamedCredentialsMetadata = ManagementAgentFunctions.getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -2144,7 +2144,7 @@ public final class ManagementAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentNamedCredentialsMetadata = ManagementAgentFunctions.getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -2187,7 +2187,7 @@ public final class ManagementAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentNamedCredentialsMetadata = ManagementAgentFunctions.getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -2230,7 +2230,7 @@ public final class ManagementAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentNamedCredentialsMetadata = ManagementAgentFunctions.getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -2728,11 +2728,11 @@ public final class ManagementAgentFunctions {
      *             .accessLevel(managementAgentAccessLevel)
      *             .availabilityStatus(managementAgentAvailabilityStatus)
      *             .compartmentIdInSubtree(managementAgentCompartmentIdInSubtree)
-     *             .dataSourceNames(testManagementAgentDataSource.name())
+     *             .dataSourceNames(testManagementAgentDataSource.get("name"))
      *             .dataSourceType(managementAgentDataSourceType)
      *             .displayName(managementAgentDisplayName)
-     *             .gatewayIds(testGateway.id())
-     *             .hostId(testHost.id())
+     *             .gatewayIds(testGateway.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .waitForHostId(10)
      *             .installType(managementAgentInstallType)
      *             .isCustomerDeployed(managementAgentIsCustomerDeployed)
@@ -2787,11 +2787,11 @@ public final class ManagementAgentFunctions {
      *             .accessLevel(managementAgentAccessLevel)
      *             .availabilityStatus(managementAgentAvailabilityStatus)
      *             .compartmentIdInSubtree(managementAgentCompartmentIdInSubtree)
-     *             .dataSourceNames(testManagementAgentDataSource.name())
+     *             .dataSourceNames(testManagementAgentDataSource.get("name"))
      *             .dataSourceType(managementAgentDataSourceType)
      *             .displayName(managementAgentDisplayName)
-     *             .gatewayIds(testGateway.id())
-     *             .hostId(testHost.id())
+     *             .gatewayIds(testGateway.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .waitForHostId(10)
      *             .installType(managementAgentInstallType)
      *             .isCustomerDeployed(managementAgentIsCustomerDeployed)
@@ -2846,11 +2846,11 @@ public final class ManagementAgentFunctions {
      *             .accessLevel(managementAgentAccessLevel)
      *             .availabilityStatus(managementAgentAvailabilityStatus)
      *             .compartmentIdInSubtree(managementAgentCompartmentIdInSubtree)
-     *             .dataSourceNames(testManagementAgentDataSource.name())
+     *             .dataSourceNames(testManagementAgentDataSource.get("name"))
      *             .dataSourceType(managementAgentDataSourceType)
      *             .displayName(managementAgentDisplayName)
-     *             .gatewayIds(testGateway.id())
-     *             .hostId(testHost.id())
+     *             .gatewayIds(testGateway.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .waitForHostId(10)
      *             .installType(managementAgentInstallType)
      *             .isCustomerDeployed(managementAgentIsCustomerDeployed)
@@ -2905,11 +2905,11 @@ public final class ManagementAgentFunctions {
      *             .accessLevel(managementAgentAccessLevel)
      *             .availabilityStatus(managementAgentAvailabilityStatus)
      *             .compartmentIdInSubtree(managementAgentCompartmentIdInSubtree)
-     *             .dataSourceNames(testManagementAgentDataSource.name())
+     *             .dataSourceNames(testManagementAgentDataSource.get("name"))
      *             .dataSourceType(managementAgentDataSourceType)
      *             .displayName(managementAgentDisplayName)
-     *             .gatewayIds(testGateway.id())
-     *             .hostId(testHost.id())
+     *             .gatewayIds(testGateway.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .waitForHostId(10)
      *             .installType(managementAgentInstallType)
      *             .isCustomerDeployed(managementAgentIsCustomerDeployed)
@@ -2964,11 +2964,11 @@ public final class ManagementAgentFunctions {
      *             .accessLevel(managementAgentAccessLevel)
      *             .availabilityStatus(managementAgentAvailabilityStatus)
      *             .compartmentIdInSubtree(managementAgentCompartmentIdInSubtree)
-     *             .dataSourceNames(testManagementAgentDataSource.name())
+     *             .dataSourceNames(testManagementAgentDataSource.get("name"))
      *             .dataSourceType(managementAgentDataSourceType)
      *             .displayName(managementAgentDisplayName)
-     *             .gatewayIds(testGateway.id())
-     *             .hostId(testHost.id())
+     *             .gatewayIds(testGateway.get("id"))
+     *             .hostId(testHost.get("id"))
      *             .waitForHostId(10)
      *             .installType(managementAgentInstallType)
      *             .isCustomerDeployed(managementAgentIsCustomerDeployed)
@@ -3017,7 +3017,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = ManagementAgentFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.id())
+     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.get("id"))
      *             .build());
      * 
      *     }
@@ -3059,7 +3059,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = ManagementAgentFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.id())
+     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.get("id"))
      *             .build());
      * 
      *     }
@@ -3101,7 +3101,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = ManagementAgentFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.id())
+     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.get("id"))
      *             .build());
      * 
      *     }
@@ -3143,7 +3143,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = ManagementAgentFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.id())
+     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.get("id"))
      *             .build());
      * 
      *     }
@@ -3185,7 +3185,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = ManagementAgentFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.id())
+     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.get("id"))
      *             .build());
      * 
      *     }
@@ -3227,7 +3227,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredentials = ManagementAgentFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .ids(namedCredentialId)
      *             .names(namedCredentialName)
      *             .states(namedCredentialState)
@@ -3273,7 +3273,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredentials = ManagementAgentFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .ids(namedCredentialId)
      *             .names(namedCredentialName)
      *             .states(namedCredentialState)
@@ -3319,7 +3319,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredentials = ManagementAgentFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .ids(namedCredentialId)
      *             .names(namedCredentialName)
      *             .states(namedCredentialState)
@@ -3365,7 +3365,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredentials = ManagementAgentFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .ids(namedCredentialId)
      *             .names(namedCredentialName)
      *             .states(namedCredentialState)
@@ -3411,7 +3411,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredentials = ManagementAgentFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
-     *             .managementAgentId(testManagementAgent.id())
+     *             .managementAgentId(testManagementAgent.get("id"))
      *             .ids(namedCredentialId)
      *             .names(namedCredentialName)
      *             .states(namedCredentialState)

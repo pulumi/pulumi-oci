@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDynamicSetUpdatePackagesManagement = new DynamicSetUpdatePackagesManagement("testDynamicSetUpdatePackagesManagement", DynamicSetUpdatePackagesManagementArgs.builder()
- *             .dynamicSetId(testDynamicSet.id())
+ *             .dynamicSetId(testDynamicSet.get("id"))
  *             .managedInstances(dynamicSetUpdatePackagesManagementManagedInstances)
  *             .updateTypes(dynamicSetUpdatePackagesManagementUpdateTypes)
  *             .workRequestDetails(DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs.builder()

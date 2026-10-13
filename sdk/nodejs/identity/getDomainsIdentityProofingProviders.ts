@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testIdentityProofingProviders = oci.identity.getDomainsIdentityProofingProviders({
  *     idcsEndpoint: testDomain.url,
- *     identityProofingProviderCount: Number(identityProofingProviderIdentityProofingProviderCount),
+ *     identityProofingProviderCount: identityProofingProviderIdentityProofingProviderCount,
  *     identityProofingProviderFilter: identityProofingProviderIdentityProofingProviderFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityProofingProviderAuthorization,
  *     resourceTypeSchemaVersion: identityProofingProviderResourceTypeSchemaVersion,
- *     startIndex: Number(identityProofingProviderStartIndex),
+ *     startIndex: identityProofingProviderStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsIdentityProofingProvidersResult {
  *
  * const testIdentityProofingProviders = oci.identity.getDomainsIdentityProofingProviders({
  *     idcsEndpoint: testDomain.url,
- *     identityProofingProviderCount: Number(identityProofingProviderIdentityProofingProviderCount),
+ *     identityProofingProviderCount: identityProofingProviderIdentityProofingProviderCount,
  *     identityProofingProviderFilter: identityProofingProviderIdentityProofingProviderFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityProofingProviderAuthorization,
  *     resourceTypeSchemaVersion: identityProofingProviderResourceTypeSchemaVersion,
- *     startIndex: Number(identityProofingProviderStartIndex),
+ *     startIndex: identityProofingProviderStartIndex,
  * });
  * ```
  */

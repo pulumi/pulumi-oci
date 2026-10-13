@@ -64,7 +64,7 @@ public final class LimitsFunctions {
      *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .name(limitDefinitionName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .subscriptionId(subscriptionOcid)
      *             .build());
      * 
@@ -111,7 +111,7 @@ public final class LimitsFunctions {
      *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .name(limitDefinitionName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .subscriptionId(subscriptionOcid)
      *             .build());
      * 
@@ -158,7 +158,7 @@ public final class LimitsFunctions {
      *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .name(limitDefinitionName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .subscriptionId(subscriptionOcid)
      *             .build());
      * 
@@ -205,7 +205,7 @@ public final class LimitsFunctions {
      *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .name(limitDefinitionName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .subscriptionId(subscriptionOcid)
      *             .build());
      * 
@@ -252,7 +252,7 @@ public final class LimitsFunctions {
      *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .name(limitDefinitionName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .subscriptionId(subscriptionOcid)
      *             .build());
      * 
@@ -297,7 +297,7 @@ public final class LimitsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
      *             .compartmentId(tenancyOcid)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .availabilityDomain(limitValueAvailabilityDomain)
      *             .externalLocation(limitValueExternalLocation)
      *             .name(limitValueName)
@@ -346,7 +346,7 @@ public final class LimitsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
      *             .compartmentId(tenancyOcid)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .availabilityDomain(limitValueAvailabilityDomain)
      *             .externalLocation(limitValueExternalLocation)
      *             .name(limitValueName)
@@ -395,7 +395,7 @@ public final class LimitsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
      *             .compartmentId(tenancyOcid)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .availabilityDomain(limitValueAvailabilityDomain)
      *             .externalLocation(limitValueExternalLocation)
      *             .name(limitValueName)
@@ -444,7 +444,7 @@ public final class LimitsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
      *             .compartmentId(tenancyOcid)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .availabilityDomain(limitValueAvailabilityDomain)
      *             .externalLocation(limitValueExternalLocation)
      *             .name(limitValueName)
@@ -493,7 +493,7 @@ public final class LimitsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
      *             .compartmentId(tenancyOcid)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .availabilityDomain(limitValueAvailabilityDomain)
      *             .externalLocation(limitValueExternalLocation)
      *             .name(limitValueName)
@@ -540,7 +540,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
-     *             .quotaId(testQuotaOciLimitsQuota.id())
+     *             .quotaId(testQuotaOciLimitsQuota.get("id"))
      *             .build());
      * 
      *     }
@@ -582,7 +582,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
-     *             .quotaId(testQuotaOciLimitsQuota.id())
+     *             .quotaId(testQuotaOciLimitsQuota.get("id"))
      *             .build());
      * 
      *     }
@@ -624,7 +624,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
-     *             .quotaId(testQuotaOciLimitsQuota.id())
+     *             .quotaId(testQuotaOciLimitsQuota.get("id"))
      *             .build());
      * 
      *     }
@@ -666,7 +666,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
-     *             .quotaId(testQuotaOciLimitsQuota.id())
+     *             .quotaId(testQuotaOciLimitsQuota.get("id"))
      *             .build());
      * 
      *     }
@@ -708,7 +708,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
-     *             .quotaId(testQuotaOciLimitsQuota.id())
+     *             .quotaId(testQuotaOciLimitsQuota.get("id"))
      *             .build());
      * 
      *     }
@@ -976,10 +976,10 @@ public final class LimitsFunctions {
      *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .limitName(resourceAvailabilityLimitName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
      *             .externalLocation(resourceAvailabilityExternalLocation)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1027,10 +1027,10 @@ public final class LimitsFunctions {
      *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .limitName(resourceAvailabilityLimitName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
      *             .externalLocation(resourceAvailabilityExternalLocation)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1078,10 +1078,10 @@ public final class LimitsFunctions {
      *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .limitName(resourceAvailabilityLimitName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
      *             .externalLocation(resourceAvailabilityExternalLocation)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1129,10 +1129,10 @@ public final class LimitsFunctions {
      *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .limitName(resourceAvailabilityLimitName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
      *             .externalLocation(resourceAvailabilityExternalLocation)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1180,10 +1180,10 @@ public final class LimitsFunctions {
      *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .limitName(resourceAvailabilityLimitName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
      *             .externalLocation(resourceAvailabilityExternalLocation)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }

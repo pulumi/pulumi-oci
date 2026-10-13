@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  *                 .type(grantGranteeType)
  *                 .value(grantGranteeValue)
  *                 .build())
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:Grant")
  *             .app(DomainsGrantAppArgs.builder()
  *                 .value(grantAppValue)

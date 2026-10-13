@@ -34,9 +34,9 @@ import * as utilities from "../utilities";
  * const testTargets = oci.cloudguard.getGuardTargets({
  *     compartmentId: compartmentId,
  *     accessLevel: targetAccessLevel,
- *     compartmentIdInSubtree: targetCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: targetCompartmentIdInSubtree,
  *     displayName: targetDisplayName,
- *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery === "true",
+ *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery,
  *     state: targetState,
  * });
  * ```
@@ -142,9 +142,9 @@ export interface GetGuardTargetsResult {
  * const testTargets = oci.cloudguard.getGuardTargets({
  *     compartmentId: compartmentId,
  *     accessLevel: targetAccessLevel,
- *     compartmentIdInSubtree: targetCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: targetCompartmentIdInSubtree,
  *     displayName: targetDisplayName,
- *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery === "true",
+ *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery,
  *     state: targetState,
  * });
  * ```

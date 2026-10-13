@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .images(ProductLicenseImageArgs.builder()
- *                 .listingId(testListing.id())
+ *                 .listingId(testListing.get("id"))
  *                 .packageVersion(productLicenseImagesPackageVersion)
  *                 .build())
  *             .vendorName(productLicenseVendorName)

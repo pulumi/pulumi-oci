@@ -69,12 +69,12 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testInternetGateway = new InternetGateway("testInternetGateway", InternetGatewayArgs.builder()
  *             .compartmentId(compartmentId)
- *             .vcnId(testVcn.id())
+ *             .vcnId(testVcn.get("id"))
  *             .enabled(internetGatewayEnabled)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(internetGatewayDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .routeTableId(testRouteTable.id())
+ *             .routeTableId(testRouteTable.get("id"))
  *             .build());
  * 
  *     }

@@ -163,7 +163,7 @@ def get_security_assessment_checks(access_level: Optional[_builtins.str] = None,
 
     test_security_assessment_checks = oci.datasafe.get_security_assessment_checks(security_assessment_id=test_security_assessment["id"],
         access_level=security_assessment_check_access_level,
-        compartment_id_in_subtree=security_assessment_check_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_assessment_check_compartment_id_in_subtree,
         contains_references=security_assessment_check_contains_references,
         contains_severities=security_assessment_check_contains_severity,
         key=security_assessment_check_key,
@@ -224,7 +224,7 @@ def get_security_assessment_checks_output(access_level: pulumi.Input[Optional[Op
 
     test_security_assessment_checks = oci.datasafe.get_security_assessment_checks(security_assessment_id=test_security_assessment["id"],
         access_level=security_assessment_check_access_level,
-        compartment_id_in_subtree=security_assessment_check_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_assessment_check_compartment_id_in_subtree,
         contains_references=security_assessment_check_contains_references,
         contains_severities=security_assessment_check_contains_severity,
         key=security_assessment_check_key,

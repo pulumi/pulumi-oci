@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  *                 .originAuthSignType(streamCdnConfigConfigOriginAuthSignType)
  *                 .build())
  *             .displayName(streamCdnConfigDisplayName)
- *             .distributionChannelId(testChannel.id())
+ *             .distributionChannelId(testChannel.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .isEnabled(streamCdnConfigIsEnabled)
@@ -76,7 +76,7 @@ import javax.annotation.Nullable;
  *                 .compartmentId(compartmentId)
  *                 .type(streamCdnConfigLocksType)
  *                 .message(streamCdnConfigLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(streamCdnConfigLocksTimeCreated)
  *                 .build())
  *             .build());

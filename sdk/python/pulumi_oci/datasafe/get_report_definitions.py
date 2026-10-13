@@ -188,10 +188,10 @@ def get_report_definitions(access_level: Optional[_builtins.str] = None,
     test_report_definitions = oci.datasafe.get_report_definitions(compartment_id=compartment_id,
         access_level=report_definition_access_level,
         category=report_definition_category,
-        compartment_id_in_subtree=report_definition_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=report_definition_compartment_id_in_subtree,
         data_source=report_definition_data_source,
         display_name=report_definition_display_name,
-        is_seeded=report_definition_is_seeded == "true",
+        is_seeded=report_definition_is_seeded,
         state=report_definition_state)
     ```
 
@@ -256,10 +256,10 @@ def get_report_definitions_output(access_level: pulumi.Input[Optional[Optional[_
     test_report_definitions = oci.datasafe.get_report_definitions(compartment_id=compartment_id,
         access_level=report_definition_access_level,
         category=report_definition_category,
-        compartment_id_in_subtree=report_definition_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=report_definition_compartment_id_in_subtree,
         data_source=report_definition_data_source,
         display_name=report_definition_display_name,
-        is_seeded=report_definition_is_seeded == "true",
+        is_seeded=report_definition_is_seeded,
         state=report_definition_state)
     ```
 

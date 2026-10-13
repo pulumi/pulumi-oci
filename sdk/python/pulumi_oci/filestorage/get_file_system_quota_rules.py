@@ -136,8 +136,8 @@ def get_file_system_quota_rules(are_violators_only: Optional[_builtins.bool] = N
 
     test_file_system_quota_rules = oci.filestorage.get_file_system_quota_rules(file_system_id=test_file_system["id"],
         principal_type=file_system_quota_rule_principal_type,
-        are_violators_only=file_system_quota_rule_are_violators_only == "true",
-        principal_id=int(test_principal["id"]))
+        are_violators_only=file_system_quota_rule_are_violators_only,
+        principal_id=test_principal["id"])
     ```
 
 
@@ -182,8 +182,8 @@ def get_file_system_quota_rules_output(are_violators_only: pulumi.Input[Optional
 
     test_file_system_quota_rules = oci.filestorage.get_file_system_quota_rules(file_system_id=test_file_system["id"],
         principal_type=file_system_quota_rule_principal_type,
-        are_violators_only=file_system_quota_rule_are_violators_only == "true",
-        principal_id=int(test_principal["id"]))
+        are_violators_only=file_system_quota_rule_are_violators_only,
+        principal_id=test_principal["id"])
     ```
 
 

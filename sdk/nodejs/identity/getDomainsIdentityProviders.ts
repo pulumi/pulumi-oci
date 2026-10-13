@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testIdentityProviders = oci.identity.getDomainsIdentityProviders({
  *     idcsEndpoint: testDomain.url,
- *     identityProviderCount: Number(identityProviderIdentityProviderCount),
+ *     identityProviderCount: identityProviderIdentityProviderCount,
  *     identityProviderFilter: identityProviderIdentityProviderFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: identityProviderAuthorization,
  *     resourceTypeSchemaVersion: identityProviderResourceTypeSchemaVersion,
- *     startIndex: Number(identityProviderStartIndex),
+ *     startIndex: identityProviderStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsIdentityProvidersResult {
  *
  * const testIdentityProviders = oci.identity.getDomainsIdentityProviders({
  *     idcsEndpoint: testDomain.url,
- *     identityProviderCount: Number(identityProviderIdentityProviderCount),
+ *     identityProviderCount: identityProviderIdentityProviderCount,
  *     identityProviderFilter: identityProviderIdentityProviderFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: identityProviderAuthorization,
  *     resourceTypeSchemaVersion: identityProviderResourceTypeSchemaVersion,
- *     startIndex: Number(identityProviderStartIndex),
+ *     startIndex: identityProviderStartIndex,
  * });
  * ```
  */

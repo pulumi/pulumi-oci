@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCalculateAuditVolumeCollected = new CalculateAuditVolumeCollected("testCalculateAuditVolumeCollected", CalculateAuditVolumeCollectedArgs.builder()
- *             .auditProfileId(testAuditProfile.id())
+ *             .auditProfileId(testAuditProfile.get("id"))
  *             .timeFromMonth(calculateAuditVolumeCollectedTimeFromMonth)
  *             .timeToMonth(calculateAuditVolumeCollectedTimeToMonth)
  *             .build());

@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutoScalingConfiguration = new AutoScalingConfiguration("testAutoScalingConfiguration", AutoScalingConfigurationArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
  *             .isEnabled(autoScalingConfigurationIsEnabled)
  *             .nodeType(autoScalingConfigurationNodeType)
  *             .clusterAdminPassword(autoScalingConfigurationClusterAdminPassword)
@@ -93,7 +93,7 @@ import javax.annotation.Nullable;
  *                     .ocpuStepSize(autoScalingConfigurationPolicyDetailsScaleUpConfigOcpuStepSize)
  *                     .build())
  *                 .build())
- *             .secretId(testSecret.id())
+ *             .secretId(testSecret.get("id"))
  *             .build());
  * 
  *     }

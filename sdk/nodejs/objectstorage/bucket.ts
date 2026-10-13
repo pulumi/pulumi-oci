@@ -34,10 +34,10 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isBucketKeyEnabled: bucketIsBucketKeyEnabled === "true",
+ *     isBucketKeyEnabled: bucketIsBucketKeyEnabled,
  *     kmsKeyId: testKey.id,
  *     metadata: bucketMetadata,
- *     objectEventsEnabled: bucketObjectEventsEnabled === "true",
+ *     objectEventsEnabled: bucketObjectEventsEnabled,
  *     storageTier: bucketStorageTier,
  *     retentionRules: [{
  *         displayName: retentionRuleDisplayName,

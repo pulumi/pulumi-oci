@@ -52,18 +52,18 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testEndpoint = new Endpoint("testEndpoint", EndpointArgs.builder()
  *             .compartmentId(compartmentId)
- *             .dedicatedAiClusterId(testDedicatedAiCluster.id())
- *             .modelId(testModel.id())
+ *             .dedicatedAiClusterId(testDedicatedAiCluster.get("id"))
+ *             .modelId(testModel.get("id"))
  *             .contentModerationConfig(EndpointContentModerationConfigArgs.builder()
  *                 .isEnabled(endpointContentModerationConfigIsEnabled)
  *                 .mode(endpointContentModerationConfigMode)
- *                 .modelId(testModel.id())
+ *                 .modelId(testModel.get("id"))
  *                 .build())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(endpointDescription)
  *             .displayName(endpointDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
+ *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.get("id"))
  *             .build());
  * 
  *     }

@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testReplication = new VaultVerification("testReplication", VaultVerificationArgs.builder()
- *             .vaultId(testVault.id())
+ *             .vaultId(testVault.get("id"))
  *             .replicaRegion(replicaRegion)
  *             .build());
  * 

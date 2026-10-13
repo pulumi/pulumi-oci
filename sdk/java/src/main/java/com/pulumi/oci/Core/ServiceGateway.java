@@ -64,13 +64,13 @@ import javax.annotation.Nullable;
  *         var testServiceGateway = new ServiceGateway("testServiceGateway", ServiceGatewayArgs.builder()
  *             .compartmentId(compartmentId)
  *             .services(ServiceGatewayServiceArgs.builder()
- *                 .serviceId(testServices.services()[0].id())
+ *                 .serviceId(testServices.get("services")[0].get("id"))
  *                 .build())
- *             .vcnId(testVcn.id())
+ *             .vcnId(testVcn.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(serviceGatewayDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .routeTableId(testRouteTable.id())
+ *             .routeTableId(testRouteTable.get("id"))
  *             .build());
  * 
  *     }

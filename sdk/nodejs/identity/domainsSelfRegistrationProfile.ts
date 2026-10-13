@@ -21,27 +21,27 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSelfRegistrationProfile = new oci.identity.DomainsSelfRegistrationProfile("test_self_registration_profile", {
- *     activationEmailRequired: selfRegistrationProfileActivationEmailRequired === "true",
- *     consentTextPresent: selfRegistrationProfileConsentTextPresent === "true",
+ *     activationEmailRequired: selfRegistrationProfileActivationEmailRequired,
+ *     consentTextPresent: selfRegistrationProfileConsentTextPresent,
  *     displayNames: [{
  *         locale: selfRegistrationProfileDisplayNameLocale,
  *         value: selfRegistrationProfileDisplayNameValue,
- *         "default": selfRegistrationProfileDisplayNameDefault === "true",
+ *         "default": selfRegistrationProfileDisplayNameDefault,
  *     }],
  *     emailTemplate: {
  *         value: selfRegistrationProfileEmailTemplateValue,
  *     },
  *     idcsEndpoint: testDomain.url,
  *     name: selfRegistrationProfileName,
- *     numberOfDaysRedirectUrlIsValid: Number(selfRegistrationProfileNumberOfDaysRedirectUrlIsValid),
+ *     numberOfDaysRedirectUrlIsValid: selfRegistrationProfileNumberOfDaysRedirectUrlIsValid,
  *     redirectUrl: selfRegistrationProfileRedirectUrl,
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile"],
- *     showOnLoginPage: selfRegistrationProfileShowOnLoginPage === "true",
- *     active: selfRegistrationProfileActive === "true",
+ *     showOnLoginPage: selfRegistrationProfileShowOnLoginPage,
+ *     active: selfRegistrationProfileActive,
  *     afterSubmitTexts: [{
  *         locale: selfRegistrationProfileAfterSubmitTextLocale,
  *         value: selfRegistrationProfileAfterSubmitTextValue,
- *         "default": selfRegistrationProfileAfterSubmitTextDefault === "true",
+ *         "default": selfRegistrationProfileAfterSubmitTextDefault,
  *     }],
  *     allowedEmailDomains: selfRegistrationProfileAllowedEmailDomains,
  *     attributeSets: ["all"],
@@ -50,7 +50,7 @@ import * as utilities from "../utilities";
  *     consentTexts: [{
  *         locale: selfRegistrationProfileConsentTextLocale,
  *         value: selfRegistrationProfileConsentTextValue,
- *         "default": selfRegistrationProfileConsentTextDefault === "true",
+ *         "default": selfRegistrationProfileConsentTextDefault,
  *     }],
  *     defaultGroups: [{
  *         value: selfRegistrationProfileDefaultGroupsValue,
@@ -61,13 +61,13 @@ import * as utilities from "../utilities";
  *     footerTexts: [{
  *         locale: selfRegistrationProfileFooterTextLocale,
  *         value: selfRegistrationProfileFooterTextValue,
- *         "default": selfRegistrationProfileFooterTextDefault === "true",
+ *         "default": selfRegistrationProfileFooterTextDefault,
  *     }],
  *     headerLogo: selfRegistrationProfileHeaderLogo,
  *     headerTexts: [{
  *         locale: selfRegistrationProfileHeaderTextLocale,
  *         value: selfRegistrationProfileHeaderTextValue,
- *         "default": selfRegistrationProfileHeaderTextDefault === "true",
+ *         "default": selfRegistrationProfileHeaderTextDefault,
  *     }],
  *     id: selfRegistrationProfileId,
  *     ocid: selfRegistrationProfileOcid,
@@ -77,7 +77,7 @@ import * as utilities from "../utilities";
  *         value: selfRegistrationProfileTagsValue,
  *     }],
  *     userAttributes: [{
- *         seqNumber: Number(selfRegistrationProfileUserAttributesSeqNumber),
+ *         seqNumber: selfRegistrationProfileUserAttributesSeqNumber,
  *         value: selfRegistrationProfileUserAttributesValue,
  *         fullyQualifiedAttributeName: selfRegistrationProfileUserAttributesFullyQualifiedAttributeName,
  *     }],

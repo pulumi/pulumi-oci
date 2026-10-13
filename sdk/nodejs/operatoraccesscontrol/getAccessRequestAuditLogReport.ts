@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testAccessRequestAuditLogReport = oci.operatoraccesscontrol.getAccessRequestAuditLogReport({
  *     accessRequestId: testAccessRequest.id,
- *     enableProcessTree: Number(accessRequestAuditLogReportEnableProcessTree),
+ *     enableProcessTree: accessRequestAuditLogReportEnableProcessTree,
  * });
  * ```
  */
@@ -83,7 +83,7 @@ export interface GetAccessRequestAuditLogReportResult {
  *
  * const testAccessRequestAuditLogReport = oci.operatoraccesscontrol.getAccessRequestAuditLogReport({
  *     accessRequestId: testAccessRequest.id,
- *     enableProcessTree: Number(accessRequestAuditLogReportEnableProcessTree),
+ *     enableProcessTree: accessRequestAuditLogReportEnableProcessTree,
  * });
  * ```
  */

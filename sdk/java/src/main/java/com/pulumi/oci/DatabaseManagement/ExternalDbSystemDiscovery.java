@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalDbSystemDiscovery = new ExternalDbSystemDiscovery("testExternalDbSystemDiscovery", ExternalDbSystemDiscoveryArgs.builder()
- *             .agentId(testAgent.id())
+ *             .agentId(testAgent.get("id"))
  *             .compartmentId(compartmentId)
  *             .externalDbSystemDiscoveryId(externalDbSystemDiscoveryExternalDbSystemDiscoveryId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

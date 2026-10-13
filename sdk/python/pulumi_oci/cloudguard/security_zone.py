@@ -411,7 +411,7 @@ class SecurityZone(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_inheritance_after_delete_enabled=security_zone_is_inheritance_after_delete_enabled == "true")
+            is_inheritance_after_delete_enabled=security_zone_is_inheritance_after_delete_enabled)
         ```
 
         ## Import
@@ -470,7 +470,7 @@ class SecurityZone(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_inheritance_after_delete_enabled=security_zone_is_inheritance_after_delete_enabled == "true")
+            is_inheritance_after_delete_enabled=security_zone_is_inheritance_after_delete_enabled)
         ```
 
         ## Import

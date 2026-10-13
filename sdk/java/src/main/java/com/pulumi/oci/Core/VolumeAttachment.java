@@ -51,8 +51,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testVolumeAttachment = new VolumeAttachment("testVolumeAttachment", VolumeAttachmentArgs.builder()
  *             .attachmentType(volumeAttachmentAttachmentType)
- *             .instanceId(testInstance.id())
- *             .volumeId(testVolume.id())
+ *             .instanceId(testInstance.get("id"))
+ *             .volumeId(testVolume.get("id"))
  *             .device(volumeAttachmentDevice)
  *             .displayName(volumeAttachmentDisplayName)
  *             .encryptionInTransitType(volumeAttachmentEncryptionInTransitType)

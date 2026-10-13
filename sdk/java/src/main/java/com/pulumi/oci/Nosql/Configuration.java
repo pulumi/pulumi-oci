@@ -71,7 +71,7 @@ import javax.annotation.Nullable;
  *             .isOpcDryRun(configurationIsOpcDryRun)
  *             .kmsKey(ConfigurationKmsKeyArgs.builder()
  *                 .id(configurationKmsKeyId)
- *                 .kmsVaultId(testVault.id())
+ *                 .kmsVaultId(testVault.get("id"))
  *                 .build())
  *             .build());
  * 

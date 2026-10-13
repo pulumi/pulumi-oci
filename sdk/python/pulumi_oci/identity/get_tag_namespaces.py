@@ -122,7 +122,7 @@ def get_tag_namespaces(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_tag_namespaces = oci.identity.get_tag_namespaces(compartment_id=compartment_id,
-        include_subcompartments=tag_namespace_include_subcompartments == "true",
+        include_subcompartments=tag_namespace_include_subcompartments,
         state=tag_namespace_state)
     ```
 
@@ -163,7 +163,7 @@ def get_tag_namespaces_output(compartment_id: pulumi.Input[Optional[_builtins.st
     import pulumi_oci as oci
 
     test_tag_namespaces = oci.identity.get_tag_namespaces(compartment_id=compartment_id,
-        include_subcompartments=tag_namespace_include_subcompartments == "true",
+        include_subcompartments=tag_namespace_include_subcompartments,
         state=tag_namespace_state)
     ```
 

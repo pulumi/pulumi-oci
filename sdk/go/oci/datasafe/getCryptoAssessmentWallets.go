@@ -37,8 +37,8 @@ import (
 //				CompartmentIdInSubtree:     pulumi.BoolRef(cryptoAssessmentWalletCompartmentIdInSubtree),
 //				Feature:                    pulumi.StringRef(cryptoAssessmentWalletFeature),
 //				TargetId:                   pulumi.StringRef(testTarget.Id),
-//				TargetIds:                  pulumi.ToArray(cryptoAssessmentWalletTargetIds),
-//				WalletEncryptionAlgorithms: pulumi.ToArray(cryptoAssessmentWalletWalletEncryptionAlgorithm),
+//				TargetIds:                  cryptoAssessmentWalletTargetIds,
+//				WalletEncryptionAlgorithms: cryptoAssessmentWalletWalletEncryptionAlgorithm,
 //			}, nil)
 //			if err != nil {
 //				return err

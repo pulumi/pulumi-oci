@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *         installSnapDetails: {
  *             name: scheduledJobOperationsInstallSnapDetailsName,
  *             channel: scheduledJobOperationsInstallSnapDetailsChannel,
- *             isSigned: scheduledJobOperationsInstallSnapDetailsIsSigned === "true",
+ *             isSigned: scheduledJobOperationsInstallSnapDetailsIsSigned,
  *             mode: scheduledJobOperationsInstallSnapDetailsMode,
  *             revision: scheduledJobOperationsInstallSnapDetailsRevision,
  *         },
@@ -56,7 +56,7 @@ import * as utilities from "../utilities";
  *             }],
  *         },
  *         packageNames: scheduledJobOperationsPackageNames,
- *         rebootTimeoutInMins: Number(scheduledJobOperationsRebootTimeoutInMins),
+ *         rebootTimeoutInMins: scheduledJobOperationsRebootTimeoutInMins,
  *         removeSnapDetails: {
  *             name: scheduledJobOperationsRemoveSnapDetailsName,
  *             revision: scheduledJobOperationsRemoveSnapDetailsRevision,
@@ -84,8 +84,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux === "true",
- *     isSubcompartmentIncluded: scheduledJobIsSubcompartmentIncluded === "true",
+ *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux,
+ *     isSubcompartmentIncluded: scheduledJobIsSubcompartmentIncluded,
  *     lifecycleStageIds: scheduledJobLifecycleStageIds,
  *     locations: scheduledJobLocations,
  *     managedCompartmentIds: scheduledJobManagedCompartmentIds,

@@ -115,7 +115,7 @@ def get_cluster_kube_config(cluster_id: Optional[_builtins.str] = None,
 
     test_cluster_kube_config = oci.containerengine.get_cluster_kube_config(cluster_id=test_cluster["id"],
         endpoint=cluster_kube_config_endpoint,
-        expiration=int(cluster_kube_config_expiration),
+        expiration=cluster_kube_config_expiration,
         token_version=cluster_kube_config_token_version)
     ```
 
@@ -158,7 +158,7 @@ def get_cluster_kube_config_output(cluster_id: pulumi.Input[Optional[_builtins.s
 
     test_cluster_kube_config = oci.containerengine.get_cluster_kube_config(cluster_id=test_cluster["id"],
         endpoint=cluster_kube_config_endpoint,
-        expiration=int(cluster_kube_config_expiration),
+        expiration=cluster_kube_config_expiration,
         token_version=cluster_kube_config_token_version)
     ```
 

@@ -30,12 +30,12 @@ import * as utilities from "../utilities";
  *         targetResourceFqdn: sessionTargetResourceDetailsTargetResourceFqdn,
  *         targetResourceId: testTargetResource.id,
  *         targetResourceOperatingSystemUserName: testUser.name,
- *         targetResourcePort: Number(sessionTargetResourceDetailsTargetResourcePort),
+ *         targetResourcePort: sessionTargetResourceDetailsTargetResourcePort,
  *         targetResourcePrivateIpAddress: sessionTargetResourceDetailsTargetResourcePrivateIpAddress,
  *     },
  *     displayName: sessionDisplayName,
  *     keyType: sessionKeyType,
- *     sessionTtlInSeconds: Number(sessionSessionTtlInSeconds),
+ *     sessionTtlInSeconds: sessionSessionTtlInSeconds,
  * });
  * ```
  *

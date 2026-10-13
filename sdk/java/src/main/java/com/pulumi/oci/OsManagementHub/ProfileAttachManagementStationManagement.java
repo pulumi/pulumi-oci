@@ -46,8 +46,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testProfileAttachManagementStationManagement = new ProfileAttachManagementStationManagement("testProfileAttachManagementStationManagement", ProfileAttachManagementStationManagementArgs.builder()
- *             .managementStationId(testManagementStation.id())
- *             .profileId(testProfile.id())
+ *             .managementStationId(testManagementStation.get("id"))
+ *             .profileId(testProfile.get("id"))
  *             .build());
  * 
  *     }

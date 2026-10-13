@@ -370,7 +370,7 @@ class ApmDomain(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_free_tier=apm_domain_is_free_tier == "true",
+            is_free_tier=apm_domain_is_free_tier,
             log_group_id=test_log_group["id"])
         ```
 
@@ -426,7 +426,7 @@ class ApmDomain(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_free_tier=apm_domain_is_free_tier == "true",
+            is_free_tier=apm_domain_is_free_tier,
             log_group_id=test_log_group["id"])
         ```
 

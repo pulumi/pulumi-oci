@@ -60,7 +60,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuCollection = FleetSoftwareUpdateFunctions.getFsuCollection(GetFsuCollectionArgs.builder()
-     *             .fsuCollectionId(testFsuCollectionOciFleetSoftwareUpdateFsuCollection.id())
+     *             .fsuCollectionId(testFsuCollectionOciFleetSoftwareUpdateFsuCollection.get("id"))
      *             .build());
      * 
      *     }
@@ -102,7 +102,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuCollection = FleetSoftwareUpdateFunctions.getFsuCollection(GetFsuCollectionArgs.builder()
-     *             .fsuCollectionId(testFsuCollectionOciFleetSoftwareUpdateFsuCollection.id())
+     *             .fsuCollectionId(testFsuCollectionOciFleetSoftwareUpdateFsuCollection.get("id"))
      *             .build());
      * 
      *     }
@@ -144,7 +144,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuCollection = FleetSoftwareUpdateFunctions.getFsuCollection(GetFsuCollectionArgs.builder()
-     *             .fsuCollectionId(testFsuCollectionOciFleetSoftwareUpdateFsuCollection.id())
+     *             .fsuCollectionId(testFsuCollectionOciFleetSoftwareUpdateFsuCollection.get("id"))
      *             .build());
      * 
      *     }
@@ -186,7 +186,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuCollection = FleetSoftwareUpdateFunctions.getFsuCollection(GetFsuCollectionArgs.builder()
-     *             .fsuCollectionId(testFsuCollectionOciFleetSoftwareUpdateFsuCollection.id())
+     *             .fsuCollectionId(testFsuCollectionOciFleetSoftwareUpdateFsuCollection.get("id"))
      *             .build());
      * 
      *     }
@@ -228,7 +228,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuCollection = FleetSoftwareUpdateFunctions.getFsuCollection(GetFsuCollectionArgs.builder()
-     *             .fsuCollectionId(testFsuCollectionOciFleetSoftwareUpdateFsuCollection.id())
+     *             .fsuCollectionId(testFsuCollectionOciFleetSoftwareUpdateFsuCollection.get("id"))
      *             .build());
      * 
      *     }
@@ -495,7 +495,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuCycle = FleetSoftwareUpdateFunctions.getFsuCycle(GetFsuCycleArgs.builder()
-     *             .fsuCycleId(testFsuCycleOciFleetSoftwareUpdateFsuCycle.id())
+     *             .fsuCycleId(testFsuCycleOciFleetSoftwareUpdateFsuCycle.get("id"))
      *             .build());
      * 
      *     }
@@ -537,7 +537,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuCycle = FleetSoftwareUpdateFunctions.getFsuCycle(GetFsuCycleArgs.builder()
-     *             .fsuCycleId(testFsuCycleOciFleetSoftwareUpdateFsuCycle.id())
+     *             .fsuCycleId(testFsuCycleOciFleetSoftwareUpdateFsuCycle.get("id"))
      *             .build());
      * 
      *     }
@@ -579,7 +579,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuCycle = FleetSoftwareUpdateFunctions.getFsuCycle(GetFsuCycleArgs.builder()
-     *             .fsuCycleId(testFsuCycleOciFleetSoftwareUpdateFsuCycle.id())
+     *             .fsuCycleId(testFsuCycleOciFleetSoftwareUpdateFsuCycle.get("id"))
      *             .build());
      * 
      *     }
@@ -621,7 +621,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuCycle = FleetSoftwareUpdateFunctions.getFsuCycle(GetFsuCycleArgs.builder()
-     *             .fsuCycleId(testFsuCycleOciFleetSoftwareUpdateFsuCycle.id())
+     *             .fsuCycleId(testFsuCycleOciFleetSoftwareUpdateFsuCycle.get("id"))
      *             .build());
      * 
      *     }
@@ -663,7 +663,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuCycle = FleetSoftwareUpdateFunctions.getFsuCycle(GetFsuCycleArgs.builder()
-     *             .fsuCycleId(testFsuCycleOciFleetSoftwareUpdateFsuCycle.id())
+     *             .fsuCycleId(testFsuCycleOciFleetSoftwareUpdateFsuCycle.get("id"))
      *             .build());
      * 
      *     }
@@ -708,7 +708,7 @@ public final class FleetSoftwareUpdateFunctions {
      *             .compartmentId(compartmentId)
      *             .collectionType(fsuCycleCollectionType)
      *             .displayName(fsuCycleDisplayName)
-     *             .fsuCollectionId(testFsuCollection.id())
+     *             .fsuCollectionId(testFsuCollection.get("id"))
      *             .state(fsuCycleState)
      *             .targetVersion(fsuCycleTargetVersion)
      *             .build());
@@ -755,7 +755,7 @@ public final class FleetSoftwareUpdateFunctions {
      *             .compartmentId(compartmentId)
      *             .collectionType(fsuCycleCollectionType)
      *             .displayName(fsuCycleDisplayName)
-     *             .fsuCollectionId(testFsuCollection.id())
+     *             .fsuCollectionId(testFsuCollection.get("id"))
      *             .state(fsuCycleState)
      *             .targetVersion(fsuCycleTargetVersion)
      *             .build());
@@ -802,7 +802,7 @@ public final class FleetSoftwareUpdateFunctions {
      *             .compartmentId(compartmentId)
      *             .collectionType(fsuCycleCollectionType)
      *             .displayName(fsuCycleDisplayName)
-     *             .fsuCollectionId(testFsuCollection.id())
+     *             .fsuCollectionId(testFsuCollection.get("id"))
      *             .state(fsuCycleState)
      *             .targetVersion(fsuCycleTargetVersion)
      *             .build());
@@ -849,7 +849,7 @@ public final class FleetSoftwareUpdateFunctions {
      *             .compartmentId(compartmentId)
      *             .collectionType(fsuCycleCollectionType)
      *             .displayName(fsuCycleDisplayName)
-     *             .fsuCollectionId(testFsuCollection.id())
+     *             .fsuCollectionId(testFsuCollection.get("id"))
      *             .state(fsuCycleState)
      *             .targetVersion(fsuCycleTargetVersion)
      *             .build());
@@ -896,7 +896,7 @@ public final class FleetSoftwareUpdateFunctions {
      *             .compartmentId(compartmentId)
      *             .collectionType(fsuCycleCollectionType)
      *             .displayName(fsuCycleDisplayName)
-     *             .fsuCollectionId(testFsuCollection.id())
+     *             .fsuCollectionId(testFsuCollection.get("id"))
      *             .state(fsuCycleState)
      *             .targetVersion(fsuCycleTargetVersion)
      *             .build());
@@ -940,7 +940,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuReadinessCheck = FleetSoftwareUpdateFunctions.getFsuReadinessCheck(GetFsuReadinessCheckArgs.builder()
-     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id())
+     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.get("id"))
      *             .build());
      * 
      *     }
@@ -982,7 +982,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuReadinessCheck = FleetSoftwareUpdateFunctions.getFsuReadinessCheck(GetFsuReadinessCheckArgs.builder()
-     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id())
+     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.get("id"))
      *             .build());
      * 
      *     }
@@ -1024,7 +1024,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuReadinessCheck = FleetSoftwareUpdateFunctions.getFsuReadinessCheck(GetFsuReadinessCheckArgs.builder()
-     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id())
+     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.get("id"))
      *             .build());
      * 
      *     }
@@ -1066,7 +1066,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuReadinessCheck = FleetSoftwareUpdateFunctions.getFsuReadinessCheck(GetFsuReadinessCheckArgs.builder()
-     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id())
+     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.get("id"))
      *             .build());
      * 
      *     }
@@ -1108,7 +1108,7 @@ public final class FleetSoftwareUpdateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFsuReadinessCheck = FleetSoftwareUpdateFunctions.getFsuReadinessCheck(GetFsuReadinessCheckArgs.builder()
-     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id())
+     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.get("id"))
      *             .build());
      * 
      *     }
@@ -1152,7 +1152,7 @@ public final class FleetSoftwareUpdateFunctions {
      *         final var testFsuReadinessChecks = FleetSoftwareUpdateFunctions.getFsuReadinessChecks(GetFsuReadinessChecksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(fsuReadinessCheckDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fsuReadinessCheckState)
      *             .type(fsuReadinessCheckType)
      *             .build());
@@ -1198,7 +1198,7 @@ public final class FleetSoftwareUpdateFunctions {
      *         final var testFsuReadinessChecks = FleetSoftwareUpdateFunctions.getFsuReadinessChecks(GetFsuReadinessChecksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(fsuReadinessCheckDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fsuReadinessCheckState)
      *             .type(fsuReadinessCheckType)
      *             .build());
@@ -1244,7 +1244,7 @@ public final class FleetSoftwareUpdateFunctions {
      *         final var testFsuReadinessChecks = FleetSoftwareUpdateFunctions.getFsuReadinessChecks(GetFsuReadinessChecksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(fsuReadinessCheckDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fsuReadinessCheckState)
      *             .type(fsuReadinessCheckType)
      *             .build());
@@ -1290,7 +1290,7 @@ public final class FleetSoftwareUpdateFunctions {
      *         final var testFsuReadinessChecks = FleetSoftwareUpdateFunctions.getFsuReadinessChecks(GetFsuReadinessChecksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(fsuReadinessCheckDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fsuReadinessCheckState)
      *             .type(fsuReadinessCheckType)
      *             .build());
@@ -1336,7 +1336,7 @@ public final class FleetSoftwareUpdateFunctions {
      *         final var testFsuReadinessChecks = FleetSoftwareUpdateFunctions.getFsuReadinessChecks(GetFsuReadinessChecksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(fsuReadinessCheckDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fsuReadinessCheckState)
      *             .type(fsuReadinessCheckType)
      *             .build());

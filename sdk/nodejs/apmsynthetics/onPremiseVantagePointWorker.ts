@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     priority: Number(onPremiseVantagePointWorkerPriority),
+ *     priority: onPremiseVantagePointWorkerPriority,
  *     status: onPremiseVantagePointWorkerStatus,
  *     workerType: onPremiseVantagePointWorkerWorkerType,
  * });

@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testConnection = new Connection("testConnection", ConnectionArgs.builder()
- *             .catalogId(testCatalog.id())
+ *             .catalogId(testCatalog.get("id"))
  *             .dataAssetKey(connectionDataAssetKey)
  *             .displayName(connectionDisplayName)
  *             .properties(connectionProperties)

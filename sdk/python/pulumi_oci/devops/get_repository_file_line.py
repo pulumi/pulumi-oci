@@ -117,7 +117,7 @@ def get_repository_file_line(file_path: Optional[_builtins.str] = None,
     test_repository_file_line = oci.devops.get_repository_file_line(repository_id=test_repository["id"],
         revision=repository_file_line_revision,
         file_path=repository_file_line_file_path,
-        start_line_number=int(repository_file_line_start_line_number))
+        start_line_number=repository_file_line_start_line_number)
     ```
 
 
@@ -160,7 +160,7 @@ def get_repository_file_line_output(file_path: pulumi.Input[Optional[_builtins.s
     test_repository_file_line = oci.devops.get_repository_file_line(repository_id=test_repository["id"],
         revision=repository_file_line_revision,
         file_path=repository_file_line_file_path,
-        start_line_number=int(repository_file_line_start_line_number))
+        start_line_number=repository_file_line_start_line_number)
     ```
 
 

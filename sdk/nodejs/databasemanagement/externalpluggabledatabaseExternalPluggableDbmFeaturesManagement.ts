@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement = new oci.databasemanagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement("test_externalpluggabledatabase_external_pluggable_dbm_features_management", {
  *     externalPluggableDatabaseId: testExternalPluggableDatabase.id,
- *     enableExternalPluggableDbmFeature: enableExternalPluggableDbmFeature === "true",
+ *     enableExternalPluggableDbmFeature: enableExternalPluggableDbmFeature,
  *     featureDetails: {
  *         feature: externalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsFeature,
  *         enableExternalPluggableDbmFeature: enableExternalPluggableDbmFeature,

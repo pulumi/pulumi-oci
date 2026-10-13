@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     networkAnchorOciSubnetId: networkAnchorOciSubnetId,
  *     networkAnchorOciVcnId: networkAnchorOciVcnId,
  *     id: id,
- *     shouldFetchVcnName: shouldFetchVcnName === "true",
+ *     shouldFetchVcnName: shouldFetchVcnName,
  * });
  * ```
  */
@@ -160,7 +160,7 @@ export interface GetMulticloudNetworkAnchorsResult {
  *     networkAnchorOciSubnetId: networkAnchorOciSubnetId,
  *     networkAnchorOciVcnId: networkAnchorOciVcnId,
  *     id: id,
- *     shouldFetchVcnName: shouldFetchVcnName === "true",
+ *     shouldFetchVcnName: shouldFetchVcnName,
  * });
  * ```
  */

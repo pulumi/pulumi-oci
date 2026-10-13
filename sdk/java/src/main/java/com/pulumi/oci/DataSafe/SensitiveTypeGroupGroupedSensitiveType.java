@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSensitiveTypeGroupGroupedSensitiveType = new SensitiveTypeGroupGroupedSensitiveType("testSensitiveTypeGroupGroupedSensitiveType", SensitiveTypeGroupGroupedSensitiveTypeArgs.builder()
- *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
+ *             .sensitiveTypeGroupId(testSensitiveTypeGroup.get("id"))
  *             .patchOperations(SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs.builder()
  *                 .operation(sensitiveTypeGroupGroupedSensitiveTypePatchOperationsOperation)
  *                 .selection(sensitiveTypeGroupGroupedSensitiveTypePatchOperationsSelection)

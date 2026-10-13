@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSoftwareSourceGenerateMetadataManagement = new SoftwareSourceGenerateMetadataManagement("testSoftwareSourceGenerateMetadataManagement", SoftwareSourceGenerateMetadataManagementArgs.builder()
- *             .softwareSourceId(testSoftwareSource.id())
+ *             .softwareSourceId(testSoftwareSource.get("id"))
  *             .build());
  * 
  *     }

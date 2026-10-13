@@ -548,7 +548,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -590,7 +590,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -632,7 +632,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -674,7 +674,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -716,7 +716,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -758,7 +758,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .resourceVersion(appCatalogListingResourceVersionResourceVersion)
      *             .build());
      * 
@@ -801,7 +801,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .resourceVersion(appCatalogListingResourceVersionResourceVersion)
      *             .build());
      * 
@@ -844,7 +844,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .resourceVersion(appCatalogListingResourceVersionResourceVersion)
      *             .build());
      * 
@@ -887,7 +887,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .resourceVersion(appCatalogListingResourceVersionResourceVersion)
      *             .build());
      * 
@@ -930,7 +930,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .resourceVersion(appCatalogListingResourceVersionResourceVersion)
      *             .build());
      * 
@@ -973,7 +973,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -1015,7 +1015,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -1057,7 +1057,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -1099,7 +1099,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -1141,7 +1141,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -1492,7 +1492,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -1535,7 +1535,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -1578,7 +1578,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -1621,7 +1621,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -1664,7 +1664,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .build());
      * 
      *     }
@@ -1706,7 +1706,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
-     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.id())
+     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -1748,7 +1748,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
-     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.id())
+     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -1790,7 +1790,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
-     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.id())
+     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -1832,7 +1832,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
-     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.id())
+     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -1874,7 +1874,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
-     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.id())
+     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -1920,7 +1920,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(blockVolumeReplicaDisplayName)
      *             .state(blockVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -1966,7 +1966,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(blockVolumeReplicaDisplayName)
      *             .state(blockVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -2012,7 +2012,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(blockVolumeReplicaDisplayName)
      *             .state(blockVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -2058,7 +2058,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(blockVolumeReplicaDisplayName)
      *             .state(blockVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -2104,7 +2104,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(blockVolumeReplicaDisplayName)
      *             .state(blockVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -2150,7 +2150,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(blockVolumeReplicaDisplayName)
      *             .state(blockVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -2196,7 +2196,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(blockVolumeReplicaDisplayName)
      *             .state(blockVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -2238,7 +2238,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
-     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.id())
+     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -2280,7 +2280,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
-     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.id())
+     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -2322,7 +2322,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
-     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.id())
+     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -2364,7 +2364,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
-     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.id())
+     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -2406,7 +2406,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
-     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.id())
+     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -2451,8 +2451,8 @@ public final class CoreFunctions {
      *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
      *             .availabilityDomain(bootVolumeAttachmentAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .bootVolumeId(testBootVolume.id())
-     *             .instanceId(testInstance.id())
+     *             .bootVolumeId(testBootVolume.get("id"))
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -2498,8 +2498,8 @@ public final class CoreFunctions {
      *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
      *             .availabilityDomain(bootVolumeAttachmentAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .bootVolumeId(testBootVolume.id())
-     *             .instanceId(testInstance.id())
+     *             .bootVolumeId(testBootVolume.get("id"))
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -2545,8 +2545,8 @@ public final class CoreFunctions {
      *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
      *             .availabilityDomain(bootVolumeAttachmentAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .bootVolumeId(testBootVolume.id())
-     *             .instanceId(testInstance.id())
+     *             .bootVolumeId(testBootVolume.get("id"))
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -2592,8 +2592,8 @@ public final class CoreFunctions {
      *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
      *             .availabilityDomain(bootVolumeAttachmentAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .bootVolumeId(testBootVolume.id())
-     *             .instanceId(testInstance.id())
+     *             .bootVolumeId(testBootVolume.get("id"))
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -2639,8 +2639,8 @@ public final class CoreFunctions {
      *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
      *             .availabilityDomain(bootVolumeAttachmentAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .bootVolumeId(testBootVolume.id())
-     *             .instanceId(testInstance.id())
+     *             .bootVolumeId(testBootVolume.get("id"))
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -2683,7 +2683,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
-     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.id())
+     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -2725,7 +2725,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
-     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.id())
+     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -2767,7 +2767,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
-     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.id())
+     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -2809,7 +2809,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
-     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.id())
+     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -2851,7 +2851,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
-     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.id())
+     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -2894,9 +2894,9 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .bootVolumeId(testBootVolume.id())
+     *             .bootVolumeId(testBootVolume.get("id"))
      *             .displayName(bootVolumeBackupDisplayName)
-     *             .sourceBootVolumeBackupId(testBootVolumeBackup.id())
+     *             .sourceBootVolumeBackupId(testBootVolumeBackup.get("id"))
      *             .state(bootVolumeBackupState)
      *             .build());
      * 
@@ -2940,9 +2940,9 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .bootVolumeId(testBootVolume.id())
+     *             .bootVolumeId(testBootVolume.get("id"))
      *             .displayName(bootVolumeBackupDisplayName)
-     *             .sourceBootVolumeBackupId(testBootVolumeBackup.id())
+     *             .sourceBootVolumeBackupId(testBootVolumeBackup.get("id"))
      *             .state(bootVolumeBackupState)
      *             .build());
      * 
@@ -2986,9 +2986,9 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .bootVolumeId(testBootVolume.id())
+     *             .bootVolumeId(testBootVolume.get("id"))
      *             .displayName(bootVolumeBackupDisplayName)
-     *             .sourceBootVolumeBackupId(testBootVolumeBackup.id())
+     *             .sourceBootVolumeBackupId(testBootVolumeBackup.get("id"))
      *             .state(bootVolumeBackupState)
      *             .build());
      * 
@@ -3032,9 +3032,9 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .bootVolumeId(testBootVolume.id())
+     *             .bootVolumeId(testBootVolume.get("id"))
      *             .displayName(bootVolumeBackupDisplayName)
-     *             .sourceBootVolumeBackupId(testBootVolumeBackup.id())
+     *             .sourceBootVolumeBackupId(testBootVolumeBackup.get("id"))
      *             .state(bootVolumeBackupState)
      *             .build());
      * 
@@ -3078,9 +3078,9 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .bootVolumeId(testBootVolume.id())
+     *             .bootVolumeId(testBootVolume.get("id"))
      *             .displayName(bootVolumeBackupDisplayName)
-     *             .sourceBootVolumeBackupId(testBootVolumeBackup.id())
+     *             .sourceBootVolumeBackupId(testBootVolumeBackup.get("id"))
      *             .state(bootVolumeBackupState)
      *             .build());
      * 
@@ -3123,7 +3123,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
-     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.id())
+     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3165,7 +3165,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
-     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.id())
+     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3207,7 +3207,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
-     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.id())
+     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3249,7 +3249,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
-     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.id())
+     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3291,7 +3291,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
-     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.id())
+     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3337,7 +3337,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(bootVolumeReplicaDisplayName)
      *             .state(bootVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3383,7 +3383,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(bootVolumeReplicaDisplayName)
      *             .state(bootVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3429,7 +3429,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(bootVolumeReplicaDisplayName)
      *             .state(bootVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3475,7 +3475,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(bootVolumeReplicaDisplayName)
      *             .state(bootVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3521,7 +3521,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(bootVolumeReplicaDisplayName)
      *             .state(bootVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3567,7 +3567,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(bootVolumeReplicaDisplayName)
      *             .state(bootVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3613,7 +3613,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(bootVolumeReplicaDisplayName)
      *             .state(bootVolumeReplicaState)
-     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3657,7 +3657,7 @@ public final class CoreFunctions {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
      *             .availabilityDomain(bootVolumeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -3701,7 +3701,7 @@ public final class CoreFunctions {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
      *             .availabilityDomain(bootVolumeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -3745,7 +3745,7 @@ public final class CoreFunctions {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
      *             .availabilityDomain(bootVolumeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -3789,7 +3789,7 @@ public final class CoreFunctions {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
      *             .availabilityDomain(bootVolumeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -3833,7 +3833,7 @@ public final class CoreFunctions {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
      *             .availabilityDomain(bootVolumeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -3877,7 +3877,7 @@ public final class CoreFunctions {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
      *             .availabilityDomain(bootVolumeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -3921,7 +3921,7 @@ public final class CoreFunctions {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
      *             .availabilityDomain(bootVolumeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -3963,7 +3963,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoasn = CoreFunctions.getByoasn(GetByoasnArgs.builder()
-     *             .byoasnId(testByoasnOciCoreByoasn.id())
+     *             .byoasnId(testByoasnOciCoreByoasn.get("id"))
      *             .build());
      * 
      *     }
@@ -4005,7 +4005,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoasn = CoreFunctions.getByoasn(GetByoasnArgs.builder()
-     *             .byoasnId(testByoasnOciCoreByoasn.id())
+     *             .byoasnId(testByoasnOciCoreByoasn.get("id"))
      *             .build());
      * 
      *     }
@@ -4047,7 +4047,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoasn = CoreFunctions.getByoasn(GetByoasnArgs.builder()
-     *             .byoasnId(testByoasnOciCoreByoasn.id())
+     *             .byoasnId(testByoasnOciCoreByoasn.get("id"))
      *             .build());
      * 
      *     }
@@ -4089,7 +4089,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoasn = CoreFunctions.getByoasn(GetByoasnArgs.builder()
-     *             .byoasnId(testByoasnOciCoreByoasn.id())
+     *             .byoasnId(testByoasnOciCoreByoasn.get("id"))
      *             .build());
      * 
      *     }
@@ -4131,7 +4131,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoasn = CoreFunctions.getByoasn(GetByoasnArgs.builder()
-     *             .byoasnId(testByoasnOciCoreByoasn.id())
+     *             .byoasnId(testByoasnOciCoreByoasn.get("id"))
      *             .build());
      * 
      *     }
@@ -4234,7 +4234,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
-     *             .byoipRangeId(testByoipRange.id())
+     *             .byoipRangeId(testByoipRange.get("id"))
      *             .build());
      * 
      *     }
@@ -4277,7 +4277,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
-     *             .byoipRangeId(testByoipRange.id())
+     *             .byoipRangeId(testByoipRange.get("id"))
      *             .build());
      * 
      *     }
@@ -4320,7 +4320,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
-     *             .byoipRangeId(testByoipRange.id())
+     *             .byoipRangeId(testByoipRange.get("id"))
      *             .build());
      * 
      *     }
@@ -4363,7 +4363,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
-     *             .byoipRangeId(testByoipRange.id())
+     *             .byoipRangeId(testByoipRange.get("id"))
      *             .build());
      * 
      *     }
@@ -4406,7 +4406,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
-     *             .byoipRangeId(testByoipRange.id())
+     *             .byoipRangeId(testByoipRange.get("id"))
      *             .build());
      * 
      *     }
@@ -4448,7 +4448,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
-     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.id())
+     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.get("id"))
      *             .build());
      * 
      *     }
@@ -4490,7 +4490,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
-     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.id())
+     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.get("id"))
      *             .build());
      * 
      *     }
@@ -4532,7 +4532,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
-     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.id())
+     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.get("id"))
      *             .build());
      * 
      *     }
@@ -4574,7 +4574,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
-     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.id())
+     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.get("id"))
      *             .build());
      * 
      *     }
@@ -4616,7 +4616,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
-     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.id())
+     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.get("id"))
      *             .build());
      * 
      *     }
@@ -4883,7 +4883,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
-     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.id())
+     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.get("id"))
      *             .build());
      * 
      *     }
@@ -4925,7 +4925,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
-     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.id())
+     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.get("id"))
      *             .build());
      * 
      *     }
@@ -4967,7 +4967,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
-     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.id())
+     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.get("id"))
      *             .build());
      * 
      *     }
@@ -5009,7 +5009,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
-     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.id())
+     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.get("id"))
      *             .build());
      * 
      *     }
@@ -5051,7 +5051,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
-     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.id())
+     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.get("id"))
      *             .build());
      * 
      *     }
@@ -5318,7 +5318,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
-     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.id())
+     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.get("id"))
      *             .build());
      * 
      *     }
@@ -5360,7 +5360,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
-     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.id())
+     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.get("id"))
      *             .build());
      * 
      *     }
@@ -5402,7 +5402,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
-     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.id())
+     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.get("id"))
      *             .build());
      * 
      *     }
@@ -5444,7 +5444,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
-     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.id())
+     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.get("id"))
      *             .build());
      * 
      *     }
@@ -5486,7 +5486,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
-     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.id())
+     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.get("id"))
      *             .build());
      * 
      *     }
@@ -5528,7 +5528,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
-     *             .clusterNetworkId(testClusterNetwork.id())
+     *             .clusterNetworkId(testClusterNetwork.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(clusterNetworkInstanceDisplayName)
      *             .build());
@@ -5572,7 +5572,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
-     *             .clusterNetworkId(testClusterNetwork.id())
+     *             .clusterNetworkId(testClusterNetwork.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(clusterNetworkInstanceDisplayName)
      *             .build());
@@ -5616,7 +5616,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
-     *             .clusterNetworkId(testClusterNetwork.id())
+     *             .clusterNetworkId(testClusterNetwork.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(clusterNetworkInstanceDisplayName)
      *             .build());
@@ -5660,7 +5660,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
-     *             .clusterNetworkId(testClusterNetwork.id())
+     *             .clusterNetworkId(testClusterNetwork.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(clusterNetworkInstanceDisplayName)
      *             .build());
@@ -5704,7 +5704,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
-     *             .clusterNetworkId(testClusterNetwork.id())
+     *             .clusterNetworkId(testClusterNetwork.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(clusterNetworkInstanceDisplayName)
      *             .build());
@@ -5973,7 +5973,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6015,7 +6015,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6057,7 +6057,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6099,7 +6099,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6141,7 +6141,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6183,7 +6183,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
-     *             .capacityReservationId(testCapacityReservation.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .build());
      * 
      *     }
@@ -6225,7 +6225,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
-     *             .capacityReservationId(testCapacityReservation.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .build());
      * 
      *     }
@@ -6267,7 +6267,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
-     *             .capacityReservationId(testCapacityReservation.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .build());
      * 
      *     }
@@ -6309,7 +6309,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
-     *             .capacityReservationId(testCapacityReservation.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .build());
      * 
      *     }
@@ -6351,7 +6351,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
-     *             .capacityReservationId(testCapacityReservation.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .build());
      * 
      *     }
@@ -6613,7 +6613,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
-     *             .capacityReservationId(testCapacityReservation.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .availabilityDomain(computeCapacityReservationInstanceAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -6657,7 +6657,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
-     *             .capacityReservationId(testCapacityReservation.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .availabilityDomain(computeCapacityReservationInstanceAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -6701,7 +6701,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
-     *             .capacityReservationId(testCapacityReservation.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .availabilityDomain(computeCapacityReservationInstanceAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -6745,7 +6745,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
-     *             .capacityReservationId(testCapacityReservation.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .availabilityDomain(computeCapacityReservationInstanceAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -6789,7 +6789,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
-     *             .capacityReservationId(testCapacityReservation.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .availabilityDomain(computeCapacityReservationInstanceAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -7298,7 +7298,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.get("id"))
      *             .build());
      * 
      *     }
@@ -7340,7 +7340,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.get("id"))
      *             .build());
      * 
      *     }
@@ -7382,7 +7382,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.get("id"))
      *             .build());
      * 
      *     }
@@ -7424,7 +7424,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.get("id"))
      *             .build());
      * 
      *     }
@@ -7466,7 +7466,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.get("id"))
      *             .build());
      * 
      *     }
@@ -7508,12 +7508,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
-     *             .computeLocalBlockId(testComputeLocalBlock.id())
-     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
+     *             .computeLocalBlockId(testComputeLocalBlock.get("id"))
+     *             .computeNetworkBlockId(testComputeNetworkBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -7555,12 +7555,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
-     *             .computeLocalBlockId(testComputeLocalBlock.id())
-     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
+     *             .computeLocalBlockId(testComputeLocalBlock.get("id"))
+     *             .computeNetworkBlockId(testComputeNetworkBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -7602,12 +7602,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
-     *             .computeLocalBlockId(testComputeLocalBlock.id())
-     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
+     *             .computeLocalBlockId(testComputeLocalBlock.get("id"))
+     *             .computeNetworkBlockId(testComputeNetworkBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -7649,12 +7649,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
-     *             .computeLocalBlockId(testComputeLocalBlock.id())
-     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
+     *             .computeLocalBlockId(testComputeLocalBlock.get("id"))
+     *             .computeNetworkBlockId(testComputeNetworkBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -7696,12 +7696,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
-     *             .computeLocalBlockId(testComputeLocalBlock.id())
-     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
+     *             .computeLocalBlockId(testComputeLocalBlock.get("id"))
+     *             .computeNetworkBlockId(testComputeNetworkBlock.get("id"))
      *             .build());
      * 
      *     }
@@ -7743,7 +7743,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeHpcIslandAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -7787,7 +7787,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeHpcIslandAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -7831,7 +7831,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeHpcIslandAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -7875,7 +7875,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeHpcIslandAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -7919,7 +7919,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeHpcIslandAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -7963,10 +7963,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeNetworkBlockAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
      *             .build());
      * 
      *     }
@@ -8008,10 +8008,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeNetworkBlockAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
      *             .build());
      * 
      *     }
@@ -8053,10 +8053,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeNetworkBlockAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
      *             .build());
      * 
      *     }
@@ -8098,10 +8098,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeNetworkBlockAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
      *             .build());
      * 
      *     }
@@ -8143,10 +8143,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
-     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.get("id"))
      *             .availabilityDomain(computeCapacityTopologyComputeNetworkBlockAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
      *             .build());
      * 
      *     }
@@ -8189,7 +8189,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
-     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.id())
+     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -8232,7 +8232,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
-     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.id())
+     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -8275,7 +8275,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
-     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.id())
+     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -8318,7 +8318,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
-     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.id())
+     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -8361,7 +8361,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
-     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.id())
+     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -8628,7 +8628,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.get("id"))
      *             .build());
      * 
      *     }
@@ -8670,7 +8670,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.get("id"))
      *             .build());
      * 
      *     }
@@ -8712,7 +8712,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.get("id"))
      *             .build());
      * 
      *     }
@@ -8754,7 +8754,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.get("id"))
      *             .build());
      * 
      *     }
@@ -8796,7 +8796,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.get("id"))
      *             .build());
      * 
      *     }
@@ -9139,7 +9139,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.get("id"))
      *             .computeGlobalImageCapabilitySchemaVersionName(computeGlobalImageCapabilitySchemasVersionComputeGlobalImageCapabilitySchemaVersionName)
      *             .build());
      * 
@@ -9182,7 +9182,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.get("id"))
      *             .computeGlobalImageCapabilitySchemaVersionName(computeGlobalImageCapabilitySchemasVersionComputeGlobalImageCapabilitySchemaVersionName)
      *             .build());
      * 
@@ -9225,7 +9225,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.get("id"))
      *             .computeGlobalImageCapabilitySchemaVersionName(computeGlobalImageCapabilitySchemasVersionComputeGlobalImageCapabilitySchemaVersionName)
      *             .build());
      * 
@@ -9268,7 +9268,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.get("id"))
      *             .computeGlobalImageCapabilitySchemaVersionName(computeGlobalImageCapabilitySchemasVersionComputeGlobalImageCapabilitySchemaVersionName)
      *             .build());
      * 
@@ -9311,7 +9311,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.get("id"))
      *             .computeGlobalImageCapabilitySchemaVersionName(computeGlobalImageCapabilitySchemasVersionComputeGlobalImageCapabilitySchemaVersionName)
      *             .build());
      * 
@@ -9354,7 +9354,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.get("id"))
      *             .displayName(computeGlobalImageCapabilitySchemasVersionDisplayName)
      *             .build());
      * 
@@ -9397,7 +9397,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.get("id"))
      *             .displayName(computeGlobalImageCapabilitySchemasVersionDisplayName)
      *             .build());
      * 
@@ -9440,7 +9440,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.get("id"))
      *             .displayName(computeGlobalImageCapabilitySchemasVersionDisplayName)
      *             .build());
      * 
@@ -9483,7 +9483,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.get("id"))
      *             .displayName(computeGlobalImageCapabilitySchemasVersionDisplayName)
      *             .build());
      * 
@@ -9526,7 +9526,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.get("id"))
      *             .displayName(computeGlobalImageCapabilitySchemasVersionDisplayName)
      *             .build());
      * 
@@ -9569,7 +9569,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryCluster = CoreFunctions.getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs.builder()
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -9611,7 +9611,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryCluster = CoreFunctions.getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs.builder()
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -9653,7 +9653,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryCluster = CoreFunctions.getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs.builder()
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -9695,7 +9695,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryCluster = CoreFunctions.getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs.builder()
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -9737,7 +9737,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryCluster = CoreFunctions.getComputeGpuMemoryCluster(GetComputeGpuMemoryClusterArgs.builder()
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryClusterOciCoreComputeGpuMemoryCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -9779,7 +9779,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryClusterInstances = CoreFunctions.getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs.builder()
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -9821,7 +9821,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryClusterInstances = CoreFunctions.getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs.builder()
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -9863,7 +9863,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryClusterInstances = CoreFunctions.getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs.builder()
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -9905,7 +9905,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryClusterInstances = CoreFunctions.getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs.builder()
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -9947,7 +9947,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryClusterInstances = CoreFunctions.getComputeGpuMemoryClusterInstances(GetComputeGpuMemoryClusterInstancesArgs.builder()
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -9991,9 +9991,9 @@ public final class CoreFunctions {
      *         final var testComputeGpuMemoryClusters = CoreFunctions.getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
-     *             .computeClusterId(testComputeCluster.id())
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeClusterId(testComputeCluster.get("id"))
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.get("id"))
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.get("id"))
      *             .displayName(computeGpuMemoryClusterDisplayName)
      *             .build());
      * 
@@ -10038,9 +10038,9 @@ public final class CoreFunctions {
      *         final var testComputeGpuMemoryClusters = CoreFunctions.getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
-     *             .computeClusterId(testComputeCluster.id())
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeClusterId(testComputeCluster.get("id"))
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.get("id"))
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.get("id"))
      *             .displayName(computeGpuMemoryClusterDisplayName)
      *             .build());
      * 
@@ -10085,9 +10085,9 @@ public final class CoreFunctions {
      *         final var testComputeGpuMemoryClusters = CoreFunctions.getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
-     *             .computeClusterId(testComputeCluster.id())
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeClusterId(testComputeCluster.get("id"))
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.get("id"))
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.get("id"))
      *             .displayName(computeGpuMemoryClusterDisplayName)
      *             .build());
      * 
@@ -10132,9 +10132,9 @@ public final class CoreFunctions {
      *         final var testComputeGpuMemoryClusters = CoreFunctions.getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
-     *             .computeClusterId(testComputeCluster.id())
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeClusterId(testComputeCluster.get("id"))
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.get("id"))
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.get("id"))
      *             .displayName(computeGpuMemoryClusterDisplayName)
      *             .build());
      * 
@@ -10179,9 +10179,9 @@ public final class CoreFunctions {
      *         final var testComputeGpuMemoryClusters = CoreFunctions.getComputeGpuMemoryClusters(GetComputeGpuMemoryClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
-     *             .computeClusterId(testComputeCluster.id())
-     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeClusterId(testComputeCluster.get("id"))
+     *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.get("id"))
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.get("id"))
      *             .displayName(computeGpuMemoryClusterDisplayName)
      *             .build());
      * 
@@ -10224,7 +10224,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryFabric = CoreFunctions.getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs.builder()
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.get("id"))
      *             .build());
      * 
      *     }
@@ -10266,7 +10266,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryFabric = CoreFunctions.getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs.builder()
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.get("id"))
      *             .build());
      * 
      *     }
@@ -10308,7 +10308,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryFabric = CoreFunctions.getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs.builder()
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.get("id"))
      *             .build());
      * 
      *     }
@@ -10350,7 +10350,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryFabric = CoreFunctions.getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs.builder()
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.get("id"))
      *             .build());
      * 
      *     }
@@ -10392,7 +10392,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGpuMemoryFabric = CoreFunctions.getComputeGpuMemoryFabric(GetComputeGpuMemoryFabricArgs.builder()
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabricOciCoreComputeGpuMemoryFabric.get("id"))
      *             .build());
      * 
      *     }
@@ -10437,10 +10437,10 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeGpuMemoryFabricAvailabilityDomain)
      *             .computeGpuMemoryFabricHealth(computeGpuMemoryFabricComputeGpuMemoryFabricHealth)
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.get("id"))
      *             .computeGpuMemoryFabricLifecycleState(computeGpuMemoryFabricComputeGpuMemoryFabricLifecycleState)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
-     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
+     *             .computeNetworkBlockId(testComputeNetworkBlock.get("id"))
      *             .displayName(computeGpuMemoryFabricDisplayName)
      *             .build());
      * 
@@ -10486,10 +10486,10 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeGpuMemoryFabricAvailabilityDomain)
      *             .computeGpuMemoryFabricHealth(computeGpuMemoryFabricComputeGpuMemoryFabricHealth)
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.get("id"))
      *             .computeGpuMemoryFabricLifecycleState(computeGpuMemoryFabricComputeGpuMemoryFabricLifecycleState)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
-     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
+     *             .computeNetworkBlockId(testComputeNetworkBlock.get("id"))
      *             .displayName(computeGpuMemoryFabricDisplayName)
      *             .build());
      * 
@@ -10535,10 +10535,10 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeGpuMemoryFabricAvailabilityDomain)
      *             .computeGpuMemoryFabricHealth(computeGpuMemoryFabricComputeGpuMemoryFabricHealth)
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.get("id"))
      *             .computeGpuMemoryFabricLifecycleState(computeGpuMemoryFabricComputeGpuMemoryFabricLifecycleState)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
-     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
+     *             .computeNetworkBlockId(testComputeNetworkBlock.get("id"))
      *             .displayName(computeGpuMemoryFabricDisplayName)
      *             .build());
      * 
@@ -10584,10 +10584,10 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeGpuMemoryFabricAvailabilityDomain)
      *             .computeGpuMemoryFabricHealth(computeGpuMemoryFabricComputeGpuMemoryFabricHealth)
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.get("id"))
      *             .computeGpuMemoryFabricLifecycleState(computeGpuMemoryFabricComputeGpuMemoryFabricLifecycleState)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
-     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
+     *             .computeNetworkBlockId(testComputeNetworkBlock.get("id"))
      *             .displayName(computeGpuMemoryFabricDisplayName)
      *             .build());
      * 
@@ -10633,10 +10633,10 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeGpuMemoryFabricAvailabilityDomain)
      *             .computeGpuMemoryFabricHealth(computeGpuMemoryFabricComputeGpuMemoryFabricHealth)
-     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.get("id"))
      *             .computeGpuMemoryFabricLifecycleState(computeGpuMemoryFabricComputeGpuMemoryFabricLifecycleState)
-     *             .computeHpcIslandId(testComputeHpcIsland.id())
-     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
+     *             .computeHpcIslandId(testComputeHpcIsland.get("id"))
+     *             .computeNetworkBlockId(testComputeNetworkBlock.get("id"))
      *             .displayName(computeGpuMemoryFabricDisplayName)
      *             .build());
      * 
@@ -10679,7 +10679,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeHost = CoreFunctions.getComputeHost(GetComputeHostArgs.builder()
-     *             .computeHostId(testComputeHostOciCoreComputeHost.id())
+     *             .computeHostId(testComputeHostOciCoreComputeHost.get("id"))
      *             .build());
      * 
      *     }
@@ -10721,7 +10721,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeHost = CoreFunctions.getComputeHost(GetComputeHostArgs.builder()
-     *             .computeHostId(testComputeHostOciCoreComputeHost.id())
+     *             .computeHostId(testComputeHostOciCoreComputeHost.get("id"))
      *             .build());
      * 
      *     }
@@ -10763,7 +10763,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeHost = CoreFunctions.getComputeHost(GetComputeHostArgs.builder()
-     *             .computeHostId(testComputeHostOciCoreComputeHost.id())
+     *             .computeHostId(testComputeHostOciCoreComputeHost.get("id"))
      *             .build());
      * 
      *     }
@@ -10805,7 +10805,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeHost = CoreFunctions.getComputeHost(GetComputeHostArgs.builder()
-     *             .computeHostId(testComputeHostOciCoreComputeHost.id())
+     *             .computeHostId(testComputeHostOciCoreComputeHost.get("id"))
      *             .build());
      * 
      *     }
@@ -10847,7 +10847,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeHost = CoreFunctions.getComputeHost(GetComputeHostArgs.builder()
-     *             .computeHostId(testComputeHostOciCoreComputeHost.id())
+     *             .computeHostId(testComputeHostOciCoreComputeHost.get("id"))
      *             .build());
      * 
      *     }
@@ -10889,7 +10889,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeHostGroup = CoreFunctions.getComputeHostGroup(GetComputeHostGroupArgs.builder()
-     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.id())
+     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -10931,7 +10931,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeHostGroup = CoreFunctions.getComputeHostGroup(GetComputeHostGroupArgs.builder()
-     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.id())
+     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -10973,7 +10973,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeHostGroup = CoreFunctions.getComputeHostGroup(GetComputeHostGroupArgs.builder()
-     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.id())
+     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -11015,7 +11015,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeHostGroup = CoreFunctions.getComputeHostGroup(GetComputeHostGroupArgs.builder()
-     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.id())
+     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -11057,7 +11057,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeHostGroup = CoreFunctions.getComputeHostGroup(GetComputeHostGroupArgs.builder()
-     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.id())
+     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -11311,12 +11311,12 @@ public final class CoreFunctions {
      *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeHostAvailabilityDomain)
-     *             .computeHostGroupId(testComputeHostGroup.id())
+     *             .computeHostGroupId(testComputeHostGroup.get("id"))
      *             .computeHostHealth(computeHostComputeHostHealth)
      *             .computeHostInSubtree(computeHostComputeHostInSubtree)
      *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
      *             .displayName(computeHostDisplayName)
-     *             .networkResourceId(testResource.id())
+     *             .networkResourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -11360,12 +11360,12 @@ public final class CoreFunctions {
      *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeHostAvailabilityDomain)
-     *             .computeHostGroupId(testComputeHostGroup.id())
+     *             .computeHostGroupId(testComputeHostGroup.get("id"))
      *             .computeHostHealth(computeHostComputeHostHealth)
      *             .computeHostInSubtree(computeHostComputeHostInSubtree)
      *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
      *             .displayName(computeHostDisplayName)
-     *             .networkResourceId(testResource.id())
+     *             .networkResourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -11409,12 +11409,12 @@ public final class CoreFunctions {
      *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeHostAvailabilityDomain)
-     *             .computeHostGroupId(testComputeHostGroup.id())
+     *             .computeHostGroupId(testComputeHostGroup.get("id"))
      *             .computeHostHealth(computeHostComputeHostHealth)
      *             .computeHostInSubtree(computeHostComputeHostInSubtree)
      *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
      *             .displayName(computeHostDisplayName)
-     *             .networkResourceId(testResource.id())
+     *             .networkResourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -11458,12 +11458,12 @@ public final class CoreFunctions {
      *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeHostAvailabilityDomain)
-     *             .computeHostGroupId(testComputeHostGroup.id())
+     *             .computeHostGroupId(testComputeHostGroup.get("id"))
      *             .computeHostHealth(computeHostComputeHostHealth)
      *             .computeHostInSubtree(computeHostComputeHostInSubtree)
      *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
      *             .displayName(computeHostDisplayName)
-     *             .networkResourceId(testResource.id())
+     *             .networkResourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -11507,12 +11507,12 @@ public final class CoreFunctions {
      *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeHostAvailabilityDomain)
-     *             .computeHostGroupId(testComputeHostGroup.id())
+     *             .computeHostGroupId(testComputeHostGroup.get("id"))
      *             .computeHostHealth(computeHostComputeHostHealth)
      *             .computeHostInSubtree(computeHostComputeHostInSubtree)
      *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
      *             .displayName(computeHostDisplayName)
-     *             .networkResourceId(testResource.id())
+     *             .networkResourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -11554,7 +11554,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
-     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id())
+     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.get("id"))
      *             .isMergeEnabled(computeImageCapabilitySchemaIsMergeEnabled)
      *             .build());
      * 
@@ -11597,7 +11597,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
-     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id())
+     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.get("id"))
      *             .isMergeEnabled(computeImageCapabilitySchemaIsMergeEnabled)
      *             .build());
      * 
@@ -11640,7 +11640,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
-     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id())
+     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.get("id"))
      *             .isMergeEnabled(computeImageCapabilitySchemaIsMergeEnabled)
      *             .build());
      * 
@@ -11683,7 +11683,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
-     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id())
+     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.get("id"))
      *             .isMergeEnabled(computeImageCapabilitySchemaIsMergeEnabled)
      *             .build());
      * 
@@ -11726,7 +11726,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
-     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id())
+     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.get("id"))
      *             .isMergeEnabled(computeImageCapabilitySchemaIsMergeEnabled)
      *             .build());
      * 
@@ -11771,7 +11771,7 @@ public final class CoreFunctions {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(computeImageCapabilitySchemaDisplayName)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -11815,7 +11815,7 @@ public final class CoreFunctions {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(computeImageCapabilitySchemaDisplayName)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -11859,7 +11859,7 @@ public final class CoreFunctions {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(computeImageCapabilitySchemaDisplayName)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -11903,7 +11903,7 @@ public final class CoreFunctions {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(computeImageCapabilitySchemaDisplayName)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -11947,7 +11947,7 @@ public final class CoreFunctions {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(computeImageCapabilitySchemaDisplayName)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -11991,7 +11991,7 @@ public final class CoreFunctions {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(computeImageCapabilitySchemaDisplayName)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -12035,7 +12035,7 @@ public final class CoreFunctions {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(computeImageCapabilitySchemaDisplayName)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -12079,7 +12079,7 @@ public final class CoreFunctions {
      *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(consoleHistoryAvailabilityDomain)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .state(consoleHistoryState)
      *             .build());
      * 
@@ -12124,7 +12124,7 @@ public final class CoreFunctions {
      *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(consoleHistoryAvailabilityDomain)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .state(consoleHistoryState)
      *             .build());
      * 
@@ -12169,7 +12169,7 @@ public final class CoreFunctions {
      *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(consoleHistoryAvailabilityDomain)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .state(consoleHistoryState)
      *             .build());
      * 
@@ -12214,7 +12214,7 @@ public final class CoreFunctions {
      *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(consoleHistoryAvailabilityDomain)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .state(consoleHistoryState)
      *             .build());
      * 
@@ -12259,7 +12259,7 @@ public final class CoreFunctions {
      *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(consoleHistoryAvailabilityDomain)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .state(consoleHistoryState)
      *             .build());
      * 
@@ -12304,7 +12304,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
-     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .consoleHistoryId(testConsoleHistory.get("id"))
      *             .length(consoleHistoryContentLength)
      *             .offset(consoleHistoryContentOffset)
      *             .build());
@@ -12350,7 +12350,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
-     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .consoleHistoryId(testConsoleHistory.get("id"))
      *             .length(consoleHistoryContentLength)
      *             .offset(consoleHistoryContentOffset)
      *             .build());
@@ -12396,7 +12396,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
-     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .consoleHistoryId(testConsoleHistory.get("id"))
      *             .length(consoleHistoryContentLength)
      *             .offset(consoleHistoryContentOffset)
      *             .build());
@@ -12442,7 +12442,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
-     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .consoleHistoryId(testConsoleHistory.get("id"))
      *             .length(consoleHistoryContentLength)
      *             .offset(consoleHistoryContentOffset)
      *             .build());
@@ -12488,7 +12488,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
-     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .consoleHistoryId(testConsoleHistory.get("id"))
      *             .length(consoleHistoryContentLength)
      *             .offset(consoleHistoryContentOffset)
      *             .build());
@@ -12540,7 +12540,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
-     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.id())
+     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.get("id"))
      *             .build());
      * 
      *     }
@@ -12590,7 +12590,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
-     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.id())
+     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.get("id"))
      *             .build());
      * 
      *     }
@@ -12640,7 +12640,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
-     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.id())
+     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.get("id"))
      *             .build());
      * 
      *     }
@@ -12690,7 +12690,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
-     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.id())
+     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.get("id"))
      *             .build());
      * 
      *     }
@@ -12740,7 +12740,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
-     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.id())
+     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.get("id"))
      *             .build());
      * 
      *     }
@@ -13363,7 +13363,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
-     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.id())
+     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -13405,7 +13405,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
-     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.id())
+     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -13447,7 +13447,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
-     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.id())
+     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -13489,7 +13489,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
-     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.id())
+     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -13531,7 +13531,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
-     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.id())
+     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -13573,7 +13573,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
-     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.id())
+     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -13615,7 +13615,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
-     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.id())
+     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -13657,7 +13657,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
-     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.id())
+     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -13699,7 +13699,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
-     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.id())
+     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -13741,7 +13741,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
-     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.id())
+     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -14438,7 +14438,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
-     *             .crossConnectId(testCrossConnect.id())
+     *             .crossConnectId(testCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -14480,7 +14480,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
-     *             .crossConnectId(testCrossConnect.id())
+     *             .crossConnectId(testCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -14522,7 +14522,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
-     *             .crossConnectId(testCrossConnect.id())
+     *             .crossConnectId(testCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -14564,7 +14564,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
-     *             .crossConnectId(testCrossConnect.id())
+     *             .crossConnectId(testCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -14606,7 +14606,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
-     *             .crossConnectId(testCrossConnect.id())
+     *             .crossConnectId(testCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -14650,7 +14650,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .crossConnectGroupId(testCrossConnectGroup.id())
+     *             .crossConnectGroupId(testCrossConnectGroup.get("id"))
      *             .displayName(crossConnectDisplayName)
      *             .state(crossConnectState)
      *             .build());
@@ -14696,7 +14696,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .crossConnectGroupId(testCrossConnectGroup.id())
+     *             .crossConnectGroupId(testCrossConnectGroup.get("id"))
      *             .displayName(crossConnectDisplayName)
      *             .state(crossConnectState)
      *             .build());
@@ -14742,7 +14742,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .crossConnectGroupId(testCrossConnectGroup.id())
+     *             .crossConnectGroupId(testCrossConnectGroup.get("id"))
      *             .displayName(crossConnectDisplayName)
      *             .state(crossConnectState)
      *             .build());
@@ -14788,7 +14788,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .crossConnectGroupId(testCrossConnectGroup.id())
+     *             .crossConnectGroupId(testCrossConnectGroup.get("id"))
      *             .displayName(crossConnectDisplayName)
      *             .state(crossConnectState)
      *             .build());
@@ -14834,7 +14834,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .crossConnectGroupId(testCrossConnectGroup.id())
+     *             .crossConnectGroupId(testCrossConnectGroup.get("id"))
      *             .displayName(crossConnectDisplayName)
      *             .state(crossConnectState)
      *             .build());
@@ -14878,7 +14878,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
-     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.id())
+     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.get("id"))
      *             .build());
      * 
      *     }
@@ -14920,7 +14920,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
-     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.id())
+     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.get("id"))
      *             .build());
      * 
      *     }
@@ -14962,7 +14962,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
-     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.id())
+     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.get("id"))
      *             .build());
      * 
      *     }
@@ -15004,7 +15004,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
-     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.id())
+     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.get("id"))
      *             .build());
      * 
      *     }
@@ -15046,7 +15046,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
-     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.id())
+     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.get("id"))
      *             .build());
      * 
      *     }
@@ -15314,7 +15314,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dedicatedVmHostId(testDedicatedVmHost.id())
+     *             .dedicatedVmHostId(testDedicatedVmHost.get("id"))
      *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
      *             .isMemoryEncryptionEnabled(dedicatedVmHostsInstanceIsMemoryEncryptionEnabled)
      *             .build());
@@ -15359,7 +15359,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dedicatedVmHostId(testDedicatedVmHost.id())
+     *             .dedicatedVmHostId(testDedicatedVmHost.get("id"))
      *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
      *             .isMemoryEncryptionEnabled(dedicatedVmHostsInstanceIsMemoryEncryptionEnabled)
      *             .build());
@@ -15404,7 +15404,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dedicatedVmHostId(testDedicatedVmHost.id())
+     *             .dedicatedVmHostId(testDedicatedVmHost.get("id"))
      *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
      *             .isMemoryEncryptionEnabled(dedicatedVmHostsInstanceIsMemoryEncryptionEnabled)
      *             .build());
@@ -15449,7 +15449,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dedicatedVmHostId(testDedicatedVmHost.id())
+     *             .dedicatedVmHostId(testDedicatedVmHost.get("id"))
      *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
      *             .isMemoryEncryptionEnabled(dedicatedVmHostsInstanceIsMemoryEncryptionEnabled)
      *             .build());
@@ -15494,7 +15494,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dedicatedVmHostId(testDedicatedVmHost.id())
+     *             .dedicatedVmHostId(testDedicatedVmHost.get("id"))
      *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
      *             .isMemoryEncryptionEnabled(dedicatedVmHostsInstanceIsMemoryEncryptionEnabled)
      *             .build());
@@ -16029,7 +16029,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dhcpOptionsDisplayName)
      *             .state(dhcpOptionsState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -16077,7 +16077,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dhcpOptionsDisplayName)
      *             .state(dhcpOptionsState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -16125,7 +16125,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dhcpOptionsDisplayName)
      *             .state(dhcpOptionsState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -16173,7 +16173,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dhcpOptionsDisplayName)
      *             .state(dhcpOptionsState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -16221,7 +16221,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dhcpOptionsDisplayName)
      *             .state(dhcpOptionsState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -16271,12 +16271,12 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .attachmentType(drgAttachmentAttachmentType)
      *             .displayName(drgAttachmentDisplayName)
-     *             .drgId(testDrg.id())
-     *             .drgNatPolicyId(testDrgNatPolicy.id())
-     *             .drgRouteTableId(testDrgRouteTable.id())
-     *             .networkId(testNetwork.id())
+     *             .drgId(testDrg.get("id"))
+     *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
+     *             .drgRouteTableId(testDrgRouteTable.get("id"))
+     *             .networkId(testNetwork.get("id"))
      *             .state(drgAttachmentState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -16326,12 +16326,12 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .attachmentType(drgAttachmentAttachmentType)
      *             .displayName(drgAttachmentDisplayName)
-     *             .drgId(testDrg.id())
-     *             .drgNatPolicyId(testDrgNatPolicy.id())
-     *             .drgRouteTableId(testDrgRouteTable.id())
-     *             .networkId(testNetwork.id())
+     *             .drgId(testDrg.get("id"))
+     *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
+     *             .drgRouteTableId(testDrgRouteTable.get("id"))
+     *             .networkId(testNetwork.get("id"))
      *             .state(drgAttachmentState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -16381,12 +16381,12 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .attachmentType(drgAttachmentAttachmentType)
      *             .displayName(drgAttachmentDisplayName)
-     *             .drgId(testDrg.id())
-     *             .drgNatPolicyId(testDrgNatPolicy.id())
-     *             .drgRouteTableId(testDrgRouteTable.id())
-     *             .networkId(testNetwork.id())
+     *             .drgId(testDrg.get("id"))
+     *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
+     *             .drgRouteTableId(testDrgRouteTable.get("id"))
+     *             .networkId(testNetwork.get("id"))
      *             .state(drgAttachmentState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -16436,12 +16436,12 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .attachmentType(drgAttachmentAttachmentType)
      *             .displayName(drgAttachmentDisplayName)
-     *             .drgId(testDrg.id())
-     *             .drgNatPolicyId(testDrgNatPolicy.id())
-     *             .drgRouteTableId(testDrgRouteTable.id())
-     *             .networkId(testNetwork.id())
+     *             .drgId(testDrg.get("id"))
+     *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
+     *             .drgRouteTableId(testDrgRouteTable.get("id"))
+     *             .networkId(testNetwork.get("id"))
      *             .state(drgAttachmentState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -16491,12 +16491,12 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .attachmentType(drgAttachmentAttachmentType)
      *             .displayName(drgAttachmentDisplayName)
-     *             .drgId(testDrg.id())
-     *             .drgNatPolicyId(testDrgNatPolicy.id())
-     *             .drgRouteTableId(testDrgRouteTable.id())
-     *             .networkId(testNetwork.id())
+     *             .drgId(testDrg.get("id"))
+     *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
+     *             .drgRouteTableId(testDrgRouteTable.get("id"))
+     *             .networkId(testNetwork.get("id"))
      *             .state(drgAttachmentState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -16753,7 +16753,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgNatPolicy = CoreFunctions.getDrgNatPolicy(GetDrgNatPolicyArgs.builder()
-     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.id())
+     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -16795,7 +16795,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgNatPolicy = CoreFunctions.getDrgNatPolicy(GetDrgNatPolicyArgs.builder()
-     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.id())
+     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -16837,7 +16837,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgNatPolicy = CoreFunctions.getDrgNatPolicy(GetDrgNatPolicyArgs.builder()
-     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.id())
+     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -16879,7 +16879,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgNatPolicy = CoreFunctions.getDrgNatPolicy(GetDrgNatPolicyArgs.builder()
-     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.id())
+     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -16921,7 +16921,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgNatPolicy = CoreFunctions.getDrgNatPolicy(GetDrgNatPolicyArgs.builder()
-     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.id())
+     *             .drgNatPolicyId(testDrgNatPolicyOciCoreDrgNatPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -16963,7 +16963,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgNatPolicyDrgNatRules = CoreFunctions.getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs.builder()
-     *             .drgNatPolicyId(testDrgNatPolicy.id())
+     *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -17005,7 +17005,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgNatPolicyDrgNatRules = CoreFunctions.getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs.builder()
-     *             .drgNatPolicyId(testDrgNatPolicy.id())
+     *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -17047,7 +17047,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgNatPolicyDrgNatRules = CoreFunctions.getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs.builder()
-     *             .drgNatPolicyId(testDrgNatPolicy.id())
+     *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -17089,7 +17089,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgNatPolicyDrgNatRules = CoreFunctions.getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs.builder()
-     *             .drgNatPolicyId(testDrgNatPolicy.id())
+     *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -17131,7 +17131,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgNatPolicyDrgNatRules = CoreFunctions.getDrgNatPolicyDrgNatRules(GetDrgNatPolicyDrgNatRulesArgs.builder()
-     *             .drgNatPolicyId(testDrgNatPolicy.id())
+     *             .drgNatPolicyId(testDrgNatPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -17173,7 +17173,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
-     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.id())
+     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.get("id"))
      *             .build());
      * 
      *     }
@@ -17215,7 +17215,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
-     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.id())
+     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.get("id"))
      *             .build());
      * 
      *     }
@@ -17257,7 +17257,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
-     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.id())
+     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.get("id"))
      *             .build());
      * 
      *     }
@@ -17299,7 +17299,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
-     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.id())
+     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.get("id"))
      *             .build());
      * 
      *     }
@@ -17341,7 +17341,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
-     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.id())
+     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.get("id"))
      *             .build());
      * 
      *     }
@@ -17383,7 +17383,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
-     *             .drgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .drgRouteDistributionId(testDrgRouteDistribution.get("id"))
      *             .build());
      * 
      *     }
@@ -17425,7 +17425,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
-     *             .drgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .drgRouteDistributionId(testDrgRouteDistribution.get("id"))
      *             .build());
      * 
      *     }
@@ -17467,7 +17467,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
-     *             .drgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .drgRouteDistributionId(testDrgRouteDistribution.get("id"))
      *             .build());
      * 
      *     }
@@ -17509,7 +17509,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
-     *             .drgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .drgRouteDistributionId(testDrgRouteDistribution.get("id"))
      *             .build());
      * 
      *     }
@@ -17551,7 +17551,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
-     *             .drgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .drgRouteDistributionId(testDrgRouteDistribution.get("id"))
      *             .build());
      * 
      *     }
@@ -17596,7 +17596,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .displayName(drgRouteDistributionDisplayName)
      *             .state(drgRouteDistributionState)
      *             .build());
@@ -17643,7 +17643,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .displayName(drgRouteDistributionDisplayName)
      *             .state(drgRouteDistributionState)
      *             .build());
@@ -17690,7 +17690,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .displayName(drgRouteDistributionDisplayName)
      *             .state(drgRouteDistributionState)
      *             .build());
@@ -17737,7 +17737,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .displayName(drgRouteDistributionDisplayName)
      *             .state(drgRouteDistributionState)
      *             .build());
@@ -17784,7 +17784,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .displayName(drgRouteDistributionDisplayName)
      *             .state(drgRouteDistributionState)
      *             .build());
@@ -17828,7 +17828,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
-     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.id())
+     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.get("id"))
      *             .build());
      * 
      *     }
@@ -17870,7 +17870,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
-     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.id())
+     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.get("id"))
      *             .build());
      * 
      *     }
@@ -17912,7 +17912,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
-     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.id())
+     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.get("id"))
      *             .build());
      * 
      *     }
@@ -17954,7 +17954,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
-     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.id())
+     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.get("id"))
      *             .build());
      * 
      *     }
@@ -17996,7 +17996,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
-     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.id())
+     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.get("id"))
      *             .build());
      * 
      *     }
@@ -18038,7 +18038,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
-     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .drgRouteTableId(testDrgRouteTable.get("id"))
      *             .routeType(drgRouteTableRouteRuleRouteType)
      *             .build());
      * 
@@ -18081,7 +18081,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
-     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .drgRouteTableId(testDrgRouteTable.get("id"))
      *             .routeType(drgRouteTableRouteRuleRouteType)
      *             .build());
      * 
@@ -18124,7 +18124,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
-     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .drgRouteTableId(testDrgRouteTable.get("id"))
      *             .routeType(drgRouteTableRouteRuleRouteType)
      *             .build());
      * 
@@ -18167,7 +18167,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
-     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .drgRouteTableId(testDrgRouteTable.get("id"))
      *             .routeType(drgRouteTableRouteRuleRouteType)
      *             .build());
      * 
@@ -18210,7 +18210,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
-     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .drgRouteTableId(testDrgRouteTable.get("id"))
      *             .routeType(drgRouteTableRouteRuleRouteType)
      *             .build());
      * 
@@ -18255,9 +18255,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .displayName(drgRouteTableDisplayName)
-     *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .importDrgRouteDistributionId(testDrgRouteDistribution.get("id"))
      *             .state(drgRouteTableState)
      *             .build());
      * 
@@ -18302,9 +18302,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .displayName(drgRouteTableDisplayName)
-     *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .importDrgRouteDistributionId(testDrgRouteDistribution.get("id"))
      *             .state(drgRouteTableState)
      *             .build());
      * 
@@ -18349,9 +18349,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .displayName(drgRouteTableDisplayName)
-     *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .importDrgRouteDistributionId(testDrgRouteDistribution.get("id"))
      *             .state(drgRouteTableState)
      *             .build());
      * 
@@ -18396,9 +18396,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .displayName(drgRouteTableDisplayName)
-     *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .importDrgRouteDistributionId(testDrgRouteDistribution.get("id"))
      *             .state(drgRouteTableState)
      *             .build());
      * 
@@ -18443,9 +18443,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .displayName(drgRouteTableDisplayName)
-     *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .importDrgRouteDistributionId(testDrgRouteDistribution.get("id"))
      *             .state(drgRouteTableState)
      *             .build());
      * 
@@ -18699,7 +18699,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -18742,7 +18742,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -18785,7 +18785,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -18828,7 +18828,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -18871,7 +18871,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -18914,7 +18914,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .providerServiceKeyName(fastConnectProviderServiceKeyProviderServiceKeyName)
      *             .build());
      * 
@@ -18958,7 +18958,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .providerServiceKeyName(fastConnectProviderServiceKeyProviderServiceKeyName)
      *             .build());
      * 
@@ -19002,7 +19002,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .providerServiceKeyName(fastConnectProviderServiceKeyProviderServiceKeyName)
      *             .build());
      * 
@@ -19046,7 +19046,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .providerServiceKeyName(fastConnectProviderServiceKeyProviderServiceKeyName)
      *             .build());
      * 
@@ -19090,7 +19090,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .providerServiceKeyName(fastConnectProviderServiceKeyProviderServiceKeyName)
      *             .build());
      * 
@@ -19373,7 +19373,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFirmwareBundle = CoreFunctions.getFirmwareBundle(GetFirmwareBundleArgs.builder()
-     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.id())
+     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.get("id"))
      *             .build());
      * 
      *     }
@@ -19415,7 +19415,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFirmwareBundle = CoreFunctions.getFirmwareBundle(GetFirmwareBundleArgs.builder()
-     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.id())
+     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.get("id"))
      *             .build());
      * 
      *     }
@@ -19457,7 +19457,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFirmwareBundle = CoreFunctions.getFirmwareBundle(GetFirmwareBundleArgs.builder()
-     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.id())
+     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.get("id"))
      *             .build());
      * 
      *     }
@@ -19499,7 +19499,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFirmwareBundle = CoreFunctions.getFirmwareBundle(GetFirmwareBundleArgs.builder()
-     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.id())
+     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.get("id"))
      *             .build());
      * 
      *     }
@@ -19541,7 +19541,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFirmwareBundle = CoreFunctions.getFirmwareBundle(GetFirmwareBundleArgs.builder()
-     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.id())
+     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.get("id"))
      *             .build());
      * 
      *     }
@@ -19643,7 +19643,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
-     *             .imageId(testImageOciCoreImage.id())
+     *             .imageId(testImageOciCoreImage.get("id"))
      *             .build());
      * 
      *     }
@@ -19685,7 +19685,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
-     *             .imageId(testImageOciCoreImage.id())
+     *             .imageId(testImageOciCoreImage.get("id"))
      *             .build());
      * 
      *     }
@@ -19727,7 +19727,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
-     *             .imageId(testImageOciCoreImage.id())
+     *             .imageId(testImageOciCoreImage.get("id"))
      *             .build());
      * 
      *     }
@@ -19769,7 +19769,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
-     *             .imageId(testImageOciCoreImage.id())
+     *             .imageId(testImageOciCoreImage.get("id"))
      *             .build());
      * 
      *     }
@@ -19811,7 +19811,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
-     *             .imageId(testImageOciCoreImage.id())
+     *             .imageId(testImageOciCoreImage.get("id"))
      *             .build());
      * 
      *     }
@@ -19853,8 +19853,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
-     *             .imageId(testImage.id())
-     *             .shapeName(testShape.name())
+     *             .imageId(testImage.get("id"))
+     *             .shapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -19896,8 +19896,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
-     *             .imageId(testImage.id())
-     *             .shapeName(testShape.name())
+     *             .imageId(testImage.get("id"))
+     *             .shapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -19939,8 +19939,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
-     *             .imageId(testImage.id())
-     *             .shapeName(testShape.name())
+     *             .imageId(testImage.get("id"))
+     *             .shapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -19982,8 +19982,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
-     *             .imageId(testImage.id())
-     *             .shapeName(testShape.name())
+     *             .imageId(testImage.get("id"))
+     *             .shapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -20025,8 +20025,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
-     *             .imageId(testImage.id())
-     *             .shapeName(testShape.name())
+     *             .imageId(testImage.get("id"))
+     *             .shapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -20068,7 +20068,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -20110,7 +20110,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -20152,7 +20152,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -20194,7 +20194,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -20236,7 +20236,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .build());
      * 
      *     }
@@ -20576,7 +20576,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
-     *             .instanceId(testInstanceOciCoreInstance.id())
+     *             .instanceId(testInstanceOciCoreInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -20621,7 +20621,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
-     *             .instanceId(testInstanceOciCoreInstance.id())
+     *             .instanceId(testInstanceOciCoreInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -20666,7 +20666,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
-     *             .instanceId(testInstanceOciCoreInstance.id())
+     *             .instanceId(testInstanceOciCoreInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -20711,7 +20711,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
-     *             .instanceId(testInstanceOciCoreInstance.id())
+     *             .instanceId(testInstanceOciCoreInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -20756,7 +20756,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
-     *             .instanceId(testInstanceOciCoreInstance.id())
+     *             .instanceId(testInstanceOciCoreInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -20798,7 +20798,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
-     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.id())
+     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -20840,7 +20840,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
-     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.id())
+     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -20882,7 +20882,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
-     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.id())
+     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -20924,7 +20924,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
-     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.id())
+     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -20966,7 +20966,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
-     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.id())
+     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -21221,7 +21221,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -21266,7 +21266,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -21311,7 +21311,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -21356,7 +21356,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -21401,7 +21401,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -21444,7 +21444,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -21487,7 +21487,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -21530,7 +21530,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -21573,7 +21573,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -21616,7 +21616,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -21658,7 +21658,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .isAvailable(instanceDeviceIsAvailable)
      *             .name(instanceDeviceName)
      *             .build());
@@ -21702,7 +21702,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .isAvailable(instanceDeviceIsAvailable)
      *             .name(instanceDeviceName)
      *             .build());
@@ -21746,7 +21746,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .isAvailable(instanceDeviceIsAvailable)
      *             .name(instanceDeviceName)
      *             .build());
@@ -21790,7 +21790,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .isAvailable(instanceDeviceIsAvailable)
      *             .name(instanceDeviceName)
      *             .build());
@@ -21834,7 +21834,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .isAvailable(instanceDeviceIsAvailable)
      *             .name(instanceDeviceName)
      *             .build());
@@ -21878,7 +21878,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceEvent = CoreFunctions.getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs.builder()
-     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id())
+     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -21920,7 +21920,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceEvent = CoreFunctions.getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs.builder()
-     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id())
+     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -21962,7 +21962,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceEvent = CoreFunctions.getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs.builder()
-     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id())
+     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -22004,7 +22004,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceEvent = CoreFunctions.getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs.builder()
-     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id())
+     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -22046,7 +22046,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceEvent = CoreFunctions.getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs.builder()
-     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id())
+     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -22091,7 +22091,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .correlationToken(instanceMaintenanceEventCorrelationToken)
      *             .instanceAction(instanceMaintenanceEventInstanceAction)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .state(instanceMaintenanceEventState)
      *             .timeWindowStartGreaterThanOrEqualTo(instanceMaintenanceEventTimeWindowStartGreaterThanOrEqualTo)
      *             .timeWindowStartLessThanOrEqualTo(instanceMaintenanceEventTimeWindowStartLessThanOrEqualTo)
@@ -22139,7 +22139,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .correlationToken(instanceMaintenanceEventCorrelationToken)
      *             .instanceAction(instanceMaintenanceEventInstanceAction)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .state(instanceMaintenanceEventState)
      *             .timeWindowStartGreaterThanOrEqualTo(instanceMaintenanceEventTimeWindowStartGreaterThanOrEqualTo)
      *             .timeWindowStartLessThanOrEqualTo(instanceMaintenanceEventTimeWindowStartLessThanOrEqualTo)
@@ -22187,7 +22187,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .correlationToken(instanceMaintenanceEventCorrelationToken)
      *             .instanceAction(instanceMaintenanceEventInstanceAction)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .state(instanceMaintenanceEventState)
      *             .timeWindowStartGreaterThanOrEqualTo(instanceMaintenanceEventTimeWindowStartGreaterThanOrEqualTo)
      *             .timeWindowStartLessThanOrEqualTo(instanceMaintenanceEventTimeWindowStartLessThanOrEqualTo)
@@ -22235,7 +22235,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .correlationToken(instanceMaintenanceEventCorrelationToken)
      *             .instanceAction(instanceMaintenanceEventInstanceAction)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .state(instanceMaintenanceEventState)
      *             .timeWindowStartGreaterThanOrEqualTo(instanceMaintenanceEventTimeWindowStartGreaterThanOrEqualTo)
      *             .timeWindowStartLessThanOrEqualTo(instanceMaintenanceEventTimeWindowStartLessThanOrEqualTo)
@@ -22283,7 +22283,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .correlationToken(instanceMaintenanceEventCorrelationToken)
      *             .instanceAction(instanceMaintenanceEventInstanceAction)
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .state(instanceMaintenanceEventState)
      *             .timeWindowStartGreaterThanOrEqualTo(instanceMaintenanceEventTimeWindowStartGreaterThanOrEqualTo)
      *             .timeWindowStartLessThanOrEqualTo(instanceMaintenanceEventTimeWindowStartLessThanOrEqualTo)
@@ -22329,7 +22329,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -22372,7 +22372,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -22415,7 +22415,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -22458,7 +22458,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -22501,7 +22501,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -22543,7 +22543,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -22585,7 +22585,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -22627,7 +22627,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -22669,7 +22669,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -22711,7 +22711,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
-     *             .instanceId(testInstance.id())
+     *             .instanceId(testInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -22753,7 +22753,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
-     *             .instancePoolId(testInstancePoolOciCoreInstancePool.id())
+     *             .instancePoolId(testInstancePoolOciCoreInstancePool.get("id"))
      *             .build());
      * 
      *     }
@@ -22795,7 +22795,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
-     *             .instancePoolId(testInstancePoolOciCoreInstancePool.id())
+     *             .instancePoolId(testInstancePoolOciCoreInstancePool.get("id"))
      *             .build());
      * 
      *     }
@@ -22837,7 +22837,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
-     *             .instancePoolId(testInstancePoolOciCoreInstancePool.id())
+     *             .instancePoolId(testInstancePoolOciCoreInstancePool.get("id"))
      *             .build());
      * 
      *     }
@@ -22879,7 +22879,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
-     *             .instancePoolId(testInstancePoolOciCoreInstancePool.id())
+     *             .instancePoolId(testInstancePoolOciCoreInstancePool.get("id"))
      *             .build());
      * 
      *     }
@@ -22921,7 +22921,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
-     *             .instancePoolId(testInstancePoolOciCoreInstancePool.id())
+     *             .instancePoolId(testInstancePoolOciCoreInstancePool.get("id"))
      *             .build());
      * 
      *     }
@@ -22964,7 +22964,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instancePoolId(testInstancePool.id())
+     *             .instancePoolId(testInstancePool.get("id"))
      *             .displayName(instancePoolInstanceDisplayName)
      *             .build());
      * 
@@ -23008,7 +23008,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instancePoolId(testInstancePool.id())
+     *             .instancePoolId(testInstancePool.get("id"))
      *             .displayName(instancePoolInstanceDisplayName)
      *             .build());
      * 
@@ -23052,7 +23052,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instancePoolId(testInstancePool.id())
+     *             .instancePoolId(testInstancePool.get("id"))
      *             .displayName(instancePoolInstanceDisplayName)
      *             .build());
      * 
@@ -23096,7 +23096,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instancePoolId(testInstancePool.id())
+     *             .instancePoolId(testInstancePool.get("id"))
      *             .displayName(instancePoolInstanceDisplayName)
      *             .build());
      * 
@@ -23140,7 +23140,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instancePoolId(testInstancePool.id())
+     *             .instancePoolId(testInstancePool.get("id"))
      *             .displayName(instancePoolInstanceDisplayName)
      *             .build());
      * 
@@ -23183,8 +23183,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
-     *             .instancePoolId(testInstancePool.id())
-     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id())
+     *             .instancePoolId(testInstancePool.get("id"))
+     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -23226,8 +23226,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
-     *             .instancePoolId(testInstancePool.id())
-     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id())
+     *             .instancePoolId(testInstancePool.get("id"))
+     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -23269,8 +23269,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
-     *             .instancePoolId(testInstancePool.id())
-     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id())
+     *             .instancePoolId(testInstancePool.get("id"))
+     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -23312,8 +23312,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
-     *             .instancePoolId(testInstancePool.id())
-     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id())
+     *             .instancePoolId(testInstancePool.get("id"))
+     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -23355,8 +23355,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
-     *             .instancePoolId(testInstancePool.id())
-     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id())
+     *             .instancePoolId(testInstancePool.get("id"))
+     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -23625,8 +23625,8 @@ public final class CoreFunctions {
      *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(instanceAvailabilityDomain)
-     *             .capacityReservationId(testCapacityReservation.id())
-     *             .computeClusterId(testComputeCluster.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
+     *             .computeClusterId(testComputeCluster.get("id"))
      *             .displayName(instanceDisplayName)
      *             .state(instanceState)
      *             .build());
@@ -23677,8 +23677,8 @@ public final class CoreFunctions {
      *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(instanceAvailabilityDomain)
-     *             .capacityReservationId(testCapacityReservation.id())
-     *             .computeClusterId(testComputeCluster.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
+     *             .computeClusterId(testComputeCluster.get("id"))
      *             .displayName(instanceDisplayName)
      *             .state(instanceState)
      *             .build());
@@ -23729,8 +23729,8 @@ public final class CoreFunctions {
      *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(instanceAvailabilityDomain)
-     *             .capacityReservationId(testCapacityReservation.id())
-     *             .computeClusterId(testComputeCluster.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
+     *             .computeClusterId(testComputeCluster.get("id"))
      *             .displayName(instanceDisplayName)
      *             .state(instanceState)
      *             .build());
@@ -23781,8 +23781,8 @@ public final class CoreFunctions {
      *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(instanceAvailabilityDomain)
-     *             .capacityReservationId(testCapacityReservation.id())
-     *             .computeClusterId(testComputeCluster.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
+     *             .computeClusterId(testComputeCluster.get("id"))
      *             .displayName(instanceDisplayName)
      *             .state(instanceState)
      *             .build());
@@ -23833,8 +23833,8 @@ public final class CoreFunctions {
      *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(instanceAvailabilityDomain)
-     *             .capacityReservationId(testCapacityReservation.id())
-     *             .computeClusterId(testComputeCluster.id())
+     *             .capacityReservationId(testCapacityReservation.get("id"))
+     *             .computeClusterId(testComputeCluster.get("id"))
      *             .displayName(instanceDisplayName)
      *             .state(instanceState)
      *             .build());
@@ -23882,7 +23882,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(internetGatewayDisplayName)
      *             .state(internetGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -23928,7 +23928,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(internetGatewayDisplayName)
      *             .state(internetGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -23974,7 +23974,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(internetGatewayDisplayName)
      *             .state(internetGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -24020,7 +24020,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(internetGatewayDisplayName)
      *             .state(internetGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -24066,7 +24066,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(internetGatewayDisplayName)
      *             .state(internetGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -24108,7 +24108,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpInventorySubnet = CoreFunctions.getIpInventorySubnet(GetIpInventorySubnetArgs.builder()
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -24150,7 +24150,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpInventorySubnet = CoreFunctions.getIpInventorySubnet(GetIpInventorySubnetArgs.builder()
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -24192,7 +24192,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpInventorySubnet = CoreFunctions.getIpInventorySubnet(GetIpInventorySubnetArgs.builder()
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -24234,7 +24234,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpInventorySubnet = CoreFunctions.getIpInventorySubnet(GetIpInventorySubnetArgs.builder()
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -24276,7 +24276,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpInventorySubnet = CoreFunctions.getIpInventorySubnet(GetIpInventorySubnetArgs.builder()
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -24318,7 +24318,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpInventorySubnetCidr = CoreFunctions.getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs.builder()
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -24360,7 +24360,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpInventorySubnetCidr = CoreFunctions.getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs.builder()
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -24402,7 +24402,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpInventorySubnetCidr = CoreFunctions.getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs.builder()
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -24444,7 +24444,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpInventorySubnetCidr = CoreFunctions.getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs.builder()
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -24486,7 +24486,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpInventorySubnetCidr = CoreFunctions.getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs.builder()
-     *             .subnetId(testSubnet.id())
+     *             .subnetId(testSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -24530,7 +24530,7 @@ public final class CoreFunctions {
      *         final var testIpInventoryVcnOverlaps = CoreFunctions.getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs.builder()
      *             .compartmentLists(ipInventoryVcnOverlapCompartmentList)
      *             .regionLists(ipInventoryVcnOverlapRegionList)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -24574,7 +24574,7 @@ public final class CoreFunctions {
      *         final var testIpInventoryVcnOverlaps = CoreFunctions.getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs.builder()
      *             .compartmentLists(ipInventoryVcnOverlapCompartmentList)
      *             .regionLists(ipInventoryVcnOverlapRegionList)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -24618,7 +24618,7 @@ public final class CoreFunctions {
      *         final var testIpInventoryVcnOverlaps = CoreFunctions.getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs.builder()
      *             .compartmentLists(ipInventoryVcnOverlapCompartmentList)
      *             .regionLists(ipInventoryVcnOverlapRegionList)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -24662,7 +24662,7 @@ public final class CoreFunctions {
      *         final var testIpInventoryVcnOverlaps = CoreFunctions.getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs.builder()
      *             .compartmentLists(ipInventoryVcnOverlapCompartmentList)
      *             .regionLists(ipInventoryVcnOverlapRegionList)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -24706,7 +24706,7 @@ public final class CoreFunctions {
      *         final var testIpInventoryVcnOverlaps = CoreFunctions.getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs.builder()
      *             .compartmentLists(ipInventoryVcnOverlapCompartmentList)
      *             .regionLists(ipInventoryVcnOverlapRegionList)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -25024,7 +25024,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -25069,7 +25069,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -25114,7 +25114,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -25159,7 +25159,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -25204,7 +25204,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -25246,8 +25246,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testIpSecConnectionTunnels.get("ipSecConnectionTunnels")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -25289,8 +25289,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testIpSecConnectionTunnels.get("ipSecConnectionTunnels")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -25332,8 +25332,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testIpSecConnectionTunnels.get("ipSecConnectionTunnels")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -25375,8 +25375,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testIpSecConnectionTunnels.get("ipSecConnectionTunnels")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -25418,8 +25418,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testIpSecConnectionTunnels.get("ipSecConnectionTunnels")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -25461,8 +25461,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .build());
      * 
      *     }
@@ -25504,8 +25504,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .build());
      * 
      *     }
@@ -25547,8 +25547,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .build());
      * 
      *     }
@@ -25590,8 +25590,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .build());
      * 
      *     }
@@ -25633,8 +25633,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .build());
      * 
      *     }
@@ -25676,8 +25676,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .advertiser(ipsecConnectionTunnelRouteAdvertiser)
      *             .build());
      * 
@@ -25720,8 +25720,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .advertiser(ipsecConnectionTunnelRouteAdvertiser)
      *             .build());
      * 
@@ -25764,8 +25764,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .advertiser(ipsecConnectionTunnelRouteAdvertiser)
      *             .build());
      * 
@@ -25808,8 +25808,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .advertiser(ipsecConnectionTunnelRouteAdvertiser)
      *             .build());
      * 
@@ -25852,8 +25852,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .advertiser(ipsecConnectionTunnelRouteAdvertiser)
      *             .build());
      * 
@@ -25896,7 +25896,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -25938,7 +25938,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -25980,7 +25980,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -26022,7 +26022,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -26064,7 +26064,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -26108,8 +26108,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .cpeId(testCpe.id())
-     *             .drgId(testDrg.id())
+     *             .cpeId(testCpe.get("id"))
+     *             .drgId(testDrg.get("id"))
      *             .build());
      * 
      *     }
@@ -26153,8 +26153,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .cpeId(testCpe.id())
-     *             .drgId(testDrg.id())
+     *             .cpeId(testCpe.get("id"))
+     *             .drgId(testDrg.get("id"))
      *             .build());
      * 
      *     }
@@ -26198,8 +26198,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .cpeId(testCpe.id())
-     *             .drgId(testDrg.id())
+     *             .cpeId(testCpe.get("id"))
+     *             .drgId(testDrg.get("id"))
      *             .build());
      * 
      *     }
@@ -26243,8 +26243,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .cpeId(testCpe.id())
-     *             .drgId(testDrg.id())
+     *             .cpeId(testCpe.get("id"))
+     *             .drgId(testDrg.get("id"))
      *             .build());
      * 
      *     }
@@ -26288,8 +26288,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .cpeId(testCpe.id())
-     *             .drgId(testDrg.id())
+     *             .cpeId(testCpe.get("id"))
+     *             .drgId(testDrg.get("id"))
      *             .build());
      * 
      *     }
@@ -26332,7 +26332,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -26375,7 +26375,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -26418,7 +26418,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -26461,7 +26461,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -26504,7 +26504,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
-     *             .ipsecId(testIpsec.id())
+     *             .ipsecId(testIpsec.get("id"))
      *             .build());
      * 
      *     }
@@ -26549,7 +26549,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
-     *             .ipv6id(testIpv6OciCoreIpv6.id())
+     *             .ipv6id(testIpv6OciCoreIpv6.get("id"))
      *             .build());
      * 
      *     }
@@ -26594,7 +26594,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
-     *             .ipv6id(testIpv6OciCoreIpv6.id())
+     *             .ipv6id(testIpv6OciCoreIpv6.get("id"))
      *             .build());
      * 
      *     }
@@ -26639,7 +26639,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
-     *             .ipv6id(testIpv6OciCoreIpv6.id())
+     *             .ipv6id(testIpv6OciCoreIpv6.get("id"))
      *             .build());
      * 
      *     }
@@ -26684,7 +26684,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
-     *             .ipv6id(testIpv6OciCoreIpv6.id())
+     *             .ipv6id(testIpv6OciCoreIpv6.get("id"))
      *             .build());
      * 
      *     }
@@ -26729,7 +26729,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
-     *             .ipv6id(testIpv6OciCoreIpv6.id())
+     *             .ipv6id(testIpv6OciCoreIpv6.get("id"))
      *             .build());
      * 
      *     }
@@ -26779,8 +26779,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
      *             .ipAddress(ipv6IpAddress)
-     *             .subnetId(testSubnet.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -26830,8 +26830,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
      *             .ipAddress(ipv6IpAddress)
-     *             .subnetId(testSubnet.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -26881,8 +26881,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
      *             .ipAddress(ipv6IpAddress)
-     *             .subnetId(testSubnet.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -26932,8 +26932,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
      *             .ipAddress(ipv6IpAddress)
-     *             .subnetId(testSubnet.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -26983,8 +26983,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
      *             .ipAddress(ipv6IpAddress)
-     *             .subnetId(testSubnet.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -27034,8 +27034,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
      *             .ipAddress(ipv6IpAddress)
-     *             .subnetId(testSubnet.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -27085,8 +27085,8 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
      *             .ipAddress(ipv6IpAddress)
-     *             .subnetId(testSubnet.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -27128,7 +27128,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
-     *             .crossConnectId(testCrossConnect.id())
+     *             .crossConnectId(testCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -27170,7 +27170,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
-     *             .crossConnectId(testCrossConnect.id())
+     *             .crossConnectId(testCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -27212,7 +27212,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
-     *             .crossConnectId(testCrossConnect.id())
+     *             .crossConnectId(testCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -27254,7 +27254,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
-     *             .crossConnectId(testCrossConnect.id())
+     *             .crossConnectId(testCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -27296,7 +27296,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
-     *             .crossConnectId(testCrossConnect.id())
+     *             .crossConnectId(testCrossConnect.get("id"))
      *             .build());
      * 
      *     }
@@ -27370,7 +27370,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27414,7 +27414,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27458,7 +27458,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27502,7 +27502,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27546,7 +27546,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27588,7 +27588,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
-     *             .natGatewayId(testNatGatewayOciCoreNatGateway.id())
+     *             .natGatewayId(testNatGatewayOciCoreNatGateway.get("id"))
      *             .build());
      * 
      *     }
@@ -27630,7 +27630,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
-     *             .natGatewayId(testNatGatewayOciCoreNatGateway.id())
+     *             .natGatewayId(testNatGatewayOciCoreNatGateway.get("id"))
      *             .build());
      * 
      *     }
@@ -27672,7 +27672,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
-     *             .natGatewayId(testNatGatewayOciCoreNatGateway.id())
+     *             .natGatewayId(testNatGatewayOciCoreNatGateway.get("id"))
      *             .build());
      * 
      *     }
@@ -27714,7 +27714,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
-     *             .natGatewayId(testNatGatewayOciCoreNatGateway.id())
+     *             .natGatewayId(testNatGatewayOciCoreNatGateway.get("id"))
      *             .build());
      * 
      *     }
@@ -27756,7 +27756,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
-     *             .natGatewayId(testNatGatewayOciCoreNatGateway.id())
+     *             .natGatewayId(testNatGatewayOciCoreNatGateway.get("id"))
      *             .build());
      * 
      *     }
@@ -27802,7 +27802,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(natGatewayDisplayName)
      *             .state(natGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27848,7 +27848,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(natGatewayDisplayName)
      *             .state(natGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27894,7 +27894,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(natGatewayDisplayName)
      *             .state(natGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27940,7 +27940,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(natGatewayDisplayName)
      *             .state(natGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27986,7 +27986,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(natGatewayDisplayName)
      *             .state(natGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -28034,7 +28034,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -28082,7 +28082,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -28130,7 +28130,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -28178,7 +28178,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -28226,7 +28226,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -28268,7 +28268,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.get("id"))
      *             .direction(networkSecurityGroupSecurityRuleDirection)
      *             .build());
      * 
@@ -28311,7 +28311,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.get("id"))
      *             .direction(networkSecurityGroupSecurityRuleDirection)
      *             .build());
      * 
@@ -28354,7 +28354,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.get("id"))
      *             .direction(networkSecurityGroupSecurityRuleDirection)
      *             .build());
      * 
@@ -28397,7 +28397,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.get("id"))
      *             .direction(networkSecurityGroupSecurityRuleDirection)
      *             .build());
      * 
@@ -28440,7 +28440,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.get("id"))
      *             .direction(networkSecurityGroupSecurityRuleDirection)
      *             .build());
      * 
@@ -28483,7 +28483,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -28525,7 +28525,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -28567,7 +28567,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -28609,7 +28609,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -28651,7 +28651,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
-     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -28697,8 +28697,8 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(networkSecurityGroupDisplayName)
      *             .state(networkSecurityGroupState)
-     *             .vcnId(testVcn.id())
-     *             .vlanId(testVlan.id())
+     *             .vcnId(testVcn.get("id"))
+     *             .vlanId(testVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -28744,8 +28744,8 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(networkSecurityGroupDisplayName)
      *             .state(networkSecurityGroupState)
-     *             .vcnId(testVcn.id())
-     *             .vlanId(testVlan.id())
+     *             .vcnId(testVcn.get("id"))
+     *             .vlanId(testVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -28791,8 +28791,8 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(networkSecurityGroupDisplayName)
      *             .state(networkSecurityGroupState)
-     *             .vcnId(testVcn.id())
-     *             .vlanId(testVlan.id())
+     *             .vcnId(testVcn.get("id"))
+     *             .vlanId(testVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -28838,8 +28838,8 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(networkSecurityGroupDisplayName)
      *             .state(networkSecurityGroupState)
-     *             .vcnId(testVcn.id())
-     *             .vlanId(testVlan.id())
+     *             .vcnId(testVcn.get("id"))
+     *             .vlanId(testVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -28885,8 +28885,8 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(networkSecurityGroupDisplayName)
      *             .state(networkSecurityGroupState)
-     *             .vcnId(testVcn.id())
-     *             .vlanId(testVlan.id())
+     *             .vcnId(testVcn.get("id"))
+     *             .vlanId(testVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -28932,8 +28932,8 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(networkSecurityGroupDisplayName)
      *             .state(networkSecurityGroupState)
-     *             .vcnId(testVcn.id())
-     *             .vlanId(testVlan.id())
+     *             .vcnId(testVcn.get("id"))
+     *             .vlanId(testVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -28979,8 +28979,8 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(networkSecurityGroupDisplayName)
      *             .state(networkSecurityGroupState)
-     *             .vcnId(testVcn.id())
-     *             .vlanId(testVlan.id())
+     *             .vcnId(testVcn.get("id"))
+     *             .vlanId(testVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -29319,7 +29319,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
-     *             .privateIpId(testPrivateIpOciCorePrivateIp.id())
+     *             .privateIpId(testPrivateIpOciCorePrivateIp.get("id"))
      *             .build());
      * 
      *     }
@@ -29364,7 +29364,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
-     *             .privateIpId(testPrivateIpOciCorePrivateIp.id())
+     *             .privateIpId(testPrivateIpOciCorePrivateIp.get("id"))
      *             .build());
      * 
      *     }
@@ -29409,7 +29409,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
-     *             .privateIpId(testPrivateIpOciCorePrivateIp.id())
+     *             .privateIpId(testPrivateIpOciCorePrivateIp.get("id"))
      *             .build());
      * 
      *     }
@@ -29454,7 +29454,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
-     *             .privateIpId(testPrivateIpOciCorePrivateIp.id())
+     *             .privateIpId(testPrivateIpOciCorePrivateIp.get("id"))
      *             .build());
      * 
      *     }
@@ -29499,7 +29499,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
-     *             .privateIpId(testPrivateIpOciCorePrivateIp.id())
+     *             .privateIpId(testPrivateIpOciCorePrivateIp.get("id"))
      *             .build());
      * 
      *     }
@@ -29588,7 +29588,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(testVnic.id())
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -29622,9 +29622,9 @@ public final class CoreFunctions {
      *             .ipAddress(privateIpIpAddress)
      *             .ipState(privateIpIpState)
      *             .lifetime(privateIpLifetime)
-     *             .subnetId(testSubnet.id())
-     *             .vlanId(testVlan.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vlanId(testVlan.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -29713,7 +29713,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(testVnic.id())
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -29747,9 +29747,9 @@ public final class CoreFunctions {
      *             .ipAddress(privateIpIpAddress)
      *             .ipState(privateIpIpState)
      *             .lifetime(privateIpLifetime)
-     *             .subnetId(testSubnet.id())
-     *             .vlanId(testVlan.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vlanId(testVlan.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -29838,7 +29838,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(testVnic.id())
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -29872,9 +29872,9 @@ public final class CoreFunctions {
      *             .ipAddress(privateIpIpAddress)
      *             .ipState(privateIpIpState)
      *             .lifetime(privateIpLifetime)
-     *             .subnetId(testSubnet.id())
-     *             .vlanId(testVlan.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vlanId(testVlan.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -29963,7 +29963,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(testVnic.id())
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -29997,9 +29997,9 @@ public final class CoreFunctions {
      *             .ipAddress(privateIpIpAddress)
      *             .ipState(privateIpIpState)
      *             .lifetime(privateIpLifetime)
-     *             .subnetId(testSubnet.id())
-     *             .vlanId(testVlan.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vlanId(testVlan.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -30088,7 +30088,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(testVnic.id())
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -30122,9 +30122,9 @@ public final class CoreFunctions {
      *             .ipAddress(privateIpIpAddress)
      *             .ipState(privateIpIpState)
      *             .lifetime(privateIpLifetime)
-     *             .subnetId(testSubnet.id())
-     *             .vlanId(testVlan.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vlanId(testVlan.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -30213,7 +30213,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(testVnic.id())
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -30247,9 +30247,9 @@ public final class CoreFunctions {
      *             .ipAddress(privateIpIpAddress)
      *             .ipState(privateIpIpState)
      *             .lifetime(privateIpLifetime)
-     *             .subnetId(testSubnet.id())
-     *             .vlanId(testVlan.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vlanId(testVlan.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -30338,7 +30338,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(testVnic.id())
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -30372,9 +30372,9 @@ public final class CoreFunctions {
      *             .ipAddress(privateIpIpAddress)
      *             .ipState(privateIpIpState)
      *             .lifetime(privateIpLifetime)
-     *             .subnetId(testSubnet.id())
-     *             .vlanId(testVlan.id())
-     *             .vnicId(testVnicAttachment.id())
+     *             .subnetId(testSubnet.get("id"))
+     *             .vlanId(testVlan.get("id"))
+     *             .vnicId(testVnicAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -31235,7 +31235,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
-     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.id())
+     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -31277,7 +31277,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
-     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.id())
+     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -31319,7 +31319,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
-     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.id())
+     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -31361,7 +31361,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
-     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.id())
+     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -31403,7 +31403,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
-     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.id())
+     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -31447,7 +31447,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .byoipRangeId(testByoipRange.id())
+     *             .byoipRangeId(testByoipRange.get("id"))
      *             .displayName(publicIpPoolDisplayName)
      *             .build());
      * 
@@ -31492,7 +31492,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .byoipRangeId(testByoipRange.id())
+     *             .byoipRangeId(testByoipRange.get("id"))
      *             .displayName(publicIpPoolDisplayName)
      *             .build());
      * 
@@ -31537,7 +31537,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .byoipRangeId(testByoipRange.id())
+     *             .byoipRangeId(testByoipRange.get("id"))
      *             .displayName(publicIpPoolDisplayName)
      *             .build());
      * 
@@ -31582,7 +31582,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .byoipRangeId(testByoipRange.id())
+     *             .byoipRangeId(testByoipRange.get("id"))
      *             .displayName(publicIpPoolDisplayName)
      *             .build());
      * 
@@ -31627,7 +31627,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .byoipRangeId(testByoipRange.id())
+     *             .byoipRangeId(testByoipRange.get("id"))
      *             .displayName(publicIpPoolDisplayName)
      *             .build());
      * 
@@ -31693,7 +31693,7 @@ public final class CoreFunctions {
      *             .scope(publicIpScope)
      *             .availabilityDomain(publicIpAvailabilityDomain)
      *             .lifetime(publicIpLifetime)
-     *             .publicIpPoolId(testPublicIpPool.id())
+     *             .publicIpPoolId(testPublicIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -31758,7 +31758,7 @@ public final class CoreFunctions {
      *             .scope(publicIpScope)
      *             .availabilityDomain(publicIpAvailabilityDomain)
      *             .lifetime(publicIpLifetime)
-     *             .publicIpPoolId(testPublicIpPool.id())
+     *             .publicIpPoolId(testPublicIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -31823,7 +31823,7 @@ public final class CoreFunctions {
      *             .scope(publicIpScope)
      *             .availabilityDomain(publicIpAvailabilityDomain)
      *             .lifetime(publicIpLifetime)
-     *             .publicIpPoolId(testPublicIpPool.id())
+     *             .publicIpPoolId(testPublicIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -31888,7 +31888,7 @@ public final class CoreFunctions {
      *             .scope(publicIpScope)
      *             .availabilityDomain(publicIpAvailabilityDomain)
      *             .lifetime(publicIpLifetime)
-     *             .publicIpPoolId(testPublicIpPool.id())
+     *             .publicIpPoolId(testPublicIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -31953,7 +31953,7 @@ public final class CoreFunctions {
      *             .scope(publicIpScope)
      *             .availabilityDomain(publicIpAvailabilityDomain)
      *             .lifetime(publicIpLifetime)
-     *             .publicIpPoolId(testPublicIpPool.id())
+     *             .publicIpPoolId(testPublicIpPool.get("id"))
      *             .build());
      * 
      *     }
@@ -31997,7 +31997,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .build());
      * 
      *     }
@@ -32041,7 +32041,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .build());
      * 
      *     }
@@ -32085,7 +32085,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .build());
      * 
      *     }
@@ -32129,7 +32129,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .build());
      * 
      *     }
@@ -32173,7 +32173,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .drgId(testDrg.id())
+     *             .drgId(testDrg.get("id"))
      *             .build());
      * 
      *     }
@@ -32221,7 +32221,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(routeTableDisplayName)
      *             .state(routeTableState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32269,7 +32269,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(routeTableDisplayName)
      *             .state(routeTableState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32317,7 +32317,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(routeTableDisplayName)
      *             .state(routeTableState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32365,7 +32365,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(routeTableDisplayName)
      *             .state(routeTableState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32413,7 +32413,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(routeTableDisplayName)
      *             .state(routeTableState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32459,7 +32459,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(securityListDisplayName)
      *             .state(securityListState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32505,7 +32505,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(securityListDisplayName)
      *             .state(securityListState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32551,7 +32551,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(securityListDisplayName)
      *             .state(securityListState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32597,7 +32597,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(securityListDisplayName)
      *             .state(securityListState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32643,7 +32643,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(securityListDisplayName)
      *             .state(securityListState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32688,7 +32688,7 @@ public final class CoreFunctions {
      *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .state(serviceGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32733,7 +32733,7 @@ public final class CoreFunctions {
      *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .state(serviceGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32778,7 +32778,7 @@ public final class CoreFunctions {
      *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .state(serviceGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32823,7 +32823,7 @@ public final class CoreFunctions {
      *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .state(serviceGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -32868,7 +32868,7 @@ public final class CoreFunctions {
      *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .state(serviceGatewayState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -33222,7 +33222,7 @@ public final class CoreFunctions {
      *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(shapeAvailabilityDomain)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .shape(shapeShape)
      *             .build());
      * 
@@ -33268,7 +33268,7 @@ public final class CoreFunctions {
      *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(shapeAvailabilityDomain)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .shape(shapeShape)
      *             .build());
      * 
@@ -33314,7 +33314,7 @@ public final class CoreFunctions {
      *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(shapeAvailabilityDomain)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .shape(shapeShape)
      *             .build());
      * 
@@ -33360,7 +33360,7 @@ public final class CoreFunctions {
      *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(shapeAvailabilityDomain)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .shape(shapeShape)
      *             .build());
      * 
@@ -33406,7 +33406,7 @@ public final class CoreFunctions {
      *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(shapeAvailabilityDomain)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .shape(shapeShape)
      *             .build());
      * 
@@ -33449,7 +33449,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
-     *             .subnetId(testSubnetOciCoreSubnet.id())
+     *             .subnetId(testSubnetOciCoreSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -33491,7 +33491,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
-     *             .subnetId(testSubnetOciCoreSubnet.id())
+     *             .subnetId(testSubnetOciCoreSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -33533,7 +33533,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
-     *             .subnetId(testSubnetOciCoreSubnet.id())
+     *             .subnetId(testSubnetOciCoreSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -33575,7 +33575,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
-     *             .subnetId(testSubnetOciCoreSubnet.id())
+     *             .subnetId(testSubnetOciCoreSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -33617,7 +33617,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
-     *             .subnetId(testSubnetOciCoreSubnet.id())
+     *             .subnetId(testSubnetOciCoreSubnet.get("id"))
      *             .build());
      * 
      *     }
@@ -33663,7 +33663,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(subnetDisplayName)
      *             .state(subnetState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -33709,7 +33709,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(subnetDisplayName)
      *             .state(subnetState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -33755,7 +33755,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(subnetDisplayName)
      *             .state(subnetState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -33801,7 +33801,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(subnetDisplayName)
      *             .state(subnetState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -33847,7 +33847,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(subnetDisplayName)
      *             .state(subnetState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -33889,8 +33889,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .build());
      * 
      *     }
@@ -33932,8 +33932,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .build());
      * 
      *     }
@@ -33975,8 +33975,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .build());
      * 
      *     }
@@ -34018,8 +34018,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .build());
      * 
      *     }
@@ -34061,8 +34061,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
-     *             .ipsecId(testIpsec.id())
-     *             .tunnelId(testTunnel.id())
+     *             .ipsecId(testIpsec.get("id"))
+     *             .tunnelId(testTunnel.get("id"))
      *             .build());
      * 
      *     }
@@ -34104,7 +34104,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
-     *             .vcnId(testVcnOciCoreVcn.id())
+     *             .vcnId(testVcnOciCoreVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -34146,7 +34146,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
-     *             .vcnId(testVcnOciCoreVcn.id())
+     *             .vcnId(testVcnOciCoreVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -34188,7 +34188,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
-     *             .vcnId(testVcnOciCoreVcn.id())
+     *             .vcnId(testVcnOciCoreVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -34230,7 +34230,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
-     *             .vcnId(testVcnOciCoreVcn.id())
+     *             .vcnId(testVcnOciCoreVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -34272,7 +34272,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
-     *             .vcnId(testVcnOciCoreVcn.id())
+     *             .vcnId(testVcnOciCoreVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -34554,7 +34554,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.get("id"))
      *             .build());
      * 
      *     }
@@ -34596,7 +34596,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.get("id"))
      *             .build());
      * 
      *     }
@@ -34638,7 +34638,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.get("id"))
      *             .build());
      * 
      *     }
@@ -34680,7 +34680,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.get("id"))
      *             .build());
      * 
      *     }
@@ -34722,7 +34722,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.get("id"))
      *             .build());
      * 
      *     }
@@ -34764,7 +34764,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuit.get("id"))
      *             .build());
      * 
      *     }
@@ -34806,7 +34806,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuit.get("id"))
      *             .build());
      * 
      *     }
@@ -34848,7 +34848,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuit.get("id"))
      *             .build());
      * 
      *     }
@@ -34890,7 +34890,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuit.get("id"))
      *             .build());
      * 
      *     }
@@ -34932,7 +34932,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuit.get("id"))
      *             .build());
      * 
      *     }
@@ -34977,7 +34977,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -35022,7 +35022,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -35067,7 +35067,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -35112,7 +35112,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -35157,7 +35157,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
-     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.get("fastConnectProviderServices")[0].get("id"))
      *             .build());
      * 
      *     }
@@ -35200,7 +35200,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuit.get("id"))
      *             .verificationState(virtualCircuitPublicPrefixVerificationState)
      *             .build());
      * 
@@ -35244,7 +35244,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuit.get("id"))
      *             .verificationState(virtualCircuitPublicPrefixVerificationState)
      *             .build());
      * 
@@ -35288,7 +35288,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuit.get("id"))
      *             .verificationState(virtualCircuitPublicPrefixVerificationState)
      *             .build());
      * 
@@ -35332,7 +35332,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuit.get("id"))
      *             .verificationState(virtualCircuitPublicPrefixVerificationState)
      *             .build());
      * 
@@ -35376,7 +35376,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
-     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .virtualCircuitId(testVirtualCircuit.get("id"))
      *             .verificationState(virtualCircuitPublicPrefixVerificationState)
      *             .build());
      * 
@@ -35654,7 +35654,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
-     *             .vlanId(testVlanOciCoreVlan.id())
+     *             .vlanId(testVlanOciCoreVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -35696,7 +35696,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
-     *             .vlanId(testVlanOciCoreVlan.id())
+     *             .vlanId(testVlanOciCoreVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -35738,7 +35738,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
-     *             .vlanId(testVlanOciCoreVlan.id())
+     *             .vlanId(testVlanOciCoreVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -35780,7 +35780,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
-     *             .vlanId(testVlanOciCoreVlan.id())
+     *             .vlanId(testVlanOciCoreVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -35822,7 +35822,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
-     *             .vlanId(testVlanOciCoreVlan.id())
+     *             .vlanId(testVlanOciCoreVlan.get("id"))
      *             .build());
      * 
      *     }
@@ -35867,7 +35867,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(vlanDisplayName)
      *             .state(vlanState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -35912,7 +35912,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(vlanDisplayName)
      *             .state(vlanState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -35957,7 +35957,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(vlanDisplayName)
      *             .state(vlanState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -36002,7 +36002,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(vlanDisplayName)
      *             .state(vlanState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -36047,7 +36047,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(vlanDisplayName)
      *             .state(vlanState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -36092,7 +36092,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
-     *             .vnicId(testVnicOciCoreVnic.id())
+     *             .vnicId(testVnicOciCoreVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -36137,7 +36137,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
-     *             .vnicId(testVnicOciCoreVnic.id())
+     *             .vnicId(testVnicOciCoreVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -36182,7 +36182,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
-     *             .vnicId(testVnicOciCoreVnic.id())
+     *             .vnicId(testVnicOciCoreVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -36227,7 +36227,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
-     *             .vnicId(testVnicOciCoreVnic.id())
+     *             .vnicId(testVnicOciCoreVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -36272,7 +36272,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
-     *             .vnicId(testVnicOciCoreVnic.id())
+     *             .vnicId(testVnicOciCoreVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -36318,8 +36318,8 @@ public final class CoreFunctions {
      *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(vnicAttachmentAvailabilityDomain)
-     *             .instanceId(testInstance.id())
-     *             .vnicId(testVnic.id())
+     *             .instanceId(testInstance.get("id"))
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -36365,8 +36365,8 @@ public final class CoreFunctions {
      *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(vnicAttachmentAvailabilityDomain)
-     *             .instanceId(testInstance.id())
-     *             .vnicId(testVnic.id())
+     *             .instanceId(testInstance.get("id"))
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -36412,8 +36412,8 @@ public final class CoreFunctions {
      *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(vnicAttachmentAvailabilityDomain)
-     *             .instanceId(testInstance.id())
-     *             .vnicId(testVnic.id())
+     *             .instanceId(testInstance.get("id"))
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -36459,8 +36459,8 @@ public final class CoreFunctions {
      *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(vnicAttachmentAvailabilityDomain)
-     *             .instanceId(testInstance.id())
-     *             .vnicId(testVnic.id())
+     *             .instanceId(testInstance.get("id"))
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -36506,8 +36506,8 @@ public final class CoreFunctions {
      *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(vnicAttachmentAvailabilityDomain)
-     *             .instanceId(testInstance.id())
-     *             .vnicId(testVnic.id())
+     *             .instanceId(testInstance.get("id"))
+     *             .vnicId(testVnic.get("id"))
      *             .build());
      * 
      *     }
@@ -36549,7 +36549,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
-     *             .volumeId(testVolumeOciCoreVolume.id())
+     *             .volumeId(testVolumeOciCoreVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -36591,7 +36591,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
-     *             .volumeId(testVolumeOciCoreVolume.id())
+     *             .volumeId(testVolumeOciCoreVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -36633,7 +36633,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
-     *             .volumeId(testVolumeOciCoreVolume.id())
+     *             .volumeId(testVolumeOciCoreVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -36675,7 +36675,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
-     *             .volumeId(testVolumeOciCoreVolume.id())
+     *             .volumeId(testVolumeOciCoreVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -36717,7 +36717,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
-     *             .volumeId(testVolumeOciCoreVolume.id())
+     *             .volumeId(testVolumeOciCoreVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -36765,8 +36765,8 @@ public final class CoreFunctions {
      *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(volumeAttachmentAvailabilityDomain)
-     *             .instanceId(testInstance.id())
-     *             .volumeId(testVolume.id())
+     *             .instanceId(testInstance.get("id"))
+     *             .volumeId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -36814,8 +36814,8 @@ public final class CoreFunctions {
      *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(volumeAttachmentAvailabilityDomain)
-     *             .instanceId(testInstance.id())
-     *             .volumeId(testVolume.id())
+     *             .instanceId(testInstance.get("id"))
+     *             .volumeId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -36863,8 +36863,8 @@ public final class CoreFunctions {
      *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(volumeAttachmentAvailabilityDomain)
-     *             .instanceId(testInstance.id())
-     *             .volumeId(testVolume.id())
+     *             .instanceId(testInstance.get("id"))
+     *             .volumeId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -36912,8 +36912,8 @@ public final class CoreFunctions {
      *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(volumeAttachmentAvailabilityDomain)
-     *             .instanceId(testInstance.id())
-     *             .volumeId(testVolume.id())
+     *             .instanceId(testInstance.get("id"))
+     *             .volumeId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -36961,8 +36961,8 @@ public final class CoreFunctions {
      *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(volumeAttachmentAvailabilityDomain)
-     *             .instanceId(testInstance.id())
-     *             .volumeId(testVolume.id())
+     *             .instanceId(testInstance.get("id"))
+     *             .volumeId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -37321,7 +37321,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
-     *             .assetId(testVolume.id())
+     *             .assetId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -37365,7 +37365,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
-     *             .assetId(testVolume.id())
+     *             .assetId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -37409,7 +37409,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
-     *             .assetId(testVolume.id())
+     *             .assetId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -37453,7 +37453,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
-     *             .assetId(testVolume.id())
+     *             .assetId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -37497,7 +37497,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
-     *             .assetId(testVolume.id())
+     *             .assetId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -37541,9 +37541,9 @@ public final class CoreFunctions {
      *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(volumeBackupDisplayName)
-     *             .sourceVolumeBackupId(testVolumeBackup.id())
+     *             .sourceVolumeBackupId(testVolumeBackup.get("id"))
      *             .state(volumeBackupState)
-     *             .volumeId(testVolume.id())
+     *             .volumeId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -37587,9 +37587,9 @@ public final class CoreFunctions {
      *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(volumeBackupDisplayName)
-     *             .sourceVolumeBackupId(testVolumeBackup.id())
+     *             .sourceVolumeBackupId(testVolumeBackup.get("id"))
      *             .state(volumeBackupState)
-     *             .volumeId(testVolume.id())
+     *             .volumeId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -37633,9 +37633,9 @@ public final class CoreFunctions {
      *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(volumeBackupDisplayName)
-     *             .sourceVolumeBackupId(testVolumeBackup.id())
+     *             .sourceVolumeBackupId(testVolumeBackup.get("id"))
      *             .state(volumeBackupState)
-     *             .volumeId(testVolume.id())
+     *             .volumeId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -37679,9 +37679,9 @@ public final class CoreFunctions {
      *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(volumeBackupDisplayName)
-     *             .sourceVolumeBackupId(testVolumeBackup.id())
+     *             .sourceVolumeBackupId(testVolumeBackup.get("id"))
      *             .state(volumeBackupState)
-     *             .volumeId(testVolume.id())
+     *             .volumeId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -37725,9 +37725,9 @@ public final class CoreFunctions {
      *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(volumeBackupDisplayName)
-     *             .sourceVolumeBackupId(testVolumeBackup.id())
+     *             .sourceVolumeBackupId(testVolumeBackup.get("id"))
      *             .state(volumeBackupState)
-     *             .volumeId(testVolume.id())
+     *             .volumeId(testVolume.get("id"))
      *             .build());
      * 
      *     }
@@ -37772,7 +37772,7 @@ public final class CoreFunctions {
      *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(volumeGroupBackupDisplayName)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -37817,7 +37817,7 @@ public final class CoreFunctions {
      *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(volumeGroupBackupDisplayName)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -37862,7 +37862,7 @@ public final class CoreFunctions {
      *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(volumeGroupBackupDisplayName)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -37907,7 +37907,7 @@ public final class CoreFunctions {
      *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(volumeGroupBackupDisplayName)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -37952,7 +37952,7 @@ public final class CoreFunctions {
      *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(volumeGroupBackupDisplayName)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -37994,7 +37994,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
-     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -38036,7 +38036,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
-     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -38078,7 +38078,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
-     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -38120,7 +38120,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
-     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -38162,7 +38162,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
-     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -38665,11 +38665,11 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
-     *             .clusterPlacementGroupId(testGroup.id())
+     *             .clusterPlacementGroupId(testGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -38712,11 +38712,11 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
-     *             .clusterPlacementGroupId(testGroup.id())
+     *             .clusterPlacementGroupId(testGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -38759,11 +38759,11 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
-     *             .clusterPlacementGroupId(testGroup.id())
+     *             .clusterPlacementGroupId(testGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -38806,11 +38806,11 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
-     *             .clusterPlacementGroupId(testGroup.id())
+     *             .clusterPlacementGroupId(testGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -38853,11 +38853,11 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
-     *             .clusterPlacementGroupId(testGroup.id())
+     *             .clusterPlacementGroupId(testGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -38900,11 +38900,11 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
-     *             .clusterPlacementGroupId(testGroup.id())
+     *             .clusterPlacementGroupId(testGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -38947,11 +38947,11 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
-     *             .clusterPlacementGroupId(testGroup.id())
+     *             .clusterPlacementGroupId(testGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
-     *             .volumeGroupId(testVolumeGroup.id())
+     *             .volumeGroupId(testVolumeGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -38993,7 +38993,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
-     *             .vtapId(testVtapOciCoreVtap.id())
+     *             .vtapId(testVtapOciCoreVtap.get("id"))
      *             .build());
      * 
      *     }
@@ -39035,7 +39035,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
-     *             .vtapId(testVtapOciCoreVtap.id())
+     *             .vtapId(testVtapOciCoreVtap.get("id"))
      *             .build());
      * 
      *     }
@@ -39077,7 +39077,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
-     *             .vtapId(testVtapOciCoreVtap.id())
+     *             .vtapId(testVtapOciCoreVtap.get("id"))
      *             .build());
      * 
      *     }
@@ -39119,7 +39119,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
-     *             .vtapId(testVtapOciCoreVtap.id())
+     *             .vtapId(testVtapOciCoreVtap.get("id"))
      *             .build());
      * 
      *     }
@@ -39161,7 +39161,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
-     *             .vtapId(testVtapOciCoreVtap.id())
+     *             .vtapId(testVtapOciCoreVtap.get("id"))
      *             .build());
      * 
      *     }
@@ -39208,9 +39208,9 @@ public final class CoreFunctions {
      *             .isVtapEnabled(vtapIsVtapEnabled)
      *             .source(vtapSource)
      *             .state(vtapState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIp(vtapTargetIp)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -39257,9 +39257,9 @@ public final class CoreFunctions {
      *             .isVtapEnabled(vtapIsVtapEnabled)
      *             .source(vtapSource)
      *             .state(vtapState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIp(vtapTargetIp)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -39306,9 +39306,9 @@ public final class CoreFunctions {
      *             .isVtapEnabled(vtapIsVtapEnabled)
      *             .source(vtapSource)
      *             .state(vtapState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIp(vtapTargetIp)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -39355,9 +39355,9 @@ public final class CoreFunctions {
      *             .isVtapEnabled(vtapIsVtapEnabled)
      *             .source(vtapSource)
      *             .state(vtapState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIp(vtapTargetIp)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -39404,9 +39404,9 @@ public final class CoreFunctions {
      *             .isVtapEnabled(vtapIsVtapEnabled)
      *             .source(vtapSource)
      *             .state(vtapState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetIp(vtapTargetIp)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }

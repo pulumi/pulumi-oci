@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testDelegatedResourceAccessRequestAuditLogReport = oci.delegateaccesscontrol.getDelegatedResourceAccessRequestAuditLogReport({
  *     delegatedResourceAccessRequestId: testDelegatedResourceAccessRequest.id,
- *     isProcessTreeEnabled: delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled === "true",
+ *     isProcessTreeEnabled: delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled,
  * });
  * ```
  */
@@ -83,7 +83,7 @@ export interface GetDelegatedResourceAccessRequestAuditLogReportResult {
  *
  * const testDelegatedResourceAccessRequestAuditLogReport = oci.delegateaccesscontrol.getDelegatedResourceAccessRequestAuditLogReport({
  *     delegatedResourceAccessRequestId: testDelegatedResourceAccessRequest.id,
- *     isProcessTreeEnabled: delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled === "true",
+ *     isProcessTreeEnabled: delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled,
  * });
  * ```
  */

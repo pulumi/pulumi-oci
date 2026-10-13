@@ -478,7 +478,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             bucket=workspace_import_request_bucket,
             file_name=workspace_import_request_file_name,
             workspace_id=test_workspace["id"],
-            are_data_asset_references_included=workspace_import_request_are_data_asset_references_included == "true",
+            are_data_asset_references_included=workspace_import_request_are_data_asset_references_included,
             import_conflict_resolution={
                 "import_conflict_resolution_type": workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
                 "duplicate_prefix": workspace_import_request_import_conflict_resolution_duplicate_prefix,
@@ -536,7 +536,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             bucket=workspace_import_request_bucket,
             file_name=workspace_import_request_file_name,
             workspace_id=test_workspace["id"],
-            are_data_asset_references_included=workspace_import_request_are_data_asset_references_included == "true",
+            are_data_asset_references_included=workspace_import_request_are_data_asset_references_included,
             import_conflict_resolution={
                 "import_conflict_resolution_type": workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
                 "duplicate_prefix": workspace_import_request_import_conflict_resolution_duplicate_prefix,

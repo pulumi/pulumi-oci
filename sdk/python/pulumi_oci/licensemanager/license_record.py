@@ -507,8 +507,8 @@ class LicenseRecord(pulumi.CustomResource):
 
         test_license_record = oci.licensemanager.LicenseRecord("test_license_record",
             display_name=license_record_display_name,
-            is_perpetual=license_record_is_perpetual == "true",
-            is_unlimited=license_record_is_unlimited == "true",
+            is_perpetual=license_record_is_perpetual,
+            is_unlimited=license_record_is_unlimited,
             product_license_id=test_product_license["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -517,7 +517,7 @@ class LicenseRecord(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            license_count=int(license_record_license_count),
+            license_count=license_record_license_count,
             product_id=test_product["id"],
             support_end_date=license_record_support_end_date)
         ```
@@ -569,8 +569,8 @@ class LicenseRecord(pulumi.CustomResource):
 
         test_license_record = oci.licensemanager.LicenseRecord("test_license_record",
             display_name=license_record_display_name,
-            is_perpetual=license_record_is_perpetual == "true",
-            is_unlimited=license_record_is_unlimited == "true",
+            is_perpetual=license_record_is_perpetual,
+            is_unlimited=license_record_is_unlimited,
             product_license_id=test_product_license["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -579,7 +579,7 @@ class LicenseRecord(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            license_count=int(license_record_license_count),
+            license_count=license_record_license_count,
             product_id=test_product["id"],
             support_end_date=license_record_support_end_date)
         ```

@@ -336,7 +336,7 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
             display_name=bds_instance_resource_principal_configuration_display_name,
             cluster_admin_password=bds_instance_resource_principal_configuration_cluster_admin_password,
             secret_id=test_secret["id"],
-            session_token_life_span_duration_in_hours=int(bds_instance_resource_principal_configuration_session_token_life_span_duration_in_hours))
+            session_token_life_span_duration_in_hours=bds_instance_resource_principal_configuration_session_token_life_span_duration_in_hours)
         ```
 
         ## Import
@@ -382,7 +382,7 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
             display_name=bds_instance_resource_principal_configuration_display_name,
             cluster_admin_password=bds_instance_resource_principal_configuration_cluster_admin_password,
             secret_id=test_secret["id"],
-            session_token_life_span_duration_in_hours=int(bds_instance_resource_principal_configuration_session_token_life_span_duration_in_hours))
+            session_token_life_span_duration_in_hours=bds_instance_resource_principal_configuration_session_token_life_span_duration_in_hours)
         ```
 
         ## Import

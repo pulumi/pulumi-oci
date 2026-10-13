@@ -995,7 +995,7 @@ class DataccVmInstance(pulumi.CustomResource):
 
         test_vm_instance = oci.oci.DataccVmInstance("test_vm_instance",
             compartment_id=compartment_id,
-            cpus_enabled=int(vm_instance_cpus_enabled),
+            cpus_enabled=vm_instance_cpus_enabled,
             infrastructure_id=test_infrastructure["id"],
             ssh_public_keys=vm_instance_ssh_public_keys,
             boot_storage_size_in_gbs=vm_instance_boot_storage_size_in_gbs,
@@ -1091,7 +1091,7 @@ class DataccVmInstance(pulumi.CustomResource):
 
         test_vm_instance = oci.oci.DataccVmInstance("test_vm_instance",
             compartment_id=compartment_id,
-            cpus_enabled=int(vm_instance_cpus_enabled),
+            cpus_enabled=vm_instance_cpus_enabled,
             infrastructure_id=test_infrastructure["id"],
             ssh_public_keys=vm_instance_ssh_public_keys,
             boot_storage_size_in_gbs=vm_instance_boot_storage_size_in_gbs,

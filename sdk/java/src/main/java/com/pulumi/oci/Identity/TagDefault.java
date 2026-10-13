@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testTagDefault = new TagDefault("testTagDefault", TagDefaultArgs.builder()
  *             .compartmentId(compartmentId)
- *             .tagDefinitionId(testTagDefinition.id())
+ *             .tagDefinitionId(testTagDefinition.get("id"))
  *             .value(tagDefaultValue)
  *             .isRequired(tagDefaultIsRequired)
  *             .build());

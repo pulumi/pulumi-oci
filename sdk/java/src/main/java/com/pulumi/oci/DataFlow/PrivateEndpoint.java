@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *         var testPrivateEndpoint = new PrivateEndpoint("testPrivateEndpoint", PrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dnsZones(privateEndpointDnsZones)
- *             .subnetId(testSubnet.id())
+ *             .subnetId(testSubnet.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(privateEndpointDescription)
  *             .displayName(privateEndpointDisplayName)

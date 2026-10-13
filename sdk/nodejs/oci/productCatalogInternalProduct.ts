@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     name: internalProductName,
  *     serviceName: testService.name,
  *     backfillEligibility: internalProductBackfillEligibility,
- *     isExcluded: internalProductIsExcluded === "true",
+ *     isExcluded: internalProductIsExcluded,
  *     limits: [{
  *         publicLimitName: internalProductLimitsPublicLimitName,
  *         publicServiceName: testService.name,

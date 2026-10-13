@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *                 .compartmentId(compartmentId)
  *                 .type(mediaWorkflowLocksType)
  *                 .message(mediaWorkflowLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(mediaWorkflowLocksTimeCreated)
  *                 .build())
  *             .mediaWorkflowConfigurationIds(mediaWorkflowMediaWorkflowConfigurationIds)

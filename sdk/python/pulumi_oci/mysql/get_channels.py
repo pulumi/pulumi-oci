@@ -164,7 +164,7 @@ def get_channels(channel_id: Optional[_builtins.str] = None,
         channel_id=test_channel["id"],
         db_system_id=test_db_system["id"],
         display_name=channel_display_name,
-        is_enabled=channel_is_enabled == "true",
+        is_enabled=channel_is_enabled,
         state=channel_state)
     ```
 
@@ -220,7 +220,7 @@ def get_channels_output(channel_id: pulumi.Input[Optional[Optional[_builtins.str
         channel_id=test_channel["id"],
         db_system_id=test_db_system["id"],
         display_name=channel_display_name,
-        is_enabled=channel_is_enabled == "true",
+        is_enabled=channel_is_enabled,
         state=channel_state)
     ```
 

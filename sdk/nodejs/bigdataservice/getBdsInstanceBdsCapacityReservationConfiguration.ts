@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *     pattern: ".*&#47;bdsCapacityReservationConfigurations/([^/]+)$",
  *     string: testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.id,
  * }).then(invoke => oci.bigdataservice.getBdsInstanceBdsCapacityReservationConfiguration({
- *     bdsCapacityReservationConfigurationId: invoke.result?.[0],
+ *     bdsCapacityReservationConfigurationId: String(invoke.result?.[0]),
  *     bdsInstanceId: testBdsInstance.id,
  * }));
  * ```
@@ -99,7 +99,7 @@ export interface GetBdsInstanceBdsCapacityReservationConfigurationResult {
  *     pattern: ".*&#47;bdsCapacityReservationConfigurations/([^/]+)$",
  *     string: testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.id,
  * }).then(invoke => oci.bigdataservice.getBdsInstanceBdsCapacityReservationConfiguration({
- *     bdsCapacityReservationConfigurationId: invoke.result?.[0],
+ *     bdsCapacityReservationConfigurationId: String(invoke.result?.[0]),
  *     bdsInstanceId: testBdsInstance.id,
  * }));
  * ```

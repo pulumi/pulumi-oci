@@ -55,8 +55,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testMlApplicationInstance = new MlApplicationInstance("testMlApplicationInstance", MlApplicationInstanceArgs.builder()
  *             .compartmentId(compartmentId)
- *             .mlApplicationId(testMlApplication.id())
- *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+ *             .mlApplicationId(testMlApplication.get("id"))
+ *             .mlApplicationImplementationId(testMlApplicationImplementation.get("id"))
  *             .authConfiguration(MlApplicationInstanceAuthConfigurationArgs.builder()
  *                 .type(mlApplicationInstanceAuthConfigurationType)
  *                 .build())

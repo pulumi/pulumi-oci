@@ -185,7 +185,7 @@ def get_all_applications(compartment_id: Optional[_builtins.str] = None,
         display_name=all_application_display_name,
         entity_id=test_entity["id"],
         entity_type=all_application_entity_type,
-        is_featured=all_application_is_featured == "true",
+        is_featured=all_application_is_featured,
         package_types=all_application_package_type,
         pricings=all_application_pricing,
         publisher_ids=test_publisher["id"])
@@ -252,7 +252,7 @@ def get_all_applications_output(compartment_id: pulumi.Input[Optional[Optional[_
         display_name=all_application_display_name,
         entity_id=test_entity["id"],
         entity_type=all_application_entity_type,
-        is_featured=all_application_is_featured == "true",
+        is_featured=all_application_is_featured,
         package_types=all_application_package_type,
         pricings=all_application_pricing,
         publisher_ids=test_publisher["id"])

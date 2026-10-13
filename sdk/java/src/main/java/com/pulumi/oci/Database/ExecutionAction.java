@@ -49,9 +49,9 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testExecutionAction = new ExecutionAction("testExecutionAction", ExecutionActionArgs.builder()
  *             .actionType(executionActionActionType)
- *             .executionWindowId(testExecutionWindow.id())
+ *             .executionWindowId(testExecutionWindow.get("id"))
  *             .actionMembers(ExecutionActionActionMemberArgs.builder()
- *                 .memberId(testMember.id())
+ *                 .memberId(testMember.get("id"))
  *                 .memberOrder(executionActionActionMembersMemberOrder)
  *                 .estimatedTimeInMins(executionActionActionMembersEstimatedTimeInMins)
  *                 .status(executionActionActionMembersStatus)

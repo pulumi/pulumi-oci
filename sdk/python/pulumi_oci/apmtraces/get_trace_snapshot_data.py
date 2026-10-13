@@ -162,7 +162,7 @@ def get_trace_snapshot_data(apm_domain_id: Optional[_builtins.str] = None,
 
     test_trace_snapshot_data = oci.apmtraces.get_trace_snapshot_data(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_snapshot_data_trace_key,
-        is_summarized=trace_snapshot_data_is_summarized == "true",
+        is_summarized=trace_snapshot_data_is_summarized,
         snapshot_time=trace_snapshot_data_snapshot_time,
         thread_id=test_thread["id"])
     ```
@@ -213,7 +213,7 @@ def get_trace_snapshot_data_output(apm_domain_id: pulumi.Input[Optional[_builtin
 
     test_trace_snapshot_data = oci.apmtraces.get_trace_snapshot_data(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_snapshot_data_trace_key,
-        is_summarized=trace_snapshot_data_is_summarized == "true",
+        is_summarized=trace_snapshot_data_is_summarized,
         snapshot_time=trace_snapshot_data_snapshot_time,
         thread_id=test_thread["id"])
     ```

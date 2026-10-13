@@ -66,7 +66,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeAutoActivateStatus = ApmTracesFunctions.getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .dataKeyType(attributeAutoActivateStatusDataKeyType)
      *             .build());
      * 
@@ -109,7 +109,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeAutoActivateStatus = ApmTracesFunctions.getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .dataKeyType(attributeAutoActivateStatusDataKeyType)
      *             .build());
      * 
@@ -152,7 +152,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeAutoActivateStatus = ApmTracesFunctions.getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .dataKeyType(attributeAutoActivateStatusDataKeyType)
      *             .build());
      * 
@@ -195,7 +195,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeAutoActivateStatus = ApmTracesFunctions.getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .dataKeyType(attributeAutoActivateStatusDataKeyType)
      *             .build());
      * 
@@ -238,7 +238,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAttributeAutoActivateStatus = ApmTracesFunctions.getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .dataKeyType(attributeAutoActivateStatusDataKeyType)
      *             .build());
      * 
@@ -281,7 +281,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLog = ApmTracesFunctions.getLog(GetLogArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .logKey(logLogKey)
      *             .timeLogEndedLessThan(logTimeLogEndedLessThan)
      *             .timeLogStartedGreaterThanOrEqualTo(logTimeLogStartedGreaterThanOrEqualTo)
@@ -326,7 +326,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLog = ApmTracesFunctions.getLog(GetLogArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .logKey(logLogKey)
      *             .timeLogEndedLessThan(logTimeLogEndedLessThan)
      *             .timeLogStartedGreaterThanOrEqualTo(logTimeLogStartedGreaterThanOrEqualTo)
@@ -371,7 +371,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLog = ApmTracesFunctions.getLog(GetLogArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .logKey(logLogKey)
      *             .timeLogEndedLessThan(logTimeLogEndedLessThan)
      *             .timeLogStartedGreaterThanOrEqualTo(logTimeLogStartedGreaterThanOrEqualTo)
@@ -416,7 +416,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLog = ApmTracesFunctions.getLog(GetLogArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .logKey(logLogKey)
      *             .timeLogEndedLessThan(logTimeLogEndedLessThan)
      *             .timeLogStartedGreaterThanOrEqualTo(logTimeLogStartedGreaterThanOrEqualTo)
@@ -461,7 +461,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLog = ApmTracesFunctions.getLog(GetLogArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .logKey(logLogKey)
      *             .timeLogEndedLessThan(logTimeLogEndedLessThan)
      *             .timeLogStartedGreaterThanOrEqualTo(logTimeLogStartedGreaterThanOrEqualTo)
@@ -507,7 +507,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -550,7 +550,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -593,7 +593,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -636,7 +636,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -679,7 +679,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -721,7 +721,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledQueries = ApmTracesFunctions.getScheduledQueries(GetScheduledQueriesArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(scheduledQueryDisplayName)
      *             .build());
      * 
@@ -764,7 +764,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledQueries = ApmTracesFunctions.getScheduledQueries(GetScheduledQueriesArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(scheduledQueryDisplayName)
      *             .build());
      * 
@@ -807,7 +807,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledQueries = ApmTracesFunctions.getScheduledQueries(GetScheduledQueriesArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(scheduledQueryDisplayName)
      *             .build());
      * 
@@ -850,7 +850,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledQueries = ApmTracesFunctions.getScheduledQueries(GetScheduledQueriesArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(scheduledQueryDisplayName)
      *             .build());
      * 
@@ -893,7 +893,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledQueries = ApmTracesFunctions.getScheduledQueries(GetScheduledQueriesArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .displayName(scheduledQueryDisplayName)
      *             .build());
      * 
@@ -936,8 +936,8 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledQuery = ApmTracesFunctions.getScheduledQuery(GetScheduledQueryArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -979,8 +979,8 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledQuery = ApmTracesFunctions.getScheduledQuery(GetScheduledQueryArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -1022,8 +1022,8 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledQuery = ApmTracesFunctions.getScheduledQuery(GetScheduledQueryArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -1065,8 +1065,8 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledQuery = ApmTracesFunctions.getScheduledQuery(GetScheduledQueryArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -1108,8 +1108,8 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledQuery = ApmTracesFunctions.getScheduledQuery(GetScheduledQueryArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
-     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.id())
+     *             .apmDomainId(testApmDomain.get("id"))
+     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -1151,7 +1151,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceTraceKey)
      *             .timeTraceStartedGreaterThanOrEqualTo(traceTimeTraceStartedGreaterThanOrEqualTo)
      *             .timeTraceStartedLessThan(traceTimeTraceStartedLessThan)
@@ -1197,7 +1197,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceTraceKey)
      *             .timeTraceStartedGreaterThanOrEqualTo(traceTimeTraceStartedGreaterThanOrEqualTo)
      *             .timeTraceStartedLessThan(traceTimeTraceStartedLessThan)
@@ -1243,7 +1243,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceTraceKey)
      *             .timeTraceStartedGreaterThanOrEqualTo(traceTimeTraceStartedGreaterThanOrEqualTo)
      *             .timeTraceStartedLessThan(traceTimeTraceStartedLessThan)
@@ -1289,7 +1289,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceTraceKey)
      *             .timeTraceStartedGreaterThanOrEqualTo(traceTimeTraceStartedGreaterThanOrEqualTo)
      *             .timeTraceStartedLessThan(traceTimeTraceStartedLessThan)
@@ -1335,7 +1335,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceTraceKey)
      *             .timeTraceStartedGreaterThanOrEqualTo(traceTimeTraceStartedGreaterThanOrEqualTo)
      *             .timeTraceStartedLessThan(traceTimeTraceStartedLessThan)
@@ -1381,10 +1381,10 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceAggregatedSnapshotDataTraceKey)
      *             .serverName(traceAggregatedSnapshotDataServerName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .spanKey(traceAggregatedSnapshotDataSpanKey)
      *             .spanName(traceAggregatedSnapshotDataSpanName)
      *             .build());
@@ -1428,10 +1428,10 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceAggregatedSnapshotDataTraceKey)
      *             .serverName(traceAggregatedSnapshotDataServerName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .spanKey(traceAggregatedSnapshotDataSpanKey)
      *             .spanName(traceAggregatedSnapshotDataSpanName)
      *             .build());
@@ -1475,10 +1475,10 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceAggregatedSnapshotDataTraceKey)
      *             .serverName(traceAggregatedSnapshotDataServerName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .spanKey(traceAggregatedSnapshotDataSpanKey)
      *             .spanName(traceAggregatedSnapshotDataSpanName)
      *             .build());
@@ -1522,10 +1522,10 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceAggregatedSnapshotDataTraceKey)
      *             .serverName(traceAggregatedSnapshotDataServerName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .spanKey(traceAggregatedSnapshotDataSpanKey)
      *             .spanName(traceAggregatedSnapshotDataSpanName)
      *             .build());
@@ -1569,10 +1569,10 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceAggregatedSnapshotDataTraceKey)
      *             .serverName(traceAggregatedSnapshotDataServerName)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .spanKey(traceAggregatedSnapshotDataSpanKey)
      *             .spanName(traceAggregatedSnapshotDataSpanName)
      *             .build());
@@ -1616,11 +1616,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceSnapshotDataTraceKey)
      *             .isSummarized(traceSnapshotDataIsSummarized)
      *             .snapshotTime(traceSnapshotDataSnapshotTime)
-     *             .threadId(testThread.id())
+     *             .threadId(testThread.get("id"))
      *             .build());
      * 
      *     }
@@ -1662,11 +1662,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceSnapshotDataTraceKey)
      *             .isSummarized(traceSnapshotDataIsSummarized)
      *             .snapshotTime(traceSnapshotDataSnapshotTime)
-     *             .threadId(testThread.id())
+     *             .threadId(testThread.get("id"))
      *             .build());
      * 
      *     }
@@ -1708,11 +1708,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceSnapshotDataTraceKey)
      *             .isSummarized(traceSnapshotDataIsSummarized)
      *             .snapshotTime(traceSnapshotDataSnapshotTime)
-     *             .threadId(testThread.id())
+     *             .threadId(testThread.get("id"))
      *             .build());
      * 
      *     }
@@ -1754,11 +1754,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceSnapshotDataTraceKey)
      *             .isSummarized(traceSnapshotDataIsSummarized)
      *             .snapshotTime(traceSnapshotDataSnapshotTime)
-     *             .threadId(testThread.id())
+     *             .threadId(testThread.get("id"))
      *             .build());
      * 
      *     }
@@ -1800,11 +1800,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
-     *             .apmDomainId(testApmDomain.id())
+     *             .apmDomainId(testApmDomain.get("id"))
      *             .traceKey(traceSnapshotDataTraceKey)
      *             .isSummarized(traceSnapshotDataIsSummarized)
      *             .snapshotTime(traceSnapshotDataSnapshotTime)
-     *             .threadId(testThread.id())
+     *             .threadId(testThread.get("id"))
      *             .build());
      * 
      *     }

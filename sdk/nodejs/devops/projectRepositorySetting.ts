@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     projectId: testProject.id,
  *     approvalRules: {
  *         items: [{
- *             minApprovalsCount: Number(projectRepositorySettingApprovalRulesItemsMinApprovalsCount),
+ *             minApprovalsCount: projectRepositorySettingApprovalRulesItemsMinApprovalsCount,
  *             name: projectRepositorySettingApprovalRulesItemsName,
  *             destinationBranch: projectRepositorySettingApprovalRulesItemsDestinationBranch,
  *             reviewers: [{

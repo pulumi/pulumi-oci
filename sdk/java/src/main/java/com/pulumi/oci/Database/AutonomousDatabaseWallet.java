@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousDatabaseWallet = new AutonomousDatabaseWallet("testAutonomousDatabaseWallet", AutonomousDatabaseWalletArgs.builder()
- *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .autonomousDatabaseId(testAutonomousDatabase.get("id"))
  *             .password(autonomousDatabaseWalletPassword)
  *             .base64EncodeContent(false)
  *             .generateType(autonomousDatabaseWalletGenerateType)

@@ -78,7 +78,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
-     *             .associationId(testAssociationOciCertificatesManagementAssociation.id())
+     *             .associationId(testAssociationOciCertificatesManagementAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -120,7 +120,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
-     *             .associationId(testAssociationOciCertificatesManagementAssociation.id())
+     *             .associationId(testAssociationOciCertificatesManagementAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -162,7 +162,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
-     *             .associationId(testAssociationOciCertificatesManagementAssociation.id())
+     *             .associationId(testAssociationOciCertificatesManagementAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -204,7 +204,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
-     *             .associationId(testAssociationOciCertificatesManagementAssociation.id())
+     *             .associationId(testAssociationOciCertificatesManagementAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -246,7 +246,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
-     *             .associationId(testAssociationOciCertificatesManagementAssociation.id())
+     *             .associationId(testAssociationOciCertificatesManagementAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -289,10 +289,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(testAssociatedResource.id())
-     *             .associationId(testAssociation.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
+     *             .associationId(testAssociation.get("id"))
      *             .associationType(associationAssociationType)
-     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .certificatesResourceId(testCertificatesResource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(associationName)
      *             .build());
@@ -337,10 +337,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(testAssociatedResource.id())
-     *             .associationId(testAssociation.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
+     *             .associationId(testAssociation.get("id"))
      *             .associationType(associationAssociationType)
-     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .certificatesResourceId(testCertificatesResource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(associationName)
      *             .build());
@@ -385,10 +385,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(testAssociatedResource.id())
-     *             .associationId(testAssociation.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
+     *             .associationId(testAssociation.get("id"))
      *             .associationType(associationAssociationType)
-     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .certificatesResourceId(testCertificatesResource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(associationName)
      *             .build());
@@ -433,10 +433,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(testAssociatedResource.id())
-     *             .associationId(testAssociation.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
+     *             .associationId(testAssociation.get("id"))
      *             .associationType(associationAssociationType)
-     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .certificatesResourceId(testCertificatesResource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(associationName)
      *             .build());
@@ -481,10 +481,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(testAssociatedResource.id())
-     *             .associationId(testAssociation.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
+     *             .associationId(testAssociation.get("id"))
      *             .associationType(associationAssociationType)
-     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .certificatesResourceId(testCertificatesResource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(associationName)
      *             .build());
@@ -529,10 +529,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(testAssociatedResource.id())
-     *             .associationId(testAssociation.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
+     *             .associationId(testAssociation.get("id"))
      *             .associationType(associationAssociationType)
-     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .certificatesResourceId(testCertificatesResource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(associationName)
      *             .build());
@@ -577,10 +577,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(testAssociatedResource.id())
-     *             .associationId(testAssociation.id())
+     *             .associatedResourceId(testAssociatedResource.get("id"))
+     *             .associationId(testAssociation.get("id"))
      *             .associationType(associationAssociationType)
-     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .certificatesResourceId(testCertificatesResource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(associationName)
      *             .build());
@@ -624,7 +624,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
-     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.id())
+     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.get("id"))
      *             .build());
      * 
      *     }
@@ -666,7 +666,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
-     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.id())
+     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.get("id"))
      *             .build());
      * 
      *     }
@@ -708,7 +708,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
-     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.id())
+     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.get("id"))
      *             .build());
      * 
      *     }
@@ -750,7 +750,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
-     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.id())
+     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.get("id"))
      *             .build());
      * 
      *     }
@@ -792,7 +792,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
-     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.id())
+     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.get("id"))
      *             .build());
      * 
      *     }
@@ -835,7 +835,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(testCaBundle.id())
+     *             .caBundleId(testCaBundle.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(caBundleName)
      *             .state(caBundleState)
@@ -881,7 +881,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(testCaBundle.id())
+     *             .caBundleId(testCaBundle.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(caBundleName)
      *             .state(caBundleState)
@@ -927,7 +927,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(testCaBundle.id())
+     *             .caBundleId(testCaBundle.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(caBundleName)
      *             .state(caBundleState)
@@ -973,7 +973,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(testCaBundle.id())
+     *             .caBundleId(testCaBundle.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(caBundleName)
      *             .state(caBundleState)
@@ -1019,7 +1019,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(testCaBundle.id())
+     *             .caBundleId(testCaBundle.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(caBundleName)
      *             .state(caBundleState)
@@ -1065,7 +1065,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(testCaBundle.id())
+     *             .caBundleId(testCaBundle.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(caBundleName)
      *             .state(caBundleState)
@@ -1111,7 +1111,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(testCaBundle.id())
+     *             .caBundleId(testCaBundle.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(caBundleName)
      *             .state(caBundleState)
@@ -1156,7 +1156,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciCertificatesManagementCertificate.id())
+     *             .certificateId(testCertificateOciCertificatesManagementCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -1198,7 +1198,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciCertificatesManagementCertificate.id())
+     *             .certificateId(testCertificateOciCertificatesManagementCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -1240,7 +1240,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciCertificatesManagementCertificate.id())
+     *             .certificateId(testCertificateOciCertificatesManagementCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -1282,7 +1282,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciCertificatesManagementCertificate.id())
+     *             .certificateId(testCertificateOciCertificatesManagementCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -1324,7 +1324,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciCertificatesManagementCertificate.id())
+     *             .certificateId(testCertificateOciCertificatesManagementCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -1367,9 +1367,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateAuthorityName)
      *             .state(certificateAuthorityState)
      *             .build());
@@ -1414,9 +1414,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateAuthorityName)
      *             .state(certificateAuthorityState)
      *             .build());
@@ -1461,9 +1461,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateAuthorityName)
      *             .state(certificateAuthorityState)
      *             .build());
@@ -1508,9 +1508,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateAuthorityName)
      *             .state(certificateAuthorityState)
      *             .build());
@@ -1555,9 +1555,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateAuthorityName)
      *             .state(certificateAuthorityState)
      *             .build());
@@ -1602,9 +1602,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateAuthorityName)
      *             .state(certificateAuthorityState)
      *             .build());
@@ -1649,9 +1649,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateAuthorityName)
      *             .state(certificateAuthorityState)
      *             .build());
@@ -1695,7 +1695,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.get("id"))
      *             .build());
      * 
      *     }
@@ -1737,7 +1737,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.get("id"))
      *             .build());
      * 
      *     }
@@ -1779,7 +1779,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.get("id"))
      *             .build());
      * 
      *     }
@@ -1821,7 +1821,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.get("id"))
      *             .build());
      * 
      *     }
@@ -1863,7 +1863,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.get("id"))
      *             .build());
      * 
      *     }
@@ -1966,7 +1966,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
@@ -2010,7 +2010,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
@@ -2054,7 +2054,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
@@ -2098,7 +2098,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
@@ -2142,7 +2142,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
-     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
      *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
@@ -2185,7 +2185,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .certificateVersionNumber(certificateVersionCertificateVersionNumber)
      *             .build());
      * 
@@ -2228,7 +2228,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .certificateVersionNumber(certificateVersionCertificateVersionNumber)
      *             .build());
      * 
@@ -2271,7 +2271,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .certificateVersionNumber(certificateVersionCertificateVersionNumber)
      *             .build());
      * 
@@ -2314,7 +2314,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .certificateVersionNumber(certificateVersionCertificateVersionNumber)
      *             .build());
      * 
@@ -2357,7 +2357,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .certificateVersionNumber(certificateVersionCertificateVersionNumber)
      *             .build());
      * 
@@ -2401,7 +2401,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .versionNumber(certificateVersionVersionNumber)
      *             .build());
      * 
@@ -2445,7 +2445,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .versionNumber(certificateVersionVersionNumber)
      *             .build());
      * 
@@ -2489,7 +2489,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .versionNumber(certificateVersionVersionNumber)
      *             .build());
      * 
@@ -2533,7 +2533,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .versionNumber(certificateVersionVersionNumber)
      *             .build());
      * 
@@ -2577,7 +2577,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .versionNumber(certificateVersionVersionNumber)
      *             .build());
      * 
@@ -2621,9 +2621,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateName)
      *             .state(certificateState)
      *             .build());
@@ -2668,9 +2668,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateName)
      *             .state(certificateState)
      *             .build());
@@ -2715,9 +2715,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateName)
      *             .state(certificateState)
      *             .build());
@@ -2762,9 +2762,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateName)
      *             .state(certificateState)
      *             .build());
@@ -2809,9 +2809,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateName)
      *             .state(certificateState)
      *             .build());
@@ -2856,9 +2856,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateName)
      *             .state(certificateState)
      *             .build());
@@ -2903,9 +2903,9 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(testCertificate.id())
+     *             .certificateId(testCertificate.get("id"))
      *             .compartmentId(compartmentId)
-     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.get("id"))
      *             .name(certificateName)
      *             .state(certificateState)
      *             .build());

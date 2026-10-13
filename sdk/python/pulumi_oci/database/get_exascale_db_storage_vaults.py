@@ -200,8 +200,8 @@ def get_exascale_db_storage_vaults(attached_shape_attributes: Optional[_builtins
         display_name=exascale_db_storage_vault_display_name,
         exadata_infrastructure_id=test_exadata_infrastructure["id"],
         state=exascale_db_storage_vault_state,
-        vm_cluster_count_greater_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to),
-        vm_cluster_count_less_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to))
+        vm_cluster_count_greater_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to,
+        vm_cluster_count_less_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to)
     ```
 
 
@@ -271,8 +271,8 @@ def get_exascale_db_storage_vaults_output(attached_shape_attributes: pulumi.Inpu
         display_name=exascale_db_storage_vault_display_name,
         exadata_infrastructure_id=test_exadata_infrastructure["id"],
         state=exascale_db_storage_vault_state,
-        vm_cluster_count_greater_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to),
-        vm_cluster_count_less_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to))
+        vm_cluster_count_greater_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to,
+        vm_cluster_count_less_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to)
     ```
 
 

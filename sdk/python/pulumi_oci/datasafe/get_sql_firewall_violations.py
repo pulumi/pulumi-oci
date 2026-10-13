@@ -130,7 +130,7 @@ def get_sql_firewall_violations(access_level: Optional[_builtins.str] = None,
 
     test_sql_firewall_violations = oci.datasafe.get_sql_firewall_violations(compartment_id=compartment_id,
         access_level=sql_firewall_violation_access_level,
-        compartment_id_in_subtree=sql_firewall_violation_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sql_firewall_violation_compartment_id_in_subtree,
         scim_query=sql_firewall_violation_scim_query)
     ```
 
@@ -178,7 +178,7 @@ def get_sql_firewall_violations_output(access_level: pulumi.Input[Optional[Optio
 
     test_sql_firewall_violations = oci.datasafe.get_sql_firewall_violations(compartment_id=compartment_id,
         access_level=sql_firewall_violation_access_level,
-        compartment_id_in_subtree=sql_firewall_violation_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sql_firewall_violation_compartment_id_in_subtree,
         scim_query=sql_firewall_violation_scim_query)
     ```
 

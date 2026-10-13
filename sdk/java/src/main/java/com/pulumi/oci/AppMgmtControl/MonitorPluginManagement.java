@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMonitorPluginManagement = new MonitorPluginManagement("testMonitorPluginManagement", MonitorPluginManagementArgs.builder()
- *             .monitoredInstanceId(testMonitoredInstance.id())
+ *             .monitoredInstanceId(testMonitoredInstance.get("id"))
  *             .build());
  * 
  *     }

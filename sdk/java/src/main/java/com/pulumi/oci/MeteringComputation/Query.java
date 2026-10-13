@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *                 .displayName(queryQueryDefinitionDisplayName)
  *                 .reportQuery(QueryQueryDefinitionReportQueryArgs.builder()
  *                     .granularity(queryQueryDefinitionReportQueryGranularity)
- *                     .tenantId(testTenant.id())
+ *                     .tenantId(testTenant.get("id"))
  *                     .compartmentDepth(queryQueryDefinitionReportQueryCompartmentDepth)
  *                     .dateRangeName(queryQueryDefinitionReportQueryDateRangeName)
  *                     .filter(queryQueryDefinitionReportQueryFilter)

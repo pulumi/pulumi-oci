@@ -49,12 +49,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDrgRouteDistributionStatement = new DrgRouteDistributionStatement("testDrgRouteDistributionStatement", DrgRouteDistributionStatementArgs.builder()
- *             .drgRouteDistributionId(testDrgRouteDistribution.id())
+ *             .drgRouteDistributionId(testDrgRouteDistribution.get("id"))
  *             .action(drgRouteDistributionStatementStatementsAction)
  *             .matchCriteria(DrgRouteDistributionStatementMatchCriteriaArgs.builder()
  *                 .matchType(drgRouteDistributionStatementStatementsMatchCriteriaMatchType)
  *                 .attachmentType(drgRouteDistributionStatementStatementsMatchCriteriaAttachmentType)
- *                 .drgAttachmentId(testDrgAttachment.id())
+ *                 .drgAttachmentId(testDrgAttachment.get("id"))
  *                 .build())
  *             .priority(drgRouteDistributionStatementStatementsPriority)
  *             .build());

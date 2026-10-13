@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *             .delegationSubscriptionIds(delegationControlDelegationSubscriptionIds)
  *             .displayName(delegationControlDisplayName)
  *             .notificationMessageFormat(delegationControlNotificationMessageFormat)
- *             .notificationTopicId(testNotificationTopic.id())
+ *             .notificationTopicId(testNotificationTopic.get("id"))
  *             .resourceIds(delegationControlResourceIds)
  *             .resourceType(delegationControlResourceType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
@@ -60,8 +60,8 @@ import javax.annotation.Nullable;
  *             .isAutoApproveDuringMaintenance(delegationControlIsAutoApproveDuringMaintenance)
  *             .numApprovalsRequired(delegationControlNumApprovalsRequired)
  *             .preApprovedServiceProviderActionNames(delegationControlPreApprovedServiceProviderActionNames)
- *             .vaultId(testVault.id())
- *             .vaultKeyId(testKey.id())
+ *             .vaultId(testVault.get("id"))
+ *             .vaultKeyId(testKey.get("id"))
  *             .build());
  * 
  *     }

@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     tenantId: testTenant.id,
  *     timeUsageEnded: usageCarbonEmissionTimeUsageEnded,
  *     timeUsageStarted: usageCarbonEmissionTimeUsageStarted,
- *     compartmentDepth: Number(usageCarbonEmissionCompartmentDepth),
+ *     compartmentDepth: usageCarbonEmissionCompartmentDepth,
  *     emissionCalculationMethod: usageCarbonEmissionEmissionCalculationMethod,
  *     emissionType: usageCarbonEmissionEmissionType,
  *     granularity: usageCarbonEmissionGranularity,
@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *         namespace: usageCarbonEmissionGroupByTagNamespace,
  *         value: usageCarbonEmissionGroupByTagValue,
  *     }],
- *     isAggregateByTime: usageCarbonEmissionIsAggregateByTime === "true",
+ *     isAggregateByTime: usageCarbonEmissionIsAggregateByTime,
  *     usageCarbonEmissionFilter: usageCarbonEmissionUsageCarbonEmissionFilter,
  * });
  * ```

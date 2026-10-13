@@ -81,7 +81,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequest = DelegateAccessControlFunctions.getDelegatedResourceAccessRequest(GetDelegatedResourceAccessRequestArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -123,7 +123,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequest = DelegateAccessControlFunctions.getDelegatedResourceAccessRequest(GetDelegatedResourceAccessRequestArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -165,7 +165,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequest = DelegateAccessControlFunctions.getDelegatedResourceAccessRequest(GetDelegatedResourceAccessRequestArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -207,7 +207,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequest = DelegateAccessControlFunctions.getDelegatedResourceAccessRequest(GetDelegatedResourceAccessRequestArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -249,7 +249,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequest = DelegateAccessControlFunctions.getDelegatedResourceAccessRequest(GetDelegatedResourceAccessRequestArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -291,7 +291,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequestAuditLogReport = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestAuditLogReport(GetDelegatedResourceAccessRequestAuditLogReportArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.get("id"))
      *             .isProcessTreeEnabled(delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled)
      *             .build());
      * 
@@ -334,7 +334,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequestAuditLogReport = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestAuditLogReport(GetDelegatedResourceAccessRequestAuditLogReportArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.get("id"))
      *             .isProcessTreeEnabled(delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled)
      *             .build());
      * 
@@ -377,7 +377,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequestAuditLogReport = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestAuditLogReport(GetDelegatedResourceAccessRequestAuditLogReportArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.get("id"))
      *             .isProcessTreeEnabled(delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled)
      *             .build());
      * 
@@ -420,7 +420,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequestAuditLogReport = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestAuditLogReport(GetDelegatedResourceAccessRequestAuditLogReportArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.get("id"))
      *             .isProcessTreeEnabled(delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled)
      *             .build());
      * 
@@ -463,7 +463,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequestAuditLogReport = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestAuditLogReport(GetDelegatedResourceAccessRequestAuditLogReportArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.get("id"))
      *             .isProcessTreeEnabled(delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled)
      *             .build());
      * 
@@ -506,7 +506,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequestHistories = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestHistories(GetDelegatedResourceAccessRequestHistoriesArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -548,7 +548,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequestHistories = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestHistories(GetDelegatedResourceAccessRequestHistoriesArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -590,7 +590,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequestHistories = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestHistories(GetDelegatedResourceAccessRequestHistoriesArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -632,7 +632,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequestHistories = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestHistories(GetDelegatedResourceAccessRequestHistoriesArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -674,7 +674,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequestHistories = DelegateAccessControlFunctions.getDelegatedResourceAccessRequestHistories(GetDelegatedResourceAccessRequestHistoriesArgs.builder()
-     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.id())
+     *             .delegatedResourceAccessRequestId(testDelegatedResourceAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -717,9 +717,9 @@ public final class DelegateAccessControlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequests = DelegateAccessControlFunctions.getDelegatedResourceAccessRequests(GetDelegatedResourceAccessRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .delegationControlId(testDelegationControl.id())
+     *             .delegationControlId(testDelegationControl.get("id"))
      *             .requestStatus(delegatedResourceAccessRequestRequestStatus)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(delegatedResourceAccessRequestState)
      *             .timeEnd(delegatedResourceAccessRequestTimeEnd)
      *             .timeStart(delegatedResourceAccessRequestTimeStart)
@@ -765,9 +765,9 @@ public final class DelegateAccessControlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequests = DelegateAccessControlFunctions.getDelegatedResourceAccessRequests(GetDelegatedResourceAccessRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .delegationControlId(testDelegationControl.id())
+     *             .delegationControlId(testDelegationControl.get("id"))
      *             .requestStatus(delegatedResourceAccessRequestRequestStatus)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(delegatedResourceAccessRequestState)
      *             .timeEnd(delegatedResourceAccessRequestTimeEnd)
      *             .timeStart(delegatedResourceAccessRequestTimeStart)
@@ -813,9 +813,9 @@ public final class DelegateAccessControlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequests = DelegateAccessControlFunctions.getDelegatedResourceAccessRequests(GetDelegatedResourceAccessRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .delegationControlId(testDelegationControl.id())
+     *             .delegationControlId(testDelegationControl.get("id"))
      *             .requestStatus(delegatedResourceAccessRequestRequestStatus)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(delegatedResourceAccessRequestState)
      *             .timeEnd(delegatedResourceAccessRequestTimeEnd)
      *             .timeStart(delegatedResourceAccessRequestTimeStart)
@@ -861,9 +861,9 @@ public final class DelegateAccessControlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequests = DelegateAccessControlFunctions.getDelegatedResourceAccessRequests(GetDelegatedResourceAccessRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .delegationControlId(testDelegationControl.id())
+     *             .delegationControlId(testDelegationControl.get("id"))
      *             .requestStatus(delegatedResourceAccessRequestRequestStatus)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(delegatedResourceAccessRequestState)
      *             .timeEnd(delegatedResourceAccessRequestTimeEnd)
      *             .timeStart(delegatedResourceAccessRequestTimeStart)
@@ -909,9 +909,9 @@ public final class DelegateAccessControlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDelegatedResourceAccessRequests = DelegateAccessControlFunctions.getDelegatedResourceAccessRequests(GetDelegatedResourceAccessRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .delegationControlId(testDelegationControl.id())
+     *             .delegationControlId(testDelegationControl.get("id"))
      *             .requestStatus(delegatedResourceAccessRequestRequestStatus)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(delegatedResourceAccessRequestState)
      *             .timeEnd(delegatedResourceAccessRequestTimeEnd)
      *             .timeStart(delegatedResourceAccessRequestTimeStart)
@@ -956,7 +956,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationControl = DelegateAccessControlFunctions.getDelegationControl(GetDelegationControlArgs.builder()
-     *             .delegationControlId(testDelegationControlOciDelegateAccessControlDelegationControl.id())
+     *             .delegationControlId(testDelegationControlOciDelegateAccessControlDelegationControl.get("id"))
      *             .build());
      * 
      *     }
@@ -998,7 +998,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationControl = DelegateAccessControlFunctions.getDelegationControl(GetDelegationControlArgs.builder()
-     *             .delegationControlId(testDelegationControlOciDelegateAccessControlDelegationControl.id())
+     *             .delegationControlId(testDelegationControlOciDelegateAccessControlDelegationControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1040,7 +1040,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationControl = DelegateAccessControlFunctions.getDelegationControl(GetDelegationControlArgs.builder()
-     *             .delegationControlId(testDelegationControlOciDelegateAccessControlDelegationControl.id())
+     *             .delegationControlId(testDelegationControlOciDelegateAccessControlDelegationControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1082,7 +1082,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationControl = DelegateAccessControlFunctions.getDelegationControl(GetDelegationControlArgs.builder()
-     *             .delegationControlId(testDelegationControlOciDelegateAccessControlDelegationControl.id())
+     *             .delegationControlId(testDelegationControlOciDelegateAccessControlDelegationControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1124,7 +1124,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationControl = DelegateAccessControlFunctions.getDelegationControl(GetDelegationControlArgs.builder()
-     *             .delegationControlId(testDelegationControlOciDelegateAccessControlDelegationControl.id())
+     *             .delegationControlId(testDelegationControlOciDelegateAccessControlDelegationControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1166,7 +1166,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationControlResources = DelegateAccessControlFunctions.getDelegationControlResources(GetDelegationControlResourcesArgs.builder()
-     *             .delegationControlId(testDelegationControl.id())
+     *             .delegationControlId(testDelegationControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1208,7 +1208,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationControlResources = DelegateAccessControlFunctions.getDelegationControlResources(GetDelegationControlResourcesArgs.builder()
-     *             .delegationControlId(testDelegationControl.id())
+     *             .delegationControlId(testDelegationControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1250,7 +1250,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationControlResources = DelegateAccessControlFunctions.getDelegationControlResources(GetDelegationControlResourcesArgs.builder()
-     *             .delegationControlId(testDelegationControl.id())
+     *             .delegationControlId(testDelegationControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1292,7 +1292,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationControlResources = DelegateAccessControlFunctions.getDelegationControlResources(GetDelegationControlResourcesArgs.builder()
-     *             .delegationControlId(testDelegationControl.id())
+     *             .delegationControlId(testDelegationControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1334,7 +1334,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationControlResources = DelegateAccessControlFunctions.getDelegationControlResources(GetDelegationControlResourcesArgs.builder()
-     *             .delegationControlId(testDelegationControl.id())
+     *             .delegationControlId(testDelegationControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1378,7 +1378,7 @@ public final class DelegateAccessControlFunctions {
      *         final var testDelegationControls = DelegateAccessControlFunctions.getDelegationControls(GetDelegationControlsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(delegationControlDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(delegationControlResourceType)
      *             .state(delegationControlState)
      *             .build());
@@ -1424,7 +1424,7 @@ public final class DelegateAccessControlFunctions {
      *         final var testDelegationControls = DelegateAccessControlFunctions.getDelegationControls(GetDelegationControlsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(delegationControlDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(delegationControlResourceType)
      *             .state(delegationControlState)
      *             .build());
@@ -1470,7 +1470,7 @@ public final class DelegateAccessControlFunctions {
      *         final var testDelegationControls = DelegateAccessControlFunctions.getDelegationControls(GetDelegationControlsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(delegationControlDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(delegationControlResourceType)
      *             .state(delegationControlState)
      *             .build());
@@ -1516,7 +1516,7 @@ public final class DelegateAccessControlFunctions {
      *         final var testDelegationControls = DelegateAccessControlFunctions.getDelegationControls(GetDelegationControlsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(delegationControlDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(delegationControlResourceType)
      *             .state(delegationControlState)
      *             .build());
@@ -1562,7 +1562,7 @@ public final class DelegateAccessControlFunctions {
      *         final var testDelegationControls = DelegateAccessControlFunctions.getDelegationControls(GetDelegationControlsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(delegationControlDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(delegationControlResourceType)
      *             .state(delegationControlState)
      *             .build());
@@ -1606,7 +1606,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationSubscription = DelegateAccessControlFunctions.getDelegationSubscription(GetDelegationSubscriptionArgs.builder()
-     *             .delegationSubscriptionId(testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.id())
+     *             .delegationSubscriptionId(testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1648,7 +1648,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationSubscription = DelegateAccessControlFunctions.getDelegationSubscription(GetDelegationSubscriptionArgs.builder()
-     *             .delegationSubscriptionId(testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.id())
+     *             .delegationSubscriptionId(testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1690,7 +1690,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationSubscription = DelegateAccessControlFunctions.getDelegationSubscription(GetDelegationSubscriptionArgs.builder()
-     *             .delegationSubscriptionId(testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.id())
+     *             .delegationSubscriptionId(testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1732,7 +1732,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationSubscription = DelegateAccessControlFunctions.getDelegationSubscription(GetDelegationSubscriptionArgs.builder()
-     *             .delegationSubscriptionId(testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.id())
+     *             .delegationSubscriptionId(testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1774,7 +1774,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDelegationSubscription = DelegateAccessControlFunctions.getDelegationSubscription(GetDelegationSubscriptionArgs.builder()
-     *             .delegationSubscriptionId(testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.id())
+     *             .delegationSubscriptionId(testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -2036,7 +2036,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceProvider = DelegateAccessControlFunctions.getServiceProvider(GetServiceProviderArgs.builder()
-     *             .serviceProviderId(testServiceProviderOciDelegateAccessControlServiceProvider.id())
+     *             .serviceProviderId(testServiceProviderOciDelegateAccessControlServiceProvider.get("id"))
      *             .build());
      * 
      *     }
@@ -2078,7 +2078,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceProvider = DelegateAccessControlFunctions.getServiceProvider(GetServiceProviderArgs.builder()
-     *             .serviceProviderId(testServiceProviderOciDelegateAccessControlServiceProvider.id())
+     *             .serviceProviderId(testServiceProviderOciDelegateAccessControlServiceProvider.get("id"))
      *             .build());
      * 
      *     }
@@ -2120,7 +2120,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceProvider = DelegateAccessControlFunctions.getServiceProvider(GetServiceProviderArgs.builder()
-     *             .serviceProviderId(testServiceProviderOciDelegateAccessControlServiceProvider.id())
+     *             .serviceProviderId(testServiceProviderOciDelegateAccessControlServiceProvider.get("id"))
      *             .build());
      * 
      *     }
@@ -2162,7 +2162,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceProvider = DelegateAccessControlFunctions.getServiceProvider(GetServiceProviderArgs.builder()
-     *             .serviceProviderId(testServiceProviderOciDelegateAccessControlServiceProvider.id())
+     *             .serviceProviderId(testServiceProviderOciDelegateAccessControlServiceProvider.get("id"))
      *             .build());
      * 
      *     }
@@ -2204,7 +2204,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceProvider = DelegateAccessControlFunctions.getServiceProvider(GetServiceProviderArgs.builder()
-     *             .serviceProviderId(testServiceProviderOciDelegateAccessControlServiceProvider.id())
+     *             .serviceProviderId(testServiceProviderOciDelegateAccessControlServiceProvider.get("id"))
      *             .build());
      * 
      *     }
@@ -2246,7 +2246,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceProviderAction = DelegateAccessControlFunctions.getServiceProviderAction(GetServiceProviderActionArgs.builder()
-     *             .serviceProviderActionId(testServiceProviderActionOciDelegateAccessControlServiceProviderAction.id())
+     *             .serviceProviderActionId(testServiceProviderActionOciDelegateAccessControlServiceProviderAction.get("id"))
      *             .build());
      * 
      *     }
@@ -2288,7 +2288,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceProviderAction = DelegateAccessControlFunctions.getServiceProviderAction(GetServiceProviderActionArgs.builder()
-     *             .serviceProviderActionId(testServiceProviderActionOciDelegateAccessControlServiceProviderAction.id())
+     *             .serviceProviderActionId(testServiceProviderActionOciDelegateAccessControlServiceProviderAction.get("id"))
      *             .build());
      * 
      *     }
@@ -2330,7 +2330,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceProviderAction = DelegateAccessControlFunctions.getServiceProviderAction(GetServiceProviderActionArgs.builder()
-     *             .serviceProviderActionId(testServiceProviderActionOciDelegateAccessControlServiceProviderAction.id())
+     *             .serviceProviderActionId(testServiceProviderActionOciDelegateAccessControlServiceProviderAction.get("id"))
      *             .build());
      * 
      *     }
@@ -2372,7 +2372,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceProviderAction = DelegateAccessControlFunctions.getServiceProviderAction(GetServiceProviderActionArgs.builder()
-     *             .serviceProviderActionId(testServiceProviderActionOciDelegateAccessControlServiceProviderAction.id())
+     *             .serviceProviderActionId(testServiceProviderActionOciDelegateAccessControlServiceProviderAction.get("id"))
      *             .build());
      * 
      *     }
@@ -2414,7 +2414,7 @@ public final class DelegateAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceProviderAction = DelegateAccessControlFunctions.getServiceProviderAction(GetServiceProviderActionArgs.builder()
-     *             .serviceProviderActionId(testServiceProviderActionOciDelegateAccessControlServiceProviderAction.id())
+     *             .serviceProviderActionId(testServiceProviderActionOciDelegateAccessControlServiceProviderAction.get("id"))
      *             .build());
      * 
      *     }

@@ -33,10 +33,10 @@ import (
 //			_, err := fleetappsmanagement.GetInventoryResources(ctx, &fleetappsmanagement.GetInventoryResourcesArgs{
 //				CompartmentId:         compartmentId,
 //				ResourceCompartmentId: testCompartment.Id,
-//				DefinedTagEquals:      pulumi.ToArray(inventoryResourceDefinedTagEquals),
+//				DefinedTagEquals:      inventoryResourceDefinedTagEquals,
 //				DisplayName:           pulumi.StringRef(inventoryResourceDisplayName),
-//				FreeformTagEquals:     pulumi.ToArray(inventoryResourceFreeformTagEquals),
-//				InventoryProperties:   pulumi.ToArray(inventoryResourceInventoryProperties),
+//				FreeformTagEquals:     inventoryResourceFreeformTagEquals,
+//				InventoryProperties:   inventoryResourceInventoryProperties,
 //				MatchingCriteria:      pulumi.StringRef(inventoryResourceMatchingCriteria),
 //				ResourceRegion:        pulumi.StringRef(inventoryResourceResourceRegion),
 //				State:                 pulumi.StringRef(inventoryResourceState),

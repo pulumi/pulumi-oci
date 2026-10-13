@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDomainReplicationToRegion = new DomainReplicationToRegion("testDomainReplicationToRegion", DomainReplicationToRegionArgs.builder()
- *             .domainId(testDomain.id())
+ *             .domainId(testDomain.get("id"))
  *             .replicaRegion(domainReplicationToRegionReplicaRegion)
  *             .build());
  * 

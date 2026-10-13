@@ -150,7 +150,7 @@ def get_sql_firewall_allowed_sql_analytics(access_level: Optional[_builtins.str]
 
     test_sql_firewall_allowed_sql_analytics = oci.datasafe.get_sql_firewall_allowed_sql_analytics(compartment_id=compartment_id,
         access_level=sql_firewall_allowed_sql_analytic_access_level,
-        compartment_id_in_subtree=sql_firewall_allowed_sql_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sql_firewall_allowed_sql_analytic_compartment_id_in_subtree,
         group_bies=sql_firewall_allowed_sql_analytic_group_by,
         scim_query=sql_firewall_allowed_sql_analytic_scim_query)
     ```
@@ -216,7 +216,7 @@ def get_sql_firewall_allowed_sql_analytics_output(access_level: pulumi.Input[Opt
 
     test_sql_firewall_allowed_sql_analytics = oci.datasafe.get_sql_firewall_allowed_sql_analytics(compartment_id=compartment_id,
         access_level=sql_firewall_allowed_sql_analytic_access_level,
-        compartment_id_in_subtree=sql_firewall_allowed_sql_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sql_firewall_allowed_sql_analytic_compartment_id_in_subtree,
         group_bies=sql_firewall_allowed_sql_analytic_group_by,
         scim_query=sql_firewall_allowed_sql_analytic_scim_query)
     ```

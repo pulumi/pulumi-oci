@@ -33,9 +33,9 @@ import * as utilities from "../utilities";
  * const testUnifiedAuditPolicies = oci.datasafe.getUnifiedAuditPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: unifiedAuditPolicyAccessLevel,
- *     compartmentIdInSubtree: unifiedAuditPolicyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: unifiedAuditPolicyCompartmentIdInSubtree,
  *     displayName: unifiedAuditPolicyDisplayName,
- *     isSeeded: unifiedAuditPolicyIsSeeded === "true",
+ *     isSeeded: unifiedAuditPolicyIsSeeded,
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: unifiedAuditPolicyState,
  *     timeCreatedGreaterThanOrEqualTo: unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo,
@@ -188,9 +188,9 @@ export interface GetUnifiedAuditPoliciesResult {
  * const testUnifiedAuditPolicies = oci.datasafe.getUnifiedAuditPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: unifiedAuditPolicyAccessLevel,
- *     compartmentIdInSubtree: unifiedAuditPolicyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: unifiedAuditPolicyCompartmentIdInSubtree,
  *     displayName: unifiedAuditPolicyDisplayName,
- *     isSeeded: unifiedAuditPolicyIsSeeded === "true",
+ *     isSeeded: unifiedAuditPolicyIsSeeded,
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: unifiedAuditPolicyState,
  *     timeCreatedGreaterThanOrEqualTo: unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo,

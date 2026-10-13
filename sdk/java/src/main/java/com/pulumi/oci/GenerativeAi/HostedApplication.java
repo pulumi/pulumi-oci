@@ -82,11 +82,11 @@ import javax.annotation.Nullable;
  *             .networkingConfig(HostedApplicationNetworkingConfigArgs.builder()
  *                 .inboundNetworkingConfig(HostedApplicationNetworkingConfigInboundNetworkingConfigArgs.builder()
  *                     .endpointMode(hostedApplicationNetworkingConfigInboundNetworkingConfigEndpointMode)
- *                     .privateEndpointId(testGenerativeAiPrivateEndpoint.id())
+ *                     .privateEndpointId(testGenerativeAiPrivateEndpoint.get("id"))
  *                     .build())
  *                 .outboundNetworkingConfig(HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs.builder()
  *                     .networkMode(hostedApplicationNetworkingConfigOutboundNetworkingConfigNetworkMode)
- *                     .customSubnetId(testSubnet.id())
+ *                     .customSubnetId(testSubnet.get("id"))
  *                     .nsgIds(hostedApplicationNetworkingConfigOutboundNetworkingConfigNsgIds)
  *                     .build())
  *                 .build())
@@ -101,7 +101,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .storageConfigs(HostedApplicationStorageConfigArgs.builder()
  *                 .environmentVariableKey(hostedApplicationStorageConfigsEnvironmentVariableKey)
- *                 .storageId(testStorage.id())
+ *                 .storageId(testStorage.get("id"))
  *                 .build())
  *             .build());
  * 

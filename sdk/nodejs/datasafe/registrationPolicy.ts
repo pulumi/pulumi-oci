@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     features: registrationPolicyFeatures,
  *     resourceId: testResource.id,
- *     canOverrideFeatures: registrationPolicyCanOverrideFeatures === "true",
+ *     canOverrideFeatures: registrationPolicyCanOverrideFeatures,
  *     connectionOption: {
  *         connectionType: registrationPolicyConnectionOptionConnectionType,
  *         identifiers: registrationPolicyConnectionOptionIdentifiers,
@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     opcDryRun: registrationPolicyOpcDryRun === "true",
+ *     opcDryRun: registrationPolicyOpcDryRun,
  *     xClusterId: registrationPolicyXClusterId,
  * });
  * ```

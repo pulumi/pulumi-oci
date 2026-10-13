@@ -72,11 +72,11 @@ import javax.annotation.Nullable;
  *             .externalKeyManagerMetadata(VaultExternalKeyManagerMetadataArgs.builder()
  *                 .externalVaultEndpointUrl(vaultExternalKeyManagerMetadataExternalVaultEndpointUrl)
  *                 .oauthMetadata(VaultExternalKeyManagerMetadataOauthMetadataArgs.builder()
- *                     .clientAppId(testClientApp.id())
+ *                     .clientAppId(testClientApp.get("id"))
  *                     .clientAppSecret(vaultExternalKeyManagerMetadataOauthMetadataClientAppSecret)
  *                     .idcsAccountNameUrl(vaultExternalKeyManagerMetadataOauthMetadataIdcsAccountNameUrl)
  *                     .build())
- *                 .privateEndpointId(testPrivateEndpoint.id())
+ *                 .privateEndpointId(testPrivateEndpoint.get("id"))
  *                 .build())
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());

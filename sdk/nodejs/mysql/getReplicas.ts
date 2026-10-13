@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     configurationId: testMysqlConfiguration.id,
  *     dbSystemId: testMysqlDbSystem.id,
  *     displayName: replicaDisplayName,
- *     isUpToDate: replicaIsUpToDate === "true",
+ *     isUpToDate: replicaIsUpToDate,
  *     replicaId: testReplica.id,
  *     state: replicaState,
  * });
@@ -129,7 +129,7 @@ export interface GetReplicasResult {
  *     configurationId: testMysqlConfiguration.id,
  *     dbSystemId: testMysqlDbSystem.id,
  *     displayName: replicaDisplayName,
- *     isUpToDate: replicaIsUpToDate === "true",
+ *     isUpToDate: replicaIsUpToDate,
  *     replicaId: testReplica.id,
  *     state: replicaState,
  * });

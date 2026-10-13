@@ -336,7 +336,7 @@ class Rrset(pulumi.CustomResource):
                 "domain": rrset_items_domain,
                 "rdata": rrset_items_rdata,
                 "rtype": rrset_items_rtype,
-                "ttl": int(rrset_items_ttl),
+                "ttl": rrset_items_ttl,
             }],
             scope=rrset_scope,
             view_id=test_view["id"])
@@ -404,7 +404,7 @@ class Rrset(pulumi.CustomResource):
                 "domain": rrset_items_domain,
                 "rdata": rrset_items_rdata,
                 "rtype": rrset_items_rtype,
-                "ttl": int(rrset_items_ttl),
+                "ttl": rrset_items_ttl,
             }],
             scope=rrset_scope,
             view_id=test_view["id"])

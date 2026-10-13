@@ -730,7 +730,7 @@ class PipelineRun(pulumi.CustomResource):
                 "Department": "Finance",
             },
             infrastructure_configuration_override_details={
-                "block_storage_size_in_gbs": int(pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs),
+                "block_storage_size_in_gbs": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs,
                 "shape_name": test_shape["name"],
                 "block_storage_size_in_gbs_parameterized": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs_parameterized,
                 "shape_config_details": {
@@ -742,8 +742,8 @@ class PipelineRun(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
             },
             log_configuration_override_details={
-                "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation == "true",
-                "enable_logging": pipeline_run_log_configuration_override_details_enable_logging == "true",
+                "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation,
+                "enable_logging": pipeline_run_log_configuration_override_details_enable_logging,
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
             },
@@ -784,11 +784,11 @@ class PipelineRun(pulumi.CustomResource):
                         "ocpus_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus_parameterized,
                     },
                     "logs_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_logs_bucket_uri,
-                    "num_executors": int(pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors),
+                    "num_executors": pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors,
                     "warehouse_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_warehouse_bucket_uri,
                 },
                 "step_infrastructure_configuration_details": {
-                    "block_storage_size_in_gbs": int(pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs),
+                    "block_storage_size_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
                     "shape_name": test_shape["name"],
                     "block_storage_size_in_gbs_parameterized": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs_parameterized,
                     "shape_config_details": {
@@ -889,7 +889,7 @@ class PipelineRun(pulumi.CustomResource):
                 "Department": "Finance",
             },
             infrastructure_configuration_override_details={
-                "block_storage_size_in_gbs": int(pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs),
+                "block_storage_size_in_gbs": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs,
                 "shape_name": test_shape["name"],
                 "block_storage_size_in_gbs_parameterized": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs_parameterized,
                 "shape_config_details": {
@@ -901,8 +901,8 @@ class PipelineRun(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
             },
             log_configuration_override_details={
-                "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation == "true",
-                "enable_logging": pipeline_run_log_configuration_override_details_enable_logging == "true",
+                "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation,
+                "enable_logging": pipeline_run_log_configuration_override_details_enable_logging,
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
             },
@@ -943,11 +943,11 @@ class PipelineRun(pulumi.CustomResource):
                         "ocpus_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus_parameterized,
                     },
                     "logs_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_logs_bucket_uri,
-                    "num_executors": int(pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors),
+                    "num_executors": pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors,
                     "warehouse_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_warehouse_bucket_uri,
                 },
                 "step_infrastructure_configuration_details": {
-                    "block_storage_size_in_gbs": int(pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs),
+                    "block_storage_size_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
                     "shape_name": test_shape["name"],
                     "block_storage_size_in_gbs_parameterized": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs_parameterized,
                     "shape_config_details": {

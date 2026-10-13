@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testMySmtpCredentials = oci.identity.getDomainsMySmtpCredentials({
  *     idcsEndpoint: testDomain.url,
- *     mySmtpCredentialCount: Number(mySmtpCredentialMySmtpCredentialCount),
+ *     mySmtpCredentialCount: mySmtpCredentialMySmtpCredentialCount,
  *     mySmtpCredentialFilter: mySmtpCredentialMySmtpCredentialFilter,
  *     authorization: mySmtpCredentialAuthorization,
  *     resourceTypeSchemaVersion: mySmtpCredentialResourceTypeSchemaVersion,
- *     startIndex: Number(mySmtpCredentialStartIndex),
+ *     startIndex: mySmtpCredentialStartIndex,
  * });
  * ```
  */
@@ -116,11 +116,11 @@ export interface GetDomainsMySmtpCredentialsResult {
  *
  * const testMySmtpCredentials = oci.identity.getDomainsMySmtpCredentials({
  *     idcsEndpoint: testDomain.url,
- *     mySmtpCredentialCount: Number(mySmtpCredentialMySmtpCredentialCount),
+ *     mySmtpCredentialCount: mySmtpCredentialMySmtpCredentialCount,
  *     mySmtpCredentialFilter: mySmtpCredentialMySmtpCredentialFilter,
  *     authorization: mySmtpCredentialAuthorization,
  *     resourceTypeSchemaVersion: mySmtpCredentialResourceTypeSchemaVersion,
- *     startIndex: Number(mySmtpCredentialStartIndex),
+ *     startIndex: mySmtpCredentialStartIndex,
  * });
  * ```
  */

@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isPrivateNetworkEnabled: workspaceIsPrivateNetworkEnabled === "true",
+ *     isPrivateNetworkEnabled: workspaceIsPrivateNetworkEnabled,
  *     registryCompartmentId: testCompartment.id,
  *     registryId: testRegistry.id,
  *     registryName: testRegistry.name,

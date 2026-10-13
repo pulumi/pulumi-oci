@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testAuditProfileManagement = new AuditProfileManagement("testAuditProfileManagement", AuditProfileManagementArgs.builder()
  *             .compartmentId(compartmentId)
- *             .targetId(testTarget.id())
+ *             .targetId(testTarget.get("id"))
  *             .targetType(auditProfileTargetType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(auditProfileDescription)

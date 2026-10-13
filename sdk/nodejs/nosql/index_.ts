@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     name: indexName,
  *     tableNameOrId: testTableNameOr.id,
  *     compartmentId: compartmentId,
- *     isIfNotExists: indexIsIfNotExists === "true",
+ *     isIfNotExists: indexIsIfNotExists,
  * });
  * ```
  *

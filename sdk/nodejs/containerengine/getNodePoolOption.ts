@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  *     nodePoolK8sVersion: nodePoolOptionNodePoolK8sVersion,
  *     nodePoolOsArch: nodePoolOptionNodePoolOsArch,
  *     nodePoolOsType: nodePoolOptionNodePoolOsType,
- *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions === "true",
+ *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions,
  * });
  * ```
  */
@@ -117,7 +117,7 @@ export interface GetNodePoolOptionResult {
  *     nodePoolK8sVersion: nodePoolOptionNodePoolK8sVersion,
  *     nodePoolOsArch: nodePoolOptionNodePoolOsArch,
  *     nodePoolOsType: nodePoolOptionNodePoolOsType,
- *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions === "true",
+ *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions,
  * });
  * ```
  */

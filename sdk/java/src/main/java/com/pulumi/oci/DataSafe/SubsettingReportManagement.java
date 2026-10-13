@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSubsettingReportManagement = new SubsettingReportManagement("testSubsettingReportManagement", SubsettingReportManagementArgs.builder()
- *             .subsettingPolicyId(testSubsettingPolicy.id())
+ *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
  *             .targetId(targetId)
  *             .targetCredentials(SubsettingReportManagementTargetCredentialsArgs.builder()
  *                 .userName(targetDatabaseUserName)

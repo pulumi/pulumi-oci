@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  * const testAuditTrailAnalytic = oci.datasafe.getAuditTrailAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: auditTrailAnalyticAccessLevel,
- *     compartmentIdInSubtree: auditTrailAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: auditTrailAnalyticCompartmentIdInSubtree,
  *     groupBies: auditTrailAnalyticGroupBy,
  *     targetId: testTarget.id,
  * });
@@ -122,7 +122,7 @@ export interface GetAuditTrailAnalyticResult {
  * const testAuditTrailAnalytic = oci.datasafe.getAuditTrailAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: auditTrailAnalyticAccessLevel,
- *     compartmentIdInSubtree: auditTrailAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: auditTrailAnalyticCompartmentIdInSubtree,
  *     groupBies: auditTrailAnalyticGroupBy,
  *     targetId: testTarget.id,
  * });

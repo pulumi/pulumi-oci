@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     channelId: testChannel.id,
  *     dbSystemId: testDbSystem.id,
  *     displayName: channelDisplayName,
- *     isEnabled: channelIsEnabled === "true",
+ *     isEnabled: channelIsEnabled,
  *     state: channelState,
  * });
  * ```
@@ -122,7 +122,7 @@ export interface GetChannelsResult {
  *     channelId: testChannel.id,
  *     dbSystemId: testDbSystem.id,
  *     displayName: channelDisplayName,
- *     isEnabled: channelIsEnabled === "true",
+ *     isEnabled: channelIsEnabled,
  *     state: channelState,
  * });
  * ```

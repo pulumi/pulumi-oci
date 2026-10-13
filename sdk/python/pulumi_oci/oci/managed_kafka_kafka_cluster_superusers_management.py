@@ -198,7 +198,7 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
 
         test_kafka_cluster_superusers_management = oci.oci.ManagedKafkaKafkaClusterSuperusersManagement("test_kafka_cluster_superusers_management",
             kafka_cluster_id=test_kafka_cluster["id"],
-            enable_superuser=enable_superuser == "true",
+            enable_superuser=enable_superuser,
             compartment_id=compartment_id,
             secret_id=test_secret["id"])
         ```
@@ -235,7 +235,7 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
 
         test_kafka_cluster_superusers_management = oci.oci.ManagedKafkaKafkaClusterSuperusersManagement("test_kafka_cluster_superusers_management",
             kafka_cluster_id=test_kafka_cluster["id"],
-            enable_superuser=enable_superuser == "true",
+            enable_superuser=enable_superuser,
             compartment_id=compartment_id,
             secret_id=test_secret["id"])
         ```

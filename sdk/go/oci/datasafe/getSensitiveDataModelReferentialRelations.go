@@ -31,11 +31,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetSensitiveDataModelReferentialRelations(ctx, &datasafe.GetSensitiveDataModelReferentialRelationsArgs{
 //				SensitiveDataModelId: testSensitiveDataModel.Id,
-//				ColumnNames:          pulumi.ToArray(sensitiveDataModelReferentialRelationColumnName),
+//				ColumnNames:          sensitiveDataModelReferentialRelationColumnName,
 //				IsSensitive:          pulumi.BoolRef(sensitiveDataModelReferentialRelationIsSensitive),
-//				Objects:              pulumi.ToArray(sensitiveDataModelReferentialRelationObject),
-//				RelationTypes:        pulumi.ToArray(sensitiveDataModelReferentialRelationRelationType),
-//				SchemaNames:          pulumi.ToArray(sensitiveDataModelReferentialRelationSchemaName),
+//				Objects:              sensitiveDataModelReferentialRelationObject,
+//				RelationTypes:        sensitiveDataModelReferentialRelationRelationType,
+//				SchemaNames:          sensitiveDataModelReferentialRelationSchemaName,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -317,8 +317,8 @@ class PingProbe(pulumi.CustomResource):
             compartment_id=compartment_id,
             protocol=ping_probe_protocol,
             targets=ping_probe_targets,
-            port=int(ping_probe_port),
-            timeout_in_seconds=int(ping_probe_timeout_in_seconds),
+            port=ping_probe_port,
+            timeout_in_seconds=ping_probe_timeout_in_seconds,
             vantage_point_names=ping_probe_vantage_point_names)
         ```
 
@@ -370,8 +370,8 @@ class PingProbe(pulumi.CustomResource):
             compartment_id=compartment_id,
             protocol=ping_probe_protocol,
             targets=ping_probe_targets,
-            port=int(ping_probe_port),
-            timeout_in_seconds=int(ping_probe_timeout_in_seconds),
+            port=ping_probe_port,
+            timeout_in_seconds=ping_probe_timeout_in_seconds,
             vantage_point_names=ping_probe_vantage_point_names)
         ```
 

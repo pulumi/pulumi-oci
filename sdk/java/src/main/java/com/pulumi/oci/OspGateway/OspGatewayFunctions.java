@@ -66,7 +66,7 @@ public final class OspGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddress = OspGatewayFunctions.getAddress(GetAddressArgs.builder()
-     *             .addressId(testAddres.id())
+     *             .addressId(testAddres.get("id"))
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(addressOspHomeRegion)
      *             .build());
@@ -110,7 +110,7 @@ public final class OspGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddress = OspGatewayFunctions.getAddress(GetAddressArgs.builder()
-     *             .addressId(testAddres.id())
+     *             .addressId(testAddres.get("id"))
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(addressOspHomeRegion)
      *             .build());
@@ -154,7 +154,7 @@ public final class OspGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddress = OspGatewayFunctions.getAddress(GetAddressArgs.builder()
-     *             .addressId(testAddres.id())
+     *             .addressId(testAddres.get("id"))
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(addressOspHomeRegion)
      *             .build());
@@ -198,7 +198,7 @@ public final class OspGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddress = OspGatewayFunctions.getAddress(GetAddressArgs.builder()
-     *             .addressId(testAddres.id())
+     *             .addressId(testAddres.get("id"))
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(addressOspHomeRegion)
      *             .build());
@@ -242,7 +242,7 @@ public final class OspGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddress = OspGatewayFunctions.getAddress(GetAddressArgs.builder()
-     *             .addressId(testAddres.id())
+     *             .addressId(testAddres.get("id"))
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(addressOspHomeRegion)
      *             .build());
@@ -507,7 +507,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoice = OspGatewayFunctions.getInvoice(GetInvoiceArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoiceOciOspGatewayInvoice.id())
+     *             .internalInvoiceId(testInvoiceOciOspGatewayInvoice.get("id"))
      *             .ospHomeRegion(invoiceOspHomeRegion)
      *             .build());
      * 
@@ -551,7 +551,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoice = OspGatewayFunctions.getInvoice(GetInvoiceArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoiceOciOspGatewayInvoice.id())
+     *             .internalInvoiceId(testInvoiceOciOspGatewayInvoice.get("id"))
      *             .ospHomeRegion(invoiceOspHomeRegion)
      *             .build());
      * 
@@ -595,7 +595,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoice = OspGatewayFunctions.getInvoice(GetInvoiceArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoiceOciOspGatewayInvoice.id())
+     *             .internalInvoiceId(testInvoiceOciOspGatewayInvoice.get("id"))
      *             .ospHomeRegion(invoiceOspHomeRegion)
      *             .build());
      * 
@@ -639,7 +639,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoice = OspGatewayFunctions.getInvoice(GetInvoiceArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoiceOciOspGatewayInvoice.id())
+     *             .internalInvoiceId(testInvoiceOciOspGatewayInvoice.get("id"))
      *             .ospHomeRegion(invoiceOspHomeRegion)
      *             .build());
      * 
@@ -683,7 +683,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoice = OspGatewayFunctions.getInvoice(GetInvoiceArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoiceOciOspGatewayInvoice.id())
+     *             .internalInvoiceId(testInvoiceOciOspGatewayInvoice.get("id"))
      *             .ospHomeRegion(invoiceOspHomeRegion)
      *             .build());
      * 
@@ -728,7 +728,7 @@ public final class OspGatewayFunctions {
      *         final var testInvoices = OspGatewayFunctions.getInvoices(GetInvoicesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(invoiceOspHomeRegion)
-     *             .invoiceId(testInvoice.id())
+     *             .invoiceId(testInvoice.get("id"))
      *             .searchText(invoiceSearchText)
      *             .statuses(invoiceStatus)
      *             .timeInvoiceEnd(invoiceTimeInvoiceEnd)
@@ -779,7 +779,7 @@ public final class OspGatewayFunctions {
      *         final var testInvoices = OspGatewayFunctions.getInvoices(GetInvoicesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(invoiceOspHomeRegion)
-     *             .invoiceId(testInvoice.id())
+     *             .invoiceId(testInvoice.get("id"))
      *             .searchText(invoiceSearchText)
      *             .statuses(invoiceStatus)
      *             .timeInvoiceEnd(invoiceTimeInvoiceEnd)
@@ -830,7 +830,7 @@ public final class OspGatewayFunctions {
      *         final var testInvoices = OspGatewayFunctions.getInvoices(GetInvoicesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(invoiceOspHomeRegion)
-     *             .invoiceId(testInvoice.id())
+     *             .invoiceId(testInvoice.get("id"))
      *             .searchText(invoiceSearchText)
      *             .statuses(invoiceStatus)
      *             .timeInvoiceEnd(invoiceTimeInvoiceEnd)
@@ -881,7 +881,7 @@ public final class OspGatewayFunctions {
      *         final var testInvoices = OspGatewayFunctions.getInvoices(GetInvoicesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(invoiceOspHomeRegion)
-     *             .invoiceId(testInvoice.id())
+     *             .invoiceId(testInvoice.get("id"))
      *             .searchText(invoiceSearchText)
      *             .statuses(invoiceStatus)
      *             .timeInvoiceEnd(invoiceTimeInvoiceEnd)
@@ -932,7 +932,7 @@ public final class OspGatewayFunctions {
      *         final var testInvoices = OspGatewayFunctions.getInvoices(GetInvoicesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(invoiceOspHomeRegion)
-     *             .invoiceId(testInvoice.id())
+     *             .invoiceId(testInvoice.get("id"))
      *             .searchText(invoiceSearchText)
      *             .statuses(invoiceStatus)
      *             .timeInvoiceEnd(invoiceTimeInvoiceEnd)
@@ -982,7 +982,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoicesInvoiceLine = OspGatewayFunctions.getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoice.id())
+     *             .internalInvoiceId(testInvoice.get("id"))
      *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
      *             .build());
      * 
@@ -1026,7 +1026,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoicesInvoiceLine = OspGatewayFunctions.getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoice.id())
+     *             .internalInvoiceId(testInvoice.get("id"))
      *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
      *             .build());
      * 
@@ -1070,7 +1070,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoicesInvoiceLine = OspGatewayFunctions.getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoice.id())
+     *             .internalInvoiceId(testInvoice.get("id"))
      *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
      *             .build());
      * 
@@ -1114,7 +1114,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoicesInvoiceLine = OspGatewayFunctions.getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoice.id())
+     *             .internalInvoiceId(testInvoice.get("id"))
      *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
      *             .build());
      * 
@@ -1158,7 +1158,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoicesInvoiceLine = OspGatewayFunctions.getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoice.id())
+     *             .internalInvoiceId(testInvoice.get("id"))
      *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
      *             .build());
      * 
@@ -1202,7 +1202,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoicesInvoiceLines = OspGatewayFunctions.getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoice.id())
+     *             .internalInvoiceId(testInvoice.get("id"))
      *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
      *             .build());
      * 
@@ -1246,7 +1246,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoicesInvoiceLines = OspGatewayFunctions.getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoice.id())
+     *             .internalInvoiceId(testInvoice.get("id"))
      *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
      *             .build());
      * 
@@ -1290,7 +1290,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoicesInvoiceLines = OspGatewayFunctions.getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoice.id())
+     *             .internalInvoiceId(testInvoice.get("id"))
      *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
      *             .build());
      * 
@@ -1334,7 +1334,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoicesInvoiceLines = OspGatewayFunctions.getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoice.id())
+     *             .internalInvoiceId(testInvoice.get("id"))
      *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
      *             .build());
      * 
@@ -1378,7 +1378,7 @@ public final class OspGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInvoicesInvoiceLines = OspGatewayFunctions.getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .internalInvoiceId(testInvoice.id())
+     *             .internalInvoiceId(testInvoice.get("id"))
      *             .ospHomeRegion(invoicesInvoiceLineOspHomeRegion)
      *             .build());
      * 
@@ -1423,7 +1423,7 @@ public final class OspGatewayFunctions {
      *         final var testSubscription = OspGatewayFunctions.getSubscription(GetSubscriptionArgs.builder()
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(subscriptionOspHomeRegion)
-     *             .subscriptionId(testSubscriptionOciOspGatewaySubscription.id())
+     *             .subscriptionId(testSubscriptionOciOspGatewaySubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1467,7 +1467,7 @@ public final class OspGatewayFunctions {
      *         final var testSubscription = OspGatewayFunctions.getSubscription(GetSubscriptionArgs.builder()
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(subscriptionOspHomeRegion)
-     *             .subscriptionId(testSubscriptionOciOspGatewaySubscription.id())
+     *             .subscriptionId(testSubscriptionOciOspGatewaySubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1511,7 +1511,7 @@ public final class OspGatewayFunctions {
      *         final var testSubscription = OspGatewayFunctions.getSubscription(GetSubscriptionArgs.builder()
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(subscriptionOspHomeRegion)
-     *             .subscriptionId(testSubscriptionOciOspGatewaySubscription.id())
+     *             .subscriptionId(testSubscriptionOciOspGatewaySubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1555,7 +1555,7 @@ public final class OspGatewayFunctions {
      *         final var testSubscription = OspGatewayFunctions.getSubscription(GetSubscriptionArgs.builder()
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(subscriptionOspHomeRegion)
-     *             .subscriptionId(testSubscriptionOciOspGatewaySubscription.id())
+     *             .subscriptionId(testSubscriptionOciOspGatewaySubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -1599,7 +1599,7 @@ public final class OspGatewayFunctions {
      *         final var testSubscription = OspGatewayFunctions.getSubscription(GetSubscriptionArgs.builder()
      *             .compartmentId(compartmentId)
      *             .ospHomeRegion(subscriptionOspHomeRegion)
-     *             .subscriptionId(testSubscriptionOciOspGatewaySubscription.id())
+     *             .subscriptionId(testSubscriptionOciOspGatewaySubscription.get("id"))
      *             .build());
      * 
      *     }

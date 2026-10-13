@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testByolAllocation = new ByolAllocation("testByolAllocation", ByolAllocationArgs.builder()
  *             .allocatedUnits(byolAllocationAllocatedUnits)
- *             .byolId(testByol.id())
+ *             .byolId(testByol.get("id"))
  *             .compartmentId(compartmentId)
  *             .displayName(byolAllocationDisplayName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

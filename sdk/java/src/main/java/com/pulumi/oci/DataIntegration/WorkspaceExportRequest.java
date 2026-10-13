@@ -52,14 +52,14 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testWorkspaceExportRequest = new WorkspaceExportRequest("testWorkspaceExportRequest", WorkspaceExportRequestArgs.builder()
  *             .bucket(workspaceExportRequestBucket)
- *             .workspaceId(testWorkspace.id())
+ *             .workspaceId(testWorkspace.get("id"))
  *             .areReferencesIncluded(workspaceExportRequestAreReferencesIncluded)
  *             .fileName(workspaceExportRequestFileName)
  *             .filters(workspaceExportRequestFilters)
  *             .isObjectOverwriteEnabled(workspaceExportRequestIsObjectOverwriteEnabled)
  *             .objectKeys(workspaceExportRequestObjectKeys)
  *             .objectStorageRegion(workspaceExportRequestObjectStorageRegion)
- *             .objectStorageTenancyId(testTenancy.id())
+ *             .objectStorageTenancyId(testTenancy.get("id"))
  *             .build());
  * 
  *     }

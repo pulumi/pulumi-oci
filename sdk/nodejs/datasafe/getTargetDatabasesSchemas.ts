@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testTargetDatabasesSchemas = oci.datasafe.getTargetDatabasesSchemas({
  *     targetDatabaseId: testTargetDatabase.id,
- *     isOracleMaintained: targetDatabasesSchemaIsOracleMaintained === "true",
+ *     isOracleMaintained: targetDatabasesSchemaIsOracleMaintained,
  *     schemaNames: targetDatabasesSchemaSchemaName,
  *     schemaNameContains: targetDatabasesSchemaSchemaNameContains,
  * });
@@ -96,7 +96,7 @@ export interface GetTargetDatabasesSchemasResult {
  *
  * const testTargetDatabasesSchemas = oci.datasafe.getTargetDatabasesSchemas({
  *     targetDatabaseId: testTargetDatabase.id,
- *     isOracleMaintained: targetDatabasesSchemaIsOracleMaintained === "true",
+ *     isOracleMaintained: targetDatabasesSchemaIsOracleMaintained,
  *     schemaNames: targetDatabasesSchemaSchemaName,
  *     schemaNameContains: targetDatabasesSchemaSchemaNameContains,
  * });

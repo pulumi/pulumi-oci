@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Identity
     ///         {
     ///             "urn:ietf:params:scim:schemas:core:2.0:Group",
     ///         },
-    ///         AttributeSets = new[] {},
+    ///         AttributeSets = new() {},
     ///         Attributes = "",
     ///         Authorization = groupAuthorization,
     ///         ExternalId = "externalId",

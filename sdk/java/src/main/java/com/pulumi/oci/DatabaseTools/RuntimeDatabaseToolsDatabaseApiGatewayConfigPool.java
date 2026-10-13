@@ -48,8 +48,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDatabaseToolsDatabaseApiGatewayConfigPool = new RuntimeDatabaseToolsDatabaseApiGatewayConfigPool("testDatabaseToolsDatabaseApiGatewayConfigPool", RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs.builder()
- *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
- *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+ *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
+ *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
  *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolDisplayName)
  *             .poolRouteValue(databaseToolsDatabaseApiGatewayConfigPoolPoolRouteValue)
  *             .type(databaseToolsDatabaseApiGatewayConfigPoolType)

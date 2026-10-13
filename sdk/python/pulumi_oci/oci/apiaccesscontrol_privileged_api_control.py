@@ -584,7 +584,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             resource_type=privileged_api_control_resource_type,
             approver_group_level_lists=[{
                 "group_ids": test_group["id"],
-                "group_level": int(privileged_api_control_approver_group_level_list_group_level),
+                "group_level": privileged_api_control_approver_group_level_list_group_level,
             }],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -594,7 +594,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            number_of_approvers=int(privileged_api_control_number_of_approvers),
+            number_of_approvers=privileged_api_control_number_of_approvers,
             resources=privileged_api_control_resources)
         ```
 
@@ -657,7 +657,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             resource_type=privileged_api_control_resource_type,
             approver_group_level_lists=[{
                 "group_ids": test_group["id"],
-                "group_level": int(privileged_api_control_approver_group_level_list_group_level),
+                "group_level": privileged_api_control_approver_group_level_list_group_level,
             }],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -667,7 +667,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            number_of_approvers=int(privileged_api_control_number_of_approvers),
+            number_of_approvers=privileged_api_control_number_of_approvers,
             resources=privileged_api_control_resources)
         ```
 

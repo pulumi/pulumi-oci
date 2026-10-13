@@ -49,10 +49,10 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyMappedSecret = new NetworkFirewallPolicyMappedSecret("testNetworkFirewallPolicyMappedSecret", NetworkFirewallPolicyMappedSecretArgs.builder()
  *             .name(networkFirewallPolicyMappedSecretName)
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
  *             .source(networkFirewallPolicyMappedSecretSource)
  *             .type(networkFirewallPolicyMappedSecretType)
- *             .vaultSecretId(testSecret.id())
+ *             .vaultSecretId(testSecret.get("id"))
  *             .versionNumber(networkFirewallPolicyMappedSecretVersionNumber)
  *             .description(networkFirewallPolicyMappedSecretDescription)
  *             .build());

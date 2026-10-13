@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMyCustomerSecretKey = new DomainsMyCustomerSecretKey("testMyCustomerSecretKey", DomainsMyCustomerSecretKeyArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey")
  *             .authorization(myCustomerSecretKeyAuthorization)
  *             .description(myCustomerSecretKeyDescription)

@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     configSourceType: catalogItemConfigSourceType,
  *     displayName: catalogItemDisplayName,
  *     packageType: catalogItemPackageType,
- *     shouldListPublicItems: catalogItemShouldListPublicItems === "true",
+ *     shouldListPublicItems: catalogItemShouldListPublicItems,
  *     state: catalogItemState,
  * });
  * ```
@@ -141,7 +141,7 @@ export interface GetCatalogItemsResult {
  *     configSourceType: catalogItemConfigSourceType,
  *     displayName: catalogItemDisplayName,
  *     packageType: catalogItemPackageType,
- *     shouldListPublicItems: catalogItemShouldListPublicItems === "true",
+ *     shouldListPublicItems: catalogItemShouldListPublicItems,
  *     state: catalogItemState,
  * });
  * ```

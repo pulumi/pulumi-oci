@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testSubsettingAnalytics = oci.datasafe.getSubsettingAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: subsettingAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: subsettingAnalyticCompartmentIdInSubtree,
  *     groupBy: subsettingAnalyticGroupBy,
  *     subsettingPolicyId: testSubsettingPolicy.id,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
@@ -129,7 +129,7 @@ export interface GetSubsettingAnalyticsResult {
  *
  * const testSubsettingAnalytics = oci.datasafe.getSubsettingAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: subsettingAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: subsettingAnalyticCompartmentIdInSubtree,
  *     groupBy: subsettingAnalyticGroupBy,
  *     subsettingPolicyId: testSubsettingPolicy.id,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,

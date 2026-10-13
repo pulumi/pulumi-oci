@@ -31,8 +31,8 @@ import * as utilities from "../utilities";
  *         intermediateCas: identityPropagationTrustCaCertChainIntermediateCas,
  *     },
  *     accountId: "accountId",
- *     active: identityPropagationTrustActive === "true",
- *     allowImpersonation: identityPropagationTrustAllowImpersonation === "true",
+ *     active: identityPropagationTrustActive,
+ *     allowImpersonation: identityPropagationTrustAllowImpersonation,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityPropagationTrustAuthorization,
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *     }],
  *     clientClaimName: identityPropagationTrustClientClaimName,
  *     clientClaimValues: ["clientClaimValues"],
- *     clockSkewSeconds: Number(identityPropagationTrustClockSkewSeconds),
+ *     clockSkewSeconds: identityPropagationTrustClockSkewSeconds,
  *     description: identityPropagationTrustDescription,
  *     impersonatingResource: identityPropagationTrustImpersonatingResource,
  *     impersonationServiceUsers: [{
@@ -53,7 +53,7 @@ import * as utilities from "../utilities";
  *     }],
  *     keytab: {
  *         secretOcid: identityPropagationTrustKeytabSecretOcid,
- *         secretVersion: Number(identityPropagationTrustKeytabSecretVersion),
+ *         secretVersion: identityPropagationTrustKeytabSecretVersion,
  *     },
  *     oauthClients: ["oauthClients"],
  *     ocid: identityPropagationTrustOcid,

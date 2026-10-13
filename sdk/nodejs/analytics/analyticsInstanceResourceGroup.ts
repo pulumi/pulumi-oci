@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testAnalyticsInstanceResourceGroup = new oci.analytics.AnalyticsInstanceResourceGroup("test_analytics_instance_resource_group", {
  *     analyticsInstanceId: testAnalyticsInstance.id,
- *     capacity: Number(analyticsInstanceResourceGroupCapacity),
+ *     capacity: analyticsInstanceResourceGroupCapacity,
  *     resourceName: testResource.name,
  *     description: analyticsInstanceResourceGroupDescription,
  *     displayName: analyticsInstanceResourceGroupDisplayName,

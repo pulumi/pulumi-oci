@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Identity
     ///         {
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:apikey",
     ///         },
-    ///         AttributeSets = new[] {},
+    ///         AttributeSets = new() {},
     ///         Attributes = "",
     ///         Authorization = apiKeyAuthorization,
     ///         Description = apiKeyDescription,

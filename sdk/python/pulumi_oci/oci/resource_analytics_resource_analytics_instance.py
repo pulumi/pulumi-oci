@@ -549,7 +549,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
             },
             compartment_id=compartment_id,
             subnet_id=test_subnet["id"],
-            compute_count=int(resource_analytics_instance_compute_count),
+            compute_count=resource_analytics_instance_compute_count,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -558,7 +558,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_mutual_tls_required=resource_analytics_instance_is_mutual_tls_required == "true",
+            is_mutual_tls_required=resource_analytics_instance_is_mutual_tls_required,
             license_model=resource_analytics_instance_license_model,
             nsg_ids=resource_analytics_instance_nsg_ids)
         ```
@@ -617,7 +617,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
             },
             compartment_id=compartment_id,
             subnet_id=test_subnet["id"],
-            compute_count=int(resource_analytics_instance_compute_count),
+            compute_count=resource_analytics_instance_compute_count,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -626,7 +626,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_mutual_tls_required=resource_analytics_instance_is_mutual_tls_required == "true",
+            is_mutual_tls_required=resource_analytics_instance_is_mutual_tls_required,
             license_model=resource_analytics_instance_license_model,
             nsg_ids=resource_analytics_instance_nsg_ids)
         ```

@@ -32,7 +32,7 @@ import (
 //			_, err := datasafe.GetTargetDatabasesSchemas(ctx, &datasafe.GetTargetDatabasesSchemasArgs{
 //				TargetDatabaseId:   testTargetDatabase.Id,
 //				IsOracleMaintained: pulumi.BoolRef(targetDatabasesSchemaIsOracleMaintained),
-//				SchemaNames:        pulumi.ToArray(targetDatabasesSchemaSchemaName),
+//				SchemaNames:        targetDatabasesSchemaSchemaName,
 //				SchemaNameContains: pulumi.StringRef(targetDatabasesSchemaSchemaNameContains),
 //			}, nil)
 //			if err != nil {

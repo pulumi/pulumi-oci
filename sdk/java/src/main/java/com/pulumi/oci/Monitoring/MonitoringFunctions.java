@@ -74,7 +74,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
-     *             .alarmId(testAlarmOciMonitoringAlarm.id())
+     *             .alarmId(testAlarmOciMonitoringAlarm.get("id"))
      *             .build());
      * 
      *     }
@@ -124,7 +124,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
-     *             .alarmId(testAlarmOciMonitoringAlarm.id())
+     *             .alarmId(testAlarmOciMonitoringAlarm.get("id"))
      *             .build());
      * 
      *     }
@@ -174,7 +174,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
-     *             .alarmId(testAlarmOciMonitoringAlarm.id())
+     *             .alarmId(testAlarmOciMonitoringAlarm.get("id"))
      *             .build());
      * 
      *     }
@@ -224,7 +224,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
-     *             .alarmId(testAlarmOciMonitoringAlarm.id())
+     *             .alarmId(testAlarmOciMonitoringAlarm.get("id"))
      *             .build());
      * 
      *     }
@@ -274,7 +274,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
-     *             .alarmId(testAlarmOciMonitoringAlarm.id())
+     *             .alarmId(testAlarmOciMonitoringAlarm.get("id"))
      *             .build());
      * 
      *     }
@@ -324,7 +324,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .alarmHistorytype(alarmHistoryCollectionAlarmHistorytype)
      *             .timestampGreaterThanOrEqualTo(alarmHistoryCollectionTimestampGreaterThanOrEqualTo)
      *             .timestampLessThan(alarmHistoryCollectionTimestampLessThan)
@@ -377,7 +377,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .alarmHistorytype(alarmHistoryCollectionAlarmHistorytype)
      *             .timestampGreaterThanOrEqualTo(alarmHistoryCollectionTimestampGreaterThanOrEqualTo)
      *             .timestampLessThan(alarmHistoryCollectionTimestampLessThan)
@@ -430,7 +430,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .alarmHistorytype(alarmHistoryCollectionAlarmHistorytype)
      *             .timestampGreaterThanOrEqualTo(alarmHistoryCollectionTimestampGreaterThanOrEqualTo)
      *             .timestampLessThan(alarmHistoryCollectionTimestampLessThan)
@@ -483,7 +483,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .alarmHistorytype(alarmHistoryCollectionAlarmHistorytype)
      *             .timestampGreaterThanOrEqualTo(alarmHistoryCollectionTimestampGreaterThanOrEqualTo)
      *             .timestampLessThan(alarmHistoryCollectionTimestampLessThan)
@@ -536,7 +536,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .alarmHistorytype(alarmHistoryCollectionAlarmHistorytype)
      *             .timestampGreaterThanOrEqualTo(alarmHistoryCollectionTimestampGreaterThanOrEqualTo)
      *             .timestampLessThan(alarmHistoryCollectionTimestampLessThan)
@@ -596,9 +596,9 @@ public final class MonitoringFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmStatusCompartmentIdInSubtree)
      *             .displayName(alarmStatusDisplayName)
-     *             .entityId(testEntity.id())
-     *             .resourceId(testResource.id())
-     *             .serviceName(testService.name())
+     *             .entityId(testEntity.get("id"))
+     *             .resourceId(testResource.get("id"))
+     *             .serviceName(testService.get("name"))
      *             .status(alarmStatusStatus)
      *             .build());
      * 
@@ -656,9 +656,9 @@ public final class MonitoringFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmStatusCompartmentIdInSubtree)
      *             .displayName(alarmStatusDisplayName)
-     *             .entityId(testEntity.id())
-     *             .resourceId(testResource.id())
-     *             .serviceName(testService.name())
+     *             .entityId(testEntity.get("id"))
+     *             .resourceId(testResource.get("id"))
+     *             .serviceName(testService.get("name"))
      *             .status(alarmStatusStatus)
      *             .build());
      * 
@@ -716,9 +716,9 @@ public final class MonitoringFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmStatusCompartmentIdInSubtree)
      *             .displayName(alarmStatusDisplayName)
-     *             .entityId(testEntity.id())
-     *             .resourceId(testResource.id())
-     *             .serviceName(testService.name())
+     *             .entityId(testEntity.get("id"))
+     *             .resourceId(testResource.get("id"))
+     *             .serviceName(testService.get("name"))
      *             .status(alarmStatusStatus)
      *             .build());
      * 
@@ -776,9 +776,9 @@ public final class MonitoringFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmStatusCompartmentIdInSubtree)
      *             .displayName(alarmStatusDisplayName)
-     *             .entityId(testEntity.id())
-     *             .resourceId(testResource.id())
-     *             .serviceName(testService.name())
+     *             .entityId(testEntity.get("id"))
+     *             .resourceId(testResource.get("id"))
+     *             .serviceName(testService.get("name"))
      *             .status(alarmStatusStatus)
      *             .build());
      * 
@@ -836,9 +836,9 @@ public final class MonitoringFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmStatusCompartmentIdInSubtree)
      *             .displayName(alarmStatusDisplayName)
-     *             .entityId(testEntity.id())
-     *             .resourceId(testResource.id())
-     *             .serviceName(testService.name())
+     *             .entityId(testEntity.get("id"))
+     *             .resourceId(testResource.get("id"))
+     *             .serviceName(testService.get("name"))
      *             .status(alarmStatusStatus)
      *             .build());
      * 
@@ -889,7 +889,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
-     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.id())
+     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.get("id"))
      *             .build());
      * 
      *     }
@@ -939,7 +939,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
-     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.id())
+     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.get("id"))
      *             .build());
      * 
      *     }
@@ -989,7 +989,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
-     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.id())
+     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.get("id"))
      *             .build());
      * 
      *     }
@@ -1039,7 +1039,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
-     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.id())
+     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.get("id"))
      *             .build());
      * 
      *     }
@@ -1089,7 +1089,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
-     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.id())
+     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.get("id"))
      *             .build());
      * 
      *     }
@@ -1139,7 +1139,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
      *             .displayName(alarmSuppressionDisplayName)
@@ -1196,7 +1196,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
      *             .displayName(alarmSuppressionDisplayName)
@@ -1253,7 +1253,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
      *             .displayName(alarmSuppressionDisplayName)
@@ -1310,7 +1310,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
      *             .displayName(alarmSuppressionDisplayName)
@@ -1367,7 +1367,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
      *             .displayName(alarmSuppressionDisplayName)
@@ -1424,7 +1424,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
      *             .displayName(alarmSuppressionDisplayName)
@@ -1481,7 +1481,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
-     *             .alarmId(testAlarm.id())
+     *             .alarmId(testAlarm.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
      *             .displayName(alarmSuppressionDisplayName)

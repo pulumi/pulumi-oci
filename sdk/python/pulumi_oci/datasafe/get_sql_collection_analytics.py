@@ -196,7 +196,7 @@ def get_sql_collection_analytics(access_level: Optional[_builtins.str] = None,
 
     test_sql_collection_analytics = oci.datasafe.get_sql_collection_analytics(compartment_id=compartment_id,
         access_level=sql_collection_analytic_access_level,
-        compartment_id_in_subtree=sql_collection_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sql_collection_analytic_compartment_id_in_subtree,
         group_bies=sql_collection_analytic_group_by,
         state=sql_collection_analytic_state,
         target_database_group_id=test_target_database_group["id"],
@@ -280,7 +280,7 @@ def get_sql_collection_analytics_output(access_level: pulumi.Input[Optional[Opti
 
     test_sql_collection_analytics = oci.datasafe.get_sql_collection_analytics(compartment_id=compartment_id,
         access_level=sql_collection_analytic_access_level,
-        compartment_id_in_subtree=sql_collection_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sql_collection_analytic_compartment_id_in_subtree,
         group_bies=sql_collection_analytic_group_by,
         state=sql_collection_analytic_state,
         target_database_group_id=test_target_database_group["id"],

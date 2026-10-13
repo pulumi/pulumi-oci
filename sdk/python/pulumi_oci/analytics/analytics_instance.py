@@ -710,7 +710,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         test_analytics_instance = oci.analytics.AnalyticsInstance("test_analytics_instance",
             capacity={
                 "capacity_type": analytics_instance_capacity_capacity_type,
-                "capacity_value": int(analytics_instance_capacity_capacity_value),
+                "capacity_value": analytics_instance_capacity_capacity_value,
             },
             compartment_id=compartment_id,
             feature_set=analytics_instance_feature_set,
@@ -800,7 +800,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         test_analytics_instance = oci.analytics.AnalyticsInstance("test_analytics_instance",
             capacity={
                 "capacity_type": analytics_instance_capacity_capacity_type,
-                "capacity_value": int(analytics_instance_capacity_capacity_value),
+                "capacity_value": analytics_instance_capacity_capacity_value,
             },
             compartment_id=compartment_id,
             feature_set=analytics_instance_feature_set,

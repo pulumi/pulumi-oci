@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testIotDomainChangeDataRetentionPeriod = new IotIotDomainChangeDataRetentionPeriod("testIotDomainChangeDataRetentionPeriod", IotIotDomainChangeDataRetentionPeriodArgs.builder()
  *             .dataRetentionPeriodInDays(iotDomainChangeDataRetentionPeriodDataRetentionPeriodInDays)
- *             .iotDomainId(testIotDomain.id())
+ *             .iotDomainId(testIotDomain.get("id"))
  *             .type(iotDomainChangeDataRetentionPeriodType)
  *             .build());
  * 

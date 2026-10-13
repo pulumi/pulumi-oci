@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Identity
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:PasswordPolicy",
     ///         },
     ///         AllowedChars = passwordPolicyAllowedChars,
-    ///         AttributeSets = new[] {},
+    ///         AttributeSets = new() {},
     ///         Attributes = "",
     ///         Authorization = passwordPolicyAuthorization,
     ///         Description = passwordPolicyDescription,

@@ -132,7 +132,7 @@ import javax.annotation.Nullable;
  *                 .memoryInGbs(containerInstanceShapeConfigMemoryInGbs)
  *                 .build())
  *             .vnics(ContainerInstanceVnicArgs.builder()
- *                 .subnetId(testSubnet.id())
+ *                 .subnetId(testSubnet.get("id"))
  *                 .definedTags(containerInstanceVnicsDefinedTags)
  *                 .displayName(containerInstanceVnicsDisplayName)
  *                 .freeformTags(containerInstanceVnicsFreeformTags)
@@ -157,7 +157,7 @@ import javax.annotation.Nullable;
  *                 .registryEndpoint(containerInstanceImagePullSecretsRegistryEndpoint)
  *                 .secretType(containerInstanceImagePullSecretsSecretType)
  *                 .password(containerInstanceImagePullSecretsPassword)
- *                 .secretId(testSecret.id())
+ *                 .secretId(testSecret.get("id"))
  *                 .username(containerInstanceImagePullSecretsUsername)
  *                 .build())
  *             .securityContext(ContainerInstanceSecurityContextArgs.builder()
@@ -192,7 +192,7 @@ import javax.annotation.Nullable;
  *                     .auth(containerInstanceVolumesSecurityAuth)
  *                     .isEncryptedInTransit(containerInstanceVolumesSecurityIsEncryptedInTransit)
  *                     .build())
- *                 .subnetId(testSubnet.id())
+ *                 .subnetId(testSubnet.get("id"))
  *                 .build())
  *             .build());
  * 

@@ -51,13 +51,13 @@ import javax.annotation.Nullable;
  *         var testVlan = new Vlan("testVlan", VlanArgs.builder()
  *             .cidrBlock(vlanCidrBlock)
  *             .compartmentId(compartmentId)
- *             .vcnId(testVcn.id())
+ *             .vcnId(testVcn.get("id"))
  *             .availabilityDomain(vlanAvailabilityDomain)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(vlanDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .nsgIds(vlanNsgIds)
- *             .routeTableId(testRouteTable.id())
+ *             .routeTableId(testRouteTable.get("id"))
  *             .vlanTag(vlanVlanTag)
  *             .build());
  * 

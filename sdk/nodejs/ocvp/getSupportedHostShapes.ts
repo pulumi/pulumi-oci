@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSupportedHostShapes = oci.ocvp.getSupportedHostShapes({
  *     compartmentId: compartmentId,
  *     initialHostShapeName: testShape.name,
- *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported === "true",
+ *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported,
  *     name: supportedHostShapeName,
  * });
  * ```
@@ -108,7 +108,7 @@ export interface GetSupportedHostShapesResult {
  * const testSupportedHostShapes = oci.ocvp.getSupportedHostShapes({
  *     compartmentId: compartmentId,
  *     initialHostShapeName: testShape.name,
- *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported === "true",
+ *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported,
  *     name: supportedHostShapeName,
  * });
  * ```

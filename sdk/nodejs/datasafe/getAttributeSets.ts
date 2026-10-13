@@ -35,10 +35,10 @@ import * as utilities from "../utilities";
  *     accessLevel: attributeSetAccessLevel,
  *     attributeSetId: testAttributeSet.id,
  *     attributeSetType: attributeSetAttributeSetType,
- *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree,
  *     displayName: attributeSetDisplayName,
  *     inUse: attributeSetInUse,
- *     isUserDefined: attributeSetIsUserDefined === "true",
+ *     isUserDefined: attributeSetIsUserDefined,
  *     state: attributeSetState,
  * });
  * ```
@@ -172,10 +172,10 @@ export interface GetAttributeSetsResult {
  *     accessLevel: attributeSetAccessLevel,
  *     attributeSetId: testAttributeSet.id,
  *     attributeSetType: attributeSetAttributeSetType,
- *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree,
  *     displayName: attributeSetDisplayName,
  *     inUse: attributeSetInUse,
- *     isUserDefined: attributeSetIsUserDefined === "true",
+ *     isUserDefined: attributeSetIsUserDefined,
  *     state: attributeSetState,
  * });
  * ```

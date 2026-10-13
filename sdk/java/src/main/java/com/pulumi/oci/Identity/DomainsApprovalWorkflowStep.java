@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testApprovalWorkflowStep = new DomainsApprovalWorkflowStep("testApprovalWorkflowStep", DomainsApprovalWorkflowStepArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .order(approvalWorkflowStepOrder)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowStep")
  *             .type(approvalWorkflowStepType)

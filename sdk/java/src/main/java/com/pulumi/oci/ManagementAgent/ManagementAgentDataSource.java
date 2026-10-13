@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testManagementAgentDataSource = new ManagementAgentDataSource("testManagementAgentDataSource", ManagementAgentDataSourceArgs.builder()
  *             .compartmentId(compartmentId)
- *             .managementAgentId(testManagementAgent.id())
+ *             .managementAgentId(testManagementAgent.get("id"))
  *             .name(managementAgentDataSourceName)
  *             .type(managementAgentDataSourceType)
  *             .url(managementAgentDataSourceUrl)

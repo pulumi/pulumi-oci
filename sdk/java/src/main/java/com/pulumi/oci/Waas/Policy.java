@@ -110,7 +110,7 @@ import javax.annotation.Nullable;
  *                 .httpsPort(waasPolicyOriginsHttpsPort)
  *                 .build())
  *             .policyConfig(PolicyPolicyConfigArgs.builder()
- *                 .certificateId(testCertificate.id())
+ *                 .certificateId(testCertificate.get("id"))
  *                 .cipherGroup(waasPolicyPolicyConfigCipherGroup)
  *                 .clientAddressHeader(waasPolicyPolicyConfigClientAddressHeader)
  *                 .healthChecks(PolicyPolicyConfigHealthChecksArgs.builder()

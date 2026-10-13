@@ -51,10 +51,10 @@ import javax.annotation.Nullable;
  *         var testMonitoredResourcesSearchAssociation = new MonitoredResourcesSearchAssociation("testMonitoredResourcesSearchAssociation", MonitoredResourcesSearchAssociationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .associationType(monitoredResourcesSearchAssociationAssociationType)
- *             .destinationResourceId(testDestinationResource.id())
+ *             .destinationResourceId(testDestinationResource.get("id"))
  *             .destinationResourceName(monitoredResourcesSearchAssociationDestinationResourceName)
  *             .destinationResourceType(monitoredResourcesSearchAssociationDestinationResourceType)
- *             .sourceResourceId(testSourceResource.id())
+ *             .sourceResourceId(testSourceResource.get("id"))
  *             .sourceResourceName(monitoredResourcesSearchAssociationSourceResourceName)
  *             .sourceResourceType(monitoredResourcesSearchAssociationSourceResourceType)
  *             .build());

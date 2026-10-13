@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testComplianceRecordCounts = oci.fleetappsmanagement.getComplianceRecordCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: complianceRecordCountCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: complianceRecordCountCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -77,7 +77,7 @@ export interface GetComplianceRecordCountsResult {
  *
  * const testComplianceRecordCounts = oci.fleetappsmanagement.getComplianceRecordCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: complianceRecordCountCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: complianceRecordCountCompartmentIdInSubtree,
  * });
  * ```
  */

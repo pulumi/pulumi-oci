@@ -34,8 +34,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetSubsettingPolicySubsettingRules(ctx, &datasafe.GetSubsettingPolicySubsettingRulesArgs{
 //				SubsettingPolicyId: testSubsettingPolicy.Id,
-//				Objects:            pulumi.ToArray(subsettingPolicySubsettingRuleObject),
-//				SchemaNames:        pulumi.ToArray(subsettingPolicySubsettingRuleSchemaName),
+//				Objects:            subsettingPolicySubsettingRuleObject,
+//				SchemaNames:        subsettingPolicySubsettingRuleSchemaName,
 //			}, nil)
 //			if err != nil {
 //				return err

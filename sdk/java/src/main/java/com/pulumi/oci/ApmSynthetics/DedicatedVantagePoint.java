@@ -51,12 +51,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDedicatedVantagePoint = new DedicatedVantagePoint("testDedicatedVantagePoint", DedicatedVantagePointArgs.builder()
- *             .apmDomainId(testApmDomain.id())
+ *             .apmDomainId(testApmDomain.get("id"))
  *             .displayName(dedicatedVantagePointDisplayName)
  *             .dvpStackDetails(DedicatedVantagePointDvpStackDetailsArgs.builder()
- *                 .dvpStackId(testStack.id())
+ *                 .dvpStackId(testStack.get("id"))
  *                 .dvpStackType(dedicatedVantagePointDvpStackDetailsDvpStackType)
- *                 .dvpStreamId(testStream.id())
+ *                 .dvpStreamId(testStream.get("id"))
  *                 .dvpVersion(dedicatedVantagePointDvpStackDetailsDvpVersion)
  *                 .build())
  *             .region(dedicatedVantagePointRegion)

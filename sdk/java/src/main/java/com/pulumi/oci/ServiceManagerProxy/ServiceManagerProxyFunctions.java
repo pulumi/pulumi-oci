@@ -49,7 +49,7 @@ public final class ServiceManagerProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id())
+     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -92,7 +92,7 @@ public final class ServiceManagerProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id())
+     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -135,7 +135,7 @@ public final class ServiceManagerProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id())
+     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -178,7 +178,7 @@ public final class ServiceManagerProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id())
+     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -221,7 +221,7 @@ public final class ServiceManagerProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id())
+     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -266,7 +266,7 @@ public final class ServiceManagerProxyFunctions {
      *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(serviceEnvironmentDisplayName)
-     *             .serviceEnvironmentId(testServiceEnvironment.id())
+     *             .serviceEnvironmentId(testServiceEnvironment.get("id"))
      *             .serviceEnvironmentType(serviceEnvironmentServiceEnvironmentType)
      *             .build());
      * 
@@ -312,7 +312,7 @@ public final class ServiceManagerProxyFunctions {
      *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(serviceEnvironmentDisplayName)
-     *             .serviceEnvironmentId(testServiceEnvironment.id())
+     *             .serviceEnvironmentId(testServiceEnvironment.get("id"))
      *             .serviceEnvironmentType(serviceEnvironmentServiceEnvironmentType)
      *             .build());
      * 
@@ -358,7 +358,7 @@ public final class ServiceManagerProxyFunctions {
      *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(serviceEnvironmentDisplayName)
-     *             .serviceEnvironmentId(testServiceEnvironment.id())
+     *             .serviceEnvironmentId(testServiceEnvironment.get("id"))
      *             .serviceEnvironmentType(serviceEnvironmentServiceEnvironmentType)
      *             .build());
      * 
@@ -404,7 +404,7 @@ public final class ServiceManagerProxyFunctions {
      *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(serviceEnvironmentDisplayName)
-     *             .serviceEnvironmentId(testServiceEnvironment.id())
+     *             .serviceEnvironmentId(testServiceEnvironment.get("id"))
      *             .serviceEnvironmentType(serviceEnvironmentServiceEnvironmentType)
      *             .build());
      * 
@@ -450,7 +450,7 @@ public final class ServiceManagerProxyFunctions {
      *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(serviceEnvironmentDisplayName)
-     *             .serviceEnvironmentId(testServiceEnvironment.id())
+     *             .serviceEnvironmentId(testServiceEnvironment.get("id"))
      *             .serviceEnvironmentType(serviceEnvironmentServiceEnvironmentType)
      *             .build());
      * 

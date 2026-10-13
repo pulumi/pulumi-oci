@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     planCustomItems: [{
  *         name: chargebackPlanPlanCustomItemsName,
  *         value: chargebackPlanPlanCustomItemsValue,
- *         isCustomizable: chargebackPlanPlanCustomItemsIsCustomizable === "true",
+ *         isCustomizable: chargebackPlanPlanCustomItemsIsCustomizable,
  *     }],
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",

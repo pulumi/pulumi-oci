@@ -54,10 +54,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCloudDbSystemDiscovery = new CloudDbSystemDiscovery("testCloudDbSystemDiscovery", CloudDbSystemDiscoveryArgs.builder()
- *             .agentId(testAgent.id())
+ *             .agentId(testAgent.get("id"))
  *             .cloudDbSystemDiscoveryId(cloudDbSystemDiscoveryCloudDbSystemDiscoveryId)
  *             .compartmentId(compartmentId)
- *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+ *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.get("id"))
  *             .deploymentType(cloudDbSystemDiscoveryDeploymentType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(cloudDbSystemDiscoveryDisplayName)

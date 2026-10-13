@@ -77,7 +77,7 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .serviceEntitlement(resourceQuotaServiceEntitlement)
      *             .build());
      * 
@@ -122,7 +122,7 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .serviceEntitlement(resourceQuotaServiceEntitlement)
      *             .build());
      * 
@@ -167,7 +167,7 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .serviceEntitlement(resourceQuotaServiceEntitlement)
      *             .build());
      * 
@@ -212,7 +212,7 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .serviceEntitlement(resourceQuotaServiceEntitlement)
      *             .build());
      * 
@@ -257,7 +257,7 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceName(testService.name())
+     *             .serviceName(testService.get("name"))
      *             .serviceEntitlement(resourceQuotaServiceEntitlement)
      *             .build());
      * 
@@ -302,8 +302,8 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceName(testService.name())
-     *             .entitlementId(testEntitlement.id())
+     *             .serviceName(testService.get("name"))
+     *             .entitlementId(testEntitlement.get("id"))
      *             .build());
      * 
      *     }
@@ -347,8 +347,8 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceName(testService.name())
-     *             .entitlementId(testEntitlement.id())
+     *             .serviceName(testService.get("name"))
+     *             .entitlementId(testEntitlement.get("id"))
      *             .build());
      * 
      *     }
@@ -392,8 +392,8 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceName(testService.name())
-     *             .entitlementId(testEntitlement.id())
+     *             .serviceName(testService.get("name"))
+     *             .entitlementId(testEntitlement.get("id"))
      *             .build());
      * 
      *     }
@@ -437,8 +437,8 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceName(testService.name())
-     *             .entitlementId(testEntitlement.id())
+     *             .serviceName(testService.get("name"))
+     *             .entitlementId(testEntitlement.get("id"))
      *             .build());
      * 
      *     }
@@ -482,8 +482,8 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .serviceName(testService.name())
-     *             .entitlementId(testEntitlement.id())
+     *             .serviceName(testService.get("name"))
+     *             .entitlementId(testEntitlement.get("id"))
      *             .build());
      * 
      *     }
@@ -525,8 +525,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
      *             .producttype(subscriptionProductProducttype)
      *             .build());
@@ -570,8 +570,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
      *             .producttype(subscriptionProductProducttype)
      *             .build());
@@ -615,8 +615,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
      *             .producttype(subscriptionProductProducttype)
      *             .build());
@@ -660,8 +660,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
      *             .producttype(subscriptionProductProducttype)
      *             .build());
@@ -705,8 +705,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
      *             .producttype(subscriptionProductProducttype)
      *             .build());
@@ -750,8 +750,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
      *             .producttype(subscriptionProductProducttype)
      *             .build());
@@ -795,8 +795,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
      *             .producttype(subscriptionProductProducttype)
      *             .build());
@@ -840,8 +840,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
      *             .producttype(subscriptionProductProducttype)
      *             .build());
@@ -885,8 +885,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
      *             .producttype(subscriptionProductProducttype)
      *             .build());
@@ -930,8 +930,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
      *             .producttype(subscriptionProductProducttype)
      *             .build());
@@ -975,8 +975,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1018,8 +1018,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1061,8 +1061,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1104,8 +1104,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1147,8 +1147,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1190,8 +1190,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1233,8 +1233,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1276,8 +1276,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1319,8 +1319,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1362,8 +1362,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1405,8 +1405,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
      *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
@@ -1450,8 +1450,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
      *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
@@ -1495,8 +1495,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
      *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
@@ -1540,8 +1540,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
      *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
@@ -1585,8 +1585,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
      *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
@@ -1630,8 +1630,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
      *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
@@ -1675,8 +1675,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
      *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
@@ -1720,8 +1720,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
      *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
@@ -1765,8 +1765,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
      *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
@@ -1810,8 +1810,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
      *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
@@ -1855,8 +1855,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1898,8 +1898,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1941,8 +1941,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -1984,8 +1984,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -2027,8 +2027,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -2070,8 +2070,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -2113,8 +2113,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -2156,8 +2156,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -2199,8 +2199,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -2242,8 +2242,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
-     *             .tenancyId(testTenancy.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -2286,7 +2286,7 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .limitType(usagelimitLimitType)
      *             .resourceType(usagelimitResourceType)
      *             .serviceType(usagelimitServiceType)
@@ -2332,7 +2332,7 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .limitType(usagelimitLimitType)
      *             .resourceType(usagelimitResourceType)
      *             .serviceType(usagelimitServiceType)
@@ -2378,7 +2378,7 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .limitType(usagelimitLimitType)
      *             .resourceType(usagelimitResourceType)
      *             .serviceType(usagelimitServiceType)
@@ -2424,7 +2424,7 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .limitType(usagelimitLimitType)
      *             .resourceType(usagelimitResourceType)
      *             .serviceType(usagelimitServiceType)
@@ -2470,7 +2470,7 @@ public final class UsageProxyFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .limitType(usagelimitLimitType)
      *             .resourceType(usagelimitResourceType)
      *             .serviceType(usagelimitServiceType)

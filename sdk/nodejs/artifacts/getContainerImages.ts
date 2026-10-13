@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testContainerImages = oci.artifacts.getContainerImages({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree,
  *     displayName: containerImageDisplayName,
  *     imageDigest: containerImageImageDigest,
  *     imageId: testImage.id,
- *     isVersioned: containerImageIsVersioned === "true",
+ *     isVersioned: containerImageIsVersioned,
  *     repositoryId: testRepository.id,
  *     repositoryName: testRepository.name,
  *     state: containerImageState,
@@ -150,11 +150,11 @@ export interface GetContainerImagesResult {
  *
  * const testContainerImages = oci.artifacts.getContainerImages({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree,
  *     displayName: containerImageDisplayName,
  *     imageDigest: containerImageImageDigest,
  *     imageId: testImage.id,
- *     isVersioned: containerImageIsVersioned === "true",
+ *     isVersioned: containerImageIsVersioned,
  *     repositoryId: testRepository.id,
  *     repositoryName: testRepository.name,
  *     state: containerImageState,

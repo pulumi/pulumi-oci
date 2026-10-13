@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *             .name(emailDomainName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(emailDomainDescription)
- *             .domainVerificationId(testDomainVerification.id())
+ *             .domainVerificationId(testDomainVerification.get("id"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 

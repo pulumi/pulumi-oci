@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testManagedInstanceGroupManagedInstances = oci.osmanagementhub.getManagedInstanceGroupManagedInstances({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree,
  *     displayNames: managedInstanceGroupManagedInstanceDisplayName,
  *     displayNameContains: managedInstanceGroupManagedInstanceDisplayNameContains,
  *     managedInstanceId: testManagedInstance.id,
@@ -111,7 +111,7 @@ export interface GetManagedInstanceGroupManagedInstancesResult {
  * const testManagedInstanceGroupManagedInstances = oci.osmanagementhub.getManagedInstanceGroupManagedInstances({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree,
  *     displayNames: managedInstanceGroupManagedInstanceDisplayName,
  *     displayNameContains: managedInstanceGroupManagedInstanceDisplayNameContains,
  *     managedInstanceId: testManagedInstance.id,

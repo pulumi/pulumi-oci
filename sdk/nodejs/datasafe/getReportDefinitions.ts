@@ -23,10 +23,10 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     accessLevel: reportDefinitionAccessLevel,
  *     category: reportDefinitionCategory,
- *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree,
  *     dataSource: reportDefinitionDataSource,
  *     displayName: reportDefinitionDisplayName,
- *     isSeeded: reportDefinitionIsSeeded === "true",
+ *     isSeeded: reportDefinitionIsSeeded,
  *     state: reportDefinitionState,
  * });
  * ```
@@ -142,10 +142,10 @@ export interface GetReportDefinitionsResult {
  *     compartmentId: compartmentId,
  *     accessLevel: reportDefinitionAccessLevel,
  *     category: reportDefinitionCategory,
- *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree,
  *     dataSource: reportDefinitionDataSource,
  *     displayName: reportDefinitionDisplayName,
- *     isSeeded: reportDefinitionIsSeeded === "true",
+ *     isSeeded: reportDefinitionIsSeeded,
  *     state: reportDefinitionState,
  * });
  * ```

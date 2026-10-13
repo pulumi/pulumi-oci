@@ -243,7 +243,7 @@ def get_security_assessment_security_features(access_level: Optional[_builtins.s
 
     test_security_assessment_security_features = oci.datasafe.get_security_assessment_security_features(compartment_id=compartment_id,
         access_level=security_assessment_security_feature_access_level,
-        compartment_id_in_subtree=security_assessment_security_feature_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_assessment_security_feature_compartment_id_in_subtree,
         target_id=test_target["id"],
         targets_with_column_encryption=security_assessment_security_feature_targets_with_column_encryption,
         targets_with_database_vault=security_assessment_security_feature_targets_with_database_vault,
@@ -344,7 +344,7 @@ def get_security_assessment_security_features_output(access_level: pulumi.Input[
 
     test_security_assessment_security_features = oci.datasafe.get_security_assessment_security_features(compartment_id=compartment_id,
         access_level=security_assessment_security_feature_access_level,
-        compartment_id_in_subtree=security_assessment_security_feature_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_assessment_security_feature_compartment_id_in_subtree,
         target_id=test_target["id"],
         targets_with_column_encryption=security_assessment_security_feature_targets_with_column_encryption,
         targets_with_database_vault=security_assessment_security_feature_targets_with_database_vault,

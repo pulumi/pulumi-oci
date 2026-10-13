@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  * const testCompartments = oci.identity.getCompartments({
  *     compartmentId: compartmentId,
  *     accessLevel: compartmentAccessLevel,
- *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree,
  *     name: compartmentName,
  *     state: compartmentState,
  * });
@@ -143,7 +143,7 @@ export interface GetCompartmentsResult {
  * const testCompartments = oci.identity.getCompartments({
  *     compartmentId: compartmentId,
  *     accessLevel: compartmentAccessLevel,
- *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree,
  *     name: compartmentName,
  *     state: compartmentState,
  * });

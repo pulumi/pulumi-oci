@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testApprovalWorkflowAssignments = oci.identity.getDomainsApprovalWorkflowAssignments({
  *     idcsEndpoint: testDomain.url,
- *     approvalWorkflowAssignmentCount: Number(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount),
+ *     approvalWorkflowAssignmentCount: approvalWorkflowAssignmentApprovalWorkflowAssignmentCount,
  *     approvalWorkflowAssignmentFilter: approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: approvalWorkflowAssignmentAuthorization,
  *     resourceTypeSchemaVersion: approvalWorkflowAssignmentResourceTypeSchemaVersion,
- *     startIndex: Number(approvalWorkflowAssignmentStartIndex),
+ *     startIndex: approvalWorkflowAssignmentStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsApprovalWorkflowAssignmentsResult {
  *
  * const testApprovalWorkflowAssignments = oci.identity.getDomainsApprovalWorkflowAssignments({
  *     idcsEndpoint: testDomain.url,
- *     approvalWorkflowAssignmentCount: Number(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount),
+ *     approvalWorkflowAssignmentCount: approvalWorkflowAssignmentApprovalWorkflowAssignmentCount,
  *     approvalWorkflowAssignmentFilter: approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: approvalWorkflowAssignmentAuthorization,
  *     resourceTypeSchemaVersion: approvalWorkflowAssignmentResourceTypeSchemaVersion,
- *     startIndex: Number(approvalWorkflowAssignmentStartIndex),
+ *     startIndex: approvalWorkflowAssignmentStartIndex,
  * });
  * ```
  */

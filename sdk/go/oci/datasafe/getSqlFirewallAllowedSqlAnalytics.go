@@ -46,7 +46,7 @@ import (
 //				CompartmentId:          compartmentId,
 //				AccessLevel:            pulumi.StringRef(sqlFirewallAllowedSqlAnalyticAccessLevel),
 //				CompartmentIdInSubtree: pulumi.BoolRef(sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree),
-//				GroupBies:              pulumi.ToArray(sqlFirewallAllowedSqlAnalyticGroupBy),
+//				GroupBies:              sqlFirewallAllowedSqlAnalyticGroupBy,
 //				ScimQuery:              pulumi.StringRef(sqlFirewallAllowedSqlAnalyticScimQuery),
 //			}, nil)
 //			if err != nil {

@@ -46,8 +46,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testProfileAttachLifecycleStageManagement = new ProfileAttachLifecycleStageManagement("testProfileAttachLifecycleStageManagement", ProfileAttachLifecycleStageManagementArgs.builder()
- *             .lifecycleStageId(testLifecycleStage.id())
- *             .profileId(testProfile.id())
+ *             .lifecycleStageId(testLifecycleStage.get("id"))
+ *             .profileId(testProfile.get("id"))
  *             .build());
  * 
  *     }

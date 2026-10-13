@@ -183,7 +183,7 @@ def get_security_assessment_template_association_analytics(access_level: Optiona
 
     test_security_assessment_template_association_analytics = oci.datasafe.get_security_assessment_template_association_analytics(compartment_id=compartment_id,
         access_level=security_assessment_template_association_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_template_association_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_assessment_template_association_analytic_compartment_id_in_subtree,
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         template_assessment_id=test_template_assessment["id"],
@@ -258,7 +258,7 @@ def get_security_assessment_template_association_analytics_output(access_level: 
 
     test_security_assessment_template_association_analytics = oci.datasafe.get_security_assessment_template_association_analytics(compartment_id=compartment_id,
         access_level=security_assessment_template_association_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_template_association_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_assessment_template_association_analytic_compartment_id_in_subtree,
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         template_assessment_id=test_template_assessment["id"],

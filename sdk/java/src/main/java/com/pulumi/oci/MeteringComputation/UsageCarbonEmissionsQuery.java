@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .displayName(usageCarbonEmissionsQueryQueryDefinitionDisplayName)
  *                 .reportQuery(UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs.builder()
- *                     .tenantId(testTenant.id())
+ *                     .tenantId(testTenant.get("id"))
  *                     .compartmentDepth(usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth)
  *                     .dateRangeName(usageCarbonEmissionsQueryQueryDefinitionReportQueryDateRangeName)
  *                     .emissionCalculationMethod(usageCarbonEmissionsQueryQueryDefinitionReportQueryEmissionCalculationMethod)

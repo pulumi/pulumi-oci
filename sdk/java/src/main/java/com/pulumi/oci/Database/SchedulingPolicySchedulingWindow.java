@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSchedulingPolicySchedulingWindow = new SchedulingPolicySchedulingWindow("testSchedulingPolicySchedulingWindow", SchedulingPolicySchedulingWindowArgs.builder()
- *             .schedulingPolicyId(testSchedulingPolicy.id())
+ *             .schedulingPolicyId(testSchedulingPolicy.get("id"))
  *             .windowPreference(SchedulingPolicySchedulingWindowWindowPreferenceArgs.builder()
  *                 .daysOfWeeks(SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs.builder()
  *                     .name(schedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekName)

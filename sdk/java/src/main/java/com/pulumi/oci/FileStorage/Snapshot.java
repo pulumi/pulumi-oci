@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSnapshot = new Snapshot("testSnapshot", SnapshotArgs.builder()
- *             .fileSystemId(testFileSystem.id())
+ *             .fileSystemId(testFileSystem.get("id"))
  *             .name(snapshotName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .expirationTime(snapshotExpirationTime)
@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  *             .locks(SnapshotLockArgs.builder()
  *                 .type(snapshotLocksType)
  *                 .message(snapshotLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(snapshotLocksTimeCreated)
  *                 .build())
  *             .build());

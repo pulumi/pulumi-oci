@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSslCipherSuite = new SslCipherSuite("testSslCipherSuite", SslCipherSuiteArgs.builder()
  *             .ciphers(sslCipherSuiteCiphers)
- *             .loadBalancerId(testLoadBalancer.id())
+ *             .loadBalancerId(testLoadBalancer.get("id"))
  *             .name(sslCipherSuiteName)
  *             .build());
  * 

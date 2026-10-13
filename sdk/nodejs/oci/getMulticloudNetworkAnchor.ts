@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     subscriptionId: subscriptionId,
  *     subscriptionServiceName: subscriptionServiceName,
  *     externalLocation: networkAnchorExternalLocation,
- *     shouldFetchVcnName: shouldFetchVcnName === "true",
+ *     shouldFetchVcnName: shouldFetchVcnName,
  * });
  * ```
  */
@@ -157,7 +157,7 @@ export interface GetMulticloudNetworkAnchorResult {
  *     subscriptionId: subscriptionId,
  *     subscriptionServiceName: subscriptionServiceName,
  *     externalLocation: networkAnchorExternalLocation,
- *     shouldFetchVcnName: shouldFetchVcnName === "true",
+ *     shouldFetchVcnName: shouldFetchVcnName,
  * });
  * ```
  */

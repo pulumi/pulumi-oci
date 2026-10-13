@@ -48,8 +48,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testReplicationPolicy = new ReplicationPolicy("testReplicationPolicy", ReplicationPolicyArgs.builder()
  *             .bucket(replicationPolicyBucket)
- *             .destinationBucketName(testBucket.name())
- *             .destinationRegionName(testRegion.name())
+ *             .destinationBucketName(testBucket.get("name"))
+ *             .destinationRegionName(testRegion.get("name"))
  *             .name(replicationPolicyName)
  *             .namespace(replicationPolicyNamespace)
  *             .build());

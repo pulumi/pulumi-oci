@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *         var testWorkspaceImportRequest = new WorkspaceImportRequest("testWorkspaceImportRequest", WorkspaceImportRequestArgs.builder()
  *             .bucket(workspaceImportRequestBucket)
  *             .fileName(workspaceImportRequestFileName)
- *             .workspaceId(testWorkspace.id())
+ *             .workspaceId(testWorkspace.get("id"))
  *             .areDataAssetReferencesIncluded(workspaceImportRequestAreDataAssetReferencesIncluded)
  *             .importConflictResolution(WorkspaceImportRequestImportConflictResolutionArgs.builder()
  *                 .importConflictResolutionType(workspaceImportRequestImportConflictResolutionImportConflictResolutionType)
@@ -64,7 +64,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .objectKeyForImport(workspaceImportRequestObjectKeyForImport)
  *             .objectStorageRegion(workspaceImportRequestObjectStorageRegion)
- *             .objectStorageTenancyId(testTenancy.id())
+ *             .objectStorageTenancyId(testTenancy.get("id"))
  *             .build());
  * 
  *     }

@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     bucket: workspaceImportRequestBucket,
  *     fileName: workspaceImportRequestFileName,
  *     workspaceId: testWorkspace.id,
- *     areDataAssetReferencesIncluded: workspaceImportRequestAreDataAssetReferencesIncluded === "true",
+ *     areDataAssetReferencesIncluded: workspaceImportRequestAreDataAssetReferencesIncluded,
  *     importConflictResolution: {
  *         importConflictResolutionType: workspaceImportRequestImportConflictResolutionImportConflictResolutionType,
  *         duplicatePrefix: workspaceImportRequestImportConflictResolutionDuplicatePrefix,

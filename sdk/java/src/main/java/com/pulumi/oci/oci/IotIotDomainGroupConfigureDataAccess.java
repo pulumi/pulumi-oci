@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testIotDomainGroupConfigureDataAccess = new IotIotDomainGroupConfigureDataAccess("testIotDomainGroupConfigureDataAccess", IotIotDomainGroupConfigureDataAccessArgs.builder()
  *             .dbAllowListedVcnIds(iotDomainGroupConfigureDataAccessDbAllowListedVcnIds)
- *             .iotDomainGroupId(testIotDomainGroup.id())
+ *             .iotDomainGroupId(testIotDomainGroup.get("id"))
  *             .build());
  * 
  *     }

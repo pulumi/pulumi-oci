@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testPublication = new oci.marketplace.Publication("test_publication", {
  *     compartmentId: compartmentId,
- *     isAgreementAcknowledged: publicationIsAgreementAcknowledged === "true",
+ *     isAgreementAcknowledged: publicationIsAgreementAcknowledged,
  *     listingType: publicationListingType,
  *     name: publicationName,
  *     packageDetails: {

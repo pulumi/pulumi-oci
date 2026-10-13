@@ -657,12 +657,12 @@ class Zone(pulumi.CustomResource):
             dnssec_state=zone_dnssec_state,
             external_downstreams=[{
                 "address": zone_external_downstreams_address,
-                "port": int(zone_external_downstreams_port),
+                "port": zone_external_downstreams_port,
                 "tsig_key_id": test_tsig_key["id"],
             }],
             external_masters=[{
                 "address": zone_external_masters_address,
-                "port": int(zone_external_masters_port),
+                "port": zone_external_masters_port,
                 "tsig_key_id": test_tsig_key["id"],
             }],
             freeform_tags=zone_freeform_tags,
@@ -746,12 +746,12 @@ class Zone(pulumi.CustomResource):
             dnssec_state=zone_dnssec_state,
             external_downstreams=[{
                 "address": zone_external_downstreams_address,
-                "port": int(zone_external_downstreams_port),
+                "port": zone_external_downstreams_port,
                 "tsig_key_id": test_tsig_key["id"],
             }],
             external_masters=[{
                 "address": zone_external_masters_address,
-                "port": int(zone_external_masters_port),
+                "port": zone_external_masters_port,
                 "tsig_key_id": test_tsig_key["id"],
             }],
             freeform_tags=zone_freeform_tags,

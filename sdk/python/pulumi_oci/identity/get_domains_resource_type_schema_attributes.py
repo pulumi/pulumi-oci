@@ -224,13 +224,13 @@ def get_domains_resource_type_schema_attributes(attribute_sets: Optional[Sequenc
     import pulumi_oci as oci
 
     test_resource_type_schema_attributes = oci.identity.get_domains_resource_type_schema_attributes(idcs_endpoint=test_domain["url"],
-        resource_type_schema_attribute_count=int(resource_type_schema_attribute_resource_type_schema_attribute_count),
+        resource_type_schema_attribute_count=resource_type_schema_attribute_resource_type_schema_attribute_count,
         resource_type_schema_attribute_filter=resource_type_schema_attribute_resource_type_schema_attribute_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=resource_type_schema_attribute_authorization,
         resource_type_schema_version=resource_type_schema_attribute_resource_type_schema_version,
-        start_index=int(resource_type_schema_attribute_start_index))
+        start_index=resource_type_schema_attribute_start_index)
     ```
 
 
@@ -299,13 +299,13 @@ def get_domains_resource_type_schema_attributes_output(attribute_sets: pulumi.In
     import pulumi_oci as oci
 
     test_resource_type_schema_attributes = oci.identity.get_domains_resource_type_schema_attributes(idcs_endpoint=test_domain["url"],
-        resource_type_schema_attribute_count=int(resource_type_schema_attribute_resource_type_schema_attribute_count),
+        resource_type_schema_attribute_count=resource_type_schema_attribute_resource_type_schema_attribute_count,
         resource_type_schema_attribute_filter=resource_type_schema_attribute_resource_type_schema_attribute_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=resource_type_schema_attribute_authorization,
         resource_type_schema_version=resource_type_schema_attribute_resource_type_schema_version,
-        start_index=int(resource_type_schema_attribute_start_index))
+        start_index=resource_type_schema_attribute_start_index)
     ```
 
 

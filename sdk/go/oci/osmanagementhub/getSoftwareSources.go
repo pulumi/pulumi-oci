@@ -31,20 +31,20 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := osmanagementhub.GetSoftwareSources(ctx, &osmanagementhub.GetSoftwareSourcesArgs{
-//				ArchTypes:                     pulumi.ToArray(softwareSourceArchType),
-//				Availabilities:                pulumi.ToArray(softwareSourceAvailability),
-//				AvailabilityAnywheres:         pulumi.ToArray(softwareSourceAvailabilityAnywhere),
-//				AvailabilityAtOcis:            pulumi.ToArray(softwareSourceAvailabilityAtOci),
+//				ArchTypes:                     softwareSourceArchType,
+//				Availabilities:                softwareSourceAvailability,
+//				AvailabilityAnywheres:         softwareSourceAvailabilityAnywhere,
+//				AvailabilityAtOcis:            softwareSourceAvailabilityAtOci,
 //				CompartmentId:                 pulumi.StringRef(compartmentId),
 //				DisplayName:                   pulumi.StringRef(softwareSourceDisplayName),
 //				DisplayNameContains:           pulumi.StringRef(softwareSourceDisplayNameContains),
-//				DisplayNameNotEqualTos:        pulumi.ToArray(softwareSourceDisplayNameNotEqualTo),
+//				DisplayNameNotEqualTos:        softwareSourceDisplayNameNotEqualTo,
 //				IsMandatoryForAutonomousLinux: pulumi.BoolRef(softwareSourceIsMandatoryForAutonomousLinux),
 //				IsMirrorSyncAllowed:           pulumi.BoolRef(softwareSourceIsMirrorSyncAllowed),
-//				OsFamilies:                    pulumi.ToArray(softwareSourceOsFamily),
+//				OsFamilies:                    softwareSourceOsFamily,
 //				SoftwareSourceId:              pulumi.StringRef(testSoftwareSource.Id),
-//				SoftwareSourceTypes:           pulumi.ToArray(softwareSourceSoftwareSourceType),
-//				States:                        pulumi.ToArray(softwareSourceState),
+//				SoftwareSourceTypes:           softwareSourceSoftwareSourceType,
+//				States:                        softwareSourceState,
 //				VendorName:                    pulumi.StringRef(softwareSourceVendorName),
 //			}, nil)
 //			if err != nil {

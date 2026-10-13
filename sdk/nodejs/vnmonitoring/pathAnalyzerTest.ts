@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *         vlanId: testVlan.id,
  *         vnicId: testVnicAttachment.id,
  *     },
- *     protocol: Number(pathAnalyzerTestProtocol),
+ *     protocol: pathAnalyzerTestProtocol,
  *     sourceEndpoint: {
  *         type: pathAnalyzerTestSourceEndpointType,
  *         address: pathAnalyzerTestSourceEndpointAddress,
@@ -56,13 +56,13 @@ import * as utilities from "../utilities";
  *     },
  *     protocolParameters: {
  *         type: pathAnalyzerTestProtocolParametersType,
- *         destinationPort: Number(pathAnalyzerTestProtocolParametersDestinationPort),
- *         icmpCode: Number(pathAnalyzerTestProtocolParametersIcmpCode),
- *         icmpType: Number(pathAnalyzerTestProtocolParametersIcmpType),
- *         sourcePort: Number(pathAnalyzerTestProtocolParametersSourcePort),
+ *         destinationPort: pathAnalyzerTestProtocolParametersDestinationPort,
+ *         icmpCode: pathAnalyzerTestProtocolParametersIcmpCode,
+ *         icmpType: pathAnalyzerTestProtocolParametersIcmpType,
+ *         sourcePort: pathAnalyzerTestProtocolParametersSourcePort,
  *     },
  *     queryOptions: {
- *         isBiDirectionalAnalysis: pathAnalyzerTestQueryOptionsIsBiDirectionalAnalysis === "true",
+ *         isBiDirectionalAnalysis: pathAnalyzerTestQueryOptionsIsBiDirectionalAnalysis,
  *     },
  * });
  * ```

@@ -489,8 +489,8 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
                 "Department": "Finance",
             },
             gpu_memory_cluster_scale_config={
-                "is_upsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_upsize_enabled == "true",
-                "is_downsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_downsize_enabled == "true",
+                "is_upsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_upsize_enabled,
+                "is_downsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_downsize_enabled,
                 "target_size": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_target_size,
             },
             gpu_memory_fabric_id=test_gpu_memory_fabric["id"],
@@ -557,8 +557,8 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
                 "Department": "Finance",
             },
             gpu_memory_cluster_scale_config={
-                "is_upsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_upsize_enabled == "true",
-                "is_downsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_downsize_enabled == "true",
+                "is_upsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_upsize_enabled,
+                "is_downsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_downsize_enabled,
                 "target_size": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_target_size,
             },
             gpu_memory_fabric_id=test_gpu_memory_fabric["id"],

@@ -147,7 +147,7 @@ class ContainerConfiguration(pulumi.CustomResource):
 
         test_container_configuration = oci.artifacts.ContainerConfiguration("test_container_configuration",
             compartment_id=compartment_id,
-            is_repository_created_on_first_push=container_configuration_is_repository_created_on_first_push == "true")
+            is_repository_created_on_first_push=container_configuration_is_repository_created_on_first_push)
         ```
 
         ## Import
@@ -187,7 +187,7 @@ class ContainerConfiguration(pulumi.CustomResource):
 
         test_container_configuration = oci.artifacts.ContainerConfiguration("test_container_configuration",
             compartment_id=compartment_id,
-            is_repository_created_on_first_push=container_configuration_is_repository_created_on_first_push == "true")
+            is_repository_created_on_first_push=container_configuration_is_repository_created_on_first_push)
         ```
 
         ## Import

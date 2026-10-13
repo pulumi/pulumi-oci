@@ -159,7 +159,7 @@ def get_data_safe_private_endpoints(access_level: Optional[_builtins.str] = None
 
     test_data_safe_private_endpoints = oci.datasafe.get_data_safe_private_endpoints(compartment_id=compartment_id,
         access_level=data_safe_private_endpoint_access_level,
-        compartment_id_in_subtree=data_safe_private_endpoint_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=data_safe_private_endpoint_compartment_id_in_subtree,
         display_name=data_safe_private_endpoint_display_name,
         state=data_safe_private_endpoint_state,
         vcn_id=test_vcn["id"])
@@ -215,7 +215,7 @@ def get_data_safe_private_endpoints_output(access_level: pulumi.Input[Optional[O
 
     test_data_safe_private_endpoints = oci.datasafe.get_data_safe_private_endpoints(compartment_id=compartment_id,
         access_level=data_safe_private_endpoint_access_level,
-        compartment_id_in_subtree=data_safe_private_endpoint_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=data_safe_private_endpoint_compartment_id_in_subtree,
         display_name=data_safe_private_endpoint_display_name,
         state=data_safe_private_endpoint_state,
         vcn_id=test_vcn["id"])

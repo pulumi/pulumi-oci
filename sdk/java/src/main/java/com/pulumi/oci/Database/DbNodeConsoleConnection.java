@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDbNodeConsoleConnection = new DbNodeConsoleConnection("testDbNodeConsoleConnection", DbNodeConsoleConnectionArgs.builder()
- *             .dbNodeId(testDbNode.id())
+ *             .dbNodeId(testDbNode.get("id"))
  *             .publicKey(dbNodeConsoleConnectionPublicKey)
  *             .definedTags(dbNodeConsoleConnectionDefinedTags)
  *             .freeformTags(Map.of("Department", "Finance"))

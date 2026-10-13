@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *                 .destinationAddresses(networkFirewallPolicyDecryptionRuleConditionDestinationAddress)
  *                 .sourceAddresses(networkFirewallPolicyDecryptionRuleConditionSourceAddress)
  *                 .build())
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
  *             .description(networkFirewallPolicyDecryptionRuleDescription)
  *             .decryptionProfile(networkFirewallPolicyDecryptionRuleDecryptionProfile)
  *             .secret(networkFirewallPolicyDecryptionRuleSecret)

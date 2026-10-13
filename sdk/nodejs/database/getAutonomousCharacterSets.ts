@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  *
  * const testAutonomousDatabaseCharacterSets = oci.database.getAutonomousCharacterSets({
  *     characterSetType: autonomousDatabaseCharacterSetCharacterSetType,
- *     isDedicated: autonomousDatabaseCharacterSetIsDedicated === "true",
- *     isShared: autonomousDatabaseCharacterSetIsShared === "true",
+ *     isDedicated: autonomousDatabaseCharacterSetIsDedicated,
+ *     isShared: autonomousDatabaseCharacterSetIsShared,
  * });
  * ```
  */
@@ -86,8 +86,8 @@ export interface GetAutonomousCharacterSetsResult {
  *
  * const testAutonomousDatabaseCharacterSets = oci.database.getAutonomousCharacterSets({
  *     characterSetType: autonomousDatabaseCharacterSetCharacterSetType,
- *     isDedicated: autonomousDatabaseCharacterSetIsDedicated === "true",
- *     isShared: autonomousDatabaseCharacterSetIsShared === "true",
+ *     isDedicated: autonomousDatabaseCharacterSetIsDedicated,
+ *     isShared: autonomousDatabaseCharacterSetIsShared,
  * });
  * ```
  */

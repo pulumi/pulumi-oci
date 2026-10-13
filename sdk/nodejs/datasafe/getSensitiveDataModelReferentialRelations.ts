@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSensitiveDataModelReferentialRelations = oci.datasafe.getSensitiveDataModelReferentialRelations({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     columnNames: sensitiveDataModelReferentialRelationColumnName,
- *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive === "true",
+ *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive,
  *     objects: sensitiveDataModelReferentialRelationObject,
  *     relationTypes: sensitiveDataModelReferentialRelationRelationType,
  *     schemaNames: sensitiveDataModelReferentialRelationSchemaName,
@@ -120,7 +120,7 @@ export interface GetSensitiveDataModelReferentialRelationsResult {
  * const testSensitiveDataModelReferentialRelations = oci.datasafe.getSensitiveDataModelReferentialRelations({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     columnNames: sensitiveDataModelReferentialRelationColumnName,
- *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive === "true",
+ *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive,
  *     objects: sensitiveDataModelReferentialRelationObject,
  *     relationTypes: sensitiveDataModelReferentialRelationRelationType,
  *     schemaNames: sensitiveDataModelReferentialRelationSchemaName,

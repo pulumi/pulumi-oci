@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isDeleteProtected: replicaIsDeleteProtected === "true",
+ *     isDeleteProtected: replicaIsDeleteProtected,
  *     replicaOverrides: {
  *         configurationId: testMysqlConfiguration.id,
  *         mysqlVersion: replicaReplicaOverridesMysqlVersion,

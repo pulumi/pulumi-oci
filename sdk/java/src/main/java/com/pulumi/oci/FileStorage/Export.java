@@ -52,8 +52,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExport = new Export("testExport", ExportArgs.builder()
- *             .exportSetId(testExportSet.id())
- *             .fileSystemId(testFileSystem.id())
+ *             .exportSetId(testExportSet.get("id"))
+ *             .fileSystemId(testFileSystem.get("id"))
  *             .path(exportPath)
  *             .exportOptions(ExportExportOptionArgs.builder()
  *                 .source(exportExportOptionsSource)
@@ -69,7 +69,7 @@ import javax.annotation.Nullable;
  *             .locks(ExportLockArgs.builder()
  *                 .type(exportLocksType)
  *                 .message(exportLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(exportLocksTimeCreated)
  *                 .build())
  *             .build());

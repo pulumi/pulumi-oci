@@ -171,7 +171,7 @@ def get_keys(algorithm: Optional[_builtins.str] = None,
     test_keys = oci.kms.get_keys(compartment_id=compartment_id,
         management_endpoint=key_management_endpoint,
         algorithm=key_algorithm,
-        length=int(key_length),
+        length=key_length,
         curve_id=test_curve["id"],
         protection_mode=key_protection_mode)
     ```
@@ -232,7 +232,7 @@ def get_keys_output(algorithm: pulumi.Input[Optional[Optional[_builtins.str]]] =
     test_keys = oci.kms.get_keys(compartment_id=compartment_id,
         management_endpoint=key_management_endpoint,
         algorithm=key_algorithm,
-        length=int(key_length),
+        length=key_length,
         curve_id=test_curve["id"],
         protection_mode=key_protection_mode)
     ```

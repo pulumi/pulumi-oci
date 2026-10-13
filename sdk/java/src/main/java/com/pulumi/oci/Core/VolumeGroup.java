@@ -68,18 +68,18 @@ import javax.annotation.Nullable;
  *                 .type("volumeIds")
  *                 .volumeIds(volumeGroupSourceId)
  *                 .build())
- *             .backupPolicyId(testVolumeBackupPolicies.volumeBackupPolicies()[0].id())
- *             .clusterPlacementGroupId(testGroup.id())
+ *             .backupPolicyId(testVolumeBackupPolicies.get("volumeBackupPolicies")[0].get("id"))
+ *             .clusterPlacementGroupId(testGroup.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(volumeGroupDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .volumeGroupReplicas(VolumeGroupVolumeGroupReplicaArgs.builder()
  *                 .availabilityDomain(volumeGroupVolumeGroupReplicasAvailabilityDomain)
  *                 .displayName(volumeGroupVolumeGroupReplicasDisplayName)
- *                 .xrrKmsKeyId(testKey.id())
+ *                 .xrrKmsKeyId(testKey.get("id"))
  *                 .build())
  *             .volumeIds(volumeGroupSourceId)
- *             .xrcKmsKeyId(testKey.id())
+ *             .xrcKmsKeyId(testKey.get("id"))
  *             .build());
  * 
  *     }

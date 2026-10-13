@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Identity
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:IdentityProvider",
     ///         },
     ///         AssertionAttribute = identityProviderAssertionAttribute,
-    ///         AttributeSets = new[] {},
+    ///         AttributeSets = new() {},
     ///         Attributes = "",
     ///         AuthnRequestBinding = identityProviderAuthnRequestBinding,
     ///         Authorization = identityProviderAuthorization,

@@ -58,10 +58,10 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testAppRole = new DomainsAppRole("testAppRole", DomainsAppRoleArgs.builder()
  *             .app(DomainsAppRoleAppArgs.builder()
- *                 .value(testApp.id())
+ *                 .value(testApp.get("id"))
  *                 .build())
  *             .displayName(appRoleDisplayName)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:AppRole")
  *             .adminRole(appRoleAdminRole)
  *             .attributeSets("all")

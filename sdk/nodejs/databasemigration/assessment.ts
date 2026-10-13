@@ -49,7 +49,7 @@ import * as utilities from "../utilities";
  *     displayName: assessmentDisplayName,
  *     excludeObjects: [{
  *         object: assessmentExcludeObjectsObject,
- *         isOmitExcludedTableFromReplication: assessmentExcludeObjectsIsOmitExcludedTableFromReplication === "true",
+ *         isOmitExcludedTableFromReplication: assessmentExcludeObjectsIsOmitExcludedTableFromReplication,
  *         owner: assessmentExcludeObjectsOwner,
  *         schema: assessmentExcludeObjectsSchema,
  *         type: assessmentExcludeObjectsType,
@@ -57,7 +57,7 @@ import * as utilities from "../utilities";
  *     freeformTags: assessmentFreeformTags,
  *     includeObjects: [{
  *         object: assessmentIncludeObjectsObject,
- *         isOmitExcludedTableFromReplication: assessmentIncludeObjectsIsOmitExcludedTableFromReplication === "true",
+ *         isOmitExcludedTableFromReplication: assessmentIncludeObjectsIsOmitExcludedTableFromReplication,
  *         owner: assessmentIncludeObjectsOwner,
  *         schema: assessmentIncludeObjectsSchema,
  *         type: assessmentIncludeObjectsType,

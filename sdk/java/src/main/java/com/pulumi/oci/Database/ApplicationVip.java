@@ -47,10 +47,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testApplicationVip = new ApplicationVip("testApplicationVip", ApplicationVipArgs.builder()
- *             .cloudVmClusterId(testCloudVmCluster.id())
+ *             .cloudVmClusterId(testCloudVmCluster.get("id"))
  *             .hostnameLabel(applicationVipHostnameLabel)
- *             .subnetId(testSubnet.id())
- *             .dbNodeId(testDbNode.id())
+ *             .subnetId(testSubnet.get("id"))
+ *             .dbNodeId(testDbNode.get("id"))
  *             .ipAddress(applicationVipIpAddress)
  *             .ipv6address(applicationVipIpv6address)
  *             .build());

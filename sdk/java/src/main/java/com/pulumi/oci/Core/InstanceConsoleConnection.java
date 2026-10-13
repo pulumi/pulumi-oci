@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testInstanceConsoleConnection = new InstanceConsoleConnection("testInstanceConsoleConnection", InstanceConsoleConnectionArgs.builder()
- *             .instanceId(testInstance.id())
+ *             .instanceId(testInstance.get("id"))
  *             .publicKey(instanceConsoleConnectionPublicKey)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))

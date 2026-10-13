@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *             .name(costAnomalyMonitorName)
  *             .targetResourceFilter(costAnomalyMonitorTargetResourceFilter)
  *             .costAlertSubscriptionMap(CostAnomalyMonitorCostAlertSubscriptionMapArgs.builder()
- *                 .costAlertSubscriptionId(testCostAlertSubscription.id())
+ *                 .costAlertSubscriptionId(testCostAlertSubscription.get("id"))
  *                 .operator(costAnomalyMonitorCostAlertSubscriptionMapOperator)
  *                 .thresholdAbsoluteValue(costAnomalyMonitorCostAlertSubscriptionMapThresholdAbsoluteValue)
  *                 .thresholdRelativePercent(costAnomalyMonitorCostAlertSubscriptionMapThresholdRelativePercent)

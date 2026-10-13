@@ -47,8 +47,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSchedulingPlan = new SchedulingPlan("testSchedulingPlan", SchedulingPlanArgs.builder()
  *             .compartmentId(compartmentId)
- *             .resourceId(testResource.id())
- *             .schedulingPolicyId(testSchedulingPolicy.id())
+ *             .resourceId(testResource.get("id"))
+ *             .schedulingPolicyId(testSchedulingPolicy.get("id"))
  *             .serviceType(schedulingPlanServiceType)
  *             .definedTags(schedulingPlanDefinedTags)
  *             .freeformTags(Map.of("Department", "Finance"))

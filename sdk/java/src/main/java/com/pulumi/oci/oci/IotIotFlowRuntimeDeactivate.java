@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testIotFlowRuntimeDeactivate = new IotIotFlowRuntimeDeactivate("testIotFlowRuntimeDeactivate", IotIotFlowRuntimeDeactivateArgs.builder()
- *             .iotFlowRuntimeId(testIotFlowRuntime.id())
+ *             .iotFlowRuntimeId(testIotFlowRuntime.get("id"))
  *             .build());
  * 
  *     }

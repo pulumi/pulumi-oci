@@ -542,7 +542,7 @@ class BdsInstanceBdsCertificateConfiguration(pulumi.CustomResource):
             issue_certificate_trigger=issue_certificate_trigger,
             renew_certificate_trigger=renew_certificate_trigger,
             set_default_trigger=set_default_trigger,
-            is_missing_nodes_only=is_missing_nodes_only == "true")
+            is_missing_nodes_only=is_missing_nodes_only)
         ```
 
         ## Import
@@ -610,7 +610,7 @@ class BdsInstanceBdsCertificateConfiguration(pulumi.CustomResource):
             issue_certificate_trigger=issue_certificate_trigger,
             renew_certificate_trigger=renew_certificate_trigger,
             set_default_trigger=set_default_trigger,
-            is_missing_nodes_only=is_missing_nodes_only == "true")
+            is_missing_nodes_only=is_missing_nodes_only)
         ```
 
         ## Import

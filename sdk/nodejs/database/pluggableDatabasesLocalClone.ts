@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  *     clonedPdbName: pluggableDatabasesLocalCloneClonedPdbName,
  *     pluggableDatabaseId: testPluggableDatabase.id,
  *     pdbAdminPassword: pluggableDatabasesLocalClonePdbAdminPassword,
- *     shouldPdbAdminAccountBeLocked: pluggableDatabasesLocalCloneShouldPdbAdminAccountBeLocked === "true",
+ *     shouldPdbAdminAccountBeLocked: pluggableDatabasesLocalCloneShouldPdbAdminAccountBeLocked,
  *     targetTdeWalletPassword: pluggableDatabasesLocalCloneTargetTdeWalletPassword,
  * });
  * ```

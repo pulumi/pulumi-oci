@@ -50,10 +50,10 @@ import javax.annotation.Nullable;
  *         var testAwrHub = new AwrHub("testAwrHub", AwrHubArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(awrHubDisplayName)
- *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+ *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
- *             .objectStorageBucketName(testBucket.name())
+ *             .objectStorageBucketName(testBucket.get("name"))
  *             .build());
  * 
  *     }

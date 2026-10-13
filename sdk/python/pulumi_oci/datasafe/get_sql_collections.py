@@ -225,7 +225,7 @@ def get_sql_collections(access_level: Optional[_builtins.str] = None,
 
     test_sql_collections = oci.datasafe.get_sql_collections(compartment_id=compartment_id,
         access_level=sql_collection_access_level,
-        compartment_id_in_subtree=sql_collection_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sql_collection_compartment_id_in_subtree,
         db_user_name=test_user["name"],
         display_name=sql_collection_display_name,
         sql_collection_id=test_sql_collection["id"],
@@ -323,7 +323,7 @@ def get_sql_collections_output(access_level: pulumi.Input[Optional[Optional[_bui
 
     test_sql_collections = oci.datasafe.get_sql_collections(compartment_id=compartment_id,
         access_level=sql_collection_access_level,
-        compartment_id_in_subtree=sql_collection_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sql_collection_compartment_id_in_subtree,
         db_user_name=test_user["name"],
         display_name=sql_collection_display_name,
         sql_collection_id=test_sql_collection["id"],

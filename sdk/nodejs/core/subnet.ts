@@ -65,8 +65,8 @@ import * as utilities from "../utilities";
  *     ipv4cidrBlocks: subnetIpv4cidrBlocks,
  *     ipv6cidrBlock: subnetIpv6cidrBlock,
  *     ipv6cidrBlocks: subnetIpv6cidrBlocks,
- *     prohibitInternetIngress: subnetProhibitInternetIngress === "true",
- *     prohibitPublicIpOnVnic: subnetProhibitPublicIpOnVnic === "true",
+ *     prohibitInternetIngress: subnetProhibitInternetIngress,
+ *     prohibitPublicIpOnVnic: subnetProhibitPublicIpOnVnic,
  *     routeTableId: testRouteTable.id,
  *     securityListIds: subnetSecurityListIds,
  * });

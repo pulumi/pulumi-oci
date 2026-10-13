@@ -73,8 +73,8 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(publicIpDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .privateIpId(testPrivateIp.id())
- *             .publicIpPoolId(testPublicIpPool.id())
+ *             .privateIpId(testPrivateIp.get("id"))
+ *             .publicIpPoolId(testPublicIpPool.get("id"))
  *             .build());
  * 
  *     }

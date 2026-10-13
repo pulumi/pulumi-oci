@@ -751,7 +751,7 @@ class DatabaseToolsMcpToolset(pulumi.CustomResource):
             database_tools_mcp_server_id=test_database_tools_mcp_server["id"],
             display_name=database_tools_mcp_toolset_display_name,
             type=database_tools_mcp_toolset_type,
-            version=int(database_tools_mcp_toolset_version),
+            version=database_tools_mcp_toolset_version,
             allowed_roles=database_tools_mcp_toolset_allowed_roles,
             default_execution_type=database_tools_mcp_toolset_default_execution_type,
             defined_tags={
@@ -850,7 +850,7 @@ class DatabaseToolsMcpToolset(pulumi.CustomResource):
             database_tools_mcp_server_id=test_database_tools_mcp_server["id"],
             display_name=database_tools_mcp_toolset_display_name,
             type=database_tools_mcp_toolset_type,
-            version=int(database_tools_mcp_toolset_version),
+            version=database_tools_mcp_toolset_version,
             allowed_roles=database_tools_mcp_toolset_allowed_roles,
             default_execution_type=database_tools_mcp_toolset_default_execution_type,
             defined_tags={

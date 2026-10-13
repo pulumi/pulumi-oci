@@ -48,7 +48,7 @@ public final class ResourceSchedulerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = ResourceSchedulerFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciResourceSchedulerSchedule.id())
+     *             .scheduleId(testScheduleOciResourceSchedulerSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -90,7 +90,7 @@ public final class ResourceSchedulerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = ResourceSchedulerFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciResourceSchedulerSchedule.id())
+     *             .scheduleId(testScheduleOciResourceSchedulerSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -132,7 +132,7 @@ public final class ResourceSchedulerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = ResourceSchedulerFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciResourceSchedulerSchedule.id())
+     *             .scheduleId(testScheduleOciResourceSchedulerSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -174,7 +174,7 @@ public final class ResourceSchedulerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = ResourceSchedulerFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciResourceSchedulerSchedule.id())
+     *             .scheduleId(testScheduleOciResourceSchedulerSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -216,7 +216,7 @@ public final class ResourceSchedulerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = ResourceSchedulerFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciResourceSchedulerSchedule.id())
+     *             .scheduleId(testScheduleOciResourceSchedulerSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -260,7 +260,7 @@ public final class ResourceSchedulerFunctions {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -304,7 +304,7 @@ public final class ResourceSchedulerFunctions {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -348,7 +348,7 @@ public final class ResourceSchedulerFunctions {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -392,7 +392,7 @@ public final class ResourceSchedulerFunctions {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -436,7 +436,7 @@ public final class ResourceSchedulerFunctions {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -480,7 +480,7 @@ public final class ResourceSchedulerFunctions {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -524,7 +524,7 @@ public final class ResourceSchedulerFunctions {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }

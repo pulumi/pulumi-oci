@@ -45,7 +45,7 @@ import (
 //								Value:     baselineableMetricsEvaluateItemsTrainingDataPointsValue,
 //							},
 //						},
-//						Dimensions: pulumi.ToMap(baselineableMetricsEvaluateItemsDimensions),
+//						Dimensions: baselineableMetricsEvaluateItemsDimensions,
 //					},
 //				},
 //				ResourceId: testResource.Id,

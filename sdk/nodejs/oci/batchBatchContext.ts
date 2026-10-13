@@ -23,14 +23,14 @@ import * as utilities from "../utilities";
  * const testBatchContext = new oci.oci.BatchBatchContext("test_batch_context", {
  *     compartmentId: compartmentId,
  *     fleets: [{
- *         maxConcurrentTasks: Number(batchContextFleetsMaxConcurrentTasks),
+ *         maxConcurrentTasks: batchContextFleetsMaxConcurrentTasks,
  *         name: batchContextFleetsName,
  *         shape: {
- *             memoryInGbs: Number(batchContextFleetsShapeMemoryInGbs),
- *             ocpus: Number(batchContextFleetsShapeOcpus),
+ *             memoryInGbs: batchContextFleetsShapeMemoryInGbs,
+ *             ocpus: batchContextFleetsShapeOcpus,
  *             shapeName: testBatchContextShapes.batchContextShapeCollection[0].items[0].name,
  *             type: batchContextFleetsShapeType,
- *             diskSizeInGbs: Number(batchContextFleetsShapeDiskSizeInGbs),
+ *             diskSizeInGbs: batchContextFleetsShapeDiskSizeInGbs,
  *         },
  *         type: batchContextFleetsType,
  *     }],
@@ -51,13 +51,13 @@ import * as utilities from "../utilities";
  *         tagKey: batchContextJobPriorityConfigurationsTagKey,
  *         tagNamespace: batchContextJobPriorityConfigurationsTagNamespace,
  *         values: batchContextJobPriorityConfigurationsValues,
- *         weight: Number(batchContextJobPriorityConfigurationsWeight),
+ *         weight: batchContextJobPriorityConfigurationsWeight,
  *     }],
  *     loggingConfiguration: {
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
  *         type: batchContextLoggingConfigurationType,
- *         isJobTaskEventsPropagationEnabled: batchContextLoggingConfigurationIsJobTaskEventsPropagationEnabled === "true",
+ *         isJobTaskEventsPropagationEnabled: batchContextLoggingConfigurationIsJobTaskEventsPropagationEnabled,
  *     },
  * });
  * ```

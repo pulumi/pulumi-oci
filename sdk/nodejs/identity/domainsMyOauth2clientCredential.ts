@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     description: myOauth2clientCredentialDescription,
  *     expiresOn: myOauth2clientCredentialExpiresOn,
  *     id: myOauth2clientCredentialId,
- *     isResetSecret: myOauth2clientCredentialIsResetSecret === "true",
+ *     isResetSecret: myOauth2clientCredentialIsResetSecret,
  *     ocid: myOauth2clientCredentialOcid,
  *     resourceTypeSchemaVersion: myOauth2clientCredentialResourceTypeSchemaVersion,
  *     status: myOauth2clientCredentialStatus,

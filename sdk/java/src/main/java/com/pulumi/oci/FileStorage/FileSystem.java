@@ -88,16 +88,16 @@ import javax.annotation.Nullable;
  *             .cloneAttachStatus(fileSystemCloneAttachStatus)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(fileSystemDisplayName)
- *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+ *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .kmsKeyId(testKey.id())
+ *             .kmsKeyId(testKey.get("id"))
  *             .locks(FileSystemLockArgs.builder()
  *                 .type(fileSystemLocksType)
  *                 .message(fileSystemLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(fileSystemLocksTimeCreated)
  *                 .build())
- *             .sourceSnapshotId(testSnapshot.id())
+ *             .sourceSnapshotId(testSnapshot.get("id"))
  *             .build());
  * 
  *     }

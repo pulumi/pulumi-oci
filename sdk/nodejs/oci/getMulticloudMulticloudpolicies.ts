@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testMulticloudpolicies = oci.oci.getMulticloudMulticloudpolicies({
  *     compartmentId: compartmentId,
  *     displayName: multicloudpolicyDisplayName,
- *     isForceRefresh: multicloudpolicyIsForceRefresh === "true",
+ *     isForceRefresh: multicloudpolicyIsForceRefresh,
  *     subscriptionId: testSubscription.id,
  * });
  * ```
@@ -100,7 +100,7 @@ export interface GetMulticloudMulticloudpoliciesResult {
  * const testMulticloudpolicies = oci.oci.getMulticloudMulticloudpolicies({
  *     compartmentId: compartmentId,
  *     displayName: multicloudpolicyDisplayName,
- *     isForceRefresh: multicloudpolicyIsForceRefresh === "true",
+ *     isForceRefresh: multicloudpolicyIsForceRefresh,
  *     subscriptionId: testSubscription.id,
  * });
  * ```

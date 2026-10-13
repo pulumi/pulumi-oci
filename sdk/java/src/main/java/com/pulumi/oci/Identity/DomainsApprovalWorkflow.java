@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testApprovalWorkflow = new DomainsApprovalWorkflow("testApprovalWorkflow", DomainsApprovalWorkflowArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .maxDuration(DomainsApprovalWorkflowMaxDurationArgs.builder()
  *                 .unit(approvalWorkflowMaxDurationUnit)
  *                 .value(approvalWorkflowMaxDurationValue)

@@ -418,7 +418,7 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            port=int(ekms_private_endpoint_port))
+            port=ekms_private_endpoint_port)
         ```
 
         ## Import
@@ -476,7 +476,7 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            port=int(ekms_private_endpoint_port))
+            port=ekms_private_endpoint_port)
         ```
 
         ## Import

@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPolicy = new DomainsPolicy("testPolicy", DomainsPolicyArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .name(policyName)
  *             .policyType(DomainsPolicyPolicyTypeArgs.builder()
  *                 .value("IdentityProvider")

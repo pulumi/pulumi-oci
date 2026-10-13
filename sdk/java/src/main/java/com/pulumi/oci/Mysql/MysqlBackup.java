@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMysqlBackup = new MysqlBackup("testMysqlBackup", MysqlBackupArgs.builder()
- *             .dbSystemId(testDbSystem.id())
+ *             .dbSystemId(testDbSystem.get("id"))
  *             .backupType(mysqlBackupBackupType)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(mysqlBackupDescription)

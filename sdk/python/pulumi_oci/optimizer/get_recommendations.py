@@ -191,11 +191,11 @@ def get_recommendations(category_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_recommendations = oci.optimizer.get_recommendations(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=recommendation_compartment_id_in_subtree,
         category_id=test_category["id"],
         category_name=test_category["name"],
         child_tenancy_ids=recommendation_child_tenancy_ids,
-        include_organization=recommendation_include_organization == "true",
+        include_organization=recommendation_include_organization,
         name=recommendation_name,
         state=recommendation_state,
         status=recommendation_status)
@@ -274,11 +274,11 @@ def get_recommendations_output(category_id: pulumi.Input[Optional[Optional[_buil
     import pulumi_oci as oci
 
     test_recommendations = oci.optimizer.get_recommendations(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=recommendation_compartment_id_in_subtree,
         category_id=test_category["id"],
         category_name=test_category["name"],
         child_tenancy_ids=recommendation_child_tenancy_ids,
-        include_organization=recommendation_include_organization == "true",
+        include_organization=recommendation_include_organization,
         name=recommendation_name,
         state=recommendation_state,
         status=recommendation_status)

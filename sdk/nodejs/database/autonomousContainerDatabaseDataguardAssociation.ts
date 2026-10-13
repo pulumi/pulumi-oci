@@ -25,8 +25,8 @@ import * as utilities from "../utilities";
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     peerAutonomousContainerDatabaseDisplayName: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseDisplayName,
  *     protectionMode: autonomousContainerDatabaseDataguardAssociationProtectionMode,
- *     fastStartFailOverLagLimitInSeconds: Number(autonomousContainerDatabaseDataguardAssociationFastStartFailOverLagLimitInSeconds),
- *     isAutomaticFailoverEnabled: autonomousContainerDatabaseDataguardAssociationIsAutomaticFailoverEnabled === "true",
+ *     fastStartFailOverLagLimitInSeconds: autonomousContainerDatabaseDataguardAssociationFastStartFailOverLagLimitInSeconds,
+ *     isAutomaticFailoverEnabled: autonomousContainerDatabaseDataguardAssociationIsAutomaticFailoverEnabled,
  *     peerAutonomousContainerDatabaseBackupConfig: {
  *         backupDestinationDetails: [{
  *             type: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
@@ -34,19 +34,19 @@ import * as utilities from "../utilities";
  *             dbrsPolicyId: testPolicy.id,
  *             id: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
  *             internetProxy: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
- *             isRemote: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote === "true",
- *             isRetentionLockEnabled: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled === "true",
+ *             isRemote: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+ *             isRetentionLockEnabled: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled,
  *             remoteRegion: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
  *             vpcPassword: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
  *             vpcUser: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
  *         }],
- *         recoveryWindowInDays: Number(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays),
+ *         recoveryWindowInDays: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
  *     },
  *     peerAutonomousContainerDatabaseCompartmentId: testCompartment.id,
  *     peerAutonomousVmClusterId: testAutonomousVmCluster.id,
  *     peerCloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
  *     peerDbUniqueName: autonomousContainerDatabaseDataguardAssociationPeerDbUniqueName,
- *     standbyMaintenanceBufferInDays: Number(autonomousContainerDatabaseDataguardAssociationStandbyMaintenanceBufferInDays),
+ *     standbyMaintenanceBufferInDays: autonomousContainerDatabaseDataguardAssociationStandbyMaintenanceBufferInDays,
  * });
  * ```
  *

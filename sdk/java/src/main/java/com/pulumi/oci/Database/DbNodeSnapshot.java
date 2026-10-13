@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDbNodeSnapshot = new DbNodeSnapshot("testDbNodeSnapshot", DbNodeSnapshotArgs.builder()
- *             .dbnodeSnapshotId(testDbNodeSnapshotManagement.snapshots()[0].id())
+ *             .dbnodeSnapshotId(testDbNodeSnapshotManagement.get("snapshots")[0].get("id"))
  *             .mountDbnodeId("null")
  *             .build());
  * 
@@ -81,8 +81,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDbNodeSnapshot = new DbNodeSnapshot("testDbNodeSnapshot", DbNodeSnapshotArgs.builder()
- *             .dbnodeSnapshotId(testDbNodeSnapshotManagement.snapshots()[0].id())
- *             .mountDbnodeId(testDbNodeSnapshotManagement.snapshots()[0].sourceDbnodeId())
+ *             .dbnodeSnapshotId(testDbNodeSnapshotManagement.get("snapshots")[0].get("id"))
+ *             .mountDbnodeId(testDbNodeSnapshotManagement.get("snapshots")[0].get("sourceDbnodeId"))
  *             .build());
  * 
  *     }

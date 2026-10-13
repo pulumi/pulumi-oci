@@ -149,7 +149,7 @@ def get_security_zones(compartment_id: Optional[_builtins.str] = None,
     test_security_zones = oci.cloudguard.get_security_zones(compartment_id=compartment_id,
         display_name=security_zone_display_name,
         id=security_zone_id,
-        is_required_security_zones_in_subtree=security_zone_is_required_security_zones_in_subtree == "true",
+        is_required_security_zones_in_subtree=security_zone_is_required_security_zones_in_subtree,
         security_recipe_id=test_security_recipe["id"],
         state=security_zone_state)
     ```
@@ -205,7 +205,7 @@ def get_security_zones_output(compartment_id: pulumi.Input[Optional[_builtins.st
     test_security_zones = oci.cloudguard.get_security_zones(compartment_id=compartment_id,
         display_name=security_zone_display_name,
         id=security_zone_id,
-        is_required_security_zones_in_subtree=security_zone_is_required_security_zones_in_subtree == "true",
+        is_required_security_zones_in_subtree=security_zone_is_required_security_zones_in_subtree,
         security_recipe_id=test_security_recipe["id"],
         state=security_zone_state)
     ```

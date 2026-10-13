@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testUserDbCredentials = oci.identity.getDomainsUserDbCredentials({
  *     idcsEndpoint: testDomain.url,
- *     userDbCredentialCount: Number(userDbCredentialUserDbCredentialCount),
+ *     userDbCredentialCount: userDbCredentialUserDbCredentialCount,
  *     userDbCredentialFilter: userDbCredentialUserDbCredentialFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: userDbCredentialAuthorization,
  *     resourceTypeSchemaVersion: userDbCredentialResourceTypeSchemaVersion,
- *     startIndex: Number(userDbCredentialStartIndex),
+ *     startIndex: userDbCredentialStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsUserDbCredentialsResult {
  *
  * const testUserDbCredentials = oci.identity.getDomainsUserDbCredentials({
  *     idcsEndpoint: testDomain.url,
- *     userDbCredentialCount: Number(userDbCredentialUserDbCredentialCount),
+ *     userDbCredentialCount: userDbCredentialUserDbCredentialCount,
  *     userDbCredentialFilter: userDbCredentialUserDbCredentialFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: userDbCredentialAuthorization,
  *     resourceTypeSchemaVersion: userDbCredentialResourceTypeSchemaVersion,
- *     startIndex: Number(userDbCredentialStartIndex),
+ *     startIndex: userDbCredentialStartIndex,
  * });
  * ```
  */

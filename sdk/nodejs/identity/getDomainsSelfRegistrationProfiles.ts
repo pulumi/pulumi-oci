@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testSelfRegistrationProfiles = oci.identity.getDomainsSelfRegistrationProfiles({
  *     idcsEndpoint: testDomain.url,
- *     selfRegistrationProfileCount: Number(selfRegistrationProfileSelfRegistrationProfileCount),
+ *     selfRegistrationProfileCount: selfRegistrationProfileSelfRegistrationProfileCount,
  *     selfRegistrationProfileFilter: selfRegistrationProfileSelfRegistrationProfileFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: selfRegistrationProfileAuthorization,
  *     resourceTypeSchemaVersion: selfRegistrationProfileResourceTypeSchemaVersion,
- *     startIndex: Number(selfRegistrationProfileStartIndex),
+ *     startIndex: selfRegistrationProfileStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsSelfRegistrationProfilesResult {
  *
  * const testSelfRegistrationProfiles = oci.identity.getDomainsSelfRegistrationProfiles({
  *     idcsEndpoint: testDomain.url,
- *     selfRegistrationProfileCount: Number(selfRegistrationProfileSelfRegistrationProfileCount),
+ *     selfRegistrationProfileCount: selfRegistrationProfileSelfRegistrationProfileCount,
  *     selfRegistrationProfileFilter: selfRegistrationProfileSelfRegistrationProfileFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: selfRegistrationProfileAuthorization,
  *     resourceTypeSchemaVersion: selfRegistrationProfileResourceTypeSchemaVersion,
- *     startIndex: Number(selfRegistrationProfileStartIndex),
+ *     startIndex: selfRegistrationProfileStartIndex,
  * });
  * ```
  */

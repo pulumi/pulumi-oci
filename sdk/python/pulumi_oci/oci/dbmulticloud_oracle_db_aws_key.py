@@ -595,7 +595,7 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_aws_key_enabled=oracle_db_aws_key_is_aws_key_enabled == "true",
+            is_aws_key_enabled=oracle_db_aws_key_is_aws_key_enabled,
             location=oracle_db_aws_key_location,
             properties=oracle_db_aws_key_properties,
             type=oracle_db_aws_key_type)
@@ -660,7 +660,7 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_aws_key_enabled=oracle_db_aws_key_is_aws_key_enabled == "true",
+            is_aws_key_enabled=oracle_db_aws_key_is_aws_key_enabled,
             location=oracle_db_aws_key_location,
             properties=oracle_db_aws_key_properties,
             type=oracle_db_aws_key_type)

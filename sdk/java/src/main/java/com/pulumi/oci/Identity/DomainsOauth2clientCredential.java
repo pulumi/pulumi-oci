@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOauth2clientCredential = new DomainsOauth2clientCredential("testOauth2clientCredential", DomainsOauth2clientCredentialArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .name(oauth2clientCredentialName)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential")
  *             .scopes(DomainsOauth2clientCredentialScopeArgs.builder()
@@ -85,8 +85,8 @@ import javax.annotation.Nullable;
  *                 .allowSelfChange(oauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange)
  *                 .build())
  *             .user(DomainsOauth2clientCredentialUserArgs.builder()
- *                 .ocid(testUser.ocid())
- *                 .value(testUser.id())
+ *                 .ocid(testUser.get("ocid"))
+ *                 .value(testUser.get("id"))
  *                 .build())
  *             .build());
  * 

@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *         edgePathPrefix: streamCdnConfigConfigEdgePathPrefix,
  *         edgeTokenKey: streamCdnConfigConfigEdgeTokenKey,
  *         edgeTokenSalt: streamCdnConfigConfigEdgeTokenSalt,
- *         isEdgeTokenAuth: streamCdnConfigConfigIsEdgeTokenAuth === "true",
+ *         isEdgeTokenAuth: streamCdnConfigConfigIsEdgeTokenAuth,
  *         originAuthSecretKeyA: streamCdnConfigConfigOriginAuthSecretKeyA,
  *         originAuthSecretKeyB: streamCdnConfigConfigOriginAuthSecretKeyB,
  *         originAuthSecretKeyNonceA: streamCdnConfigConfigOriginAuthSecretKeyNonceA,
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isEnabled: streamCdnConfigIsEnabled === "true",
+ *     isEnabled: streamCdnConfigIsEnabled,
  *     locks: [{
  *         compartmentId: compartmentId,
  *         type: streamCdnConfigLocksType,

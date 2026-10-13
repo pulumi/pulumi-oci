@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *         var testFusionEnvironmentAdminUser = new FusionEnvironmentAdminUser("testFusionEnvironmentAdminUser", FusionEnvironmentAdminUserArgs.builder()
  *             .emailAddress(fusionEnvironmentAdminUserEmailAddress)
  *             .firstName(fusionEnvironmentAdminUserFirstName)
- *             .fusionEnvironmentId(testFusionEnvironment.id())
+ *             .fusionEnvironmentId(testFusionEnvironment.get("id"))
  *             .lastName(fusionEnvironmentAdminUserLastName)
  *             .username(fusionEnvironmentAdminUserUsername)
  *             .build());

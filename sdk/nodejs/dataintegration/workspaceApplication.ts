@@ -35,13 +35,13 @@ import * as utilities from "../utilities";
  *     },
  *     key: workspaceApplicationKey,
  *     modelVersion: workspaceApplicationModelVersion,
- *     objectStatus: Number(workspaceApplicationObjectStatus),
+ *     objectStatus: workspaceApplicationObjectStatus,
  *     registryMetadata: {
  *         aggregatorKey: workspaceApplicationRegistryMetadataAggregatorKey,
- *         isFavorite: workspaceApplicationRegistryMetadataIsFavorite === "true",
+ *         isFavorite: workspaceApplicationRegistryMetadataIsFavorite,
  *         key: workspaceApplicationRegistryMetadataKey,
  *         labels: workspaceApplicationRegistryMetadataLabels,
- *         registryVersion: Number(workspaceApplicationRegistryMetadataRegistryVersion),
+ *         registryVersion: workspaceApplicationRegistryMetadataRegistryVersion,
  *     },
  *     sourceApplicationInfo: {
  *         applicationKey: workspaceApplicationSourceApplicationInfoApplicationKey,

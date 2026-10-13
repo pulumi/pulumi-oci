@@ -52,7 +52,7 @@ public final class ComputeInstanceAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceagentId(instanceagent.id())
+     *             .instanceagentId(instanceagent.get("id"))
      *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
@@ -96,7 +96,7 @@ public final class ComputeInstanceAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceagentId(instanceagent.id())
+     *             .instanceagentId(instanceagent.get("id"))
      *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
@@ -140,7 +140,7 @@ public final class ComputeInstanceAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceagentId(instanceagent.id())
+     *             .instanceagentId(instanceagent.get("id"))
      *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
@@ -184,7 +184,7 @@ public final class ComputeInstanceAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceagentId(instanceagent.id())
+     *             .instanceagentId(instanceagent.get("id"))
      *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
@@ -228,7 +228,7 @@ public final class ComputeInstanceAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceagentId(instanceagent.id())
+     *             .instanceagentId(instanceagent.get("id"))
      *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
@@ -272,7 +272,7 @@ public final class ComputeInstanceAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceagentId(instanceagent.id())
+     *             .instanceagentId(instanceagent.get("id"))
      *             .name(instanceAgentPluginName)
      *             .status(instanceAgentPluginStatus)
      *             .build());
@@ -317,7 +317,7 @@ public final class ComputeInstanceAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceagentId(instanceagent.id())
+     *             .instanceagentId(instanceagent.get("id"))
      *             .name(instanceAgentPluginName)
      *             .status(instanceAgentPluginStatus)
      *             .build());
@@ -362,7 +362,7 @@ public final class ComputeInstanceAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceagentId(instanceagent.id())
+     *             .instanceagentId(instanceagent.get("id"))
      *             .name(instanceAgentPluginName)
      *             .status(instanceAgentPluginStatus)
      *             .build());
@@ -407,7 +407,7 @@ public final class ComputeInstanceAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceagentId(instanceagent.id())
+     *             .instanceagentId(instanceagent.get("id"))
      *             .name(instanceAgentPluginName)
      *             .status(instanceAgentPluginStatus)
      *             .build());
@@ -452,7 +452,7 @@ public final class ComputeInstanceAgentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .instanceagentId(instanceagent.id())
+     *             .instanceagentId(instanceagent.get("id"))
      *             .name(instanceAgentPluginName)
      *             .status(instanceAgentPluginStatus)
      *             .build());

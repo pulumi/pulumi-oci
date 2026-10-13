@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCalculateAuditVolumeAvailable = new CalculateAuditVolumeAvailable("testCalculateAuditVolumeAvailable", CalculateAuditVolumeAvailableArgs.builder()
- *             .auditProfileId(testAuditProfile.id())
+ *             .auditProfileId(testAuditProfile.get("id"))
  *             .auditCollectionStartTime(calculateAuditVolumeAvailableAuditCollectionStartTime)
  *             .databaseUniqueName(calculateAuditVolumeAvailableDatabaseUniqueName)
  *             .trailLocations(calculateAuditVolumeAvailableTrailLocations)

@@ -106,7 +106,7 @@ def get_scheduler_job_counts(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_scheduler_job_counts = oci.fleetappsmanagement.get_scheduler_job_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=scheduler_job_count_compartment_id_in_subtree == "true")
+        compartment_id_in_subtree=scheduler_job_count_compartment_id_in_subtree)
     ```
 
 
@@ -142,7 +142,7 @@ def get_scheduler_job_counts_output(compartment_id: pulumi.Input[Optional[Option
     import pulumi_oci as oci
 
     test_scheduler_job_counts = oci.fleetappsmanagement.get_scheduler_job_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=scheduler_job_count_compartment_id_in_subtree == "true")
+        compartment_id_in_subtree=scheduler_job_count_compartment_id_in_subtree)
     ```
 
 

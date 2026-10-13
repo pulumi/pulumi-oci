@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *             .processingPeriodType(budgetProcessingPeriodType)
  *             .startDate(budgetStartDate)
  *             .systemTags(budgetSystemTags)
- *             .targetCompartmentId(testCompartment.id())
+ *             .targetCompartmentId(testCompartment.get("id"))
  *             .targetType(budgetTargetType)
  *             .targets(budgetTargets)
  *             .build());

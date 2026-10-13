@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testOauthPartnerCertificates = oci.identity.getDomainsOauthPartnerCertificates({
  *     idcsEndpoint: testDomain.url,
- *     oauthPartnerCertificateCount: Number(oauthPartnerCertificateOauthPartnerCertificateCount),
+ *     oauthPartnerCertificateCount: oauthPartnerCertificateOauthPartnerCertificateCount,
  *     oauthPartnerCertificateFilter: oauthPartnerCertificateOauthPartnerCertificateFilter,
  *     authorization: oauthPartnerCertificateAuthorization,
  *     resourceTypeSchemaVersion: oauthPartnerCertificateResourceTypeSchemaVersion,
- *     startIndex: Number(oauthPartnerCertificateStartIndex),
+ *     startIndex: oauthPartnerCertificateStartIndex,
  * });
  * ```
  */
@@ -116,11 +116,11 @@ export interface GetDomainsOauthPartnerCertificatesResult {
  *
  * const testOauthPartnerCertificates = oci.identity.getDomainsOauthPartnerCertificates({
  *     idcsEndpoint: testDomain.url,
- *     oauthPartnerCertificateCount: Number(oauthPartnerCertificateOauthPartnerCertificateCount),
+ *     oauthPartnerCertificateCount: oauthPartnerCertificateOauthPartnerCertificateCount,
  *     oauthPartnerCertificateFilter: oauthPartnerCertificateOauthPartnerCertificateFilter,
  *     authorization: oauthPartnerCertificateAuthorization,
  *     resourceTypeSchemaVersion: oauthPartnerCertificateResourceTypeSchemaVersion,
- *     startIndex: Number(oauthPartnerCertificateStartIndex),
+ *     startIndex: oauthPartnerCertificateStartIndex,
  * });
  * ```
  */

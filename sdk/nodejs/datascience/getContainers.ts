@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testContainers = oci.datascience.getContainers({
  *     containerName: testContainer.name,
  *     displayName: containerDisplayName,
- *     isLatest: containerIsLatest === "true",
+ *     isLatest: containerIsLatest,
  *     state: containerState,
  *     tagQueryParam: containerTagQueryParam,
  *     targetWorkload: containerTargetWorkload,
@@ -125,7 +125,7 @@ export interface GetContainersResult {
  * const testContainers = oci.datascience.getContainers({
  *     containerName: testContainer.name,
  *     displayName: containerDisplayName,
- *     isLatest: containerIsLatest === "true",
+ *     isLatest: containerIsLatest,
  *     state: containerState,
  *     tagQueryParam: containerTagQueryParam,
  *     targetWorkload: containerTargetWorkload,

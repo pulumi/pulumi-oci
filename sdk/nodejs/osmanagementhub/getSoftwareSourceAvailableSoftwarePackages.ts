@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     softwareSourceId: testSoftwareSource.id,
  *     displayName: softwareSourceAvailableSoftwarePackageDisplayName,
  *     displayNameContains: softwareSourceAvailableSoftwarePackageDisplayNameContains,
- *     isLatest: softwareSourceAvailableSoftwarePackageIsLatest === "true",
+ *     isLatest: softwareSourceAvailableSoftwarePackageIsLatest,
  * });
  * ```
  */
@@ -100,7 +100,7 @@ export interface GetSoftwareSourceAvailableSoftwarePackagesResult {
  *     softwareSourceId: testSoftwareSource.id,
  *     displayName: softwareSourceAvailableSoftwarePackageDisplayName,
  *     displayNameContains: softwareSourceAvailableSoftwarePackageDisplayNameContains,
- *     isLatest: softwareSourceAvailableSoftwarePackageIsLatest === "true",
+ *     isLatest: softwareSourceAvailableSoftwarePackageIsLatest,
  * });
  * ```
  */

@@ -33,7 +33,7 @@ import (
 //			_, err := osmanagementhub.GetSoftwareSourcePackageGroups(ctx, &osmanagementhub.GetSoftwareSourcePackageGroupsArgs{
 //				SoftwareSourceId: testSoftwareSource.Id,
 //				CompartmentId:    pulumi.StringRef(compartmentId),
-//				GroupTypes:       pulumi.ToArray(softwareSourcePackageGroupGroupType),
+//				GroupTypes:       softwareSourcePackageGroupGroupType,
 //				Name:             pulumi.StringRef(softwareSourcePackageGroupName),
 //				NameContains:     pulumi.StringRef(softwareSourcePackageGroupNameContains),
 //			}, nil)

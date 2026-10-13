@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isCostTracking: tagIsCostTracking === "true",
+ *     isCostTracking: tagIsCostTracking,
  *     validator: {
  *         validatorType: tagValidatorValidatorType,
  *         values: tagValidatorValues,

@@ -71,7 +71,7 @@ import javax.annotation.Nullable;
  *                     .value(usagePlanEntitlementsRateLimitValue)
  *                     .build())
  *                 .targets(UsagePlanEntitlementTargetArgs.builder()
- *                     .deploymentId(testDeployment.id())
+ *                     .deploymentId(testDeployment.get("id"))
  *                     .build())
  *                 .build())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

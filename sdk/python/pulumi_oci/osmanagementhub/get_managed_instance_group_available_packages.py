@@ -146,7 +146,7 @@ def get_managed_instance_group_available_packages(compartment_id: Optional[_buil
         compartment_id=compartment_id,
         display_names=managed_instance_group_available_package_display_name,
         display_name_contains=managed_instance_group_available_package_display_name_contains,
-        is_latest=managed_instance_group_available_package_is_latest == "true")
+        is_latest=managed_instance_group_available_package_is_latest)
     ```
 
 
@@ -198,7 +198,7 @@ def get_managed_instance_group_available_packages_output(compartment_id: pulumi.
         compartment_id=compartment_id,
         display_names=managed_instance_group_available_package_display_name,
         display_name_contains=managed_instance_group_available_package_display_name_contains,
-        is_latest=managed_instance_group_available_package_is_latest == "true")
+        is_latest=managed_instance_group_available_package_is_latest)
     ```
 
 

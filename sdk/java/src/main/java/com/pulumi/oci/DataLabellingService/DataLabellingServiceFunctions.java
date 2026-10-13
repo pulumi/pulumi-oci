@@ -474,7 +474,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
-     *             .datasetId(testDatasetOciDataLabelingServiceDataset.id())
+     *             .datasetId(testDatasetOciDataLabelingServiceDataset.get("id"))
      *             .build());
      * 
      *     }
@@ -516,7 +516,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
-     *             .datasetId(testDatasetOciDataLabelingServiceDataset.id())
+     *             .datasetId(testDatasetOciDataLabelingServiceDataset.get("id"))
      *             .build());
      * 
      *     }
@@ -558,7 +558,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
-     *             .datasetId(testDatasetOciDataLabelingServiceDataset.id())
+     *             .datasetId(testDatasetOciDataLabelingServiceDataset.get("id"))
      *             .build());
      * 
      *     }
@@ -600,7 +600,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
-     *             .datasetId(testDatasetOciDataLabelingServiceDataset.id())
+     *             .datasetId(testDatasetOciDataLabelingServiceDataset.get("id"))
      *             .build());
      * 
      *     }
@@ -642,7 +642,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
-     *             .datasetId(testDatasetOciDataLabelingServiceDataset.id())
+     *             .datasetId(testDatasetOciDataLabelingServiceDataset.get("id"))
      *             .build());
      * 
      *     }

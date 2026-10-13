@@ -31,9 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := waas.GetCustomProtectionRules(ctx, &waas.GetCustomProtectionRulesArgs{
 //				CompartmentId:                   compartmentId,
-//				DisplayNames:                    pulumi.ToArray(customProtectionRuleDisplayNames),
-//				Ids:                             pulumi.ToArray(customProtectionRuleIds),
-//				States:                          pulumi.ToArray(customProtectionRuleStates),
+//				DisplayNames:                    customProtectionRuleDisplayNames,
+//				Ids:                             customProtectionRuleIds,
+//				States:                          customProtectionRuleStates,
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(customProtectionRuleTimeCreatedGreaterThanOrEqualTo),
 //				TimeCreatedLessThan:             pulumi.StringRef(customProtectionRuleTimeCreatedLessThan),
 //			}, nil)

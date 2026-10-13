@@ -48,7 +48,7 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
-     *             .oceInstanceId(testOceInstanceOciOceOceInstance.id())
+     *             .oceInstanceId(testOceInstanceOciOceOceInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -90,7 +90,7 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
-     *             .oceInstanceId(testOceInstanceOciOceOceInstance.id())
+     *             .oceInstanceId(testOceInstanceOciOceOceInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -132,7 +132,7 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
-     *             .oceInstanceId(testOceInstanceOciOceOceInstance.id())
+     *             .oceInstanceId(testOceInstanceOciOceOceInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -174,7 +174,7 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
-     *             .oceInstanceId(testOceInstanceOciOceOceInstance.id())
+     *             .oceInstanceId(testOceInstanceOciOceOceInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -216,7 +216,7 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
-     *             .oceInstanceId(testOceInstanceOciOceOceInstance.id())
+     *             .oceInstanceId(testOceInstanceOciOceOceInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -261,7 +261,7 @@ public final class OceFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(oceInstanceDisplayName)
      *             .state(oceInstanceState)
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -306,7 +306,7 @@ public final class OceFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(oceInstanceDisplayName)
      *             .state(oceInstanceState)
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -351,7 +351,7 @@ public final class OceFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(oceInstanceDisplayName)
      *             .state(oceInstanceState)
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -396,7 +396,7 @@ public final class OceFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(oceInstanceDisplayName)
      *             .state(oceInstanceState)
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -441,7 +441,7 @@ public final class OceFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(oceInstanceDisplayName)
      *             .state(oceInstanceState)
-     *             .tenancyId(testTenancy.id())
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }

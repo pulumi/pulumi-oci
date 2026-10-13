@@ -27,8 +27,8 @@ import * as utilities from "../utilities";
  *     costAlertSubscriptionMap: {
  *         costAlertSubscriptionId: testCostAlertSubscription.id,
  *         operator: costAnomalyMonitorCostAlertSubscriptionMapOperator,
- *         thresholdAbsoluteValue: Number(costAnomalyMonitorCostAlertSubscriptionMapThresholdAbsoluteValue),
- *         thresholdRelativePercent: Number(costAnomalyMonitorCostAlertSubscriptionMapThresholdRelativePercent),
+ *         thresholdAbsoluteValue: costAnomalyMonitorCostAlertSubscriptionMapThresholdAbsoluteValue,
+ *         thresholdRelativePercent: costAnomalyMonitorCostAlertSubscriptionMapThresholdRelativePercent,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",

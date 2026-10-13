@@ -46,9 +46,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     listenerPort: Number(vmClusterNetworkListenerPort),
- *     listenerPortSsl: Number(vmClusterNetworkListenerPortSsl),
- *     nodeCount: Number(vmClusterNetworkNodeCount),
+ *     listenerPort: vmClusterNetworkListenerPort,
+ *     listenerPortSsl: vmClusterNetworkListenerPortSsl,
+ *     nodeCount: vmClusterNetworkNodeCount,
  *     ntpServers: vmClusterNetworkNtpServers,
  *     scans: [{
  *         hostname: vmClusterNetworkScansHostname,

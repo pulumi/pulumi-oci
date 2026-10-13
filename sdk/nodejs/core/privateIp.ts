@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateIp = new oci.core.PrivateIp("test_private_ip", {
- *     cidrPrefixLength: Number(privateIpCidrPrefixLength),
+ *     cidrPrefixLength: privateIpCidrPrefixLength,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

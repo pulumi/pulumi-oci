@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *             .isOobSavedSearch(managementSavedSearchIsOobSavedSearch)
  *             .metadataVersion(managementSavedSearchMetadataVersion)
  *             .nls(managementSavedSearchNls)
- *             .providerId(testProvider.id())
+ *             .providerId(testProvider.get("id"))
  *             .providerName(managementSavedSearchProviderName)
  *             .providerVersion(managementSavedSearchProviderVersion)
  *             .screenImage(managementSavedSearchScreenImage)

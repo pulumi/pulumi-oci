@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testCustomerSecretKey = new CustomerSecretKey("testCustomerSecretKey", CustomerSecretKeyArgs.builder()
  *             .displayName(customerSecretKeyDisplayName)
- *             .userId(testUser.id())
+ *             .userId(testUser.get("id"))
  *             .build());
  * 
  *     }

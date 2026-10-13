@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDatabaseToolsDatabaseApiGatewayConfigGlobal = new RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal("testDatabaseToolsDatabaseApiGatewayConfigGlobal", RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs.builder()
- *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+ *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
  *             .globalKey(databaseToolsDatabaseApiGatewayConfigGlobalGlobalKey)
  *             .type(databaseToolsDatabaseApiGatewayConfigGlobalType)
  *             .advancedProperties(databaseToolsDatabaseApiGatewayConfigGlobalAdvancedProperties)

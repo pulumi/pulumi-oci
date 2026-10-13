@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCustomerSecretKey = new DomainsCustomerSecretKey("testCustomerSecretKey", DomainsCustomerSecretKeyArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey")
  *             .attributeSets()
  *             .attributes("")
@@ -78,8 +78,8 @@ import javax.annotation.Nullable;
  *                 .allowSelfChange(customerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange)
  *                 .build())
  *             .user(DomainsCustomerSecretKeyUserArgs.builder()
- *                 .ocid(testUser.ocid())
- *                 .value(testUser.id())
+ *                 .ocid(testUser.get("ocid"))
+ *                 .value(testUser.get("id"))
  *                 .build())
  *             .build());
  * 

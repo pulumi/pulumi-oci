@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDigitalTwinModel = new IotDigitalTwinModel("testDigitalTwinModel", IotDigitalTwinModelArgs.builder()
- *             .iotDomainId(testIotDomain.id())
+ *             .iotDomainId(testIotDomain.get("id"))
  *             .spec(digitalTwinModelSpec)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(digitalTwinModelDescription)

@@ -30,8 +30,8 @@ import * as utilities from "../utilities";
  *     environmentId: testEnvironment.id,
  *     inventoryId: testInventory.id,
  *     type: assetSourceType,
- *     areHistoricalMetricsCollected: assetSourceAreHistoricalMetricsCollected === "true",
- *     areRealtimeMetricsCollected: assetSourceAreRealtimeMetricsCollected === "true",
+ *     areHistoricalMetricsCollected: assetSourceAreHistoricalMetricsCollected,
+ *     areRealtimeMetricsCollected: assetSourceAreRealtimeMetricsCollected,
  *     awsAccountKey: assetSourceAwsAccountKey,
  *     awsRegion: assetSourceAwsRegion,
  *     definedTags: {
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isCostInformationCollected: assetSourceIsCostInformationCollected === "true",
+ *     isCostInformationCollected: assetSourceIsCostInformationCollected,
  *     olvmEndpoint: assetSourceOlvmEndpoint,
  *     replicationCredentials: {
  *         secretId: testSecret.id,

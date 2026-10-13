@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAlertPolicyRule = new AlertPolicyRule("testAlertPolicyRule", AlertPolicyRuleArgs.builder()
- *             .alertPolicyId(testAlertPolicy.id())
+ *             .alertPolicyId(testAlertPolicy.get("id"))
  *             .expression(alertPolicyRuleExpression)
  *             .description(alertPolicyRuleDescription)
  *             .displayName(alertPolicyRuleDisplayName)

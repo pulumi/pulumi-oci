@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testComplianceRecords = oci.fleetappsmanagement.getComplianceRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree,
  *     complianceState: complianceRecordComplianceState,
  *     entityId: testEntity.id,
  *     productName: complianceRecordProductName,
@@ -139,7 +139,7 @@ export interface GetComplianceRecordsResult {
  *
  * const testComplianceRecords = oci.fleetappsmanagement.getComplianceRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree,
  *     complianceState: complianceRecordComplianceState,
  *     entityId: testEntity.id,
  *     productName: complianceRecordProductName,

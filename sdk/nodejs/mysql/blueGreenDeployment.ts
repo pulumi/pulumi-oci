@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     targetDbSystemDetails: {
  *         mysqlVersion: blueGreenDeploymentTargetDbSystemDetailsMysqlVersion,
  *         configurationId: testMysqlConfiguration.id,
- *         dataStorageSizeInGb: Number(blueGreenDeploymentTargetDbSystemDetailsDataStorageSizeInGb),
+ *         dataStorageSizeInGb: blueGreenDeploymentTargetDbSystemDetailsDataStorageSizeInGb,
  *         shapeName: testShape.name,
  *     },
  *     definedTags: {

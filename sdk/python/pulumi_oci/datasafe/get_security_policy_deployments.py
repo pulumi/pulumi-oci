@@ -208,7 +208,7 @@ def get_security_policy_deployments(access_level: Optional[_builtins.str] = None
 
     test_security_policy_deployments = oci.datasafe.get_security_policy_deployments(compartment_id=compartment_id,
         access_level=security_policy_deployment_access_level,
-        compartment_id_in_subtree=security_policy_deployment_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_policy_deployment_compartment_id_in_subtree,
         display_name=security_policy_deployment_display_name,
         security_policy_deployment_id=test_security_policy_deployment["id"],
         security_policy_id=test_security_policy["id"],
@@ -292,7 +292,7 @@ def get_security_policy_deployments_output(access_level: pulumi.Input[Optional[O
 
     test_security_policy_deployments = oci.datasafe.get_security_policy_deployments(compartment_id=compartment_id,
         access_level=security_policy_deployment_access_level,
-        compartment_id_in_subtree=security_policy_deployment_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_policy_deployment_compartment_id_in_subtree,
         display_name=security_policy_deployment_display_name,
         security_policy_deployment_id=test_security_policy_deployment["id"],
         security_policy_id=test_security_policy["id"],

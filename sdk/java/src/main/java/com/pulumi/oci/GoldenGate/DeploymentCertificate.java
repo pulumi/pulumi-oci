@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDeploymentCertificate = new DeploymentCertificate("testDeploymentCertificate", DeploymentCertificateArgs.builder()
  *             .certificateContent(deploymentCertificateCertificateContent)
- *             .deploymentId(testDeployment.id())
+ *             .deploymentId(testDeployment.get("id"))
  *             .key(deploymentCertificateKey)
  *             .isLockOverride(deploymentCertificateIsLockOverride)
  *             .build());

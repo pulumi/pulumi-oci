@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMyAuthToken = new DomainsMyAuthToken("testMyAuthToken", DomainsMyAuthTokenArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:authToken")
  *             .authorization(myAuthTokenAuthorization)
  *             .description(myAuthTokenDescription)

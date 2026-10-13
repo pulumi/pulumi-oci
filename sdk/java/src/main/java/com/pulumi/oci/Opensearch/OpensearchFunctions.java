@@ -69,7 +69,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
-     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.id())
+     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -120,7 +120,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
-     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.id())
+     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -171,7 +171,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
-     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.id())
+     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -222,7 +222,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
-     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.id())
+     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -273,7 +273,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
-     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.id())
+     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -315,7 +315,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchClusterPipeline = OpensearchFunctions.getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs.builder()
-     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.id())
+     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -357,7 +357,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchClusterPipeline = OpensearchFunctions.getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs.builder()
-     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.id())
+     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -399,7 +399,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchClusterPipeline = OpensearchFunctions.getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs.builder()
-     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.id())
+     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -441,7 +441,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchClusterPipeline = OpensearchFunctions.getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs.builder()
-     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.id())
+     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -483,7 +483,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchClusterPipeline = OpensearchFunctions.getOpensearchClusterPipeline(GetOpensearchClusterPipelineArgs.builder()
-     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.id())
+     *             .opensearchClusterPipelineId(testOpensearchClusterPipelineOciOpensearchOpensearchClusterPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -528,7 +528,7 @@ public final class OpensearchFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(opensearchClusterPipelineDisplayName)
      *             .id(opensearchClusterPipelineId)
-     *             .pipelineComponentId(testPipelineComponent.id())
+     *             .pipelineComponentId(testPipelineComponent.get("id"))
      *             .state(opensearchClusterPipelineState)
      *             .build());
      * 
@@ -574,7 +574,7 @@ public final class OpensearchFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(opensearchClusterPipelineDisplayName)
      *             .id(opensearchClusterPipelineId)
-     *             .pipelineComponentId(testPipelineComponent.id())
+     *             .pipelineComponentId(testPipelineComponent.get("id"))
      *             .state(opensearchClusterPipelineState)
      *             .build());
      * 
@@ -620,7 +620,7 @@ public final class OpensearchFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(opensearchClusterPipelineDisplayName)
      *             .id(opensearchClusterPipelineId)
-     *             .pipelineComponentId(testPipelineComponent.id())
+     *             .pipelineComponentId(testPipelineComponent.get("id"))
      *             .state(opensearchClusterPipelineState)
      *             .build());
      * 
@@ -666,7 +666,7 @@ public final class OpensearchFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(opensearchClusterPipelineDisplayName)
      *             .id(opensearchClusterPipelineId)
-     *             .pipelineComponentId(testPipelineComponent.id())
+     *             .pipelineComponentId(testPipelineComponent.get("id"))
      *             .state(opensearchClusterPipelineState)
      *             .build());
      * 
@@ -712,7 +712,7 @@ public final class OpensearchFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(opensearchClusterPipelineDisplayName)
      *             .id(opensearchClusterPipelineId)
-     *             .pipelineComponentId(testPipelineComponent.id())
+     *             .pipelineComponentId(testPipelineComponent.get("id"))
      *             .state(opensearchClusterPipelineState)
      *             .build());
      * 

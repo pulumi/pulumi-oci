@@ -227,13 +227,13 @@ def get_domains_security_questions(attribute_sets: Optional[Sequence[_builtins.s
     import pulumi_oci as oci
 
     test_security_questions = oci.identity.get_domains_security_questions(idcs_endpoint=test_domain["url"],
-        security_question_count=int(security_question_security_question_count),
+        security_question_count=security_question_security_question_count,
         security_question_filter=security_question_security_question_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=security_question_authorization,
         resource_type_schema_version=security_question_resource_type_schema_version,
-        start_index=int(security_question_start_index))
+        start_index=security_question_start_index)
     ```
 
 
@@ -303,13 +303,13 @@ def get_domains_security_questions_output(attribute_sets: pulumi.Input[Optional[
     import pulumi_oci as oci
 
     test_security_questions = oci.identity.get_domains_security_questions(idcs_endpoint=test_domain["url"],
-        security_question_count=int(security_question_security_question_count),
+        security_question_count=security_question_security_question_count,
         security_question_filter=security_question_security_question_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=security_question_authorization,
         resource_type_schema_version=security_question_resource_type_schema_version,
-        start_index=int(security_question_start_index))
+        start_index=security_question_start_index)
     ```
 
 

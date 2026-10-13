@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testResourceTypeSchemaAttributes = oci.identity.getDomainsResourceTypeSchemaAttributes({
  *     idcsEndpoint: testDomain.url,
- *     resourceTypeSchemaAttributeCount: Number(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount),
+ *     resourceTypeSchemaAttributeCount: resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount,
  *     resourceTypeSchemaAttributeFilter: resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: resourceTypeSchemaAttributeAuthorization,
  *     resourceTypeSchemaVersion: resourceTypeSchemaAttributeResourceTypeSchemaVersion,
- *     startIndex: Number(resourceTypeSchemaAttributeStartIndex),
+ *     startIndex: resourceTypeSchemaAttributeStartIndex,
  * });
  * ```
  */
@@ -139,13 +139,13 @@ export interface GetDomainsResourceTypeSchemaAttributesResult {
  *
  * const testResourceTypeSchemaAttributes = oci.identity.getDomainsResourceTypeSchemaAttributes({
  *     idcsEndpoint: testDomain.url,
- *     resourceTypeSchemaAttributeCount: Number(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount),
+ *     resourceTypeSchemaAttributeCount: resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount,
  *     resourceTypeSchemaAttributeFilter: resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: resourceTypeSchemaAttributeAuthorization,
  *     resourceTypeSchemaVersion: resourceTypeSchemaAttributeResourceTypeSchemaVersion,
- *     startIndex: Number(resourceTypeSchemaAttributeStartIndex),
+ *     startIndex: resourceTypeSchemaAttributeStartIndex,
  * });
  * ```
  */

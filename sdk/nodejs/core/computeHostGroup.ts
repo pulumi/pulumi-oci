@@ -24,11 +24,11 @@ import * as utilities from "../utilities";
  *     availabilityDomain: computeHostGroupAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: computeHostGroupDisplayName,
- *     isTargetedPlacementRequired: computeHostGroupIsTargetedPlacementRequired === "true",
+ *     isTargetedPlacementRequired: computeHostGroupIsTargetedPlacementRequired,
  *     configurations: [{
  *         firmwareBundleId: testFirmwareBundle.id,
  *         quickRecycleSettings: {
- *             nvmeWipe: computeHostGroupConfigurationsQuickRecycleSettingsNvmeWipe === "true",
+ *             nvmeWipe: computeHostGroupConfigurationsQuickRecycleSettingsNvmeWipe,
  *         },
  *         recycleLevel: computeHostGroupConfigurationsRecycleLevel,
  *         state: computeHostGroupConfigurationsState,

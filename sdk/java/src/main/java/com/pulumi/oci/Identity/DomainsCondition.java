@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *         var testCondition = new DomainsCondition("testCondition", DomainsConditionArgs.builder()
  *             .attributeName(conditionAttributeName)
  *             .attributeValue(conditionAttributeValue)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .name(conditionName)
  *             .operator(conditionOperator)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:Condition")

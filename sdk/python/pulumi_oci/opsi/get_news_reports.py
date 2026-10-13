@@ -145,7 +145,7 @@ def get_news_reports(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_news_reports = oci.opsi.get_news_reports(compartment_id=compartment_id,
-        compartment_id_in_subtree=news_report_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=news_report_compartment_id_in_subtree,
         news_report_id=test_news_report["id"],
         states=news_report_state,
         statuses=news_report_status)
@@ -196,7 +196,7 @@ def get_news_reports_output(compartment_id: pulumi.Input[Optional[Optional[_buil
     import pulumi_oci as oci
 
     test_news_reports = oci.opsi.get_news_reports(compartment_id=compartment_id,
-        compartment_id_in_subtree=news_report_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=news_report_compartment_id_in_subtree,
         news_report_id=test_news_report["id"],
         states=news_report_state,
         statuses=news_report_status)

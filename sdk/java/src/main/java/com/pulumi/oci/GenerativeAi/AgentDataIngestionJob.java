@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDataIngestionJob = new AgentDataIngestionJob("testDataIngestionJob", AgentDataIngestionJobArgs.builder()
  *             .compartmentId(compartmentId)
- *             .dataSourceId(testDataSource.id())
+ *             .dataSourceId(testDataSource.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(dataIngestionJobDescription)
  *             .displayName(dataIngestionJobDisplayName)

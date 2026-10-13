@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testAlertAnalytic = oci.datasafe.getAlertAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: alertAnalyticAccessLevel,
- *     compartmentIdInSubtree: alertAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: alertAnalyticCompartmentIdInSubtree,
  *     groupBies: alertAnalyticGroupBy,
  *     queryTimeZone: alertAnalyticQueryTimeZone,
  *     scimQuery: alertAnalyticScimQuery,
@@ -134,7 +134,7 @@ export interface GetAlertAnalyticResult {
  * const testAlertAnalytic = oci.datasafe.getAlertAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: alertAnalyticAccessLevel,
- *     compartmentIdInSubtree: alertAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: alertAnalyticCompartmentIdInSubtree,
  *     groupBies: alertAnalyticGroupBy,
  *     queryTimeZone: alertAnalyticQueryTimeZone,
  *     scimQuery: alertAnalyticScimQuery,

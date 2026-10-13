@@ -525,7 +525,7 @@ class MlApplicationInstance(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=ml_application_instance_is_enabled == "true")
+            is_enabled=ml_application_instance_is_enabled)
         ```
 
         ## Import
@@ -590,7 +590,7 @@ class MlApplicationInstance(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=ml_application_instance_is_enabled == "true")
+            is_enabled=ml_application_instance_is_enabled)
         ```
 
         ## Import

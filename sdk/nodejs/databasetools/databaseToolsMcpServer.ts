@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *         },
  *     },
  *     type: databaseToolsMcpServerType,
- *     accessTokenExpiryInSeconds: Number(databaseToolsMcpServerAccessTokenExpiryInSeconds),
+ *     accessTokenExpiryInSeconds: databaseToolsMcpServerAccessTokenExpiryInSeconds,
  *     customRoles: [{
  *         description: databaseToolsMcpServerCustomRolesDescription,
  *         displayName: databaseToolsMcpServerCustomRolesDisplayName,
@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  *         relatedResourceId: testResource.id,
  *         timeCreated: databaseToolsMcpServerLocksTimeCreated,
  *     }],
- *     refreshTokenExpiryInSeconds: Number(databaseToolsMcpServerRefreshTokenExpiryInSeconds),
+ *     refreshTokenExpiryInSeconds: databaseToolsMcpServerRefreshTokenExpiryInSeconds,
  *     runtimeIdentity: databaseToolsMcpServerRuntimeIdentity,
  * });
  * ```

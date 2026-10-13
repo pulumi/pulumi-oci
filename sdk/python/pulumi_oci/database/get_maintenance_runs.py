@@ -185,7 +185,7 @@ def get_maintenance_runs(availability_domain: Optional[_builtins.str] = None,
 
     test_maintenance_runs = oci.database.get_maintenance_runs(compartment_id=compartment_id,
         availability_domain=maintenance_run_availability_domain,
-        is_local_adg=maintenance_run_is_local_adg == "true",
+        is_local_adg=maintenance_run_is_local_adg,
         maintenance_subtype=maintenance_run_maintenance_subtype,
         maintenance_type=maintenance_run_maintenance_type,
         state=maintenance_run_state,
@@ -251,7 +251,7 @@ def get_maintenance_runs_output(availability_domain: pulumi.Input[Optional[Optio
 
     test_maintenance_runs = oci.database.get_maintenance_runs(compartment_id=compartment_id,
         availability_domain=maintenance_run_availability_domain,
-        is_local_adg=maintenance_run_is_local_adg == "true",
+        is_local_adg=maintenance_run_is_local_adg,
         maintenance_subtype=maintenance_run_maintenance_subtype,
         maintenance_type=maintenance_run_maintenance_type,
         state=maintenance_run_state,

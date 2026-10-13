@@ -919,9 +919,9 @@ class LoadBalancer(pulumi.CustomResource):
             },
             ip_mode=load_balancer_ip_mode,
             ipv6subnet_cidr=load_balancer_ipv6subnet_cidr,
-            is_delete_protection_enabled=load_balancer_is_delete_protection_enabled == "true",
-            is_private=load_balancer_is_private == "true",
-            is_request_id_enabled=load_balancer_is_request_id_enabled == "true",
+            is_delete_protection_enabled=load_balancer_is_delete_protection_enabled,
+            is_private=load_balancer_is_private,
+            is_request_id_enabled=load_balancer_is_request_id_enabled,
             network_security_group_ids=load_balancer_network_security_group_ids,
             request_id_header=load_balancer_request_id_header,
             reserved_ips=[{
@@ -929,8 +929,8 @@ class LoadBalancer(pulumi.CustomResource):
             }],
             security_attributes=load_balancer_security_attributes,
             shape_details={
-                "maximum_bandwidth_in_mbps": int(load_balancer_shape_details_maximum_bandwidth_in_mbps),
-                "minimum_bandwidth_in_mbps": int(load_balancer_shape_details_minimum_bandwidth_in_mbps),
+                "maximum_bandwidth_in_mbps": load_balancer_shape_details_maximum_bandwidth_in_mbps,
+                "minimum_bandwidth_in_mbps": load_balancer_shape_details_minimum_bandwidth_in_mbps,
             })
         ```
 
@@ -1075,9 +1075,9 @@ class LoadBalancer(pulumi.CustomResource):
             },
             ip_mode=load_balancer_ip_mode,
             ipv6subnet_cidr=load_balancer_ipv6subnet_cidr,
-            is_delete_protection_enabled=load_balancer_is_delete_protection_enabled == "true",
-            is_private=load_balancer_is_private == "true",
-            is_request_id_enabled=load_balancer_is_request_id_enabled == "true",
+            is_delete_protection_enabled=load_balancer_is_delete_protection_enabled,
+            is_private=load_balancer_is_private,
+            is_request_id_enabled=load_balancer_is_request_id_enabled,
             network_security_group_ids=load_balancer_network_security_group_ids,
             request_id_header=load_balancer_request_id_header,
             reserved_ips=[{
@@ -1085,8 +1085,8 @@ class LoadBalancer(pulumi.CustomResource):
             }],
             security_attributes=load_balancer_security_attributes,
             shape_details={
-                "maximum_bandwidth_in_mbps": int(load_balancer_shape_details_maximum_bandwidth_in_mbps),
-                "minimum_bandwidth_in_mbps": int(load_balancer_shape_details_minimum_bandwidth_in_mbps),
+                "maximum_bandwidth_in_mbps": load_balancer_shape_details_maximum_bandwidth_in_mbps,
+                "minimum_bandwidth_in_mbps": load_balancer_shape_details_minimum_bandwidth_in_mbps,
             })
         ```
 

@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *         var testWorkspaceApplication = new WorkspaceApplication("testWorkspaceApplication", WorkspaceApplicationArgs.builder()
  *             .identifier(workspaceApplicationIdentifier)
  *             .name(workspaceApplicationName)
- *             .workspaceId(testWorkspace.id())
+ *             .workspaceId(testWorkspace.get("id"))
  *             .modelType(workspaceApplicationModelType)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(workspaceApplicationDescription)
@@ -78,7 +78,7 @@ import javax.annotation.Nullable;
  *             .sourceApplicationInfo(WorkspaceApplicationSourceApplicationInfoArgs.builder()
  *                 .applicationKey(workspaceApplicationSourceApplicationInfoApplicationKey)
  *                 .copyType(workspaceApplicationSourceApplicationInfoCopyType)
- *                 .workspaceId(testWorkspace.id())
+ *                 .workspaceId(testWorkspace.get("id"))
  *                 .build())
  *             .state(workspaceApplicationState)
  *             .build());

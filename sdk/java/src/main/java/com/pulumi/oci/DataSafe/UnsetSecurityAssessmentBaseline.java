@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testUnsetSecurityAssessmentBaseline = new UnsetSecurityAssessmentBaseline("testUnsetSecurityAssessmentBaseline", UnsetSecurityAssessmentBaselineArgs.builder()
- *             .securityAssessmentId(testSecurityAssessment.id())
+ *             .securityAssessmentId(testSecurityAssessment.get("id"))
  *             .targetIds(unsetSecurityAssessmentBaselineTargetIds)
  *             .build());
  * 

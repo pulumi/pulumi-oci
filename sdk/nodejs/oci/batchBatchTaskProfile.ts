@@ -34,9 +34,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     minDiskSizeInGbs: Number(batchTaskProfileMinDiskSizeInGbs),
- *     minMemoryInGbs: Number(batchTaskProfileMinMemoryInGbs),
- *     minOcpus: Number(batchTaskProfileMinOcpus),
+ *     minDiskSizeInGbs: batchTaskProfileMinDiskSizeInGbs,
+ *     minMemoryInGbs: batchTaskProfileMinMemoryInGbs,
+ *     minOcpus: batchTaskProfileMinOcpus,
  * });
  * ```
  *

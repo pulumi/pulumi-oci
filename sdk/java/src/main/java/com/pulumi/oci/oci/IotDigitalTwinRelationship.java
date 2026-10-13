@@ -49,9 +49,9 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDigitalTwinRelationship = new IotDigitalTwinRelationship("testDigitalTwinRelationship", IotDigitalTwinRelationshipArgs.builder()
  *             .contentPath(digitalTwinRelationshipContentPath)
- *             .iotDomainId(testIotDomain.id())
- *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.id())
- *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.id())
+ *             .iotDomainId(testIotDomain.get("id"))
+ *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
+ *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
  *             .content(digitalTwinRelationshipContent)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(digitalTwinRelationshipDescription)

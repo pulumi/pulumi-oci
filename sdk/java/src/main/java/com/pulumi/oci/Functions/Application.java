@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *             .imagePolicyConfig(ApplicationImagePolicyConfigArgs.builder()
  *                 .isPolicyEnabled(applicationImagePolicyConfigIsPolicyEnabled)
  *                 .keyDetails(ApplicationImagePolicyConfigKeyDetailArgs.builder()
- *                     .kmsKeyId(testKey.id())
+ *                     .kmsKeyId(testKey.get("id"))
  *                     .build())
  *                 .build())
  *             .logging(ApplicationLoggingArgs.builder()
@@ -77,7 +77,7 @@ import javax.annotation.Nullable;
  *             .shape(applicationShape)
  *             .syslogUrl(applicationSyslogUrl)
  *             .traceConfig(ApplicationTraceConfigArgs.builder()
- *                 .domainId(testDomain.id())
+ *                 .domainId(testDomain.get("id"))
  *                 .isEnabled(applicationTraceConfigIsEnabled)
  *                 .build())
  *             .build());

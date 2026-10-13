@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testUnsetUserAssessmentBaselineManagement = new UnsetUserAssessmentBaselineManagement("testUnsetUserAssessmentBaselineManagement", UnsetUserAssessmentBaselineManagementArgs.builder()
- *             .userAssessmentId(testSetUserAssessmentBaselineManagement.userAssessmentId())
+ *             .userAssessmentId(testSetUserAssessmentBaselineManagement.get("userAssessmentId"))
  *             .compartmentId(comaprtmentId)
  *             .build());
  * 

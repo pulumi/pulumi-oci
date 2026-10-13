@@ -50,8 +50,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLifecycleStagePromoteSoftwareSourceManagement = new LifecycleStagePromoteSoftwareSourceManagement("testLifecycleStagePromoteSoftwareSourceManagement", LifecycleStagePromoteSoftwareSourceManagementArgs.builder()
- *             .lifecycleStageId(testLifecycleStage.id())
- *             .softwareSourceId(testSoftwareSource.id())
+ *             .lifecycleStageId(testLifecycleStage.get("id"))
+ *             .softwareSourceId(testSoftwareSource.get("id"))
  *             .workRequestDetails(LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs.builder()
  *                 .description(lifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsDescription)
  *                 .displayName(lifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsDisplayName)

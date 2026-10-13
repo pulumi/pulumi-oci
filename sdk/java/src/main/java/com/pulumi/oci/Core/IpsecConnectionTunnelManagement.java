@@ -70,8 +70,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testIpSecConnectionTunnel = new IpsecConnectionTunnelManagement("testIpSecConnectionTunnel", IpsecConnectionTunnelManagementArgs.builder()
- *             .ipsecId(testIpsec.id())
- *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
+ *             .ipsecId(testIpsec.get("id"))
+ *             .tunnelId(testIpSecConnectionTunnels.get("ipSecConnectionTunnels")[0].get("id"))
  *             .routing(ipSecConnectionTunnelManagementRouting)
  *             .bgpSessionInfo(IpsecConnectionTunnelManagementBgpSessionInfoArgs.builder()
  *                 .customerBgpAsn(ipSecConnectionTunnelManagementBgpSessionInfoCustomerBgpAsn)

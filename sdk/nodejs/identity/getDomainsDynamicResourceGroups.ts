@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testDynamicResourceGroups = oci.identity.getDomainsDynamicResourceGroups({
  *     idcsEndpoint: testDomain.url,
- *     dynamicResourceGroupCount: Number(dynamicResourceGroupDynamicResourceGroupCount),
+ *     dynamicResourceGroupCount: dynamicResourceGroupDynamicResourceGroupCount,
  *     dynamicResourceGroupFilter: dynamicResourceGroupDynamicResourceGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: dynamicResourceGroupAuthorization,
  *     resourceTypeSchemaVersion: dynamicResourceGroupResourceTypeSchemaVersion,
- *     startIndex: Number(dynamicResourceGroupStartIndex),
+ *     startIndex: dynamicResourceGroupStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsDynamicResourceGroupsResult {
  *
  * const testDynamicResourceGroups = oci.identity.getDomainsDynamicResourceGroups({
  *     idcsEndpoint: testDomain.url,
- *     dynamicResourceGroupCount: Number(dynamicResourceGroupDynamicResourceGroupCount),
+ *     dynamicResourceGroupCount: dynamicResourceGroupDynamicResourceGroupCount,
  *     dynamicResourceGroupFilter: dynamicResourceGroupDynamicResourceGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: dynamicResourceGroupAuthorization,
  *     resourceTypeSchemaVersion: dynamicResourceGroupResourceTypeSchemaVersion,
- *     startIndex: Number(dynamicResourceGroupStartIndex),
+ *     startIndex: dynamicResourceGroupStartIndex,
  * });
  * ```
  */

@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testIdentityProofingProviderTemplate = new DomainsIdentityProofingProviderTemplate("testIdentityProofingProviderTemplate", DomainsIdentityProofingProviderTemplateArgs.builder()
  *             .identityProofingProviderTemplateProvider(identityProofingProviderTemplateIdentityProofingProviderTemplateProvider)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:IdentityProofingProviderTemplate")
  *             .serviceTypes(identityProofingProviderTemplateServiceType)
  *             .verificationUrl(identityProofingProviderTemplateVerificationUrl)

@@ -47,8 +47,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMonitoredRegion = new ResourceAnalyticsMonitoredRegion("testMonitoredRegion", ResourceAnalyticsMonitoredRegionArgs.builder()
- *             .regionId(testRegion.id())
- *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+ *             .regionId(testRegion.get("id"))
+ *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
  *             .build());
  * 
  *     }

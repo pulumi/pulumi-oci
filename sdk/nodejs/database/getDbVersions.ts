@@ -21,8 +21,8 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     dbSystemId: testDbSystem.id,
  *     dbSystemShape: dbVersionDbSystemShape,
- *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported === "true",
- *     isUpgradeSupported: dbVersionIsUpgradeSupported === "true",
+ *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported,
+ *     isUpgradeSupported: dbVersionIsUpgradeSupported,
  *     shapeAttribute: dbVersionShapeAttribute,
  *     storageManagement: dbVersionStorageManagement,
  * });
@@ -118,8 +118,8 @@ export interface GetDbVersionsResult {
  *     compartmentId: compartmentId,
  *     dbSystemId: testDbSystem.id,
  *     dbSystemShape: dbVersionDbSystemShape,
- *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported === "true",
- *     isUpgradeSupported: dbVersionIsUpgradeSupported === "true",
+ *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported,
+ *     isUpgradeSupported: dbVersionIsUpgradeSupported,
  *     shapeAttribute: dbVersionShapeAttribute,
  *     storageManagement: dbVersionStorageManagement,
  * });

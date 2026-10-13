@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testSecurityAttributeNamespaces = oci.securityattribute.getSecurityAttributeNamespaces({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree,
  *     name: securityAttributeNamespaceName,
  *     state: securityAttributeNamespaceState,
  * });
@@ -100,7 +100,7 @@ export interface GetSecurityAttributeNamespacesResult {
  *
  * const testSecurityAttributeNamespaces = oci.securityattribute.getSecurityAttributeNamespaces({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree,
  *     name: securityAttributeNamespaceName,
  *     state: securityAttributeNamespaceState,
  * });

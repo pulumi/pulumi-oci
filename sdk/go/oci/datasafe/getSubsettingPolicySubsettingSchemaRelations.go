@@ -31,9 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetSubsettingPolicySubsettingSchemaRelations(ctx, &datasafe.GetSubsettingPolicySubsettingSchemaRelationsArgs{
 //				SubsettingPolicyId: testSubsettingPolicy.Id,
-//				Objects:            pulumi.ToArray(subsettingPolicySubsettingSchemaRelationObject),
+//				Objects:            subsettingPolicySubsettingSchemaRelationObject,
 //				RelationType:       pulumi.StringRef(subsettingPolicySubsettingSchemaRelationRelationType),
-//				SchemaNames:        pulumi.ToArray(subsettingPolicySubsettingSchemaRelationSchemaName),
+//				SchemaNames:        subsettingPolicySubsettingSchemaRelationSchemaName,
 //			}, nil)
 //			if err != nil {
 //				return err

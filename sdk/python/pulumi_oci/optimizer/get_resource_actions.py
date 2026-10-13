@@ -214,10 +214,10 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[_builtins.str]] = 
     import pulumi_oci as oci
 
     test_resource_actions = oci.optimizer.get_resource_actions(compartment_id=compartment_id,
-        compartment_id_in_subtree=resource_action_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=resource_action_compartment_id_in_subtree,
         child_tenancy_ids=resource_action_child_tenancy_ids,
-        include_organization=resource_action_include_organization == "true",
-        include_resource_metadata=resource_action_include_resource_metadata == "true",
+        include_organization=resource_action_include_organization,
+        include_resource_metadata=resource_action_include_resource_metadata,
         name=resource_action_name,
         recommendation_id=test_recommendation["id"],
         recommendation_name=test_recommendation["name"],
@@ -307,10 +307,10 @@ def get_resource_actions_output(child_tenancy_ids: pulumi.Input[Optional[Optiona
     import pulumi_oci as oci
 
     test_resource_actions = oci.optimizer.get_resource_actions(compartment_id=compartment_id,
-        compartment_id_in_subtree=resource_action_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=resource_action_compartment_id_in_subtree,
         child_tenancy_ids=resource_action_child_tenancy_ids,
-        include_organization=resource_action_include_organization == "true",
-        include_resource_metadata=resource_action_include_resource_metadata == "true",
+        include_organization=resource_action_include_organization,
+        include_resource_metadata=resource_action_include_resource_metadata,
         name=resource_action_name,
         recommendation_id=test_recommendation["id"],
         recommendation_name=test_recommendation["name"],

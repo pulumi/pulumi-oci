@@ -56,12 +56,12 @@ import * as utilities from "../utilities";
  *     },
  *     scalingConfig: {
  *         scalingType: hostedApplicationScalingConfigScalingType,
- *         maxReplica: Number(hostedApplicationScalingConfigMaxReplica),
- *         minReplica: Number(hostedApplicationScalingConfigMinReplica),
- *         targetConcurrencyThreshold: Number(hostedApplicationScalingConfigTargetConcurrencyThreshold),
- *         targetCpuThreshold: Number(hostedApplicationScalingConfigTargetCpuThreshold),
- *         targetMemoryThreshold: Number(hostedApplicationScalingConfigTargetMemoryThreshold),
- *         targetRpsThreshold: Number(hostedApplicationScalingConfigTargetRpsThreshold),
+ *         maxReplica: hostedApplicationScalingConfigMaxReplica,
+ *         minReplica: hostedApplicationScalingConfigMinReplica,
+ *         targetConcurrencyThreshold: hostedApplicationScalingConfigTargetConcurrencyThreshold,
+ *         targetCpuThreshold: hostedApplicationScalingConfigTargetCpuThreshold,
+ *         targetMemoryThreshold: hostedApplicationScalingConfigTargetMemoryThreshold,
+ *         targetRpsThreshold: hostedApplicationScalingConfigTargetRpsThreshold,
  *     },
  *     storageConfigs: [{
  *         environmentVariableKey: hostedApplicationStorageConfigsEnvironmentVariableKey,

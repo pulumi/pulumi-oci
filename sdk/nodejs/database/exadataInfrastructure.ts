@@ -35,12 +35,12 @@ import * as utilities from "../utilities";
  *     shape: exadataInfrastructureShape,
  *     timeZone: exadataInfrastructureTimeZone,
  *     activationFile: exadataInfrastructureActivationFile,
- *     computeCount: Number(exadataInfrastructureComputeCount),
+ *     computeCount: exadataInfrastructureComputeCount,
  *     contacts: [{
  *         email: exadataInfrastructureContactsEmail,
- *         isPrimary: exadataInfrastructureContactsIsPrimary === "true",
+ *         isPrimary: exadataInfrastructureContactsIsPrimary,
  *         name: exadataInfrastructureContactsName,
- *         isContactMosValidated: exadataInfrastructureContactsIsContactMosValidated === "true",
+ *         isContactMosValidated: exadataInfrastructureContactsIsContactMosValidated,
  *         phoneNumber: exadataInfrastructureContactsPhoneNumber,
  *     }],
  *     corporateProxy: exadataInfrastructureCorporateProxy,
@@ -49,20 +49,20 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isCpsOfflineReportEnabled: exadataInfrastructureIsCpsOfflineReportEnabled === "true",
- *     isMultiRackDeployment: exadataInfrastructureIsMultiRackDeployment === "true",
+ *     isCpsOfflineReportEnabled: exadataInfrastructureIsCpsOfflineReportEnabled,
+ *     isMultiRackDeployment: exadataInfrastructureIsMultiRackDeployment,
  *     maintenanceVersionPreferences: {
  *         referenceResourceIdForImageUpdates: exadataInfrastructureMaintenanceVersionPreferencesReferenceResourceIdForImageUpdates,
  *     },
  *     maintenanceWindow: {
- *         customActionTimeoutInMins: Number(exadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins),
+ *         customActionTimeoutInMins: exadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins,
  *         daysOfWeeks: [{
  *             name: exadataInfrastructureMaintenanceWindowDaysOfWeekName,
  *         }],
  *         hoursOfDays: exadataInfrastructureMaintenanceWindowHoursOfDay,
- *         isCustomActionTimeoutEnabled: exadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled === "true",
- *         isMonthlyPatchingEnabled: exadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled === "true",
- *         leadTimeInWeeks: Number(exadataInfrastructureMaintenanceWindowLeadTimeInWeeks),
+ *         isCustomActionTimeoutEnabled: exadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled,
+ *         isMonthlyPatchingEnabled: exadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled,
+ *         leadTimeInWeeks: exadataInfrastructureMaintenanceWindowLeadTimeInWeeks,
  *         months: [{
  *             name: exadataInfrastructureMaintenanceWindowMonthsName,
  *         }],
@@ -76,7 +76,7 @@ import * as utilities from "../utilities";
  *         clientNetworkBondingMode: exadataInfrastructureNetworkBondingModeDetailsClientNetworkBondingMode,
  *         drNetworkBondingMode: exadataInfrastructureNetworkBondingModeDetailsDrNetworkBondingMode,
  *     },
- *     storageCount: Number(exadataInfrastructureStorageCount),
+ *     storageCount: exadataInfrastructureStorageCount,
  *     storageServerType: exadataInfrastructureStorageServerType,
  * });
  * ```

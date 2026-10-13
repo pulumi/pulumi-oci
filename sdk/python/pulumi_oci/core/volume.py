@@ -840,8 +840,8 @@ class Volume(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_tune_enabled=volume_is_auto_tune_enabled == "true",
-            is_reservations_enabled=volume_is_reservations_enabled == "true",
+            is_auto_tune_enabled=volume_is_auto_tune_enabled,
+            is_reservations_enabled=volume_is_reservations_enabled,
             kms_key_id=test_key["id"],
             size_in_gbs=volume_size_in_gbs,
             size_in_mbs=volume_size_in_mbs,
@@ -946,8 +946,8 @@ class Volume(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_tune_enabled=volume_is_auto_tune_enabled == "true",
-            is_reservations_enabled=volume_is_reservations_enabled == "true",
+            is_auto_tune_enabled=volume_is_auto_tune_enabled,
+            is_reservations_enabled=volume_is_reservations_enabled,
             kms_key_id=test_key["id"],
             size_in_gbs=volume_size_in_gbs,
             size_in_mbs=volume_size_in_mbs,

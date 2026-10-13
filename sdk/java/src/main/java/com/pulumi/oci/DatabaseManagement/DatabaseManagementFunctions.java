@@ -480,7 +480,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsm = DatabaseManagementFunctions.getCloudAsm(GetCloudAsmArgs.builder()
-     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.id())
+     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -522,7 +522,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsm = DatabaseManagementFunctions.getCloudAsm(GetCloudAsmArgs.builder()
-     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.id())
+     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -564,7 +564,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsm = DatabaseManagementFunctions.getCloudAsm(GetCloudAsmArgs.builder()
-     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.id())
+     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -606,7 +606,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsm = DatabaseManagementFunctions.getCloudAsm(GetCloudAsmArgs.builder()
-     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.id())
+     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -648,7 +648,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsm = DatabaseManagementFunctions.getCloudAsm(GetCloudAsmArgs.builder()
-     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.id())
+     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -690,7 +690,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmConfiguration = DatabaseManagementFunctions.getCloudAsmConfiguration(GetCloudAsmConfigurationArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -733,7 +733,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmConfiguration = DatabaseManagementFunctions.getCloudAsmConfiguration(GetCloudAsmConfigurationArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -776,7 +776,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmConfiguration = DatabaseManagementFunctions.getCloudAsmConfiguration(GetCloudAsmConfigurationArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -819,7 +819,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmConfiguration = DatabaseManagementFunctions.getCloudAsmConfiguration(GetCloudAsmConfigurationArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -862,7 +862,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmConfiguration = DatabaseManagementFunctions.getCloudAsmConfiguration(GetCloudAsmConfigurationArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -905,7 +905,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmDiskGroups = DatabaseManagementFunctions.getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
@@ -948,7 +948,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmDiskGroups = DatabaseManagementFunctions.getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
@@ -991,7 +991,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmDiskGroups = DatabaseManagementFunctions.getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
@@ -1034,7 +1034,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmDiskGroups = DatabaseManagementFunctions.getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
@@ -1077,7 +1077,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmDiskGroups = DatabaseManagementFunctions.getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
@@ -1120,7 +1120,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstance = DatabaseManagementFunctions.getCloudAsmInstance(GetCloudAsmInstanceArgs.builder()
-     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.id())
+     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -1162,7 +1162,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstance = DatabaseManagementFunctions.getCloudAsmInstance(GetCloudAsmInstanceArgs.builder()
-     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.id())
+     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -1204,7 +1204,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstance = DatabaseManagementFunctions.getCloudAsmInstance(GetCloudAsmInstanceArgs.builder()
-     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.id())
+     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -1246,7 +1246,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstance = DatabaseManagementFunctions.getCloudAsmInstance(GetCloudAsmInstanceArgs.builder()
-     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.id())
+     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -1288,7 +1288,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstance = DatabaseManagementFunctions.getCloudAsmInstance(GetCloudAsmInstanceArgs.builder()
-     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.id())
+     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -1330,7 +1330,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmInstanceDisplayName)
      *             .build());
@@ -1374,7 +1374,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmInstanceDisplayName)
      *             .build());
@@ -1418,7 +1418,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmInstanceDisplayName)
      *             .build());
@@ -1462,7 +1462,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmInstanceDisplayName)
      *             .build());
@@ -1506,7 +1506,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmInstanceDisplayName)
      *             .build());
@@ -1550,7 +1550,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmInstanceDisplayName)
      *             .build());
@@ -1594,7 +1594,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmInstanceDisplayName)
      *             .build());
@@ -1638,7 +1638,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmUsers = DatabaseManagementFunctions.getCloudAsmUsers(GetCloudAsmUsersArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -1681,7 +1681,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmUsers = DatabaseManagementFunctions.getCloudAsmUsers(GetCloudAsmUsersArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -1724,7 +1724,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmUsers = DatabaseManagementFunctions.getCloudAsmUsers(GetCloudAsmUsersArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -1767,7 +1767,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmUsers = DatabaseManagementFunctions.getCloudAsmUsers(GetCloudAsmUsersArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -1810,7 +1810,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsmUsers = DatabaseManagementFunctions.getCloudAsmUsers(GetCloudAsmUsersArgs.builder()
-     *             .cloudAsmId(testCloudAsm.id())
+     *             .cloudAsmId(testCloudAsm.get("id"))
      *             .opcNamedCredentialId(cloudAsmUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -1853,7 +1853,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmDisplayName)
      *             .build());
@@ -1897,7 +1897,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmDisplayName)
      *             .build());
@@ -1941,7 +1941,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmDisplayName)
      *             .build());
@@ -1985,7 +1985,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmDisplayName)
      *             .build());
@@ -2029,7 +2029,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmDisplayName)
      *             .build());
@@ -2073,7 +2073,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmDisplayName)
      *             .build());
@@ -2117,7 +2117,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudAsmDisplayName)
      *             .build());
@@ -2161,7 +2161,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudCluster = DatabaseManagementFunctions.getCloudCluster(GetCloudClusterArgs.builder()
-     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.id())
+     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2203,7 +2203,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudCluster = DatabaseManagementFunctions.getCloudCluster(GetCloudClusterArgs.builder()
-     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.id())
+     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2245,7 +2245,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudCluster = DatabaseManagementFunctions.getCloudCluster(GetCloudClusterArgs.builder()
-     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.id())
+     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2287,7 +2287,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudCluster = DatabaseManagementFunctions.getCloudCluster(GetCloudClusterArgs.builder()
-     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.id())
+     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2329,7 +2329,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudCluster = DatabaseManagementFunctions.getCloudCluster(GetCloudClusterArgs.builder()
-     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.id())
+     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2371,7 +2371,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstance = DatabaseManagementFunctions.getCloudClusterInstance(GetCloudClusterInstanceArgs.builder()
-     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.id())
+     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -2413,7 +2413,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstance = DatabaseManagementFunctions.getCloudClusterInstance(GetCloudClusterInstanceArgs.builder()
-     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.id())
+     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -2455,7 +2455,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstance = DatabaseManagementFunctions.getCloudClusterInstance(GetCloudClusterInstanceArgs.builder()
-     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.id())
+     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -2497,7 +2497,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstance = DatabaseManagementFunctions.getCloudClusterInstance(GetCloudClusterInstanceArgs.builder()
-     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.id())
+     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -2539,7 +2539,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstance = DatabaseManagementFunctions.getCloudClusterInstance(GetCloudClusterInstanceArgs.builder()
-     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.id())
+     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -2581,7 +2581,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
-     *             .cloudClusterId(testCloudCluster.id())
+     *             .cloudClusterId(testCloudCluster.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterInstanceDisplayName)
      *             .build());
@@ -2625,7 +2625,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
-     *             .cloudClusterId(testCloudCluster.id())
+     *             .cloudClusterId(testCloudCluster.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterInstanceDisplayName)
      *             .build());
@@ -2669,7 +2669,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
-     *             .cloudClusterId(testCloudCluster.id())
+     *             .cloudClusterId(testCloudCluster.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterInstanceDisplayName)
      *             .build());
@@ -2713,7 +2713,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
-     *             .cloudClusterId(testCloudCluster.id())
+     *             .cloudClusterId(testCloudCluster.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterInstanceDisplayName)
      *             .build());
@@ -2757,7 +2757,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
-     *             .cloudClusterId(testCloudCluster.id())
+     *             .cloudClusterId(testCloudCluster.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterInstanceDisplayName)
      *             .build());
@@ -2801,7 +2801,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
-     *             .cloudClusterId(testCloudCluster.id())
+     *             .cloudClusterId(testCloudCluster.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterInstanceDisplayName)
      *             .build());
@@ -2845,7 +2845,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
-     *             .cloudClusterId(testCloudCluster.id())
+     *             .cloudClusterId(testCloudCluster.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterInstanceDisplayName)
      *             .build());
@@ -2889,7 +2889,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterDisplayName)
      *             .build());
@@ -2933,7 +2933,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterDisplayName)
      *             .build());
@@ -2977,7 +2977,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterDisplayName)
      *             .build());
@@ -3021,7 +3021,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterDisplayName)
      *             .build());
@@ -3065,7 +3065,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterDisplayName)
      *             .build());
@@ -3109,7 +3109,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterDisplayName)
      *             .build());
@@ -3153,7 +3153,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudClusterDisplayName)
      *             .build());
@@ -3197,7 +3197,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDatabases = DatabaseManagementFunctions.getCloudDatabases(GetCloudDatabasesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDatabaseDisplayName)
      *             .build());
@@ -3241,7 +3241,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDatabases = DatabaseManagementFunctions.getCloudDatabases(GetCloudDatabasesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDatabaseDisplayName)
      *             .build());
@@ -3285,7 +3285,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDatabases = DatabaseManagementFunctions.getCloudDatabases(GetCloudDatabasesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDatabaseDisplayName)
      *             .build());
@@ -3329,7 +3329,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDatabases = DatabaseManagementFunctions.getCloudDatabases(GetCloudDatabasesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDatabaseDisplayName)
      *             .build());
@@ -3373,7 +3373,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDatabases = DatabaseManagementFunctions.getCloudDatabases(GetCloudDatabasesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDatabaseDisplayName)
      *             .build());
@@ -3417,7 +3417,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHome = DatabaseManagementFunctions.getCloudDbHome(GetCloudDbHomeArgs.builder()
-     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.id())
+     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.get("id"))
      *             .build());
      * 
      *     }
@@ -3459,7 +3459,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHome = DatabaseManagementFunctions.getCloudDbHome(GetCloudDbHomeArgs.builder()
-     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.id())
+     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.get("id"))
      *             .build());
      * 
      *     }
@@ -3501,7 +3501,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHome = DatabaseManagementFunctions.getCloudDbHome(GetCloudDbHomeArgs.builder()
-     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.id())
+     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.get("id"))
      *             .build());
      * 
      *     }
@@ -3543,7 +3543,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHome = DatabaseManagementFunctions.getCloudDbHome(GetCloudDbHomeArgs.builder()
-     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.id())
+     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.get("id"))
      *             .build());
      * 
      *     }
@@ -3585,7 +3585,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHome = DatabaseManagementFunctions.getCloudDbHome(GetCloudDbHomeArgs.builder()
-     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.id())
+     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.get("id"))
      *             .build());
      * 
      *     }
@@ -3627,7 +3627,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbHomeDisplayName)
      *             .build());
@@ -3671,7 +3671,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbHomeDisplayName)
      *             .build());
@@ -3715,7 +3715,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbHomeDisplayName)
      *             .build());
@@ -3759,7 +3759,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbHomeDisplayName)
      *             .build());
@@ -3803,7 +3803,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbHomeDisplayName)
      *             .build());
@@ -3847,7 +3847,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbHomeDisplayName)
      *             .build());
@@ -3891,7 +3891,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbHomeDisplayName)
      *             .build());
@@ -3935,7 +3935,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNode = DatabaseManagementFunctions.getCloudDbNode(GetCloudDbNodeArgs.builder()
-     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.id())
+     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.get("id"))
      *             .build());
      * 
      *     }
@@ -3977,7 +3977,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNode = DatabaseManagementFunctions.getCloudDbNode(GetCloudDbNodeArgs.builder()
-     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.id())
+     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.get("id"))
      *             .build());
      * 
      *     }
@@ -4019,7 +4019,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNode = DatabaseManagementFunctions.getCloudDbNode(GetCloudDbNodeArgs.builder()
-     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.id())
+     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.get("id"))
      *             .build());
      * 
      *     }
@@ -4061,7 +4061,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNode = DatabaseManagementFunctions.getCloudDbNode(GetCloudDbNodeArgs.builder()
-     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.id())
+     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.get("id"))
      *             .build());
      * 
      *     }
@@ -4103,7 +4103,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNode = DatabaseManagementFunctions.getCloudDbNode(GetCloudDbNodeArgs.builder()
-     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.id())
+     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.get("id"))
      *             .build());
      * 
      *     }
@@ -4145,7 +4145,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbNodeDisplayName)
      *             .build());
@@ -4189,7 +4189,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbNodeDisplayName)
      *             .build());
@@ -4233,7 +4233,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbNodeDisplayName)
      *             .build());
@@ -4277,7 +4277,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbNodeDisplayName)
      *             .build());
@@ -4321,7 +4321,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbNodeDisplayName)
      *             .build());
@@ -4365,7 +4365,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbNodeDisplayName)
      *             .build());
@@ -4409,7 +4409,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbNodeDisplayName)
      *             .build());
@@ -4453,7 +4453,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystem = DatabaseManagementFunctions.getCloudDbSystem(GetCloudDbSystemArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -4495,7 +4495,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystem = DatabaseManagementFunctions.getCloudDbSystem(GetCloudDbSystemArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -4537,7 +4537,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystem = DatabaseManagementFunctions.getCloudDbSystem(GetCloudDbSystemArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -4579,7 +4579,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystem = DatabaseManagementFunctions.getCloudDbSystem(GetCloudDbSystemArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -4621,7 +4621,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystem = DatabaseManagementFunctions.getCloudDbSystem(GetCloudDbSystemArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -4663,7 +4663,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnector = DatabaseManagementFunctions.getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs.builder()
-     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.id())
+     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -4705,7 +4705,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnector = DatabaseManagementFunctions.getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs.builder()
-     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.id())
+     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -4747,7 +4747,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnector = DatabaseManagementFunctions.getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs.builder()
-     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.id())
+     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -4789,7 +4789,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnector = DatabaseManagementFunctions.getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs.builder()
-     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.id())
+     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -4831,7 +4831,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnector = DatabaseManagementFunctions.getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs.builder()
-     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.id())
+     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -4873,7 +4873,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbSystemConnectorDisplayName)
      *             .build());
@@ -4917,7 +4917,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbSystemConnectorDisplayName)
      *             .build());
@@ -4961,7 +4961,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbSystemConnectorDisplayName)
      *             .build());
@@ -5005,7 +5005,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbSystemConnectorDisplayName)
      *             .build());
@@ -5049,7 +5049,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbSystemConnectorDisplayName)
      *             .build());
@@ -5093,7 +5093,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbSystemConnectorDisplayName)
      *             .build());
@@ -5137,7 +5137,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudDbSystemConnectorDisplayName)
      *             .build());
@@ -5396,7 +5396,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemDiscovery = DatabaseManagementFunctions.getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs.builder()
-     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id())
+     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -5438,7 +5438,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemDiscovery = DatabaseManagementFunctions.getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs.builder()
-     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id())
+     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -5480,7 +5480,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemDiscovery = DatabaseManagementFunctions.getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs.builder()
-     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id())
+     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -5522,7 +5522,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemDiscovery = DatabaseManagementFunctions.getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs.builder()
-     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id())
+     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -5564,7 +5564,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystemDiscovery = DatabaseManagementFunctions.getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs.builder()
-     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id())
+     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -5607,7 +5607,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystems = DatabaseManagementFunctions.getCloudDbSystems(GetCloudDbSystemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.get("id"))
      *             .deploymentType(cloudDbSystemDeploymentType)
      *             .displayName(cloudDbSystemDisplayName)
      *             .state(cloudDbSystemState)
@@ -5653,7 +5653,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystems = DatabaseManagementFunctions.getCloudDbSystems(GetCloudDbSystemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.get("id"))
      *             .deploymentType(cloudDbSystemDeploymentType)
      *             .displayName(cloudDbSystemDisplayName)
      *             .state(cloudDbSystemState)
@@ -5699,7 +5699,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystems = DatabaseManagementFunctions.getCloudDbSystems(GetCloudDbSystemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.get("id"))
      *             .deploymentType(cloudDbSystemDeploymentType)
      *             .displayName(cloudDbSystemDisplayName)
      *             .state(cloudDbSystemState)
@@ -5745,7 +5745,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystems = DatabaseManagementFunctions.getCloudDbSystems(GetCloudDbSystemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.get("id"))
      *             .deploymentType(cloudDbSystemDeploymentType)
      *             .displayName(cloudDbSystemDisplayName)
      *             .state(cloudDbSystemState)
@@ -5791,7 +5791,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudDbSystems = DatabaseManagementFunctions.getCloudDbSystems(GetCloudDbSystemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.get("id"))
      *             .deploymentType(cloudDbSystemDeploymentType)
      *             .displayName(cloudDbSystemDisplayName)
      *             .state(cloudDbSystemState)
@@ -5837,7 +5837,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructure = DatabaseManagementFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -5880,7 +5880,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructure = DatabaseManagementFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -5923,7 +5923,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructure = DatabaseManagementFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -5966,7 +5966,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructure = DatabaseManagementFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -6009,7 +6009,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructure = DatabaseManagementFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -6266,7 +6266,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageConnector = DatabaseManagementFunctions.getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs.builder()
-     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.id())
+     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -6308,7 +6308,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageConnector = DatabaseManagementFunctions.getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs.builder()
-     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.id())
+     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -6350,7 +6350,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageConnector = DatabaseManagementFunctions.getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs.builder()
-     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.id())
+     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -6392,7 +6392,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageConnector = DatabaseManagementFunctions.getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs.builder()
-     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.id())
+     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -6434,7 +6434,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageConnector = DatabaseManagementFunctions.getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs.builder()
-     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.id())
+     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -6476,7 +6476,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageConnectors = DatabaseManagementFunctions.getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudExadataStorageConnectorDisplayName)
      *             .build());
@@ -6520,7 +6520,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageConnectors = DatabaseManagementFunctions.getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudExadataStorageConnectorDisplayName)
      *             .build());
@@ -6564,7 +6564,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageConnectors = DatabaseManagementFunctions.getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudExadataStorageConnectorDisplayName)
      *             .build());
@@ -6608,7 +6608,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageConnectors = DatabaseManagementFunctions.getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudExadataStorageConnectorDisplayName)
      *             .build());
@@ -6652,7 +6652,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageConnectors = DatabaseManagementFunctions.getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudExadataStorageConnectorDisplayName)
      *             .build());
@@ -6696,7 +6696,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageGrid = DatabaseManagementFunctions.getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs.builder()
-     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.id())
+     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.get("id"))
      *             .build());
      * 
      *     }
@@ -6738,7 +6738,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageGrid = DatabaseManagementFunctions.getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs.builder()
-     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.id())
+     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.get("id"))
      *             .build());
      * 
      *     }
@@ -6780,7 +6780,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageGrid = DatabaseManagementFunctions.getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs.builder()
-     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.id())
+     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.get("id"))
      *             .build());
      * 
      *     }
@@ -6822,7 +6822,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageGrid = DatabaseManagementFunctions.getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs.builder()
-     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.id())
+     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.get("id"))
      *             .build());
      * 
      *     }
@@ -6864,7 +6864,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageGrid = DatabaseManagementFunctions.getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs.builder()
-     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.id())
+     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.get("id"))
      *             .build());
      * 
      *     }
@@ -6906,7 +6906,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServer = DatabaseManagementFunctions.getCloudExadataStorageServer(GetCloudExadataStorageServerArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -6948,7 +6948,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServer = DatabaseManagementFunctions.getCloudExadataStorageServer(GetCloudExadataStorageServerArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -6990,7 +6990,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServer = DatabaseManagementFunctions.getCloudExadataStorageServer(GetCloudExadataStorageServerArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7032,7 +7032,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServer = DatabaseManagementFunctions.getCloudExadataStorageServer(GetCloudExadataStorageServerArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7074,7 +7074,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServer = DatabaseManagementFunctions.getCloudExadataStorageServer(GetCloudExadataStorageServerArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7116,7 +7116,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServerIormPlan = DatabaseManagementFunctions.getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7158,7 +7158,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServerIormPlan = DatabaseManagementFunctions.getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7200,7 +7200,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServerIormPlan = DatabaseManagementFunctions.getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7242,7 +7242,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServerIormPlan = DatabaseManagementFunctions.getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7284,7 +7284,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServerIormPlan = DatabaseManagementFunctions.getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7326,7 +7326,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7368,7 +7368,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7410,7 +7410,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7452,7 +7452,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7494,7 +7494,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -7536,7 +7536,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServers = DatabaseManagementFunctions.getCloudExadataStorageServers(GetCloudExadataStorageServersArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudExadataStorageServerDisplayName)
      *             .build());
@@ -7580,7 +7580,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServers = DatabaseManagementFunctions.getCloudExadataStorageServers(GetCloudExadataStorageServersArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudExadataStorageServerDisplayName)
      *             .build());
@@ -7624,7 +7624,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServers = DatabaseManagementFunctions.getCloudExadataStorageServers(GetCloudExadataStorageServersArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudExadataStorageServerDisplayName)
      *             .build());
@@ -7668,7 +7668,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServers = DatabaseManagementFunctions.getCloudExadataStorageServers(GetCloudExadataStorageServersArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudExadataStorageServerDisplayName)
      *             .build());
@@ -7712,7 +7712,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataStorageServers = DatabaseManagementFunctions.getCloudExadataStorageServers(GetCloudExadataStorageServersArgs.builder()
-     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudExadataStorageServerDisplayName)
      *             .build());
@@ -7756,7 +7756,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListener = DatabaseManagementFunctions.getCloudListener(GetCloudListenerArgs.builder()
-     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.id())
+     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.get("id"))
      *             .build());
      * 
      *     }
@@ -7798,7 +7798,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListener = DatabaseManagementFunctions.getCloudListener(GetCloudListenerArgs.builder()
-     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.id())
+     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.get("id"))
      *             .build());
      * 
      *     }
@@ -7840,7 +7840,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListener = DatabaseManagementFunctions.getCloudListener(GetCloudListenerArgs.builder()
-     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.id())
+     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.get("id"))
      *             .build());
      * 
      *     }
@@ -7882,7 +7882,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListener = DatabaseManagementFunctions.getCloudListener(GetCloudListenerArgs.builder()
-     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.id())
+     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.get("id"))
      *             .build());
      * 
      *     }
@@ -7924,7 +7924,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListener = DatabaseManagementFunctions.getCloudListener(GetCloudListenerArgs.builder()
-     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.id())
+     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.get("id"))
      *             .build());
      * 
      *     }
@@ -7967,8 +7967,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListenerServices = DatabaseManagementFunctions.getCloudListenerServices(GetCloudListenerServicesArgs.builder()
-     *             .cloudListenerId(testCloudListener.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .cloudListenerId(testCloudListener.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(cloudListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
@@ -8012,8 +8012,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListenerServices = DatabaseManagementFunctions.getCloudListenerServices(GetCloudListenerServicesArgs.builder()
-     *             .cloudListenerId(testCloudListener.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .cloudListenerId(testCloudListener.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(cloudListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
@@ -8057,8 +8057,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListenerServices = DatabaseManagementFunctions.getCloudListenerServices(GetCloudListenerServicesArgs.builder()
-     *             .cloudListenerId(testCloudListener.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .cloudListenerId(testCloudListener.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(cloudListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
@@ -8102,8 +8102,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListenerServices = DatabaseManagementFunctions.getCloudListenerServices(GetCloudListenerServicesArgs.builder()
-     *             .cloudListenerId(testCloudListener.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .cloudListenerId(testCloudListener.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(cloudListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
@@ -8147,8 +8147,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListenerServices = DatabaseManagementFunctions.getCloudListenerServices(GetCloudListenerServicesArgs.builder()
-     *             .cloudListenerId(testCloudListener.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .cloudListenerId(testCloudListener.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(cloudListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
@@ -8191,7 +8191,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudListenerDisplayName)
      *             .build());
@@ -8235,7 +8235,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudListenerDisplayName)
      *             .build());
@@ -8279,7 +8279,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudListenerDisplayName)
      *             .build());
@@ -8323,7 +8323,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudListenerDisplayName)
      *             .build());
@@ -8367,7 +8367,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudListenerDisplayName)
      *             .build());
@@ -8411,7 +8411,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudListenerDisplayName)
      *             .build());
@@ -8455,7 +8455,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
-     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .cloudDbSystemId(testCloudDbSystem.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(cloudListenerDisplayName)
      *             .build());
@@ -8499,7 +8499,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -8541,7 +8541,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -8583,7 +8583,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -8625,7 +8625,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -8667,7 +8667,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -8710,7 +8710,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -8753,7 +8753,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -8796,7 +8796,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -8839,7 +8839,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -8882,7 +8882,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -8925,7 +8925,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -8968,7 +8968,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -9011,7 +9011,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -9054,7 +9054,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -9097,7 +9097,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -9144,7 +9144,7 @@ public final class DatabaseManagementFunctions {
      *             .isDnsResolutionEnabled(dbManagementPrivateEndpointIsDnsResolutionEnabled)
      *             .name(dbManagementPrivateEndpointName)
      *             .state(dbManagementPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -9191,7 +9191,7 @@ public final class DatabaseManagementFunctions {
      *             .isDnsResolutionEnabled(dbManagementPrivateEndpointIsDnsResolutionEnabled)
      *             .name(dbManagementPrivateEndpointName)
      *             .state(dbManagementPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -9238,7 +9238,7 @@ public final class DatabaseManagementFunctions {
      *             .isDnsResolutionEnabled(dbManagementPrivateEndpointIsDnsResolutionEnabled)
      *             .name(dbManagementPrivateEndpointName)
      *             .state(dbManagementPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -9285,7 +9285,7 @@ public final class DatabaseManagementFunctions {
      *             .isDnsResolutionEnabled(dbManagementPrivateEndpointIsDnsResolutionEnabled)
      *             .name(dbManagementPrivateEndpointName)
      *             .state(dbManagementPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -9332,7 +9332,7 @@ public final class DatabaseManagementFunctions {
      *             .isDnsResolutionEnabled(dbManagementPrivateEndpointIsDnsResolutionEnabled)
      *             .name(dbManagementPrivateEndpointName)
      *             .state(dbManagementPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -9614,7 +9614,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
-     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.id())
+     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -9656,7 +9656,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
-     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.id())
+     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -9698,7 +9698,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
-     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.id())
+     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -9740,7 +9740,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
-     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.id())
+     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -9782,7 +9782,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
-     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.id())
+     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -9824,7 +9824,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -9867,7 +9867,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -9910,7 +9910,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -9953,7 +9953,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -9996,7 +9996,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -10039,7 +10039,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
@@ -10082,7 +10082,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
@@ -10125,7 +10125,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
@@ -10168,7 +10168,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
@@ -10211,7 +10211,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
@@ -10254,7 +10254,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
-     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id())
+     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -10296,7 +10296,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
-     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id())
+     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -10338,7 +10338,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
-     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id())
+     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -10380,7 +10380,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
-     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id())
+     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -10422,7 +10422,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
-     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id())
+     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -10466,7 +10466,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmInstanceDisplayName)
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -10510,7 +10510,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmInstanceDisplayName)
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -10554,7 +10554,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmInstanceDisplayName)
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -10598,7 +10598,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmInstanceDisplayName)
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -10642,7 +10642,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmInstanceDisplayName)
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -10686,7 +10686,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmInstanceDisplayName)
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -10730,7 +10730,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmInstanceDisplayName)
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .build());
      * 
      *     }
@@ -10772,7 +10772,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -10815,7 +10815,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -10858,7 +10858,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -10901,7 +10901,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -10944,7 +10944,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
-     *             .externalAsmId(testExternalAsm.id())
+     *             .externalAsmId(testExternalAsm.get("id"))
      *             .opcNamedCredentialId(externalAsmUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -10989,7 +10989,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -11033,7 +11033,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -11077,7 +11077,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -11121,7 +11121,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -11165,7 +11165,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -11209,7 +11209,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -11253,7 +11253,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalAsmDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -11295,7 +11295,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
-     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.id())
+     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -11337,7 +11337,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
-     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.id())
+     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -11379,7 +11379,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
-     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.id())
+     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -11421,7 +11421,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
-     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.id())
+     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -11463,7 +11463,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
-     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.id())
+     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -11505,7 +11505,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
-     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id())
+     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -11547,7 +11547,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
-     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id())
+     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -11589,7 +11589,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
-     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id())
+     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -11631,7 +11631,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
-     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id())
+     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -11673,7 +11673,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
-     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id())
+     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -11717,7 +11717,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterInstanceDisplayName)
-     *             .externalClusterId(testExternalCluster.id())
+     *             .externalClusterId(testExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -11761,7 +11761,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterInstanceDisplayName)
-     *             .externalClusterId(testExternalCluster.id())
+     *             .externalClusterId(testExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -11805,7 +11805,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterInstanceDisplayName)
-     *             .externalClusterId(testExternalCluster.id())
+     *             .externalClusterId(testExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -11849,7 +11849,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterInstanceDisplayName)
-     *             .externalClusterId(testExternalCluster.id())
+     *             .externalClusterId(testExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -11893,7 +11893,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterInstanceDisplayName)
-     *             .externalClusterId(testExternalCluster.id())
+     *             .externalClusterId(testExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -11937,7 +11937,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterInstanceDisplayName)
-     *             .externalClusterId(testExternalCluster.id())
+     *             .externalClusterId(testExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -11981,7 +11981,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterInstanceDisplayName)
-     *             .externalClusterId(testExternalCluster.id())
+     *             .externalClusterId(testExternalCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -12025,7 +12025,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12069,7 +12069,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12113,7 +12113,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12157,7 +12157,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12201,7 +12201,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12245,7 +12245,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12289,7 +12289,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalClusterDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12333,8 +12333,8 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
-     *             .externalDatabaseId(testExternalDatabase.id())
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDatabaseId(testExternalDatabase.get("id"))
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12378,8 +12378,8 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
-     *             .externalDatabaseId(testExternalDatabase.id())
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDatabaseId(testExternalDatabase.get("id"))
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12423,8 +12423,8 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
-     *             .externalDatabaseId(testExternalDatabase.id())
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDatabaseId(testExternalDatabase.get("id"))
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12468,8 +12468,8 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
-     *             .externalDatabaseId(testExternalDatabase.id())
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDatabaseId(testExternalDatabase.get("id"))
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12513,8 +12513,8 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
-     *             .externalDatabaseId(testExternalDatabase.id())
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDatabaseId(testExternalDatabase.get("id"))
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12558,8 +12558,8 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
-     *             .externalDatabaseId(testExternalDatabase.id())
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDatabaseId(testExternalDatabase.get("id"))
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12603,8 +12603,8 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
-     *             .externalDatabaseId(testExternalDatabase.id())
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDatabaseId(testExternalDatabase.get("id"))
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12646,7 +12646,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
-     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.id())
+     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.get("id"))
      *             .build());
      * 
      *     }
@@ -12688,7 +12688,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
-     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.id())
+     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.get("id"))
      *             .build());
      * 
      *     }
@@ -12730,7 +12730,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
-     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.id())
+     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.get("id"))
      *             .build());
      * 
      *     }
@@ -12772,7 +12772,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
-     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.id())
+     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.get("id"))
      *             .build());
      * 
      *     }
@@ -12814,7 +12814,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
-     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.id())
+     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.get("id"))
      *             .build());
      * 
      *     }
@@ -12858,7 +12858,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbHomeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12902,7 +12902,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbHomeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12946,7 +12946,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbHomeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -12990,7 +12990,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbHomeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13034,7 +13034,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbHomeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13078,7 +13078,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbHomeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13122,7 +13122,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbHomeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13164,7 +13164,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
-     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.id())
+     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.get("id"))
      *             .build());
      * 
      *     }
@@ -13206,7 +13206,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
-     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.id())
+     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.get("id"))
      *             .build());
      * 
      *     }
@@ -13248,7 +13248,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
-     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.id())
+     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.get("id"))
      *             .build());
      * 
      *     }
@@ -13290,7 +13290,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
-     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.id())
+     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.get("id"))
      *             .build());
      * 
      *     }
@@ -13332,7 +13332,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
-     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.id())
+     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.get("id"))
      *             .build());
      * 
      *     }
@@ -13376,7 +13376,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbNodeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13420,7 +13420,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbNodeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13464,7 +13464,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbNodeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13508,7 +13508,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbNodeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13552,7 +13552,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbNodeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13596,7 +13596,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbNodeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13640,7 +13640,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbNodeDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13682,7 +13682,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
-     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13724,7 +13724,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
-     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13766,7 +13766,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
-     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13808,7 +13808,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
-     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13850,7 +13850,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
-     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -13892,7 +13892,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
-     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id())
+     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -13934,7 +13934,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
-     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id())
+     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -13976,7 +13976,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
-     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id())
+     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -14018,7 +14018,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
-     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id())
+     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -14060,7 +14060,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
-     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id())
+     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -14104,7 +14104,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbSystemConnectorDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -14148,7 +14148,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbSystemConnectorDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -14192,7 +14192,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbSystemConnectorDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -14236,7 +14236,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbSystemConnectorDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -14280,7 +14280,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbSystemConnectorDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -14324,7 +14324,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbSystemConnectorDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -14368,7 +14368,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDbSystemConnectorDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -14625,7 +14625,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
-     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.id())
+     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -14667,7 +14667,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
-     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.id())
+     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -14709,7 +14709,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
-     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.id())
+     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -14751,7 +14751,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
-     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.id())
+     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -14793,7 +14793,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
-     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.id())
+     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -15051,7 +15051,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -15094,7 +15094,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -15137,7 +15137,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -15180,7 +15180,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -15223,7 +15223,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -15480,7 +15480,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
-     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id())
+     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -15522,7 +15522,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
-     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id())
+     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -15564,7 +15564,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
-     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id())
+     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -15606,7 +15606,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
-     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id())
+     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -15648,7 +15648,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
-     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id())
+     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -15691,7 +15691,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .displayName(externalExadataStorageConnectorDisplayName)
      *             .build());
      * 
@@ -15735,7 +15735,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .displayName(externalExadataStorageConnectorDisplayName)
      *             .build());
      * 
@@ -15779,7 +15779,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .displayName(externalExadataStorageConnectorDisplayName)
      *             .build());
      * 
@@ -15823,7 +15823,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .displayName(externalExadataStorageConnectorDisplayName)
      *             .build());
      * 
@@ -15867,7 +15867,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .displayName(externalExadataStorageConnectorDisplayName)
      *             .build());
      * 
@@ -15910,7 +15910,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
-     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id())
+     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.get("id"))
      *             .build());
      * 
      *     }
@@ -15952,7 +15952,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
-     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id())
+     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.get("id"))
      *             .build());
      * 
      *     }
@@ -15994,7 +15994,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
-     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id())
+     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.get("id"))
      *             .build());
      * 
      *     }
@@ -16036,7 +16036,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
-     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id())
+     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.get("id"))
      *             .build());
      * 
      *     }
@@ -16078,7 +16078,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
-     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id())
+     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.get("id"))
      *             .build());
      * 
      *     }
@@ -16120,7 +16120,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16162,7 +16162,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16204,7 +16204,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16246,7 +16246,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16288,7 +16288,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16330,7 +16330,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16372,7 +16372,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16414,7 +16414,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16456,7 +16456,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16498,7 +16498,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16540,7 +16540,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16582,7 +16582,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16624,7 +16624,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16666,7 +16666,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16708,7 +16708,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16750,7 +16750,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16792,7 +16792,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16834,7 +16834,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16876,7 +16876,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16918,7 +16918,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
-     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.get("id"))
      *             .build());
      * 
      *     }
@@ -16961,7 +16961,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .displayName(externalExadataStorageServerDisplayName)
      *             .build());
      * 
@@ -17005,7 +17005,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .displayName(externalExadataStorageServerDisplayName)
      *             .build());
      * 
@@ -17049,7 +17049,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .displayName(externalExadataStorageServerDisplayName)
      *             .build());
      * 
@@ -17093,7 +17093,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .displayName(externalExadataStorageServerDisplayName)
      *             .build());
      * 
@@ -17137,7 +17137,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .displayName(externalExadataStorageServerDisplayName)
      *             .build());
      * 
@@ -17180,7 +17180,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
-     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.id())
+     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.get("id"))
      *             .build());
      * 
      *     }
@@ -17222,7 +17222,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
-     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.id())
+     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.get("id"))
      *             .build());
      * 
      *     }
@@ -17264,7 +17264,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
-     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.id())
+     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.get("id"))
      *             .build());
      * 
      *     }
@@ -17306,7 +17306,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
-     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.id())
+     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.get("id"))
      *             .build());
      * 
      *     }
@@ -17348,7 +17348,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
-     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.id())
+     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.get("id"))
      *             .build());
      * 
      *     }
@@ -17391,8 +17391,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
-     *             .externalListenerId(testExternalListener.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .externalListenerId(testExternalListener.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(externalListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
@@ -17436,8 +17436,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
-     *             .externalListenerId(testExternalListener.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .externalListenerId(testExternalListener.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(externalListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
@@ -17481,8 +17481,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
-     *             .externalListenerId(testExternalListener.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .externalListenerId(testExternalListener.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(externalListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
@@ -17526,8 +17526,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
-     *             .externalListenerId(testExternalListener.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .externalListenerId(testExternalListener.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(externalListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
@@ -17571,8 +17571,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
-     *             .externalListenerId(testExternalListener.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .externalListenerId(testExternalListener.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(externalListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
@@ -17617,7 +17617,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalListenerDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -17661,7 +17661,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalListenerDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -17705,7 +17705,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalListenerDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -17749,7 +17749,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalListenerDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -17793,7 +17793,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalListenerDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -17837,7 +17837,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalListenerDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -17881,7 +17881,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalListenerDisplayName)
-     *             .externalDbSystemId(testExternalDbSystem.id())
+     *             .externalDbSystemId(testExternalDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -17924,7 +17924,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalMySqlDatabase = DatabaseManagementFunctions.getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs.builder()
-     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.id())
+     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -17967,7 +17967,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalMySqlDatabase = DatabaseManagementFunctions.getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs.builder()
-     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.id())
+     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -18010,7 +18010,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalMySqlDatabase = DatabaseManagementFunctions.getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs.builder()
-     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.id())
+     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -18053,7 +18053,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalMySqlDatabase = DatabaseManagementFunctions.getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs.builder()
-     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.id())
+     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -18096,7 +18096,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalMySqlDatabase = DatabaseManagementFunctions.getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs.builder()
-     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.id())
+     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -18139,7 +18139,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalMySqlDatabaseConnector = DatabaseManagementFunctions.getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs.builder()
-     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.id())
+     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -18182,7 +18182,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalMySqlDatabaseConnector = DatabaseManagementFunctions.getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs.builder()
-     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.id())
+     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -18225,7 +18225,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalMySqlDatabaseConnector = DatabaseManagementFunctions.getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs.builder()
-     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.id())
+     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -18268,7 +18268,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalMySqlDatabaseConnector = DatabaseManagementFunctions.getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs.builder()
-     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.id())
+     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -18311,7 +18311,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalMySqlDatabaseConnector = DatabaseManagementFunctions.getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs.builder()
-     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.id())
+     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -18807,8 +18807,8 @@ public final class DatabaseManagementFunctions {
      *             .endTime(jobExecutionsStatusEndTime)
      *             .startTime(jobExecutionsStatusStartTime)
      *             .id(jobExecutionsStatusId)
-     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(jobExecutionsStatusName)
      *             .build());
      * 
@@ -18855,8 +18855,8 @@ public final class DatabaseManagementFunctions {
      *             .endTime(jobExecutionsStatusEndTime)
      *             .startTime(jobExecutionsStatusStartTime)
      *             .id(jobExecutionsStatusId)
-     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(jobExecutionsStatusName)
      *             .build());
      * 
@@ -18903,8 +18903,8 @@ public final class DatabaseManagementFunctions {
      *             .endTime(jobExecutionsStatusEndTime)
      *             .startTime(jobExecutionsStatusStartTime)
      *             .id(jobExecutionsStatusId)
-     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(jobExecutionsStatusName)
      *             .build());
      * 
@@ -18951,8 +18951,8 @@ public final class DatabaseManagementFunctions {
      *             .endTime(jobExecutionsStatusEndTime)
      *             .startTime(jobExecutionsStatusStartTime)
      *             .id(jobExecutionsStatusId)
-     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(jobExecutionsStatusName)
      *             .build());
      * 
@@ -18999,8 +18999,8 @@ public final class DatabaseManagementFunctions {
      *             .endTime(jobExecutionsStatusEndTime)
      *             .startTime(jobExecutionsStatusStartTime)
      *             .id(jobExecutionsStatusId)
-     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(jobExecutionsStatusName)
      *             .build());
      * 
@@ -19047,8 +19047,8 @@ public final class DatabaseManagementFunctions {
      *             .endTime(jobExecutionsStatusEndTime)
      *             .startTime(jobExecutionsStatusStartTime)
      *             .id(jobExecutionsStatusId)
-     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(jobExecutionsStatusName)
      *             .build());
      * 
@@ -19095,8 +19095,8 @@ public final class DatabaseManagementFunctions {
      *             .endTime(jobExecutionsStatusEndTime)
      *             .startTime(jobExecutionsStatusStartTime)
      *             .id(jobExecutionsStatusId)
-     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(jobExecutionsStatusName)
      *             .build());
      * 
@@ -19143,8 +19143,8 @@ public final class DatabaseManagementFunctions {
      *             .endTime(jobExecutionsStatusEndTime)
      *             .startTime(jobExecutionsStatusStartTime)
      *             .id(jobExecutionsStatusId)
-     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(jobExecutionsStatusName)
      *             .build());
      * 
@@ -19191,8 +19191,8 @@ public final class DatabaseManagementFunctions {
      *             .endTime(jobExecutionsStatusEndTime)
      *             .startTime(jobExecutionsStatusStartTime)
      *             .id(jobExecutionsStatusId)
-     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(jobExecutionsStatusName)
      *             .build());
      * 
@@ -19239,8 +19239,8 @@ public final class DatabaseManagementFunctions {
      *             .endTime(jobExecutionsStatusEndTime)
      *             .startTime(jobExecutionsStatusStartTime)
      *             .id(jobExecutionsStatusId)
-     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(jobExecutionsStatusName)
      *             .build());
      * 
@@ -19283,7 +19283,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
-     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -19325,7 +19325,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
-     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -19367,7 +19367,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
-     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -19409,7 +19409,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
-     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -19451,7 +19451,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
-     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -19494,7 +19494,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
      *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
@@ -19539,7 +19539,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
      *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
@@ -19584,7 +19584,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
      *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
@@ -19629,7 +19629,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
      *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
@@ -19674,7 +19674,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
      *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
@@ -19719,7 +19719,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
      *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
@@ -19764,7 +19764,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
      *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
@@ -19809,7 +19809,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
      *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
@@ -19854,7 +19854,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
      *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
@@ -19899,7 +19899,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
      *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
@@ -19943,7 +19943,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAlertLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
      *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
@@ -19992,7 +19992,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAlertLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
      *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
@@ -20041,7 +20041,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAlertLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
      *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
@@ -20090,7 +20090,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAlertLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
      *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
@@ -20139,7 +20139,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAlertLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
      *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
@@ -20188,7 +20188,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAlertLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
      *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
@@ -20237,7 +20237,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAlertLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
      *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
@@ -20286,7 +20286,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAlertLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
      *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
@@ -20335,7 +20335,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAlertLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
      *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
@@ -20384,7 +20384,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAlertLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
      *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
@@ -20433,7 +20433,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
      *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
@@ -20482,7 +20482,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
      *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
@@ -20531,7 +20531,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
      *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
@@ -20580,7 +20580,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
      *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
@@ -20629,7 +20629,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
      *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
@@ -20678,7 +20678,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
      *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
@@ -20727,7 +20727,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
      *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
@@ -20776,7 +20776,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
      *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
@@ -20825,7 +20825,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
      *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
@@ -20874,7 +20874,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
      *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
      *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
@@ -20923,7 +20923,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(managedDatabaseCursorCacheStatementOpcNamedCredentialId)
      *             .sqlText(managedDatabaseCursorCacheStatementSqlText)
      *             .build());
@@ -20967,7 +20967,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(managedDatabaseCursorCacheStatementOpcNamedCredentialId)
      *             .sqlText(managedDatabaseCursorCacheStatementSqlText)
      *             .build());
@@ -21011,7 +21011,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(managedDatabaseCursorCacheStatementOpcNamedCredentialId)
      *             .sqlText(managedDatabaseCursorCacheStatementSqlText)
      *             .build());
@@ -21055,7 +21055,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(managedDatabaseCursorCacheStatementOpcNamedCredentialId)
      *             .sqlText(managedDatabaseCursorCacheStatementSqlText)
      *             .build());
@@ -21099,7 +21099,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(managedDatabaseCursorCacheStatementOpcNamedCredentialId)
      *             .sqlText(managedDatabaseCursorCacheStatementSqlText)
      *             .build());
@@ -21143,7 +21143,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
-     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -21185,7 +21185,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
-     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -21227,7 +21227,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
-     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -21269,7 +21269,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
-     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -21311,7 +21311,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
-     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -21595,7 +21595,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
      *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName)
      *             .build());
      * 
@@ -21640,7 +21640,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
      *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName)
      *             .build());
      * 
@@ -21685,7 +21685,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
      *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName)
      *             .build());
      * 
@@ -21730,7 +21730,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
      *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName)
      *             .build());
      * 
@@ -21775,7 +21775,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
      *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName)
      *             .build());
      * 
@@ -21819,7 +21819,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
      *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName)
      *             .build());
      * 
@@ -21863,7 +21863,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
      *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName)
      *             .build());
      * 
@@ -21907,7 +21907,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
      *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName)
      *             .build());
      * 
@@ -21951,7 +21951,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
      *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName)
      *             .build());
      * 
@@ -21995,7 +21995,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
      *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName)
      *             .build());
      * 
@@ -22040,7 +22040,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo)
      *             .build());
@@ -22086,7 +22086,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo)
      *             .build());
@@ -22132,7 +22132,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo)
      *             .build());
@@ -22178,7 +22178,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo)
      *             .build());
@@ -22224,7 +22224,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo)
      *             .build());
@@ -22274,7 +22274,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
      *             .groupType(managedDatabaseOptimizerStatisticsCollectionAggregationGroupType)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo)
      *             .taskType(managedDatabaseOptimizerStatisticsCollectionAggregationTaskType)
@@ -22325,7 +22325,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
      *             .groupType(managedDatabaseOptimizerStatisticsCollectionAggregationGroupType)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo)
      *             .taskType(managedDatabaseOptimizerStatisticsCollectionAggregationTaskType)
@@ -22376,7 +22376,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
      *             .groupType(managedDatabaseOptimizerStatisticsCollectionAggregationGroupType)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo)
      *             .taskType(managedDatabaseOptimizerStatisticsCollectionAggregationTaskType)
@@ -22427,7 +22427,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
      *             .groupType(managedDatabaseOptimizerStatisticsCollectionAggregationGroupType)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo)
      *             .taskType(managedDatabaseOptimizerStatisticsCollectionAggregationTaskType)
@@ -22478,7 +22478,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
      *             .groupType(managedDatabaseOptimizerStatisticsCollectionAggregationGroupType)
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo)
      *             .taskType(managedDatabaseOptimizerStatisticsCollectionAggregationTaskType)
@@ -22523,8 +22523,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.get("id"))
      *             .build());
      * 
      *     }
@@ -22566,8 +22566,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.get("id"))
      *             .build());
      * 
      *     }
@@ -22609,8 +22609,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.get("id"))
      *             .build());
      * 
      *     }
@@ -22652,8 +22652,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.get("id"))
      *             .build());
      * 
      *     }
@@ -22695,8 +22695,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.get("id"))
      *             .build());
      * 
      *     }
@@ -22744,7 +22744,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo)
      *             .filterBy(managedDatabaseOptimizerStatisticsCollectionOperationFilterBy)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo)
@@ -22796,7 +22796,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo)
      *             .filterBy(managedDatabaseOptimizerStatisticsCollectionOperationFilterBy)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo)
@@ -22848,7 +22848,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo)
      *             .filterBy(managedDatabaseOptimizerStatisticsCollectionOperationFilterBy)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo)
@@ -22900,7 +22900,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo)
      *             .filterBy(managedDatabaseOptimizerStatisticsCollectionOperationFilterBy)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo)
@@ -22952,7 +22952,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo)
      *             .filterBy(managedDatabaseOptimizerStatisticsCollectionOperationFilterBy)
      *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo)
@@ -22998,7 +22998,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .planName(managedDatabaseSqlPlanBaselinePlanName)
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
      *             .build());
@@ -23042,7 +23042,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .planName(managedDatabaseSqlPlanBaselinePlanName)
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
      *             .build());
@@ -23086,7 +23086,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .planName(managedDatabaseSqlPlanBaselinePlanName)
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
      *             .build());
@@ -23130,7 +23130,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .planName(managedDatabaseSqlPlanBaselinePlanName)
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
      *             .build());
@@ -23174,7 +23174,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .planName(managedDatabaseSqlPlanBaselinePlanName)
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
      *             .build());
@@ -23220,7 +23220,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -23265,7 +23265,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -23310,7 +23310,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -23355,7 +23355,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -23400,7 +23400,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId)
      *             .build());
      * 
@@ -23443,7 +23443,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlPlanBaselineJobName)
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId)
      *             .build());
@@ -23487,7 +23487,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlPlanBaselineJobName)
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId)
      *             .build());
@@ -23531,7 +23531,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlPlanBaselineJobName)
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId)
      *             .build());
@@ -23575,7 +23575,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlPlanBaselineJobName)
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId)
      *             .build());
@@ -23619,7 +23619,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlPlanBaselineJobName)
      *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId)
      *             .build());
@@ -23718,7 +23718,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlTuningAdvisorTaskName)
      *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
      *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
@@ -23764,7 +23764,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlTuningAdvisorTaskName)
      *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
      *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
@@ -23810,7 +23810,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlTuningAdvisorTaskName)
      *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
      *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
@@ -23856,7 +23856,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlTuningAdvisorTaskName)
      *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
      *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
@@ -23902,7 +23902,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlTuningAdvisorTaskName)
      *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
      *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
@@ -23948,7 +23948,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlTuningAdvisorTaskName)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId)
      *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
@@ -23995,7 +23995,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlTuningAdvisorTaskName)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId)
      *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
@@ -24042,7 +24042,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlTuningAdvisorTaskName)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId)
      *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
@@ -24089,7 +24089,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlTuningAdvisorTaskName)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId)
      *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
@@ -24136,7 +24136,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseSqlTuningAdvisorTaskName)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId)
      *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
@@ -24185,10 +24185,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisionOpcNamedCredentialId)
      *             .build());
      * 
@@ -24233,10 +24233,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisionOpcNamedCredentialId)
      *             .build());
      * 
@@ -24281,10 +24281,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisionOpcNamedCredentialId)
      *             .build());
      * 
@@ -24329,10 +24329,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisionOpcNamedCredentialId)
      *             .build());
      * 
@@ -24377,10 +24377,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisionOpcNamedCredentialId)
      *             .build());
      * 
@@ -24423,10 +24423,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
-     *             .beginExecId(testBeginExec.id())
-     *             .endExecId(testEndExec.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
+     *             .beginExecId(testBeginExec.get("id"))
+     *             .endExecId(testEndExec.get("id"))
      *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
      *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
      *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
@@ -24472,10 +24472,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
-     *             .beginExecId(testBeginExec.id())
-     *             .endExecId(testEndExec.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
+     *             .beginExecId(testBeginExec.get("id"))
+     *             .endExecId(testEndExec.get("id"))
      *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
      *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
      *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
@@ -24521,10 +24521,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
-     *             .beginExecId(testBeginExec.id())
-     *             .endExecId(testEndExec.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
+     *             .beginExecId(testBeginExec.get("id"))
+     *             .endExecId(testEndExec.get("id"))
      *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
      *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
      *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
@@ -24570,10 +24570,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
-     *             .beginExecId(testBeginExec.id())
-     *             .endExecId(testEndExec.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
+     *             .beginExecId(testBeginExec.get("id"))
+     *             .endExecId(testEndExec.get("id"))
      *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
      *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
      *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
@@ -24619,10 +24619,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
-     *             .beginExecId(testBeginExec.id())
-     *             .endExecId(testEndExec.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
+     *             .beginExecId(testBeginExec.get("id"))
+     *             .endExecId(testEndExec.get("id"))
      *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
      *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
      *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
@@ -24668,10 +24668,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
-     *             .beginExecId(testBeginExec.id())
-     *             .endExecId(testEndExec.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
+     *             .beginExecId(testBeginExec.get("id"))
+     *             .endExecId(testEndExec.get("id"))
      *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
      *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId)
@@ -24718,10 +24718,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
-     *             .beginExecId(testBeginExec.id())
-     *             .endExecId(testEndExec.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
+     *             .beginExecId(testBeginExec.get("id"))
+     *             .endExecId(testEndExec.get("id"))
      *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
      *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId)
@@ -24768,10 +24768,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
-     *             .beginExecId(testBeginExec.id())
-     *             .endExecId(testEndExec.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
+     *             .beginExecId(testBeginExec.get("id"))
+     *             .endExecId(testEndExec.get("id"))
      *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
      *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId)
@@ -24818,10 +24818,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
-     *             .beginExecId(testBeginExec.id())
-     *             .endExecId(testEndExec.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
+     *             .beginExecId(testBeginExec.get("id"))
+     *             .endExecId(testEndExec.get("id"))
      *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
      *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId)
@@ -24868,10 +24868,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
-     *             .beginExecId(testBeginExec.id())
-     *             .endExecId(testEndExec.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
+     *             .beginExecId(testBeginExec.get("id"))
+     *             .endExecId(testEndExec.get("id"))
      *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
      *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId)
@@ -24919,10 +24919,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .build());
      * 
      *     }
@@ -24965,10 +24965,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .build());
      * 
      *     }
@@ -25011,10 +25011,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .build());
      * 
      *     }
@@ -25057,10 +25057,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .build());
      * 
      *     }
@@ -25103,10 +25103,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .build());
      * 
      *     }
@@ -25149,10 +25149,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId)
      *             .build());
      * 
@@ -25196,10 +25196,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId)
      *             .build());
      * 
@@ -25243,10 +25243,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId)
      *             .build());
      * 
@@ -25290,10 +25290,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId)
      *             .build());
      * 
@@ -25337,10 +25337,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
-     *             .executionId(testExecution.id())
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .executionId(testExecution.get("id"))
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId)
      *             .build());
      * 
@@ -25384,9 +25384,9 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
      *             .attribute(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute)
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId)
      *             .build());
      * 
@@ -25430,9 +25430,9 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
      *             .attribute(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute)
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId)
      *             .build());
      * 
@@ -25476,9 +25476,9 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
      *             .attribute(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute)
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId)
      *             .build());
      * 
@@ -25522,9 +25522,9 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
      *             .attribute(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute)
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId)
      *             .build());
      * 
@@ -25568,9 +25568,9 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
      *             .attribute(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute)
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlObjectId(testObject.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlObjectId(testObject.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId)
      *             .build());
      * 
@@ -25613,8 +25613,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .beginExecIdGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo)
      *             .endExecIdLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId)
@@ -25662,8 +25662,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .beginExecIdGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo)
      *             .endExecIdLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId)
@@ -25711,8 +25711,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .beginExecIdGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo)
      *             .endExecIdLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId)
@@ -25760,8 +25760,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .beginExecIdGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo)
      *             .endExecIdLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId)
@@ -25809,8 +25809,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.get("id"))
      *             .beginExecIdGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo)
      *             .endExecIdLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId)
@@ -25858,7 +25858,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .nameContains(managedDatabaseSqlTuningSetNameContains)
      *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
@@ -25902,7 +25902,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .nameContains(managedDatabaseSqlTuningSetNameContains)
      *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
@@ -25946,7 +25946,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .nameContains(managedDatabaseSqlTuningSetNameContains)
      *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
@@ -25990,7 +25990,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .nameContains(managedDatabaseSqlTuningSetNameContains)
      *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
@@ -26034,7 +26034,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .nameContains(managedDatabaseSqlTuningSetNameContains)
      *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
@@ -26078,7 +26078,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .nameContains(managedDatabaseSqlTuningSetNameContains)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningSetOpcNamedCredentialId)
      *             .owner(managedDatabaseSqlTuningSetOwner)
@@ -26123,7 +26123,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .nameContains(managedDatabaseSqlTuningSetNameContains)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningSetOpcNamedCredentialId)
      *             .owner(managedDatabaseSqlTuningSetOwner)
@@ -26168,7 +26168,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .nameContains(managedDatabaseSqlTuningSetNameContains)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningSetOpcNamedCredentialId)
      *             .owner(managedDatabaseSqlTuningSetOwner)
@@ -26213,7 +26213,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .nameContains(managedDatabaseSqlTuningSetNameContains)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningSetOpcNamedCredentialId)
      *             .owner(managedDatabaseSqlTuningSetOwner)
@@ -26258,7 +26258,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .nameContains(managedDatabaseSqlTuningSetNameContains)
      *             .opcNamedCredentialId(managedDatabaseSqlTuningSetOpcNamedCredentialId)
      *             .owner(managedDatabaseSqlTuningSetOwner)
@@ -26304,7 +26304,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -26347,7 +26347,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -26390,7 +26390,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -26433,7 +26433,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -26476,7 +26476,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -26518,8 +26518,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -26562,8 +26562,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -26606,8 +26606,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -26650,8 +26650,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -26694,8 +26694,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
@@ -26738,8 +26738,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .build());
      * 
@@ -26782,8 +26782,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .build());
      * 
@@ -26826,8 +26826,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .build());
      * 
@@ -26870,8 +26870,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .build());
      * 
@@ -26914,8 +26914,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .build());
      * 
@@ -26958,8 +26958,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .opcNamedCredentialId(managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -27003,8 +27003,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .opcNamedCredentialId(managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -27048,8 +27048,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .opcNamedCredentialId(managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -27093,8 +27093,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .opcNamedCredentialId(managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -27138,8 +27138,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .opcNamedCredentialId(managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -27183,8 +27183,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserDataAccessContainerName)
      *             .build());
      * 
@@ -27227,8 +27227,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserDataAccessContainerName)
      *             .build());
      * 
@@ -27271,8 +27271,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserDataAccessContainerName)
      *             .build());
      * 
@@ -27315,8 +27315,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserDataAccessContainerName)
      *             .build());
      * 
@@ -27359,8 +27359,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserDataAccessContainerName)
      *             .build());
      * 
@@ -27403,8 +27403,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserDataAccessContainerName)
      *             .opcNamedCredentialId(managedDatabaseUserDataAccessContainerOpcNamedCredentialId)
      *             .build());
@@ -27448,8 +27448,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserDataAccessContainerName)
      *             .opcNamedCredentialId(managedDatabaseUserDataAccessContainerOpcNamedCredentialId)
      *             .build());
@@ -27493,8 +27493,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserDataAccessContainerName)
      *             .opcNamedCredentialId(managedDatabaseUserDataAccessContainerOpcNamedCredentialId)
      *             .build());
@@ -27538,8 +27538,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserDataAccessContainerName)
      *             .opcNamedCredentialId(managedDatabaseUserDataAccessContainerOpcNamedCredentialId)
      *             .build());
@@ -27583,8 +27583,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserDataAccessContainerName)
      *             .opcNamedCredentialId(managedDatabaseUserDataAccessContainerOpcNamedCredentialId)
      *             .build());
@@ -27628,8 +27628,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .build());
      * 
@@ -27672,8 +27672,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .build());
      * 
@@ -27716,8 +27716,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .build());
      * 
@@ -27760,8 +27760,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .build());
      * 
@@ -27804,8 +27804,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .build());
      * 
@@ -27848,8 +27848,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .opcNamedCredentialId(managedDatabaseUserObjectPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -27893,8 +27893,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .opcNamedCredentialId(managedDatabaseUserObjectPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -27938,8 +27938,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .opcNamedCredentialId(managedDatabaseUserObjectPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -27983,8 +27983,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .opcNamedCredentialId(managedDatabaseUserObjectPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -28028,8 +28028,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .opcNamedCredentialId(managedDatabaseUserObjectPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -28073,8 +28073,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserProxiedForUserName)
      *             .build());
      * 
@@ -28117,8 +28117,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserProxiedForUserName)
      *             .build());
      * 
@@ -28161,8 +28161,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserProxiedForUserName)
      *             .build());
      * 
@@ -28205,8 +28205,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserProxiedForUserName)
      *             .build());
      * 
@@ -28249,8 +28249,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserProxiedForUserName)
      *             .build());
      * 
@@ -28293,8 +28293,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserProxiedForUserName)
      *             .opcNamedCredentialId(managedDatabaseUserProxiedForUserOpcNamedCredentialId)
      *             .build());
@@ -28338,8 +28338,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserProxiedForUserName)
      *             .opcNamedCredentialId(managedDatabaseUserProxiedForUserOpcNamedCredentialId)
      *             .build());
@@ -28383,8 +28383,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserProxiedForUserName)
      *             .opcNamedCredentialId(managedDatabaseUserProxiedForUserOpcNamedCredentialId)
      *             .build());
@@ -28428,8 +28428,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserProxiedForUserName)
      *             .opcNamedCredentialId(managedDatabaseUserProxiedForUserOpcNamedCredentialId)
      *             .build());
@@ -28473,8 +28473,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserProxiedForUserName)
      *             .opcNamedCredentialId(managedDatabaseUserProxiedForUserOpcNamedCredentialId)
      *             .build());
@@ -28518,8 +28518,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserRoleName)
      *             .build());
      * 
@@ -28562,8 +28562,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserRoleName)
      *             .build());
      * 
@@ -28606,8 +28606,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserRoleName)
      *             .build());
      * 
@@ -28650,8 +28650,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserRoleName)
      *             .build());
      * 
@@ -28694,8 +28694,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserRoleName)
      *             .build());
      * 
@@ -28738,8 +28738,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserRoleName)
      *             .opcNamedCredentialId(managedDatabaseUserRoleOpcNamedCredentialId)
      *             .build());
@@ -28783,8 +28783,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserRoleName)
      *             .opcNamedCredentialId(managedDatabaseUserRoleOpcNamedCredentialId)
      *             .build());
@@ -28828,8 +28828,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserRoleName)
      *             .opcNamedCredentialId(managedDatabaseUserRoleOpcNamedCredentialId)
      *             .build());
@@ -28873,8 +28873,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserRoleName)
      *             .opcNamedCredentialId(managedDatabaseUserRoleOpcNamedCredentialId)
      *             .build());
@@ -28918,8 +28918,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabaseUserRoleName)
      *             .opcNamedCredentialId(managedDatabaseUserRoleOpcNamedCredentialId)
      *             .build());
@@ -28963,7 +28963,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseUserName)
      *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
@@ -29007,7 +29007,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseUserName)
      *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
@@ -29051,7 +29051,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseUserName)
      *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
@@ -29095,7 +29095,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseUserName)
      *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
@@ -29139,7 +29139,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabaseUserName)
      *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
@@ -29190,7 +29190,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .deploymentType(managedDatabaseDeploymentType)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .id(managedDatabaseId)
      *             .managementOption(managedDatabaseManagementOption)
      *             .name(managedDatabaseName)
@@ -29242,7 +29242,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .deploymentType(managedDatabaseDeploymentType)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .id(managedDatabaseId)
      *             .managementOption(managedDatabaseManagementOption)
      *             .name(managedDatabaseName)
@@ -29294,7 +29294,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .deploymentType(managedDatabaseDeploymentType)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .id(managedDatabaseId)
      *             .managementOption(managedDatabaseManagementOption)
      *             .name(managedDatabaseName)
@@ -29346,7 +29346,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .deploymentType(managedDatabaseDeploymentType)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .id(managedDatabaseId)
      *             .managementOption(managedDatabaseManagementOption)
      *             .name(managedDatabaseName)
@@ -29398,7 +29398,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .deploymentType(managedDatabaseDeploymentType)
-     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.get("id"))
      *             .id(managedDatabaseId)
      *             .managementOption(managedDatabaseManagementOption)
      *             .name(managedDatabaseName)
@@ -29443,7 +29443,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
@@ -29486,7 +29486,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
@@ -29529,7 +29529,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
@@ -29572,7 +29572,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
@@ -29615,7 +29615,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
@@ -29658,7 +29658,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
@@ -29701,7 +29701,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
@@ -29744,7 +29744,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
@@ -29787,7 +29787,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
@@ -29830,7 +29830,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
@@ -29873,7 +29873,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
      *             .name(managedDatabasesDatabaseParameterName)
      *             .source(managedDatabasesDatabaseParameterSource)
@@ -29918,7 +29918,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
      *             .name(managedDatabasesDatabaseParameterName)
      *             .source(managedDatabasesDatabaseParameterSource)
@@ -29963,7 +29963,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
      *             .name(managedDatabasesDatabaseParameterName)
      *             .source(managedDatabasesDatabaseParameterSource)
@@ -30008,7 +30008,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
      *             .name(managedDatabasesDatabaseParameterName)
      *             .source(managedDatabasesDatabaseParameterSource)
@@ -30053,7 +30053,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
      *             .name(managedDatabasesDatabaseParameterName)
      *             .source(managedDatabasesDatabaseParameterSource)
@@ -30098,7 +30098,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
      *             .name(managedDatabasesDatabaseParameterName)
      *             .opcNamedCredentialId(managedDatabasesDatabaseParameterOpcNamedCredentialId)
@@ -30144,7 +30144,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
      *             .name(managedDatabasesDatabaseParameterName)
      *             .opcNamedCredentialId(managedDatabasesDatabaseParameterOpcNamedCredentialId)
@@ -30190,7 +30190,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
      *             .name(managedDatabasesDatabaseParameterName)
      *             .opcNamedCredentialId(managedDatabasesDatabaseParameterOpcNamedCredentialId)
@@ -30236,7 +30236,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
      *             .name(managedDatabasesDatabaseParameterName)
      *             .opcNamedCredentialId(managedDatabasesDatabaseParameterOpcNamedCredentialId)
@@ -30282,7 +30282,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
      *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
      *             .name(managedDatabasesDatabaseParameterName)
      *             .opcNamedCredentialId(managedDatabasesDatabaseParameterOpcNamedCredentialId)
@@ -30328,8 +30328,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserProxyUserName)
      *             .build());
      * 
@@ -30372,8 +30372,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserProxyUserName)
      *             .build());
      * 
@@ -30416,8 +30416,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserProxyUserName)
      *             .build());
      * 
@@ -30460,8 +30460,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserProxyUserName)
      *             .build());
      * 
@@ -30504,8 +30504,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserProxyUserName)
      *             .build());
      * 
@@ -30548,8 +30548,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserProxyUserName)
      *             .opcNamedCredentialId(managedDatabasesUserProxyUserOpcNamedCredentialId)
      *             .build());
@@ -30593,8 +30593,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserProxyUserName)
      *             .opcNamedCredentialId(managedDatabasesUserProxyUserOpcNamedCredentialId)
      *             .build());
@@ -30638,8 +30638,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserProxyUserName)
      *             .opcNamedCredentialId(managedDatabasesUserProxyUserOpcNamedCredentialId)
      *             .build());
@@ -30683,8 +30683,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserProxyUserName)
      *             .opcNamedCredentialId(managedDatabasesUserProxyUserOpcNamedCredentialId)
      *             .build());
@@ -30728,8 +30728,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserProxyUserName)
      *             .opcNamedCredentialId(managedDatabasesUserProxyUserOpcNamedCredentialId)
      *             .build());
@@ -30773,8 +30773,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .build());
      * 
@@ -30817,8 +30817,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .build());
      * 
@@ -30861,8 +30861,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .build());
      * 
@@ -30905,8 +30905,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .build());
      * 
@@ -30949,8 +30949,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .build());
      * 
@@ -30993,8 +30993,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .opcNamedCredentialId(managedDatabasesUserSystemPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -31038,8 +31038,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .opcNamedCredentialId(managedDatabasesUserSystemPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -31083,8 +31083,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .opcNamedCredentialId(managedDatabasesUserSystemPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -31128,8 +31128,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .opcNamedCredentialId(managedDatabasesUserSystemPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -31173,8 +31173,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
-     *             .managedDatabaseId(testManagedDatabase.id())
-     *             .userName(testUser.name())
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .userName(testUser.get("name"))
      *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .opcNamedCredentialId(managedDatabasesUserSystemPrivilegeOpcNamedCredentialId)
      *             .build());
@@ -31220,7 +31220,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabase = DatabaseManagementFunctions.getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31264,7 +31264,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabase = DatabaseManagementFunctions.getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31308,7 +31308,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabase = DatabaseManagementFunctions.getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31352,7 +31352,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabase = DatabaseManagementFunctions.getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31396,7 +31396,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabase = DatabaseManagementFunctions.getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31439,7 +31439,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseBinaryLogInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31482,7 +31482,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseBinaryLogInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31525,7 +31525,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseBinaryLogInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31568,7 +31568,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseBinaryLogInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31611,7 +31611,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseBinaryLogInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31655,7 +31655,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseConfigurationData = DatabaseManagementFunctions.getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31699,7 +31699,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseConfigurationData = DatabaseManagementFunctions.getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31743,7 +31743,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseConfigurationData = DatabaseManagementFunctions.getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31787,7 +31787,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseConfigurationData = DatabaseManagementFunctions.getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31831,7 +31831,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseConfigurationData = DatabaseManagementFunctions.getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31875,7 +31875,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseDigestErrors = DatabaseManagementFunctions.getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs.builder()
      *             .digest(managedMySqlDatabaseDigestErrorDigest)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31919,7 +31919,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseDigestErrors = DatabaseManagementFunctions.getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs.builder()
      *             .digest(managedMySqlDatabaseDigestErrorDigest)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -31963,7 +31963,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseDigestErrors = DatabaseManagementFunctions.getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs.builder()
      *             .digest(managedMySqlDatabaseDigestErrorDigest)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32007,7 +32007,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseDigestErrors = DatabaseManagementFunctions.getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs.builder()
      *             .digest(managedMySqlDatabaseDigestErrorDigest)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32051,7 +32051,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseDigestErrors = DatabaseManagementFunctions.getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs.builder()
      *             .digest(managedMySqlDatabaseDigestErrorDigest)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32094,7 +32094,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseGeneralReplicationInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32137,7 +32137,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseGeneralReplicationInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32180,7 +32180,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseGeneralReplicationInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32223,7 +32223,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseGeneralReplicationInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32266,7 +32266,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseGeneralReplicationInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32309,7 +32309,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseHighAvailabilityMembers = DatabaseManagementFunctions.getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32352,7 +32352,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseHighAvailabilityMembers = DatabaseManagementFunctions.getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32395,7 +32395,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseHighAvailabilityMembers = DatabaseManagementFunctions.getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32438,7 +32438,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseHighAvailabilityMembers = DatabaseManagementFunctions.getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32481,7 +32481,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseHighAvailabilityMembers = DatabaseManagementFunctions.getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32524,7 +32524,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseInboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32567,7 +32567,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseInboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32610,7 +32610,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseInboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32653,7 +32653,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseInboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32696,7 +32696,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseInboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32739,7 +32739,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseOutboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32782,7 +32782,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseOutboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32825,7 +32825,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseOutboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32868,7 +32868,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseOutboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32911,7 +32911,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseOutboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs.builder()
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32955,7 +32955,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseQueryDetail = DatabaseManagementFunctions.getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs.builder()
      *             .digest(managedMySqlDatabaseQueryDetailDigest)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -32999,7 +32999,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseQueryDetail = DatabaseManagementFunctions.getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs.builder()
      *             .digest(managedMySqlDatabaseQueryDetailDigest)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -33043,7 +33043,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseQueryDetail = DatabaseManagementFunctions.getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs.builder()
      *             .digest(managedMySqlDatabaseQueryDetailDigest)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -33087,7 +33087,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseQueryDetail = DatabaseManagementFunctions.getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs.builder()
      *             .digest(managedMySqlDatabaseQueryDetailDigest)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -33131,7 +33131,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseQueryDetail = DatabaseManagementFunctions.getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs.builder()
      *             .digest(managedMySqlDatabaseQueryDetailDigest)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .build());
      * 
      *     }
@@ -33176,7 +33176,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseSqlData = DatabaseManagementFunctions.getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs.builder()
      *             .endTime(managedMySqlDatabaseSqlDataEndTime)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .startTime(managedMySqlDatabaseSqlDataStartTime)
      *             .filterColumn(managedMySqlDatabaseSqlDataFilterColumn)
      *             .build());
@@ -33223,7 +33223,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseSqlData = DatabaseManagementFunctions.getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs.builder()
      *             .endTime(managedMySqlDatabaseSqlDataEndTime)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .startTime(managedMySqlDatabaseSqlDataStartTime)
      *             .filterColumn(managedMySqlDatabaseSqlDataFilterColumn)
      *             .build());
@@ -33270,7 +33270,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseSqlData = DatabaseManagementFunctions.getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs.builder()
      *             .endTime(managedMySqlDatabaseSqlDataEndTime)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .startTime(managedMySqlDatabaseSqlDataStartTime)
      *             .filterColumn(managedMySqlDatabaseSqlDataFilterColumn)
      *             .build());
@@ -33317,7 +33317,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseSqlData = DatabaseManagementFunctions.getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs.builder()
      *             .endTime(managedMySqlDatabaseSqlDataEndTime)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .startTime(managedMySqlDatabaseSqlDataStartTime)
      *             .filterColumn(managedMySqlDatabaseSqlDataFilterColumn)
      *             .build());
@@ -33364,7 +33364,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseSqlData = DatabaseManagementFunctions.getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs.builder()
      *             .endTime(managedMySqlDatabaseSqlDataEndTime)
-     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.get("id"))
      *             .startTime(managedMySqlDatabaseSqlDataStartTime)
      *             .filterColumn(managedMySqlDatabaseSqlDataFilterColumn)
      *             .build());
@@ -33628,7 +33628,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.id())
+     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.get("id"))
      *             .build());
      * 
      *     }
@@ -33670,7 +33670,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.id())
+     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.get("id"))
      *             .build());
      * 
      *     }
@@ -33712,7 +33712,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.id())
+     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.get("id"))
      *             .build());
      * 
      *     }
@@ -33754,7 +33754,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.id())
+     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.get("id"))
      *             .build());
      * 
      *     }
@@ -33796,7 +33796,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.id())
+     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.get("id"))
      *             .build());
      * 
      *     }

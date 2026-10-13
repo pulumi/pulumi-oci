@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testMlApplicationImplementation = new MlApplicationImplementation("testMlApplicationImplementation", MlApplicationImplementationArgs.builder()
  *             .compartmentId(compartmentId)
- *             .mlApplicationId(testMlApplication.id())
+ *             .mlApplicationId(testMlApplication.get("id"))
  *             .name(mlApplicationImplementationName)
  *             .mlApplicationPackage(Map.ofEntries(
  *                 Map.entry("source_type", mlApplicationPackageSourceType),
@@ -71,18 +71,18 @@ import javax.annotation.Nullable;
  *             .logging(MlApplicationImplementationLoggingArgs.builder()
  *                 .aggregatedInstanceViewLog(MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs.builder()
  *                     .enableLogging(mlApplicationImplementationLoggingAggregatedInstanceViewLogEnableLogging)
- *                     .logGroupId(testLogGroup.id())
- *                     .logId(testLog.id())
+ *                     .logGroupId(testLogGroup.get("id"))
+ *                     .logId(testLog.get("id"))
  *                     .build())
  *                 .implementationLog(MlApplicationImplementationLoggingImplementationLogArgs.builder()
  *                     .enableLogging(mlApplicationImplementationLoggingImplementationLogEnableLogging)
- *                     .logGroupId(testLogGroup.id())
- *                     .logId(testLog.id())
+ *                     .logGroupId(testLogGroup.get("id"))
+ *                     .logId(testLog.get("id"))
  *                     .build())
  *                 .triggerLog(MlApplicationImplementationLoggingTriggerLogArgs.builder()
  *                     .enableLogging(mlApplicationImplementationLoggingTriggerLogEnableLogging)
- *                     .logGroupId(testLogGroup.id())
- *                     .logId(testLog.id())
+ *                     .logGroupId(testLogGroup.get("id"))
+ *                     .logId(testLog.get("id"))
  *                     .build())
  *                 .build())
  *             .build());

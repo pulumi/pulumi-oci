@@ -46,8 +46,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testUserGroupMembership = new UserGroupMembership("testUserGroupMembership", UserGroupMembershipArgs.builder()
- *             .groupId(testGroup.id())
- *             .userId(testUser.id())
+ *             .groupId(testGroup.get("id"))
+ *             .userId(testUser.get("id"))
  *             .build());
  * 
  *     }

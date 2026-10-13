@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     backupPolicy: {
  *         copyPolicies: [{
  *             copyToRegion: mysqlDbSystemBackupPolicyCopyPoliciesCopyToRegion,
- *             backupCopyRetentionInDays: Number(mysqlDbSystemBackupPolicyCopyPoliciesBackupCopyRetentionInDays),
+ *             backupCopyRetentionInDays: mysqlDbSystemBackupPolicyCopyPoliciesBackupCopyRetentionInDays,
  *         }],
  *         definedTags: {
  *             "foo-namespace.bar-key": "value",
@@ -39,11 +39,11 @@ import * as utilities from "../utilities";
  *         freeformTags: {
  *             "bar-key": "value",
  *         },
- *         isEnabled: mysqlDbSystemBackupPolicyIsEnabled === "true",
+ *         isEnabled: mysqlDbSystemBackupPolicyIsEnabled,
  *         pitrPolicy: {
- *             isEnabled: mysqlDbSystemBackupPolicyPitrPolicyIsEnabled === "true",
+ *             isEnabled: mysqlDbSystemBackupPolicyPitrPolicyIsEnabled,
  *         },
- *         retentionInDays: Number(mysqlDbSystemBackupPolicyRetentionInDays),
+ *         retentionInDays: mysqlDbSystemBackupPolicyRetentionInDays,
  *         softDelete: mysqlDbSystemBackupPolicySoftDelete,
  *         windowStartTime: mysqlDbSystemBackupPolicyWindowStartTime,
  *     },
@@ -53,13 +53,13 @@ import * as utilities from "../utilities";
  *         email: mysqlDbSystemCustomerContactsEmail,
  *     }],
  *     dataStorage: {
- *         isAutoExpandStorageEnabled: mysqlDbSystemDataStorageIsAutoExpandStorageEnabled === "true",
- *         maxStorageSizeInGbs: Number(mysqlDbSystemDataStorageMaxStorageSizeInGbs),
+ *         isAutoExpandStorageEnabled: mysqlDbSystemDataStorageIsAutoExpandStorageEnabled,
+ *         maxStorageSizeInGbs: mysqlDbSystemDataStorageMaxStorageSizeInGbs,
  *     },
- *     dataStorageSizeInGb: Number(mysqlDbSystemDataStorageSizeInGb),
+ *     dataStorageSizeInGb: mysqlDbSystemDataStorageSizeInGb,
  *     databaseConsole: {
  *         status: mysqlDbSystemDatabaseConsoleStatus,
- *         port: Number(mysqlDbSystemDatabaseConsolePort),
+ *         port: mysqlDbSystemDatabaseConsolePort,
  *     },
  *     databaseManagement: mysqlDbSystemDatabaseManagement,
  *     databaseMode: mysqlDbSystemDatabaseMode,
@@ -69,7 +69,7 @@ import * as utilities from "../utilities";
  *     deletionPolicies: [{
  *         automaticBackupRetention: mysqlDbSystemDeletionPolicyAutomaticBackupRetention,
  *         finalBackup: mysqlDbSystemDeletionPolicyFinalBackup,
- *         isDeleteProtected: mysqlDbSystemDeletionPolicyIsDeleteProtected === "true",
+ *         isDeleteProtected: mysqlDbSystemDeletionPolicyIsDeleteProtected,
  *     }],
  *     description: mysqlDbSystemDescription,
  *     displayName: mysqlDbSystemDisplayName,
@@ -87,8 +87,8 @@ import * as utilities from "../utilities";
  *         ipv6address: mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsIpv6address,
  *         ipv6subnetCidr: mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *     },
- *     isHighlyAvailable: mysqlDbSystemIsHighlyAvailable === "true",
- *     isIpv6enabled: mysqlDbSystemIsIpv6enabled === "true",
+ *     isHighlyAvailable: mysqlDbSystemIsHighlyAvailable,
+ *     isIpv6enabled: mysqlDbSystemIsIpv6enabled,
  *     maintenance: {
  *         windowStartTime: mysqlDbSystemMaintenanceWindowStartTime,
  *         maintenanceDisabledWindows: [{
@@ -100,11 +100,11 @@ import * as utilities from "../utilities";
  *         versionTrackPreference: mysqlDbSystemMaintenanceVersionTrackPreference,
  *     },
  *     nsgIds: mysqlDbSystemNsgIds,
- *     port: Number(mysqlDbSystemPort),
- *     portX: Number(mysqlDbSystemPortX),
+ *     port: mysqlDbSystemPort,
+ *     portX: mysqlDbSystemPortX,
  *     readEndpoint: {
  *         excludeIps: mysqlDbSystemReadEndpointExcludeIps,
- *         isEnabled: mysqlDbSystemReadEndpointIsEnabled === "true",
+ *         isEnabled: mysqlDbSystemReadEndpointIsEnabled,
  *         readEndpointHostnameLabel: mysqlDbSystemReadEndpointReadEndpointHostnameLabel,
  *         readEndpointIpAddress: mysqlDbSystemReadEndpointReadEndpointIpAddress,
  *         readEndpointIpv6addressIpv6subnetCidrPairDetails: {
@@ -114,7 +114,7 @@ import * as utilities from "../utilities";
  *     },
  *     rest: {
  *         configuration: mysqlDbSystemRestConfiguration,
- *         port: Number(mysqlDbSystemRestPort),
+ *         port: mysqlDbSystemRestPort,
  *     },
  *     secureConnections: {
  *         certificateGenerationType: mysqlDbSystemSecureConnectionsCertificateGenerationType,

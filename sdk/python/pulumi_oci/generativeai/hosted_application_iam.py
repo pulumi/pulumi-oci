@@ -457,12 +457,12 @@ class HostedApplicationIam(pulumi.CustomResource):
             },
             scaling_config={
                 "scaling_type": hosted_application_iam_scaling_config_scaling_type,
-                "max_replica": int(hosted_application_iam_scaling_config_max_replica),
-                "min_replica": int(hosted_application_iam_scaling_config_min_replica),
-                "target_concurrency_threshold": int(hosted_application_iam_scaling_config_target_concurrency_threshold),
-                "target_cpu_threshold": int(hosted_application_iam_scaling_config_target_cpu_threshold),
-                "target_memory_threshold": int(hosted_application_iam_scaling_config_target_memory_threshold),
-                "target_rps_threshold": int(hosted_application_iam_scaling_config_target_rps_threshold),
+                "max_replica": hosted_application_iam_scaling_config_max_replica,
+                "min_replica": hosted_application_iam_scaling_config_min_replica,
+                "target_concurrency_threshold": hosted_application_iam_scaling_config_target_concurrency_threshold,
+                "target_cpu_threshold": hosted_application_iam_scaling_config_target_cpu_threshold,
+                "target_memory_threshold": hosted_application_iam_scaling_config_target_memory_threshold,
+                "target_rps_threshold": hosted_application_iam_scaling_config_target_rps_threshold,
             })
         ```
 
@@ -532,12 +532,12 @@ class HostedApplicationIam(pulumi.CustomResource):
             },
             scaling_config={
                 "scaling_type": hosted_application_iam_scaling_config_scaling_type,
-                "max_replica": int(hosted_application_iam_scaling_config_max_replica),
-                "min_replica": int(hosted_application_iam_scaling_config_min_replica),
-                "target_concurrency_threshold": int(hosted_application_iam_scaling_config_target_concurrency_threshold),
-                "target_cpu_threshold": int(hosted_application_iam_scaling_config_target_cpu_threshold),
-                "target_memory_threshold": int(hosted_application_iam_scaling_config_target_memory_threshold),
-                "target_rps_threshold": int(hosted_application_iam_scaling_config_target_rps_threshold),
+                "max_replica": hosted_application_iam_scaling_config_max_replica,
+                "min_replica": hosted_application_iam_scaling_config_min_replica,
+                "target_concurrency_threshold": hosted_application_iam_scaling_config_target_concurrency_threshold,
+                "target_cpu_threshold": hosted_application_iam_scaling_config_target_cpu_threshold,
+                "target_memory_threshold": hosted_application_iam_scaling_config_target_memory_threshold,
+                "target_rps_threshold": hosted_application_iam_scaling_config_target_rps_threshold,
             })
         ```
 

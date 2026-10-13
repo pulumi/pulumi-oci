@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMonitoringTemplateMonitoringTemplateOnGivenResourcesManagement = new MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement("testMonitoringTemplateMonitoringTemplateOnGivenResourcesManagement", MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementArgs.builder()
- *             .monitoringTemplateId(testMonitoringTemplate.id())
+ *             .monitoringTemplateId(testMonitoringTemplate.get("id"))
  *             .enableMonitoringTemplateOnGivenResources(enableMonitoringTemplateOnGivenResources)
  *             .build());
  * 

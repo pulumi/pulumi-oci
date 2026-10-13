@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *         var testDeploymentBackup = new DeploymentBackup("testDeploymentBackup", DeploymentBackupArgs.builder()
  *             .bucket(deploymentBackupBucket)
  *             .compartmentId(compartmentId)
- *             .deploymentId(testDeployment.id())
+ *             .deploymentId(testDeployment.get("id"))
  *             .displayName(deploymentBackupDisplayName)
  *             .namespace(deploymentBackupNamespace)
  *             .object(deploymentBackupObject)

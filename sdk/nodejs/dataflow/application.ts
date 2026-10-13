@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     driverShape: applicationDriverShape,
  *     executorShape: applicationExecutorShape,
  *     language: applicationLanguage,
- *     numExecutors: Number(applicationNumExecutors),
+ *     numExecutors: applicationNumExecutors,
  *     sparkVersion: applicationSparkVersion,
  *     applicationLogConfig: {
  *         logGroupId: testLogGroup.id,

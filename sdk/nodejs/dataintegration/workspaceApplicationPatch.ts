@@ -30,13 +30,13 @@ import * as utilities from "../utilities";
  *     description: workspaceApplicationPatchDescription,
  *     key: workspaceApplicationPatchKey,
  *     modelVersion: workspaceApplicationPatchModelVersion,
- *     objectStatus: Number(workspaceApplicationPatchObjectStatus),
+ *     objectStatus: workspaceApplicationPatchObjectStatus,
  *     registryMetadata: {
  *         aggregatorKey: workspaceApplicationPatchRegistryMetadataAggregatorKey,
- *         isFavorite: workspaceApplicationPatchRegistryMetadataIsFavorite === "true",
+ *         isFavorite: workspaceApplicationPatchRegistryMetadataIsFavorite,
  *         key: workspaceApplicationPatchRegistryMetadataKey,
  *         labels: workspaceApplicationPatchRegistryMetadataLabels,
- *         registryVersion: Number(workspaceApplicationPatchRegistryMetadataRegistryVersion),
+ *         registryVersion: workspaceApplicationPatchRegistryMetadataRegistryVersion,
  *     },
  * });
  * ```

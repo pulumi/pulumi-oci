@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSecurityPolicyConfig = new SecurityPolicyConfig("testSecurityPolicyConfig", SecurityPolicyConfigArgs.builder()
  *             .compartmentId(compartmentId)
- *             .securityPolicyId(testSecurityPolicy.id())
+ *             .securityPolicyId(testSecurityPolicy.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(securityPolicyConfigDescription)
  *             .displayName(securityPolicyConfigDisplayName)

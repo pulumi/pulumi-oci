@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentOcid)
  *             .namespace(namespaceName)
  *             .name(peName)
- *             .subnetId(testSubnet1.id())
+ *             .subnetId(testSubnet1.get("id"))
  *             .prefix(dnsPrefix)
  *             .accessTargets(PrivateEndpointAccessTargetArgs.builder()
  *                 .namespace("*")

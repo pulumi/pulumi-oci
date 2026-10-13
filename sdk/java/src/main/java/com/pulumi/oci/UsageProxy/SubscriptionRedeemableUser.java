@@ -49,14 +49,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSubscriptionRedeemableUser = new SubscriptionRedeemableUser("testSubscriptionRedeemableUser", SubscriptionRedeemableUserArgs.builder()
- *             .subscriptionId(testSubscription.id())
- *             .tenancyId(testTenancy.id())
+ *             .subscriptionId(testSubscription.get("id"))
+ *             .tenancyId(testTenancy.get("id"))
  *             .items(SubscriptionRedeemableUserItemArgs.builder()
- *                 .emailId(testEmail.id())
+ *                 .emailId(testEmail.get("id"))
  *                 .firstName(subscriptionRedeemableUserItemsFirstName)
  *                 .lastName(subscriptionRedeemableUserItemsLastName)
  *                 .build())
- *             .userId(testUser.id())
+ *             .userId(testUser.get("id"))
  *             .build());
  * 
  *     }

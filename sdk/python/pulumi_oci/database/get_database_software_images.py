@@ -178,7 +178,7 @@ def get_database_software_images(compartment_id: Optional[_builtins.str] = None,
         display_name=database_software_image_display_name,
         image_shape_family=database_software_image_image_shape_family,
         image_type=database_software_image_image_type,
-        is_upgrade_supported=database_software_image_is_upgrade_supported == "true",
+        is_upgrade_supported=database_software_image_is_upgrade_supported,
         state=database_software_image_state)
     ```
 
@@ -239,7 +239,7 @@ def get_database_software_images_output(compartment_id: pulumi.Input[Optional[_b
         display_name=database_software_image_display_name,
         image_shape_family=database_software_image_image_shape_family,
         image_type=database_software_image_image_type,
-        is_upgrade_supported=database_software_image_is_upgrade_supported == "true",
+        is_upgrade_supported=database_software_image_is_upgrade_supported,
         state=database_software_image_state)
     ```
 

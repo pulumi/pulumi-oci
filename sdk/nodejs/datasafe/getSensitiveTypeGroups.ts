@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSensitiveTypeGroups = oci.datasafe.getSensitiveTypeGroups({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveTypeGroupAccessLevel,
- *     compartmentIdInSubtree: sensitiveTypeGroupCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sensitiveTypeGroupCompartmentIdInSubtree,
  *     displayName: sensitiveTypeGroupDisplayName,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     state: sensitiveTypeGroupState,
@@ -132,7 +132,7 @@ export interface GetSensitiveTypeGroupsResult {
  * const testSensitiveTypeGroups = oci.datasafe.getSensitiveTypeGroups({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveTypeGroupAccessLevel,
- *     compartmentIdInSubtree: sensitiveTypeGroupCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sensitiveTypeGroupCompartmentIdInSubtree,
  *     displayName: sensitiveTypeGroupDisplayName,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     state: sensitiveTypeGroupState,

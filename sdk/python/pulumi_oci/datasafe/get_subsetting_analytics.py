@@ -171,7 +171,7 @@ def get_subsetting_analytics(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_subsetting_analytics = oci.datasafe.get_subsetting_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=subsetting_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=subsetting_analytic_compartment_id_in_subtree,
         group_by=subsetting_analytic_group_by,
         subsetting_policy_id=test_subsetting_policy["id"],
         target_database_group_id=test_target_database_group["id"],
@@ -243,7 +243,7 @@ def get_subsetting_analytics_output(compartment_id: pulumi.Input[Optional[_built
     import pulumi_oci as oci
 
     test_subsetting_analytics = oci.datasafe.get_subsetting_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=subsetting_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=subsetting_analytic_compartment_id_in_subtree,
         group_by=subsetting_analytic_group_by,
         subsetting_policy_id=test_subsetting_policy["id"],
         target_database_group_id=test_target_database_group["id"],

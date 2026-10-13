@@ -33,8 +33,8 @@ import (
 //				CompartmentId:          pulumi.StringRef(compartmentId),
 //				CompartmentIdInSubtree: pulumi.BoolRef(newsReportCompartmentIdInSubtree),
 //				NewsReportId:           pulumi.StringRef(testNewsReport.Id),
-//				States:                 pulumi.ToArray(newsReportState),
-//				Statuses:               pulumi.ToArray(newsReportStatus),
+//				States:                 newsReportState,
+//				Statuses:               newsReportStatus,
 //			}, nil)
 //			if err != nil {
 //				return err

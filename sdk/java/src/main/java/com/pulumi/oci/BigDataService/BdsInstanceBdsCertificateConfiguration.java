@@ -57,10 +57,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceBdsCertificateConfiguration = new BdsInstanceBdsCertificateConfiguration("testBdsInstanceBdsCertificateConfiguration", BdsInstanceBdsCertificateConfigurationArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
  *             .certificateType(bdsInstanceBdsCertificateConfigurationCertificateType)
  *             .displayName(bdsInstanceBdsCertificateConfigurationDisplayName)
- *             .certificateAuthorityId(testCertificateAuthority.id())
+ *             .certificateAuthorityId(testCertificateAuthority.get("id"))
  *             .compartmentId(compartmentId)
  *             .clusterAdminPassword(clusterAdminPassword)
  *             .secretId(secretId)

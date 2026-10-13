@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testProductLicenseConsumers = oci.licensemanager.getProductLicenseConsumers({
  *     compartmentId: compartmentId,
  *     productLicenseId: testProductLicense.id,
- *     isCompartmentIdInSubtree: productLicenseConsumerIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: productLicenseConsumerIsCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -81,7 +81,7 @@ export interface GetProductLicenseConsumersResult {
  * const testProductLicenseConsumers = oci.licensemanager.getProductLicenseConsumers({
  *     compartmentId: compartmentId,
  *     productLicenseId: testProductLicense.id,
- *     isCompartmentIdInSubtree: productLicenseConsumerIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: productLicenseConsumerIsCompartmentIdInSubtree,
  * });
  * ```
  */

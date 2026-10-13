@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLifecycleStageAttachManagedInstancesManagement = new LifecycleStageAttachManagedInstancesManagement("testLifecycleStageAttachManagedInstancesManagement", LifecycleStageAttachManagedInstancesManagementArgs.builder()
- *             .lifecycleStageId(testLifecycleStage.id())
+ *             .lifecycleStageId(testLifecycleStage.get("id"))
  *             .managedInstanceDetails(LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs.builder()
  *                 .managedInstances(lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsManagedInstances)
  *                 .workRequestDetails(LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs.builder()

@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *
  * const testMetrics = oci.monitoring.getMetrics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: metricCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: metricCompartmentIdInSubtree,
  *     dimensionFilters: metricDimensionFilters,
  *     groupBies: metricGroupBy,
  *     name: metricName,
@@ -141,7 +141,7 @@ export interface GetMetricsResult {
  *
  * const testMetrics = oci.monitoring.getMetrics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: metricCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: metricCompartmentIdInSubtree,
  *     dimensionFilters: metricDimensionFilters,
  *     groupBies: metricGroupBy,
  *     name: metricName,

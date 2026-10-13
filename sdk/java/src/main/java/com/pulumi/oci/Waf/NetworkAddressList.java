@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *             .systemTags(networkAddressListSystemTags)
  *             .vcnAddresses(NetworkAddressListVcnAddressArgs.builder()
  *                 .addresses(networkAddressListVcnAddressesAddresses)
- *                 .vcnId(testVcn.id())
+ *                 .vcnId(testVcn.get("id"))
  *                 .build())
  *             .build());
  * 

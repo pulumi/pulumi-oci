@@ -186,7 +186,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeTarget = DataScienceFunctions.getComputeTarget(GetComputeTargetArgs.builder()
-     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.id())
+     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -228,7 +228,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeTarget = DataScienceFunctions.getComputeTarget(GetComputeTargetArgs.builder()
-     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.id())
+     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -270,7 +270,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeTarget = DataScienceFunctions.getComputeTarget(GetComputeTargetArgs.builder()
-     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.id())
+     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -312,7 +312,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeTarget = DataScienceFunctions.getComputeTarget(GetComputeTargetArgs.builder()
-     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.id())
+     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -354,7 +354,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeTarget = DataScienceFunctions.getComputeTarget(GetComputeTargetArgs.builder()
-     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.id())
+     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -831,7 +831,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
-     *             .containerName(testContainer.name())
+     *             .containerName(testContainer.get("name"))
      *             .displayName(containerDisplayName)
      *             .isLatest(containerIsLatest)
      *             .state(containerState)
@@ -879,7 +879,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
-     *             .containerName(testContainer.name())
+     *             .containerName(testContainer.get("name"))
      *             .displayName(containerDisplayName)
      *             .isLatest(containerIsLatest)
      *             .state(containerState)
@@ -927,7 +927,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
-     *             .containerName(testContainer.name())
+     *             .containerName(testContainer.get("name"))
      *             .displayName(containerDisplayName)
      *             .isLatest(containerIsLatest)
      *             .state(containerState)
@@ -975,7 +975,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
-     *             .containerName(testContainer.name())
+     *             .containerName(testContainer.get("name"))
      *             .displayName(containerDisplayName)
      *             .isLatest(containerIsLatest)
      *             .state(containerState)
@@ -1023,7 +1023,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
-     *             .containerName(testContainer.name())
+     *             .containerName(testContainer.get("name"))
      *             .displayName(containerDisplayName)
      *             .isLatest(containerIsLatest)
      *             .state(containerState)
@@ -1071,7 +1071,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
-     *             .containerName(testContainer.name())
+     *             .containerName(testContainer.get("name"))
      *             .displayName(containerDisplayName)
      *             .isLatest(containerIsLatest)
      *             .state(containerState)
@@ -1119,7 +1119,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
-     *             .containerName(testContainer.name())
+     *             .containerName(testContainer.get("name"))
      *             .displayName(containerDisplayName)
      *             .isLatest(containerIsLatest)
      *             .state(containerState)
@@ -1377,7 +1377,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(testJobOciDatascienceJob.id())
+     *             .jobId(testJobOciDatascienceJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1419,7 +1419,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(testJobOciDatascienceJob.id())
+     *             .jobId(testJobOciDatascienceJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1461,7 +1461,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(testJobOciDatascienceJob.id())
+     *             .jobId(testJobOciDatascienceJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1503,7 +1503,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(testJobOciDatascienceJob.id())
+     *             .jobId(testJobOciDatascienceJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1545,7 +1545,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(testJobOciDatascienceJob.id())
+     *             .jobId(testJobOciDatascienceJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1587,7 +1587,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
-     *             .jobRunId(testJobRunOciDatascienceJobRun.id())
+     *             .jobRunId(testJobRunOciDatascienceJobRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1629,7 +1629,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
-     *             .jobRunId(testJobRunOciDatascienceJobRun.id())
+     *             .jobRunId(testJobRunOciDatascienceJobRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1671,7 +1671,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
-     *             .jobRunId(testJobRunOciDatascienceJobRun.id())
+     *             .jobRunId(testJobRunOciDatascienceJobRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1713,7 +1713,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
-     *             .jobRunId(testJobRunOciDatascienceJobRun.id())
+     *             .jobRunId(testJobRunOciDatascienceJobRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1755,7 +1755,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
-     *             .jobRunId(testJobRunOciDatascienceJobRun.id())
+     *             .jobRunId(testJobRunOciDatascienceJobRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1801,7 +1801,7 @@ public final class DataScienceFunctions {
      *             .createdBy(jobRunCreatedBy)
      *             .displayName(jobRunDisplayName)
      *             .id(jobRunId)
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .state(jobRunState)
      *             .build());
      * 
@@ -1848,7 +1848,7 @@ public final class DataScienceFunctions {
      *             .createdBy(jobRunCreatedBy)
      *             .displayName(jobRunDisplayName)
      *             .id(jobRunId)
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .state(jobRunState)
      *             .build());
      * 
@@ -1895,7 +1895,7 @@ public final class DataScienceFunctions {
      *             .createdBy(jobRunCreatedBy)
      *             .displayName(jobRunDisplayName)
      *             .id(jobRunId)
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .state(jobRunState)
      *             .build());
      * 
@@ -1942,7 +1942,7 @@ public final class DataScienceFunctions {
      *             .createdBy(jobRunCreatedBy)
      *             .displayName(jobRunDisplayName)
      *             .id(jobRunId)
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .state(jobRunState)
      *             .build());
      * 
@@ -1989,7 +1989,7 @@ public final class DataScienceFunctions {
      *             .createdBy(jobRunCreatedBy)
      *             .displayName(jobRunDisplayName)
      *             .id(jobRunId)
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .state(jobRunState)
      *             .build());
      * 
@@ -2246,7 +2246,7 @@ public final class DataScienceFunctions {
      *             .createdBy(jobCreatedBy)
      *             .displayName(jobDisplayName)
      *             .id(jobId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(jobState)
      *             .build());
      * 
@@ -2293,7 +2293,7 @@ public final class DataScienceFunctions {
      *             .createdBy(jobCreatedBy)
      *             .displayName(jobDisplayName)
      *             .id(jobId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(jobState)
      *             .build());
      * 
@@ -2340,7 +2340,7 @@ public final class DataScienceFunctions {
      *             .createdBy(jobCreatedBy)
      *             .displayName(jobDisplayName)
      *             .id(jobId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(jobState)
      *             .build());
      * 
@@ -2387,7 +2387,7 @@ public final class DataScienceFunctions {
      *             .createdBy(jobCreatedBy)
      *             .displayName(jobDisplayName)
      *             .id(jobId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(jobState)
      *             .build());
      * 
@@ -2434,7 +2434,7 @@ public final class DataScienceFunctions {
      *             .createdBy(jobCreatedBy)
      *             .displayName(jobDisplayName)
      *             .id(jobId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(jobState)
      *             .build());
      * 
@@ -2477,7 +2477,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplication = DataScienceFunctions.getMlApplication(GetMlApplicationArgs.builder()
-     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.id())
+     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -2519,7 +2519,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplication = DataScienceFunctions.getMlApplication(GetMlApplicationArgs.builder()
-     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.id())
+     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -2561,7 +2561,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplication = DataScienceFunctions.getMlApplication(GetMlApplicationArgs.builder()
-     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.id())
+     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -2603,7 +2603,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplication = DataScienceFunctions.getMlApplication(GetMlApplicationArgs.builder()
-     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.id())
+     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -2645,7 +2645,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplication = DataScienceFunctions.getMlApplication(GetMlApplicationArgs.builder()
-     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.id())
+     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.get("id"))
      *             .build());
      * 
      *     }
@@ -2687,7 +2687,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementation = DataScienceFunctions.getMlApplicationImplementation(GetMlApplicationImplementationArgs.builder()
-     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.get("id"))
      *             .build());
      * 
      *     }
@@ -2729,7 +2729,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementation = DataScienceFunctions.getMlApplicationImplementation(GetMlApplicationImplementationArgs.builder()
-     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.get("id"))
      *             .build());
      * 
      *     }
@@ -2771,7 +2771,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementation = DataScienceFunctions.getMlApplicationImplementation(GetMlApplicationImplementationArgs.builder()
-     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.get("id"))
      *             .build());
      * 
      *     }
@@ -2813,7 +2813,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementation = DataScienceFunctions.getMlApplicationImplementation(GetMlApplicationImplementationArgs.builder()
-     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.get("id"))
      *             .build());
      * 
      *     }
@@ -2855,7 +2855,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementation = DataScienceFunctions.getMlApplicationImplementation(GetMlApplicationImplementationArgs.builder()
-     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.get("id"))
      *             .build());
      * 
      *     }
@@ -2897,7 +2897,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementationVersion = DataScienceFunctions.getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs.builder()
-     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id())
+     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -2939,7 +2939,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementationVersion = DataScienceFunctions.getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs.builder()
-     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id())
+     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -2981,7 +2981,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementationVersion = DataScienceFunctions.getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs.builder()
-     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id())
+     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -3023,7 +3023,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementationVersion = DataScienceFunctions.getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs.builder()
-     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id())
+     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -3065,7 +3065,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementationVersion = DataScienceFunctions.getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs.builder()
-     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id())
+     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -3107,7 +3107,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementationVersions = DataScienceFunctions.getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs.builder()
-     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.get("id"))
      *             .state(mlApplicationImplementationVersionState)
      *             .build());
      * 
@@ -3150,7 +3150,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementationVersions = DataScienceFunctions.getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs.builder()
-     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.get("id"))
      *             .state(mlApplicationImplementationVersionState)
      *             .build());
      * 
@@ -3193,7 +3193,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementationVersions = DataScienceFunctions.getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs.builder()
-     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.get("id"))
      *             .state(mlApplicationImplementationVersionState)
      *             .build());
      * 
@@ -3236,7 +3236,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementationVersions = DataScienceFunctions.getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs.builder()
-     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.get("id"))
      *             .state(mlApplicationImplementationVersionState)
      *             .build());
      * 
@@ -3279,7 +3279,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationImplementationVersions = DataScienceFunctions.getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs.builder()
-     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.get("id"))
      *             .state(mlApplicationImplementationVersionState)
      *             .build());
      * 
@@ -3324,8 +3324,8 @@ public final class DataScienceFunctions {
      *         final var testMlApplicationImplementations = DataScienceFunctions.getMlApplicationImplementations(GetMlApplicationImplementationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(mlApplicationImplementationCompartmentIdInSubtree)
-     *             .mlApplicationId(testMlApplication.id())
-     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.get("id"))
      *             .name(mlApplicationImplementationName)
      *             .state(mlApplicationImplementationState)
      *             .build());
@@ -3371,8 +3371,8 @@ public final class DataScienceFunctions {
      *         final var testMlApplicationImplementations = DataScienceFunctions.getMlApplicationImplementations(GetMlApplicationImplementationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(mlApplicationImplementationCompartmentIdInSubtree)
-     *             .mlApplicationId(testMlApplication.id())
-     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.get("id"))
      *             .name(mlApplicationImplementationName)
      *             .state(mlApplicationImplementationState)
      *             .build());
@@ -3418,8 +3418,8 @@ public final class DataScienceFunctions {
      *         final var testMlApplicationImplementations = DataScienceFunctions.getMlApplicationImplementations(GetMlApplicationImplementationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(mlApplicationImplementationCompartmentIdInSubtree)
-     *             .mlApplicationId(testMlApplication.id())
-     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.get("id"))
      *             .name(mlApplicationImplementationName)
      *             .state(mlApplicationImplementationState)
      *             .build());
@@ -3465,8 +3465,8 @@ public final class DataScienceFunctions {
      *         final var testMlApplicationImplementations = DataScienceFunctions.getMlApplicationImplementations(GetMlApplicationImplementationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(mlApplicationImplementationCompartmentIdInSubtree)
-     *             .mlApplicationId(testMlApplication.id())
-     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.get("id"))
      *             .name(mlApplicationImplementationName)
      *             .state(mlApplicationImplementationState)
      *             .build());
@@ -3512,8 +3512,8 @@ public final class DataScienceFunctions {
      *         final var testMlApplicationImplementations = DataScienceFunctions.getMlApplicationImplementations(GetMlApplicationImplementationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(mlApplicationImplementationCompartmentIdInSubtree)
-     *             .mlApplicationId(testMlApplication.id())
-     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.get("id"))
      *             .name(mlApplicationImplementationName)
      *             .state(mlApplicationImplementationState)
      *             .build());
@@ -3557,7 +3557,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationInstance = DataScienceFunctions.getMlApplicationInstance(GetMlApplicationInstanceArgs.builder()
-     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.id())
+     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -3599,7 +3599,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationInstance = DataScienceFunctions.getMlApplicationInstance(GetMlApplicationInstanceArgs.builder()
-     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.id())
+     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -3641,7 +3641,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationInstance = DataScienceFunctions.getMlApplicationInstance(GetMlApplicationInstanceArgs.builder()
-     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.id())
+     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -3683,7 +3683,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationInstance = DataScienceFunctions.getMlApplicationInstance(GetMlApplicationInstanceArgs.builder()
-     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.id())
+     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -3725,7 +3725,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMlApplicationInstance = DataScienceFunctions.getMlApplicationInstance(GetMlApplicationInstanceArgs.builder()
-     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.id())
+     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -3769,7 +3769,7 @@ public final class DataScienceFunctions {
      *         final var testMlApplicationInstances = DataScienceFunctions.getMlApplicationInstances(GetMlApplicationInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(mlApplicationInstanceDisplayName)
-     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
      *             .state(mlApplicationInstanceState)
      *             .build());
      * 
@@ -3814,7 +3814,7 @@ public final class DataScienceFunctions {
      *         final var testMlApplicationInstances = DataScienceFunctions.getMlApplicationInstances(GetMlApplicationInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(mlApplicationInstanceDisplayName)
-     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
      *             .state(mlApplicationInstanceState)
      *             .build());
      * 
@@ -3859,7 +3859,7 @@ public final class DataScienceFunctions {
      *         final var testMlApplicationInstances = DataScienceFunctions.getMlApplicationInstances(GetMlApplicationInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(mlApplicationInstanceDisplayName)
-     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
      *             .state(mlApplicationInstanceState)
      *             .build());
      * 
@@ -3904,7 +3904,7 @@ public final class DataScienceFunctions {
      *         final var testMlApplicationInstances = DataScienceFunctions.getMlApplicationInstances(GetMlApplicationInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(mlApplicationInstanceDisplayName)
-     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
      *             .state(mlApplicationInstanceState)
      *             .build());
      * 
@@ -3949,7 +3949,7 @@ public final class DataScienceFunctions {
      *         final var testMlApplicationInstances = DataScienceFunctions.getMlApplicationInstances(GetMlApplicationInstancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(mlApplicationInstanceDisplayName)
-     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
      *             .state(mlApplicationInstanceState)
      *             .build());
      * 
@@ -3994,7 +3994,7 @@ public final class DataScienceFunctions {
      *         final var testMlApplications = DataScienceFunctions.getMlApplications(GetMlApplicationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(mlApplicationCompartmentIdInSubtree)
-     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
      *             .name(mlApplicationName)
      *             .state(mlApplicationState)
      *             .build());
@@ -4040,7 +4040,7 @@ public final class DataScienceFunctions {
      *         final var testMlApplications = DataScienceFunctions.getMlApplications(GetMlApplicationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(mlApplicationCompartmentIdInSubtree)
-     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
      *             .name(mlApplicationName)
      *             .state(mlApplicationState)
      *             .build());
@@ -4086,7 +4086,7 @@ public final class DataScienceFunctions {
      *         final var testMlApplications = DataScienceFunctions.getMlApplications(GetMlApplicationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(mlApplicationCompartmentIdInSubtree)
-     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
      *             .name(mlApplicationName)
      *             .state(mlApplicationState)
      *             .build());
@@ -4132,7 +4132,7 @@ public final class DataScienceFunctions {
      *         final var testMlApplications = DataScienceFunctions.getMlApplications(GetMlApplicationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(mlApplicationCompartmentIdInSubtree)
-     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
      *             .name(mlApplicationName)
      *             .state(mlApplicationState)
      *             .build());
@@ -4178,7 +4178,7 @@ public final class DataScienceFunctions {
      *         final var testMlApplications = DataScienceFunctions.getMlApplications(GetMlApplicationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(mlApplicationCompartmentIdInSubtree)
-     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationId(testMlApplication.get("id"))
      *             .name(mlApplicationName)
      *             .state(mlApplicationState)
      *             .build());
@@ -4222,7 +4222,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciDatascienceModel.id())
+     *             .modelId(testModelOciDatascienceModel.get("id"))
      *             .build());
      * 
      *     }
@@ -4264,7 +4264,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciDatascienceModel.id())
+     *             .modelId(testModelOciDatascienceModel.get("id"))
      *             .build());
      * 
      *     }
@@ -4306,7 +4306,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciDatascienceModel.id())
+     *             .modelId(testModelOciDatascienceModel.get("id"))
      *             .build());
      * 
      *     }
@@ -4348,7 +4348,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciDatascienceModel.id())
+     *             .modelId(testModelOciDatascienceModel.get("id"))
      *             .build());
      * 
      *     }
@@ -4390,7 +4390,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciDatascienceModel.id())
+     *             .modelId(testModelOciDatascienceModel.get("id"))
      *             .build());
      * 
      *     }
@@ -4432,8 +4432,8 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelCustomMetadataArtifactContent = DataScienceFunctions.getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs.builder()
-     *             .metadatumKeyName(testKey.name())
-     *             .modelId(testModel.id())
+     *             .metadatumKeyName(testKey.get("name"))
+     *             .modelId(testModel.get("id"))
      *             .range(modelCustomMetadataArtifactContentRange)
      *             .build());
      * 
@@ -4476,8 +4476,8 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelCustomMetadataArtifactContent = DataScienceFunctions.getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs.builder()
-     *             .metadatumKeyName(testKey.name())
-     *             .modelId(testModel.id())
+     *             .metadatumKeyName(testKey.get("name"))
+     *             .modelId(testModel.get("id"))
      *             .range(modelCustomMetadataArtifactContentRange)
      *             .build());
      * 
@@ -4520,8 +4520,8 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelCustomMetadataArtifactContent = DataScienceFunctions.getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs.builder()
-     *             .metadatumKeyName(testKey.name())
-     *             .modelId(testModel.id())
+     *             .metadatumKeyName(testKey.get("name"))
+     *             .modelId(testModel.get("id"))
      *             .range(modelCustomMetadataArtifactContentRange)
      *             .build());
      * 
@@ -4564,8 +4564,8 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelCustomMetadataArtifactContent = DataScienceFunctions.getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs.builder()
-     *             .metadatumKeyName(testKey.name())
-     *             .modelId(testModel.id())
+     *             .metadatumKeyName(testKey.get("name"))
+     *             .modelId(testModel.get("id"))
      *             .range(modelCustomMetadataArtifactContentRange)
      *             .build());
      * 
@@ -4608,8 +4608,8 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelCustomMetadataArtifactContent = DataScienceFunctions.getModelCustomMetadataArtifactContent(GetModelCustomMetadataArtifactContentArgs.builder()
-     *             .metadatumKeyName(testKey.name())
-     *             .modelId(testModel.id())
+     *             .metadatumKeyName(testKey.get("name"))
+     *             .modelId(testModel.get("id"))
      *             .range(modelCustomMetadataArtifactContentRange)
      *             .build());
      * 
@@ -4652,8 +4652,8 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDefinedMetadataArtifactContent = DataScienceFunctions.getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs.builder()
-     *             .metadatumKeyName(testKey.name())
-     *             .modelId(testModel.id())
+     *             .metadatumKeyName(testKey.get("name"))
+     *             .modelId(testModel.get("id"))
      *             .range(modelDefinedMetadataArtifactContentRange)
      *             .build());
      * 
@@ -4696,8 +4696,8 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDefinedMetadataArtifactContent = DataScienceFunctions.getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs.builder()
-     *             .metadatumKeyName(testKey.name())
-     *             .modelId(testModel.id())
+     *             .metadatumKeyName(testKey.get("name"))
+     *             .modelId(testModel.get("id"))
      *             .range(modelDefinedMetadataArtifactContentRange)
      *             .build());
      * 
@@ -4740,8 +4740,8 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDefinedMetadataArtifactContent = DataScienceFunctions.getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs.builder()
-     *             .metadatumKeyName(testKey.name())
-     *             .modelId(testModel.id())
+     *             .metadatumKeyName(testKey.get("name"))
+     *             .modelId(testModel.get("id"))
      *             .range(modelDefinedMetadataArtifactContentRange)
      *             .build());
      * 
@@ -4784,8 +4784,8 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDefinedMetadataArtifactContent = DataScienceFunctions.getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs.builder()
-     *             .metadatumKeyName(testKey.name())
-     *             .modelId(testModel.id())
+     *             .metadatumKeyName(testKey.get("name"))
+     *             .modelId(testModel.get("id"))
      *             .range(modelDefinedMetadataArtifactContentRange)
      *             .build());
      * 
@@ -4828,8 +4828,8 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDefinedMetadataArtifactContent = DataScienceFunctions.getModelDefinedMetadataArtifactContent(GetModelDefinedMetadataArtifactContentArgs.builder()
-     *             .metadatumKeyName(testKey.name())
-     *             .modelId(testModel.id())
+     *             .metadatumKeyName(testKey.get("name"))
+     *             .modelId(testModel.get("id"))
      *             .range(modelDefinedMetadataArtifactContentRange)
      *             .build());
      * 
@@ -4872,7 +4872,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
-     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.id())
+     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -4959,7 +4959,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
-     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.id())
+     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -5046,7 +5046,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
-     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.id())
+     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -5133,7 +5133,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
-     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.id())
+     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -5220,7 +5220,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
-     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.id())
+     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -5308,11 +5308,11 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelDeploymentModelStates = DataScienceFunctions.getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .modelDeploymentId(testModelDeployment.id())
+     *             .modelDeploymentId(testModelDeployment.get("id"))
      *             .displayName(modelDeploymentModelStateDisplayName)
      *             .inferenceKey(modelDeploymentModelStateInferenceKey)
-     *             .modelId(testModel.id())
-     *             .projectId(testProject.id())
+     *             .modelId(testModel.get("id"))
+     *             .projectId(testProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5355,11 +5355,11 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelDeploymentModelStates = DataScienceFunctions.getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .modelDeploymentId(testModelDeployment.id())
+     *             .modelDeploymentId(testModelDeployment.get("id"))
      *             .displayName(modelDeploymentModelStateDisplayName)
      *             .inferenceKey(modelDeploymentModelStateInferenceKey)
-     *             .modelId(testModel.id())
-     *             .projectId(testProject.id())
+     *             .modelId(testModel.get("id"))
+     *             .projectId(testProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5402,11 +5402,11 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelDeploymentModelStates = DataScienceFunctions.getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .modelDeploymentId(testModelDeployment.id())
+     *             .modelDeploymentId(testModelDeployment.get("id"))
      *             .displayName(modelDeploymentModelStateDisplayName)
      *             .inferenceKey(modelDeploymentModelStateInferenceKey)
-     *             .modelId(testModel.id())
-     *             .projectId(testProject.id())
+     *             .modelId(testModel.get("id"))
+     *             .projectId(testProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5449,11 +5449,11 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelDeploymentModelStates = DataScienceFunctions.getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .modelDeploymentId(testModelDeployment.id())
+     *             .modelDeploymentId(testModelDeployment.get("id"))
      *             .displayName(modelDeploymentModelStateDisplayName)
      *             .inferenceKey(modelDeploymentModelStateInferenceKey)
-     *             .modelId(testModel.id())
-     *             .projectId(testProject.id())
+     *             .modelId(testModel.get("id"))
+     *             .projectId(testProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5496,11 +5496,11 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelDeploymentModelStates = DataScienceFunctions.getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .modelDeploymentId(testModelDeployment.id())
+     *             .modelDeploymentId(testModelDeployment.get("id"))
      *             .displayName(modelDeploymentModelStateDisplayName)
      *             .inferenceKey(modelDeploymentModelStateInferenceKey)
-     *             .modelId(testModel.id())
-     *             .projectId(testProject.id())
+     *             .modelId(testModel.get("id"))
+     *             .projectId(testProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5756,7 +5756,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelDeploymentCreatedBy)
      *             .displayName(modelDeploymentDisplayName)
      *             .id(modelDeploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelDeploymentState)
      *             .build());
      * 
@@ -5848,7 +5848,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelDeploymentCreatedBy)
      *             .displayName(modelDeploymentDisplayName)
      *             .id(modelDeploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelDeploymentState)
      *             .build());
      * 
@@ -5940,7 +5940,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelDeploymentCreatedBy)
      *             .displayName(modelDeploymentDisplayName)
      *             .id(modelDeploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelDeploymentState)
      *             .build());
      * 
@@ -6032,7 +6032,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelDeploymentCreatedBy)
      *             .displayName(modelDeploymentDisplayName)
      *             .id(modelDeploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelDeploymentState)
      *             .build());
      * 
@@ -6124,7 +6124,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelDeploymentCreatedBy)
      *             .displayName(modelDeploymentDisplayName)
      *             .id(modelDeploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelDeploymentState)
      *             .build());
      * 
@@ -6212,7 +6212,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroup = DataScienceFunctions.getModelGroup(GetModelGroupArgs.builder()
-     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.id())
+     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -6254,7 +6254,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroup = DataScienceFunctions.getModelGroup(GetModelGroupArgs.builder()
-     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.id())
+     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -6296,7 +6296,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroup = DataScienceFunctions.getModelGroup(GetModelGroupArgs.builder()
-     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.id())
+     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -6338,7 +6338,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroup = DataScienceFunctions.getModelGroup(GetModelGroupArgs.builder()
-     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.id())
+     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -6380,7 +6380,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroup = DataScienceFunctions.getModelGroup(GetModelGroupArgs.builder()
-     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.id())
+     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -6422,7 +6422,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroupArtifactContent = DataScienceFunctions.getModelGroupArtifactContent(GetModelGroupArtifactContentArgs.builder()
-     *             .modelGroupId(testModelGroup.id())
+     *             .modelGroupId(testModelGroup.get("id"))
      *             .range(modelGroupArtifactContentRange)
      *             .build());
      * 
@@ -6465,7 +6465,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroupArtifactContent = DataScienceFunctions.getModelGroupArtifactContent(GetModelGroupArtifactContentArgs.builder()
-     *             .modelGroupId(testModelGroup.id())
+     *             .modelGroupId(testModelGroup.get("id"))
      *             .range(modelGroupArtifactContentRange)
      *             .build());
      * 
@@ -6508,7 +6508,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroupArtifactContent = DataScienceFunctions.getModelGroupArtifactContent(GetModelGroupArtifactContentArgs.builder()
-     *             .modelGroupId(testModelGroup.id())
+     *             .modelGroupId(testModelGroup.get("id"))
      *             .range(modelGroupArtifactContentRange)
      *             .build());
      * 
@@ -6551,7 +6551,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroupArtifactContent = DataScienceFunctions.getModelGroupArtifactContent(GetModelGroupArtifactContentArgs.builder()
-     *             .modelGroupId(testModelGroup.id())
+     *             .modelGroupId(testModelGroup.get("id"))
      *             .range(modelGroupArtifactContentRange)
      *             .build());
      * 
@@ -6594,7 +6594,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroupArtifactContent = DataScienceFunctions.getModelGroupArtifactContent(GetModelGroupArtifactContentArgs.builder()
-     *             .modelGroupId(testModelGroup.id())
+     *             .modelGroupId(testModelGroup.get("id"))
      *             .range(modelGroupArtifactContentRange)
      *             .build());
      * 
@@ -6638,7 +6638,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelGroupModels = DataScienceFunctions.getModelGroupModels(GetModelGroupModelsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .modelGroupId(testModelGroup.id())
+     *             .modelGroupId(testModelGroup.get("id"))
      *             .createdBy(modelGroupModelCreatedBy)
      *             .displayName(modelGroupModelDisplayName)
      *             .id(modelGroupModelId)
@@ -6685,7 +6685,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelGroupModels = DataScienceFunctions.getModelGroupModels(GetModelGroupModelsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .modelGroupId(testModelGroup.id())
+     *             .modelGroupId(testModelGroup.get("id"))
      *             .createdBy(modelGroupModelCreatedBy)
      *             .displayName(modelGroupModelDisplayName)
      *             .id(modelGroupModelId)
@@ -6732,7 +6732,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelGroupModels = DataScienceFunctions.getModelGroupModels(GetModelGroupModelsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .modelGroupId(testModelGroup.id())
+     *             .modelGroupId(testModelGroup.get("id"))
      *             .createdBy(modelGroupModelCreatedBy)
      *             .displayName(modelGroupModelDisplayName)
      *             .id(modelGroupModelId)
@@ -6779,7 +6779,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelGroupModels = DataScienceFunctions.getModelGroupModels(GetModelGroupModelsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .modelGroupId(testModelGroup.id())
+     *             .modelGroupId(testModelGroup.get("id"))
      *             .createdBy(modelGroupModelCreatedBy)
      *             .displayName(modelGroupModelDisplayName)
      *             .id(modelGroupModelId)
@@ -6826,7 +6826,7 @@ public final class DataScienceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testModelGroupModels = DataScienceFunctions.getModelGroupModels(GetModelGroupModelsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .modelGroupId(testModelGroup.id())
+     *             .modelGroupId(testModelGroup.get("id"))
      *             .createdBy(modelGroupModelCreatedBy)
      *             .displayName(modelGroupModelDisplayName)
      *             .id(modelGroupModelId)
@@ -6876,7 +6876,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelGroupVersionHistoryCreatedBy)
      *             .displayName(modelGroupVersionHistoryDisplayName)
      *             .id(modelGroupVersionHistoryId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelGroupVersionHistoryState)
      *             .build());
      * 
@@ -6923,7 +6923,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelGroupVersionHistoryCreatedBy)
      *             .displayName(modelGroupVersionHistoryDisplayName)
      *             .id(modelGroupVersionHistoryId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelGroupVersionHistoryState)
      *             .build());
      * 
@@ -6970,7 +6970,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelGroupVersionHistoryCreatedBy)
      *             .displayName(modelGroupVersionHistoryDisplayName)
      *             .id(modelGroupVersionHistoryId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelGroupVersionHistoryState)
      *             .build());
      * 
@@ -7017,7 +7017,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelGroupVersionHistoryCreatedBy)
      *             .displayName(modelGroupVersionHistoryDisplayName)
      *             .id(modelGroupVersionHistoryId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelGroupVersionHistoryState)
      *             .build());
      * 
@@ -7064,7 +7064,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelGroupVersionHistoryCreatedBy)
      *             .displayName(modelGroupVersionHistoryDisplayName)
      *             .id(modelGroupVersionHistoryId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelGroupVersionHistoryState)
      *             .build());
      * 
@@ -7107,7 +7107,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroupVersionHistory = DataScienceFunctions.getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs.builder()
-     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.id())
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.get("id"))
      *             .build());
      * 
      *     }
@@ -7149,7 +7149,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroupVersionHistory = DataScienceFunctions.getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs.builder()
-     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.id())
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.get("id"))
      *             .build());
      * 
      *     }
@@ -7191,7 +7191,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroupVersionHistory = DataScienceFunctions.getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs.builder()
-     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.id())
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.get("id"))
      *             .build());
      * 
      *     }
@@ -7233,7 +7233,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroupVersionHistory = DataScienceFunctions.getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs.builder()
-     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.id())
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.get("id"))
      *             .build());
      * 
      *     }
@@ -7275,7 +7275,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelGroupVersionHistory = DataScienceFunctions.getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs.builder()
-     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.id())
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.get("id"))
      *             .build());
      * 
      *     }
@@ -7321,8 +7321,8 @@ public final class DataScienceFunctions {
      *             .createdBy(modelGroupCreatedBy)
      *             .displayName(modelGroupDisplayName)
      *             .id(modelGroupId)
-     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.id())
-     *             .projectId(testProject.id())
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.get("id"))
+     *             .projectId(testProject.get("id"))
      *             .state(modelGroupState)
      *             .build());
      * 
@@ -7369,8 +7369,8 @@ public final class DataScienceFunctions {
      *             .createdBy(modelGroupCreatedBy)
      *             .displayName(modelGroupDisplayName)
      *             .id(modelGroupId)
-     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.id())
-     *             .projectId(testProject.id())
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.get("id"))
+     *             .projectId(testProject.get("id"))
      *             .state(modelGroupState)
      *             .build());
      * 
@@ -7417,8 +7417,8 @@ public final class DataScienceFunctions {
      *             .createdBy(modelGroupCreatedBy)
      *             .displayName(modelGroupDisplayName)
      *             .id(modelGroupId)
-     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.id())
-     *             .projectId(testProject.id())
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.get("id"))
+     *             .projectId(testProject.get("id"))
      *             .state(modelGroupState)
      *             .build());
      * 
@@ -7465,8 +7465,8 @@ public final class DataScienceFunctions {
      *             .createdBy(modelGroupCreatedBy)
      *             .displayName(modelGroupDisplayName)
      *             .id(modelGroupId)
-     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.id())
-     *             .projectId(testProject.id())
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.get("id"))
+     *             .projectId(testProject.get("id"))
      *             .state(modelGroupState)
      *             .build());
      * 
@@ -7513,8 +7513,8 @@ public final class DataScienceFunctions {
      *             .createdBy(modelGroupCreatedBy)
      *             .displayName(modelGroupDisplayName)
      *             .id(modelGroupId)
-     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.id())
-     *             .projectId(testProject.id())
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.get("id"))
+     *             .projectId(testProject.get("id"))
      *             .state(modelGroupState)
      *             .build());
      * 
@@ -7557,7 +7557,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .build());
      * 
      *     }
@@ -7599,7 +7599,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .build());
      * 
      *     }
@@ -7641,7 +7641,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .build());
      * 
      *     }
@@ -7683,7 +7683,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .build());
      * 
      *     }
@@ -7725,7 +7725,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .build());
      * 
      *     }
@@ -7767,7 +7767,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
-     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.id())
+     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.get("id"))
      *             .build());
      * 
      *     }
@@ -7809,7 +7809,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
-     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.id())
+     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.get("id"))
      *             .build());
      * 
      *     }
@@ -7851,7 +7851,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
-     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.id())
+     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.get("id"))
      *             .build());
      * 
      *     }
@@ -7893,7 +7893,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
-     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.id())
+     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.get("id"))
      *             .build());
      * 
      *     }
@@ -7935,7 +7935,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
-     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.id())
+     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.get("id"))
      *             .build());
      * 
      *     }
@@ -7982,7 +7982,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelVersionSetCreatedBy)
      *             .id(modelVersionSetId)
      *             .name(modelVersionSetName)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelVersionSetState)
      *             .build());
      * 
@@ -8030,7 +8030,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelVersionSetCreatedBy)
      *             .id(modelVersionSetId)
      *             .name(modelVersionSetName)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelVersionSetState)
      *             .build());
      * 
@@ -8078,7 +8078,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelVersionSetCreatedBy)
      *             .id(modelVersionSetId)
      *             .name(modelVersionSetName)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelVersionSetState)
      *             .build());
      * 
@@ -8126,7 +8126,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelVersionSetCreatedBy)
      *             .id(modelVersionSetId)
      *             .name(modelVersionSetName)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelVersionSetState)
      *             .build());
      * 
@@ -8174,7 +8174,7 @@ public final class DataScienceFunctions {
      *             .createdBy(modelVersionSetCreatedBy)
      *             .id(modelVersionSetId)
      *             .name(modelVersionSetName)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelVersionSetState)
      *             .build());
      * 
@@ -8222,8 +8222,8 @@ public final class DataScienceFunctions {
      *             .createdBy(modelCreatedBy)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .modelVersionSetName(testModelVersionSet.name())
-     *             .projectId(testProject.id())
+     *             .modelVersionSetName(testModelVersionSet.get("name"))
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -8271,8 +8271,8 @@ public final class DataScienceFunctions {
      *             .createdBy(modelCreatedBy)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .modelVersionSetName(testModelVersionSet.name())
-     *             .projectId(testProject.id())
+     *             .modelVersionSetName(testModelVersionSet.get("name"))
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -8320,8 +8320,8 @@ public final class DataScienceFunctions {
      *             .createdBy(modelCreatedBy)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .modelVersionSetName(testModelVersionSet.name())
-     *             .projectId(testProject.id())
+     *             .modelVersionSetName(testModelVersionSet.get("name"))
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -8369,8 +8369,8 @@ public final class DataScienceFunctions {
      *             .createdBy(modelCreatedBy)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .modelVersionSetName(testModelVersionSet.name())
-     *             .projectId(testProject.id())
+     *             .modelVersionSetName(testModelVersionSet.get("name"))
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -8418,8 +8418,8 @@ public final class DataScienceFunctions {
      *             .createdBy(modelCreatedBy)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .modelVersionSetName(testModelVersionSet.name())
-     *             .projectId(testProject.id())
+     *             .modelVersionSetName(testModelVersionSet.get("name"))
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -8462,7 +8462,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
-     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.id())
+     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.get("id"))
      *             .build());
      * 
      *     }
@@ -8504,7 +8504,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
-     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.id())
+     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.get("id"))
      *             .build());
      * 
      *     }
@@ -8546,7 +8546,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
-     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.id())
+     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.get("id"))
      *             .build());
      * 
      *     }
@@ -8588,7 +8588,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
-     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.id())
+     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.get("id"))
      *             .build());
      * 
      *     }
@@ -8630,7 +8630,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
-     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.id())
+     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.get("id"))
      *             .build());
      * 
      *     }
@@ -8886,7 +8886,7 @@ public final class DataScienceFunctions {
      *             .createdBy(notebookSessionCreatedBy)
      *             .displayName(notebookSessionDisplayName)
      *             .id(notebookSessionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(notebookSessionState)
      *             .build());
      * 
@@ -8933,7 +8933,7 @@ public final class DataScienceFunctions {
      *             .createdBy(notebookSessionCreatedBy)
      *             .displayName(notebookSessionDisplayName)
      *             .id(notebookSessionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(notebookSessionState)
      *             .build());
      * 
@@ -8980,7 +8980,7 @@ public final class DataScienceFunctions {
      *             .createdBy(notebookSessionCreatedBy)
      *             .displayName(notebookSessionDisplayName)
      *             .id(notebookSessionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(notebookSessionState)
      *             .build());
      * 
@@ -9027,7 +9027,7 @@ public final class DataScienceFunctions {
      *             .createdBy(notebookSessionCreatedBy)
      *             .displayName(notebookSessionDisplayName)
      *             .id(notebookSessionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(notebookSessionState)
      *             .build());
      * 
@@ -9074,7 +9074,7 @@ public final class DataScienceFunctions {
      *             .createdBy(notebookSessionCreatedBy)
      *             .displayName(notebookSessionDisplayName)
      *             .id(notebookSessionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(notebookSessionState)
      *             .build());
      * 
@@ -9117,7 +9117,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(testPipelineOciDatasciencePipeline.id())
+     *             .pipelineId(testPipelineOciDatasciencePipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -9159,7 +9159,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(testPipelineOciDatasciencePipeline.id())
+     *             .pipelineId(testPipelineOciDatasciencePipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -9201,7 +9201,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(testPipelineOciDatasciencePipeline.id())
+     *             .pipelineId(testPipelineOciDatasciencePipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -9243,7 +9243,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(testPipelineOciDatasciencePipeline.id())
+     *             .pipelineId(testPipelineOciDatasciencePipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -9285,7 +9285,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(testPipelineOciDatasciencePipeline.id())
+     *             .pipelineId(testPipelineOciDatasciencePipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -9327,7 +9327,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
-     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.id())
+     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.get("id"))
      *             .build());
      * 
      *     }
@@ -9369,7 +9369,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
-     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.id())
+     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.get("id"))
      *             .build());
      * 
      *     }
@@ -9411,7 +9411,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
-     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.id())
+     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.get("id"))
      *             .build());
      * 
      *     }
@@ -9453,7 +9453,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
-     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.id())
+     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.get("id"))
      *             .build());
      * 
      *     }
@@ -9495,7 +9495,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
-     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.id())
+     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.get("id"))
      *             .build());
      * 
      *     }
@@ -9541,7 +9541,7 @@ public final class DataScienceFunctions {
      *             .createdBy(pipelineRunCreatedBy)
      *             .displayName(pipelineRunDisplayName)
      *             .id(pipelineRunId)
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .state(pipelineRunState)
      *             .build());
      * 
@@ -9588,7 +9588,7 @@ public final class DataScienceFunctions {
      *             .createdBy(pipelineRunCreatedBy)
      *             .displayName(pipelineRunDisplayName)
      *             .id(pipelineRunId)
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .state(pipelineRunState)
      *             .build());
      * 
@@ -9635,7 +9635,7 @@ public final class DataScienceFunctions {
      *             .createdBy(pipelineRunCreatedBy)
      *             .displayName(pipelineRunDisplayName)
      *             .id(pipelineRunId)
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .state(pipelineRunState)
      *             .build());
      * 
@@ -9682,7 +9682,7 @@ public final class DataScienceFunctions {
      *             .createdBy(pipelineRunCreatedBy)
      *             .displayName(pipelineRunDisplayName)
      *             .id(pipelineRunId)
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .state(pipelineRunState)
      *             .build());
      * 
@@ -9729,7 +9729,7 @@ public final class DataScienceFunctions {
      *             .createdBy(pipelineRunCreatedBy)
      *             .displayName(pipelineRunDisplayName)
      *             .id(pipelineRunId)
-     *             .pipelineId(testPipeline.id())
+     *             .pipelineId(testPipeline.get("id"))
      *             .state(pipelineRunState)
      *             .build());
      * 
@@ -9776,7 +9776,7 @@ public final class DataScienceFunctions {
      *             .createdBy(pipelineCreatedBy)
      *             .displayName(pipelineDisplayName)
      *             .id(pipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(pipelineState)
      *             .build());
      * 
@@ -9823,7 +9823,7 @@ public final class DataScienceFunctions {
      *             .createdBy(pipelineCreatedBy)
      *             .displayName(pipelineDisplayName)
      *             .id(pipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(pipelineState)
      *             .build());
      * 
@@ -9870,7 +9870,7 @@ public final class DataScienceFunctions {
      *             .createdBy(pipelineCreatedBy)
      *             .displayName(pipelineDisplayName)
      *             .id(pipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(pipelineState)
      *             .build());
      * 
@@ -9917,7 +9917,7 @@ public final class DataScienceFunctions {
      *             .createdBy(pipelineCreatedBy)
      *             .displayName(pipelineDisplayName)
      *             .id(pipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(pipelineState)
      *             .build());
      * 
@@ -9964,7 +9964,7 @@ public final class DataScienceFunctions {
      *             .createdBy(pipelineCreatedBy)
      *             .displayName(pipelineDisplayName)
      *             .id(pipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(pipelineState)
      *             .build());
      * 
@@ -10007,7 +10007,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id())
+     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -10049,7 +10049,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id())
+     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -10091,7 +10091,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id())
+     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -10133,7 +10133,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id())
+     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -10175,7 +10175,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id())
+     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -10447,7 +10447,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciDatascienceProject.id())
+     *             .projectId(testProjectOciDatascienceProject.get("id"))
      *             .build());
      * 
      *     }
@@ -10489,7 +10489,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciDatascienceProject.id())
+     *             .projectId(testProjectOciDatascienceProject.get("id"))
      *             .build());
      * 
      *     }
@@ -10531,7 +10531,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciDatascienceProject.id())
+     *             .projectId(testProjectOciDatascienceProject.get("id"))
      *             .build());
      * 
      *     }
@@ -10573,7 +10573,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciDatascienceProject.id())
+     *             .projectId(testProjectOciDatascienceProject.get("id"))
      *             .build());
      * 
      *     }
@@ -10615,7 +10615,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciDatascienceProject.id())
+     *             .projectId(testProjectOciDatascienceProject.get("id"))
      *             .build());
      * 
      *     }
@@ -10887,7 +10887,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = DataScienceFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciDatascienceSchedule.id())
+     *             .scheduleId(testScheduleOciDatascienceSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -10929,7 +10929,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = DataScienceFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciDatascienceSchedule.id())
+     *             .scheduleId(testScheduleOciDatascienceSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -10971,7 +10971,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = DataScienceFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciDatascienceSchedule.id())
+     *             .scheduleId(testScheduleOciDatascienceSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -11013,7 +11013,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = DataScienceFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciDatascienceSchedule.id())
+     *             .scheduleId(testScheduleOciDatascienceSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -11055,7 +11055,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = DataScienceFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciDatascienceSchedule.id())
+     *             .scheduleId(testScheduleOciDatascienceSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -11100,7 +11100,7 @@ public final class DataScienceFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
      *             .id(scheduleId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(scheduleState)
      *             .build());
      * 
@@ -11146,7 +11146,7 @@ public final class DataScienceFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
      *             .id(scheduleId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(scheduleState)
      *             .build());
      * 
@@ -11192,7 +11192,7 @@ public final class DataScienceFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
      *             .id(scheduleId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(scheduleState)
      *             .build());
      * 
@@ -11238,7 +11238,7 @@ public final class DataScienceFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
      *             .id(scheduleId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(scheduleState)
      *             .build());
      * 
@@ -11284,7 +11284,7 @@ public final class DataScienceFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(scheduleDisplayName)
      *             .id(scheduleId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(scheduleState)
      *             .build());
      * 

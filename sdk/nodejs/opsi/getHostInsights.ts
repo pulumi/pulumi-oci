@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testHostInsights = oci.opsi.getHostInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree,
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataInsightId: testExadataInsight.id,
  *     hostTypes: hostInsightHostType,
@@ -138,7 +138,7 @@ export interface GetHostInsightsResult {
  *
  * const testHostInsights = oci.opsi.getHostInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree,
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataInsightId: testExadataInsight.id,
  *     hostTypes: hostInsightHostType,

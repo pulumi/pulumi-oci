@@ -463,7 +463,7 @@ class Rule(pulumi.CustomResource):
             actions={
                 "actions": [{
                     "action_type": rule_actions_action_action_type,
-                    "is_enabled": rule_actions_action_is_enabled == "true",
+                    "is_enabled": rule_actions_action_is_enabled,
                     "description": rule_actions_action_description,
                     "function_id": test_function["id"],
                     "stream_id": test_stream["id"],
@@ -479,7 +479,7 @@ class Rule(pulumi.CustomResource):
                 "data": json.dumps({}),
             },
             display_name=rule_display_name,
-            is_enabled=rule_is_enabled == "true",
+            is_enabled=rule_is_enabled,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -550,7 +550,7 @@ class Rule(pulumi.CustomResource):
             actions={
                 "actions": [{
                     "action_type": rule_actions_action_action_type,
-                    "is_enabled": rule_actions_action_is_enabled == "true",
+                    "is_enabled": rule_actions_action_is_enabled,
                     "description": rule_actions_action_description,
                     "function_id": test_function["id"],
                     "stream_id": test_stream["id"],
@@ -566,7 +566,7 @@ class Rule(pulumi.CustomResource):
                 "data": json.dumps({}),
             },
             display_name=rule_display_name,
-            is_enabled=rule_is_enabled == "true",
+            is_enabled=rule_is_enabled,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

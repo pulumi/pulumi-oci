@@ -176,7 +176,7 @@ def get_host_insights(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_host_insights = oci.opsi.get_host_insights(compartment_id=compartment_id,
-        compartment_id_in_subtree=host_insight_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=host_insight_compartment_id_in_subtree,
         enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
         exadata_insight_id=test_exadata_insight["id"],
         host_types=host_insight_host_type,
@@ -242,7 +242,7 @@ def get_host_insights_output(compartment_id: pulumi.Input[Optional[Optional[_bui
     import pulumi_oci as oci
 
     test_host_insights = oci.opsi.get_host_insights(compartment_id=compartment_id,
-        compartment_id_in_subtree=host_insight_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=host_insight_compartment_id_in_subtree,
         enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
         exadata_insight_id=test_exadata_insight["id"],
         host_types=host_insight_host_type,

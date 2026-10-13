@@ -32,9 +32,9 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     lockDurationDetails: {
- *         lockDuration: Number(snapshotLockDurationDetailsLockDuration),
+ *         lockDuration: snapshotLockDurationDetailsLockDuration,
  *         lockMode: snapshotLockDurationDetailsLockMode,
- *         coolOffDuration: Number(snapshotLockDurationDetailsCoolOffDuration),
+ *         coolOffDuration: snapshotLockDurationDetailsCoolOffDuration,
  *     },
  *     locks: [{
  *         type: snapshotLocksType,

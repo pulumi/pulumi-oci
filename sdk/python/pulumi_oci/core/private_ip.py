@@ -590,7 +590,7 @@ class PrivateIp(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_private_ip = oci.core.PrivateIp("test_private_ip",
-            cidr_prefix_length=int(private_ip_cidr_prefix_length),
+            cidr_prefix_length=private_ip_cidr_prefix_length,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -666,7 +666,7 @@ class PrivateIp(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_private_ip = oci.core.PrivateIp("test_private_ip",
-            cidr_prefix_length=int(private_ip_cidr_prefix_length),
+            cidr_prefix_length=private_ip_cidr_prefix_length,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

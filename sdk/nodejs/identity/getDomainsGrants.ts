@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testGrants = oci.identity.getDomainsGrants({
  *     idcsEndpoint: testDomain.url,
- *     grantCount: Number(grantGrantCount),
+ *     grantCount: grantGrantCount,
  *     grantFilter: grantGrantFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: grantAuthorization,
  *     resourceTypeSchemaVersion: grantResourceTypeSchemaVersion,
- *     startIndex: Number(grantStartIndex),
+ *     startIndex: grantStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsGrantsResult {
  *
  * const testGrants = oci.identity.getDomainsGrants({
  *     idcsEndpoint: testDomain.url,
- *     grantCount: Number(grantGrantCount),
+ *     grantCount: grantGrantCount,
  *     grantFilter: grantGrantFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: grantAuthorization,
  *     resourceTypeSchemaVersion: grantResourceTypeSchemaVersion,
- *     startIndex: Number(grantStartIndex),
+ *     startIndex: grantStartIndex,
  * });
  * ```
  */

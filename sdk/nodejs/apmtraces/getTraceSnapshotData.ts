@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testTraceSnapshotData = oci.apmtraces.getTraceSnapshotData({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceSnapshotDataTraceKey,
- *     isSummarized: traceSnapshotDataIsSummarized === "true",
+ *     isSummarized: traceSnapshotDataIsSummarized,
  *     snapshotTime: traceSnapshotDataSnapshotTime,
  *     threadId: testThread.id,
  * });
@@ -107,7 +107,7 @@ export interface GetTraceSnapshotDataResult {
  * const testTraceSnapshotData = oci.apmtraces.getTraceSnapshotData({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceSnapshotDataTraceKey,
- *     isSummarized: traceSnapshotDataIsSummarized === "true",
+ *     isSummarized: traceSnapshotDataIsSummarized,
  *     snapshotTime: traceSnapshotDataSnapshotTime,
  *     threadId: testThread.id,
  * });

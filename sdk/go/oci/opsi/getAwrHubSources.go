@@ -34,9 +34,9 @@ import (
 //				AwrHubSourceId: pulumi.StringRef(testAwrHubSource.Id),
 //				CompartmentId:  pulumi.StringRef(compartmentId),
 //				Name:           pulumi.StringRef(awrHubSourceName),
-//				SourceTypes:    pulumi.ToArray(awrHubSourceSourceType),
-//				States:         pulumi.ToArray(awrHubSourceState),
-//				Statuses:       pulumi.ToArray(awrHubSourceStatus),
+//				SourceTypes:    awrHubSourceSourceType,
+//				States:         awrHubSourceState,
+//				Statuses:       awrHubSourceStatus,
 //			}, nil)
 //			if err != nil {
 //				return err

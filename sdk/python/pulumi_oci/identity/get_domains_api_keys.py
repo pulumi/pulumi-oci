@@ -215,13 +215,13 @@ def get_domains_api_keys(api_key_count: Optional[_builtins.int] = None,
     import pulumi_oci as oci
 
     test_api_keys = oci.identity.get_domains_api_keys(idcs_endpoint=test_domain["url"],
-        api_key_count=int(api_key_api_key_count),
+        api_key_count=api_key_api_key_count,
         api_key_filter=api_key_api_key_filter,
         attribute_sets=[],
         attributes="",
         authorization=api_key_authorization,
         resource_type_schema_version=api_key_resource_type_schema_version,
-        start_index=int(api_key_start_index))
+        start_index=api_key_start_index)
     ```
 
 
@@ -290,13 +290,13 @@ def get_domains_api_keys_output(api_key_count: pulumi.Input[Optional[Optional[_b
     import pulumi_oci as oci
 
     test_api_keys = oci.identity.get_domains_api_keys(idcs_endpoint=test_domain["url"],
-        api_key_count=int(api_key_api_key_count),
+        api_key_count=api_key_api_key_count,
         api_key_filter=api_key_api_key_filter,
         attribute_sets=[],
         attributes="",
         authorization=api_key_authorization,
         resource_type_schema_version=api_key_resource_type_schema_version,
-        start_index=int(api_key_start_index))
+        start_index=api_key_start_index)
     ```
 
 

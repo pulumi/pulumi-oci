@@ -63,7 +63,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testIdentityPropagationTrust = new DomainsIdentityPropagationTrust("testIdentityPropagationTrust", DomainsIdentityPropagationTrustArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .issuer(identityPropagationTrustIssuer)
  *             .name(identityPropagationTrustName)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:IdentityPropagationTrust")
@@ -90,7 +90,7 @@ import javax.annotation.Nullable;
  *             .impersonatingResource(identityPropagationTrustImpersonatingResource)
  *             .impersonationServiceUsers(DomainsIdentityPropagationTrustImpersonationServiceUserArgs.builder()
  *                 .rule(identityPropagationTrustImpersonationServiceUsersRule)
- *                 .value(testIdentityPropagationTrustUser.id())
+ *                 .value(testIdentityPropagationTrustUser.get("id"))
  *                 .ocid(identityPropagationTrustImpersonationServiceUsersOcid)
  *                 .build())
  *             .keytab(DomainsIdentityPropagationTrustKeytabArgs.builder()

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSqlFirewallViolationAnalytics = oci.datasafe.getSqlFirewallViolationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallViolationAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree,
  *     groupBies: sqlFirewallViolationAnalyticGroupBy,
  *     queryTimeZone: sqlFirewallViolationAnalyticQueryTimeZone,
  *     scimQuery: sqlFirewallViolationAnalyticScimQuery,
@@ -134,7 +134,7 @@ export interface GetSqlFirewallViolationAnalyticsResult {
  * const testSqlFirewallViolationAnalytics = oci.datasafe.getSqlFirewallViolationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallViolationAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree,
  *     groupBies: sqlFirewallViolationAnalyticGroupBy,
  *     queryTimeZone: sqlFirewallViolationAnalyticQueryTimeZone,
  *     scimQuery: sqlFirewallViolationAnalyticScimQuery,

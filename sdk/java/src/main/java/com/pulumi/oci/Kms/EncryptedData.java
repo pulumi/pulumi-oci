@@ -50,11 +50,11 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testEncryptedData = new EncryptedData("testEncryptedData", EncryptedDataArgs.builder()
  *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
- *             .keyId(testKey.id())
+ *             .keyId(testKey.get("id"))
  *             .plaintext(encryptedDataPlaintext)
  *             .associatedData(encryptedDataAssociatedData)
  *             .encryptionAlgorithm(encryptedDataEncryptionAlgorithm)
- *             .keyVersionId(testKeyVersion.id())
+ *             .keyVersionId(testKeyVersion.get("id"))
  *             .loggingContext(encryptedDataLoggingContext)
  *             .build());
  * 

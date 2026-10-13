@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionMinorVersionGiVersion,
  *     majorVersion: systemVersionMinorVersionMajorVersion,
- *     isLatest: systemVersionMinorVersionIsLatest === "true",
+ *     isLatest: systemVersionMinorVersionIsLatest,
  *     resourceId: testResource.id,
  *     shape: systemVersionMinorVersionShape,
  * });
@@ -106,7 +106,7 @@ export interface GetSystemVersionMinorVersionsResult {
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionMinorVersionGiVersion,
  *     majorVersion: systemVersionMinorVersionMajorVersion,
- *     isLatest: systemVersionMinorVersionIsLatest === "true",
+ *     isLatest: systemVersionMinorVersionIsLatest,
  *     resourceId: testResource.id,
  *     shape: systemVersionMinorVersionShape,
  * });

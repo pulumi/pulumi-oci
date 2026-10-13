@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     issueCertificateTrigger: issueCertificateTrigger,
  *     renewCertificateTrigger: renewCertificateTrigger,
  *     setDefaultTrigger: setDefaultTrigger,
- *     isMissingNodesOnly: isMissingNodesOnly === "true",
+ *     isMissingNodesOnly: isMissingNodesOnly,
  * });
  * ```
  *

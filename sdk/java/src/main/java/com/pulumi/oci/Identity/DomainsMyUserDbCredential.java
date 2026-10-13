@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testMyUserDbCredential = new DomainsMyUserDbCredential("testMyUserDbCredential", DomainsMyUserDbCredentialArgs.builder()
  *             .dbPassword(myUserDbCredentialDbPassword)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials")
  *             .authorization(myUserDbCredentialAuthorization)
  *             .description(myUserDbCredentialDescription)

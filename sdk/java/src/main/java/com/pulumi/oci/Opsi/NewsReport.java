@@ -66,7 +66,7 @@ import javax.annotation.Nullable;
  *             .locale(newsReportLocale)
  *             .name(newsReportName)
  *             .newsFrequency(newsReportNewsFrequency)
- *             .onsTopicId(testOnsTopic.id())
+ *             .onsTopicId(testOnsTopic.get("id"))
  *             .areChildCompartmentsIncluded(newsReportAreChildCompartmentsIncluded)
  *             .dayOfWeek(newsReportDayOfWeek)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

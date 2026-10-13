@@ -472,7 +472,7 @@ class DeploymentCertificate(pulumi.CustomResource):
             certificate_content=deployment_certificate_certificate_content,
             deployment_id=test_deployment["id"],
             key=deployment_certificate_key,
-            is_lock_override=deployment_certificate_is_lock_override == "true")
+            is_lock_override=deployment_certificate_is_lock_override)
         ```
 
         ## Import
@@ -518,7 +518,7 @@ class DeploymentCertificate(pulumi.CustomResource):
             certificate_content=deployment_certificate_certificate_content,
             deployment_id=test_deployment["id"],
             key=deployment_certificate_key,
-            is_lock_override=deployment_certificate_is_lock_override == "true")
+            is_lock_override=deployment_certificate_is_lock_override)
         ```
 
         ## Import

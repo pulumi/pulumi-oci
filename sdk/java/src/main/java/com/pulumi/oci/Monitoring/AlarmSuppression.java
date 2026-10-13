@@ -64,7 +64,7 @@ import javax.annotation.Nullable;
  *         var testAlarmSuppression = new AlarmSuppression("testAlarmSuppression", AlarmSuppressionArgs.builder()
  *             .alarmSuppressionTarget(AlarmSuppressionAlarmSuppressionTargetArgs.builder()
  *                 .targetType(alarmSuppressionAlarmSuppressionTargetTargetType)
- *                 .alarmId(testAlarm.id())
+ *                 .alarmId(testAlarm.get("id"))
  *                 .compartmentId(compartmentId)
  *                 .compartmentIdInSubtree(alarmSuppressionAlarmSuppressionTargetCompartmentIdInSubtree)
  *                 .build())

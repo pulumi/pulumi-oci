@@ -52,15 +52,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCompliancePolicyRule = new CompliancePolicyRule("testCompliancePolicyRule", CompliancePolicyRuleArgs.builder()
- *             .compliancePolicyId(testCompliancePolicy.id())
+ *             .compliancePolicyId(testCompliancePolicy.get("id"))
  *             .displayName(compliancePolicyRuleDisplayName)
  *             .patchSelection(CompliancePolicyRulePatchSelectionArgs.builder()
  *                 .selectionType(compliancePolicyRulePatchSelectionSelectionType)
  *                 .daysSinceRelease(compliancePolicyRulePatchSelectionDaysSinceRelease)
  *                 .patchLevel(compliancePolicyRulePatchSelectionPatchLevel)
- *                 .patchName(testPatch.name())
+ *                 .patchName(testPatch.get("name"))
  *                 .build())
- *             .patchTypeIds(testPatchType.id())
+ *             .patchTypeIds(testPatchType.get("id"))
  *             .productVersion(CompliancePolicyRuleProductVersionArgs.builder()
  *                 .version(compliancePolicyRuleProductVersionVersion)
  *                 .isApplicableForAllHigherVersions(compliancePolicyRuleProductVersionIsApplicableForAllHigherVersions)

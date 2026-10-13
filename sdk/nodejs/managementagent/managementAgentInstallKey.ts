@@ -21,8 +21,8 @@ import * as utilities from "../utilities";
  * const testManagementAgentInstallKey = new oci.managementagent.ManagementAgentInstallKey("test_management_agent_install_key", {
  *     compartmentId: compartmentId,
  *     displayName: managementAgentInstallKeyDisplayName,
- *     allowedKeyInstallCount: Number(managementAgentInstallKeyAllowedKeyInstallCount),
- *     isUnlimited: managementAgentInstallKeyIsUnlimited === "true",
+ *     allowedKeyInstallCount: managementAgentInstallKeyAllowedKeyInstallCount,
+ *     isUnlimited: managementAgentInstallKeyIsUnlimited,
  *     timeExpires: managementAgentInstallKeyTimeExpires,
  * });
  * ```

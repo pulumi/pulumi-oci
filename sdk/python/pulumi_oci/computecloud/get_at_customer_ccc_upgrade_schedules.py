@@ -167,7 +167,7 @@ def get_at_customer_ccc_upgrade_schedules(access_level: Optional[_builtins.str] 
     test_ccc_upgrade_schedules = oci.computecloud.get_at_customer_ccc_upgrade_schedules(access_level=ccc_upgrade_schedule_access_level,
         ccc_upgrade_schedule_id=test_ccc_upgrade_schedule["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree,
         display_name=ccc_upgrade_schedule_display_name,
         display_name_contains=ccc_upgrade_schedule_display_name_contains,
         state=ccc_upgrade_schedule_state)
@@ -228,7 +228,7 @@ def get_at_customer_ccc_upgrade_schedules_output(access_level: pulumi.Input[Opti
     test_ccc_upgrade_schedules = oci.computecloud.get_at_customer_ccc_upgrade_schedules(access_level=ccc_upgrade_schedule_access_level,
         ccc_upgrade_schedule_id=test_ccc_upgrade_schedule["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree,
         display_name=ccc_upgrade_schedule_display_name,
         display_name_contains=ccc_upgrade_schedule_display_name_contains,
         state=ccc_upgrade_schedule_state)

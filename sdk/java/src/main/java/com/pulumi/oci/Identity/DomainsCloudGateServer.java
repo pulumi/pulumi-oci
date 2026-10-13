@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .displayName(cloudGateServerDisplayName)
  *             .hostName(cloudGateServerHostName)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .port(cloudGateServerPort)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:CloudGateServer")
  *             .ssl(cloudGateServerSsl)

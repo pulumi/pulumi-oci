@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: objectStorageLinkAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     fileSystemPath: objectStorageLinkFileSystemPath,
- *     isOverwrite: objectStorageLinkIsOverwrite === "true",
+ *     isOverwrite: objectStorageLinkIsOverwrite,
  *     lustreFileSystemId: testLustreFileSystem.id,
  *     objectStoragePrefix: objectStorageLinkObjectStoragePrefix,
  *     definedTags: {

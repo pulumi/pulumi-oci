@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     lastIpDrainPeriodInHours: Number(emailIpPoolLastIpDrainPeriodInHours),
+ *     lastIpDrainPeriodInHours: emailIpPoolLastIpDrainPeriodInHours,
  * });
  * ```
  *

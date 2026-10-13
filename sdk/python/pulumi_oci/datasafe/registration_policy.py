@@ -543,7 +543,7 @@ class RegistrationPolicy(pulumi.CustomResource):
             compartment_id=compartment_id,
             features=registration_policy_features,
             resource_id=test_resource["id"],
-            can_override_features=registration_policy_can_override_features == "true",
+            can_override_features=registration_policy_can_override_features,
             connection_option={
                 "connection_type": registration_policy_connection_option_connection_type,
                 "identifiers": registration_policy_connection_option_identifiers,
@@ -556,7 +556,7 @@ class RegistrationPolicy(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            opc_dry_run=registration_policy_opc_dry_run == "true",
+            opc_dry_run=registration_policy_opc_dry_run,
             x_cluster_id=registration_policy_x_cluster_id)
         ```
 
@@ -610,7 +610,7 @@ class RegistrationPolicy(pulumi.CustomResource):
             compartment_id=compartment_id,
             features=registration_policy_features,
             resource_id=test_resource["id"],
-            can_override_features=registration_policy_can_override_features == "true",
+            can_override_features=registration_policy_can_override_features,
             connection_option={
                 "connection_type": registration_policy_connection_option_connection_type,
                 "identifiers": registration_policy_connection_option_identifiers,
@@ -623,7 +623,7 @@ class RegistrationPolicy(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            opc_dry_run=registration_policy_opc_dry_run == "true",
+            opc_dry_run=registration_policy_opc_dry_run,
             x_cluster_id=registration_policy_x_cluster_id)
         ```
 

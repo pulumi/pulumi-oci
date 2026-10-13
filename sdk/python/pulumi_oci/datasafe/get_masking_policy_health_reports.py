@@ -182,7 +182,7 @@ def get_masking_policy_health_reports(access_level: Optional[_builtins.str] = No
 
     test_masking_policy_health_reports = oci.datasafe.get_masking_policy_health_reports(compartment_id=compartment_id,
         access_level=masking_policy_health_report_access_level,
-        compartment_id_in_subtree=masking_policy_health_report_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=masking_policy_health_report_compartment_id_in_subtree,
         display_name=masking_policy_health_report_display_name,
         masking_policy_health_report_id=test_masking_policy_health_report["id"],
         masking_policy_id=test_masking_policy["id"],
@@ -248,7 +248,7 @@ def get_masking_policy_health_reports_output(access_level: pulumi.Input[Optional
 
     test_masking_policy_health_reports = oci.datasafe.get_masking_policy_health_reports(compartment_id=compartment_id,
         access_level=masking_policy_health_report_access_level,
-        compartment_id_in_subtree=masking_policy_health_report_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=masking_policy_health_report_compartment_id_in_subtree,
         display_name=masking_policy_health_report_display_name,
         masking_policy_health_report_id=test_masking_policy_health_report["id"],
         masking_policy_id=test_masking_policy["id"],

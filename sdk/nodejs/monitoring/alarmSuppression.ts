@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *         targetType: alarmSuppressionAlarmSuppressionTargetTargetType,
  *         alarmId: testAlarm.id,
  *         compartmentId: compartmentId,
- *         compartmentIdInSubtree: alarmSuppressionAlarmSuppressionTargetCompartmentIdInSubtree === "true",
+ *         compartmentIdInSubtree: alarmSuppressionAlarmSuppressionTargetCompartmentIdInSubtree,
  *     },
  *     displayName: alarmSuppressionDisplayName,
  *     timeSuppressFrom: alarmSuppressionTimeSuppressFrom,

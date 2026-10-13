@@ -217,7 +217,7 @@ class SubsettingPolicySubsettingRuleProcessingChainObject(pulumi.CustomResource)
             processing_chain_object_key=subsetting_policy_subsetting_rule_processing_chain_object_processing_chain_object_key,
             subsetting_policy_id=test_subsetting_policy["id"],
             subsetting_rule_key=subsetting_policy_subsetting_rule_processing_chain_object_subsetting_rule_key,
-            is_enabled_for_processing=subsetting_policy_subsetting_rule_processing_chain_object_is_enabled_for_processing == "true")
+            is_enabled_for_processing=subsetting_policy_subsetting_rule_processing_chain_object_is_enabled_for_processing)
         ```
 
         ## Import
@@ -263,7 +263,7 @@ class SubsettingPolicySubsettingRuleProcessingChainObject(pulumi.CustomResource)
             processing_chain_object_key=subsetting_policy_subsetting_rule_processing_chain_object_processing_chain_object_key,
             subsetting_policy_id=test_subsetting_policy["id"],
             subsetting_rule_key=subsetting_policy_subsetting_rule_processing_chain_object_subsetting_rule_key,
-            is_enabled_for_processing=subsetting_policy_subsetting_rule_processing_chain_object_is_enabled_for_processing == "true")
+            is_enabled_for_processing=subsetting_policy_subsetting_rule_processing_chain_object_is_enabled_for_processing)
         ```
 
         ## Import

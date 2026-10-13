@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: databaseSoftwareImageDisplayName,
  *     imageShapeFamily: databaseSoftwareImageImageShapeFamily,
  *     imageType: databaseSoftwareImageImageType,
- *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported === "true",
+ *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported,
  *     state: databaseSoftwareImageState,
  * });
  * ```
@@ -133,7 +133,7 @@ export interface GetDatabaseSoftwareImagesResult {
  *     displayName: databaseSoftwareImageDisplayName,
  *     imageShapeFamily: databaseSoftwareImageImageShapeFamily,
  *     imageType: databaseSoftwareImageImageType,
- *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported === "true",
+ *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported,
  *     state: databaseSoftwareImageState,
  * });
  * ```

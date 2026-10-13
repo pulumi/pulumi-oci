@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testIdentityPropagationTrusts = oci.identity.getDomainsIdentityPropagationTrusts({
  *     idcsEndpoint: testDomain.url,
- *     identityPropagationTrustCount: Number(identityPropagationTrustIdentityPropagationTrustCount),
+ *     identityPropagationTrustCount: identityPropagationTrustIdentityPropagationTrustCount,
  *     identityPropagationTrustFilter: identityPropagationTrustIdentityPropagationTrustFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityPropagationTrustAuthorization,
  *     resourceTypeSchemaVersion: identityPropagationTrustResourceTypeSchemaVersion,
- *     startIndex: Number(identityPropagationTrustStartIndex),
+ *     startIndex: identityPropagationTrustStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsIdentityPropagationTrustsResult {
  *
  * const testIdentityPropagationTrusts = oci.identity.getDomainsIdentityPropagationTrusts({
  *     idcsEndpoint: testDomain.url,
- *     identityPropagationTrustCount: Number(identityPropagationTrustIdentityPropagationTrustCount),
+ *     identityPropagationTrustCount: identityPropagationTrustIdentityPropagationTrustCount,
  *     identityPropagationTrustFilter: identityPropagationTrustIdentityPropagationTrustFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityPropagationTrustAuthorization,
  *     resourceTypeSchemaVersion: identityPropagationTrustResourceTypeSchemaVersion,
- *     startIndex: Number(identityPropagationTrustStartIndex),
+ *     startIndex: identityPropagationTrustStartIndex,
  * });
  * ```
  */

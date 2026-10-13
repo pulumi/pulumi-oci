@@ -57,9 +57,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testEsxiHost = new EsxiHost("testEsxiHost", EsxiHostArgs.builder()
- *             .clusterId(testCluster.id())
- *             .billingDonorHostId(testBillingDonorHost.id())
- *             .capacityReservationId(testCapacityReservation.id())
+ *             .clusterId(testCluster.get("id"))
+ *             .billingDonorHostId(testBillingDonorHost.get("id"))
+ *             .capacityReservationId(testCapacityReservation.get("id"))
  *             .computeAvailabilityDomain(esxiHostComputeAvailabilityDomain)
  *             .currentCommitment(esxiHostCurrentCommitment)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
@@ -67,11 +67,11 @@ import javax.annotation.Nullable;
  *             .esxiSoftwareVersion(esxiHostEsxiSoftwareVersion)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .hostOcpuCount(esxiHostHostOcpuCount)
- *             .hostShapeName(testShape.name())
+ *             .hostShapeName(testShape.get("name"))
  *             .initialFaultDomainHostDistribution(esxiHostInitialFaultDomainHostDistribution)
  *             .isVsanByolEnabled(esxiHostIsVsanByolEnabled)
  *             .nextCommitment(esxiHostNextCommitment)
- *             .vcfByolAllocationId(testByolAllocation.id())
+ *             .vcfByolAllocationId(testByolAllocation.get("id"))
  *             .build());
  * 
  *     }

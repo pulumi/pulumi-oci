@@ -601,14 +601,14 @@ class VirtualNodePool(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
                 "nsg_ids": virtual_node_pool_pod_configuration_nsg_ids,
             },
-            size=int(virtual_node_pool_size),
+            size=virtual_node_pool_size,
             taints=[{
                 "effect": virtual_node_pool_taints_effect,
                 "key": virtual_node_pool_taints_key,
                 "value": virtual_node_pool_taints_value,
             }],
             virtual_node_pool_cycling_details={
-                "is_virtual_node_cycling_enabled": virtual_node_pool_virtual_node_pool_cycling_details_is_virtual_node_cycling_enabled == "true",
+                "is_virtual_node_cycling_enabled": virtual_node_pool_virtual_node_pool_cycling_details_is_virtual_node_cycling_enabled,
                 "maximum_surge": virtual_node_pool_virtual_node_pool_cycling_details_maximum_surge,
                 "maximum_unavailable": virtual_node_pool_virtual_node_pool_cycling_details_maximum_unavailable,
             },
@@ -692,14 +692,14 @@ class VirtualNodePool(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
                 "nsg_ids": virtual_node_pool_pod_configuration_nsg_ids,
             },
-            size=int(virtual_node_pool_size),
+            size=virtual_node_pool_size,
             taints=[{
                 "effect": virtual_node_pool_taints_effect,
                 "key": virtual_node_pool_taints_key,
                 "value": virtual_node_pool_taints_value,
             }],
             virtual_node_pool_cycling_details={
-                "is_virtual_node_cycling_enabled": virtual_node_pool_virtual_node_pool_cycling_details_is_virtual_node_cycling_enabled == "true",
+                "is_virtual_node_cycling_enabled": virtual_node_pool_virtual_node_pool_cycling_details_is_virtual_node_cycling_enabled,
                 "maximum_surge": virtual_node_pool_virtual_node_pool_cycling_details_maximum_surge,
                 "maximum_unavailable": virtual_node_pool_virtual_node_pool_cycling_details_maximum_unavailable,
             },

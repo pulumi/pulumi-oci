@@ -234,7 +234,7 @@ def get_registration_policies(access_level: Optional[_builtins.str] = None,
 
     test_registration_policies = oci.datasafe.get_registration_policies(compartment_id=compartment_id,
         access_level=registration_policy_access_level,
-        compartment_id_in_subtree=registration_policy_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=registration_policy_compartment_id_in_subtree,
         connection_id=test_connection["id"],
         connection_type=registration_policy_connection_type,
         display_name=registration_policy_display_name,
@@ -324,7 +324,7 @@ def get_registration_policies_output(access_level: pulumi.Input[Optional[Optiona
 
     test_registration_policies = oci.datasafe.get_registration_policies(compartment_id=compartment_id,
         access_level=registration_policy_access_level,
-        compartment_id_in_subtree=registration_policy_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=registration_policy_compartment_id_in_subtree,
         connection_id=test_connection["id"],
         connection_type=registration_policy_connection_type,
         display_name=registration_policy_display_name,

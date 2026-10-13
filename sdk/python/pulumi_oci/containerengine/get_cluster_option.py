@@ -118,7 +118,7 @@ def get_cluster_option(cluster_option_id: Optional[_builtins.str] = None,
 
     test_cluster_option = oci.containerengine.get_cluster_option(cluster_option_id=test_cluster_option_oci_containerengine_cluster_option["id"],
         compartment_id=compartment_id,
-        should_list_all_patch_versions=cluster_option_should_list_all_patch_versions == "true")
+        should_list_all_patch_versions=cluster_option_should_list_all_patch_versions)
     ```
 
 
@@ -157,7 +157,7 @@ def get_cluster_option_output(cluster_option_id: pulumi.Input[Optional[_builtins
 
     test_cluster_option = oci.containerengine.get_cluster_option(cluster_option_id=test_cluster_option_oci_containerengine_cluster_option["id"],
         compartment_id=compartment_id,
-        should_list_all_patch_versions=cluster_option_should_list_all_patch_versions == "true")
+        should_list_all_patch_versions=cluster_option_should_list_all_patch_versions)
     ```
 
 

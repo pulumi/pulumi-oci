@@ -32,7 +32,7 @@ import (
 //			_, err := datasafe.GetSubsettingPolicySubsettingSchemas(ctx, &datasafe.GetSubsettingPolicySubsettingSchemasArgs{
 //				SubsettingPolicyId: testSubsettingPolicy.Id,
 //				IsDerivedSchema:    pulumi.BoolRef(subsettingPolicySubsettingSchemaIsDerivedSchema),
-//				SchemaNames:        pulumi.ToArray(subsettingPolicySubsettingSchemaSchemaName),
+//				SchemaNames:        subsettingPolicySubsettingSchemaSchemaName,
 //			}, nil)
 //			if err != nil {
 //				return err

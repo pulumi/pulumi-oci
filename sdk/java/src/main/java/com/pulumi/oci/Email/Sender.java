@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .emailAddress(senderEmailAddress)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .emailIpPoolId(testEmailIpPool.id())
+ *             .emailIpPoolId(testEmailIpPool.get("id"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 

@@ -204,11 +204,11 @@ def get_domains_my_requestable_groups(authorization: Optional[_builtins.str] = N
     import pulumi_oci as oci
 
     test_my_requestable_groups = oci.identity.get_domains_my_requestable_groups(idcs_endpoint=test_domain["url"],
-        my_requestable_group_count=int(my_requestable_group_my_requestable_group_count),
+        my_requestable_group_count=my_requestable_group_my_requestable_group_count,
         my_requestable_group_filter=my_requestable_group_my_requestable_group_filter,
         authorization=my_requestable_group_authorization,
         resource_type_schema_version=my_requestable_group_resource_type_schema_version,
-        start_index=int(my_requestable_group_start_index))
+        start_index=my_requestable_group_start_index)
     ```
 
 
@@ -269,11 +269,11 @@ def get_domains_my_requestable_groups_output(authorization: pulumi.Input[Optiona
     import pulumi_oci as oci
 
     test_my_requestable_groups = oci.identity.get_domains_my_requestable_groups(idcs_endpoint=test_domain["url"],
-        my_requestable_group_count=int(my_requestable_group_my_requestable_group_count),
+        my_requestable_group_count=my_requestable_group_my_requestable_group_count,
         my_requestable_group_filter=my_requestable_group_my_requestable_group_filter,
         authorization=my_requestable_group_authorization,
         resource_type_schema_version=my_requestable_group_resource_type_schema_version,
-        start_index=int(my_requestable_group_start_index))
+        start_index=my_requestable_group_start_index)
     ```
 
 

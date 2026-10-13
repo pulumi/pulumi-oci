@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testEnterpriseManagerBridges = oci.opsi.getEnterpriseManagerBridges({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: enterpriseManagerBridgeCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: enterpriseManagerBridgeCompartmentIdInSubtree,
  *     displayName: enterpriseManagerBridgeDisplayName,
  *     id: enterpriseManagerBridgeId,
  *     states: enterpriseManagerBridgeState,
@@ -108,7 +108,7 @@ export interface GetEnterpriseManagerBridgesResult {
  *
  * const testEnterpriseManagerBridges = oci.opsi.getEnterpriseManagerBridges({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: enterpriseManagerBridgeCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: enterpriseManagerBridgeCompartmentIdInSubtree,
  *     displayName: enterpriseManagerBridgeDisplayName,
  *     id: enterpriseManagerBridgeId,
  *     states: enterpriseManagerBridgeState,

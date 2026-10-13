@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceUpdatePackagesManagement = new ManagedInstanceUpdatePackagesManagement("testManagedInstanceUpdatePackagesManagement", ManagedInstanceUpdatePackagesManagementArgs.builder()
- *             .managedInstanceId(testManagedInstance.id())
+ *             .managedInstanceId(testManagedInstance.get("id"))
  *             .packageNames(managedInstanceUpdatePackagesManagementPackageNames)
  *             .updateTypes(managedInstanceUpdatePackagesManagementUpdateTypes)
  *             .workRequestDetails(ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs.builder()

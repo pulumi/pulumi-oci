@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  * const testAuditEventAnalytic = oci.datasafe.getAuditEventAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: auditEventAnalyticAccessLevel,
- *     compartmentIdInSubtree: auditEventAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: auditEventAnalyticCompartmentIdInSubtree,
  *     groupBies: auditEventAnalyticGroupBy,
  *     queryTimeZone: auditEventAnalyticQueryTimeZone,
  *     scimQuery: auditEventAnalyticScimQuery,
@@ -141,7 +141,7 @@ export interface GetAuditEventAnalyticResult {
  * const testAuditEventAnalytic = oci.datasafe.getAuditEventAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: auditEventAnalyticAccessLevel,
- *     compartmentIdInSubtree: auditEventAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: auditEventAnalyticCompartmentIdInSubtree,
  *     groupBies: auditEventAnalyticGroupBy,
  *     queryTimeZone: auditEventAnalyticQueryTimeZone,
  *     scimQuery: auditEventAnalyticScimQuery,

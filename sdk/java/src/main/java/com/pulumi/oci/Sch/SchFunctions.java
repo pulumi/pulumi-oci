@@ -54,7 +54,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
-     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.name())
+     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.get("name"))
      *             .build());
      * 
      *     }
@@ -96,7 +96,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
-     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.name())
+     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.get("name"))
      *             .build());
      * 
      *     }
@@ -138,7 +138,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
-     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.name())
+     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.get("name"))
      *             .build());
      * 
      *     }
@@ -180,7 +180,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
-     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.name())
+     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.get("name"))
      *             .build());
      * 
      *     }
@@ -222,7 +222,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
-     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.name())
+     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.get("name"))
      *             .build());
      * 
      *     }
@@ -574,7 +574,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
-     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.id())
+     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -618,7 +618,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
-     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.id())
+     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -662,7 +662,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
-     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.id())
+     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -706,7 +706,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
-     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.id())
+     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -750,7 +750,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
-     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.id())
+     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.get("id"))
      *             .build());
      * 
      *     }

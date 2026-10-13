@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCloudExadataStorageConnector = new CloudExadataStorageConnector("testCloudExadataStorageConnector", CloudExadataStorageConnectorArgs.builder()
- *             .agentId(testAgent.id())
+ *             .agentId(testAgent.get("id"))
  *             .connectionUri(cloudExadataStorageConnectorConnectionUri)
  *             .credentialInfo(CloudExadataStorageConnectorCredentialInfoArgs.builder()
  *                 .password(cloudExadataStorageConnectorCredentialInfoPassword)
@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *                 .sslTrustStorePassword(cloudExadataStorageConnectorCredentialInfoSslTrustStorePassword)
  *                 .sslTrustStoreType(cloudExadataStorageConnectorCredentialInfoSslTrustStoreType)
  *                 .build())
- *             .storageServerId(testStorageServer.id())
+ *             .storageServerId(testStorageServer.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(cloudExadataStorageConnectorDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))

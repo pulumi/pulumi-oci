@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testSubsettingPolicySubsettingRuleProcessingChainObjects = oci.datasafe.getSubsettingPolicySubsettingRuleProcessingChainObjects({
  *     subsettingPolicyId: testSubsettingPolicy.id,
  *     subsettingRuleKey: subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey,
- *     isEnabledForProcessing: subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing === "true",
+ *     isEnabledForProcessing: subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing,
  * });
  * ```
  */
@@ -93,7 +93,7 @@ export interface GetSubsettingPolicySubsettingRuleProcessingChainObjectsResult {
  * const testSubsettingPolicySubsettingRuleProcessingChainObjects = oci.datasafe.getSubsettingPolicySubsettingRuleProcessingChainObjects({
  *     subsettingPolicyId: testSubsettingPolicy.id,
  *     subsettingRuleKey: subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey,
- *     isEnabledForProcessing: subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing === "true",
+ *     isEnabledForProcessing: subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing,
  * });
  * ```
  */

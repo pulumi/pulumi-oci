@@ -149,7 +149,7 @@ def get_pbf_listing_versions(filters: Optional[Sequence[Union['GetPbfListingVers
     import pulumi_oci as oci
 
     test_pbf_listing_versions = oci.functions.get_pbf_listing_versions(pbf_listing_id=test_pbf_listing["id"],
-        is_current_version=pbf_listing_version_is_current_version == "true",
+        is_current_version=pbf_listing_version_is_current_version,
         name=pbf_listing_version_name,
         pbf_listing_version_id=test_pbf_listing_version["id"],
         state=pbf_listing_version_state)
@@ -204,7 +204,7 @@ def get_pbf_listing_versions_output(filters: pulumi.Input[Optional[Optional[Sequ
     import pulumi_oci as oci
 
     test_pbf_listing_versions = oci.functions.get_pbf_listing_versions(pbf_listing_id=test_pbf_listing["id"],
-        is_current_version=pbf_listing_version_is_current_version == "true",
+        is_current_version=pbf_listing_version_is_current_version,
         name=pbf_listing_version_name,
         pbf_listing_version_id=test_pbf_listing_version["id"],
         state=pbf_listing_version_state)

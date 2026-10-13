@@ -329,7 +329,7 @@ class AgentProvisionedCapacity(pulumi.CustomResource):
         test_provisioned_capacity = oci.generativeai.AgentProvisionedCapacity("test_provisioned_capacity",
             compartment_id=compartment_id,
             display_name=provisioned_capacity_display_name,
-            number_of_units=int(provisioned_capacity_number_of_units),
+            number_of_units=provisioned_capacity_number_of_units,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -383,7 +383,7 @@ class AgentProvisionedCapacity(pulumi.CustomResource):
         test_provisioned_capacity = oci.generativeai.AgentProvisionedCapacity("test_provisioned_capacity",
             compartment_id=compartment_id,
             display_name=provisioned_capacity_display_name,
-            number_of_units=int(provisioned_capacity_number_of_units),
+            number_of_units=provisioned_capacity_number_of_units,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

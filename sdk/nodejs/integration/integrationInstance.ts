@@ -24,8 +24,8 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: integrationInstanceDisplayName,
  *     integrationInstanceType: integrationInstanceIntegrationInstanceType,
- *     isByol: integrationInstanceIsByol === "true",
- *     messagePacks: Number(integrationInstanceMessagePacks),
+ *     isByol: integrationInstanceIsByol,
+ *     messagePacks: integrationInstanceMessagePacks,
  *     alternateCustomEndpoints: [{
  *         hostname: integrationInstanceAlternateCustomEndpointsHostname,
  *         certificateSecretId: testSecret.id,
@@ -43,9 +43,9 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     idcsAt: integrationInstanceIdcsAt,
- *     isDisasterRecoveryEnabled: integrationInstanceIsDisasterRecoveryEnabled === "true",
- *     isFileServerEnabled: integrationInstanceIsFileServerEnabled === "true",
- *     isVisualBuilderEnabled: integrationInstanceIsVisualBuilderEnabled === "true",
+ *     isDisasterRecoveryEnabled: integrationInstanceIsDisasterRecoveryEnabled,
+ *     isFileServerEnabled: integrationInstanceIsFileServerEnabled,
+ *     isVisualBuilderEnabled: integrationInstanceIsVisualBuilderEnabled,
  *     networkEndpointDetails: {
  *         networkEndpointType: integrationInstanceNetworkEndpointDetailsNetworkEndpointType,
  *         allowlistedHttpIps: integrationInstanceNetworkEndpointDetailsAllowlistedHttpIps,
@@ -60,7 +60,7 @@ import * as utilities from "../utilities";
  *                 allowlistedIps: integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnsAllowlistedIps,
  *             }],
  *         },
- *         isIntegrationVcnAllowlisted: integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted === "true",
+ *         isIntegrationVcnAllowlisted: integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted,
  *         runtime: {
  *             allowlistedHttpIps: integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpIps,
  *             allowlistedHttpVcns: [{

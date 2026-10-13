@@ -87,7 +87,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
-     *             .apiId(testApiOciApigatewayApi.id())
+     *             .apiId(testApiOciApigatewayApi.get("id"))
      *             .build());
      * 
      *     }
@@ -129,7 +129,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
-     *             .apiId(testApiOciApigatewayApi.id())
+     *             .apiId(testApiOciApigatewayApi.get("id"))
      *             .build());
      * 
      *     }
@@ -171,7 +171,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
-     *             .apiId(testApiOciApigatewayApi.id())
+     *             .apiId(testApiOciApigatewayApi.get("id"))
      *             .build());
      * 
      *     }
@@ -213,7 +213,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
-     *             .apiId(testApiOciApigatewayApi.id())
+     *             .apiId(testApiOciApigatewayApi.get("id"))
      *             .build());
      * 
      *     }
@@ -255,7 +255,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
-     *             .apiId(testApiOciApigatewayApi.id())
+     *             .apiId(testApiOciApigatewayApi.get("id"))
      *             .build());
      * 
      *     }
@@ -297,7 +297,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -339,7 +339,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -381,7 +381,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -423,7 +423,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -465,7 +465,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -507,7 +507,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -549,7 +549,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -591,7 +591,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -633,7 +633,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -675,7 +675,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -717,7 +717,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -759,7 +759,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -801,7 +801,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -843,7 +843,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -885,7 +885,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
-     *             .apiId(testApi.id())
+     *             .apiId(testApi.get("id"))
      *             .build());
      * 
      *     }
@@ -1147,7 +1147,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciApigatewayCertificate.id())
+     *             .certificateId(testCertificateOciApigatewayCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -1189,7 +1189,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciApigatewayCertificate.id())
+     *             .certificateId(testCertificateOciApigatewayCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -1231,7 +1231,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciApigatewayCertificate.id())
+     *             .certificateId(testCertificateOciApigatewayCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -1273,7 +1273,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciApigatewayCertificate.id())
+     *             .certificateId(testCertificateOciApigatewayCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -1315,7 +1315,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(testCertificateOciApigatewayCertificate.id())
+     *             .certificateId(testCertificateOciApigatewayCertificate.get("id"))
      *             .build());
      * 
      *     }
@@ -1577,7 +1577,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciApigatewayDeployment.id())
+     *             .deploymentId(testDeploymentOciApigatewayDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -1619,7 +1619,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciApigatewayDeployment.id())
+     *             .deploymentId(testDeploymentOciApigatewayDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -1661,7 +1661,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciApigatewayDeployment.id())
+     *             .deploymentId(testDeploymentOciApigatewayDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -1703,7 +1703,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciApigatewayDeployment.id())
+     *             .deploymentId(testDeploymentOciApigatewayDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -1745,7 +1745,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciApigatewayDeployment.id())
+     *             .deploymentId(testDeploymentOciApigatewayDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -1789,7 +1789,7 @@ public final class ApiGatewayFunctions {
      *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(deploymentDisplayName)
-     *             .gatewayId(testGateway.id())
+     *             .gatewayId(testGateway.get("id"))
      *             .state(deploymentState)
      *             .build());
      * 
@@ -1834,7 +1834,7 @@ public final class ApiGatewayFunctions {
      *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(deploymentDisplayName)
-     *             .gatewayId(testGateway.id())
+     *             .gatewayId(testGateway.get("id"))
      *             .state(deploymentState)
      *             .build());
      * 
@@ -1879,7 +1879,7 @@ public final class ApiGatewayFunctions {
      *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(deploymentDisplayName)
-     *             .gatewayId(testGateway.id())
+     *             .gatewayId(testGateway.get("id"))
      *             .state(deploymentState)
      *             .build());
      * 
@@ -1924,7 +1924,7 @@ public final class ApiGatewayFunctions {
      *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(deploymentDisplayName)
-     *             .gatewayId(testGateway.id())
+     *             .gatewayId(testGateway.get("id"))
      *             .state(deploymentState)
      *             .build());
      * 
@@ -1969,7 +1969,7 @@ public final class ApiGatewayFunctions {
      *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(deploymentDisplayName)
-     *             .gatewayId(testGateway.id())
+     *             .gatewayId(testGateway.get("id"))
      *             .state(deploymentState)
      *             .build());
      * 
@@ -2012,7 +2012,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
-     *             .gatewayId(testGatewayOciApigatewayGateway.id())
+     *             .gatewayId(testGatewayOciApigatewayGateway.get("id"))
      *             .build());
      * 
      *     }
@@ -2054,7 +2054,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
-     *             .gatewayId(testGatewayOciApigatewayGateway.id())
+     *             .gatewayId(testGatewayOciApigatewayGateway.get("id"))
      *             .build());
      * 
      *     }
@@ -2096,7 +2096,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
-     *             .gatewayId(testGatewayOciApigatewayGateway.id())
+     *             .gatewayId(testGatewayOciApigatewayGateway.get("id"))
      *             .build());
      * 
      *     }
@@ -2138,7 +2138,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
-     *             .gatewayId(testGatewayOciApigatewayGateway.id())
+     *             .gatewayId(testGatewayOciApigatewayGateway.get("id"))
      *             .build());
      * 
      *     }
@@ -2180,7 +2180,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
-     *             .gatewayId(testGatewayOciApigatewayGateway.id())
+     *             .gatewayId(testGatewayOciApigatewayGateway.get("id"))
      *             .build());
      * 
      *     }
@@ -2223,7 +2223,7 @@ public final class ApiGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .certificateId(ociApigatewayCertificate.testCertificate().id())
+     *             .certificateId(ociApigatewayCertificate.get("testCertificate").get("id"))
      *             .displayName(gatewayDisplayName)
      *             .state(gatewayState)
      *             .build());
@@ -2268,7 +2268,7 @@ public final class ApiGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .certificateId(ociApigatewayCertificate.testCertificate().id())
+     *             .certificateId(ociApigatewayCertificate.get("testCertificate").get("id"))
      *             .displayName(gatewayDisplayName)
      *             .state(gatewayState)
      *             .build());
@@ -2313,7 +2313,7 @@ public final class ApiGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .certificateId(ociApigatewayCertificate.testCertificate().id())
+     *             .certificateId(ociApigatewayCertificate.get("testCertificate").get("id"))
      *             .displayName(gatewayDisplayName)
      *             .state(gatewayState)
      *             .build());
@@ -2358,7 +2358,7 @@ public final class ApiGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .certificateId(ociApigatewayCertificate.testCertificate().id())
+     *             .certificateId(ociApigatewayCertificate.get("testCertificate").get("id"))
      *             .displayName(gatewayDisplayName)
      *             .state(gatewayState)
      *             .build());
@@ -2403,7 +2403,7 @@ public final class ApiGatewayFunctions {
      *     public static void stack(Context ctx) {
      *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .certificateId(ociApigatewayCertificate.testCertificate().id())
+     *             .certificateId(ociApigatewayCertificate.get("testCertificate").get("id"))
      *             .displayName(gatewayDisplayName)
      *             .state(gatewayState)
      *             .build());
@@ -2447,7 +2447,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
-     *             .subscriberId(testSubscriberOciApigatewaySubscriber.id())
+     *             .subscriberId(testSubscriberOciApigatewaySubscriber.get("id"))
      *             .build());
      * 
      *     }
@@ -2489,7 +2489,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
-     *             .subscriberId(testSubscriberOciApigatewaySubscriber.id())
+     *             .subscriberId(testSubscriberOciApigatewaySubscriber.get("id"))
      *             .build());
      * 
      *     }
@@ -2531,7 +2531,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
-     *             .subscriberId(testSubscriberOciApigatewaySubscriber.id())
+     *             .subscriberId(testSubscriberOciApigatewaySubscriber.get("id"))
      *             .build());
      * 
      *     }
@@ -2573,7 +2573,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
-     *             .subscriberId(testSubscriberOciApigatewaySubscriber.id())
+     *             .subscriberId(testSubscriberOciApigatewaySubscriber.get("id"))
      *             .build());
      * 
      *     }
@@ -2615,7 +2615,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
-     *             .subscriberId(testSubscriberOciApigatewaySubscriber.id())
+     *             .subscriberId(testSubscriberOciApigatewaySubscriber.get("id"))
      *             .build());
      * 
      *     }
@@ -2877,7 +2877,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
-     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.id())
+     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.get("id"))
      *             .build());
      * 
      *     }
@@ -2919,7 +2919,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
-     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.id())
+     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.get("id"))
      *             .build());
      * 
      *     }
@@ -2961,7 +2961,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
-     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.id())
+     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.get("id"))
      *             .build());
      * 
      *     }
@@ -3003,7 +3003,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
-     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.id())
+     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.get("id"))
      *             .build());
      * 
      *     }
@@ -3045,7 +3045,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
-     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.id())
+     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.get("id"))
      *             .build());
      * 
      *     }

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testTopUtilizedResources = oci.licensemanager.getTopUtilizedResources({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: topUtilizedResourceIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: topUtilizedResourceIsCompartmentIdInSubtree,
  *     resourceUnitType: topUtilizedResourceResourceUnitType,
  * });
  * ```
@@ -80,7 +80,7 @@ export interface GetTopUtilizedResourcesResult {
  *
  * const testTopUtilizedResources = oci.licensemanager.getTopUtilizedResources({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: topUtilizedResourceIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: topUtilizedResourceIsCompartmentIdInSubtree,
  *     resourceUnitType: topUtilizedResourceResourceUnitType,
  * });
  * ```

@@ -27,22 +27,22 @@ import * as utilities from "../utilities";
  *     vmClusterNetworkId: testVmClusterNetwork.id,
  *     autonomousDataStorageSizeInTbs: autonomousVmClusterAutonomousDataStorageSizeInTbs,
  *     computeModel: autonomousVmClusterComputeModel,
- *     cpuCoreCountPerNode: Number(autonomousVmClusterCpuCoreCountPerNode),
+ *     cpuCoreCountPerNode: autonomousVmClusterCpuCoreCountPerNode,
  *     dbServers: autonomousVmClusterDbServers,
  *     definedTags: autonomousVmClusterDefinedTags,
  *     distributionAlgorithm: autonomousVmClusterDistributionAlgorithm,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isLocalBackupEnabled: autonomousVmClusterIsLocalBackupEnabled === "true",
- *     isMtlsEnabled: autonomousVmClusterIsMtlsEnabled === "true",
+ *     isLocalBackupEnabled: autonomousVmClusterIsLocalBackupEnabled,
+ *     isMtlsEnabled: autonomousVmClusterIsMtlsEnabled,
  *     licenseModel: autonomousVmClusterLicenseModel,
  *     maintenanceWindowDetails: [{
  *         daysOfWeeks: [{
  *             name: autonomousVmClusterMaintenanceWindowDetailsDaysOfWeekName,
  *         }],
  *         hoursOfDays: autonomousVmClusterMaintenanceWindowDetailsHoursOfDay,
- *         leadTimeInWeeks: Number(autonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks),
+ *         leadTimeInWeeks: autonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks,
  *         months: [{
  *             name: autonomousVmClusterMaintenanceWindowDetailsMonthsName,
  *         }],
@@ -50,12 +50,12 @@ import * as utilities from "../utilities";
  *         preference: autonomousVmClusterMaintenanceWindowDetailsPreference,
  *         weeksOfMonths: autonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth,
  *     }],
- *     memoryPerOracleComputeUnitInGbs: Number(autonomousVmClusterMemoryPerOracleComputeUnitInGbs),
- *     scanListenerPortNonTls: Number(autonomousVmClusterScanListenerPortNonTls),
- *     scanListenerPortTls: Number(autonomousVmClusterScanListenerPortTls),
+ *     memoryPerOracleComputeUnitInGbs: autonomousVmClusterMemoryPerOracleComputeUnitInGbs,
+ *     scanListenerPortNonTls: autonomousVmClusterScanListenerPortNonTls,
+ *     scanListenerPortTls: autonomousVmClusterScanListenerPortTls,
  *     sgaPercentage: autonomousVmClusterSgaPercentage,
  *     timeZone: autonomousVmClusterTimeZone,
- *     totalContainerDatabases: Number(autonomousVmClusterTotalContainerDatabases),
+ *     totalContainerDatabases: autonomousVmClusterTotalContainerDatabases,
  * });
  * ```
  *

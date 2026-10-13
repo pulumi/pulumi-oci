@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBuildRun = new BuildRun("testBuildRun", BuildRunArgs.builder()
- *             .buildPipelineId(testBuildPipeline.id())
+ *             .buildPipelineId(testBuildPipeline.get("id"))
  *             .buildRunArguments(BuildRunBuildRunArgumentsArgs.builder()
  *                 .items(BuildRunBuildRunArgumentsItemArgs.builder()
  *                     .name(buildRunBuildRunArgumentsItemsName)

@@ -169,7 +169,7 @@ def get_containers(container_name: Optional[_builtins.str] = None,
 
     test_containers = oci.datascience.get_containers(container_name=test_container["name"],
         display_name=container_display_name,
-        is_latest=container_is_latest == "true",
+        is_latest=container_is_latest,
         state=container_state,
         tag_query_param=container_tag_query_param,
         target_workload=container_target_workload,
@@ -230,7 +230,7 @@ def get_containers_output(container_name: pulumi.Input[Optional[Optional[_builti
 
     test_containers = oci.datascience.get_containers(container_name=test_container["name"],
         display_name=container_display_name,
-        is_latest=container_is_latest == "true",
+        is_latest=container_is_latest,
         state=container_state,
         tag_query_param=container_tag_query_param,
         target_workload=container_target_workload,

@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDkim = new Dkim("testDkim", DkimArgs.builder()
- *             .emailDomainId(testEmailDomain.id())
+ *             .emailDomainId(testEmailDomain.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(dkimDescription)
  *             .freeformTags(Map.of("Department", "Finance"))

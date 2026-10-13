@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSubsettingPolicies = oci.datasafe.getSubsettingPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: subsettingPolicyAccessLevel,
- *     compartmentIdInSubtree: subsettingPolicyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: subsettingPolicyCompartmentIdInSubtree,
  *     displayName: subsettingPolicyDisplayName,
  *     maskingPolicyId: testMaskingPolicy.id,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
@@ -162,7 +162,7 @@ export interface GetSubsettingPoliciesResult {
  * const testSubsettingPolicies = oci.datasafe.getSubsettingPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: subsettingPolicyAccessLevel,
- *     compartmentIdInSubtree: subsettingPolicyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: subsettingPolicyCompartmentIdInSubtree,
  *     displayName: subsettingPolicyDisplayName,
  *     maskingPolicyId: testMaskingPolicy.id,
  *     sensitiveDataModelId: testSensitiveDataModel.id,

@@ -90,7 +90,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlueGreenDeployment = MysqlFunctions.getBlueGreenDeployment(GetBlueGreenDeploymentArgs.builder()
-     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.id())
+     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -132,7 +132,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlueGreenDeployment = MysqlFunctions.getBlueGreenDeployment(GetBlueGreenDeploymentArgs.builder()
-     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.id())
+     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -174,7 +174,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlueGreenDeployment = MysqlFunctions.getBlueGreenDeployment(GetBlueGreenDeploymentArgs.builder()
-     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.id())
+     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -216,7 +216,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlueGreenDeployment = MysqlFunctions.getBlueGreenDeployment(GetBlueGreenDeploymentArgs.builder()
-     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.id())
+     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -258,7 +258,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlueGreenDeployment = MysqlFunctions.getBlueGreenDeployment(GetBlueGreenDeploymentArgs.builder()
-     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.id())
+     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -302,9 +302,9 @@ public final class MysqlFunctions {
      *         final var testBlueGreenDeployments = MysqlFunctions.getBlueGreenDeployments(GetBlueGreenDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(blueGreenDeploymentDisplayName)
-     *             .sourceDbSystemId(testMysqlDbSystem.id())
+     *             .sourceDbSystemId(testMysqlDbSystem.get("id"))
      *             .state(blueGreenDeploymentState)
-     *             .targetDbSystemId(testMysqlDbSystem.id())
+     *             .targetDbSystemId(testMysqlDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -348,9 +348,9 @@ public final class MysqlFunctions {
      *         final var testBlueGreenDeployments = MysqlFunctions.getBlueGreenDeployments(GetBlueGreenDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(blueGreenDeploymentDisplayName)
-     *             .sourceDbSystemId(testMysqlDbSystem.id())
+     *             .sourceDbSystemId(testMysqlDbSystem.get("id"))
      *             .state(blueGreenDeploymentState)
-     *             .targetDbSystemId(testMysqlDbSystem.id())
+     *             .targetDbSystemId(testMysqlDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -394,9 +394,9 @@ public final class MysqlFunctions {
      *         final var testBlueGreenDeployments = MysqlFunctions.getBlueGreenDeployments(GetBlueGreenDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(blueGreenDeploymentDisplayName)
-     *             .sourceDbSystemId(testMysqlDbSystem.id())
+     *             .sourceDbSystemId(testMysqlDbSystem.get("id"))
      *             .state(blueGreenDeploymentState)
-     *             .targetDbSystemId(testMysqlDbSystem.id())
+     *             .targetDbSystemId(testMysqlDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -440,9 +440,9 @@ public final class MysqlFunctions {
      *         final var testBlueGreenDeployments = MysqlFunctions.getBlueGreenDeployments(GetBlueGreenDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(blueGreenDeploymentDisplayName)
-     *             .sourceDbSystemId(testMysqlDbSystem.id())
+     *             .sourceDbSystemId(testMysqlDbSystem.get("id"))
      *             .state(blueGreenDeploymentState)
-     *             .targetDbSystemId(testMysqlDbSystem.id())
+     *             .targetDbSystemId(testMysqlDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -486,9 +486,9 @@ public final class MysqlFunctions {
      *         final var testBlueGreenDeployments = MysqlFunctions.getBlueGreenDeployments(GetBlueGreenDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(blueGreenDeploymentDisplayName)
-     *             .sourceDbSystemId(testMysqlDbSystem.id())
+     *             .sourceDbSystemId(testMysqlDbSystem.get("id"))
      *             .state(blueGreenDeploymentState)
-     *             .targetDbSystemId(testMysqlDbSystem.id())
+     *             .targetDbSystemId(testMysqlDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -532,7 +532,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
-     *             .channelId(testChannelOciMysqlChannel.id())
+     *             .channelId(testChannelOciMysqlChannel.get("id"))
      *             .build());
      * 
      *     }
@@ -576,7 +576,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
-     *             .channelId(testChannelOciMysqlChannel.id())
+     *             .channelId(testChannelOciMysqlChannel.get("id"))
      *             .build());
      * 
      *     }
@@ -620,7 +620,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
-     *             .channelId(testChannelOciMysqlChannel.id())
+     *             .channelId(testChannelOciMysqlChannel.get("id"))
      *             .build());
      * 
      *     }
@@ -664,7 +664,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
-     *             .channelId(testChannelOciMysqlChannel.id())
+     *             .channelId(testChannelOciMysqlChannel.get("id"))
      *             .build());
      * 
      *     }
@@ -708,7 +708,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
-     *             .channelId(testChannelOciMysqlChannel.id())
+     *             .channelId(testChannelOciMysqlChannel.get("id"))
      *             .build());
      * 
      *     }
@@ -751,8 +751,8 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .channelId(testChannel.id())
-     *             .dbSystemId(testDbSystem.id())
+     *             .channelId(testChannel.get("id"))
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(channelDisplayName)
      *             .isEnabled(channelIsEnabled)
      *             .state(channelState)
@@ -798,8 +798,8 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .channelId(testChannel.id())
-     *             .dbSystemId(testDbSystem.id())
+     *             .channelId(testChannel.get("id"))
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(channelDisplayName)
      *             .isEnabled(channelIsEnabled)
      *             .state(channelState)
@@ -845,8 +845,8 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .channelId(testChannel.id())
-     *             .dbSystemId(testDbSystem.id())
+     *             .channelId(testChannel.get("id"))
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(channelDisplayName)
      *             .isEnabled(channelIsEnabled)
      *             .state(channelState)
@@ -892,8 +892,8 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .channelId(testChannel.id())
-     *             .dbSystemId(testDbSystem.id())
+     *             .channelId(testChannel.get("id"))
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(channelDisplayName)
      *             .isEnabled(channelIsEnabled)
      *             .state(channelState)
@@ -939,8 +939,8 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .channelId(testChannel.id())
-     *             .dbSystemId(testDbSystem.id())
+     *             .channelId(testChannel.get("id"))
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(channelDisplayName)
      *             .isEnabled(channelIsEnabled)
      *             .state(channelState)
@@ -985,7 +985,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemMaintenanceEvents = MysqlFunctions.getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs.builder()
-     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .dbSystemId(testMysqlDbSystem.get("id"))
      *             .maintenanceAction(dbSystemMaintenanceEventMaintenanceAction)
      *             .maintenanceStatus(dbSystemMaintenanceEventMaintenanceStatus)
      *             .maintenanceType(dbSystemMaintenanceEventMaintenanceType)
@@ -1032,7 +1032,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemMaintenanceEvents = MysqlFunctions.getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs.builder()
-     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .dbSystemId(testMysqlDbSystem.get("id"))
      *             .maintenanceAction(dbSystemMaintenanceEventMaintenanceAction)
      *             .maintenanceStatus(dbSystemMaintenanceEventMaintenanceStatus)
      *             .maintenanceType(dbSystemMaintenanceEventMaintenanceType)
@@ -1079,7 +1079,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemMaintenanceEvents = MysqlFunctions.getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs.builder()
-     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .dbSystemId(testMysqlDbSystem.get("id"))
      *             .maintenanceAction(dbSystemMaintenanceEventMaintenanceAction)
      *             .maintenanceStatus(dbSystemMaintenanceEventMaintenanceStatus)
      *             .maintenanceType(dbSystemMaintenanceEventMaintenanceType)
@@ -1126,7 +1126,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemMaintenanceEvents = MysqlFunctions.getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs.builder()
-     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .dbSystemId(testMysqlDbSystem.get("id"))
      *             .maintenanceAction(dbSystemMaintenanceEventMaintenanceAction)
      *             .maintenanceStatus(dbSystemMaintenanceEventMaintenanceStatus)
      *             .maintenanceType(dbSystemMaintenanceEventMaintenanceType)
@@ -1173,7 +1173,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemMaintenanceEvents = MysqlFunctions.getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs.builder()
-     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .dbSystemId(testMysqlDbSystem.get("id"))
      *             .maintenanceAction(dbSystemMaintenanceEventMaintenanceAction)
      *             .maintenanceStatus(dbSystemMaintenanceEventMaintenanceStatus)
      *             .maintenanceType(dbSystemMaintenanceEventMaintenanceType)
@@ -1220,7 +1220,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1262,7 +1262,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1304,7 +1304,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1346,7 +1346,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1388,7 +1388,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1430,7 +1430,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -1472,7 +1472,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -1514,7 +1514,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -1556,7 +1556,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -1598,7 +1598,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -1641,9 +1641,9 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .backupId(testMysqlBackup.id())
+     *             .backupId(testMysqlBackup.get("id"))
      *             .creationType(mysqlBackupCreationType)
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(mysqlBackupDisplayName)
      *             .softDelete(mysqlBackupSoftDelete)
      *             .state(mysqlBackupState)
@@ -1689,9 +1689,9 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .backupId(testMysqlBackup.id())
+     *             .backupId(testMysqlBackup.get("id"))
      *             .creationType(mysqlBackupCreationType)
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(mysqlBackupDisplayName)
      *             .softDelete(mysqlBackupSoftDelete)
      *             .state(mysqlBackupState)
@@ -1737,9 +1737,9 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .backupId(testMysqlBackup.id())
+     *             .backupId(testMysqlBackup.get("id"))
      *             .creationType(mysqlBackupCreationType)
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(mysqlBackupDisplayName)
      *             .softDelete(mysqlBackupSoftDelete)
      *             .state(mysqlBackupState)
@@ -1785,9 +1785,9 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .backupId(testMysqlBackup.id())
+     *             .backupId(testMysqlBackup.get("id"))
      *             .creationType(mysqlBackupCreationType)
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(mysqlBackupDisplayName)
      *             .softDelete(mysqlBackupSoftDelete)
      *             .state(mysqlBackupState)
@@ -1833,9 +1833,9 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .backupId(testMysqlBackup.id())
+     *             .backupId(testMysqlBackup.get("id"))
      *             .creationType(mysqlBackupCreationType)
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(mysqlBackupDisplayName)
      *             .softDelete(mysqlBackupSoftDelete)
      *             .state(mysqlBackupState)
@@ -2360,7 +2360,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2402,7 +2402,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2444,7 +2444,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2486,7 +2486,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2528,7 +2528,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2574,7 +2574,7 @@ public final class MysqlFunctions {
      *             .compartmentId(compartmentId)
      *             .configurationId(mysqlConfigurationId)
      *             .databaseManagements(mysqlDbSystemDatabaseManagement)
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(mysqlDbSystemDisplayName)
      *             .isHeatWaveClusterAttached(mysqlDbSystemIsHeatWaveClusterAttached)
      *             .isUpToDate(mysqlDbSystemIsUpToDate)
@@ -2624,7 +2624,7 @@ public final class MysqlFunctions {
      *             .compartmentId(compartmentId)
      *             .configurationId(mysqlConfigurationId)
      *             .databaseManagements(mysqlDbSystemDatabaseManagement)
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(mysqlDbSystemDisplayName)
      *             .isHeatWaveClusterAttached(mysqlDbSystemIsHeatWaveClusterAttached)
      *             .isUpToDate(mysqlDbSystemIsUpToDate)
@@ -2674,7 +2674,7 @@ public final class MysqlFunctions {
      *             .compartmentId(compartmentId)
      *             .configurationId(mysqlConfigurationId)
      *             .databaseManagements(mysqlDbSystemDatabaseManagement)
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(mysqlDbSystemDisplayName)
      *             .isHeatWaveClusterAttached(mysqlDbSystemIsHeatWaveClusterAttached)
      *             .isUpToDate(mysqlDbSystemIsUpToDate)
@@ -2724,7 +2724,7 @@ public final class MysqlFunctions {
      *             .compartmentId(compartmentId)
      *             .configurationId(mysqlConfigurationId)
      *             .databaseManagements(mysqlDbSystemDatabaseManagement)
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(mysqlDbSystemDisplayName)
      *             .isHeatWaveClusterAttached(mysqlDbSystemIsHeatWaveClusterAttached)
      *             .isUpToDate(mysqlDbSystemIsUpToDate)
@@ -2774,7 +2774,7 @@ public final class MysqlFunctions {
      *             .compartmentId(compartmentId)
      *             .configurationId(mysqlConfigurationId)
      *             .databaseManagements(mysqlDbSystemDatabaseManagement)
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .displayName(mysqlDbSystemDisplayName)
      *             .isHeatWaveClusterAttached(mysqlDbSystemIsHeatWaveClusterAttached)
      *             .isUpToDate(mysqlDbSystemIsUpToDate)
@@ -3040,7 +3040,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
-     *             .replicaId(testReplicaOciMysqlReplica.id())
+     *             .replicaId(testReplicaOciMysqlReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3082,7 +3082,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
-     *             .replicaId(testReplicaOciMysqlReplica.id())
+     *             .replicaId(testReplicaOciMysqlReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3124,7 +3124,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
-     *             .replicaId(testReplicaOciMysqlReplica.id())
+     *             .replicaId(testReplicaOciMysqlReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3166,7 +3166,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
-     *             .replicaId(testReplicaOciMysqlReplica.id())
+     *             .replicaId(testReplicaOciMysqlReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3208,7 +3208,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
-     *             .replicaId(testReplicaOciMysqlReplica.id())
+     *             .replicaId(testReplicaOciMysqlReplica.get("id"))
      *             .build());
      * 
      *     }
@@ -3251,11 +3251,11 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .configurationId(testMysqlConfiguration.id())
-     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .configurationId(testMysqlConfiguration.get("id"))
+     *             .dbSystemId(testMysqlDbSystem.get("id"))
      *             .displayName(replicaDisplayName)
      *             .isUpToDate(replicaIsUpToDate)
-     *             .replicaId(testReplica.id())
+     *             .replicaId(testReplica.get("id"))
      *             .state(replicaState)
      *             .build());
      * 
@@ -3299,11 +3299,11 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .configurationId(testMysqlConfiguration.id())
-     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .configurationId(testMysqlConfiguration.get("id"))
+     *             .dbSystemId(testMysqlDbSystem.get("id"))
      *             .displayName(replicaDisplayName)
      *             .isUpToDate(replicaIsUpToDate)
-     *             .replicaId(testReplica.id())
+     *             .replicaId(testReplica.get("id"))
      *             .state(replicaState)
      *             .build());
      * 
@@ -3347,11 +3347,11 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .configurationId(testMysqlConfiguration.id())
-     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .configurationId(testMysqlConfiguration.get("id"))
+     *             .dbSystemId(testMysqlDbSystem.get("id"))
      *             .displayName(replicaDisplayName)
      *             .isUpToDate(replicaIsUpToDate)
-     *             .replicaId(testReplica.id())
+     *             .replicaId(testReplica.get("id"))
      *             .state(replicaState)
      *             .build());
      * 
@@ -3395,11 +3395,11 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .configurationId(testMysqlConfiguration.id())
-     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .configurationId(testMysqlConfiguration.get("id"))
+     *             .dbSystemId(testMysqlDbSystem.get("id"))
      *             .displayName(replicaDisplayName)
      *             .isUpToDate(replicaIsUpToDate)
-     *             .replicaId(testReplica.id())
+     *             .replicaId(testReplica.get("id"))
      *             .state(replicaState)
      *             .build());
      * 
@@ -3443,11 +3443,11 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .configurationId(testMysqlConfiguration.id())
-     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .configurationId(testMysqlConfiguration.get("id"))
+     *             .dbSystemId(testMysqlDbSystem.get("id"))
      *             .displayName(replicaDisplayName)
      *             .isUpToDate(replicaIsUpToDate)
-     *             .replicaId(testReplica.id())
+     *             .replicaId(testReplica.get("id"))
      *             .state(replicaState)
      *             .build());
      * 

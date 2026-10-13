@@ -48,12 +48,12 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testModelGroupVersionHistory = new ModelGroupVersionHistory("testModelGroupVersionHistory", ModelGroupVersionHistoryArgs.builder()
  *             .compartmentId(compartmentId)
- *             .projectId(testProject.id())
+ *             .projectId(testProject.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(modelGroupVersionHistoryDescription)
  *             .displayName(modelGroupVersionHistoryDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .latestModelGroupId(testModelGroup.id())
+ *             .latestModelGroupId(testModelGroup.get("id"))
  *             .build());
  * 
  *     }

@@ -187,9 +187,9 @@ def get_discovery_analytics(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_discovery_analytics = oci.datasafe.get_discovery_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree,
         group_by=discovery_analytic_group_by,
-        is_common=discovery_analytic_is_common == "true",
+        is_common=discovery_analytic_is_common,
         sensitive_data_model_id=test_sensitive_data_model["id"],
         sensitive_type_group_id=test_sensitive_type_group["id"],
         sensitive_type_id=test_sensitive_type["id"],
@@ -260,9 +260,9 @@ def get_discovery_analytics_output(compartment_id: pulumi.Input[Optional[_builti
     import pulumi_oci as oci
 
     test_discovery_analytics = oci.datasafe.get_discovery_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree,
         group_by=discovery_analytic_group_by,
-        is_common=discovery_analytic_is_common == "true",
+        is_common=discovery_analytic_is_common,
         sensitive_data_model_id=test_sensitive_data_model["id"],
         sensitive_type_group_id=test_sensitive_type_group["id"],
         sensitive_type_id=test_sensitive_type["id"],

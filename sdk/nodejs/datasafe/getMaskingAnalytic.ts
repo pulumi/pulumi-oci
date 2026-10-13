@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testMaskingAnalytic = oci.datasafe.getMaskingAnalytic({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree,
  *     groupBy: maskingAnalyticGroupBy,
  *     maskingPolicyId: testMaskingPolicy.id,
  *     targetId: testTarget.id,
@@ -101,7 +101,7 @@ export interface GetMaskingAnalyticResult {
  *
  * const testMaskingAnalytic = oci.datasafe.getMaskingAnalytic({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree,
  *     groupBy: maskingAnalyticGroupBy,
  *     maskingPolicyId: testMaskingPolicy.id,
  *     targetId: testTarget.id,

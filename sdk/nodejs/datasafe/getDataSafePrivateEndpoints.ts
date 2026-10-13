@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testDataSafePrivateEndpoints = oci.datasafe.getDataSafePrivateEndpoints({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSafePrivateEndpointAccessLevel,
- *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree,
  *     displayName: dataSafePrivateEndpointDisplayName,
  *     state: dataSafePrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -117,7 +117,7 @@ export interface GetDataSafePrivateEndpointsResult {
  * const testDataSafePrivateEndpoints = oci.datasafe.getDataSafePrivateEndpoints({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSafePrivateEndpointAccessLevel,
- *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree,
  *     displayName: dataSafePrivateEndpointDisplayName,
  *     state: dataSafePrivateEndpointState,
  *     vcnId: testVcn.id,

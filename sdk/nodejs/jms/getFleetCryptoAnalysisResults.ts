@@ -20,12 +20,12 @@ import * as utilities from "../utilities";
  * const testFleetCryptoAnalysisResults = oci.jms.getFleetCryptoAnalysisResults({
  *     fleetId: testFleet.id,
  *     aggregationMode: fleetCryptoAnalysisResultAggregationMode,
- *     findingCount: Number(fleetCryptoAnalysisResultFindingCount),
- *     findingCountGreaterThan: Number(fleetCryptoAnalysisResultFindingCountGreaterThan),
+ *     findingCount: fleetCryptoAnalysisResultFindingCount,
+ *     findingCountGreaterThan: fleetCryptoAnalysisResultFindingCountGreaterThan,
  *     hostName: fleetCryptoAnalysisResultHostName,
  *     managedInstanceId: fleetCryptoAnalysisResultManagedInstanceOcid,
- *     nonCompliantFindingCount: Number(fleetCryptoAnalysisResultNonCompliantFindingCount),
- *     nonCompliantFindingCountGreaterThan: Number(fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan),
+ *     nonCompliantFindingCount: fleetCryptoAnalysisResultNonCompliantFindingCount,
+ *     nonCompliantFindingCountGreaterThan: fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan,
  *     timeEnd: fleetCryptoAnalysisResultTimeEnd,
  *     timeStart: fleetCryptoAnalysisResultTimeStart,
  * });
@@ -151,12 +151,12 @@ export interface GetFleetCryptoAnalysisResultsResult {
  * const testFleetCryptoAnalysisResults = oci.jms.getFleetCryptoAnalysisResults({
  *     fleetId: testFleet.id,
  *     aggregationMode: fleetCryptoAnalysisResultAggregationMode,
- *     findingCount: Number(fleetCryptoAnalysisResultFindingCount),
- *     findingCountGreaterThan: Number(fleetCryptoAnalysisResultFindingCountGreaterThan),
+ *     findingCount: fleetCryptoAnalysisResultFindingCount,
+ *     findingCountGreaterThan: fleetCryptoAnalysisResultFindingCountGreaterThan,
  *     hostName: fleetCryptoAnalysisResultHostName,
  *     managedInstanceId: fleetCryptoAnalysisResultManagedInstanceOcid,
- *     nonCompliantFindingCount: Number(fleetCryptoAnalysisResultNonCompliantFindingCount),
- *     nonCompliantFindingCountGreaterThan: Number(fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan),
+ *     nonCompliantFindingCount: fleetCryptoAnalysisResultNonCompliantFindingCount,
+ *     nonCompliantFindingCountGreaterThan: fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan,
  *     timeEnd: fleetCryptoAnalysisResultTimeEnd,
  *     timeStart: fleetCryptoAnalysisResultTimeStart,
  * });

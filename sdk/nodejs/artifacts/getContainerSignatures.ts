@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testContainerImageSignatures = oci.artifacts.getContainerSignatures({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree,
  *     displayName: containerImageSignatureDisplayName,
  *     imageDigest: containerImageSignatureImageDigest,
  *     imageId: testImage.id,
@@ -150,7 +150,7 @@ export interface GetContainerSignaturesResult {
  *
  * const testContainerImageSignatures = oci.artifacts.getContainerSignatures({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree,
  *     displayName: containerImageSignatureDisplayName,
  *     imageDigest: containerImageSignatureImageDigest,
  *     imageId: testImage.id,

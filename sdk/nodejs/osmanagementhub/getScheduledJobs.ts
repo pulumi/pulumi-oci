@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testScheduledJobs = oci.osmanagementhub.getScheduledJobs({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree,
  *     displayName: scheduledJobDisplayName,
  *     displayNameContains: scheduledJobDisplayNameContains,
  *     dynamicSetId: testDynamicSet.id,
  *     id: scheduledJobId,
- *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux === "true",
- *     isRestricted: scheduledJobIsRestricted === "true",
+ *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux,
+ *     isRestricted: scheduledJobIsRestricted,
  *     lifecycleStageId: testLifecycleStage.id,
  *     locations: scheduledJobLocation,
  *     locationNotEqualTos: scheduledJobLocationNotEqualTo,
@@ -216,13 +216,13 @@ export interface GetScheduledJobsResult {
  *
  * const testScheduledJobs = oci.osmanagementhub.getScheduledJobs({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree,
  *     displayName: scheduledJobDisplayName,
  *     displayNameContains: scheduledJobDisplayNameContains,
  *     dynamicSetId: testDynamicSet.id,
  *     id: scheduledJobId,
- *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux === "true",
- *     isRestricted: scheduledJobIsRestricted === "true",
+ *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux,
+ *     isRestricted: scheduledJobIsRestricted,
  *     lifecycleStageId: testLifecycleStage.id,
  *     locations: scheduledJobLocation,
  *     locationNotEqualTos: scheduledJobLocationNotEqualTo,

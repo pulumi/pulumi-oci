@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     dedicatedVmHostId: testDedicatedVmHost.id,
  *     availabilityDomain: dedicatedVmHostsInstanceAvailabilityDomain,
- *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled === "true",
+ *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled,
  * });
  * ```
  */
@@ -101,7 +101,7 @@ export interface GetDedicatedVmHostInstancesResult {
  *     compartmentId: compartmentId,
  *     dedicatedVmHostId: testDedicatedVmHost.id,
  *     availabilityDomain: dedicatedVmHostsInstanceAvailabilityDomain,
- *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled === "true",
+ *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled,
  * });
  * ```
  */

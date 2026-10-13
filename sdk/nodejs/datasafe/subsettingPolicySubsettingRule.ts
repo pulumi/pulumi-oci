@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *         ruleType: subsettingPolicySubsettingRuleSubsetRuleEntryRuleType,
  *         condition: subsettingPolicySubsettingRuleSubsetRuleEntryCondition,
  *         partitionsLists: subsettingPolicySubsettingRuleSubsetRuleEntryPartitionsList,
- *         percent: Number(subsettingPolicySubsettingRuleSubsetRuleEntryPercent),
+ *         percent: subsettingPolicySubsettingRuleSubsetRuleEntryPercent,
  *         subPartitionsLists: subsettingPolicySubsettingRuleSubsetRuleEntrySubPartitionsList,
  *     },
  *     subsettingPolicyId: testSubsettingPolicy.id,

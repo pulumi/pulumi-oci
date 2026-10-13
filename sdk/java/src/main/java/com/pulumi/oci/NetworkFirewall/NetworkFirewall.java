@@ -51,8 +51,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewall = new NetworkFirewall("testNetworkFirewall", NetworkFirewallArgs.builder()
  *             .compartmentId(compartmentId)
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
- *             .subnetId(testSubnet.id())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+ *             .subnetId(testSubnet.get("id"))
  *             .availabilityDomain(networkFirewallAvailabilityDomain)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(networkFirewallDisplayName)

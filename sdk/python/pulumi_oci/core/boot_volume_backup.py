@@ -659,12 +659,12 @@ class BootVolumeBackup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_indefinite_retention_enabled=boot_volume_backup_is_indefinite_retention_enabled == "true",
-            is_prevent_deletion_enabled=boot_volume_backup_is_prevent_deletion_enabled == "true",
-            is_retention_lock_enabled=boot_volume_backup_is_retention_lock_enabled == "true",
+            is_indefinite_retention_enabled=boot_volume_backup_is_indefinite_retention_enabled,
+            is_prevent_deletion_enabled=boot_volume_backup_is_prevent_deletion_enabled,
+            is_retention_lock_enabled=boot_volume_backup_is_retention_lock_enabled,
             kms_key_id=test_key["id"],
             retention_period={
-                "retention_time_amount": int(boot_volume_backup_retention_period_retention_time_amount),
+                "retention_time_amount": boot_volume_backup_retention_period_retention_time_amount,
                 "retention_time_unit": boot_volume_backup_retention_period_retention_time_unit,
             },
             type=boot_volume_backup_type)
@@ -728,12 +728,12 @@ class BootVolumeBackup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_indefinite_retention_enabled=boot_volume_backup_is_indefinite_retention_enabled == "true",
-            is_prevent_deletion_enabled=boot_volume_backup_is_prevent_deletion_enabled == "true",
-            is_retention_lock_enabled=boot_volume_backup_is_retention_lock_enabled == "true",
+            is_indefinite_retention_enabled=boot_volume_backup_is_indefinite_retention_enabled,
+            is_prevent_deletion_enabled=boot_volume_backup_is_prevent_deletion_enabled,
+            is_retention_lock_enabled=boot_volume_backup_is_retention_lock_enabled,
             kms_key_id=test_key["id"],
             retention_period={
-                "retention_time_amount": int(boot_volume_backup_retention_period_retention_time_amount),
+                "retention_time_amount": boot_volume_backup_retention_period_retention_time_amount,
                 "retention_time_unit": boot_volume_backup_retention_period_retention_time_unit,
             },
             type=boot_volume_backup_type)

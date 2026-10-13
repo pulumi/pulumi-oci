@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMaintenanceWindowsRetryFailedOperation = new MaintenanceWindowsRetryFailedOperation("testMaintenanceWindowsRetryFailedOperation", MaintenanceWindowsRetryFailedOperationArgs.builder()
- *             .maintenanceWindowId(testMaintenanceWindow.id())
+ *             .maintenanceWindowId(testMaintenanceWindow.get("id"))
  *             .build());
  * 
  *     }

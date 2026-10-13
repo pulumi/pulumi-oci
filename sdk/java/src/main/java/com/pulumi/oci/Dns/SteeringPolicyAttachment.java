@@ -55,8 +55,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSteeringPolicyAttachment = new SteeringPolicyAttachment("testSteeringPolicyAttachment", SteeringPolicyAttachmentArgs.builder()
  *             .domainName(steeringPolicyAttachmentDomainName)
- *             .steeringPolicyId(testSteeringPolicy.id())
- *             .zoneId(testZone.id())
+ *             .steeringPolicyId(testSteeringPolicy.get("id"))
+ *             .zoneId(testZone.get("id"))
  *             .displayName(steeringPolicyAttachmentDisplayName)
  *             .build());
  * 

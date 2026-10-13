@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnableAiFeature: aiDataPlatformIsEnableAiFeature === "true",
+ *     isEnableAiFeature: aiDataPlatformIsEnableAiFeature,
  *     systemTags: aiDataPlatformSystemTags,
  *     vectorDbAdminCred: aiDataPlatformVectorDbAdminCred,
  *     vectorDbAdminSecretId: testSecret.id,

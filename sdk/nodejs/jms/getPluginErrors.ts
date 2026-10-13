@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testPluginErrors = oci.jms.getPluginErrors({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: pluginErrorCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: pluginErrorCompartmentIdInSubtree,
  *     managedInstanceId: testManagedInstance.id,
  *     timeFirstSeenGreaterThanOrEqualTo: pluginErrorTimeFirstSeenGreaterThanOrEqualTo,
  *     timeFirstSeenLessThanOrEqualTo: pluginErrorTimeFirstSeenLessThanOrEqualTo,
@@ -118,7 +118,7 @@ export interface GetPluginErrorsResult {
  *
  * const testPluginErrors = oci.jms.getPluginErrors({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: pluginErrorCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: pluginErrorCompartmentIdInSubtree,
  *     managedInstanceId: testManagedInstance.id,
  *     timeFirstSeenGreaterThanOrEqualTo: pluginErrorTimeFirstSeenGreaterThanOrEqualTo,
  *     timeFirstSeenLessThanOrEqualTo: pluginErrorTimeFirstSeenLessThanOrEqualTo,

@@ -32,16 +32,16 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := generativeai.GetModelDiscoveries(ctx, &generativeai.GetModelDiscoveriesArgs{
 //				CompartmentId:      compartmentId,
-//				ApiCapabilities:    pulumi.ToArray(modelDiscoveryApiCapability),
-//				Capabilities:       pulumi.ToArray(modelDiscoveryCapability),
+//				ApiCapabilities:    modelDiscoveryApiCapability,
+//				Capabilities:       modelDiscoveryCapability,
 //				IsDedicatedRetired: pulumi.BoolRef(modelDiscoveryIsDedicatedRetired),
 //				IsDeprecated:       pulumi.BoolRef(modelDiscoveryIsDeprecated),
 //				IsOnDemandRetired:  pulumi.BoolRef(modelDiscoveryIsOnDemandRetired),
-//				ModelAccesses:      pulumi.ToArray(modelDiscoveryModelAccess),
+//				ModelAccesses:      modelDiscoveryModelAccess,
 //				ModelId:            pulumi.StringRef(testModel.Id),
-//				Realms:             pulumi.ToArray(modelDiscoveryRealm),
-//				Regions:            pulumi.ToArray(modelDiscoveryRegion),
-//				ServingModes:       pulumi.ToArray(modelDiscoveryServingMode),
+//				Realms:             modelDiscoveryRealm,
+//				Regions:            modelDiscoveryRegion,
+//				ServingModes:       modelDiscoveryServingMode,
 //			}, nil)
 //			if err != nil {
 //				return err

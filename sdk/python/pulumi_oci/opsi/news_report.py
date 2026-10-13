@@ -622,7 +622,7 @@ class NewsReport(pulumi.CustomResource):
             name=news_report_name,
             news_frequency=news_report_news_frequency,
             ons_topic_id=test_ons_topic["id"],
-            are_child_compartments_included=news_report_are_child_compartments_included == "true",
+            are_child_compartments_included=news_report_are_child_compartments_included,
             day_of_week=news_report_day_of_week,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -701,7 +701,7 @@ class NewsReport(pulumi.CustomResource):
             name=news_report_name,
             news_frequency=news_report_news_frequency,
             ons_topic_id=test_ons_topic["id"],
-            are_child_compartments_included=news_report_are_child_compartments_included == "true",
+            are_child_compartments_included=news_report_are_child_compartments_included,
             day_of_week=news_report_day_of_week,
             defined_tags={
                 "foo-namespace.bar-key": "value",

@@ -26,11 +26,11 @@ import * as utilities from "../utilities";
  *     clusterAdminPassword: bdsInstancePatchActionClusterAdminPassword,
  *     patchingConfig: {
  *         patchingConfigStrategy: bdsInstancePatchActionPatchingConfigPatchingConfigStrategy,
- *         batchSize: Number(bdsInstancePatchActionPatchingConfigBatchSize),
- *         toleranceThresholdPerBatch: Number(bdsInstancePatchActionPatchingConfigToleranceThresholdPerBatch),
- *         toleranceThresholdPerDomain: Number(bdsInstancePatchActionPatchingConfigToleranceThresholdPerDomain),
- *         waitTimeBetweenBatchInSeconds: Number(bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds),
- *         waitTimeBetweenDomainInSeconds: Number(bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds),
+ *         batchSize: bdsInstancePatchActionPatchingConfigBatchSize,
+ *         toleranceThresholdPerBatch: bdsInstancePatchActionPatchingConfigToleranceThresholdPerBatch,
+ *         toleranceThresholdPerDomain: bdsInstancePatchActionPatchingConfigToleranceThresholdPerDomain,
+ *         waitTimeBetweenBatchInSeconds: bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds,
+ *         waitTimeBetweenDomainInSeconds: bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds,
  *     },
  *     secretId: testSecret.id,
  * });

@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBackup = new Backup("testBackup", BackupArgs.builder()
- *             .databaseId(testDatabase.id())
+ *             .databaseId(testDatabase.get("id"))
  *             .displayName(backupDisplayName)
  *             .build());
  * 

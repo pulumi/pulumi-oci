@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testMaskingPolicies = oci.datasafe.getMaskingPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: maskingPolicyAccessLevel,
- *     compartmentIdInSubtree: maskingPolicyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: maskingPolicyCompartmentIdInSubtree,
  *     displayName: maskingPolicyDisplayName,
  *     maskingPolicyId: testMaskingPolicy.id,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
@@ -152,7 +152,7 @@ export interface GetMaskingPoliciesResult {
  * const testMaskingPolicies = oci.datasafe.getMaskingPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: maskingPolicyAccessLevel,
- *     compartmentIdInSubtree: maskingPolicyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: maskingPolicyCompartmentIdInSubtree,
  *     displayName: maskingPolicyDisplayName,
  *     maskingPolicyId: testMaskingPolicy.id,
  *     sensitiveDataModelId: testSensitiveDataModel.id,

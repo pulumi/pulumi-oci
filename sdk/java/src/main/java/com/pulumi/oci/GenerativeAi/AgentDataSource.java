@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .shouldEnableMultiModality(dataSourceDataSourceConfigShouldEnableMultiModality)
  *                 .build())
- *             .knowledgeBaseId(testKnowledgeBase.id())
+ *             .knowledgeBaseId(testKnowledgeBase.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(dataSourceDescription)
  *             .displayName(dataSourceDisplayName)

@@ -228,7 +228,7 @@ def get_sql_firewall_policies(access_level: Optional[_builtins.str] = None,
 
     test_sql_firewall_policies = oci.datasafe.get_sql_firewall_policies(compartment_id=compartment_id,
         access_level=sql_firewall_policy_access_level,
-        compartment_id_in_subtree=sql_firewall_policy_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sql_firewall_policy_compartment_id_in_subtree,
         db_user_name=test_user["name"],
         display_name=sql_firewall_policy_display_name,
         security_policy_id=test_security_policy["id"],
@@ -326,7 +326,7 @@ def get_sql_firewall_policies_output(access_level: pulumi.Input[Optional[Optiona
 
     test_sql_firewall_policies = oci.datasafe.get_sql_firewall_policies(compartment_id=compartment_id,
         access_level=sql_firewall_policy_access_level,
-        compartment_id_in_subtree=sql_firewall_policy_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sql_firewall_policy_compartment_id_in_subtree,
         db_user_name=test_user["name"],
         display_name=sql_firewall_policy_display_name,
         security_policy_id=test_security_policy["id"],

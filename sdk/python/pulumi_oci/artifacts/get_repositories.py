@@ -141,7 +141,7 @@ def get_repositories(compartment_id: Optional[_builtins.str] = None,
     test_repositories = oci.artifacts.get_repositories(compartment_id=compartment_id,
         display_name=repository_display_name,
         id=repository_id,
-        is_immutable=repository_is_immutable == "true",
+        is_immutable=repository_is_immutable,
         state=repository_state)
     ```
 
@@ -191,7 +191,7 @@ def get_repositories_output(compartment_id: pulumi.Input[Optional[_builtins.str]
     test_repositories = oci.artifacts.get_repositories(compartment_id=compartment_id,
         display_name=repository_display_name,
         id=repository_id,
-        is_immutable=repository_is_immutable == "true",
+        is_immutable=repository_is_immutable,
         state=repository_state)
     ```
 

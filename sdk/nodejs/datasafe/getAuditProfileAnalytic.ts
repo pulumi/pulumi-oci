@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  * const testAuditProfileAnalytic = oci.datasafe.getAuditProfileAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: auditProfileAnalyticAccessLevel,
- *     compartmentIdInSubtree: auditProfileAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: auditProfileAnalyticCompartmentIdInSubtree,
  *     groupBies: auditProfileAnalyticGroupBy,
  * });
  * ```
@@ -112,7 +112,7 @@ export interface GetAuditProfileAnalyticResult {
  * const testAuditProfileAnalytic = oci.datasafe.getAuditProfileAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: auditProfileAnalyticAccessLevel,
- *     compartmentIdInSubtree: auditProfileAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: auditProfileAnalyticCompartmentIdInSubtree,
  *     groupBies: auditProfileAnalyticGroupBy,
  * });
  * ```

@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     attributes: "",
  *     authorization: groupAuthorization,
  *     externalId: "externalId",
- *     forceDelete: groupForceDelete === "true",
+ *     forceDelete: groupForceDelete,
  *     id: groupId,
  *     members: [{
  *         type: groupMembersType,
@@ -66,10 +66,10 @@ import * as utilities from "../utilities";
  *         }],
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionposixGroup: {
- *         gidNumber: Number(groupUrnietfparamsscimschemasoracleidcsextensionposixGroupGidNumber),
+ *         gidNumber: groupUrnietfparamsscimschemasoracleidcsextensionposixGroupGidNumber,
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionrequestableGroup: {
- *         requestable: groupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupRequestable === "true",
+ *         requestable: groupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupRequestable,
  *     },
  * });
  * ```

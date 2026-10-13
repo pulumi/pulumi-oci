@@ -141,7 +141,7 @@ def get_alerts(access_level: Optional[_builtins.str] = None,
 
     test_alerts = oci.datasafe.get_alerts(compartment_id=compartment_id,
         access_level=alert_access_level,
-        compartment_id_in_subtree=alert_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=alert_compartment_id_in_subtree,
         fields=alert_field,
         id=alert_id,
         scim_query=alert_scim_query)
@@ -202,7 +202,7 @@ def get_alerts_output(access_level: pulumi.Input[Optional[Optional[_builtins.str
 
     test_alerts = oci.datasafe.get_alerts(compartment_id=compartment_id,
         access_level=alert_access_level,
-        compartment_id_in_subtree=alert_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=alert_compartment_id_in_subtree,
         fields=alert_field,
         id=alert_id,
         scim_query=alert_scim_query)

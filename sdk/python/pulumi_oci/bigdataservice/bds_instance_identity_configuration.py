@@ -514,7 +514,7 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
             identity_domain_id=test_domain["id"],
             cluster_admin_password=bds_instance_identity_configuration_cluster_admin_password,
             iam_user_sync_configuration_details={
-                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required == "true",
+                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required,
             },
             secret_id=test_secret["id"],
             upst_configuration_details={
@@ -576,7 +576,7 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
             identity_domain_id=test_domain["id"],
             cluster_admin_password=bds_instance_identity_configuration_cluster_admin_password,
             iam_user_sync_configuration_details={
-                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required == "true",
+                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required,
             },
             secret_id=test_secret["id"],
             upst_configuration_details={

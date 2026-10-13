@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: unifiedAgentConfigurationDisplayName,
  *     groupId: testGroup.id,
- *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree,
  *     logId: testLog.id,
  *     state: unifiedAgentConfigurationState,
  * });
@@ -115,7 +115,7 @@ export interface GetUnifiedAgentConfigurationsResult {
  *     compartmentId: compartmentId,
  *     displayName: unifiedAgentConfigurationDisplayName,
  *     groupId: testGroup.id,
- *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree,
  *     logId: testLog.id,
  *     state: unifiedAgentConfigurationState,
  * });

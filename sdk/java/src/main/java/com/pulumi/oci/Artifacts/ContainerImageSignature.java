@@ -48,9 +48,9 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testContainerImageSignature = new ContainerImageSignature("testContainerImageSignature", ContainerImageSignatureArgs.builder()
  *             .compartmentId(compartmentId)
- *             .imageId(testImage.id())
- *             .kmsKeyId(testKey.id())
- *             .kmsKeyVersionId(testKeyVersion.id())
+ *             .imageId(testImage.get("id"))
+ *             .kmsKeyId(testKey.get("id"))
+ *             .kmsKeyVersionId(testKeyVersion.get("id"))
  *             .message(containerImageSignatureMessage)
  *             .signature(containerImageSignatureSignature)
  *             .signingAlgorithm(containerImageSignatureSigningAlgorithm)

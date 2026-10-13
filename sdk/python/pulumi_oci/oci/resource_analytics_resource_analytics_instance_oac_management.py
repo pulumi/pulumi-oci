@@ -204,11 +204,11 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
         test_resource_analytics_instance_oac_management = oci.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagement("test_resource_analytics_instance_oac_management",
             attachment_type=resource_analytics_instance_oac_management_attachment_type,
             resource_analytics_instance_id=test_resource_analytics_instance["id"],
-            enable_oac=enable_oac == "true",
+            enable_oac=enable_oac,
             attachment_details={
                 "idcs_domain_id": test_domain["id"],
                 "capacity_type": resource_analytics_instance_oac_management_attachment_details_capacity_type,
-                "capacity_value": int(resource_analytics_instance_oac_management_attachment_details_capacity_value),
+                "capacity_value": resource_analytics_instance_oac_management_attachment_details_capacity_value,
                 "license_model": resource_analytics_instance_oac_management_attachment_details_license_model,
                 "network_details": {
                     "subnet_id": test_subnet["id"],
@@ -246,11 +246,11 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
         test_resource_analytics_instance_oac_management = oci.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagement("test_resource_analytics_instance_oac_management",
             attachment_type=resource_analytics_instance_oac_management_attachment_type,
             resource_analytics_instance_id=test_resource_analytics_instance["id"],
-            enable_oac=enable_oac == "true",
+            enable_oac=enable_oac,
             attachment_details={
                 "idcs_domain_id": test_domain["id"],
                 "capacity_type": resource_analytics_instance_oac_management_attachment_details_capacity_type,
-                "capacity_value": int(resource_analytics_instance_oac_management_attachment_details_capacity_value),
+                "capacity_value": resource_analytics_instance_oac_management_attachment_details_capacity_value,
                 "license_model": resource_analytics_instance_oac_management_attachment_details_license_model,
                 "network_details": {
                     "subnet_id": test_subnet["id"],

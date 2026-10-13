@@ -73,7 +73,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) }{{@code
  *         var testSetting = new DomainsSetting("testSetting", DomainsSettingArgs.builder()
  *             .csrAccess(settingCsrAccess)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:Settings")
  *             .settingId("Settings")
  *             .accountAlwaysTrustScope(settingAccountAlwaysTrustScope)

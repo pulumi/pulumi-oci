@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *                 .arePrechecksEnabled(drPlanExecutionExecutionOptionsArePrechecksEnabled)
  *                 .areWarningsIgnored(drPlanExecutionExecutionOptionsAreWarningsIgnored)
  *                 .build())
- *             .planId(testPlan.id())
+ *             .planId(testPlan.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(drPlanExecutionDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))

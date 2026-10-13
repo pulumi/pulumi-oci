@@ -48,8 +48,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isRedoLoggingEnabled: subsettingPolicyIsRedoLoggingEnabled === "true",
- *     isRefreshStatsEnabled: subsettingPolicyIsRefreshStatsEnabled === "true",
+ *     isRedoLoggingEnabled: subsettingPolicyIsRedoLoggingEnabled,
+ *     isRefreshStatsEnabled: subsettingPolicyIsRefreshStatsEnabled,
  *     maskingPolicyId: testMaskingPolicy.id,
  *     parallelDegree: subsettingPolicyParallelDegree,
  *     postSubsettingScript: subsettingPolicyPostSubsettingScript,

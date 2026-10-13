@@ -54,14 +54,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRepositorySetting = new RepositorySetting("testRepositorySetting", RepositorySettingArgs.builder()
- *             .repositoryId(testRepository.id())
+ *             .repositoryId(testRepository.get("id"))
  *             .approvalRules(RepositorySettingApprovalRulesArgs.builder()
  *                 .items(RepositorySettingApprovalRulesItemArgs.builder()
  *                     .minApprovalsCount(repositorySettingApprovalRulesItemsMinApprovalsCount)
  *                     .name(repositorySettingApprovalRulesItemsName)
  *                     .destinationBranch(repositorySettingApprovalRulesItemsDestinationBranch)
  *                     .reviewers(RepositorySettingApprovalRulesItemReviewerArgs.builder()
- *                         .principalId(testPrincipal.id())
+ *                         .principalId(testPrincipal.get("id"))
  *                         .build())
  *                     .build())
  *                 .build())

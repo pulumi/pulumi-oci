@@ -43,8 +43,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRouteTableAttachment = new RouteTableAttachment("testRouteTableAttachment", RouteTableAttachmentArgs.builder()
- *             .subnetId(testSubnet.id())
- *             .routeTableId(testRouteTable.id())
+ *             .subnetId(testSubnet.get("id"))
+ *             .routeTableId(testRouteTable.get("id"))
  *             .build());
  * 
  *     }

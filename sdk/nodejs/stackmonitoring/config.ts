@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  * const testConfig = new oci.stackmonitoring.Config("test_config", {
  *     compartmentId: compartmentId,
  *     configType: configConfigType,
- *     isEnabled: configIsEnabled === "true",
+ *     isEnabled: configIsEnabled,
  *     resourceType: configResourceType,
  *     license: configLicense,
  *     definedTags: {

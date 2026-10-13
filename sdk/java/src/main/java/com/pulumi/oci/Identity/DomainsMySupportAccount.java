@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMySupportAccount = new DomainsMySupportAccount("testMySupportAccount", DomainsMySupportAccountArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:supportAccount")
  *             .token(mySupportAccountToken)
  *             .authorization(mySupportAccountAuthorization)

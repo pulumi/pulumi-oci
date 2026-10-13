@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *             .definedTags(streamDefinedTags)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .retentionInHours(streamRetentionInHours)
- *             .streamPoolId(testStreamPool.id())
+ *             .streamPoolId(testStreamPool.get("id"))
  *             .build());
  * 
  *     }

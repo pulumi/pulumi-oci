@@ -50,8 +50,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testTenancyAttachment = new ResourceAnalyticsTenancyAttachment("testTenancyAttachment", ResourceAnalyticsTenancyAttachmentArgs.builder()
- *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
- *             .tenancyId(testTenancy.id())
+ *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
+ *             .tenancyId(testTenancy.get("id"))
  *             .description(tenancyAttachmentDescription)
  *             .build());
  * 

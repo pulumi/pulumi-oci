@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAuthToken = new DomainsAuthToken("testAuthToken", DomainsAuthTokenArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:authToken")
  *             .attributeSets()
  *             .attributes("")
@@ -77,8 +77,8 @@ import javax.annotation.Nullable;
  *                 .allowSelfChange(authTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange)
  *                 .build())
  *             .user(DomainsAuthTokenUserArgs.builder()
- *                 .ocid(testUser.ocid())
- *                 .value(testUser.id())
+ *                 .ocid(testUser.get("ocid"))
+ *                 .value(testUser.get("id"))
  *                 .build())
  *             .build());
  * 

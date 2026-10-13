@@ -47,8 +47,8 @@ public final class OsubBillingScheduleFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
-     *             .subscribedServiceId(testService.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .subscribedServiceId(testService.get("id"))
      *             .xOneOriginRegion(billingScheduleXOneOriginRegion)
      *             .build());
      * 
@@ -93,8 +93,8 @@ public final class OsubBillingScheduleFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
-     *             .subscribedServiceId(testService.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .subscribedServiceId(testService.get("id"))
      *             .xOneOriginRegion(billingScheduleXOneOriginRegion)
      *             .build());
      * 
@@ -139,8 +139,8 @@ public final class OsubBillingScheduleFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
-     *             .subscribedServiceId(testService.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .subscribedServiceId(testService.get("id"))
      *             .xOneOriginRegion(billingScheduleXOneOriginRegion)
      *             .build());
      * 
@@ -185,8 +185,8 @@ public final class OsubBillingScheduleFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
-     *             .subscribedServiceId(testService.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .subscribedServiceId(testService.get("id"))
      *             .xOneOriginRegion(billingScheduleXOneOriginRegion)
      *             .build());
      * 
@@ -231,8 +231,8 @@ public final class OsubBillingScheduleFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
-     *             .subscribedServiceId(testService.id())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .subscribedServiceId(testService.get("id"))
      *             .xOneOriginRegion(billingScheduleXOneOriginRegion)
      *             .build());
      * 

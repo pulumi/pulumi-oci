@@ -205,7 +205,7 @@ def get_compute_hosts(availability_domain: Optional[_builtins.str] = None,
         availability_domain=compute_host_availability_domain,
         compute_host_group_id=test_compute_host_group["id"],
         compute_host_health=compute_host_compute_host_health,
-        compute_host_in_subtree=compute_host_compute_host_in_subtree == "true",
+        compute_host_in_subtree=compute_host_compute_host_in_subtree,
         compute_host_lifecycle_state=compute_host_compute_host_lifecycle_state,
         display_name=compute_host_display_name,
         network_resource_id=test_resource["id"])
@@ -276,7 +276,7 @@ def get_compute_hosts_output(availability_domain: pulumi.Input[Optional[Optional
         availability_domain=compute_host_availability_domain,
         compute_host_group_id=test_compute_host_group["id"],
         compute_host_health=compute_host_compute_host_health,
-        compute_host_in_subtree=compute_host_compute_host_in_subtree == "true",
+        compute_host_in_subtree=compute_host_compute_host_in_subtree,
         compute_host_lifecycle_state=compute_host_compute_host_lifecycle_state,
         display_name=compute_host_display_name,
         network_resource_id=test_resource["id"])

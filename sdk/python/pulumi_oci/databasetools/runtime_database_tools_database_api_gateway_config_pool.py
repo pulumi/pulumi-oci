@@ -613,13 +613,13 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPool(pulumi.CustomResource):
             type=database_tools_database_api_gateway_config_pool_type,
             advanced_properties=database_tools_database_api_gateway_config_pool_advanced_properties,
             database_actions_status=database_tools_database_api_gateway_config_pool_database_actions_status,
-            initial_pool_size=int(database_tools_database_api_gateway_config_pool_initial_pool_size),
+            initial_pool_size=database_tools_database_api_gateway_config_pool_initial_pool_size,
             jwt_profile_audience=database_tools_database_api_gateway_config_pool_jwt_profile_audience,
             jwt_profile_issuer=database_tools_database_api_gateway_config_pool_jwt_profile_issuer,
             jwt_profile_jwk_url=database_tools_database_api_gateway_config_pool_jwt_profile_jwk_url,
             jwt_profile_role_claim_name=database_tools_database_api_gateway_config_pool_jwt_profile_role_claim_name,
-            max_pool_size=int(database_tools_database_api_gateway_config_pool_max_pool_size),
-            min_pool_size=int(database_tools_database_api_gateway_config_pool_min_pool_size),
+            max_pool_size=database_tools_database_api_gateway_config_pool_max_pool_size,
+            min_pool_size=database_tools_database_api_gateway_config_pool_min_pool_size,
             rest_enabled_sql_status=database_tools_database_api_gateway_config_pool_rest_enabled_sql_status)
         ```
 
@@ -681,13 +681,13 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPool(pulumi.CustomResource):
             type=database_tools_database_api_gateway_config_pool_type,
             advanced_properties=database_tools_database_api_gateway_config_pool_advanced_properties,
             database_actions_status=database_tools_database_api_gateway_config_pool_database_actions_status,
-            initial_pool_size=int(database_tools_database_api_gateway_config_pool_initial_pool_size),
+            initial_pool_size=database_tools_database_api_gateway_config_pool_initial_pool_size,
             jwt_profile_audience=database_tools_database_api_gateway_config_pool_jwt_profile_audience,
             jwt_profile_issuer=database_tools_database_api_gateway_config_pool_jwt_profile_issuer,
             jwt_profile_jwk_url=database_tools_database_api_gateway_config_pool_jwt_profile_jwk_url,
             jwt_profile_role_claim_name=database_tools_database_api_gateway_config_pool_jwt_profile_role_claim_name,
-            max_pool_size=int(database_tools_database_api_gateway_config_pool_max_pool_size),
-            min_pool_size=int(database_tools_database_api_gateway_config_pool_min_pool_size),
+            max_pool_size=database_tools_database_api_gateway_config_pool_max_pool_size,
+            min_pool_size=database_tools_database_api_gateway_config_pool_min_pool_size,
             rest_enabled_sql_status=database_tools_database_api_gateway_config_pool_rest_enabled_sql_status)
         ```
 

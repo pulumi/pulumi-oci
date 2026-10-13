@@ -54,8 +54,8 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttribute = SecurityAttributeFunctions.getSecurityAttribute(GetSecurityAttributeArgs.builder()
-     *             .securityAttributeName(testSecurityAttributeOciSecurityAttributeSecurityAttribute.name())
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .securityAttributeName(testSecurityAttributeOciSecurityAttributeSecurityAttribute.get("name"))
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -97,8 +97,8 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttribute = SecurityAttributeFunctions.getSecurityAttribute(GetSecurityAttributeArgs.builder()
-     *             .securityAttributeName(testSecurityAttributeOciSecurityAttributeSecurityAttribute.name())
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .securityAttributeName(testSecurityAttributeOciSecurityAttributeSecurityAttribute.get("name"))
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -140,8 +140,8 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttribute = SecurityAttributeFunctions.getSecurityAttribute(GetSecurityAttributeArgs.builder()
-     *             .securityAttributeName(testSecurityAttributeOciSecurityAttributeSecurityAttribute.name())
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .securityAttributeName(testSecurityAttributeOciSecurityAttributeSecurityAttribute.get("name"))
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -183,8 +183,8 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttribute = SecurityAttributeFunctions.getSecurityAttribute(GetSecurityAttributeArgs.builder()
-     *             .securityAttributeName(testSecurityAttributeOciSecurityAttributeSecurityAttribute.name())
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .securityAttributeName(testSecurityAttributeOciSecurityAttributeSecurityAttribute.get("name"))
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -226,8 +226,8 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttribute = SecurityAttributeFunctions.getSecurityAttribute(GetSecurityAttributeArgs.builder()
-     *             .securityAttributeName(testSecurityAttributeOciSecurityAttributeSecurityAttribute.name())
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .securityAttributeName(testSecurityAttributeOciSecurityAttributeSecurityAttribute.get("name"))
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -269,7 +269,7 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttributeNamespace = SecurityAttributeFunctions.getSecurityAttributeNamespace(GetSecurityAttributeNamespaceArgs.builder()
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespaceOciSecurityAttributeSecurityAttributeNamespace.id())
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespaceOciSecurityAttributeSecurityAttributeNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -311,7 +311,7 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttributeNamespace = SecurityAttributeFunctions.getSecurityAttributeNamespace(GetSecurityAttributeNamespaceArgs.builder()
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespaceOciSecurityAttributeSecurityAttributeNamespace.id())
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespaceOciSecurityAttributeSecurityAttributeNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -353,7 +353,7 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttributeNamespace = SecurityAttributeFunctions.getSecurityAttributeNamespace(GetSecurityAttributeNamespaceArgs.builder()
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespaceOciSecurityAttributeSecurityAttributeNamespace.id())
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespaceOciSecurityAttributeSecurityAttributeNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -395,7 +395,7 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttributeNamespace = SecurityAttributeFunctions.getSecurityAttributeNamespace(GetSecurityAttributeNamespaceArgs.builder()
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespaceOciSecurityAttributeSecurityAttributeNamespace.id())
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespaceOciSecurityAttributeSecurityAttributeNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -437,7 +437,7 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttributeNamespace = SecurityAttributeFunctions.getSecurityAttributeNamespace(GetSecurityAttributeNamespaceArgs.builder()
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespaceOciSecurityAttributeSecurityAttributeNamespace.id())
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespaceOciSecurityAttributeSecurityAttributeNamespace.get("id"))
      *             .build());
      * 
      *     }
@@ -794,7 +794,7 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttributes = SecurityAttributeFunctions.getSecurityAttributes(GetSecurityAttributesArgs.builder()
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.get("id"))
      *             .state(securityAttributeState)
      *             .build());
      * 
@@ -837,7 +837,7 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttributes = SecurityAttributeFunctions.getSecurityAttributes(GetSecurityAttributesArgs.builder()
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.get("id"))
      *             .state(securityAttributeState)
      *             .build());
      * 
@@ -880,7 +880,7 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttributes = SecurityAttributeFunctions.getSecurityAttributes(GetSecurityAttributesArgs.builder()
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.get("id"))
      *             .state(securityAttributeState)
      *             .build());
      * 
@@ -923,7 +923,7 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttributes = SecurityAttributeFunctions.getSecurityAttributes(GetSecurityAttributesArgs.builder()
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.get("id"))
      *             .state(securityAttributeState)
      *             .build());
      * 
@@ -966,7 +966,7 @@ public final class SecurityAttributeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAttributes = SecurityAttributeFunctions.getSecurityAttributes(GetSecurityAttributesArgs.builder()
-     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+     *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.get("id"))
      *             .state(securityAttributeState)
      *             .build());
      * 

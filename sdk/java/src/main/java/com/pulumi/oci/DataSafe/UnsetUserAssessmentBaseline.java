@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testUnsetUserAssessmentBaseline = new UnsetUserAssessmentBaseline("testUnsetUserAssessmentBaseline", UnsetUserAssessmentBaselineArgs.builder()
- *             .userAssessmentId(testUserAssessment.id())
+ *             .userAssessmentId(testUserAssessment.get("id"))
  *             .targetIds(unsetUserAssessmentBaselineTargetIds)
  *             .build());
  * 

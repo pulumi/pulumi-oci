@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOciCacheConfigSetlistAssociatedOciCacheCluster = new OciCacheConfigSetlistAssociatedOciCacheCluster("testOciCacheConfigSetlistAssociatedOciCacheCluster", OciCacheConfigSetlistAssociatedOciCacheClusterArgs.builder()
- *             .ociCacheConfigSetId(testOciCacheConfigSet.id())
+ *             .ociCacheConfigSetId(testOciCacheConfigSet.get("id"))
  *             .build());
  * 
  *     }

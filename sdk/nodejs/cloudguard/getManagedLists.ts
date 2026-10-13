@@ -33,10 +33,10 @@ import * as utilities from "../utilities";
  * const testManagedLists = oci.cloudguard.getManagedLists({
  *     compartmentId: compartmentId,
  *     accessLevel: managedListAccessLevel,
- *     compartmentIdInSubtree: managedListCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: managedListCompartmentIdInSubtree,
  *     displayName: managedListDisplayName,
  *     listType: managedListListType,
- *     resourceMetadataOnly: managedListResourceMetadataOnly === "true",
+ *     resourceMetadataOnly: managedListResourceMetadataOnly,
  *     state: managedListState,
  * });
  * ```
@@ -150,10 +150,10 @@ export interface GetManagedListsResult {
  * const testManagedLists = oci.cloudguard.getManagedLists({
  *     compartmentId: compartmentId,
  *     accessLevel: managedListAccessLevel,
- *     compartmentIdInSubtree: managedListCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: managedListCompartmentIdInSubtree,
  *     displayName: managedListDisplayName,
  *     listType: managedListListType,
- *     resourceMetadataOnly: managedListResourceMetadataOnly === "true",
+ *     resourceMetadataOnly: managedListResourceMetadataOnly,
  *     state: managedListState,
  * });
  * ```

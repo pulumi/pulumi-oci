@@ -84,8 +84,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testIpSecConnection = new Ipsec("testIpSecConnection", IpsecArgs.builder()
  *             .compartmentId(compartmentId)
- *             .cpeId(testCpe.id())
- *             .drgId(testDrg.id())
+ *             .cpeId(testCpe.get("id"))
+ *             .drgId(testDrg.get("id"))
  *             .staticRoutes(ipSecConnectionStaticRoutes)
  *             .cpeLocalIdentifier(ipSecConnectionCpeLocalIdentifier)
  *             .cpeLocalIdentifierType(ipSecConnectionCpeLocalIdentifierType)
@@ -96,8 +96,8 @@ import javax.annotation.Nullable;
  * 
  *         var testIpSecConnectionOverFc = new Ipsec("testIpSecConnectionOverFc", IpsecArgs.builder()
  *             .compartmentId(compartmentId)
- *             .cpeId(testCpe.id())
- *             .drgId(testDrg.id())
+ *             .cpeId(testCpe.get("id"))
+ *             .drgId(testDrg.get("id"))
  *             .staticRoutes(ipSecConnectionStaticRoutes)
  *             .cpeLocalIdentifier(ipSecConnectionCpeLocalIdentifier)
  *             .cpeLocalIdentifierType(ipSecConnectionCpeLocalIdentifierType)
@@ -107,13 +107,13 @@ import javax.annotation.Nullable;
  *             .tunnelConfigurations(            
  *                 IpsecTunnelConfigurationArgs.builder()
  *                     .oracleTunnelIp("10.1.5.5")
- *                     .associatedVirtualCircuits(testIpsecOverFcVirtualCircuit.id())
- *                     .drgRouteTableId(testDrgIpsecOverFcRouteTable.id())
+ *                     .associatedVirtualCircuits(testIpsecOverFcVirtualCircuit.get("id"))
+ *                     .drgRouteTableId(testDrgIpsecOverFcRouteTable.get("id"))
  *                     .build(),
  *                 IpsecTunnelConfigurationArgs.builder()
  *                     .oracleTunnelIp("10.1.7.7")
- *                     .associatedVirtualCircuits(testIpsecOverFcVirtualCircuit.id())
- *                     .drgRouteTableId(testDrgIpsecOverFcRouteTable.id())
+ *                     .associatedVirtualCircuits(testIpsecOverFcVirtualCircuit.get("id"))
+ *                     .drgRouteTableId(testDrgIpsecOverFcRouteTable.get("id"))
  *                     .build())
  *             .build());
  * 

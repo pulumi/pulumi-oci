@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testMyCustomerSecretKeys = oci.identity.getDomainsMyCustomerSecretKeys({
  *     idcsEndpoint: testDomain.url,
- *     myCustomerSecretKeyCount: Number(myCustomerSecretKeyMyCustomerSecretKeyCount),
+ *     myCustomerSecretKeyCount: myCustomerSecretKeyMyCustomerSecretKeyCount,
  *     myCustomerSecretKeyFilter: myCustomerSecretKeyMyCustomerSecretKeyFilter,
  *     authorization: myCustomerSecretKeyAuthorization,
  *     resourceTypeSchemaVersion: myCustomerSecretKeyResourceTypeSchemaVersion,
- *     startIndex: Number(myCustomerSecretKeyStartIndex),
+ *     startIndex: myCustomerSecretKeyStartIndex,
  * });
  * ```
  */
@@ -116,11 +116,11 @@ export interface GetDomainsMyCustomerSecretKeysResult {
  *
  * const testMyCustomerSecretKeys = oci.identity.getDomainsMyCustomerSecretKeys({
  *     idcsEndpoint: testDomain.url,
- *     myCustomerSecretKeyCount: Number(myCustomerSecretKeyMyCustomerSecretKeyCount),
+ *     myCustomerSecretKeyCount: myCustomerSecretKeyMyCustomerSecretKeyCount,
  *     myCustomerSecretKeyFilter: myCustomerSecretKeyMyCustomerSecretKeyFilter,
  *     authorization: myCustomerSecretKeyAuthorization,
  *     resourceTypeSchemaVersion: myCustomerSecretKeyResourceTypeSchemaVersion,
- *     startIndex: Number(myCustomerSecretKeyStartIndex),
+ *     startIndex: myCustomerSecretKeyStartIndex,
  * });
  * ```
  */

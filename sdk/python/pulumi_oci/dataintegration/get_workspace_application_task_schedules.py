@@ -173,7 +173,7 @@ def get_workspace_application_task_schedules(application_key: Optional[_builtins
     test_workspace_application_task_schedules = oci.dataintegration.get_workspace_application_task_schedules(application_key=workspace_application_task_schedule_application_key,
         workspace_id=test_workspace["id"],
         identifiers=workspace_application_task_schedule_identifier,
-        is_enabled=workspace_application_task_schedule_is_enabled == "true",
+        is_enabled=workspace_application_task_schedule_is_enabled,
         keys=workspace_application_task_schedule_key,
         name=workspace_application_task_schedule_name,
         types=workspace_application_task_schedule_type)
@@ -234,7 +234,7 @@ def get_workspace_application_task_schedules_output(application_key: pulumi.Inpu
     test_workspace_application_task_schedules = oci.dataintegration.get_workspace_application_task_schedules(application_key=workspace_application_task_schedule_application_key,
         workspace_id=test_workspace["id"],
         identifiers=workspace_application_task_schedule_identifier,
-        is_enabled=workspace_application_task_schedule_is_enabled == "true",
+        is_enabled=workspace_application_task_schedule_is_enabled,
         keys=workspace_application_task_schedule_key,
         name=workspace_application_task_schedule_name,
         types=workspace_application_task_schedule_type)

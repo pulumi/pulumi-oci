@@ -42,7 +42,7 @@ import (
 //				DisplayName:     pulumi.StringRef(mysqlConfigurationDisplayName),
 //				ShapeName:       pulumi.StringRef(mysqlShapeName),
 //				State:           pulumi.StringRef(mysqlConfigurationState),
-//				Types:           pulumi.ToArray(mysqlConfigurationType),
+//				Types:           mysqlConfigurationType,
 //			}, nil)
 //			if err != nil {
 //				return err

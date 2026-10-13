@@ -186,7 +186,7 @@ def get_target_database_groups(access_level: Optional[_builtins.str] = None,
 
     test_target_database_groups = oci.datasafe.get_target_database_groups(compartment_id=compartment_id,
         access_level=target_database_group_access_level,
-        compartment_id_in_subtree=target_database_group_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=target_database_group_compartment_id_in_subtree,
         display_name=target_database_group_display_name,
         state=target_database_group_state,
         target_database_group_id=test_target_database_group["id"],
@@ -261,7 +261,7 @@ def get_target_database_groups_output(access_level: pulumi.Input[Optional[Option
 
     test_target_database_groups = oci.datasafe.get_target_database_groups(compartment_id=compartment_id,
         access_level=target_database_group_access_level,
-        compartment_id_in_subtree=target_database_group_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=target_database_group_compartment_id_in_subtree,
         display_name=target_database_group_display_name,
         state=target_database_group_state,
         target_database_group_id=test_target_database_group["id"],

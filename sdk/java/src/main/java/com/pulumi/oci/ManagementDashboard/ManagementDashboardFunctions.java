@@ -53,7 +53,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementDashboardsExport = ManagementDashboardFunctions.getManagementDashboardsExport(GetManagementDashboardsExportArgs.builder()
-     *             .exportDashboardId(testExportDashboard.id())
+     *             .exportDashboardId(testExportDashboard.get("id"))
      *             .build());
      * 
      *     }
@@ -97,7 +97,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementDashboardsExport = ManagementDashboardFunctions.getManagementDashboardsExport(GetManagementDashboardsExportArgs.builder()
-     *             .exportDashboardId(testExportDashboard.id())
+     *             .exportDashboardId(testExportDashboard.get("id"))
      *             .build());
      * 
      *     }
@@ -141,7 +141,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementDashboardsExport = ManagementDashboardFunctions.getManagementDashboardsExport(GetManagementDashboardsExportArgs.builder()
-     *             .exportDashboardId(testExportDashboard.id())
+     *             .exportDashboardId(testExportDashboard.get("id"))
      *             .build());
      * 
      *     }
@@ -185,7 +185,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementDashboardsExport = ManagementDashboardFunctions.getManagementDashboardsExport(GetManagementDashboardsExportArgs.builder()
-     *             .exportDashboardId(testExportDashboard.id())
+     *             .exportDashboardId(testExportDashboard.get("id"))
      *             .build());
      * 
      *     }
@@ -229,7 +229,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementDashboardsExport = ManagementDashboardFunctions.getManagementDashboardsExport(GetManagementDashboardsExportArgs.builder()
-     *             .exportDashboardId(testExportDashboard.id())
+     *             .exportDashboardId(testExportDashboard.get("id"))
      *             .build());
      * 
      *     }
@@ -271,7 +271,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementSavedSearch = ManagementDashboardFunctions.getManagementSavedSearch(GetManagementSavedSearchArgs.builder()
-     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.id())
+     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.get("id"))
      *             .build());
      * 
      *     }
@@ -313,7 +313,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementSavedSearch = ManagementDashboardFunctions.getManagementSavedSearch(GetManagementSavedSearchArgs.builder()
-     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.id())
+     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.get("id"))
      *             .build());
      * 
      *     }
@@ -355,7 +355,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementSavedSearch = ManagementDashboardFunctions.getManagementSavedSearch(GetManagementSavedSearchArgs.builder()
-     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.id())
+     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.get("id"))
      *             .build());
      * 
      *     }
@@ -397,7 +397,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementSavedSearch = ManagementDashboardFunctions.getManagementSavedSearch(GetManagementSavedSearchArgs.builder()
-     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.id())
+     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.get("id"))
      *             .build());
      * 
      *     }
@@ -439,7 +439,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementSavedSearch = ManagementDashboardFunctions.getManagementSavedSearch(GetManagementSavedSearchArgs.builder()
-     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.id())
+     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.get("id"))
      *             .build());
      * 
      *     }

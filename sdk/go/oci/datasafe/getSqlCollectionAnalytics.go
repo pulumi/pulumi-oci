@@ -46,7 +46,7 @@ import (
 //				CompartmentId:          compartmentId,
 //				AccessLevel:            pulumi.StringRef(sqlCollectionAnalyticAccessLevel),
 //				CompartmentIdInSubtree: pulumi.BoolRef(sqlCollectionAnalyticCompartmentIdInSubtree),
-//				GroupBies:              pulumi.ToArray(sqlCollectionAnalyticGroupBy),
+//				GroupBies:              sqlCollectionAnalyticGroupBy,
 //				State:                  pulumi.StringRef(sqlCollectionAnalyticState),
 //				TargetDatabaseGroupId:  pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:               pulumi.StringRef(testTarget.Id),

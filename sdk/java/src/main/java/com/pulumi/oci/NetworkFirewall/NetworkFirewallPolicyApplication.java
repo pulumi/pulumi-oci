@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *         var testNetworkFirewallPolicyApplication = new NetworkFirewallPolicyApplication("testNetworkFirewallPolicyApplication", NetworkFirewallPolicyApplicationArgs.builder()
  *             .icmpType(networkFirewallPolicyApplicationIcmpType)
  *             .name(networkFirewallPolicyApplicationName)
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
  *             .type(networkFirewallPolicyApplicationType)
  *             .description(networkFirewallPolicyApplicationDescription)
  *             .icmpCode(networkFirewallPolicyApplicationIcmpCode)

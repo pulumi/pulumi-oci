@@ -48,7 +48,7 @@ public final class VnMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest(GetPathAnalyzerTestArgs.builder()
-     *             .pathAnalyzerTestId(testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.id())
+     *             .pathAnalyzerTestId(testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.get("id"))
      *             .build());
      * 
      *     }
@@ -90,7 +90,7 @@ public final class VnMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest(GetPathAnalyzerTestArgs.builder()
-     *             .pathAnalyzerTestId(testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.id())
+     *             .pathAnalyzerTestId(testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.get("id"))
      *             .build());
      * 
      *     }
@@ -132,7 +132,7 @@ public final class VnMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest(GetPathAnalyzerTestArgs.builder()
-     *             .pathAnalyzerTestId(testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.id())
+     *             .pathAnalyzerTestId(testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.get("id"))
      *             .build());
      * 
      *     }
@@ -174,7 +174,7 @@ public final class VnMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest(GetPathAnalyzerTestArgs.builder()
-     *             .pathAnalyzerTestId(testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.id())
+     *             .pathAnalyzerTestId(testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.get("id"))
      *             .build());
      * 
      *     }
@@ -216,7 +216,7 @@ public final class VnMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathAnalyzerTest = VnMonitoringFunctions.GetPathAnalyzerTest(GetPathAnalyzerTestArgs.builder()
-     *             .pathAnalyzerTestId(testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.id())
+     *             .pathAnalyzerTestId(testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.get("id"))
      *             .build());
      * 
      *     }

@@ -404,8 +404,8 @@ class Project(pulumi.CustomResource):
         test_project = oci.generativeai.Project("test_project",
             compartment_id=compartment_id,
             conversation_config={
-                "conversations_retention_in_hours": int(project_conversation_config_conversations_retention_in_hours),
-                "responses_retention_in_hours": int(project_conversation_config_responses_retention_in_hours),
+                "conversations_retention_in_hours": project_conversation_config_conversations_retention_in_hours,
+                "responses_retention_in_hours": project_conversation_config_responses_retention_in_hours,
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -417,7 +417,7 @@ class Project(pulumi.CustomResource):
             },
             long_term_memory_config={
                 "standard_long_term_memory_strategy": {
-                    "is_enabled": project_long_term_memory_config_standard_long_term_memory_strategy_is_enabled == "true",
+                    "is_enabled": project_long_term_memory_config_standard_long_term_memory_strategy_is_enabled,
                     "embedding_config": {
                         "llm_selection": {
                             "llm_selection_type": project_long_term_memory_config_standard_long_term_memory_strategy_embedding_config_llm_selection_llm_selection_type,
@@ -433,7 +433,7 @@ class Project(pulumi.CustomResource):
                 },
             },
             short_term_memory_optimization_config={
-                "is_enabled": project_short_term_memory_optimization_config_is_enabled == "true",
+                "is_enabled": project_short_term_memory_optimization_config_is_enabled,
                 "condenser_config": {
                     "llm_selection": {
                         "llm_selection_type": project_short_term_memory_optimization_config_condenser_config_llm_selection_llm_selection_type,
@@ -487,8 +487,8 @@ class Project(pulumi.CustomResource):
         test_project = oci.generativeai.Project("test_project",
             compartment_id=compartment_id,
             conversation_config={
-                "conversations_retention_in_hours": int(project_conversation_config_conversations_retention_in_hours),
-                "responses_retention_in_hours": int(project_conversation_config_responses_retention_in_hours),
+                "conversations_retention_in_hours": project_conversation_config_conversations_retention_in_hours,
+                "responses_retention_in_hours": project_conversation_config_responses_retention_in_hours,
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -500,7 +500,7 @@ class Project(pulumi.CustomResource):
             },
             long_term_memory_config={
                 "standard_long_term_memory_strategy": {
-                    "is_enabled": project_long_term_memory_config_standard_long_term_memory_strategy_is_enabled == "true",
+                    "is_enabled": project_long_term_memory_config_standard_long_term_memory_strategy_is_enabled,
                     "embedding_config": {
                         "llm_selection": {
                             "llm_selection_type": project_long_term_memory_config_standard_long_term_memory_strategy_embedding_config_llm_selection_llm_selection_type,
@@ -516,7 +516,7 @@ class Project(pulumi.CustomResource):
                 },
             },
             short_term_memory_optimization_config={
-                "is_enabled": project_short_term_memory_optimization_config_is_enabled == "true",
+                "is_enabled": project_short_term_memory_optimization_config_is_enabled,
                 "condenser_config": {
                     "llm_selection": {
                         "llm_selection_type": project_short_term_memory_optimization_config_condenser_config_llm_selection_llm_selection_type,

@@ -27,13 +27,13 @@ import * as utilities from "../utilities";
  *     displayName: dataSourceDisplayName,
  *     dataSourceDetails: {
  *         dataSourceFeedProvider: dataSourceDataSourceDetailsDataSourceFeedProvider,
- *         additionalEntitiesCount: Number(dataSourceDataSourceDetailsAdditionalEntitiesCount),
+ *         additionalEntitiesCount: dataSourceDataSourceDetailsAdditionalEntitiesCount,
  *         description: dataSourceDataSourceDetailsDescription,
- *         intervalInMinutes: Number(dataSourceDataSourceDetailsIntervalInMinutes),
- *         intervalInSeconds: Number(dataSourceDataSourceDetailsIntervalInSeconds),
+ *         intervalInMinutes: dataSourceDataSourceDetailsIntervalInMinutes,
+ *         intervalInSeconds: dataSourceDataSourceDetailsIntervalInSeconds,
  *         loggingQueryDetails: {
  *             loggingQueryType: dataSourceDataSourceDetailsLoggingQueryDetailsLoggingQueryType,
- *             keyEntitiesCount: Number(dataSourceDataSourceDetailsLoggingQueryDetailsKeyEntitiesCount),
+ *             keyEntitiesCount: dataSourceDataSourceDetailsLoggingQueryDetailsKeyEntitiesCount,
  *         },
  *         loggingQueryType: dataSourceDataSourceDetailsLoggingQueryType,
  *         operator: dataSourceDataSourceDetailsOperator,
@@ -48,7 +48,7 @@ import * as utilities from "../utilities";
  *             resourceIds: dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceIds,
  *             resourceType: dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceType,
  *         }],
- *         threshold: Number(dataSourceDataSourceDetailsThreshold),
+ *         threshold: dataSourceDataSourceDetailsThreshold,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",

@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *                 .rowGroupBies(customTableSavedCustomTableRowGroupBy)
  *                 .version(customTableSavedCustomTableVersion)
  *                 .build())
- *             .savedReportId(testSavedReport.id())
+ *             .savedReportId(testSavedReport.get("id"))
  *             .build());
  * 
  *     }

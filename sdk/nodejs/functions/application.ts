@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *     },
  *     networkSecurityGroupIds: applicationNetworkSecurityGroupIds,
  *     imagePolicyConfig: {
- *         isPolicyEnabled: applicationImagePolicyConfigIsPolicyEnabled === "true",
+ *         isPolicyEnabled: applicationImagePolicyConfigIsPolicyEnabled,
  *         keyDetails: [{
  *             kmsKeyId: testKey.id,
  *         }],
@@ -48,7 +48,7 @@ import * as utilities from "../utilities";
  *     syslogUrl: applicationSyslogUrl,
  *     traceConfig: {
  *         domainId: testDomain.id,
- *         isEnabled: applicationTraceConfigIsEnabled === "true",
+ *         isEnabled: applicationTraceConfigIsEnabled,
  *     },
  * });
  * ```

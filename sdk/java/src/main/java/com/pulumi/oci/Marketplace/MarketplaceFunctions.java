@@ -87,7 +87,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
-     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.id())
+     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.get("id"))
      *             .build());
      * 
      *     }
@@ -129,7 +129,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
-     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.id())
+     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.get("id"))
      *             .build());
      * 
      *     }
@@ -171,7 +171,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
-     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.id())
+     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.get("id"))
      *             .build());
      * 
      *     }
@@ -213,7 +213,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
-     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.id())
+     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.get("id"))
      *             .build());
      * 
      *     }
@@ -255,7 +255,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
-     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.id())
+     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.get("id"))
      *             .build());
      * 
      *     }
@@ -299,9 +299,9 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .acceptedAgreementId(testAcceptedAgreement.id())
+     *             .acceptedAgreementId(testAcceptedAgreement.get("id"))
      *             .displayName(acceptedAgreementDisplayName)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(acceptedAgreementPackageVersion)
      *             .build());
      * 
@@ -346,9 +346,9 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .acceptedAgreementId(testAcceptedAgreement.id())
+     *             .acceptedAgreementId(testAcceptedAgreement.get("id"))
      *             .displayName(acceptedAgreementDisplayName)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(acceptedAgreementPackageVersion)
      *             .build());
      * 
@@ -393,9 +393,9 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .acceptedAgreementId(testAcceptedAgreement.id())
+     *             .acceptedAgreementId(testAcceptedAgreement.get("id"))
      *             .displayName(acceptedAgreementDisplayName)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(acceptedAgreementPackageVersion)
      *             .build());
      * 
@@ -440,9 +440,9 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .acceptedAgreementId(testAcceptedAgreement.id())
+     *             .acceptedAgreementId(testAcceptedAgreement.get("id"))
      *             .displayName(acceptedAgreementDisplayName)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(acceptedAgreementPackageVersion)
      *             .build());
      * 
@@ -487,9 +487,9 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .acceptedAgreementId(testAcceptedAgreement.id())
+     *             .acceptedAgreementId(testAcceptedAgreement.get("id"))
      *             .displayName(acceptedAgreementDisplayName)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(acceptedAgreementPackageVersion)
      *             .build());
      * 
@@ -847,7 +847,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
-     *             .listingId(testListingOciMarketplaceListing.id())
+     *             .listingId(testListingOciMarketplaceListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -904,7 +904,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
-     *             .listingId(testListingOciMarketplaceListing.id())
+     *             .listingId(testListingOciMarketplaceListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -961,7 +961,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
-     *             .listingId(testListingOciMarketplaceListing.id())
+     *             .listingId(testListingOciMarketplaceListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -1018,7 +1018,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
-     *             .listingId(testListingOciMarketplaceListing.id())
+     *             .listingId(testListingOciMarketplaceListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -1075,7 +1075,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
-     *             .listingId(testListingOciMarketplaceListing.id())
+     *             .listingId(testListingOciMarketplaceListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -1131,7 +1131,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(listingPackagePackageVersion)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -1188,7 +1188,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(listingPackagePackageVersion)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -1245,7 +1245,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(listingPackagePackageVersion)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -1302,7 +1302,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(listingPackagePackageVersion)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -1359,7 +1359,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(listingPackagePackageVersion)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -1403,7 +1403,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(listingPackageAgreementPackageVersion)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -1447,7 +1447,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(listingPackageAgreementPackageVersion)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -1491,7 +1491,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(listingPackageAgreementPackageVersion)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -1535,7 +1535,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(listingPackageAgreementPackageVersion)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -1579,7 +1579,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .packageVersion(listingPackageAgreementPackageVersion)
      *             .compartmentId(compartmentId)
      *             .build());
@@ -1636,7 +1636,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .packageType(listingPackagePackageType)
      *             .packageVersion(listingPackagePackageVersion)
@@ -1694,7 +1694,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .packageType(listingPackagePackageType)
      *             .packageVersion(listingPackagePackageVersion)
@@ -1752,7 +1752,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .packageType(listingPackagePackageType)
      *             .packageVersion(listingPackagePackageVersion)
@@ -1810,7 +1810,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .packageType(listingPackagePackageType)
      *             .packageVersion(listingPackagePackageVersion)
@@ -1868,7 +1868,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .packageType(listingPackagePackageType)
      *             .packageVersion(listingPackagePackageVersion)
@@ -1913,7 +1913,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -1956,7 +1956,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -1999,7 +1999,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -2042,7 +2042,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -2085,7 +2085,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -2144,15 +2144,15 @@ public final class MarketplaceFunctions {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
      *             .categories(listingCategory)
      *             .compartmentId(compartmentId)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .isFeatured(listingIsFeatured)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .listingTypes(listingListingTypes)
      *             .names(listingName)
      *             .operatingSystems(listingOperatingSystems)
      *             .packageType(listingPackageType)
      *             .pricings(listingPricing)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -2210,15 +2210,15 @@ public final class MarketplaceFunctions {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
      *             .categories(listingCategory)
      *             .compartmentId(compartmentId)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .isFeatured(listingIsFeatured)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .listingTypes(listingListingTypes)
      *             .names(listingName)
      *             .operatingSystems(listingOperatingSystems)
      *             .packageType(listingPackageType)
      *             .pricings(listingPricing)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -2276,15 +2276,15 @@ public final class MarketplaceFunctions {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
      *             .categories(listingCategory)
      *             .compartmentId(compartmentId)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .isFeatured(listingIsFeatured)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .listingTypes(listingListingTypes)
      *             .names(listingName)
      *             .operatingSystems(listingOperatingSystems)
      *             .packageType(listingPackageType)
      *             .pricings(listingPricing)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -2342,15 +2342,15 @@ public final class MarketplaceFunctions {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
      *             .categories(listingCategory)
      *             .compartmentId(compartmentId)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .isFeatured(listingIsFeatured)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .listingTypes(listingListingTypes)
      *             .names(listingName)
      *             .operatingSystems(listingOperatingSystems)
      *             .packageType(listingPackageType)
      *             .pricings(listingPricing)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -2408,15 +2408,15 @@ public final class MarketplaceFunctions {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
      *             .categories(listingCategory)
      *             .compartmentId(compartmentId)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .isFeatured(listingIsFeatured)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .listingTypes(listingListingTypes)
      *             .names(listingName)
      *             .operatingSystems(listingOperatingSystems)
      *             .packageType(listingPackageType)
      *             .pricings(listingPricing)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -2474,15 +2474,15 @@ public final class MarketplaceFunctions {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
      *             .categories(listingCategory)
      *             .compartmentId(compartmentId)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .isFeatured(listingIsFeatured)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .listingTypes(listingListingTypes)
      *             .names(listingName)
      *             .operatingSystems(listingOperatingSystems)
      *             .packageType(listingPackageType)
      *             .pricings(listingPricing)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -2540,15 +2540,15 @@ public final class MarketplaceFunctions {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
      *             .categories(listingCategory)
      *             .compartmentId(compartmentId)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .isFeatured(listingIsFeatured)
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .listingTypes(listingListingTypes)
      *             .names(listingName)
      *             .operatingSystems(listingOperatingSystems)
      *             .packageType(listingPackageType)
      *             .pricings(listingPricing)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -2884,7 +2884,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
-     *             .publicationId(testPublicationOciMarketplacePublication.id())
+     *             .publicationId(testPublicationOciMarketplacePublication.get("id"))
      *             .build());
      * 
      *     }
@@ -2926,7 +2926,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
-     *             .publicationId(testPublicationOciMarketplacePublication.id())
+     *             .publicationId(testPublicationOciMarketplacePublication.get("id"))
      *             .build());
      * 
      *     }
@@ -2968,7 +2968,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
-     *             .publicationId(testPublicationOciMarketplacePublication.id())
+     *             .publicationId(testPublicationOciMarketplacePublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3010,7 +3010,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
-     *             .publicationId(testPublicationOciMarketplacePublication.id())
+     *             .publicationId(testPublicationOciMarketplacePublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3052,7 +3052,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
-     *             .publicationId(testPublicationOciMarketplacePublication.id())
+     *             .publicationId(testPublicationOciMarketplacePublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3095,7 +3095,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
      *             .packageVersion(publicationPackagePackageVersion)
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3138,7 +3138,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
      *             .packageVersion(publicationPackagePackageVersion)
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3181,7 +3181,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
      *             .packageVersion(publicationPackagePackageVersion)
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3224,7 +3224,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
      *             .packageVersion(publicationPackagePackageVersion)
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3267,7 +3267,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
      *             .packageVersion(publicationPackagePackageVersion)
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3309,7 +3309,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .packageType(publicationPackagePackageType)
      *             .packageVersion(publicationPackagePackageVersion)
      *             .build());
@@ -3353,7 +3353,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .packageType(publicationPackagePackageType)
      *             .packageVersion(publicationPackagePackageVersion)
      *             .build());
@@ -3397,7 +3397,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .packageType(publicationPackagePackageType)
      *             .packageVersion(publicationPackagePackageVersion)
      *             .build());
@@ -3441,7 +3441,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .packageType(publicationPackagePackageType)
      *             .packageVersion(publicationPackagePackageVersion)
      *             .build());
@@ -3485,7 +3485,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .packageType(publicationPackagePackageType)
      *             .packageVersion(publicationPackagePackageVersion)
      *             .build());
@@ -3533,7 +3533,7 @@ public final class MarketplaceFunctions {
      *             .listingType(publicationListingType)
      *             .names(publicationName)
      *             .operatingSystems(publicationOperatingSystems)
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3579,7 +3579,7 @@ public final class MarketplaceFunctions {
      *             .listingType(publicationListingType)
      *             .names(publicationName)
      *             .operatingSystems(publicationOperatingSystems)
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3625,7 +3625,7 @@ public final class MarketplaceFunctions {
      *             .listingType(publicationListingType)
      *             .names(publicationName)
      *             .operatingSystems(publicationOperatingSystems)
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3671,7 +3671,7 @@ public final class MarketplaceFunctions {
      *             .listingType(publicationListingType)
      *             .names(publicationName)
      *             .operatingSystems(publicationOperatingSystems)
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3717,7 +3717,7 @@ public final class MarketplaceFunctions {
      *             .listingType(publicationListingType)
      *             .names(publicationName)
      *             .operatingSystems(publicationOperatingSystems)
-     *             .publicationId(testPublication.id())
+     *             .publicationId(testPublication.get("id"))
      *             .build());
      * 
      *     }
@@ -3760,7 +3760,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -3803,7 +3803,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -3846,7 +3846,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -3889,7 +3889,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -3932,7 +3932,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -3975,7 +3975,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }
@@ -4018,7 +4018,7 @@ public final class MarketplaceFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .publisherId(testPublisher.id())
+     *             .publisherId(testPublisher.get("id"))
      *             .build());
      * 
      *     }

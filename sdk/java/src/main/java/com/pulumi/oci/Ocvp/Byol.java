@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(byolDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .siteId(testSite.id())
+ *             .siteId(testSite.get("id"))
  *             .build());
  * 
  *     }

@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     durationInHrs: Number(privilegedApiRequestDurationInHrs),
+ *     durationInHrs: privilegedApiRequestDurationInHrs,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

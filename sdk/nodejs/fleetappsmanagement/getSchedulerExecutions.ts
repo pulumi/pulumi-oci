@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testSchedulerExecutions = oci.fleetappsmanagement.getSchedulerExecutions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree,
  *     displayName: schedulerExecutionDisplayName,
  *     lifecycleOperation: schedulerExecutionLifecycleOperation,
  *     resourceId: testResource.id,
@@ -165,7 +165,7 @@ export interface GetSchedulerExecutionsResult {
  *
  * const testSchedulerExecutions = oci.fleetappsmanagement.getSchedulerExecutions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree,
  *     displayName: schedulerExecutionDisplayName,
  *     lifecycleOperation: schedulerExecutionLifecycleOperation,
  *     resourceId: testResource.id,

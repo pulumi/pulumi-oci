@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testTargetDatabaseRoles = oci.datasafe.getTargetDatabaseRoles({
  *     targetDatabaseId: testTargetDatabase.id,
  *     authenticationType: targetDatabaseRoleAuthenticationType,
- *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained === "true",
+ *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained,
  *     roleNames: targetDatabaseRoleRoleName,
  *     roleNameContains: targetDatabaseRoleRoleNameContains,
  * });
@@ -107,7 +107,7 @@ export interface GetTargetDatabaseRolesResult {
  * const testTargetDatabaseRoles = oci.datasafe.getTargetDatabaseRoles({
  *     targetDatabaseId: testTargetDatabase.id,
  *     authenticationType: targetDatabaseRoleAuthenticationType,
- *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained === "true",
+ *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained,
  *     roleNames: targetDatabaseRoleRoleName,
  *     roleNameContains: targetDatabaseRoleRoleNameContains,
  * });

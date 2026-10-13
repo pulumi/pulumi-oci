@@ -182,7 +182,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = AiLanguageFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(testJobOciAiLanguageJob.id())
+     *             .jobId(testJobOciAiLanguageJob.get("id"))
      *             .build());
      * 
      *     }
@@ -224,7 +224,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = AiLanguageFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(testJobOciAiLanguageJob.id())
+     *             .jobId(testJobOciAiLanguageJob.get("id"))
      *             .build());
      * 
      *     }
@@ -266,7 +266,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = AiLanguageFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(testJobOciAiLanguageJob.id())
+     *             .jobId(testJobOciAiLanguageJob.get("id"))
      *             .build());
      * 
      *     }
@@ -308,7 +308,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = AiLanguageFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(testJobOciAiLanguageJob.id())
+     *             .jobId(testJobOciAiLanguageJob.get("id"))
      *             .build());
      * 
      *     }
@@ -350,7 +350,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = AiLanguageFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(testJobOciAiLanguageJob.id())
+     *             .jobId(testJobOciAiLanguageJob.get("id"))
      *             .build());
      * 
      *     }
@@ -672,7 +672,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelEvaluationResults = AiLanguageFunctions.getModelEvaluationResults(GetModelEvaluationResultsArgs.builder()
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .build());
      * 
      *     }
@@ -714,7 +714,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelEvaluationResults = AiLanguageFunctions.getModelEvaluationResults(GetModelEvaluationResultsArgs.builder()
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .build());
      * 
      *     }
@@ -756,7 +756,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelEvaluationResults = AiLanguageFunctions.getModelEvaluationResults(GetModelEvaluationResultsArgs.builder()
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .build());
      * 
      *     }
@@ -798,7 +798,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelEvaluationResults = AiLanguageFunctions.getModelEvaluationResults(GetModelEvaluationResultsArgs.builder()
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .build());
      * 
      *     }
@@ -840,7 +840,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelEvaluationResults = AiLanguageFunctions.getModelEvaluationResults(GetModelEvaluationResultsArgs.builder()
-     *             .modelId(testModel.id())
+     *             .modelId(testModel.get("id"))
      *             .build());
      * 
      *     }

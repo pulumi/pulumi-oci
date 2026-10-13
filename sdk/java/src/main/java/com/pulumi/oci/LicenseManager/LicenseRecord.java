@@ -52,12 +52,12 @@ import javax.annotation.Nullable;
  *             .displayName(licenseRecordDisplayName)
  *             .isPerpetual(licenseRecordIsPerpetual)
  *             .isUnlimited(licenseRecordIsUnlimited)
- *             .productLicenseId(testProductLicense.id())
+ *             .productLicenseId(testProductLicense.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .expirationDate(licenseRecordExpirationDate)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .licenseCount(licenseRecordLicenseCount)
- *             .productId(testProduct.id())
+ *             .productId(testProduct.get("id"))
  *             .supportEndDate(licenseRecordSupportEndDate)
  *             .build());
  * 

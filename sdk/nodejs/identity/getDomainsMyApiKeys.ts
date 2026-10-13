@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testMyApiKeys = oci.identity.getDomainsMyApiKeys({
  *     idcsEndpoint: testDomain.url,
- *     myApiKeyCount: Number(myApiKeyMyApiKeyCount),
+ *     myApiKeyCount: myApiKeyMyApiKeyCount,
  *     myApiKeyFilter: myApiKeyMyApiKeyFilter,
  *     authorization: myApiKeyAuthorization,
  *     resourceTypeSchemaVersion: myApiKeyResourceTypeSchemaVersion,
- *     startIndex: Number(myApiKeyStartIndex),
+ *     startIndex: myApiKeyStartIndex,
  * });
  * ```
  */
@@ -116,11 +116,11 @@ export interface GetDomainsMyApiKeysResult {
  *
  * const testMyApiKeys = oci.identity.getDomainsMyApiKeys({
  *     idcsEndpoint: testDomain.url,
- *     myApiKeyCount: Number(myApiKeyMyApiKeyCount),
+ *     myApiKeyCount: myApiKeyMyApiKeyCount,
  *     myApiKeyFilter: myApiKeyMyApiKeyFilter,
  *     authorization: myApiKeyAuthorization,
  *     resourceTypeSchemaVersion: myApiKeyResourceTypeSchemaVersion,
- *     startIndex: Number(myApiKeyStartIndex),
+ *     startIndex: myApiKeyStartIndex,
  * });
  * ```
  */

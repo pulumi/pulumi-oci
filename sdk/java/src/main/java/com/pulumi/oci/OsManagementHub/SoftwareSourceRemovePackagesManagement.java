@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSoftwareSourceRemovePackagesManagement = new SoftwareSourceRemovePackagesManagement("testSoftwareSourceRemovePackagesManagement", SoftwareSourceRemovePackagesManagementArgs.builder()
  *             .packages(softwareSourceRemovePackagesManagementPackages)
- *             .softwareSourceId(testSoftwareSource.id())
+ *             .softwareSourceId(testSoftwareSource.get("id"))
  *             .build());
  * 
  *     }

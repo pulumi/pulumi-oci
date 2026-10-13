@@ -46,8 +46,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDbNodeSnapshotManagement = new DbNodeSnapshotManagement("testDbNodeSnapshotManagement", DbNodeSnapshotManagementArgs.builder()
- *             .exadbVmClusterId(testExadbVmCluster.id())
- *             .sourceDbnodeIds(testExadbVmCluster.nodeResource().stream().map(element -> element.nodeId()).collect(toList()))
+ *             .exadbVmClusterId(testExadbVmCluster.get("id"))
+ *             .sourceDbnodeIds(testExadbVmCluster.get("nodeResource").stream().map(element -> element.get("nodeId")).collect(toList()))
  *             .name(dbNodeSnapshotSuffix)
  *             .definedTags(dbNodeSnapshotDefinedTags)
  *             .freeformTags(dbNodeSnapshotFreeformTags)

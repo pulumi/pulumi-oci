@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * const testManagementAgentCount = oci.managementagent.getManagementAgentCount({
  *     compartmentId: compartmentId,
  *     groupBies: managementAgentCountGroupBy,
- *     hasPlugins: managementAgentCountHasPlugins === "true",
+ *     hasPlugins: managementAgentCountHasPlugins,
  *     installType: managementAgentCountInstallType,
  * });
  * ```
@@ -96,7 +96,7 @@ export interface GetManagementAgentCountResult {
  * const testManagementAgentCount = oci.managementagent.getManagementAgentCount({
  *     compartmentId: compartmentId,
  *     groupBies: managementAgentCountGroupBy,
- *     hasPlugins: managementAgentCountHasPlugins === "true",
+ *     hasPlugins: managementAgentCountHasPlugins,
  *     installType: managementAgentCountInstallType,
  * });
  * ```

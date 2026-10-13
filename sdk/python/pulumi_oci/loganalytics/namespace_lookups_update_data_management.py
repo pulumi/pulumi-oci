@@ -268,7 +268,7 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
             namespace=namespace_lookups_update_data_management_namespace,
             char_encoding=namespace_lookups_update_data_management_char_encoding,
             expect=namespace_lookups_update_data_management_expect,
-            is_force=namespace_lookups_update_data_management_is_force == "true")
+            is_force=namespace_lookups_update_data_management_is_force)
         ```
 
         ## Import
@@ -314,7 +314,7 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
             namespace=namespace_lookups_update_data_management_namespace,
             char_encoding=namespace_lookups_update_data_management_char_encoding,
             expect=namespace_lookups_update_data_management_expect,
-            is_force=namespace_lookups_update_data_management_is_force == "true")
+            is_force=namespace_lookups_update_data_management_is_force)
         ```
 
         ## Import

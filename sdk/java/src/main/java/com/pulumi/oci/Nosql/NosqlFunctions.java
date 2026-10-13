@@ -287,8 +287,8 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
-     *             .indexName(testIndexOciNosqlIndex.name())
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .indexName(testIndexOciNosqlIndex.get("name"))
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -331,8 +331,8 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
-     *             .indexName(testIndexOciNosqlIndex.name())
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .indexName(testIndexOciNosqlIndex.get("name"))
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -375,8 +375,8 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
-     *             .indexName(testIndexOciNosqlIndex.name())
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .indexName(testIndexOciNosqlIndex.get("name"))
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -419,8 +419,8 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
-     *             .indexName(testIndexOciNosqlIndex.name())
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .indexName(testIndexOciNosqlIndex.get("name"))
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -463,8 +463,8 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
-     *             .indexName(testIndexOciNosqlIndex.name())
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .indexName(testIndexOciNosqlIndex.get("name"))
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -507,7 +507,7 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(indexName)
      *             .state(indexState)
@@ -552,7 +552,7 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(indexName)
      *             .state(indexState)
@@ -597,7 +597,7 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(indexName)
      *             .state(indexState)
@@ -642,7 +642,7 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(indexName)
      *             .state(indexState)
@@ -687,7 +687,7 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(indexName)
      *             .state(indexState)
@@ -732,7 +732,7 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -775,7 +775,7 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -818,7 +818,7 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -861,7 +861,7 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 
@@ -904,7 +904,7 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
-     *             .tableNameOrId(testTableNameOr.id())
+     *             .tableNameOrId(testTableNameOr.get("id"))
      *             .compartmentId(compartmentId)
      *             .build());
      * 

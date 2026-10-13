@@ -146,7 +146,7 @@ def get_management_agent_install_keys(access_level: Optional[_builtins.str] = No
 
     test_management_agent_install_keys = oci.managementagent.get_management_agent_install_keys(compartment_id=compartment_id,
         access_level=management_agent_install_key_access_level,
-        compartment_id_in_subtree=management_agent_install_key_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=management_agent_install_key_compartment_id_in_subtree,
         display_name=management_agent_install_key_display_name,
         state=management_agent_install_key_state)
     ```
@@ -197,7 +197,7 @@ def get_management_agent_install_keys_output(access_level: pulumi.Input[Optional
 
     test_management_agent_install_keys = oci.managementagent.get_management_agent_install_keys(compartment_id=compartment_id,
         access_level=management_agent_install_key_access_level,
-        compartment_id_in_subtree=management_agent_install_key_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=management_agent_install_key_compartment_id_in_subtree,
         display_name=management_agent_install_key_display_name,
         state=management_agent_install_key_state)
     ```

@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceGroupAttachManagedInstancesManagement = new ManagedInstanceGroupAttachManagedInstancesManagement("testManagedInstanceGroupAttachManagedInstancesManagement", ManagedInstanceGroupAttachManagedInstancesManagementArgs.builder()
- *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+ *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
  *             .managedInstances(managedInstanceGroupAttachManagedInstancesManagementManagedInstances)
  *             .workRequestDetails(ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs.builder()
  *                 .description(managedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsDescription)

@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isUsingRecommendedScheduledActions: schedulingPlanIsUsingRecommendedScheduledActions === "true",
+ *     isUsingRecommendedScheduledActions: schedulingPlanIsUsingRecommendedScheduledActions,
  * });
  * ```
  *

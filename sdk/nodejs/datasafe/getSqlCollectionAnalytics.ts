@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  * const testSqlCollectionAnalytics = oci.datasafe.getSqlCollectionAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlCollectionAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlCollectionAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sqlCollectionAnalyticCompartmentIdInSubtree,
  *     groupBies: sqlCollectionAnalyticGroupBy,
  *     state: sqlCollectionAnalyticState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
@@ -158,7 +158,7 @@ export interface GetSqlCollectionAnalyticsResult {
  * const testSqlCollectionAnalytics = oci.datasafe.getSqlCollectionAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlCollectionAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlCollectionAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sqlCollectionAnalyticCompartmentIdInSubtree,
  *     groupBies: sqlCollectionAnalyticGroupBy,
  *     state: sqlCollectionAnalyticState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,

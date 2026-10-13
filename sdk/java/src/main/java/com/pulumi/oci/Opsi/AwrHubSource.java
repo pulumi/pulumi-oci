@@ -49,12 +49,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAwrHubSource = new AwrHubSource("testAwrHubSource", AwrHubSourceArgs.builder()
- *             .awrHubId(testAwrHub.id())
+ *             .awrHubId(testAwrHub.get("id"))
  *             .compartmentId(compartmentId)
  *             .name(awrHubSourceName)
  *             .type(awrHubSourceType)
- *             .associatedOpsiId(testAssociatedOpsi.id())
- *             .associatedResourceId(testResource.id())
+ *             .associatedOpsiId(testAssociatedOpsi.get("id"))
+ *             .associatedResourceId(testResource.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .build());

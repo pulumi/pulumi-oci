@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDatabaseSoftwareScheduleManagement = new DatabaseSoftwareScheduleManagement("testDatabaseSoftwareScheduleManagement", DatabaseSoftwareScheduleManagementArgs.builder()
- *             .databaseId(testDatabase.id())
+ *             .databaseId(testDatabase.get("id"))
  *             .build());
  * 
  *     }

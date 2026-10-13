@@ -770,8 +770,8 @@ class SubsettingPolicy(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_redo_logging_enabled=subsetting_policy_is_redo_logging_enabled == "true",
-            is_refresh_stats_enabled=subsetting_policy_is_refresh_stats_enabled == "true",
+            is_redo_logging_enabled=subsetting_policy_is_redo_logging_enabled,
+            is_refresh_stats_enabled=subsetting_policy_is_refresh_stats_enabled,
             masking_policy_id=test_masking_policy["id"],
             parallel_degree=subsetting_policy_parallel_degree,
             post_subsetting_script=subsetting_policy_post_subsetting_script,
@@ -862,8 +862,8 @@ class SubsettingPolicy(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_redo_logging_enabled=subsetting_policy_is_redo_logging_enabled == "true",
-            is_refresh_stats_enabled=subsetting_policy_is_refresh_stats_enabled == "true",
+            is_redo_logging_enabled=subsetting_policy_is_redo_logging_enabled,
+            is_refresh_stats_enabled=subsetting_policy_is_refresh_stats_enabled,
             masking_policy_id=test_masking_policy["id"],
             parallel_degree=subsetting_policy_parallel_degree,
             post_subsetting_script=subsetting_policy_post_subsetting_script,

@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testMysqlConfiguration = new MysqlConfiguration("testMysqlConfiguration", MysqlConfigurationArgs.builder()
  *             .compartmentId(compartmentId)
- *             .shapeName(testShape.name())
+ *             .shapeName(testShape.get("name"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(mysqlConfigurationDescription)
  *             .displayName(mysqlConfigurationDisplayName)
@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *                 .name(mysqlConfigurationOptionsName)
  *                 .value(mysqlConfigurationOptionsValue)
  *                 .build())
- *             .parentConfigurationId(testConfiguration.id())
+ *             .parentConfigurationId(testConfiguration.get("id"))
  *             .variables(MysqlConfigurationVariablesArgs.builder()
  *                 .autoIncrementIncrement(mysqlConfigurationVariablesAutoIncrementIncrement)
  *                 .autoIncrementOffset(mysqlConfigurationVariablesAutoIncrementOffset)

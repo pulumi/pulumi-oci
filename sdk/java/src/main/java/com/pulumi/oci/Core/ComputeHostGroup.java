@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *             .displayName(computeHostGroupDisplayName)
  *             .isTargetedPlacementRequired(computeHostGroupIsTargetedPlacementRequired)
  *             .configurations(ComputeHostGroupConfigurationArgs.builder()
- *                 .firmwareBundleId(testFirmwareBundle.id())
+ *                 .firmwareBundleId(testFirmwareBundle.get("id"))
  *                 .quickRecycleSettings(ComputeHostGroupConfigurationQuickRecycleSettingsArgs.builder()
  *                     .nvmeWipe(computeHostGroupConfigurationsQuickRecycleSettingsNvmeWipe)
  *                     .build())

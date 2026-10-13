@@ -50,8 +50,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSecurityPolicyDeployment = new SecurityPolicyDeployment("testSecurityPolicyDeployment", SecurityPolicyDeploymentArgs.builder()
  *             .compartmentId(compartmentId)
- *             .securityPolicyId(testSecurityPolicy.id())
- *             .targetId(testTarget.id())
+ *             .securityPolicyId(testSecurityPolicy.get("id"))
+ *             .targetId(testTarget.get("id"))
  *             .targetType(securityPolicyDeploymentTargetType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(securityPolicyDeploymentDescription)

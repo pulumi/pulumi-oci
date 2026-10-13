@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testSoftwareSourceModuleStreams = oci.osmanagementhub.getSoftwareSourceModuleStreams({
  *     softwareSourceId: testSoftwareSource.id,
- *     isLatest: softwareSourceModuleStreamIsLatest === "true",
+ *     isLatest: softwareSourceModuleStreamIsLatest,
  *     moduleName: softwareSourceModuleStreamModuleName,
  *     moduleNameContains: softwareSourceModuleStreamModuleNameContains,
  *     name: softwareSourceModuleStreamName,
@@ -111,7 +111,7 @@ export interface GetSoftwareSourceModuleStreamsResult {
  *
  * const testSoftwareSourceModuleStreams = oci.osmanagementhub.getSoftwareSourceModuleStreams({
  *     softwareSourceId: testSoftwareSource.id,
- *     isLatest: softwareSourceModuleStreamIsLatest === "true",
+ *     isLatest: softwareSourceModuleStreamIsLatest,
  *     moduleName: softwareSourceModuleStreamModuleName,
  *     moduleNameContains: softwareSourceModuleStreamModuleNameContains,
  *     name: softwareSourceModuleStreamName,

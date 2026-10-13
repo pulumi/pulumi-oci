@@ -586,7 +586,7 @@ class OpaInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_at=opa_instance_idcs_at,
-            is_breakglass_enabled=opa_instance_is_breakglass_enabled == "true",
+            is_breakglass_enabled=opa_instance_is_breakglass_enabled,
             metering_type=opa_instance_metering_type)
         ```
 
@@ -649,7 +649,7 @@ class OpaInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_at=opa_instance_idcs_at,
-            is_breakglass_enabled=opa_instance_is_breakglass_enabled == "true",
+            is_breakglass_enabled=opa_instance_is_breakglass_enabled,
             metering_type=opa_instance_metering_type)
         ```
 

@@ -81,7 +81,7 @@ import javax.annotation.Nullable;
  *             .emailTemplate(DomainsSelfRegistrationProfileEmailTemplateArgs.builder()
  *                 .value(selfRegistrationProfileEmailTemplateValue)
  *                 .build())
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .name(selfRegistrationProfileName)
  *             .numberOfDaysRedirectUrlIsValid(selfRegistrationProfileNumberOfDaysRedirectUrlIsValid)
  *             .redirectUrl(selfRegistrationProfileRedirectUrl)

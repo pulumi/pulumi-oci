@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .dataMaskCategories(dataMaskRuleDataMaskCategories)
  *             .displayName(dataMaskRuleDisplayName)
- *             .iamGroupId(testGroup.id())
+ *             .iamGroupId(testGroup.get("id"))
  *             .targetSelected(DataMaskRuleTargetSelectedArgs.builder()
  *                 .kind(dataMaskRuleTargetSelectedKind)
  *                 .values(dataMaskRuleTargetSelectedValues)

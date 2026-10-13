@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPasswordPolicy = new DomainsPasswordPolicy("testPasswordPolicy", DomainsPasswordPolicyArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .name(passwordPolicyName)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:PasswordPolicy")
  *             .allowedChars(passwordPolicyAllowedChars)
@@ -77,7 +77,7 @@ import javax.annotation.Nullable;
  *             .firstNameDisallowed(passwordPolicyFirstNameDisallowed)
  *             .forcePasswordReset(passwordPolicyForcePasswordReset)
  *             .groups(DomainsPasswordPolicyGroupArgs.builder()
- *                 .value(testGroup.id())
+ *                 .value(testGroup.get("id"))
  *                 .build())
  *             .id(passwordPolicyId)
  *             .lastNameDisallowed(passwordPolicyLastNameDisallowed)

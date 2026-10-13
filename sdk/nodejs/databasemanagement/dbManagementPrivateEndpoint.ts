@@ -29,8 +29,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isCluster: dbManagementPrivateEndpointIsCluster === "true",
- *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled === "true",
+ *     isCluster: dbManagementPrivateEndpointIsCluster,
+ *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled,
  *     nsgIds: dbManagementPrivateEndpointNsgIds,
  *     securityAttributes: dbManagementPrivateEndpointSecurityAttributes,
  * });

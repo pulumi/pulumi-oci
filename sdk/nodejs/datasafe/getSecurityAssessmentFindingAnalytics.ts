@@ -29,10 +29,10 @@ import * as utilities from "../utilities";
  * const testSecurityAssessmentFindingAnalytics = oci.datasafe.getSecurityAssessmentFindingAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentFindingAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree,
  *     findingKey: securityAssessmentFindingAnalyticFindingKey,
  *     groupBy: securityAssessmentFindingAnalyticGroupBy,
- *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding === "true",
+ *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding,
  *     severity: securityAssessmentFindingAnalyticSeverity,
  *     topFindingStatus: securityAssessmentFindingAnalyticTopFindingStatus,
  * });
@@ -151,10 +151,10 @@ export interface GetSecurityAssessmentFindingAnalyticsResult {
  * const testSecurityAssessmentFindingAnalytics = oci.datasafe.getSecurityAssessmentFindingAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentFindingAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree,
  *     findingKey: securityAssessmentFindingAnalyticFindingKey,
  *     groupBy: securityAssessmentFindingAnalyticGroupBy,
- *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding === "true",
+ *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding,
  *     severity: securityAssessmentFindingAnalyticSeverity,
  *     topFindingStatus: securityAssessmentFindingAnalyticTopFindingStatus,
  * });

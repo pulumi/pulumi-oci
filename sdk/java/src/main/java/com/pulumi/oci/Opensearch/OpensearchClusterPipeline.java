@@ -62,16 +62,16 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .nodeShape(opensearchClusterPipelineNodeShape)
- *             .nsgId(testNsg.id())
+ *             .nsgId(testNsg.get("id"))
  *             .opcDryRun(opensearchClusterPipelineOpcDryRun)
  *             .reverseConnectionEndpoints(OpensearchClusterPipelineReverseConnectionEndpointArgs.builder()
  *                 .customerFqdn(opensearchClusterPipelineReverseConnectionEndpointsCustomerFqdn)
  *                 .customerIp(opensearchClusterPipelineReverseConnectionEndpointsCustomerIp)
  *                 .build())
- *             .subnetCompartmentId(testCompartment.id())
- *             .subnetId(testSubnet.id())
- *             .vcnCompartmentId(testCompartment.id())
- *             .vcnId(testVcn.id())
+ *             .subnetCompartmentId(testCompartment.get("id"))
+ *             .subnetId(testSubnet.get("id"))
+ *             .vcnCompartmentId(testCompartment.get("id"))
+ *             .vcnId(testVcn.get("id"))
  *             .build());
  * 
  *     }

@@ -486,8 +486,8 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cluster=db_management_private_endpoint_is_cluster == "true",
-            is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled == "true",
+            is_cluster=db_management_private_endpoint_is_cluster,
+            is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled,
             nsg_ids=db_management_private_endpoint_nsg_ids,
             security_attributes=db_management_private_endpoint_security_attributes)
         ```
@@ -548,8 +548,8 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cluster=db_management_private_endpoint_is_cluster == "true",
-            is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled == "true",
+            is_cluster=db_management_private_endpoint_is_cluster,
+            is_dns_resolution_enabled=db_management_private_endpoint_is_dns_resolution_enabled,
             nsg_ids=db_management_private_endpoint_nsg_ids,
             security_attributes=db_management_private_endpoint_security_attributes)
         ```

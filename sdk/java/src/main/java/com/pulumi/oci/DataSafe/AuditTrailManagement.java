@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testAuditTrailManagement = new AuditTrailManagement("testAuditTrailManagement", AuditTrailManagementArgs.builder()
  *             .compartmentId(compartmentId)
- *             .targetId(testTargetDatabase.id())
+ *             .targetId(testTargetDatabase.get("id"))
  *             .trailLocation(auditTrailManagementTrailLocation)
  *             .canUpdateLastArchiveTimeOnTarget(auditTrailManagementCanUpdateLastArchiveTimeOnTarget)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

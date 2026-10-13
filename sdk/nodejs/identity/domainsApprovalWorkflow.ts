@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     idcsEndpoint: testDomain.url,
  *     maxDuration: {
  *         unit: approvalWorkflowMaxDurationUnit,
- *         value: Number(approvalWorkflowMaxDurationValue),
+ *         value: approvalWorkflowMaxDurationValue,
  *     },
  *     name: approvalWorkflowName,
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflow"],

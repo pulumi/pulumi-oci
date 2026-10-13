@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     name: maintenanceWindowName,
  *     resources: [{
  *         resourceId: testResource.id,
- *         areMembersIncluded: maintenanceWindowResourcesAreMembersIncluded === "true",
+ *         areMembersIncluded: maintenanceWindowResourcesAreMembersIncluded,
  *     }],
  *     schedule: {
  *         scheduleType: maintenanceWindowScheduleScheduleType,

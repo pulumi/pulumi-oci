@@ -81,7 +81,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .compartmentId(compartmentId)
  *             .displayName(reportDefinitionDisplayName)
- *             .parentId(testParent.id())
+ *             .parentId(testParent.get("id"))
  *             .summaries(ReportDefinitionSummaryArgs.builder()
  *                 .displayOrder(reportDefinitionSummaryDisplayOrder)
  *                 .name(reportDefinitionSummaryName)

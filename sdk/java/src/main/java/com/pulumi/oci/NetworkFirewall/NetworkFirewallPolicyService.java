@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *         var testNetworkFirewallPolicyService = new NetworkFirewallPolicyService("testNetworkFirewallPolicyService", NetworkFirewallPolicyServiceArgs.builder()
  *             .name(networkFirewallPolicyServiceName)
  *             .type(networkFirewallPolicyServiceType)
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
  *             .portRanges(NetworkFirewallPolicyServicePortRangeArgs.builder()
  *                 .minimumPort(networkFirewallPolicyServicePortRangesMinimumPort)
  *                 .maximumPort(networkFirewallPolicyServicePortRangesMaximumPort)

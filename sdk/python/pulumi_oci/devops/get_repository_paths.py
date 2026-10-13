@@ -138,7 +138,7 @@ def get_repository_paths(display_name: Optional[_builtins.str] = None,
     test_repository_paths = oci.devops.get_repository_paths(repository_id=test_repository["id"],
         display_name=repository_path_display_name,
         folder_path=repository_path_folder_path,
-        paths_in_subtree=repository_path_paths_in_subtree == "true",
+        paths_in_subtree=repository_path_paths_in_subtree,
         ref=repository_path_ref)
     ```
 
@@ -189,7 +189,7 @@ def get_repository_paths_output(display_name: pulumi.Input[Optional[Optional[_bu
     test_repository_paths = oci.devops.get_repository_paths(repository_id=test_repository["id"],
         display_name=repository_path_display_name,
         folder_path=repository_path_folder_path,
-        paths_in_subtree=repository_path_paths_in_subtree == "true",
+        paths_in_subtree=repository_path_paths_in_subtree,
         ref=repository_path_ref)
     ```
 

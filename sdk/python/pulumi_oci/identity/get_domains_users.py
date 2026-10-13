@@ -215,13 +215,13 @@ def get_domains_users(attribute_sets: Optional[Sequence[_builtins.str]] = None,
     import pulumi_oci as oci
 
     test_users = oci.identity.get_domains_users(idcs_endpoint=test_domain["url"],
-        user_count=int(user_user_count),
+        user_count=user_user_count,
         user_filter=user_user_filter,
         attribute_sets=[],
         attributes="",
         authorization=user_authorization,
         resource_type_schema_version=user_resource_type_schema_version,
-        start_index=int(user_start_index))
+        start_index=user_start_index)
     ```
 
 
@@ -290,13 +290,13 @@ def get_domains_users_output(attribute_sets: pulumi.Input[Optional[Optional[Sequ
     import pulumi_oci as oci
 
     test_users = oci.identity.get_domains_users(idcs_endpoint=test_domain["url"],
-        user_count=int(user_user_count),
+        user_count=user_user_count,
         user_filter=user_user_filter,
         attribute_sets=[],
         attributes="",
         authorization=user_authorization,
         resource_type_schema_version=user_resource_type_schema_version,
-        start_index=int(user_start_index))
+        start_index=user_start_index)
     ```
 
 

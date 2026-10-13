@@ -36,11 +36,11 @@ import (
 //				AssessmentId:           pulumi.StringRef(testAssessment.Id),
 //				AssessmentType:         pulumi.StringRef(cryptoAssessmentTdeObjectAssessmentType),
 //				CompartmentIdInSubtree: pulumi.BoolRef(cryptoAssessmentTdeObjectCompartmentIdInSubtree),
-//				EncryptionObserveds:    pulumi.ToArray(cryptoAssessmentTdeObjectEncryptionObserved),
+//				EncryptionObserveds:    cryptoAssessmentTdeObjectEncryptionObserved,
 //				EncryptionStatus:       pulumi.StringRef(cryptoAssessmentTdeObjectEncryptionStatus),
 //				QuantumReadiness:       pulumi.StringRef(cryptoAssessmentTdeObjectQuantumReadiness),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
-//				TargetIds:              pulumi.ToArray(cryptoAssessmentTdeObjectTargetIds),
+//				TargetIds:              cryptoAssessmentTdeObjectTargetIds,
 //			}, nil)
 //			if err != nil {
 //				return err

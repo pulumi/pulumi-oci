@@ -167,7 +167,7 @@ def get_autonomous_container_database_backups(autonomous_container_database_id: 
         compartment_id=compartment_id,
         display_name=autonomous_container_database_backup_display_name,
         infrastructure_type=autonomous_container_database_backup_infrastructure_type,
-        is_remote=autonomous_container_database_backup_is_remote == "true",
+        is_remote=autonomous_container_database_backup_is_remote,
         state=autonomous_container_database_backup_state)
     ```
 
@@ -223,7 +223,7 @@ def get_autonomous_container_database_backups_output(autonomous_container_databa
         compartment_id=compartment_id,
         display_name=autonomous_container_database_backup_display_name,
         infrastructure_type=autonomous_container_database_backup_infrastructure_type,
-        is_remote=autonomous_container_database_backup_is_remote == "true",
+        is_remote=autonomous_container_database_backup_is_remote,
         state=autonomous_container_database_backup_state)
     ```
 

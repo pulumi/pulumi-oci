@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDatabaseSnapshotStandby = new DatabaseSnapshotStandby("testDatabaseSnapshotStandby", DatabaseSnapshotStandbyArgs.builder()
  *             .databaseAdminPassword(databaseSnapshotStandbyDatabaseAdminPassword)
- *             .databaseId(testDatabase.id())
+ *             .databaseId(testDatabase.get("id"))
  *             .standbyConversionType(databaseSnapshotStandbyStandbyConversionType)
  *             .snapshotDurationInDays(databaseSnapshotStandbySnapshotDurationInDays)
  *             .build());

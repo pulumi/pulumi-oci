@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testUserDbCredential = new DomainsUserDbCredential("testUserDbCredential", DomainsUserDbCredentialArgs.builder()
  *             .dbPassword(userDbCredentialDbPassword)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials")
  *             .attributeSets()
  *             .attributes("")
@@ -78,8 +78,8 @@ import javax.annotation.Nullable;
  *                 .allowSelfChange(userDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange)
  *                 .build())
  *             .user(DomainsUserDbCredentialUserArgs.builder()
- *                 .value(testUser.id())
- *                 .ocid(testUser.ocid())
+ *                 .value(testUser.get("id"))
+ *                 .ocid(testUser.get("ocid"))
  *                 .build())
  *             .build());
  * 

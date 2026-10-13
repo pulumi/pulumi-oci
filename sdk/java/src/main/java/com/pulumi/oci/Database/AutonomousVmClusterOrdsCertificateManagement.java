@@ -43,11 +43,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousVmClusterOrdsCertificateManagement = new AutonomousVmClusterOrdsCertificateManagement("testAutonomousVmClusterOrdsCertificateManagement", AutonomousVmClusterOrdsCertificateManagementArgs.builder()
- *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+ *             .autonomousVmClusterId(testAutonomousVmCluster.get("id"))
  *             .certificateGenerationType(autonomousVmClusterOrdsCertificateManagementCertificateGenerationType)
- *             .caBundleId(testCaBundle.id())
- *             .certificateAuthorityId(testCertificateAuthority.id())
- *             .certificateId(testCertificate.id())
+ *             .caBundleId(testCaBundle.get("id"))
+ *             .certificateAuthorityId(testCertificateAuthority.get("id"))
+ *             .certificateId(testCertificate.get("id"))
  *             .build());
  * 
  *     }

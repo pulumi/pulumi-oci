@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .latestConfig(ManagedKafkaKafkaClusterConfigLatestConfigArgs.builder()
  *                 .properties(kafkaClusterConfigLatestConfigProperties)
- *                 .configId(testConfig.id())
+ *                 .configId(testConfig.get("id"))
  *                 .timeCreated(kafkaClusterConfigLatestConfigTimeCreated)
  *                 .versionNumber(kafkaClusterConfigLatestConfigVersionNumber)
  *                 .build())
